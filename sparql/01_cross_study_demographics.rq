@@ -1,0 +1,19 @@
+# Cross-Study Subject Demographics
+# Retrieves demographic components shared across NHANES, ADNI, and SPRINT.
+# Join: shared ct_id for NIH CDE demographic components.
+#
+# Placeholder — real ct_id URIs will be populated after model generation.
+
+PREFIX sdc4: <https://datacharterontology.org/sdc4/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?component ?label ?study ?dataType
+WHERE {
+    ?component a sdc4:Component ;
+               rdfs:label ?label ;
+               sdc4:domain "Demographics" ;
+               sdc4:study ?study ;
+               sdc4:dataType ?dataType .
+}
+ORDER BY ?label ?study

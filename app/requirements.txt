@@ -1,0 +1,8 @@
+Django>=5.1,<5.2
+psycopg2-binary>=2.9
+gunicorn>=22.0
+rdflib>=7.0
+SPARQLWrapper>=2.0
+redis>=5.0
+django-redis>=5.4
+requests>=2.31

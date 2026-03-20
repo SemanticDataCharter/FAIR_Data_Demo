@@ -1,0 +1,81 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-fair_demo}
+      POSTGRES_USER: ${POSTGRES_USER:-fair_demo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fair_demo_dev}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT_HOST:-5433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fair_demo}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  graphdb:
+    image: ontotext/graphdb:10.8.4
+    environment:
+      GDB_HEAP_SIZE: 1g
+    volumes:
+      - graphdb_data:/opt/graphdb/home
+    ports:
+      - "${GRAPHDB_PORT:-7200}:7200"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7200/rest/repositories"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    ports:
+      - "${REDIS_PORT_HOST:-6380}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:-dev-secret-key-change-me}
+      DJANGO_DEBUG: ${DJANGO_DEBUG:-True}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1}
+      POSTGRES_DB: ${POSTGRES_DB:-fair_demo}
+      POSTGRES_USER: ${POSTGRES_USER:-fair_demo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fair_demo_dev}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      GRAPHDB_URL: http://graphdb:7200
+      GRAPHDB_REPOSITORY: ${GRAPHDB_REPOSITORY:-fair_demo}
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - ./app:/app
+      - media_data:/app/mediafiles
+    ports:
+      - "${WEB_PORT:-8000}:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      graphdb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py collectstatic --noinput &&
+             gunicorn fair_demo.wsgi:application --bind 0.0.0.0:8000 --workers 3"
+
+volumes:
+  postgres_data:
+  graphdb_data:
+  redis_data:
+  media_data:

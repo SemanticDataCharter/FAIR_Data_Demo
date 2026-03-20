@@ -1,0 +1,19 @@
+# Vital Signs Distribution Comparison
+# Compares vital signs components across studies — shared units, ranges, constraints.
+#
+# Placeholder — real ct_id URIs will be populated after model generation.
+
+PREFIX sdc4: <https://datacharterontology.org/sdc4/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?component ?label ?study ?units ?minInclusive ?maxInclusive
+WHERE {
+    ?component a sdc4:Component ;
+               rdfs:label ?label ;
+               sdc4:domain "Vital Signs" ;
+               sdc4:study ?study .
+    OPTIONAL { ?component sdc4:units ?units . }
+    OPTIONAL { ?component sdc4:minInclusive ?minInclusive . }
+    OPTIONAL { ?component sdc4:maxInclusive ?maxInclusive . }
+}
+ORDER BY ?label ?study

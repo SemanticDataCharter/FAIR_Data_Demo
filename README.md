@@ -23,6 +23,12 @@ SDC4 models NIH CDEs as **reusable components** — each identified by a permane
 
 Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
 
+## Why This Matters for Autonomous AI
+
+Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `VSSBP` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
+
+SDC4 compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a mathematically secure foundation for AI-driven clinical data operations: zero hallucination risk on structure, zero ambiguity on semantics.
+
 ## What This Demo Contains
 
 | Study | Type | NIH Institute | CDE Domains |

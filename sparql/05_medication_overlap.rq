@@ -2,7 +2,10 @@
 # Identifies medication-related components shared across studies.
 # Shared ct_id means identical semantic definition — no mapping needed.
 #
-# Placeholder — real ct_id URIs will be populated after model generation.
+# NOTE: These queries use a placeholder sdc4: vocabulary. They will be
+# rewritten once real RDF triples are generated from SDCStudio models.
+# Actual SDCStudio RDF output uses sdc4-meta: predicates, not this
+# placeholder vocabulary.
 
 PREFIX sdc4: <https://datacharterontology.org/sdc4/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

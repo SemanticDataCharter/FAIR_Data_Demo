@@ -153,7 +153,7 @@
                     <h3>{{ study.name }}</h3>
                     <div class="meta">{{ study.full_name }}<br>{{ study.funder }} &mdash; {{ study.type }}</div>
                     {% for domain in study.domains %}
-                    <span class="domain-tag {% if coverage|default:'' %}shared{% endif %}">{{ domain }}</span>
+                    <span class="domain-tag{% if domain in shared_domains %} shared{% endif %}">{{ domain }}</span>
                     {% endfor %}
                 </div>
                 {% endfor %}
@@ -202,6 +202,7 @@
                         {% endfor %}
                     </select>
                 </div>
+                {% csrf_token %}
                 <textarea id="sparql-input" placeholder="Enter a SPARQL query or select one above..."></textarea>
                 <button onclick="runQuery()">Execute Query</button>
                 <div id="results"></div>
@@ -214,7 +215,7 @@
             <p>Built with <a href="https://github.com/Axius-SDC/SDCStudio">SDCStudio</a> &mdash;
             Semantic Data Charter (SDC4) reference implementation</p>
             <p style="margin-top:0.5rem; opacity:0.7; font-size:0.9rem;">
-                Apache 2.0 License &mdash; Axius SDC, LLC
+                Apache 2.0 License &mdash; Axius-SDC, Inc.
             </p>
         </div>
     </footer>

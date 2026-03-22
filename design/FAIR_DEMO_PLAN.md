@@ -31,6 +31,53 @@ All 12 NIH Common Data Element domains are represented. 5 domains are shared acr
 | Physical Function | X | | | 1 |
 | Pain | X | | | 1 |
 
+## Workflow
+
+### Template-Based Model Assembly
+
+The demo exercises the real SDCStudio pipeline:
+
+1. **Markdown templates** (`templates/*.md`) define each study's data model
+2. Templates reference existing NIH-CDE catalog components via `**Reuse**: ct_id`
+3. **SDCStudio assembles** the models, directly reusing published components (same `ct_id`, no copy)
+4. Study-specific components are **minted fresh** during assembly
+5. SDCStudio **generates all 8 output formats** (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
+6. Generated output is placed in `models/{study}/`
+7. RDF triples are loaded into GraphDB for cross-study SPARQL queries
+
+### Reusable Component Table
+
+These components from the NIH-CDE catalog are reused across all three study templates:
+
+| Component | Type | ct_id |
+|-----------|------|-------|
+| Participant ID | XdString | `sdt9aiqjdbjjaafgjzzwygf8` |
+| Age in Years | XdCount | `c1nr0ykdr4w99ss7dty1iaug` |
+| Birth Date | XdTemporal | `g3k6bj8su3rvkszg2700dhyh` |
+| Sex | XdToken | `mw9qdn71urog8egjbp5t3y00` |
+| Race | XdToken | `iiwx1rakgy3wfytyskre0v3x` |
+| Ethnicity | XdToken | `ltobu9ek54hcnrjxk16jk8qk` |
+| Education Level | XdToken | `dbv7fgfi67iztx00lgv1vxni` |
+| Marital Status | XdToken | `w3bw02ebbrrs7mzu3ztkb8od` |
+| Systolic Blood Pressure | XdQuantity | `v15kv8dnd9th63hmccqetmki` |
+| Diastolic Blood Pressure | XdQuantity | `b0qfvgagjyebeuizpe900a93` |
+| Heart Rate | XdQuantity | `wmjt38l5le7u3ro7qjmkaaz7` |
+| Respiratory Rate | XdQuantity | `zseky2lf0pcuc7rsjtj49dm9` |
+| Body Temperature | XdQuantity | `s0yyyjcuu3l4ra93p5lktzig` |
+| BMI | XdQuantity | `wpojnsuwae37rfsnj9xpbcun` |
+| Person Weight Value | XdQuantity | `scjotdd5kp3yovkvjgsc5a7v` |
+| Person Height Value | XdQuantity | `mkelab9gci43xj7akjy8w7h3` |
+| Smoking Status | XdToken | `pcqb6t8q1g9e0fagm55fkhf2` |
+
+Components shared by ADNI and SPRINT (Adverse Events):
+
+| Component | Type | ct_id |
+|-----------|------|-------|
+| AE Description | XdString | `pp5v32ipc0xbva1hi5l3r91g` |
+| AE Term | XdString | `fbfqzhm0es37p5rtrtw2wh0n` |
+| AE Start Date | XdTemporal | `w0qi4triqgeeg0oodhy75p8h` |
+| AE End Date | XdTemporal | `andj4gpkessj3z0koheyc7gj` |
+
 ## Architecture
 
 ### Services
@@ -43,6 +90,21 @@ All 12 NIH Common Data Element domains are represented. 5 domains are shared acr
 ### Data Flow
 
 ```
+Markdown Templates (templates/*.md)
+    │
+    ▼
+SDCStudio (upload → assemble → generate)
+    │
+    ▼
+Generated Output (models/{study}/)
+    ├── XSD schemas
+    ├── XML instances
+    ├── JSON / JSON-LD
+    ├── HTML documentation
+    ├── RDF triples ──▶ GraphDB
+    ├── SHACL constraints
+    └── GQL CREATE statements
+
 Source Data (CSV/XPT)
     │
     ▼
@@ -75,15 +137,18 @@ Cross-study queries join on `ct_id`. No mapping tables. No ETL. No reconciliatio
 
 ## What Gets Generated in SDCStudio
 
-For each study, SDCStudio will generate:
+For each study, SDCStudio generates:
 
-1. **Django app** (models, views, admin, templates) via AppGen
-2. **XSD schemas** for each data model
-3. **RDF triples** extracted from schemas
-4. **SHACL constraints** for validation
-5. **JSON-LD** semantic descriptions
+1. **XSD schemas** for each data model
+2. **XML instance documents** (complete data examples)
+3. **JSON instance data** (mirrors XML structure)
+4. **JSON-LD schema** (semantic descriptions for linked data)
+5. **HTML documentation**
+6. **RDF triples** extracted from schemas
+7. **SHACL constraints** for validation
+8. **GQL CREATE statements** for property graphs
 
-The generated apps get placed in `app/{study_name}/` and registered in Django settings.
+Optionally, Django apps can be generated via AppGen for study-specific views.
 
 ## SPARQL Query Strategy
 
@@ -97,3 +162,5 @@ Six pre-built queries demonstrate different interoperability patterns:
 6. **Medical History**: Shared history components
 
 All queries join on `ct_id` — the same mechanism that would work in production with thousands of studies.
+
+**Note**: The current SPARQL queries use a placeholder `sdc4:` vocabulary. They will be rewritten to use the actual `sdc4-meta:` predicates once real RDF triples are generated from SDCStudio models.

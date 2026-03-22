@@ -68,7 +68,7 @@ Three different study designs. Three different NIH institutes. One shared semant
 ### Prerequisites
 
 - Docker and Docker Compose
-- Python 3.12+ (for data conversion only)
+- Access to an [SDCStudio](https://github.com/Axius-SDC/SDCStudio) instance with the NIH-CDE catalog
 
 ### 1. Clone and configure
 
@@ -78,7 +78,29 @@ cd FAIR_Data_Demo
 cp .env.example .env
 ```
 
-### 2. Run the setup script
+### 2. Upload templates to SDCStudio
+
+Upload the Markdown templates from `templates/` to the FAIR Data Demo project in SDCStudio:
+
+- `templates/nhanes_study_data.md` — NHANES (10 domains, 17 reused + 15 minted components)
+- `templates/adni_study_data.md` — ADNI (8 domains, 21 reused + 14 minted components)
+- `templates/sprint_study_data.md` — SPRINT (7 domains, 21 reused + 14 minted components)
+
+SDCStudio assembles the models by directly reusing existing NIH-CDE catalog components (same `ct_id`) and minting fresh components for study-specific concepts.
+
+### 3. Generate models and export
+
+In SDCStudio, generate all 8 output formats for each study model:
+- XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
+
+### 4. Add generated output to this repo
+
+Place the generated files in the appropriate study directories:
+- `models/NHANES/`
+- `models/ADNI/`
+- `models/SPRINT/`
+
+### 5. Run the setup script
 
 ```bash
 ./scripts/setup.sh
@@ -86,20 +108,15 @@ cp .env.example .env
 
 This starts PostgreSQL, GraphDB, Redis, and the Django web application.
 
-### 3. Explore
+### 6. Explore
 
 - **Demo UI**: http://localhost:8000 — study overview, CDE coverage matrix, SPARQL explorer
 - **Django Admin**: http://localhost:8000/admin — credentials: `admin` / `admin`
 - **GraphDB Workbench**: http://localhost:7200 — direct SPARQL access and graph visualization
 
-### 4. (Optional) Load study data
+### 7. (Optional) Load study data
 
-Download source data from each study (see [source_data/README.md](source_data/README.md)), then:
-
-```bash
-python datagen/convert_all.py
-docker compose exec web python manage.py import_data
-```
+Download source data from each study (see [source_data/README.md](source_data/README.md)), then convert and import once the datagen pipeline is built.
 
 ## Cross-Study SPARQL Queries
 
@@ -116,6 +133,8 @@ Six pre-built queries demonstrate structural interoperability:
 
 All queries join on `ct_id` — no mapping tables involved. See [sparql/README.md](sparql/README.md) for details.
 
+**Note**: The current SPARQL queries use a placeholder vocabulary. They will be rewritten once real RDF triples are generated from SDCStudio models.
+
 ## The Challenge
 
 Submit a payload that violates the NIH CDE constraints.
@@ -129,15 +148,15 @@ FAIR means more than findable and accessible. It means the data **means what it 
 
 ## How It's Built
 
-Every component in this demo was modeled in [SDCStudio](https://github.com/Axius-SDC/SDCStudio) — the production platform for SDC4-compliant data models. The Django apps, XSD schemas, XML instances, RDF triples, and SPARQL queries were all generated from those models.
+Every component in this demo was modeled in [SDCStudio](https://github.com/Axius-SDC/SDCStudio) — the production platform for SDC4-compliant data models. The Markdown templates in `templates/` reference existing NIH-CDE catalog components by `ct_id`, and SDCStudio assembles the study models by reusing those components directly.
 
 The workflow:
-1. Model NIH CDEs as SDC4 components in SDCStudio
-2. Reuse components across study data models (shared `ct_id`)
-3. Generate Django apps via SDCStudio AppGen
-4. Convert source data (CSV/XPT) to validated XML instances
-5. Extract RDF triples into GraphDB
-6. Query across studies using SPARQL
+1. Write Markdown templates referencing existing catalog components via `**Reuse**: ct_id`
+2. Upload templates to SDCStudio's FAIR Data Demo project
+3. SDCStudio assembles models (reusing shared components, minting study-specific ones)
+4. Generate all output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
+5. Load RDF triples into GraphDB
+6. Query across studies using SPARQL — joins on shared `ct_id`
 
 No custom integration code. No study-specific adapters. The interoperability is structural.
 

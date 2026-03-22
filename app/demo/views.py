@@ -89,15 +89,16 @@ def landing(request):
             study["name"]: domain in study["domains"] for study in STUDIES
         }
 
-    shared_count = sum(
-        1 for domain in ALL_DOMAINS if all(coverage[domain].values())
-    )
+    shared_domains = [
+        domain for domain in ALL_DOMAINS if all(coverage[domain].values())
+    ]
 
     context = {
         "studies": STUDIES,
         "all_domains": ALL_DOMAINS,
         "coverage": coverage,
-        "shared_count": shared_count,
+        "shared_count": len(shared_domains),
+        "shared_domains": shared_domains,
         "canned_queries": CANNED_QUERIES,
     }
     return render(request, "demo/landing.html", context)

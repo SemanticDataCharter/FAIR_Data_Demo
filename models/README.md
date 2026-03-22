@@ -25,8 +25,8 @@ models/
 
 ## How to Populate
 
-1. Upload the Markdown templates from `templates/` to the FAIR Data Demo project in SDCStudio
-2. SDCStudio assembles the data models, reusing existing NIH-CDE catalog components via `ct_id`
+1. Use SDC_Agents API to create/reuse NIH-CDE catalog components and assemble clusters
+2. In SDCStudio, approve draft components and build study-level data models
 3. Generate all 8 output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
 4. Download and place output files in the appropriate study directory
 

@@ -2,7 +2,7 @@
 
 **Three NIH studies. One project. Shared semantic infrastructure.**
 
-This repository demonstrates how [SDC4](https://github.com/Axius-SDC/SDCStudio) (Semantic Data Charter) delivers structural FAIR data compliance across real NIH-funded research studies — without mapping tables, without ETL pipelines, and without reconciliation layers.
+This repository demonstrates how [SDC](https://semanticdatacharter.com/) (Semantic Data Charter) delivers structural FAIR data compliance across real NIH-funded research studies, without mapping tables, without ETL pipelines, and without reconciliation layers.
 
 ## The FAIR Problem
 
@@ -17,17 +17,19 @@ The same concept — systolic blood pressure — appears as:
 
 Three encodings. Three parsers. Three mapping efforts. Multiply by every CDE, every study, every institution. This is the state of FAIR data in 2026.
 
-## The SDC4 Solution
+## The SDC Solution
 
-SDC4 models NIH CDEs as **reusable components** — each identified by a permanent `ct_id`, each carrying its own schema, units, constraints, and semantic links. When NHANES, ADNI, and SPRINT need "systolic blood pressure," they reference the **same component**. Same `ct_id`. Same XSD schema. Same validation rules.
+The NIH CDE catalog publishes data element definitions: names, descriptions, data types, permissible values, and usage contexts. SDC takes all of that published information and maps each CDE to a **content-compliant SDC model component**, preserving every semantic detail from the original definition and then extending it with formal constraints that the CDE catalog does not provide: explicit numeric ranges, required units, ontology predicates, and XSD-enforced validation rules. The result is the best deterministic model possible for each concept, not a lossy approximation.
 
-Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
+Each component is identified by a permanent `ct_id` (CUID2) and carries its own compiled schema, units, constraints, and semantic links. Consider systolic blood pressure: many variables affect the measurement, including device type (manual cuff vs. automated oscillometric vs. invasive arterial line), patient position (seated, standing, supine), and anatomical location (upper arm, wrist, thigh). None of these contextual factors are captured in CDEs. At all. Ideally, each measurement context would be modeled as a distinct component with its own constraints, because a reading from an automated arm cuff and a reading from an invasive arterial line are not the same measurement. We understand that assumptions are often made in practice, but SDC4's goal is that domain experts create precisely scoped components and that those components are correctly reused across studies for the best accuracy possible.
+
+In this demo, when NHANES, ADNI, and SPRINT need "systolic blood pressure," they reference the **same component**. Same `ct_id`. Same XSD schema. Same validation rules. Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
 
 ## Why This Matters for Autonomous AI
 
 Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `VSSBP` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
 
-SDC4 compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a mathematically secure foundation for AI-driven clinical data operations: zero hallucination risk on structure, zero ambiguity on semantics.
+SDC compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a mathematically secure foundation for AI-driven clinical data operations: zero hallucination risk on structure, zero ambiguity on semantics.
 
 ## What This Demo Contains
 
@@ -68,7 +70,7 @@ Three different study designs. Three different NIH institutes. One shared semant
 ### Prerequisites
 
 - Docker and Docker Compose
-- Access to an [SDCStudio](https://github.com/Axius-SDC/SDCStudio) instance with the NIH-CDE catalog
+- Access to an [SDCStudio](https://sdcstudio.axius-sdc.com/) instance with the NIH-CDE catalog
 
 ### 1. Clone and configure
 
@@ -78,29 +80,35 @@ cd FAIR_Data_Demo
 cp .env.example .env
 ```
 
-### 2. Upload templates to SDCStudio
+### 2. Create components and assemble clusters via SDC_Agents
 
-Upload the Markdown templates from `templates/` to the FAIR Data Demo project in SDCStudio:
+Use the [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) API to create and reuse NIH-CDE components for each study:
 
-- `templates/nhanes_study_data.md` — NHANES (10 domains, 17 reused + 15 minted components)
-- `templates/adni_study_data.md` — ADNI (8 domains, 21 reused + 14 minted components)
-- `templates/sprint_study_data.md` — SPRINT (7 domains, 21 reused + 14 minted components)
+- Reuse existing catalog components (same `ct_id`) for shared concepts (demographics, vital signs, etc.)
+- Mint new components for study-specific concepts
+- Assemble components into clusters within the FAIR Data Demo project
 
-SDCStudio assembles the models by directly reusing existing NIH-CDE catalog components (same `ct_id`) and minting fresh components for study-specific concepts.
+### 3. Approve drafts and build data models in SDCStudio
 
-### 3. Generate models and export
+In [SDCStudio](https://sdcstudio.axius-sdc.com/), review and approve draft components created by the agents, then build study-level data models:
 
-In SDCStudio, generate all 8 output formats for each study model:
+- **NHANES** — 10 CDE domains
+- **ADNI** — 8 CDE domains
+- **SPRINT** — 7 CDE domains
+
+### 4. Generate all output formats
+
+Generate all 8 output formats for each study model:
 - XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
 
-### 4. Add generated output to this repo
+### 5. Add generated output to this repo
 
 Place the generated files in the appropriate study directories:
 - `models/NHANES/`
 - `models/ADNI/`
 - `models/SPRINT/`
 
-### 5. Run the setup script
+### 6. Run the setup script
 
 ```bash
 ./scripts/setup.sh
@@ -108,13 +116,13 @@ Place the generated files in the appropriate study directories:
 
 This starts PostgreSQL, GraphDB, Redis, and the Django web application.
 
-### 6. Explore
+### 7. Explore
 
 - **Demo UI**: http://localhost:8000 — study overview, CDE coverage matrix, SPARQL explorer
 - **Django Admin**: http://localhost:8000/admin — credentials: `admin` / `admin`
 - **GraphDB Workbench**: http://localhost:7200 — direct SPARQL access and graph visualization
 
-### 7. (Optional) Load study data
+### 8. (Optional) Load study data
 
 Download source data from each study (see [source_data/README.md](source_data/README.md)), then convert and import once the datagen pipeline is built.
 
@@ -140,20 +148,20 @@ All queries join on `ct_id` — no mapping tables involved. See [sparql/README.m
 Submit a payload that violates the NIH CDE constraints.
 
 - The CSV will accept it.
-- The SDC4 schema will reject it.
+- The SDC schema will reject it.
 
-Try entering a systolic blood pressure of -50 mmHg, or a date of birth in the year 3000, or a medication dosage with no units. The CSV has no opinion. The SDC4 XSD does.
+Try entering a systolic blood pressure of -50 mmHg, or a date of birth in the year 3000, or a medication dosage with no units. The CSV has no opinion. The SDC XSD does.
 
 FAIR means more than findable and accessible. It means the data **means what it claims to mean** and can be **used without translation**.
 
 ## How It's Built
 
-Every component in this demo was modeled in [SDCStudio](https://github.com/Axius-SDC/SDCStudio) — the production platform for SDC4-compliant data models. The Markdown templates in `templates/` reference existing NIH-CDE catalog components by `ct_id`, and SDCStudio assembles the study models by reusing those components directly.
+Every component in this demo was modeled in [SDCStudio](https://sdcstudio.axius-sdc.com/), the production platform for SDC-compliant data models. [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) create and reuse NIH-CDE catalog components via the SDCStudio API, and a human approves draft components before building the final data models.
 
 The workflow:
-1. Write Markdown templates referencing existing catalog components via `**Reuse**: ct_id`
-2. Upload templates to SDCStudio's FAIR Data Demo project
-3. SDCStudio assembles models (reusing shared components, minting study-specific ones)
+1. Use SDC_Agents API to create/reuse NIH-CDE catalog components (same `ct_id` for shared concepts)
+2. Agents assemble components into clusters within the FAIR Data Demo project
+3. In SDCStudio, approve draft components and build study-level data models
 4. Generate all output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
 5. Load RDF triples into GraphDB
 6. Query across studies using SPARQL — joins on shared `ct_id`
@@ -180,10 +188,10 @@ No custom integration code. No study-specific adapters. The interoperability is 
 
 ## Related Projects
 
-- [SDCStudio](https://github.com/Axius-SDC/SDCStudio) — Production platform for SDC4 data models
-- [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) — AI agents for automated SDC4 model generation
+- [SDCStudio](https://sdcstudio.axius-sdc.com/) — Production platform for SDC data models
+- [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) — AI agents for automated SDC model generation
 - [CordovaOS](https://github.com/Axius-SDC/CordovaOS) — Sovereign operating system demo (civil registry use case)
-- [SDCRM](https://github.com/SemanticDataCharter/SDCRM) — SDC4 Reference Model specification
+- [SDCRM](https://github.com/SemanticDataCharter/SDCRM) — SDC Reference Model specification
 
 ## License
 

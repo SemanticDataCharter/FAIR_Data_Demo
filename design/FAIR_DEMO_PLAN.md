@@ -33,14 +33,14 @@ All 12 NIH Common Data Element domains are represented. 5 domains are shared acr
 
 ## Workflow
 
-### Template-Based Model Assembly
+### Agent-Based Model Assembly
 
-The demo exercises the real SDCStudio pipeline:
+The demo exercises the real SDCStudio + SDC_Agents pipeline:
 
-1. **Markdown templates** (`templates/*.md`) define each study's data model
-2. Templates reference existing NIH-CDE catalog components via `**Reuse**: ct_id`
-3. **SDCStudio assembles** the models, directly reusing published components (same `ct_id`, no copy)
-4. Study-specific components are **minted fresh** during assembly
+1. **SDC_Agents API** creates and reuses NIH-CDE catalog components (same `ct_id` for shared concepts)
+2. Agents **assemble components into clusters** within the FAIR Data Demo project
+3. Study-specific components are **minted fresh** by the agents during creation
+4. In **SDCStudio**, a human reviews and **approves draft components**, then builds study-level data models
 5. SDCStudio **generates all 8 output formats** (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
 6. Generated output is placed in `models/{study}/`
 7. RDF triples are loaded into GraphDB for cross-study SPARQL queries
@@ -90,10 +90,10 @@ Components shared by ADNI and SPRINT (Adverse Events):
 ### Data Flow
 
 ```
-Markdown Templates (templates/*.md)
+SDC_Agents API (create/reuse components → assemble clusters)
     │
     ▼
-SDCStudio (upload → assemble → generate)
+SDCStudio (approve drafts → build data models → generate)
     │
     ▼
 Generated Output (models/{study}/)
@@ -123,7 +123,7 @@ Validated XML Instances (app/import_data/)
 
 ### Interoperability Mechanism
 
-SDC4 components are identified by a permanent `ct_id` (CUID2). When multiple studies model the same NIH CDE concept, they reuse the identical component — same `ct_id`, same XSD schema, same validation rules.
+SDC components are identified by a permanent `ct_id` (CUID2). When multiple studies model the same NIH CDE concept, they reuse the identical component — same `ct_id`, same XSD schema, same validation rules.
 
 Cross-study queries join on `ct_id`. No mapping tables. No ETL. No reconciliation.
 

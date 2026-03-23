@@ -107,7 +107,7 @@ datasources:
 # ---------------------------------------------------------------------------
 
 output:
-  directory: "app/import_data"
+  directory: "output/instances"
   formats:
     - xml
 

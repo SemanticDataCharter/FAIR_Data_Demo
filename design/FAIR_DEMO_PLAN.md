@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Prove that SDC4 delivers structural FAIR data interoperability across real NIH-funded studies. Three studies, three NIH institutes, three study designs — one shared semantic infrastructure.
+Prove that SDC delivers structural FAIR data interoperability across real NIH-funded studies. Three studies, three NIH institutes, three study designs — one shared semantic infrastructure.
 
 ## Studies
 
@@ -80,20 +80,20 @@ Components shared by ADNI and SPRINT (Adverse Events):
 
 ## Architecture
 
-### Services
-
-- **PostgreSQL 16**: Django ORM storage (study app models, user accounts)
-- **GraphDB 10.8**: RDF triplestore with OWL 2 RL reasoning (knowledge graph, SPARQL endpoint)
-- **Redis 7**: Django cache backend
-- **Django 5.1**: Web application (landing page, SPARQL explorer, admin)
-
 ### Data Flow
 
 ```
-SDC_Agents API (create/reuse components → assemble clusters)
+Source Data (CSV/XPT)
     │
     ▼
-SDCStudio (approve drafts → build data models → generate)
+SDC Agents Pipeline (scripts/run_pipeline.py)
+    ├── Introspect datasources
+    ├── Discover/reuse catalog components
+    ├── Propose cluster hierarchies
+    └── Assemble data models
+    │
+    ▼
+SDCStudio (approve drafts → build data models → generate app)
     │
     ▼
 Generated Output (models/{study}/)
@@ -101,24 +101,14 @@ Generated Output (models/{study}/)
     ├── XML instances
     ├── JSON / JSON-LD
     ├── HTML documentation
-    ├── RDF triples ──▶ GraphDB
+    ├── RDF triples
     ├── SHACL constraints
     └── GQL CREATE statements
 
-Source Data (CSV/XPT)
+XML Instance Generation (scripts/generate_instances.py)
     │
     ▼
-datagen/ converters
-    │
-    ▼
-Validated XML Instances (app/import_data/)
-    │
-    ├──▶ Django bulk import (PostgreSQL)
-    │
-    └──▶ RDF triple extraction (GraphDB)
-            │
-            ▼
-        SPARQL queries (cross-study joins on shared ct_id)
+Validated XML Instances (output/instances/)
 ```
 
 ### Interoperability Mechanism
@@ -126,14 +116,6 @@ Validated XML Instances (app/import_data/)
 SDC components are identified by a permanent `ct_id` (CUID2). When multiple studies model the same NIH CDE concept, they reuse the identical component — same `ct_id`, same XSD schema, same validation rules.
 
 Cross-study queries join on `ct_id`. No mapping tables. No ETL. No reconciliation.
-
-## Memory Target
-
-4 GB total:
-- PostgreSQL: ~512 MB
-- GraphDB: 1 GB heap + ~512 MB overhead
-- Redis: ~128 MB
-- Django: ~256 MB per gunicorn worker (3 workers)
 
 ## What Gets Generated in SDCStudio
 
@@ -147,8 +129,7 @@ For each study, SDCStudio generates:
 6. **RDF triples** extracted from schemas
 7. **SHACL constraints** for validation
 8. **GQL CREATE statements** for property graphs
-
-Optionally, Django apps can be generated via AppGen for study-specific views.
+9. **Django application** via AppGen for study-specific views and data management
 
 ## SPARQL Query Strategy
 

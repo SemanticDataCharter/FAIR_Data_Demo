@@ -69,8 +69,9 @@ Three different study designs. Three different NIH institutes. One shared semant
 
 ### Prerequisites
 
-- Docker and Docker Compose
+- Python 3.11+
 - Access to an [SDCStudio](https://sdcstudio.axius-sdc.com/) instance with the NIH-CDE catalog
+- SDCStudio API key
 
 ### 1. Clone and configure
 
@@ -78,53 +79,58 @@ Three different study designs. Three different NIH institutes. One shared semant
 git clone https://github.com/Axius-SDC/FAIR_Data_Demo.git
 cd FAIR_Data_Demo
 cp .env.example .env
+# Edit .env with your SDCStudio URL and API key
+pip install -r requirements-pipeline.txt
 ```
 
-### 2. Create components and assemble clusters via SDC_Agents
+### 2. Download source data
 
-Use the [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) API to create and reuse NIH-CDE components for each study:
-
-- Reuse existing catalog components (same `ct_id`) for shared concepts (demographics, vital signs, etc.)
-- Mint new components for study-specific concepts
-- Assemble components into clusters within the FAIR Data Demo project
-
-### 3. Approve drafts and build data models in SDCStudio
-
-In [SDCStudio](https://sdcstudio.axius-sdc.com/), review and approve draft components created by the agents, then build study-level data models:
-
-- **NHANES** — 10 CDE domains
-- **ADNI** — 8 CDE domains
-- **SPRINT** — 7 CDE domains
-
-### 4. Generate all output formats
-
-Generate all 8 output formats for each study model:
-- XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
-
-### 5. Add generated output to this repo
-
-Place the generated files in the appropriate study directories:
-- `models/NHANES/`
-- `models/ADNI/`
-- `models/SPRINT/`
-
-### 6. Run the setup script
+Follow the instructions in [source_data/README.md](source_data/README.md) to download public NIH study data. NHANES XPT files need conversion to CSV:
 
 ```bash
-./scripts/setup.sh
+python scripts/convert_xpt_to_csv.py
 ```
 
-This starts PostgreSQL, GraphDB, Redis, and the Django web application.
+### 3. Run the SDC Agents pipeline
 
-### 7. Explore
+```bash
+python scripts/run_pipeline.py --study all
+```
 
-- **Demo UI**: http://localhost:8000 — study overview, CDE coverage matrix, SPARQL explorer
-- **Django Admin**: http://localhost:8000/admin — credentials: `admin` / `admin`
-- **GraphDB Workbench**: http://localhost:7200 — direct SPARQL access and graph visualization
+The pipeline runs 7 steps with human approval gates:
 
-### 8. (Optional) Load study data
+| Step | Action | Human Review |
+|------|--------|--------------|
+| 1 | Introspect all datasources | No |
+| 2 | Verify catalog components exist | No |
+| 3 | Discover component matches + manual overrides | Yes |
+| 4 | Propose cluster hierarchy per study | Yes |
+| 5 | Check wallet balance and estimate cost | Yes |
+| 6 | Assemble data models (reuse + mint) | No |
+| 7 | Download schemas and artifacts | No |
 
-Download source data from each study (see [source_data/README.md](source_data/README.md)), then convert and import once the datagen pipeline is built.
+Each step caches results in `.sdc-cache/` so the pipeline can resume from any point:
+
+```bash
+python scripts/run_pipeline.py --study nhanes --step 6
+```
+
+### 4. Review and approve in SDCStudio
+
+In [SDCStudio](https://sdcstudio.axius-sdc.com/), review assembled models and generate all 8 output formats:
+- XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
+
+SDCStudio generates the complete application from the approved data models.
+
+### 5. Generate XML instances from source data
+
+After models are approved:
+
+```bash
+python scripts/generate_instances.py --study all --validate
+```
+
+This generates validated XML instances in `output/instances/`.
 
 ## Cross-Study SPARQL Queries
 
@@ -156,35 +162,40 @@ FAIR means more than findable and accessible. It means the data **means what it 
 
 ## How It's Built
 
-Every component in this demo was modeled in [SDCStudio](https://sdcstudio.axius-sdc.com/), the production platform for SDC-compliant data models. [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) create and reuse NIH-CDE catalog components via the SDCStudio API, and a human approves draft components before building the final data models.
+Every component in this demo was modeled in [SDCStudio](https://sdcstudio.axius-sdc.com/), the production platform for SDC-compliant data models. [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) create and reuse NIH-CDE catalog components via the SDCStudio API, and a human approves draft components before building the final data models. SDCStudio then generates the complete application from the approved models.
 
 The workflow:
 1. Use SDC_Agents API to create/reuse NIH-CDE catalog components (same `ct_id` for shared concepts)
 2. Agents assemble components into clusters within the FAIR Data Demo project
 3. In SDCStudio, approve draft components and build study-level data models
 4. Generate all output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
-5. Load RDF triples into GraphDB
+5. SDCStudio generates the application from the data models
 6. Query across studies using SPARQL — joins on shared `ct_id`
 
 No custom integration code. No study-specific adapters. The interoperability is structural.
 
-## Architecture
+## Repository Structure
 
 ```
-                    ┌─────────────────────────────┐
-                    │     Django Web Application   │
-                    │  (Landing Page + SPARQL UI)  │
-                    └──────────┬──────────────────-┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-     ┌────────▼──────┐  ┌─────▼──────┐  ┌──────▼──────┐
-     │  PostgreSQL   │  │  GraphDB   │  │    Redis    │
-     │  (Django ORM) │  │  (RDF/OWL) │  │   (Cache)   │
-     └───────────────┘  └────────────┘  └─────────────┘
+FAIR_Data_Demo/
+├── scripts/                     # Pipeline scripts
+│   ├── run_pipeline.py          # 7-step SDC Agents orchestration
+│   ├── generate_instances.py    # Post-assembly XML generation
+│   ├── convert_xpt_to_csv.py    # NHANES XPT preprocessing
+│   └── fair_constants.py        # Shared ct_ids and study metadata
+├── source_data/                 # Raw study data (user-downloaded)
+│   ├── nhanes/
+│   ├── adni/
+│   └── sprint/
+├── models/                      # Generated SDCStudio output
+│   ├── NHANES/
+│   ├── ADNI/
+│   └── SPRINT/
+├── sparql/                      # Pre-built SPARQL queries
+├── design/                      # Architecture documents
+├── sdc-agents.yaml              # SDC Agents configuration (23 datasources)
+└── requirements-pipeline.txt    # Pipeline dependencies
 ```
-
-**Memory target**: 4 GB total (runs on any modern laptop).
 
 ## Related Projects
 

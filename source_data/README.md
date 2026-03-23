@@ -102,4 +102,4 @@ After models are approved in SDCStudio:
 python scripts/generate_instances.py --study all --validate
 ```
 
-This generates validated XML instances in `app/import_data/`.
+This generates validated XML instances in `output/instances/`.

@@ -31,7 +31,7 @@ from fair_constants import STUDIES
 
 ROOT = Path(__file__).resolve().parent.parent
 CACHE_DIR = ROOT / ".sdc-cache"
-OUTPUT_DIR = ROOT / "app" / "import_data"
+OUTPUT_DIR = ROOT / "output" / "instances"
 CONFIG_PATH = ROOT / "sdc-agents.yaml"
 
 

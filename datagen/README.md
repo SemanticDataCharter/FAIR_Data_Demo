@@ -13,4 +13,4 @@ The conversion pipeline requires:
 Conversion scripts will be built after models are generated in SDCStudio. The scripts will:
 - Read source CSV/XPT files from `source_data/`
 - Validate against XSD schemas from `models/`
-- Write validated XML instances to `app/import_data/`
+- Write validated XML instances to `output/instances/`

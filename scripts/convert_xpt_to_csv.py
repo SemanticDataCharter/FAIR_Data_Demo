@@ -17,7 +17,7 @@ Requires: pip install pyreadstat
 
 Output per XPT file:
     source_data/nhanes/DEMO_J.csv          — tabular data
-    source_data/nhanes/DEMO_J.meta.json    — column labels, value labels, file metadata
+    source_data/nhanes/DEMO_J.json         — column metadata (4.2.0 sidecar format)
 """
 from __future__ import annotations
 
@@ -45,7 +45,7 @@ def convert_xpt_to_csv(xpt_path: Path) -> tuple[Path, Path]:
     import pyreadstat
 
     csv_path = xpt_path.with_suffix(".csv")
-    meta_path = xpt_path.with_suffix(".meta.json")
+    meta_path = xpt_path.with_suffix(".json")
 
     df, meta = pyreadstat.read_xport(str(xpt_path))
     df.to_csv(csv_path, index=False)
@@ -60,8 +60,10 @@ def convert_xpt_to_csv(xpt_path: Path) -> tuple[Path, Path]:
     }
 
     for col in df.columns:
+        sas_label = meta.column_names_to_labels.get(col, "")
         col_meta: dict = {
-            "label": meta.column_names_to_labels.get(col, ""),
+            "label": sas_label,
+            "description": sas_label,
             "original_type": meta.readstat_variable_types.get(col, ""),
         }
 
@@ -69,11 +71,13 @@ def convert_xpt_to_csv(xpt_path: Path) -> tuple[Path, Path]:
         # e.g. RIAGENDR: {1.0: "Male", 2.0: "Female"}
         value_label_name = meta.variable_to_label.get(col, "")
         if value_label_name and value_label_name in meta.value_labels:
+            raw_labels = meta.value_labels[value_label_name]
             # Convert numeric keys to strings for JSON serialization
             col_meta["value_labels"] = {
-                str(k): v
-                for k, v in meta.value_labels[value_label_name].items()
+                str(k): v for k, v in raw_labels.items()
             }
+            # 4.2.0 sidecar: enumeration as list of display values
+            col_meta["enumeration"] = list(raw_labels.values())
 
         # Variable format (e.g. "F8.0" for numeric, "$CHAR50" for string)
         if hasattr(meta, "original_variable_types"):
@@ -101,7 +105,7 @@ def main() -> None:
     for filename in XPT_FILES:
         xpt_path = NHANES_DIR / filename
         csv_path = xpt_path.with_suffix(".csv")
-        meta_path = xpt_path.with_suffix(".meta.json")
+        meta_path = xpt_path.with_suffix(".json")
 
         if not xpt_path.exists():
             # Also check lowercase

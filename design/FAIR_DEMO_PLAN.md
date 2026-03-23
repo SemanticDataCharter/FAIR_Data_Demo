@@ -158,21 +158,22 @@ NHANES uses coded column names (e.g. `BPXSY1`, `RIDAGEYR`, `DMDEDUC2`) that carr
 
 When converted to CSV, this metadata is lost. The SDC Agents `introspect_csv()` sees only the coded name and inferred type, and `discover_components()` matches on `_name_similarity(col_name, comp_label)` via `SequenceMatcher`. Result: `BPXSY1` vs "Systolic Blood Pressure" scores near zero.
 
-### Current Workaround (This Demo)
+### Current Workflow (This Demo)
 
-1. `convert_xpt_to_csv.py` saves metadata as `.meta.json` sidecar files
-2. `run_pipeline.py` Step 3 loads SAS labels and matches them against known catalog components before falling back to manual overrides
-3. `fair_constants.py` `COLUMN_OVERRIDES` provides a final safety net for columns that don't auto-match
+1. `convert_xpt_to_csv.py` converts XPT to CSV and saves metadata as `.json` sidecar files (with `description` and `enumeration` fields for 4.2.0 compatibility)
+2. `sdc-agents.yaml` datasource entries include `metadata_path` pointing to the sidecar files
+3. `introspect_csv` merges sidecar metadata into column output; `discover_components` matches on `description`
+4. `fair_constants.py` `COLUMN_OVERRIDES` provides a manual safety net for columns that don't auto-match
 
-### SDC_Agents Enhancement Needed
+### SDC_Agents Enhancement Status
 
-For federal health data at scale (NIH, FDA, CDC), the Introspect toolset needs:
+SDC_Agents 4.2.0 addressed the three gaps identified during initial development:
 
-1. **Column description/label field** in the introspection cache schema — so that external metadata (SAS labels, data dictionaries, CDISC definitions) can be attached to columns
-2. **Discovery matching on description** — `discover_components()` should match on column description in addition to column name, with description matches weighted higher
-3. **Metadata ingest hook** — a way to provide external column metadata (JSON sidecar, data dictionary CSV, CDISC Define-XML) that gets merged into introspection results
+1. **Column description/label field** — RESOLVED. The 13-field column schema includes `description`, `enumeration`, `units`, and other metadata fields. `introspect_csv` merges sidecar `.json` metadata (configured via `metadata_path` in datasource config) into column output.
+2. **Discovery matching on description** — RESOLVED. `discover_components()` matches on the `description` field when populated, allowing coded names like `BPXSY1` to match catalog components via the SAS label.
+3. **Metadata ingest hook** — RESOLVED. The `metadata_path` datasource config field points to a JSON sidecar file that is merged into introspection results automatically.
 
-This is critical for any datasource where column names are coded identifiers rather than human-readable labels: NHANES, FDA CDISC submissions, legacy SAS datasets, SPSS exports, and most government health data.
+**Remaining gap**: No native XPT/SAS/SPSS introspection. These formats still require pre-conversion to CSV + JSON sidecar (via `convert_xpt_to_csv.py`). A native `introspect_xpt` tool would eliminate this preprocessing step for federal health data workflows.
 
 ### Federal Health Data Formats Affected
 

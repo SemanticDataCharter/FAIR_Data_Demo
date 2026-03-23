@@ -85,11 +85,13 @@ pip install -r requirements-pipeline.txt
 
 ### 2. Download source data
 
-Follow the instructions in [source_data/README.md](source_data/README.md) to download public NIH study data. NHANES XPT files need conversion to CSV:
+Follow the instructions in [source_data/README.md](source_data/README.md) to download public NIH study data. NHANES XPT files need conversion to CSV with metadata sidecars:
 
 ```bash
 python scripts/convert_xpt_to_csv.py
 ```
+
+This produces `.csv` data files and `.json` sidecar files containing column descriptions, value labels, and enumerations. The sidecar metadata is referenced via `metadata_path` in `sdc-agents.yaml` and merged into introspection results by SDC_Agents 4.2.0, enabling automatic component matching on SAS labels instead of coded column names.
 
 ### 3. Run the SDC Agents pipeline
 

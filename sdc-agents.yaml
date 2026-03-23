@@ -31,27 +31,35 @@ datasources:
   nhanes_demographics:
     type: csv
     path: "source_data/nhanes/DEMO_J.csv"
+    metadata_path: "source_data/nhanes/DEMO_J.json"
   nhanes_blood_pressure:
     type: csv
     path: "source_data/nhanes/BPX_J.csv"
+    metadata_path: "source_data/nhanes/BPX_J.json"
   nhanes_cbc:
     type: csv
     path: "source_data/nhanes/CBC_J.csv"
+    metadata_path: "source_data/nhanes/CBC_J.json"
   nhanes_cholesterol:
     type: csv
     path: "source_data/nhanes/TCHOL_J.csv"
+    metadata_path: "source_data/nhanes/TCHOL_J.json"
   nhanes_medications:
     type: csv
     path: "source_data/nhanes/RXQ_RX_J.csv"
+    metadata_path: "source_data/nhanes/RXQ_RX_J.json"
   nhanes_medical_conditions:
     type: csv
     path: "source_data/nhanes/MCQ_J.csv"
+    metadata_path: "source_data/nhanes/MCQ_J.json"
   nhanes_smoking:
     type: csv
     path: "source_data/nhanes/SMQ_J.csv"
+    metadata_path: "source_data/nhanes/SMQ_J.json"
   nhanes_physical_functioning:
     type: csv
     path: "source_data/nhanes/PFQ_J.csv"
+    metadata_path: "source_data/nhanes/PFQ_J.json"
 
   # --- ADNI (8 datasets) ---
   adni_demographics:

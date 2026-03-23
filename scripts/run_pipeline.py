@@ -29,48 +29,6 @@ from fair_constants import (
 )
 
 # ---------------------------------------------------------------------------
-# XPT metadata (SAS labels, value maps)
-# ---------------------------------------------------------------------------
-# NHANES XPT files carry metadata that CSV loses. The converter saves it as
-# sidecar .meta.json files. We load these to give Discovery better column
-# descriptions than coded names like BPXSY1.
-
-NHANES_META_DIR = ROOT / "source_data" / "nhanes"
-
-
-def _load_xpt_metadata(datasource_name: str) -> dict:
-    """Load XPT sidecar metadata for a NHANES datasource, if available.
-
-    Returns a dict mapping column names to their SAS metadata:
-        {"BPXSY1": {"label": "Systolic: Blood pres (1st rdg) mm Hg", ...}, ...}
-    Returns empty dict for non-NHANES datasources or if metadata is missing.
-    """
-    if not datasource_name.startswith("nhanes_"):
-        return {}
-
-    # Map datasource names to XPT filenames
-    ds_to_xpt = {
-        "nhanes_demographics": "DEMO_J",
-        "nhanes_blood_pressure": "BPX_J",
-        "nhanes_cbc": "CBC_J",
-        "nhanes_cholesterol": "TCHOL_J",
-        "nhanes_medications": "RXQ_RX_J",
-        "nhanes_medical_conditions": "MCQ_J",
-        "nhanes_smoking": "SMQ_J",
-        "nhanes_physical_functioning": "PFQ_J",
-    }
-    xpt_stem = ds_to_xpt.get(datasource_name)
-    if not xpt_stem:
-        return {}
-
-    meta_path = NHANES_META_DIR / f"{xpt_stem}.meta.json"
-    if not meta_path.exists():
-        return {}
-
-    meta = json.loads(meta_path.read_text())
-    return meta.get("columns", {})
-
-# ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 
@@ -158,32 +116,27 @@ def step_introspect(study: str, dry_run: bool = False) -> dict:
 
     async def _run():
         toolset = IntrospectToolset(config)
-        try:
-            for ds_name in study_meta["datasets"]:
-                _info(f"Introspecting: {ds_name}")
-                try:
-                    result = await toolset.introspect_csv(ds_name)
-                    results[ds_name] = result
-                    cols = result.get("columns", [])
-                    rows = result.get("row_count", 0)
-                    _ok(f"  {len(cols)} columns, {rows} rows")
+        for ds_name in study_meta["datasets"]:
+            _info(f"Introspecting: {ds_name}")
+            try:
+                result = await toolset.introspect_csv(ds_name)
+                results[ds_name] = result
+                cols = result.get("columns", [])
+                rows = result.get("row_count", 0)
+                _ok(f"  {len(cols)} columns, {rows} rows")
 
-                    # Load XPT metadata for NHANES to show SAS labels
-                    xpt_meta = _load_xpt_metadata(ds_name)
-                    for col in cols[:5]:
-                        name = col["name"]
-                        sas_label = xpt_meta.get(name, {}).get("label", "")
-                        label_display = f"  ({sas_label})" if sas_label else ""
-                        print(f"    {name:<25} {col['inferred_type']:<12}{label_display}")
-                    if len(cols) > 5:
-                        print(f"    ... and {len(cols) - 5} more columns")
-                except FileNotFoundError:
-                    _fail(f"  Source file not found for {ds_name}")
-                    _info(f"  Download data per source_data/README.md")
-                except Exception as e:
-                    _fail(f"  Error introspecting {ds_name}: {e}")
-        finally:
-            await toolset.close()
+                for col in cols[:5]:
+                    name = col["name"]
+                    desc = col.get("description", "")
+                    desc_display = f"  ({desc})" if desc else ""
+                    print(f"    {name:<25} {col['data_type']:<12}{desc_display}")
+                if len(cols) > 5:
+                    print(f"    ... and {len(cols) - 5} more columns")
+            except FileNotFoundError:
+                _fail(f"  Source file not found for {ds_name}")
+                _info(f"  Download data per source_data/README.md")
+            except Exception as e:
+                _fail(f"  Error introspecting {ds_name}: {e}")
 
     if dry_run:
         _info("Dry run: would introspect the following datasources:")
@@ -224,23 +177,20 @@ def step_verify_catalog(study: str) -> dict:
 
     async def _run():
         toolset = CatalogToolset(config)
-        try:
-            for key, comp in components_needed.items():
-                ct_id = comp["ct_id"]
-                try:
-                    schema = await toolset.catalog_get_schema(ct_id)
-                    found[key] = {
-                        "ct_id": ct_id,
-                        "label": schema.get("title", comp["label"]),
-                        "type": comp["type"],
-                        "status": "found",
-                    }
-                    _ok(f"  {comp['label']} ({ct_id[:12]}...)")
-                except Exception:
-                    missing.append(key)
-                    _fail(f"  {comp['label']} ({ct_id[:12]}...) — NOT FOUND")
-        finally:
-            await toolset.close()
+        for key, comp in components_needed.items():
+            ct_id = comp["ct_id"]
+            try:
+                schema = await toolset.catalog_get_schema(ct_id)
+                found[key] = {
+                    "ct_id": ct_id,
+                    "label": schema.get("title", comp["label"]),
+                    "type": comp["type"],
+                    "status": "found",
+                }
+                _ok(f"  {comp['label']} ({ct_id[:12]}...)")
+            except Exception:
+                missing.append(key)
+                _fail(f"  {comp['label']} ({ct_id[:12]}...) — NOT FOUND")
 
     asyncio.run(_run())
 
@@ -260,34 +210,6 @@ def step_verify_catalog(study: str) -> dict:
 # Step 3 — Discover components + merge manual overrides
 # ---------------------------------------------------------------------------
 
-def _match_sas_label_to_component(sas_label: str) -> dict | None:
-    """Try to match a SAS label to a known reusable component.
-
-    Uses case-insensitive substring matching on key terms.
-    Returns component dict or None.
-    """
-    from difflib import SequenceMatcher
-
-    label_lower = sas_label.lower()
-    all_components = {**SHARED_COMPONENTS, **AE_COMPONENTS}
-
-    best_match = None
-    best_score = 0.0
-
-    for _key, comp in all_components.items():
-        comp_label = comp["label"].lower()
-        # SequenceMatcher on the SAS label vs component label
-        score = SequenceMatcher(None, label_lower, comp_label).ratio()
-        if score > best_score:
-            best_score = score
-            best_match = comp
-
-    # Require a reasonable match (SAS labels are descriptive enough)
-    if best_match and best_score > 0.45:
-        return {**best_match, "sas_score": round(best_score, 4)}
-    return None
-
-
 def step_discover(study: str, introspection: dict) -> dict:
     """Discover catalog matches for datasource columns, merge manual overrides."""
     _banner(3, f"Discover Components — {study.upper()}")
@@ -304,90 +226,53 @@ def step_discover(study: str, introspection: dict) -> dict:
 
     async def _run():
         toolset = AssemblyToolset(config)
-        try:
-            for ds_name in study_meta["datasets"]:
-                if ds_name not in introspection:
-                    continue
+        for ds_name in study_meta["datasets"]:
+            if ds_name not in introspection:
+                continue
 
-                _info(f"Discovering components for: {ds_name}")
-                result = await toolset.discover_components(ds_name)
+            _info(f"Discovering components for: {ds_name}")
+            result = await toolset.discover_components(ds_name)
 
-                matches = result.get("matches", [])
-                matched_cols = {m["column"] for m in matches}
-                unmatched = result.get("unmatched", [])
+            matches = result.get("matches", [])
+            matched_cols = {m["column"] for m in matches}
+            unmatched = result.get("unmatched", [])
 
-                # Phase 1: Use XPT metadata (SAS labels) to match unmatched
-                # coded columns against known components
-                xpt_meta = _load_xpt_metadata(ds_name)
-                if xpt_meta:
-                    sas_matched = 0
-                    still_unmatched = []
-                    for col_name in list(unmatched):
-                        if col_name in matched_cols:
-                            continue
-                        col_info = xpt_meta.get(col_name, {})
-                        sas_label = col_info.get("label", "")
-                        if not sas_label:
-                            still_unmatched.append(col_name)
-                            continue
+            # Apply manual overrides (highest priority fallback)
+            overrides = COLUMN_OVERRIDES.get(ds_name, {})
+            for col_name, ct_id in overrides.items():
+                if col_name not in matched_cols:
+                    comp = next(
+                        (c for c in {**SHARED_COMPONENTS, **AE_COMPONENTS}.values()
+                         if c["ct_id"] == ct_id),
+                        None,
+                    )
+                    if comp:
+                        matches.append({
+                            "column": col_name,
+                            "ct_id": ct_id,
+                            "label": comp["label"],
+                            "type": comp["type"],
+                            "score": 1.0,
+                            "source": "manual_override",
+                        })
+                        matched_cols.add(col_name)
+                        if col_name in unmatched:
+                            unmatched.remove(col_name)
+                else:
+                    # Override existing match
+                    for m in matches:
+                        if m["column"] == col_name:
+                            m["ct_id"] = ct_id
+                            m["source"] = "manual_override"
 
-                        comp = _match_sas_label_to_component(sas_label)
-                        if comp:
-                            matches.append({
-                                "column": col_name,
-                                "ct_id": comp["ct_id"],
-                                "label": comp["label"],
-                                "type": comp["type"],
-                                "score": comp["sas_score"],
-                                "source": "xpt_metadata",
-                                "sas_label": sas_label,
-                            })
-                            matched_cols.add(col_name)
-                            sas_matched += 1
-                        else:
-                            still_unmatched.append(col_name)
-                    unmatched = still_unmatched
-                    if sas_matched:
-                        _info(f"  {sas_matched} columns matched via SAS labels")
+            reuse_count = sum(1 for m in matches if m.get("ct_id") in ALL_REUSABLE_CT_IDS)
+            mint_count = len(unmatched)
+            _ok(f"  {len(matches)} matched ({reuse_count} reuse, {mint_count} mint)")
 
-                # Phase 2: Apply manual overrides (highest priority)
-                overrides = COLUMN_OVERRIDES.get(ds_name, {})
-                for col_name, ct_id in overrides.items():
-                    if col_name not in matched_cols:
-                        comp = next(
-                            (c for c in {**SHARED_COMPONENTS, **AE_COMPONENTS}.values()
-                             if c["ct_id"] == ct_id),
-                            None,
-                        )
-                        if comp:
-                            matches.append({
-                                "column": col_name,
-                                "ct_id": ct_id,
-                                "label": comp["label"],
-                                "type": comp["type"],
-                                "score": 1.0,
-                                "source": "manual_override",
-                            })
-                            matched_cols.add(col_name)
-                            if col_name in unmatched:
-                                unmatched.remove(col_name)
-                    else:
-                        # Override existing match
-                        for m in matches:
-                            if m["column"] == col_name:
-                                m["ct_id"] = ct_id
-                                m["source"] = "manual_override"
-
-                reuse_count = sum(1 for m in matches if m.get("ct_id") in ALL_REUSABLE_CT_IDS)
-                mint_count = len(unmatched)
-                _ok(f"  {len(matches)} matched ({reuse_count} reuse, {mint_count} mint)")
-
-                all_matches[ds_name] = {
-                    "matches": matches,
-                    "unmatched": unmatched,
-                }
-        finally:
-            await toolset.close()
+            all_matches[ds_name] = {
+                "matches": matches,
+                "unmatched": unmatched,
+            }
 
     asyncio.run(_run())
 
@@ -396,15 +281,14 @@ def step_discover(study: str, introspection: dict) -> dict:
     # Print match report for human review
     print()
     print("  Match Report")
-    print(f"  {'Dataset':<30} {'Auto':<7} {'SAS':<7} {'Manual':<7} {'Unmatched'}")
-    print(f"  {'-'*30} {'-'*7} {'-'*7} {'-'*7} {'-'*10}")
+    print(f"  {'Dataset':<30} {'Auto':<7} {'Manual':<7} {'Unmatched'}")
+    print(f"  {'-'*30} {'-'*7} {'-'*7} {'-'*10}")
     for ds_name, data in all_matches.items():
         matches = data["matches"]
-        auto = sum(1 for m in matches if m.get("source") not in ("xpt_metadata", "manual_override"))
-        sas = sum(1 for m in matches if m.get("source") == "xpt_metadata")
+        auto = sum(1 for m in matches if m.get("source") != "manual_override")
         manual = sum(1 for m in matches if m.get("source") == "manual_override")
         unmatched = len(data.get("unmatched", []))
-        print(f"  {ds_name:<30} {auto:<7} {sas:<7} {manual:<7} {unmatched}")
+        print(f"  {ds_name:<30} {auto:<7} {manual:<7} {unmatched}")
 
     if not _confirm("Proceed with these component matches?"):
         _info("Aborted. Edit COLUMN_OVERRIDES in fair_constants.py and re-run.")
@@ -433,28 +317,25 @@ def step_propose_hierarchy(study: str, discovery: dict) -> dict:
 
     async def _run():
         toolset = AssemblyToolset(config)
-        try:
-            for ds_name in study_meta["datasets"]:
-                if ds_name not in discovery:
-                    continue
+        for ds_name in study_meta["datasets"]:
+            if ds_name not in discovery:
+                continue
 
-                ds_data = discovery[ds_name]
-                _info(f"Proposing hierarchy for: {ds_name}")
+            ds_data = discovery[ds_name]
+            _info(f"Proposing hierarchy for: {ds_name}")
 
-                result = await toolset.propose_cluster_hierarchy(
-                    ds_name,
-                    component_matches=ds_data["matches"],
-                    unmatched_columns=ds_data.get("unmatched"),
-                )
+            result = await toolset.propose_cluster_hierarchy(
+                ds_name,
+                component_matches=ds_data["matches"],
+                unmatched_columns=ds_data.get("unmatched"),
+            )
 
-                clusters = result.get("cluster_count", 0)
-                reuse = result.get("reuse_component_count", 0)
-                mint = result.get("new_component_count", 0)
-                _ok(f"  {clusters} clusters, {reuse} reuse, {mint} new")
+            clusters = result.get("cluster_count", 0)
+            reuse = result.get("reuse_component_count", 0)
+            mint = result.get("new_component_count", 0)
+            _ok(f"  {clusters} clusters, {reuse} reuse, {mint} new")
 
-                hierarchies[ds_name] = result
-        finally:
-            await toolset.close()
+            hierarchies[ds_name] = result
 
     asyncio.run(_run())
 
@@ -493,10 +374,7 @@ def step_check_wallet(study: str, hierarchies: dict) -> dict:
 
     async def _run():
         toolset = CatalogToolset(config)
-        try:
-            wallet_info.update(await toolset.catalog_check_wallet())
-        finally:
-            await toolset.close()
+        wallet_info.update(await toolset.catalog_check_wallet())
 
     asyncio.run(_run())
 
@@ -553,45 +431,42 @@ def step_assemble(study: str, hierarchies: dict) -> dict:
 
     async def _run():
         toolset = AssemblyToolset(config)
-        try:
-            for ds_name, hierarchy in hierarchies.items():
-                _info(f"Assembling model for: {ds_name}")
+        for ds_name, hierarchy in hierarchies.items():
+            _info(f"Assembling model for: {ds_name}")
 
-                title = f"{study_meta['label']} — {ds_name.split('_', 1)[-1].replace('_', ' ').title()}"
-                description = (
-                    f"SDC4 data model for {study_meta['full_name']} "
-                    f"({ds_name}) — FAIR Data Demo"
+            title = f"{study_meta['label']} — {ds_name.split('_', 1)[-1].replace('_', ' ').title()}"
+            description = (
+                f"SDC4 data model for {study_meta['full_name']} "
+                f"({ds_name}) — FAIR Data Demo"
+            )
+
+            try:
+                result = await toolset.assemble_model(
+                    title=title,
+                    description=description,
+                    assembly_tree=hierarchy.get("hierarchy", {}),
                 )
 
-                try:
-                    result = await toolset.assemble_model(
-                        title=title,
-                        description=description,
-                        assembly_tree=hierarchy.get("hierarchy", {}),
-                    )
+                if result.get("status") == "published":
+                    # Pure reuse path (sync)
+                    _ok(f"  Published: {result.get('dm_ct_id', 'unknown')}")
+                elif result.get("status") == "processing":
+                    # Mixed reuse+mint path (async)
+                    task_id = result.get("task_id")
+                    _info(f"  Processing: task_id={task_id}")
+                    _info(f"  Estimated cost: ${result.get('estimated_cost', 0):.2f}")
+                    _info("  Check SDCStudio for completion")
 
-                    if result.get("status") == "published":
-                        # Pure reuse path (sync)
-                        _ok(f"  Published: {result.get('dm_ct_id', 'unknown')}")
-                    elif result.get("status") == "processing":
-                        # Mixed reuse+mint path (async)
-                        task_id = result.get("task_id")
-                        _info(f"  Processing: task_id={task_id}")
-                        _info(f"  Estimated cost: ${result.get('estimated_cost', 0):.2f}")
-                        _info("  Check SDCStudio for completion")
+                results[ds_name] = result
 
-                    results[ds_name] = result
-
-                except Exception as e:
-                    error_msg = str(e)
-                    if "402" in error_msg or "InsufficientFunds" in error_msg:
-                        _fail(f"  Insufficient funds for {ds_name}")
-                        _info("  Add funds and re-run from step 6")
-                        break
-                    _fail(f"  Assembly failed for {ds_name}: {e}")
-                    results[ds_name] = {"error": error_msg}
-        finally:
-            await toolset.close()
+            except Exception as e:
+                error_msg = str(e)
+                if "402" in error_msg or "InsufficientFunds" in error_msg:
+                    _fail(f"  Insufficient funds for {ds_name}")
+                    _info("  Add funds and re-run from step 6")
+                    break
+                _fail(f"  Assembly failed for {ds_name}: {e}")
+                results[ds_name] = {"error": error_msg}
 
     asyncio.run(_run())
 
@@ -624,44 +499,40 @@ def step_download_artifacts(study: str, assembly_results: dict) -> None:
 
     async def _run():
         toolset = CatalogToolset(config)
-        try:
-            for ds_name, result in assembly_results.items():
-                dm_ct_id = result.get("dm_ct_id")
-                if not dm_ct_id:
-                    _info(f"  Skipping {ds_name} (no dm_ct_id, may still be processing)")
-                    continue
+        for ds_name, result in assembly_results.items():
+            dm_ct_id = result.get("dm_ct_id")
+            if not dm_ct_id:
+                _info(f"  Skipping {ds_name} (no dm_ct_id, may still be processing)")
+                continue
 
-                _info(f"Downloading artifacts for: {ds_name} (dm-{dm_ct_id})")
+            _info(f"Downloading artifacts for: {ds_name} (dm-{dm_ct_id})")
 
-                # Fetch full schema (includes artifact URLs)
-                try:
-                    schema = await toolset.catalog_get_schema(dm_ct_id)
-                    schema_path = output_dir / f"dm-{dm_ct_id}.json"
-                    schema_path.write_text(json.dumps(schema, indent=2))
-                    _ok(f"  Schema metadata: {schema_path.name}")
-                except Exception as e:
-                    _fail(f"  Failed to fetch schema: {e}")
+            # Fetch full schema (includes artifact URLs)
+            try:
+                schema = await toolset.catalog_get_schema(dm_ct_id)
+                schema_path = output_dir / f"dm-{dm_ct_id}.json"
+                schema_path.write_text(json.dumps(schema, indent=2))
+                _ok(f"  Schema metadata: {schema_path.name}")
+            except Exception as e:
+                _fail(f"  Failed to fetch schema: {e}")
 
-                # Download RDF triples
-                try:
-                    rdf_content = await toolset.catalog_download_schema_rdf(dm_ct_id)
-                    rdf_path = output_dir / f"dm-{dm_ct_id}.ttl"
-                    rdf_path.write_text(rdf_content)
-                    _ok(f"  RDF triples: {rdf_path.name}")
-                except Exception as e:
-                    _info(f"  RDF not available: {e}")
+            # Download RDF triples
+            try:
+                rdf_content = await toolset.catalog_download_schema_rdf(dm_ct_id)
+                rdf_path = output_dir / f"dm-{dm_ct_id}.ttl"
+                rdf_path.write_text(rdf_content)
+                _ok(f"  RDF triples: {rdf_path.name}")
+            except Exception as e:
+                _info(f"  RDF not available: {e}")
 
-                # Download XML skeleton
-                try:
-                    skeleton = await toolset.catalog_download_skeleton(dm_ct_id)
-                    skel_path = output_dir / f"dm-{dm_ct_id}_skeleton.xml"
-                    skel_path.write_text(skeleton)
-                    _ok(f"  Skeleton: {skel_path.name}")
-                except Exception as e:
-                    _info(f"  Skeleton not available: {e}")
-
-        finally:
-            await toolset.close()
+            # Download XML skeleton
+            try:
+                skeleton = await toolset.catalog_download_skeleton(dm_ct_id)
+                skel_path = output_dir / f"dm-{dm_ct_id}_skeleton.xml"
+                skel_path.write_text(skeleton)
+                _ok(f"  Skeleton: {skel_path.name}")
+            except Exception as e:
+                _info(f"  Skeleton not available: {e}")
 
     asyncio.run(_run())
     _ok(f"Artifacts saved to {output_dir}/")

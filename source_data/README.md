@@ -69,10 +69,37 @@ Place downloaded files in `source_data/sprint/`.
 
 ## After Downloading
 
-Run the conversion pipeline:
+### Step 1: Convert NHANES XPT to CSV
+
+NHANES data is distributed as SAS transport (.XPT) files. Convert to CSV before running the pipeline:
 
 ```bash
-python datagen/convert_all.py
+pip install pyreadstat
+python scripts/convert_xpt_to_csv.py
 ```
 
-This converts all source data to validated SDC4 XML instances in `app/import_data/`.
+This creates `.csv` files alongside the `.XPT` files in `source_data/nhanes/`. The script is idempotent; it skips files that have already been converted.
+
+ADNI and SPRINT data is already in CSV format and needs no conversion.
+
+### Step 2: Run the SDC Agents Pipeline
+
+```bash
+pip install -r requirements-pipeline.txt
+export SDCSTUDIO_URL=http://localhost:8000
+export SDC_API_KEY=your-api-key
+
+python scripts/run_pipeline.py --study all
+```
+
+This introspects all datasources, discovers reusable catalog components, and assembles data models in SDCStudio. See `scripts/run_pipeline.py --help` for step-by-step options.
+
+### Step 3: Generate XML Instances
+
+After models are approved in SDCStudio:
+
+```bash
+python scripts/generate_instances.py --study all --validate
+```
+
+This generates validated XML instances in `app/import_data/`.

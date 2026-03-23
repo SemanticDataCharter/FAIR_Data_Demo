@@ -1,0 +1,122 @@
+# FAIR Data Demo — SDC Agents Configuration
+# ===========================================
+# Configures 23 NIH datasources across 3 studies for the FAIR interoperability demo.
+# Requires a running SDCStudio instance and API key.
+#
+# Set environment variables:
+#   SDCSTUDIO_URL  — SDCStudio base URL (default: http://localhost:8000)
+#   SDC_API_KEY    — API token for Catalog, Assembly, and VaaS APIs
+
+sdcstudio:
+  base_url: "${SDCSTUDIO_URL}"
+  api_key: "${SDC_API_KEY}"
+  default_library_project: "NIH-CDE"
+
+cache:
+  root: ".sdc-cache"
+  ttl_hours: 168
+
+audit:
+  path: ".sdc-cache/audit.jsonl"
+  log_level: "verbose"
+
+# ---------------------------------------------------------------------------
+# Datasources — 23 datasets across 3 NIH studies
+# ---------------------------------------------------------------------------
+# NHANES XPT files must be converted to CSV first (scripts/convert_xpt_to_csv.py).
+# ADNI and SPRINT are already CSV.
+
+datasources:
+  # --- NHANES (8 datasets) ---
+  nhanes_demographics:
+    type: csv
+    path: "source_data/nhanes/DEMO_J.csv"
+  nhanes_blood_pressure:
+    type: csv
+    path: "source_data/nhanes/BPX_J.csv"
+  nhanes_cbc:
+    type: csv
+    path: "source_data/nhanes/CBC_J.csv"
+  nhanes_cholesterol:
+    type: csv
+    path: "source_data/nhanes/TCHOL_J.csv"
+  nhanes_medications:
+    type: csv
+    path: "source_data/nhanes/RXQ_RX_J.csv"
+  nhanes_medical_conditions:
+    type: csv
+    path: "source_data/nhanes/MCQ_J.csv"
+  nhanes_smoking:
+    type: csv
+    path: "source_data/nhanes/SMQ_J.csv"
+  nhanes_physical_functioning:
+    type: csv
+    path: "source_data/nhanes/PFQ_J.csv"
+
+  # --- ADNI (8 datasets) ---
+  adni_demographics:
+    type: csv
+    path: "source_data/adni/PTDEMOG.csv"
+  adni_vitals:
+    type: csv
+    path: "source_data/adni/VITALS.csv"
+  adni_labs:
+    type: csv
+    path: "source_data/adni/LABDATA.csv"
+  adni_biospecimens:
+    type: csv
+    path: "source_data/adni/BIOMARK.csv"
+  adni_medications:
+    type: csv
+    path: "source_data/adni/CONMED.csv"
+  adni_adverse_events:
+    type: csv
+    path: "source_data/adni/ADVERSE.csv"
+  adni_cognitive:
+    type: csv
+    path: "source_data/adni/ADSC_ADASSCORES.csv"
+  adni_medical_history:
+    type: csv
+    path: "source_data/adni/MEDHIST.csv"
+
+  # --- SPRINT (7 datasets) ---
+  sprint_baseline:
+    type: csv
+    path: "source_data/sprint/bl_baseline.csv"
+  sprint_blood_pressure:
+    type: csv
+    path: "source_data/sprint/bp.csv"
+  sprint_labs:
+    type: csv
+    path: "source_data/sprint/labs.csv"
+  sprint_medications:
+    type: csv
+    path: "source_data/sprint/meds.csv"
+  sprint_adverse_events:
+    type: csv
+    path: "source_data/sprint/ae.csv"
+  sprint_cognitive:
+    type: csv
+    path: "source_data/sprint/cog_moca.csv"
+  sprint_medical_history:
+    type: csv
+    path: "source_data/sprint/medhx.csv"
+
+# ---------------------------------------------------------------------------
+# Output
+# ---------------------------------------------------------------------------
+
+output:
+  directory: "app/import_data"
+  formats:
+    - xml
+
+# ---------------------------------------------------------------------------
+# Destinations
+# ---------------------------------------------------------------------------
+
+destinations:
+  graphdb:
+    type: graphdb
+    endpoint: "http://localhost:7200"
+    repository: "fair_demo"

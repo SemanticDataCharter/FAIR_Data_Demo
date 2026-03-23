@@ -1,0 +1,6 @@
+# FAIR Data Demo — Pipeline Dependencies
+# Install with: pip install -r requirements-pipeline.txt
+
+sdc-agents>=4.0.0       # SDC Agents toolsets (Introspect, Catalog, Assembly, etc.)
+sdcvalidator>=4.2.0     # Local XML instance validation
+pyreadstat>=1.2.0       # NHANES XPT (SAS transport) to CSV conversion

@@ -145,3 +145,41 @@ Six pre-built queries demonstrate different interoperability patterns:
 All queries join on `ct_id` — the same mechanism that would work in production with thousands of studies.
 
 **Note**: The current SPARQL queries use a placeholder `sdc4:` vocabulary. They will be rewritten to use the actual `sdc4-meta:` predicates once real RDF triples are generated from SDCStudio models.
+
+## XPT Metadata and the Column Description Gap
+
+### The Problem
+
+NHANES uses coded column names (e.g. `BPXSY1`, `RIDAGEYR`, `DMDEDUC2`) that carry no semantic meaning. The SAS transport (.XPT) format embeds rich metadata alongside the data:
+
+- **Column labels**: `BPXSY1` → "Systolic: Blood pres (1st rdg) mm Hg"
+- **Value labels**: `RIAGENDR` 1="Male", 2="Female"
+- **Format info**: numeric precision, string lengths
+
+When converted to CSV, this metadata is lost. The SDC Agents `introspect_csv()` sees only the coded name and inferred type, and `discover_components()` matches on `_name_similarity(col_name, comp_label)` via `SequenceMatcher`. Result: `BPXSY1` vs "Systolic Blood Pressure" scores near zero.
+
+### Current Workaround (This Demo)
+
+1. `convert_xpt_to_csv.py` saves metadata as `.meta.json` sidecar files
+2. `run_pipeline.py` Step 3 loads SAS labels and matches them against known catalog components before falling back to manual overrides
+3. `fair_constants.py` `COLUMN_OVERRIDES` provides a final safety net for columns that don't auto-match
+
+### SDC_Agents Enhancement Needed
+
+For federal health data at scale (NIH, FDA, CDC), the Introspect toolset needs:
+
+1. **Column description/label field** in the introspection cache schema — so that external metadata (SAS labels, data dictionaries, CDISC definitions) can be attached to columns
+2. **Discovery matching on description** — `discover_components()` should match on column description in addition to column name, with description matches weighted higher
+3. **Metadata ingest hook** — a way to provide external column metadata (JSON sidecar, data dictionary CSV, CDISC Define-XML) that gets merged into introspection results
+
+This is critical for any datasource where column names are coded identifiers rather than human-readable labels: NHANES, FDA CDISC submissions, legacy SAS datasets, SPSS exports, and most government health data.
+
+### Federal Health Data Formats Affected
+
+| Format | Extension | Metadata Type | Agency |
+|--------|-----------|---------------|--------|
+| SAS Transport | .XPT | Column labels, value labels, formats | CDC, FDA, NIH |
+| SAS Dataset | .sas7bdat | Same as XPT + more | All federal |
+| SPSS | .sav | Variable labels, value labels, missing codes | NIH surveys |
+| Stata | .dta | Variable labels, value labels | NIH, Census |
+| CDISC Define-XML | .xml | Full metadata spec for clinical trials | FDA required |

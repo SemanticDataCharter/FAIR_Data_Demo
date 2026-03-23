@@ -29,6 +29,48 @@ from fair_constants import (
 )
 
 # ---------------------------------------------------------------------------
+# XPT metadata (SAS labels, value maps)
+# ---------------------------------------------------------------------------
+# NHANES XPT files carry metadata that CSV loses. The converter saves it as
+# sidecar .meta.json files. We load these to give Discovery better column
+# descriptions than coded names like BPXSY1.
+
+NHANES_META_DIR = ROOT / "source_data" / "nhanes"
+
+
+def _load_xpt_metadata(datasource_name: str) -> dict:
+    """Load XPT sidecar metadata for a NHANES datasource, if available.
+
+    Returns a dict mapping column names to their SAS metadata:
+        {"BPXSY1": {"label": "Systolic: Blood pres (1st rdg) mm Hg", ...}, ...}
+    Returns empty dict for non-NHANES datasources or if metadata is missing.
+    """
+    if not datasource_name.startswith("nhanes_"):
+        return {}
+
+    # Map datasource names to XPT filenames
+    ds_to_xpt = {
+        "nhanes_demographics": "DEMO_J",
+        "nhanes_blood_pressure": "BPX_J",
+        "nhanes_cbc": "CBC_J",
+        "nhanes_cholesterol": "TCHOL_J",
+        "nhanes_medications": "RXQ_RX_J",
+        "nhanes_medical_conditions": "MCQ_J",
+        "nhanes_smoking": "SMQ_J",
+        "nhanes_physical_functioning": "PFQ_J",
+    }
+    xpt_stem = ds_to_xpt.get(datasource_name)
+    if not xpt_stem:
+        return {}
+
+    meta_path = NHANES_META_DIR / f"{xpt_stem}.meta.json"
+    if not meta_path.exists():
+        return {}
+
+    meta = json.loads(meta_path.read_text())
+    return meta.get("columns", {})
+
+# ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
 
@@ -125,8 +167,14 @@ def step_introspect(study: str, dry_run: bool = False) -> dict:
                     cols = result.get("columns", [])
                     rows = result.get("row_count", 0)
                     _ok(f"  {len(cols)} columns, {rows} rows")
+
+                    # Load XPT metadata for NHANES to show SAS labels
+                    xpt_meta = _load_xpt_metadata(ds_name)
                     for col in cols[:5]:
-                        print(f"    {col['name']:<30} {col['inferred_type']:<12} {col.get('sample_values', [])[:2]}")
+                        name = col["name"]
+                        sas_label = xpt_meta.get(name, {}).get("label", "")
+                        label_display = f"  ({sas_label})" if sas_label else ""
+                        print(f"    {name:<25} {col['inferred_type']:<12}{label_display}")
                     if len(cols) > 5:
                         print(f"    ... and {len(cols) - 5} more columns")
                 except FileNotFoundError:
@@ -212,6 +260,34 @@ def step_verify_catalog(study: str) -> dict:
 # Step 3 — Discover components + merge manual overrides
 # ---------------------------------------------------------------------------
 
+def _match_sas_label_to_component(sas_label: str) -> dict | None:
+    """Try to match a SAS label to a known reusable component.
+
+    Uses case-insensitive substring matching on key terms.
+    Returns component dict or None.
+    """
+    from difflib import SequenceMatcher
+
+    label_lower = sas_label.lower()
+    all_components = {**SHARED_COMPONENTS, **AE_COMPONENTS}
+
+    best_match = None
+    best_score = 0.0
+
+    for _key, comp in all_components.items():
+        comp_label = comp["label"].lower()
+        # SequenceMatcher on the SAS label vs component label
+        score = SequenceMatcher(None, label_lower, comp_label).ratio()
+        if score > best_score:
+            best_score = score
+            best_match = comp
+
+    # Require a reasonable match (SAS labels are descriptive enough)
+    if best_match and best_score > 0.45:
+        return {**best_match, "sas_score": round(best_score, 4)}
+    return None
+
+
 def step_discover(study: str, introspection: dict) -> dict:
     """Discover catalog matches for datasource columns, merge manual overrides."""
     _banner(3, f"Discover Components — {study.upper()}")
@@ -236,14 +312,48 @@ def step_discover(study: str, introspection: dict) -> dict:
                 _info(f"Discovering components for: {ds_name}")
                 result = await toolset.discover_components(ds_name)
 
-                # Merge manual overrides
-                overrides = COLUMN_OVERRIDES.get(ds_name, {})
                 matches = result.get("matches", [])
                 matched_cols = {m["column"] for m in matches}
+                unmatched = result.get("unmatched", [])
 
+                # Phase 1: Use XPT metadata (SAS labels) to match unmatched
+                # coded columns against known components
+                xpt_meta = _load_xpt_metadata(ds_name)
+                if xpt_meta:
+                    sas_matched = 0
+                    still_unmatched = []
+                    for col_name in list(unmatched):
+                        if col_name in matched_cols:
+                            continue
+                        col_info = xpt_meta.get(col_name, {})
+                        sas_label = col_info.get("label", "")
+                        if not sas_label:
+                            still_unmatched.append(col_name)
+                            continue
+
+                        comp = _match_sas_label_to_component(sas_label)
+                        if comp:
+                            matches.append({
+                                "column": col_name,
+                                "ct_id": comp["ct_id"],
+                                "label": comp["label"],
+                                "type": comp["type"],
+                                "score": comp["sas_score"],
+                                "source": "xpt_metadata",
+                                "sas_label": sas_label,
+                            })
+                            matched_cols.add(col_name)
+                            sas_matched += 1
+                        else:
+                            still_unmatched.append(col_name)
+                    unmatched = still_unmatched
+                    if sas_matched:
+                        _info(f"  {sas_matched} columns matched via SAS labels")
+
+                # Phase 2: Apply manual overrides (highest priority)
+                overrides = COLUMN_OVERRIDES.get(ds_name, {})
                 for col_name, ct_id in overrides.items():
                     if col_name not in matched_cols:
-                        # Find the component metadata
                         comp = next(
                             (c for c in {**SHARED_COMPONENTS, **AE_COMPONENTS}.values()
                              if c["ct_id"] == ct_id),
@@ -258,20 +368,23 @@ def step_discover(study: str, introspection: dict) -> dict:
                                 "score": 1.0,
                                 "source": "manual_override",
                             })
+                            matched_cols.add(col_name)
+                            if col_name in unmatched:
+                                unmatched.remove(col_name)
                     else:
-                        # Update existing match with manual override
+                        # Override existing match
                         for m in matches:
                             if m["column"] == col_name:
                                 m["ct_id"] = ct_id
                                 m["source"] = "manual_override"
 
                 reuse_count = sum(1 for m in matches if m.get("ct_id") in ALL_REUSABLE_CT_IDS)
-                mint_count = len(result.get("unmatched", []))
+                mint_count = len(unmatched)
                 _ok(f"  {len(matches)} matched ({reuse_count} reuse, {mint_count} mint)")
 
                 all_matches[ds_name] = {
                     "matches": matches,
-                    "unmatched": result.get("unmatched", []),
+                    "unmatched": unmatched,
                 }
         finally:
             await toolset.close()
@@ -283,14 +396,15 @@ def step_discover(study: str, introspection: dict) -> dict:
     # Print match report for human review
     print()
     print("  Match Report")
-    print(f"  {'Dataset':<30} {'Reuse':<8} {'Mint':<8} {'Unmatched'}")
-    print(f"  {'-'*30} {'-'*8} {'-'*8} {'-'*10}")
+    print(f"  {'Dataset':<30} {'Auto':<7} {'SAS':<7} {'Manual':<7} {'Unmatched'}")
+    print(f"  {'-'*30} {'-'*7} {'-'*7} {'-'*7} {'-'*10}")
     for ds_name, data in all_matches.items():
         matches = data["matches"]
-        reuse = sum(1 for m in matches if m.get("ct_id") in ALL_REUSABLE_CT_IDS)
-        mint = len(data.get("unmatched", []))
-        total_unmatched = len([m for m in matches if m.get("ct_id") not in ALL_REUSABLE_CT_IDS])
-        print(f"  {ds_name:<30} {reuse:<8} {mint:<8} {total_unmatched}")
+        auto = sum(1 for m in matches if m.get("source") not in ("xpt_metadata", "manual_override"))
+        sas = sum(1 for m in matches if m.get("source") == "xpt_metadata")
+        manual = sum(1 for m in matches if m.get("source") == "manual_override")
+        unmatched = len(data.get("unmatched", []))
+        print(f"  {ds_name:<30} {auto:<7} {sas:<7} {manual:<7} {unmatched}")
 
     if not _confirm("Proceed with these component matches?"):
         _info("Aborted. Edit COLUMN_OVERRIDES in fair_constants.py and re-run.")

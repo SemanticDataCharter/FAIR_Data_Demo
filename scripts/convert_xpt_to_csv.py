@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 """
-Convert NHANES XPT (SAS transport) files to CSV.
+Convert NHANES XPT (SAS transport) files to CSV with metadata extraction.
 
-NHANES distributes data as .XPT files. The SDC Agents Introspect toolset
-works with CSV, so this script converts XPT to CSV as a preprocessing step.
+NHANES distributes data as .XPT files with embedded SAS metadata: column labels,
+value labels, and format information. This script converts XPT to CSV and saves
+the metadata as sidecar JSON files for use by the pipeline.
+
+The metadata is critical because NHANES uses coded column names (e.g. BPXSY1)
+that are meaningless without the SAS label ("Systolic: Blood pres (1st rdg) mm Hg").
+The pipeline uses these labels for better catalog component matching.
 
 Usage:
     python scripts/convert_xpt_to_csv.py
 
 Requires: pip install pyreadstat
+
+Output per XPT file:
+    source_data/nhanes/DEMO_J.csv          — tabular data
+    source_data/nhanes/DEMO_J.meta.json    — column labels, value labels, file metadata
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -30,14 +40,52 @@ XPT_FILES = [
 ]
 
 
-def convert_xpt_to_csv(xpt_path: Path) -> Path:
-    """Convert a single XPT file to CSV. Returns the CSV path."""
+def convert_xpt_to_csv(xpt_path: Path) -> tuple[Path, Path]:
+    """Convert a single XPT file to CSV + metadata JSON. Returns both paths."""
     import pyreadstat
 
     csv_path = xpt_path.with_suffix(".csv")
-    df, _ = pyreadstat.read_xport(str(xpt_path))
+    meta_path = xpt_path.with_suffix(".meta.json")
+
+    df, meta = pyreadstat.read_xport(str(xpt_path))
     df.to_csv(csv_path, index=False)
-    return csv_path
+
+    # Extract metadata
+    metadata = {
+        "source_file": xpt_path.name,
+        "file_label": meta.file_label or "",
+        "row_count": len(df),
+        "column_count": len(df.columns),
+        "columns": {},
+    }
+
+    for col in df.columns:
+        col_meta: dict = {
+            "label": meta.column_names_to_labels.get(col, ""),
+            "original_type": meta.readstat_variable_types.get(col, ""),
+        }
+
+        # Value labels (coded values -> human-readable)
+        # e.g. RIAGENDR: {1.0: "Male", 2.0: "Female"}
+        value_label_name = meta.variable_to_label.get(col, "")
+        if value_label_name and value_label_name in meta.value_labels:
+            # Convert numeric keys to strings for JSON serialization
+            col_meta["value_labels"] = {
+                str(k): v
+                for k, v in meta.value_labels[value_label_name].items()
+            }
+
+        # Variable format (e.g. "F8.0" for numeric, "$CHAR50" for string)
+        if hasattr(meta, "original_variable_types"):
+            fmt = meta.original_variable_types.get(col, "")
+            if fmt:
+                col_meta["sas_format"] = fmt
+
+        metadata["columns"][col] = col_meta
+
+    meta_path.write_text(json.dumps(metadata, indent=2, ensure_ascii=False))
+
+    return csv_path, meta_path
 
 
 def main() -> None:
@@ -53,6 +101,7 @@ def main() -> None:
     for filename in XPT_FILES:
         xpt_path = NHANES_DIR / filename
         csv_path = xpt_path.with_suffix(".csv")
+        meta_path = xpt_path.with_suffix(".meta.json")
 
         if not xpt_path.exists():
             # Also check lowercase
@@ -64,14 +113,20 @@ def main() -> None:
                 missing += 1
                 continue
 
-        if csv_path.exists():
-            print(f"  [OK] Already converted: {csv_path.name}")
+        if csv_path.exists() and meta_path.exists():
+            print(f"  [OK] Already converted: {csv_path.name} + {meta_path.name}")
             skipped += 1
             continue
 
         try:
-            out = convert_xpt_to_csv(xpt_path)
-            print(f"  [OK] Converted: {xpt_path.name} -> {out.name}")
+            csv_out, meta_out = convert_xpt_to_csv(xpt_path)
+            # Count metadata stats
+            with open(meta_out) as f:
+                meta_data = json.load(f)
+            labels = sum(1 for c in meta_data["columns"].values() if c.get("label"))
+            value_maps = sum(1 for c in meta_data["columns"].values() if c.get("value_labels"))
+            print(f"  [OK] {xpt_path.name} -> {csv_out.name} + {meta_out.name}")
+            print(f"       {meta_data['column_count']} columns, {labels} labels, {value_maps} value maps")
             converted += 1
         except Exception as e:
             print(f"  [!!] Failed: {xpt_path.name}: {e}", file=sys.stderr)

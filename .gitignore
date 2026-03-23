@@ -5,6 +5,7 @@ source_data/**/*.xpt
 source_data/**/*.XPT
 source_data/**/*.sas7bdat
 source_data/**/*.zip
+source_data/**/*.meta.json
 
 # Generated XML instances
 output/instances/

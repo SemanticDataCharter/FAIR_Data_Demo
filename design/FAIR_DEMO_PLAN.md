@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Prove that SDC delivers structural FAIR data interoperability across real NIH-funded studies. Three studies, three NIH institutes, three study designs — one shared semantic infrastructure.
+Prove that SDC delivers structural FAIR data interoperability across real NIH-funded studies. Three studies, three NIH institutes, three study designs; one shared semantic infrastructure.
 
 ## Studies
 
@@ -113,7 +113,7 @@ Validated XML Instances (output/instances/)
 
 ### Interoperability Mechanism
 
-SDC components are identified by a permanent `ct_id` (CUID2). When multiple studies model the same NIH CDE concept, they reuse the identical component — same `ct_id`, same XSD schema, same validation rules.
+SDC components are identified by a permanent `ct_id` (CUID2). When multiple studies model the same NIH CDE concept, they reuse the identical component; same `ct_id`, same XSD schema, same validation rules.
 
 Cross-study queries join on `ct_id`. No mapping tables. No ETL. No reconciliation.
 
@@ -142,11 +142,11 @@ Six pre-built queries demonstrate different interoperability patterns:
 5. **Medications**: Overlapping medication coding
 6. **Medical History**: Shared history components
 
-All queries join on `ct_id` — the same mechanism that would work in production with thousands of studies.
+All queries join on `ct_id`, the same mechanism that would work in production with thousands of studies.
 
-**Note**: The current SPARQL queries use a placeholder `sdc4:` vocabulary. They will be rewritten to use the actual `sdc4-meta:` predicates once real RDF triples are generated from SDCStudio models.
+**Note**: The SPARQL queries use a placeholder `sdc4:` vocabulary. They will be rewritten to use the actual `sdc4-meta:` predicates once real RDF triples are generated from SDCStudio models.
 
-## XPT Metadata and the Column Description Gap
+## NHANES XPT Metadata Handling
 
 ### The Problem
 
@@ -156,26 +156,20 @@ NHANES uses coded column names (e.g. `BPXSY1`, `RIDAGEYR`, `DMDEDUC2`) that carr
 - **Value labels**: `RIAGENDR` 1="Male", 2="Female"
 - **Format info**: numeric precision, string lengths
 
-When converted to CSV, this metadata is lost. The SDC Agents `introspect_csv()` sees only the coded name and inferred type, and `discover_components()` matches on `_name_similarity(col_name, comp_label)` via `SequenceMatcher`. Result: `BPXSY1` vs "Systolic Blood Pressure" scores near zero.
+When converted to CSV, this metadata is lost.
 
-### Current Workflow (This Demo)
+### Solution: Sidecar Metadata with SDC_Agents 4.2.0
 
-1. `convert_xpt_to_csv.py` converts XPT to CSV and saves metadata as `.json` sidecar files (with `description` and `enumeration` fields for 4.2.0 compatibility)
+SDC_Agents 4.2.0 supports JSON sidecar metadata files that are merged into introspection results automatically. The pipeline leverages this as follows:
+
+1. `convert_xpt_to_csv.py` converts XPT to CSV and saves metadata as `.json` sidecar files, including `description` and `enumeration` fields per column
 2. `sdc-agents.yaml` datasource entries include `metadata_path` pointing to the sidecar files
-3. `introspect_csv` merges sidecar metadata into column output; `discover_components` matches on `description`
-4. `fair_constants.py` `COLUMN_OVERRIDES` provides a manual safety net for columns that don't auto-match
+3. `introspect_csv` merges sidecar metadata into its 13-field column schema; `discover_components` matches on the `description` field, allowing coded names like `BPXSY1` to match catalog components via the SAS label
+4. `fair_constants.py` `COLUMN_OVERRIDES` provides a manual safety net for columns that do not auto-match
 
-### SDC_Agents Enhancement Status
+### Future: Native Statistical Format Introspection
 
-SDC_Agents 4.2.0 addressed the three gaps identified during initial development:
-
-1. **Column description/label field** — RESOLVED. The 13-field column schema includes `description`, `enumeration`, `units`, and other metadata fields. `introspect_csv` merges sidecar `.json` metadata (configured via `metadata_path` in datasource config) into column output.
-2. **Discovery matching on description** — RESOLVED. `discover_components()` matches on the `description` field when populated, allowing coded names like `BPXSY1` to match catalog components via the SAS label.
-3. **Metadata ingest hook** — RESOLVED. The `metadata_path` datasource config field points to a JSON sidecar file that is merged into introspection results automatically.
-
-**Remaining gap**: No native XPT/SAS/SPSS introspection. These formats still require pre-conversion to CSV + JSON sidecar (via `convert_xpt_to_csv.py`). A native `introspect_xpt` tool would eliminate this preprocessing step for federal health data workflows.
-
-### Federal Health Data Formats Affected
+SDC_Agents does not yet have native XPT/SAS/SPSS introspection. These formats require pre-conversion to CSV + JSON sidecar (via `convert_xpt_to_csv.py`). A native `introspect_xpt` tool would eliminate this preprocessing step for federal health data workflows.
 
 | Format | Extension | Metadata Type | Agency |
 |--------|-----------|---------------|--------|

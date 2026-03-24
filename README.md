@@ -125,7 +125,17 @@ python scripts/run_pipeline.py --study nhanes --step 6
 
 ### 4. Review and approve in SDCStudio
 
-In [SDCStudio](https://sdcstudio.axius-sdc.com/), review assembled models and generate all 8 output formats:
+The assembly pipeline uses an LLM to infer component types, constraints, descriptions, and semantic links from the introspected data. This is a **probabilistic process**: the LLM makes its best determination based on column names, sample values, and sidecar metadata, but it cannot guarantee correctness. A blood pressure column might be typed as XdString instead of XdQuantity. A unit might be omitted. An enumeration might include spurious values. A semantic link might point to the wrong ontology concept.
+
+This is why the pipeline produces **draft components**, not published ones. A human domain expert must review each draft in [SDCStudio](https://sdcstudio.axius-sdc.com/) before it becomes part of the permanent catalog:
+
+- **Verify component types** — confirm each component uses the correct SDC4 type (XdQuantity vs. XdCount vs. XdString, etc.)
+- **Check constraints** — validate numeric ranges, string patterns, enumeration values, and required units against the study codebook
+- **Assign semantic links** — connect components to the correct ontology concepts (LOINC, SNOMED CT, UMLS, etc.) where the LLM's suggestions are incomplete or incorrect
+- **Edit descriptions** — refine LLM-generated descriptions to accurately reflect the study variable's meaning
+- **Publish** — once a component is correct, publish it to make it available for reuse across studies
+
+After all components are reviewed and published, generate all 8 output formats:
 - XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
 
 SDCStudio generates the complete application from the approved data models.

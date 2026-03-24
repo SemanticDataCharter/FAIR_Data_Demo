@@ -210,7 +210,6 @@ FAIR_Data_Demo/
 │   ├── BRFSS/
 │   └── CMS/
 ├── sparql/                      # Pre-built SPARQL queries
-├── design/                      # Architecture documents
 ├── sdc-agents.yaml              # SDC Agents configuration (13 datasources)
 └── requirements-pipeline.txt    # Pipeline dependencies
 ```

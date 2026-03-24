@@ -19,15 +19,17 @@ All queries exploit the fact that SDC components are identified by a permanent `
 
 ## Running Queries
 
-### Via the Demo UI
+After RDF triples are generated from the approved SDCStudio models, load them into a SPARQL-capable triplestore (Fuseki, GraphDB, etc.) and run these queries against it.
 
-Navigate to `http://localhost:8000/` and use the SPARQL Explorer section. Select a pre-built query from the dropdown or paste your own.
+### Via Fuseki
 
-### Via GraphDB Workbench
+```bash
+curl -X POST http://localhost:3030/fair_demo/query \
+  -H "Accept: application/sparql-results+json" \
+  -d "query=$(cat sparql/01_cross_study_demographics.rq)"
+```
 
-Navigate to `http://localhost:7200/sparql` and paste a query.
-
-### Via curl
+### Via GraphDB
 
 ```bash
 curl -X POST http://localhost:7200/repositories/fair_demo \

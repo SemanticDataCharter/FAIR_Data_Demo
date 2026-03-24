@@ -526,12 +526,26 @@ def step_download_artifacts(study: str, assembly_results: dict) -> None:
     output_dir = MODELS_DIR / study_meta["label"]
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Check if any models are still in async processing (no dm_ct_id yet)
+    pending = [ds for ds, r in assembly_results.items() if not r.get("dm_ct_id")]
+    if pending:
+        print()
+        _info(f"{len(pending)} model(s) were submitted for async processing.")
+        _info("Before downloading artifacts, complete these steps in SDCStudio:")
+        _info("  1. Review the assembled components and clusters")
+        _info("  2. Edit component details as needed (descriptions, constraints, units)")
+        _info("  3. Publish all components and clusters")
+        _info("  4. Generate data model packages")
+        print()
+        _info("Re-run this step after publishing to download artifacts.")
+        _ok(f"Artifacts saved to {output_dir}/")
+        return
+
     async def _run():
         toolset = CatalogToolset(config)
         for ds_name, result in assembly_results.items():
             dm_ct_id = result.get("dm_ct_id")
             if not dm_ct_id:
-                _info(f"  Skipping {ds_name} (no dm_ct_id, may still be processing)")
                 continue
 
             _info(f"Downloading artifacts for: {ds_name} (dm-{dm_ct_id})")

@@ -215,6 +215,10 @@ FAIR_Data_Demo/
 └── requirements-pipeline.txt    # Pipeline dependencies
 ```
 
+## The Public Good Guarantee
+
+The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $82.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
+
 ## Related Projects
 
 - [SDCStudio](https://sdcstudio.axius-sdc.com/) — Production platform for SDC data models

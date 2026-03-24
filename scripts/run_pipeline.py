@@ -520,65 +520,16 @@ def step_download_artifacts(study: str, assembly_results: dict) -> None:
     """Download generated schemas, RDF, and skeletons to models/{study}/."""
     _banner(7, f"Download Artifacts — {study.upper()}")
 
-    from sdc_agents.toolsets.catalog import CatalogToolset
-    config = _load_config()
-    study_meta = STUDIES[study]
-    output_dir = MODELS_DIR / study_meta["label"]
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    # Check if any models are still in async processing (no dm_ct_id yet)
-    pending = [ds for ds, r in assembly_results.items() if not r.get("dm_ct_id")]
-    if pending:
-        print()
-        _info(f"{len(pending)} model(s) were submitted for async processing.")
-        _info("Before downloading artifacts, complete these steps in SDCStudio:")
-        _info("  1. Review the assembled components and clusters")
-        _info("  2. Edit component details as needed (descriptions, constraints, units)")
-        _info("  3. Publish all components and clusters")
-        _info("  4. Generate data model packages")
-        print()
-        _info("Re-run this step after publishing to download artifacts.")
-        _ok(f"Artifacts saved to {output_dir}/")
-        return
-
-    async def _run():
-        toolset = CatalogToolset(config)
-        for ds_name, result in assembly_results.items():
-            dm_ct_id = result.get("dm_ct_id")
-            if not dm_ct_id:
-                continue
-
-            _info(f"Downloading artifacts for: {ds_name} (dm-{dm_ct_id})")
-
-            # Fetch full schema (includes artifact URLs)
-            try:
-                schema = await toolset.catalog_get_schema(dm_ct_id)
-                schema_path = output_dir / f"dm-{dm_ct_id}.json"
-                schema_path.write_text(json.dumps(schema, indent=2))
-                _ok(f"  Schema metadata: {schema_path.name}")
-            except Exception as e:
-                _fail(f"  Failed to fetch schema: {e}")
-
-            # Download RDF triples
-            try:
-                rdf_content = await toolset.catalog_download_schema_rdf(dm_ct_id)
-                rdf_path = output_dir / f"dm-{dm_ct_id}.ttl"
-                rdf_path.write_text(rdf_content)
-                _ok(f"  RDF triples: {rdf_path.name}")
-            except Exception as e:
-                _info(f"  RDF not available: {e}")
-
-            # Download XML skeleton
-            try:
-                skeleton = await toolset.catalog_download_skeleton(dm_ct_id)
-                skel_path = output_dir / f"dm-{dm_ct_id}_skeleton.xml"
-                skel_path.write_text(skeleton)
-                _ok(f"  Skeleton: {skel_path.name}")
-            except Exception as e:
-                _info(f"  Skeleton not available: {e}")
-
-    asyncio.run(_run())
-    _ok(f"Artifacts saved to {output_dir}/")
+    print()
+    _info(f"{len(assembly_results)} model(s) submitted. Complete these steps in SDCStudio:")
+    _info("  1. Review the assembled components and clusters")
+    _info("  2. Edit component details as needed (descriptions, constraints, units)")
+    _info("  3. Publish all components and clusters")
+    _info("  4. Generate and download the data model package")
+    _info("  5. Generate and download the application")
+    print()
+    _info("See SDCStudio documentation for details on generating packages and apps.")
+    _ok("Pipeline complete — remaining steps are in SDCStudio.")
 
 
 # ---------------------------------------------------------------------------

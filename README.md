@@ -1,19 +1,21 @@
 # FAIR Data Demo
 
-**Three NIH studies. One project. Shared semantic infrastructure.**
+**Three federal health studies. One project. Shared semantic infrastructure.**
 
-This repository demonstrates how [SDC](https://semanticdatacharter.com/) (Semantic Data Charter) delivers structural FAIR data compliance across real NIH-funded research studies, without mapping tables, without ETL pipelines, and without reconciliation layers.
+All source data is freely downloadable with no registration.
+
+This repository demonstrates how [SDC](https://semanticdatacharter.com/) (Semantic Data Charter) delivers structural FAIR data compliance across real federal health studies, without mapping tables, without ETL pipelines, and without reconciliation layers.
 
 ## The FAIR Problem
 
 NIH mandates FAIR data sharing. Researchers dutifully publish CSV files. But "available" is not "interoperable."
 
-Consider three NIH-funded studies — NHANES, ADNI, and SPRINT — all collecting demographics, vital signs, lab results, and medications. Each uses NIH Common Data Elements. Each publishes data. None of it is structurally compatible.
+Consider three federal health studies — NHANES, BRFSS, and CMS DE-SynPUF — all collecting demographics, vital signs, medical history, and medications. Each uses NIH Common Data Elements. Each publishes data. None of it is structurally compatible.
 
-The same concept — systolic blood pressure — appears as:
-- `BPXSY1` in NHANES (SAS transport, mmHg implied)
-- `VSSBP` in ADNI (CSV, units in a separate column)
-- `sbp` in SPRINT (CSV, no units metadata)
+The same concept — a diabetes indicator — appears as:
+- `DIQ010` in NHANES (SAS transport, coded 1/2/3)
+- `DIABETE4` in BRFSS (SAS transport, coded 1/2/3/4)
+- `SP_DIABETES` in CMS (CSV, coded 1/2)
 
 Three encodings. Three parsers. Three mapping efforts. Multiply by every CDE, every study, every institution. This is the state of FAIR data in 2026.
 
@@ -23,47 +25,41 @@ The NIH CDE catalog publishes data element definitions: names, descriptions, dat
 
 Each component is identified by a permanent `ct_id` (CUID2) and carries its own compiled schema, units, constraints, and semantic links. Consider systolic blood pressure: many variables affect the measurement, including device type (manual cuff vs. automated oscillometric vs. invasive arterial line), patient position (seated, standing, supine), and anatomical location (upper arm, wrist, thigh). None of these contextual factors are captured in CDEs. At all. Ideally, each measurement context would be modeled as a distinct component with its own constraints, because a reading from an automated arm cuff and a reading from an invasive arterial line are not the same measurement. We understand that assumptions are often made in practice, but SDC4's goal is that domain experts create precisely scoped components and that those components are correctly reused across studies for the best accuracy possible.
 
-In this demo, when NHANES, ADNI, and SPRINT need "systolic blood pressure," they reference the **same component**. Same `ct_id`. Same XSD schema. Same validation rules. Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
+In this demo, when NHANES, BRFSS, and CMS need "systolic blood pressure," they reference the **same component**. Same `ct_id`. Same XSD schema. Same validation rules. Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
 
 ## Why This Matters for Autonomous AI
 
-Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `VSSBP` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
+Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `BPHIGH6` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
 
 SDC compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a mathematically secure foundation for AI-driven clinical data operations: zero hallucination risk on structure, zero ambiguity on semantics.
 
 ## What This Demo Contains
 
-| Study | Type | NIH Institute | CDE Domains |
-|-------|------|---------------|-------------|
-| **NHANES** | Population Survey | CDC / NCHS | 10 domains |
-| **ADNI** | Longitudinal Cohort | NIA | 8 domains |
-| **SPRINT** | Randomized Trial | NHLBI | 7 domains |
+| Study | Type | Agency | Format | Access |
+|-------|------|--------|--------|--------|
+| **NHANES** | Population Survey | CDC / NCHS | 8 XPT files | Direct download |
+| **BRFSS** | Telephone Survey | CDC | 1 XPT file | Direct download |
+| **CMS DE-SynPUF** | Medicare Claims (Synthetic) | CMS | CSV (Sample 1) | Direct download |
 
-**12 NIH CDE domains** covered. **5 shared across all 3 studies**:
+**8 CDE domains** covered. **3 shared across all 3 studies**:
 - Demographics
-- Vital Signs
-- Laboratory Results
-- Medications
 - Medical History
+- Medications (NHANES + CMS)
 
-Three different study designs. Three different NIH institutes. One shared semantic layer.
+Three different study designs. Three different federal agencies. One shared semantic layer.
 
 ### CDE Coverage Matrix
 
-| NIH CDE Domain | NHANES | ADNI | SPRINT |
-|----------------|--------|------|--------|
+| Domain | NHANES | BRFSS | CMS |
+|--------|--------|-------|-----|
 | Demographics | X | X | X |
-| Vital Signs | X | X | X |
-| Laboratory Results | X | X | X |
-| Medications | X | X | X |
 | Medical History | X | X | X |
-| Biospecimens | X | X | |
-| Adverse Events | | X | X |
-| Cognitive Assessment | | X | X |
-| Substance Use | X | | |
+| Substance Use | X | X | |
+| Vital Signs (BP, BMI) | X | X | |
+| Medications | X | | X |
+| Physical Function | X | X | |
+| Lab Results | X | | |
 | SDOH | X | | |
-| Physical Function | X | | |
-| Pain | X | | |
 
 ## Quick Start
 
@@ -78,6 +74,12 @@ Three different study designs. Three different NIH institutes. One shared semant
 ```bash
 git clone https://github.com/Axius-SDC/FAIR_Data_Demo.git
 cd FAIR_Data_Demo
+
+# Create and activate a Python virtual environment
+python -m venv .venv
+source .venv/bin/activate   # Linux/macOS
+# .venv\Scripts\activate    # Windows
+
 cp .env.example .env
 # Edit .env with your SDCStudio URL and API key
 pip install -r requirements-pipeline.txt
@@ -85,13 +87,15 @@ pip install -r requirements-pipeline.txt
 
 ### 2. Download source data
 
-Follow the instructions in [source_data/README.md](source_data/README.md) to download public NIH study data. NHANES XPT files need conversion to CSV with metadata sidecars:
+Follow the instructions in [source_data/README.md](source_data/README.md) to download the freely available federal health data. NHANES and BRFSS XPT files need conversion to CSV with metadata sidecars:
 
 ```bash
 python scripts/convert_xpt_to_csv.py
 ```
 
 This produces `.csv` data files and `.json` sidecar files containing column descriptions, value labels, and enumerations. The sidecar metadata is referenced via `metadata_path` in `sdc-agents.yaml` and merged into introspection results by SDC_Agents 4.2.0, enabling automatic component matching on SAS labels instead of coded column names.
+
+CMS data is already CSV and needs no conversion.
 
 ### 3. Run the SDC Agents pipeline
 
@@ -143,7 +147,7 @@ Six pre-built queries demonstrate structural interoperability:
 | 1 | Cross-Study Demographics | Same demographic components across all 3 studies |
 | 2 | Shared CDE Audit | Which components are reused vs. study-specific |
 | 3 | Vital Signs Comparison | Shared units and measurement constraints |
-| 4 | Lab Results Interoperability | Compatible result structures and reference ranges |
+| 4 | Chronic Conditions Interoperability | Shared medical history components across studies |
 | 5 | Medication Overlap | Overlapping medication coding across studies |
 | 6 | Cross-Study Medical History | Shared history components |
 
@@ -183,19 +187,19 @@ FAIR_Data_Demo/
 ├── scripts/                     # Pipeline scripts
 │   ├── run_pipeline.py          # 7-step SDC Agents orchestration
 │   ├── generate_instances.py    # Post-assembly XML generation
-│   ├── convert_xpt_to_csv.py    # NHANES XPT preprocessing
+│   ├── convert_xpt_to_csv.py    # NHANES + BRFSS XPT preprocessing
 │   └── fair_constants.py        # Shared ct_ids and study metadata
 ├── source_data/                 # Raw study data (user-downloaded)
 │   ├── nhanes/
-│   ├── adni/
-│   └── sprint/
+│   ├── brfss/
+│   └── cms/
 ├── models/                      # Generated SDCStudio output
 │   ├── NHANES/
-│   ├── ADNI/
-│   └── SPRINT/
+│   ├── BRFSS/
+│   └── CMS/
 ├── sparql/                      # Pre-built SPARQL queries
 ├── design/                      # Architecture documents
-├── sdc-agents.yaml              # SDC Agents configuration (23 datasources)
+├── sdc-agents.yaml              # SDC Agents configuration (13 datasources)
 └── requirements-pipeline.txt    # Pipeline dependencies
 ```
 

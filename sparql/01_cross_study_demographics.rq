@@ -1,5 +1,5 @@
 # Cross-Study Subject Demographics
-# Retrieves demographic components shared across NHANES, ADNI, and SPRINT.
+# Retrieves demographic components shared across NHANES, BRFSS, and CMS.
 # Join: shared ct_id for NIH CDE demographic components.
 #
 # NOTE: These queries use a placeholder sdc4: vocabulary. They will be

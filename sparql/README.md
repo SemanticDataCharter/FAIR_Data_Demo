@@ -4,7 +4,7 @@ Pre-built cross-study SPARQL queries demonstrating SDC interoperability.
 
 ## Join Mechanism
 
-All queries exploit the fact that SDC components are identified by a permanent `ct_id` (CUID2). When NHANES, ADNI, and SPRINT reuse the same NIH CDE component, their XML instances share the same schema URI (`sdc4:dm-{ct_id}`). The knowledge graph contains RDF triples extracted from each study's schemas — joining on `ct_id` gives cross-study interoperability with zero mapping.
+All queries exploit the fact that SDC components are identified by a permanent `ct_id` (CUID2). When NHANES, BRFSS, and CMS reuse the same NIH CDE component, their XML instances share the same schema URI (`sdc4:dm-{ct_id}`). The knowledge graph contains RDF triples extracted from each study's schemas; joining on `ct_id` gives cross-study interoperability with zero mapping.
 
 ## Queries
 
@@ -13,7 +13,7 @@ All queries exploit the fact that SDC components are identified by a permanent `
 | 1 | `01_cross_study_demographics.rq` | Subject demographics across all three studies | Demographics |
 | 2 | `02_shared_cde_audit.rq` | Audit which CDE components are shared vs. study-specific | All |
 | 3 | `03_vital_signs_comparison.rq` | Vital signs distributions across studies | Vital Signs |
-| 4 | `04_lab_results_interop.rq` | Lab result components with shared units and ranges | Laboratory Results |
+| 4 | `04_chronic_conditions_interop.rq` | Chronic condition components shared across studies | Medical History |
 | 5 | `05_medication_overlap.rq` | Medication coding overlap analysis | Medications |
 | 6 | `06_cross_study_medical_history.rq` | Medical history components shared across studies | Medical History |
 

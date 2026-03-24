@@ -7,7 +7,7 @@ XML instances from source CSV data using the GeneratorToolset and optionally
 validates them via VaaS.
 
 Usage:
-    python scripts/generate_instances.py --study nhanes|adni|sprint|all
+    python scripts/generate_instances.py --study nhanes|brfss|cms|all
                                          [--validate] [--limit N]
 
 Requires:
@@ -192,12 +192,12 @@ def main() -> None:
 Examples:
   python scripts/generate_instances.py --study nhanes
   python scripts/generate_instances.py --study all --validate
-  python scripts/generate_instances.py --study adni --limit 50
+  python scripts/generate_instances.py --study brfss --limit 50
         """,
     )
     parser.add_argument(
         "--study",
-        choices=["nhanes", "adni", "sprint", "all"],
+        choices=["nhanes", "brfss", "cms", "all"],
         required=True,
         help="Which study to generate instances for",
     )

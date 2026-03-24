@@ -1,10 +1,10 @@
 # FAIR Data Demo — SDC Agents Configuration
 # ===========================================
-# Configures 23 NIH datasources across 3 studies for the FAIR interoperability demo.
-# Requires a running SDCStudio instance and API key.
+# Configures 13 datasources across 3 federal health studies for the FAIR
+# interoperability demo. Requires a running SDCStudio instance and API key.
 #
 # Set environment variables:
-#   SDCSTUDIO_URL  — SDCStudio base URL (default: http://localhost:8000)
+#   SDCSTUDIO_URL  — SDCStudio base URL (default: https://sdcstudio.axius-sdc.com)
 #   SDC_API_KEY    — API token for Catalog, Assembly, and VaaS APIs
 
 sdcstudio:
@@ -21,10 +21,10 @@ audit:
   log_level: "verbose"
 
 # ---------------------------------------------------------------------------
-# Datasources — 23 datasets across 3 NIH studies
+# Datasources — 13 datasets across 3 federal health studies
 # ---------------------------------------------------------------------------
 # NHANES XPT files must be converted to CSV first (scripts/convert_xpt_to_csv.py).
-# ADNI and SPRINT are already CSV.
+# BRFSS XPT file must also be converted. CMS data is already CSV.
 
 datasources:
   # --- NHANES (8 datasets) ---
@@ -61,54 +61,25 @@ datasources:
     path: "source_data/nhanes/PFQ_J.csv"
     metadata_path: "source_data/nhanes/PFQ_J.json"
 
-  # --- ADNI (8 datasets) ---
-  adni_demographics:
+  # --- BRFSS (1 dataset) ---
+  brfss:
     type: csv
-    path: "source_data/adni/PTDEMOG.csv"
-  adni_vitals:
-    type: csv
-    path: "source_data/adni/VITALS.csv"
-  adni_labs:
-    type: csv
-    path: "source_data/adni/LABDATA.csv"
-  adni_biospecimens:
-    type: csv
-    path: "source_data/adni/BIOMARK.csv"
-  adni_medications:
-    type: csv
-    path: "source_data/adni/CONMED.csv"
-  adni_adverse_events:
-    type: csv
-    path: "source_data/adni/ADVERSE.csv"
-  adni_cognitive:
-    type: csv
-    path: "source_data/adni/ADSC_ADASSCORES.csv"
-  adni_medical_history:
-    type: csv
-    path: "source_data/adni/MEDHIST.csv"
+    path: "source_data/brfss/LLCP2022.csv"
+    metadata_path: "source_data/brfss/LLCP2022.json"
 
-  # --- SPRINT (7 datasets) ---
-  sprint_baseline:
+  # --- CMS DE-SynPUF (4 datasets, Sample 1 only) ---
+  cms_beneficiary:
     type: csv
-    path: "source_data/sprint/bl_baseline.csv"
-  sprint_blood_pressure:
+    path: "source_data/cms/DE1_0_2008_Beneficiary_Summary_File_Sample_1.csv"
+  cms_inpatient:
     type: csv
-    path: "source_data/sprint/bp.csv"
-  sprint_labs:
+    path: "source_data/cms/DE1_0_2008_to_2010_Inpatient_Claims_Sample_1.csv"
+  cms_outpatient:
     type: csv
-    path: "source_data/sprint/labs.csv"
-  sprint_medications:
+    path: "source_data/cms/DE1_0_2008_to_2010_Outpatient_Claims_Sample_1.csv"
+  cms_prescriptions:
     type: csv
-    path: "source_data/sprint/meds.csv"
-  sprint_adverse_events:
-    type: csv
-    path: "source_data/sprint/ae.csv"
-  sprint_cognitive:
-    type: csv
-    path: "source_data/sprint/cog_moca.csv"
-  sprint_medical_history:
-    type: csv
-    path: "source_data/sprint/medhx.csv"
+    path: "source_data/cms/DE1_0_2008_to_2010_Prescription_Drug_Events_Sample_1.csv"
 
 # ---------------------------------------------------------------------------
 # Output

@@ -2,11 +2,12 @@
 """
 FAIR Data Demo — SDC Agents Pipeline
 
-Seven-step pipeline that uses SDC_Agents toolsets to introspect NIH datasources,
-discover/reuse catalog components, and assemble data models via the SDCStudio API.
+Seven-step pipeline that uses SDC_Agents toolsets to introspect federal health
+datasources, discover/reuse catalog components, and assemble data models via
+the SDCStudio API.
 
 Usage:
-    python scripts/run_pipeline.py --study nhanes|adni|sprint|all [--step N] [--dry-run]
+    python scripts/run_pipeline.py --study nhanes|brfss|cms|all [--step N] [--dry-run]
 
 Requires:
     pip install -r requirements-pipeline.txt
@@ -21,7 +22,6 @@ import sys
 from pathlib import Path
 
 from fair_constants import (
-    AE_COMPONENTS,
     ALL_REUSABLE_CT_IDS,
     COLUMN_OVERRIDES,
     SHARED_COMPONENTS,
@@ -167,10 +167,7 @@ def step_verify_catalog(study: str) -> dict:
     from sdc_agents.toolsets.catalog import CatalogToolset
     config = _load_config()
 
-    # Determine which components this study needs
     components_needed = dict(SHARED_COMPONENTS)
-    if study in ("adni", "sprint"):
-        components_needed.update(AE_COMPONENTS)
 
     found = {}
     missing = []
@@ -242,7 +239,7 @@ def step_discover(study: str, introspection: dict) -> dict:
             for col_name, ct_id in overrides.items():
                 if col_name not in matched_cols:
                     comp = next(
-                        (c for c in {**SHARED_COMPONENTS, **AE_COMPONENTS}.values()
+                        (c for c in SHARED_COMPONENTS.values()
                          if c["ct_id"] == ct_id),
                         None,
                     )
@@ -621,14 +618,14 @@ def main() -> None:
         epilog="""
 Examples:
   python scripts/run_pipeline.py --study nhanes --step 1 --dry-run
-  python scripts/run_pipeline.py --study adni
+  python scripts/run_pipeline.py --study brfss
   python scripts/run_pipeline.py --study all
-  python scripts/run_pipeline.py --study sprint --step 6
+  python scripts/run_pipeline.py --study cms --step 6
         """,
     )
     parser.add_argument(
         "--study",
-        choices=["nhanes", "adni", "sprint", "all"],
+        choices=["nhanes", "brfss", "cms", "all"],
         required=True,
         help="Which study to process (or 'all' for all three)",
     )

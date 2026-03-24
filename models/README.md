@@ -17,9 +17,9 @@ models/
 │   ├── *.rdf          # RDF triples
 │   ├── *.shacl        # SHACL constraint files
 │   └── *.gql          # GQL CREATE statements
-├── ADNI/
+├── BRFSS/
 │   └── (same formats)
-└── SPRINT/
+└── CMS/
     └── (same formats)
 ```
 

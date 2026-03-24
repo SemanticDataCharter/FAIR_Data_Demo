@@ -32,17 +32,9 @@ SHARED_COMPONENTS: dict[str, dict] = {
     "smoking_status":           {"ct_id": "pcqb6t8q1g9e0fagm55fkhf2", "type": "XdToken",    "label": "Smoking Status"},
 }
 
-# Components shared by ADNI + SPRINT only (Adverse Events, 4 components)
-AE_COMPONENTS: dict[str, dict] = {
-    "ae_description": {"ct_id": "pp5v32ipc0xbva1hi5l3r91g", "type": "XdString",   "label": "AE Description"},
-    "ae_term":        {"ct_id": "fbfqzhm0es37p5rtrtw2wh0n", "type": "XdString",   "label": "AE Term"},
-    "ae_start_date":  {"ct_id": "w0qi4triqgeeg0oodhy75p8h", "type": "XdTemporal", "label": "AE Start Date"},
-    "ae_end_date":    {"ct_id": "andj4gpkessj3z0koheyc7gj", "type": "XdTemporal", "label": "AE End Date"},
-}
-
 # All known reusable ct_ids (for quick lookup)
 ALL_REUSABLE_CT_IDS: set[str] = {
-    c["ct_id"] for c in {**SHARED_COMPONENTS, **AE_COMPONENTS}.values()
+    c["ct_id"] for c in SHARED_COMPONENTS.values()
 }
 
 
@@ -71,43 +63,30 @@ STUDIES: dict[str, dict] = {
             "Substance Use", "SDOH", "Physical Function", "Pain",
         ],
     },
-    "adni": {
-        "label": "ADNI",
-        "full_name": "Alzheimer's Disease Neuroimaging Initiative",
-        "funder": "NIA",
+    "brfss": {
+        "label": "BRFSS",
+        "full_name": "Behavioral Risk Factor Surveillance System",
+        "funder": "CDC",
         "datasets": [
-            "adni_demographics",
-            "adni_vitals",
-            "adni_labs",
-            "adni_biospecimens",
-            "adni_medications",
-            "adni_adverse_events",
-            "adni_cognitive",
-            "adni_medical_history",
+            "brfss",
         ],
         "cde_domains": [
-            "Demographics", "Vital Signs", "Lab Results",
-            "Medications", "Medical History", "Biospecimens",
-            "Adverse Events", "Cognitive Assessment",
+            "Demographics", "Vital Signs", "Medical History",
+            "Substance Use", "Physical Function",
         ],
     },
-    "sprint": {
-        "label": "SPRINT",
-        "full_name": "Systolic Blood Pressure Intervention Trial",
-        "funder": "NHLBI",
+    "cms": {
+        "label": "CMS",
+        "full_name": "CMS DE-SynPUF (Medicare Claims Synthetic Data)",
+        "funder": "CMS",
         "datasets": [
-            "sprint_baseline",
-            "sprint_blood_pressure",
-            "sprint_labs",
-            "sprint_medications",
-            "sprint_adverse_events",
-            "sprint_cognitive",
-            "sprint_medical_history",
+            "cms_beneficiary",
+            "cms_inpatient",
+            "cms_outpatient",
+            "cms_prescriptions",
         ],
         "cde_domains": [
-            "Demographics", "Vital Signs", "Lab Results",
-            "Medications", "Medical History",
-            "Adverse Events", "Cognitive Assessment",
+            "Demographics", "Medical History", "Medications",
         ],
     },
 }
@@ -116,7 +95,8 @@ STUDIES: dict[str, dict] = {
 # ---------------------------------------------------------------------------
 # Column-to-ct_id manual overrides per study
 # ---------------------------------------------------------------------------
-# NHANES uses coded column names (e.g. BPXSY1) that won't auto-match.
+# NHANES and BRFSS use coded column names that won't auto-match.
+# CMS uses short coded names for beneficiary demographics.
 # These overrides tell the pipeline which catalog component to reuse
 # for specific source columns.
 
@@ -139,17 +119,25 @@ COLUMN_OVERRIDES: dict[str, dict[str, str]] = {
         "SMQ020":  "pcqb6t8q1g9e0fagm55fkhf2",   # Smoking Status
     },
 
-    # ADNI — column names are more descriptive, fewer overrides needed
-    "adni_adverse_events": {
-        "AETERM":     "fbfqzhm0es37p5rtrtw2wh0n", # AE Term
-        "AESTDTC":    "w0qi4triqgeeg0oodhy75p8h",  # AE Start Date
-        "AEENDTC":    "andj4gpkessj3z0koheyc7gj",  # AE End Date
+    # BRFSS coded names -> component ct_id
+    "brfss": {
+        "_AGE80":   "c1nr0ykdr4w99ss7dty1iaug",  # Age in Years (top-coded at 80)
+        "_SEX":     "mw9qdn71urog8egjbp5t3y00",  # Sex
+        "_RACE":    "iiwx1rakgy3wfytyskre0v3x",  # Race
+        "_EDUCAG":  "dbv7fgfi67iztx00lgv1vxni",  # Education Level
+        "MARITAL":  "w3bw02ebbrrs7mzu3ztkb8od",  # Marital Status
+        "_SMOKER3": "pcqb6t8q1g9e0fagm55fkhf2",  # Smoking Status
+        "_BMI5":    "wpojnsuwae37rfsnj9xpbcun",  # BMI (implied 1 decimal)
+        "HTM4":     "mkelab9gci43xj7akjy8w7h3",  # Person Height Value
+        "WTK3":     "scjotdd5kp3yovkvjgsc5a7v",  # Person Weight Value
+        "BPHIGH6":  "v15kv8dnd9th63hmccqetmki",  # High Blood Pressure (systolic proxy)
     },
 
-    # SPRINT — column names are fairly descriptive
-    "sprint_adverse_events": {
-        "AETERM":     "fbfqzhm0es37p5rtrtw2wh0n", # AE Term
-        "AESTDT":     "w0qi4triqgeeg0oodhy75p8h",  # AE Start Date
-        "AEENDT":     "andj4gpkessj3z0koheyc7gj",  # AE End Date
+    # CMS coded names -> component ct_id
+    "cms_beneficiary": {
+        "DESYNPUF_ID":       "sdt9aiqjdbjjaafgjzzwygf8",  # Participant ID
+        "BENE_SEX_IDENT_CD": "mw9qdn71urog8egjbp5t3y00",  # Sex
+        "BENE_RACE_CD":      "iiwx1rakgy3wfytyskre0v3x",  # Race
+        "BENE_BIRTH_DT":     "g3k6bj8su3rvkszg2700dhyh",  # Birth Date
     },
 }

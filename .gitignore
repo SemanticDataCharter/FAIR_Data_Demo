@@ -3,6 +3,12 @@ source_data/**/*.csv
 source_data/**/*.CSV
 source_data/**/*.xpt
 source_data/**/*.XPT
+source_data/**/*.ASC
+source_data/**/*.ASC?
+source_data/**/*.asc
+source_data/**/*.asc?
+source_data/**/*.HTML
+source_data/**/*.html
 source_data/**/*.sas7bdat
 source_data/**/*.zip
 source_data/**/*.json

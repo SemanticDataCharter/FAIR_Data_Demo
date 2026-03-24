@@ -2,34 +2,30 @@
 
 ## Purpose
 
-Prove that SDC delivers structural FAIR data interoperability across real NIH-funded studies. Three studies, three NIH institutes, three study designs; one shared semantic infrastructure.
+Prove that SDC delivers structural FAIR data interoperability across real federal health studies. Three studies, three agencies, three study designs; one shared semantic infrastructure. All source data is freely downloadable with no registration.
 
 ## Studies
 
-| Study | Type | Funder | Source |
-|-------|------|--------|--------|
-| NHANES | Population Survey | CDC/NCHS | https://wwwn.cdc.gov/nchs/nhanes/ |
-| ADNI | Longitudinal Cohort | NIA | https://adni.loni.usc.edu/ |
-| SPRINT | Randomized Trial | NHLBI | https://biolincc.nhlbi.nih.gov/studies/sprint/ |
+| Study | Type | Agency | Format | Access |
+|-------|------|--------|--------|--------|
+| NHANES 2017-18 | Population Survey | CDC/NCHS | 8 XPT files | Direct download |
+| BRFSS 2022 | Telephone Survey | CDC | 1 XPT file (326 vars, ~445K records) | Direct download |
+| CMS DE-SynPUF | Medicare Claims (Synthetic) | CMS | CSV, Sample 1 only | Direct download |
 
-## NIH CDE Domain Coverage
+## CDE Domain Coverage
 
-All 12 NIH Common Data Element domains are represented. 5 domains are shared across all three studies.
+8 domains are represented. 3 domains are shared across all three studies.
 
-| Domain | NHANES | ADNI | SPRINT | Shared |
-|--------|--------|------|--------|--------|
+| Domain | NHANES | BRFSS | CMS | Shared |
+|--------|--------|-------|-----|--------|
 | Demographics | X | X | X | All 3 |
-| Vital Signs | X | X | X | All 3 |
-| Lab Results | X | X | X | All 3 |
-| Medications | X | X | X | All 3 |
 | Medical History | X | X | X | All 3 |
-| Biospecimens | X | X | | 2 |
-| Adverse Events | | X | X | 2 |
-| Cognitive Assessment | | X | X | 2 |
-| Substance Use | X | | | 1 |
+| Substance Use | X | X | | 2 |
+| Vital Signs (BP, BMI) | X | X | | 2 |
+| Medications | X | | X | 2 |
+| Physical Function | X | X | | 2 |
+| Lab Results | X | | | 1 |
 | SDOH | X | | | 1 |
-| Physical Function | X | | | 1 |
-| Pain | X | | | 1 |
 
 ## Workflow
 
@@ -47,7 +43,7 @@ The demo exercises the real SDCStudio + SDC_Agents pipeline:
 
 ### Reusable Component Table
 
-These components from the NIH-CDE catalog are reused across all three study templates:
+These components from the NIH-CDE catalog are reused across studies:
 
 | Component | Type | ct_id |
 |-----------|------|-------|
@@ -68,15 +64,6 @@ These components from the NIH-CDE catalog are reused across all three study temp
 | Person Weight Value | XdQuantity | `scjotdd5kp3yovkvjgsc5a7v` |
 | Person Height Value | XdQuantity | `mkelab9gci43xj7akjy8w7h3` |
 | Smoking Status | XdToken | `pcqb6t8q1g9e0fagm55fkhf2` |
-
-Components shared by ADNI and SPRINT (Adverse Events):
-
-| Component | Type | ct_id |
-|-----------|------|-------|
-| AE Description | XdString | `pp5v32ipc0xbva1hi5l3r91g` |
-| AE Term | XdString | `fbfqzhm0es37p5rtrtw2wh0n` |
-| AE Start Date | XdTemporal | `w0qi4triqgeeg0oodhy75p8h` |
-| AE End Date | XdTemporal | `andj4gpkessj3z0koheyc7gj` |
 
 ## Architecture
 
@@ -138,7 +125,7 @@ Six pre-built queries demonstrate different interoperability patterns:
 1. **Demographics**: Direct component reuse across studies
 2. **CDE Audit**: Which components are shared vs. study-specific
 3. **Vital Signs**: Shared units and measurement constraints
-4. **Lab Results**: Compatible result structures and reference ranges
+4. **Chronic Conditions**: Medical history components shared across studies
 5. **Medications**: Overlapping medication coding
 6. **Medical History**: Shared history components
 
@@ -146,11 +133,11 @@ All queries join on `ct_id`, the same mechanism that would work in production wi
 
 **Note**: The SPARQL queries use a placeholder `sdc4:` vocabulary. They will be rewritten to use the actual `sdc4-meta:` predicates once real RDF triples are generated from SDCStudio models.
 
-## NHANES XPT Metadata Handling
+## XPT Metadata Handling
 
 ### The Problem
 
-NHANES uses coded column names (e.g. `BPXSY1`, `RIDAGEYR`, `DMDEDUC2`) that carry no semantic meaning. The SAS transport (.XPT) format embeds rich metadata alongside the data:
+NHANES and BRFSS use coded column names (e.g. `BPXSY1`, `_AGE80`, `_SMOKER3`) that carry no semantic meaning. The SAS transport (.XPT) format embeds rich metadata alongside the data:
 
 - **Column labels**: `BPXSY1` → "Systolic: Blood pres (1st rdg) mm Hg"
 - **Value labels**: `RIAGENDR` 1="Male", 2="Female"

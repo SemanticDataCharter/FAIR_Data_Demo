@@ -1,6 +1,7 @@
-# Lab Results Interoperability
-# Shows laboratory result components with shared units and reference ranges.
-# Demonstrates that identically-modeled CDEs produce structurally compatible data.
+# Chronic Conditions Interoperability
+# Shows medical history / chronic condition components shared across studies.
+# Demonstrates that identically-modeled CDEs produce structurally compatible data
+# for conditions like diabetes, hypertension, and heart disease.
 #
 # NOTE: These queries use a placeholder sdc4: vocabulary. They will be
 # rewritten once real RDF triples are generated from SDCStudio models.
@@ -10,15 +11,14 @@
 PREFIX sdc4: <https://datacharterontology.org/sdc4/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?ctId ?label ?study ?units ?referenceRange ?dataType
+SELECT ?ctId ?label ?study ?dataType ?description
 WHERE {
     ?component a sdc4:Component ;
                sdc4:ctId ?ctId ;
                rdfs:label ?label ;
-               sdc4:domain "Laboratory Results" ;
+               sdc4:domain "Medical History" ;
                sdc4:study ?study ;
                sdc4:dataType ?dataType .
-    OPTIONAL { ?component sdc4:units ?units . }
-    OPTIONAL { ?component sdc4:referenceRange ?referenceRange . }
+    OPTIONAL { ?component sdc4:description ?description . }
 }
 ORDER BY ?label ?study

@@ -85,6 +85,8 @@ cp .env.example .env
 pip install -r requirements-pipeline.txt
 ```
 
+**Important**: In SDCStudio, go to **Settings > Preferences** and set your **Default Project** to the project where new components should be created. The assembly API creates all new components and data models in the Modeler's default project. If no default project is set, assembly will fail.
+
 ### 2. Download source data
 
 Follow the instructions in [source_data/README.md](source_data/README.md) to download the freely available federal health data. NHANES and BRFSS XPT files need conversion to CSV with metadata sidecars:

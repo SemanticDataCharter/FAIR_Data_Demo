@@ -62,7 +62,9 @@ We built case-insensitive file detection with whitespace stripping and auto-rena
 [..] Renamed: 'PFQ_J.xpt' -> PFQ_J.XPT
 ```
 
-A casual user would not have built that workaround. A casual user would have given up.
+The trailing space is not just a script problem. It corrupts every tool that touches the file. Git's `.gitignore` pattern `source_data/**/*.ASC` did not match `LLCP2022.ASC ` because the filename does not end with `.ASC` — it ends with `.ASC `. We had to add a separate glob pattern (`*.ASC?`) to catch the trailing-space variant and prevent a 914 MB file from being committed to the repository. The same applied to the XPT. Any build system, CI pipeline, Makefile, or shell script that references these files by their expected names will fail silently or error out. The corruption propagates through the entire toolchain, not just the first program that tries to open the file.
+
+A casual user would not have built any of these workarounds. A casual user would have given up.
 
 ## The Encoding Problem: Character Sets in SAS Transport Files
 
@@ -149,6 +151,7 @@ The conversion pipeline handles file chaos automatically. Case mismatches, trail
 | Lowercase file extension | NHANES | `.xpt` instead of `.XPT`, path matching fails | Case-insensitive file detection with auto-rename | "File not found" error |
 | Trailing space in XPT filename | BRFSS | ZIP extracts `LLCP2022.XPT ` (invisible space) | Whitespace-stripping file detection with auto-rename | "Missing: LLCP2022.XPT" and no idea why |
 | Trailing space in ASC filename | BRFSS | ZIP extracts `LLCP2022.ASC ` (same bug, different format) | Same whitespace-stripping fix | Same silent failure |
+| Trailing space breaks gitignore | BRFSS | `*.ASC` pattern does not match `LLCP2022.ASC ` — 914 MB file nearly committed to repo | Added `*.ASC?` glob pattern | Accidentally commits gigabyte files to version control |
 | Useless alternate format | BRFSS | 914 MB fixed-width ASCII file, no headers, no column names, requires external layout doc to parse | Ignored it, used XPT instead | Downloads wrong format or tries both, confused by which to use |
 | UTF-8 encoding failure | BRFSS | `0xb4` byte in SAS metadata breaks pyreadstat | Fallback to `pandas.read_sas()` | Script crash, no output |
 | Unsupported character set | BRFSS | pyreadstat rejects internal charset marker even with latin-1 | Fallback to `pandas.read_sas()` | Script crash, no output |

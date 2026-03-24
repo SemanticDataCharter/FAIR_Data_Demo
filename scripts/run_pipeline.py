@@ -152,12 +152,6 @@ def step_introspect(study: str, dry_run: bool = False) -> dict:
 
     if results:
         _save_cache(study, "introspect", results)
-        # Also write per-datasource cache files that AssemblyToolset expects
-        introspections_dir = CACHE_DIR / "introspections"
-        introspections_dir.mkdir(parents=True, exist_ok=True)
-        for ds_name, ds_result in results.items():
-            ds_path = introspections_dir / f"{ds_name}.json"
-            ds_path.write_text(json.dumps(ds_result, indent=2, default=str))
     return results
 
 
@@ -308,7 +302,7 @@ def step_discover(study: str, introspection: dict) -> dict:
 # Step 4 — Propose cluster hierarchy
 # ---------------------------------------------------------------------------
 
-def step_propose_hierarchy(study: str, discovery: dict, introspection: dict | None = None) -> dict:
+def step_propose_hierarchy(study: str, discovery: dict) -> dict:
     """Propose cluster hierarchy per study, grouped by CDE domain."""
     _banner(4, f"Propose Cluster Hierarchy — {study.upper()}")
 
@@ -321,26 +315,6 @@ def step_propose_hierarchy(study: str, discovery: dict, introspection: dict | No
     config = _load_config()
     study_meta = STUDIES[study]
     hierarchies = {}
-    introspection = introspection or _load_cache(study, "introspect") or {}
-
-    def _enrich_unmatched(ds_name: str, unmatched: list) -> list:
-        """Convert unmatched column name strings to dicts with metadata."""
-        if not unmatched or isinstance(unmatched[0], dict):
-            return unmatched
-        # Build lookup from introspection columns
-        ds_intro = introspection.get(ds_name, {})
-        col_lookup = {
-            c["name"]: c for c in ds_intro.get("columns", [])
-        }
-        enriched = []
-        for col_name in unmatched:
-            col_info = col_lookup.get(col_name, {})
-            enriched.append({
-                "name": col_name,
-                "data_type": col_info.get("data_type", "string"),
-                "description": col_info.get("description", ""),
-            })
-        return enriched
 
     async def _run():
         toolset = AssemblyToolset(config)
@@ -351,7 +325,7 @@ def step_propose_hierarchy(study: str, discovery: dict, introspection: dict | No
             ds_data = discovery[ds_name]
             _info(f"Proposing hierarchy for: {ds_name}")
 
-            unmatched = _enrich_unmatched(ds_name, ds_data.get("unmatched", []))
+            unmatched = ds_data.get("unmatched", [])
 
             result = await toolset.propose_cluster_hierarchy(
                 ds_name,
@@ -575,9 +549,7 @@ def run_pipeline(study: str, start_step: int = 1, dry_run: bool = False) -> None
     if start_step <= 4:
         if not discovery:
             discovery = _load_cache(study, "discovery") or {}
-        if not introspection:
-            introspection = _load_cache(study, "introspect") or {}
-        hierarchies = step_propose_hierarchy(study, discovery, introspection)
+        hierarchies = step_propose_hierarchy(study, discovery)
     else:
         hierarchies = _load_cache(study, "hierarchy") or {}
 

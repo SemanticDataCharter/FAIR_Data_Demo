@@ -173,34 +173,50 @@ The conversion pipeline handles file chaos automatically. Case mismatches, trail
 
 Every row in this table is a violation of at least one FAIR principle. These are not edge cases. These are the flagship public health datasets of the United States federal government.
 
-## The ROI of $28.50
+## The ROI of $82.40
 
-When we ran the SDC pipeline against NHANES (8 datasets, 254 columns across demographics, vital signs, labs, medications, medical history, smoking, and physical functioning), the wallet check came back:
+We ran the SDC pipeline against all three studies in sequence: NHANES first, then BRFSS, then CMS. Here is what each one cost.
+
+**NHANES** (8 datasets, 254 columns: demographics, vital signs, labs, medications, medical history, smoking, physical functioning):
 
 ```
-  Current balance:   $150.50
   New components:    245 x $0.10 = $24.50
   Model assemblies:  8 x $0.50 = $4.00
   Estimated total:   $28.50
 ```
 
-That is the cost to compile 8 NHANES datasets into permanent, reusable, semantically linked SDC components with full constraints, ontology links, and cross-study identifiers.
+**BRFSS** (1 dataset, 328 columns: demographics, vital signs, medical history, substance use, physical function):
+
+```
+  Reused components: 10 (free — same ct_id as NHANES)
+  New components:    321 x $0.10 = $32.10
+  Model assemblies:  1 x $0.50 = $0.50
+  Estimated total:   $32.60
+```
+
+**CMS DE-SynPUF** (4 datasets, 197 columns: beneficiary demographics, inpatient claims, outpatient claims, prescriptions):
+
+```
+  Reused components: 4 (free — same ct_id as NHANES)
+  New components:    193 x $0.10 = $19.30
+  Model assemblies:  4 x $0.50 = $2.00
+  Estimated total:   $21.30
+```
+
+**Total across all three studies: $82.40**
+
+That is the cost to compile 13 datasets from 3 federal agencies into permanent, reusable, semantically linked SDC components with full constraints, ontology links, and cross-study identifiers.
+
+The reuse is visible in the numbers. BRFSS reused 10 demographic and vital sign components that NHANES had already minted. CMS reused 4 beneficiary demographic components. Those 14 reused components cost nothing because they already existed with the same `ct_id`, same constraints, same ontology links. As the component library grows, the reuse fraction grows with it and the marginal cost of each new study drops.
 
 What is the alternative?
 
-**The Legacy Way**: A hospital network assigns a Senior Data Engineer (at $150/hour) to ingest the CDC data. They spend 4 hours figuring out why pyreadstat is crashing on a corrupted `0xb4` byte. They spend another 12 hours manually cross-referencing 328 cryptic column codes like `_AGE80` against a 30,000-line SAS-generated HTML codebook that is not even linked to the data file. They spend 2 more hours debugging a script that failed because of an invisible trailing space in `LLCP2022.XPT `.
+**The Legacy Way**: A hospital network assigns a Senior Data Engineer (at $150/hour) to ingest these three studies. They spend 4 hours figuring out why pyreadstat is crashing on a corrupted `0xb4` byte in BRFSS. They spend 12 hours manually cross-referencing 328 cryptic column codes like `_AGE80` against a 30,000-line SAS-generated HTML codebook that is not even linked to the data file. They spend 2 hours debugging a script that failed because of an invisible trailing space in `LLCP2022.XPT `. They spend another 8 hours mapping CMS's 4 separate CSV files with column names like `BENE_SEX_IDENT_CD` and `SP_DIABETES` against a separate codebook. Then they spend 6 hours building reconciliation logic so that NHANES `RIAGENDR`, BRFSS `_SEX`, and CMS `BENE_SEX_IDENT_CD` all mean the same thing in downstream queries.
 
-**The Legacy Cost**: ~18 hours of engineering time = $2,700.
+**The Legacy Cost**: ~32 hours of engineering time = $4,800. And the output is a custom ETL pipeline that breaks every time the data format changes, carries no formal constraints, and has to be rebuilt for every new study.
 
-**The SDC Cost**: 10 minutes and $28.50.
+**The SDC Cost**: One command per study and $82.40 total.
 
-That is a 99% cost reduction. And unlike the legacy approach, the output is permanent. Every component gets a `ct_id` that never changes. The next study that measures age, blood pressure, or smoking status reuses the same components at zero additional cost. The $28.50 is a one-time investment; the $2,700 repeats every time a new dataset arrives.
+That is a 98% cost reduction. And unlike the legacy approach, the output is not a disposable script. It is permanently reusable data models and a complete application stack ready to stand up. SDCStudio generates 8 output formats from each approved model: XSD schemas, XML instances, JSON, JSON-LD, HTML documentation, RDF triples, SHACL constraints, and GQL statements. From those, it generates a full Enterprise or FOSS application stack: validated data entry, constraint enforcement, semantic querying, and cross-study interoperability, all derived from the same models. The $82.40 buys not just the data compilation but the entire infrastructure to use it.
 
-This is not hypothetical. When the pipeline ran BRFSS and CMS after NHANES, the wallet check came back:
-
-```
-  BRFSS:  New components: 0 x $0.10 = $0.00   Model assemblies: 0 x $0.50 = $0.00
-  CMS:    New components: 0 x $0.10 = $0.00   Model assemblies: 0 x $0.50 = $0.00
-```
-
-Zero dollars. Every demographic, vital sign, and medical history component that BRFSS and CMS needed had already been minted for NHANES. The reuse was automatic — same `ct_id`, same constraints, same ontology links. Three federal health studies, fully compiled, for $28.50 total.
+Every component gets a `ct_id` that never changes. Cross-study queries join on `ct_id` with zero mapping tables. The next study that measures age, blood pressure, or smoking status reuses the same components at zero additional cost. The $82.40 is a one-time investment; the $4,800 repeats every time a new dataset arrives.

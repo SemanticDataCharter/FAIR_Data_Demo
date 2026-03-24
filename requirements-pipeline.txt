@@ -5,3 +5,4 @@ sdc-agents>=4.2.0       # SDC Agents toolsets (Introspect, Catalog, Assembly, et
 sdcvalidator>=4.2.0     # Local XML instance validation
 pyreadstat>=1.2.0       # NHANES/BRFSS XPT (SAS transport) to CSV conversion
 pandas>=2.0             # Required by pyreadstat for DataFrame output
+python-dotenv>=1.0      # Auto-load .env for SDCSTUDIO_URL, SDC_API_KEY

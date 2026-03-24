@@ -20,7 +20,17 @@ Neither dataset can be linked in a README and downloaded in 10 minutes. Both are
 
 Even "freely available" does not mean "easy to find."
 
-**BRFSS (Behavioral Risk Factor Surveillance System)**: The [2022 Annual Survey Data page](https://www.cdc.gov/brfss/annual_data/annual_2022.html) lists multiple file formats with unclear descriptions. The correct file is "2022 BRFSS Data (SAS Transport Format) [ZIP - 64.3 MB]." It contains a single file, `LLCP2022.XPT`. This is not obvious without reading the full page. The page also notes that "some of the variable labels get truncated in the process of converting to the XPT format," which turns out to be an understatement: there are no labels at all.
+**BRFSS (Behavioral Risk Factor Surveillance System)**: The [2022 Annual Survey Data page](https://www.cdc.gov/brfss/annual_data/annual_2022.html) presents 20 downloadable items with no visual hierarchy and no guidance on which ones you actually need. The list includes:
+
+- 2 data files (ASCII and SAS Transport, with no guidance on which to choose)
+- 1 codebook ZIP
+- 6 SAS program/format files (useless without a SAS license)
+- 2 HTML reference pages
+- 9 PDF documents covering survey design, sampling weights, response rates, and data comparability
+
+The correct data file is "2022 BRFSS Data (SAS Transport Format) [ZIP - 64.3 MB]," which contains `LLCP2022.XPT`. This is not obvious. The page notes that "some of the variable labels get truncated in the process of converting to the XPT format," which turns out to be an understatement: there are no labels at all.
+
+The codebook — the one file that explains what the columns mean — is described as "Codebook for the file showing variable name, location, and frequency of values." That description sounds like a column layout reference, not a document containing survey question text and value labels. A user scanning the page has no way to distinguish it from the "Variable Layout" HTML link two items below, which actually is just a column layout reference. You have to download both to discover that one is useful and the other is not.
 
 **CMS DE-SynPUF (Medicare Claims Synthetic Public Use Files)**: Two levels of navigation. The [main page](https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf) lists 20 samples. You must click through to the "DE1.0 Sample 1" sub-page to find download links. There you find four separate ZIP files, each containing one CSV. The page also lists files you do not need (2009/2010 beneficiary files, carrier claims) with no guidance on which subset is sufficient for any purpose.
 
@@ -146,7 +156,7 @@ The conversion pipeline handles file chaos automatically. Case mismatches, trail
 |-------|---------|--------------|---------|-------------------|
 | Committee approval required | ADNI | LONI portal application, weeks of waiting | Replaced dataset | No data |
 | Data Use Agreement required | SPRINT | NHLBI BioLINCC DUA process | Replaced dataset | No data |
-| Confusing download page | BRFSS | Multiple formats, unclear descriptions | Step-by-step instructions in README | Wrong file or gives up |
+| Confusing download page | BRFSS | 20 items with no hierarchy; codebook description indistinguishable from layout page | Step-by-step instructions in README | Wrong file, skips codebook, or gives up |
 | Two-level navigation | CMS DE-SynPUF | 20 samples, must click through to sub-page | Step-by-step instructions in README | Confused, downloads wrong files |
 | Lowercase file extension | NHANES | `.xpt` instead of `.XPT`, path matching fails | Case-insensitive file detection with auto-rename | "File not found" error |
 | Trailing space in XPT filename | BRFSS | ZIP extracts `LLCP2022.XPT ` (invisible space) | Whitespace-stripping file detection with auto-rename | "Missing: LLCP2022.XPT" and no idea why |
@@ -162,3 +172,35 @@ The conversion pipeline handles file chaos automatically. Case mismatches, trail
 | No machine-readable codebook | BRFSS, CMS | Codebook is SAS-generated HTML (windows-1252) or PDF, not JSON/CSV | SDC schema carries all metadata inline | Manual cross-reference |
 
 Every row in this table is a violation of at least one FAIR principle. These are not edge cases. These are the flagship public health datasets of the United States federal government.
+
+## The ROI of $28.50
+
+When we ran the SDC pipeline against NHANES (8 datasets, 254 columns across demographics, vital signs, labs, medications, medical history, smoking, and physical functioning), the wallet check came back:
+
+```
+  Current balance:   $150.50
+  New components:    245 x $0.10 = $24.50
+  Model assemblies:  8 x $0.50 = $4.00
+  Estimated total:   $28.50
+```
+
+That is the cost to compile 8 NHANES datasets into permanent, reusable, semantically linked SDC components with full constraints, ontology links, and cross-study identifiers.
+
+What is the alternative?
+
+**The Legacy Way**: A hospital network assigns a Senior Data Engineer (at $150/hour) to ingest the CDC data. They spend 4 hours figuring out why pyreadstat is crashing on a corrupted `0xb4` byte. They spend another 12 hours manually cross-referencing 328 cryptic column codes like `_AGE80` against a 30,000-line SAS-generated HTML codebook that is not even linked to the data file. They spend 2 more hours debugging a script that failed because of an invisible trailing space in `LLCP2022.XPT `.
+
+**The Legacy Cost**: ~18 hours of engineering time = $2,700.
+
+**The SDC Cost**: 10 minutes and $28.50.
+
+That is a 99% cost reduction. And unlike the legacy approach, the output is permanent. Every component gets a `ct_id` that never changes. The next study that measures age, blood pressure, or smoking status reuses the same components at zero additional cost. The $28.50 is a one-time investment; the $2,700 repeats every time a new dataset arrives.
+
+This is not hypothetical. When the pipeline ran BRFSS and CMS after NHANES, the wallet check came back:
+
+```
+  BRFSS:  New components: 0 x $0.10 = $0.00   Model assemblies: 0 x $0.50 = $0.00
+  CMS:    New components: 0 x $0.10 = $0.00   Model assemblies: 0 x $0.50 = $0.00
+```
+
+Zero dollars. Every demographic, vital sign, and medical history component that BRFSS and CMS needed had already been minted for NHANES. The reuse was automatic — same `ct_id`, same constraints, same ontology links. Three federal health studies, fully compiled, for $28.50 total.

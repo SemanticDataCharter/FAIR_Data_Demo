@@ -11,7 +11,7 @@ Usage:
 
 Requires:
     pip install -r requirements-pipeline.txt
-    Environment variables: SDCSTUDIO_URL, SDC_API_KEY
+    .env file or environment variables: SDCSTUDIO_URL, SDC_API_KEY
 """
 from __future__ import annotations
 
@@ -20,6 +20,10 @@ import asyncio
 import json
 import sys
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv()  # Load .env before anything reads os.environ
 
 from fair_constants import (
     ALL_REUSABLE_CT_IDS,
@@ -148,6 +152,12 @@ def step_introspect(study: str, dry_run: bool = False) -> dict:
 
     if results:
         _save_cache(study, "introspect", results)
+        # Also write per-datasource cache files that AssemblyToolset expects
+        introspections_dir = CACHE_DIR / "introspections"
+        introspections_dir.mkdir(parents=True, exist_ok=True)
+        for ds_name, ds_result in results.items():
+            ds_path = introspections_dir / f"{ds_name}.json"
+            ds_path.write_text(json.dumps(ds_result, indent=2, default=str))
     return results
 
 
@@ -298,7 +308,7 @@ def step_discover(study: str, introspection: dict) -> dict:
 # Step 4 — Propose cluster hierarchy
 # ---------------------------------------------------------------------------
 
-def step_propose_hierarchy(study: str, discovery: dict) -> dict:
+def step_propose_hierarchy(study: str, discovery: dict, introspection: dict | None = None) -> dict:
     """Propose cluster hierarchy per study, grouped by CDE domain."""
     _banner(4, f"Propose Cluster Hierarchy — {study.upper()}")
 
@@ -311,6 +321,26 @@ def step_propose_hierarchy(study: str, discovery: dict) -> dict:
     config = _load_config()
     study_meta = STUDIES[study]
     hierarchies = {}
+    introspection = introspection or _load_cache(study, "introspect") or {}
+
+    def _enrich_unmatched(ds_name: str, unmatched: list) -> list:
+        """Convert unmatched column name strings to dicts with metadata."""
+        if not unmatched or isinstance(unmatched[0], dict):
+            return unmatched
+        # Build lookup from introspection columns
+        ds_intro = introspection.get(ds_name, {})
+        col_lookup = {
+            c["name"]: c for c in ds_intro.get("columns", [])
+        }
+        enriched = []
+        for col_name in unmatched:
+            col_info = col_lookup.get(col_name, {})
+            enriched.append({
+                "name": col_name,
+                "data_type": col_info.get("data_type", "string"),
+                "description": col_info.get("description", ""),
+            })
+        return enriched
 
     async def _run():
         toolset = AssemblyToolset(config)
@@ -321,10 +351,12 @@ def step_propose_hierarchy(study: str, discovery: dict) -> dict:
             ds_data = discovery[ds_name]
             _info(f"Proposing hierarchy for: {ds_name}")
 
+            unmatched = _enrich_unmatched(ds_name, ds_data.get("unmatched", []))
+
             result = await toolset.propose_cluster_hierarchy(
                 ds_name,
                 component_matches=ds_data["matches"],
-                unmatched_columns=ds_data.get("unmatched"),
+                unmatched_columns=unmatched,
             )
 
             clusters = result.get("cluster_count", 0)
@@ -375,7 +407,7 @@ def step_check_wallet(study: str, hierarchies: dict) -> dict:
 
     asyncio.run(_run())
 
-    balance = wallet_info.get("balance", 0)
+    balance = float(wallet_info.get("balance", 0))
     print(f"  Current balance:   ${balance:.2f}")
 
     # Estimate cost
@@ -451,7 +483,7 @@ def step_assemble(study: str, hierarchies: dict) -> dict:
                     # Mixed reuse+mint path (async)
                     task_id = result.get("task_id")
                     _info(f"  Processing: task_id={task_id}")
-                    _info(f"  Estimated cost: ${result.get('estimated_cost', 0):.2f}")
+                    _info(f"  Estimated cost: ${float(result.get('estimated_cost', 0)):.2f}")
                     _info("  Check SDCStudio for completion")
 
                 results[ds_name] = result
@@ -578,7 +610,9 @@ def run_pipeline(study: str, start_step: int = 1, dry_run: bool = False) -> None
     if start_step <= 4:
         if not discovery:
             discovery = _load_cache(study, "discovery") or {}
-        hierarchies = step_propose_hierarchy(study, discovery)
+        if not introspection:
+            introspection = _load_cache(study, "introspect") or {}
+        hierarchies = step_propose_hierarchy(study, discovery, introspection)
     else:
         hierarchies = _load_cache(study, "hierarchy") or {}
 

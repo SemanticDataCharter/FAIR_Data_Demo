@@ -100,6 +100,8 @@ def _load_config():
     return load_config(str(CONFIG_PATH))
 
 
+
+
 # ---------------------------------------------------------------------------
 # Step 1 — Introspect
 # ---------------------------------------------------------------------------
@@ -168,10 +170,19 @@ def step_verify_catalog(study: str) -> dict:
         _ok(f"Using cached catalog verification")
         return cached
 
+    # Skip verification when no ct_ids are populated yet
+    components_needed = {
+        k: v for k, v in SHARED_COMPONENTS.items() if v.get("ct_id")
+    }
+    if not components_needed:
+        _info("No ct_ids configured in SHARED_COMPONENTS — skipping verification")
+        _info("Catalog-first discovery (4.3.1+) will find matches by keyword")
+        result: dict = {"found": {}, "missing": []}
+        _save_cache(study, "catalog_verify", result)
+        return result
+
     from sdc_agents.toolsets.catalog import CatalogToolset
     config = _load_config()
-
-    components_needed = dict(SHARED_COMPONENTS)
 
     found = {}
     missing = []
@@ -232,15 +243,19 @@ def step_discover(study: str, introspection: dict) -> dict:
                 continue
 
             _info(f"Discovering components for: {ds_name}")
+            # project_ct_id auto-fetched from Modeler API by toolset
             result = await toolset.discover_components(ds_name)
 
             matches = result.get("matches", [])
             matched_cols = {m["column"] for m in matches}
             unmatched = result.get("unmatched", [])
+            catalog_hits = result.get("catalog_matches", 0)
 
             # Apply manual overrides (highest priority fallback)
             overrides = COLUMN_OVERRIDES.get(ds_name, {})
             for col_name, ct_id in overrides.items():
+                if not ct_id:
+                    continue  # Skip empty ct_ids
                 if col_name not in matched_cols:
                     comp = next(
                         (c for c in SHARED_COMPONENTS.values()
@@ -268,7 +283,7 @@ def step_discover(study: str, introspection: dict) -> dict:
 
             reuse_count = sum(1 for m in matches if m.get("ct_id") in ALL_REUSABLE_CT_IDS)
             mint_count = len(unmatched)
-            _ok(f"  {len(matches)} matched ({reuse_count} reuse, {mint_count} mint)")
+            _ok(f"  {len(matches)} matched ({catalog_hits} catalog, {reuse_count} reuse, {mint_count} mint)")
 
             all_matches[ds_name] = {
                 "matches": matches,

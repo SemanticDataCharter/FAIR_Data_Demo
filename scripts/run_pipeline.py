@@ -100,6 +100,28 @@ def _load_config():
     return load_config(str(CONFIG_PATH))
 
 
+def _demo_reuse_summary(total_matched: int, total_unmatched: int) -> None:
+    """Print a highlighted reuse summary banner when all components are catalog matches."""
+    if total_unmatched > 0:
+        return
+    lines = [
+        f"  All {total_matched} components matched existing catalog entries.",
+        "  0 new components to mint.",
+        "  These components were originally built from 3 federal",
+        "  datasets using 3 different metadata formats.",
+        "  Now they are permanently reusable at zero cost.",
+    ]
+    width = 59
+    print()
+    print(f"  ┌{'─' * width}┐")
+    print(f"  │  {'REUSE SUMMARY':<{width - 2}}│")
+    for line in lines:
+        # Strip leading 2 spaces since we add our own padding
+        text = line.strip()
+        print(f"  │  {text:<{width - 2}}│")
+    print(f"  └{'─' * width}┘")
+
+
 
 
 # ---------------------------------------------------------------------------
@@ -299,12 +321,18 @@ def step_discover(study: str, introspection: dict) -> dict:
     print("  Match Report")
     print(f"  {'Dataset':<30} {'Auto':<7} {'Manual':<7} {'Unmatched'}")
     print(f"  {'-'*30} {'-'*7} {'-'*7} {'-'*10}")
+    total_matched = 0
+    total_unmatched = 0
     for ds_name, data in all_matches.items():
         matches = data["matches"]
         auto = sum(1 for m in matches if m.get("source") != "manual_override")
         manual = sum(1 for m in matches if m.get("source") == "manual_override")
         unmatched = len(data.get("unmatched", []))
+        total_matched += len(matches)
+        total_unmatched += unmatched
         print(f"  {ds_name:<30} {auto:<7} {manual:<7} {unmatched}")
+
+    _demo_reuse_summary(total_matched, total_unmatched)
 
     if not _confirm("Proceed with these component matches?"):
         _info("Aborted. Edit COLUMN_OVERRIDES in fair_constants.py and re-run.")
@@ -409,10 +437,16 @@ def step_check_wallet(study: str, hierarchies: dict) -> dict:
     assembly_cost = total_models * 0.50
     estimated_total = mint_cost + assembly_cost
 
-    print(f"  New components:    {total_new} x $0.10 = ${mint_cost:.2f}")
-    print(f"  Model assemblies:  {total_models} x $0.50 = ${assembly_cost:.2f}")
-    print(f"  Estimated total:   ${estimated_total:.2f}")
     print()
+    print(f"  Cost breakdown:")
+    print(f"    New components:    {total_new} x $0.10 = ${mint_cost:.2f}")
+    print(f"    Model assemblies:  {total_models} x $0.50 = ${assembly_cost:.2f}")
+    print(f"    Estimated total:   ${estimated_total:.2f}")
+    print()
+
+    if mint_cost == 0:
+        _ok("The catalog did all the work. Minting cost: $0.00")
+        print()
 
     if balance < estimated_total:
         _fail(f"Insufficient funds: ${balance:.2f} < ${estimated_total:.2f}")

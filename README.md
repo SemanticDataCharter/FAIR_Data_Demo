@@ -192,6 +192,45 @@ The workflow:
 
 No custom integration code. No study-specific adapters. The interoperability is structural.
 
+## The Enrichment Story
+
+The 567 components in this demo did not arrive self-describing. Getting them there required significant one-time effort, and that effort is the whole point.
+
+### What we found
+
+Three federal datasets, three different metadata formats, none structurally compatible:
+
+| Study | Metadata Format | How You Access It |
+|-------|----------------|-------------------|
+| **NHANES** | SAS transport labels + HTML codebook | Parse `.xpt` variable labels, scrape CDC HTML pages with BeautifulSoup |
+| **BRFSS** | HTML codebook (400+ pages) | Parse HTML tables, cross-reference variable-specific coding |
+| **CMS DE-SynPUF** | PDF codebook + no machine-readable metadata | Hardcode 121 variable definitions by hand from the PDF |
+
+None of these formats share a schema. None publish constraints (numeric ranges, required units, valid enumerations) in a machine-readable form. The "FAIR" data is findable and accessible, but it is not interoperable and not reusable without significant manual effort.
+
+### What it took
+
+~1,974 lines of Python in `scripts/enrichment/`:
+
+- **`metadata_nhanes.py`**: Parses SAS transport labels and augments with descriptions, constraints, and units per NHANES codebook
+- **`metadata_brfss.py`**: Scrapes BRFSS HTML codebook, extracts variable descriptions, value labels, and coding schemes
+- **`metadata_cms.py`**: 121 hardcoded CMS variable definitions (descriptions, data types, enumerations) transcribed from the PDF codebook
+- **`semantic_mappings.py`**: 85 curated LOINC and SNOMED CT mappings linking components to standard ontology concepts
+- **`component_mapper.py`**: Maps enriched metadata to SDC4 component types with appropriate constraints
+- **`api_client.py`**: Batch updates components in SDCStudio via the API (800+ API calls)
+
+This is the work that "FAIR" compliance actually requires when your source data lacks self-describing metadata.
+
+### The punchline
+
+All of this was a **one-time effort**. Now that the 567 components exist in the SDC catalog, every subsequent user who needs NHANES demographics, BRFSS vital signs, or CMS claims data gets **100% catalog reuse at $0.00**. The metadata, constraints, semantic links, and validation rules travel inside each component permanently, identified by its `ct_id`.
+
+When you run this pipeline, the discovery step finds all 567 components already in the catalog. Zero new components to mint. Zero enrichment scripts to run. Zero codebooks to parse. The ~2,000 lines of enrichment code in this repository exist solely to document what it took the first time, so you understand what you are no longer paying for.
+
+### The contrast
+
+Without SDC, every new researcher working with these datasets repeats some version of this work from scratch: parsing codebooks, hardcoding definitions, mapping variables across studies, reconciling units and enumerations. The NIH CDE catalog publishes definitions but not constraints. The data files publish values but not semantics. The gap between "available" and "interoperable" is filled by graduate students, one study at a time, and their work is never reusable by the next team.
+
 ## Repository Structure
 
 ```
@@ -200,7 +239,14 @@ FAIR_Data_Demo/
 │   ├── run_pipeline.py          # 7-step SDC Agents orchestration
 │   ├── generate_instances.py    # Post-assembly XML generation
 │   ├── convert_xpt_to_csv.py    # NHANES + BRFSS XPT preprocessing
-│   └── fair_constants.py        # Shared ct_ids and study metadata
+│   ├── fair_constants.py        # Shared ct_ids and study metadata
+│   └── enrichment/              # One-time metadata enrichment (~1,974 lines)
+│       ├── metadata_nhanes.py   # NHANES SAS labels + codebook parsing
+│       ├── metadata_brfss.py    # BRFSS HTML codebook scraping
+│       ├── metadata_cms.py      # CMS hardcoded definitions (121 variables)
+│       ├── semantic_mappings.py  # 85 LOINC/SNOMED CT mappings
+│       ├── component_mapper.py  # Metadata → SDC4 component type mapping
+│       └── api_client.py        # Batch SDCStudio API updates
 ├── source_data/                 # Raw study data (user-downloaded)
 │   ├── nhanes/
 │   ├── brfss/
@@ -217,7 +263,7 @@ FAIR_Data_Demo/
 
 ## The Public Good Guarantee
 
-The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $82.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
+The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $82.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs, plus the engineering cost of ~2,000 lines of enrichment code to extract metadata that the source datasets should have included but did not. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
 
 ## Related Projects
 

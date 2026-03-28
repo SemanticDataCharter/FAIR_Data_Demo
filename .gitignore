@@ -55,8 +55,7 @@ htmlcov/
 .coverage.*
 coverage.xml
 
-# Model exports (large binary zips)
-models/**/*.zip
+# Model and app exports are now committed for reproducibility
 
 # SDC Agents pipeline cache
 .sdc-cache/

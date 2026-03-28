@@ -61,6 +61,19 @@ Three different study designs. Three different federal agencies. One shared sema
 | Lab Results | X | | |
 | SDOH | X | | |
 
+## What's Included vs. What You Download
+
+**Included in this repository:**
+- `models/` -- 7 SDC4 model packages (XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL) exported from SDCStudio
+- `apps/` -- 8 generated enterprise application packages (Django projects with full SDC4 integration)
+- `scripts/` -- Pipeline scripts, enrichment code, and conversion tools
+- `sparql/` -- Pre-built cross-study SPARQL queries
+
+**Not included (download separately):**
+- `source_data/` -- Raw federal health data files (NHANES XPT, BRFSS XPT, CMS CSV). These are freely available from CDC and CMS with no registration. See [source_data/README.md](source_data/README.md) for download instructions.
+
+The model and app packages let you inspect the complete SDC4 output without running the pipeline or downloading source data. If you want to reproduce the pipeline end-to-end, follow the Quick Start below.
+
 ## Quick Start
 
 ### Prerequisites
@@ -247,16 +260,16 @@ FAIR_Data_Demo/
 │       ├── semantic_mappings.py  # 85 LOINC/SNOMED CT mappings
 │       ├── component_mapper.py  # Metadata → SDC4 component type mapping
 │       └── api_client.py        # Batch SDCStudio API updates
-├── source_data/                 # Raw study data (user-downloaded)
+├── source_data/                 # Raw study data (NOT included -- user downloads separately)
 │   ├── nhanes/
 │   ├── brfss/
 │   └── cms/
-├── models/                      # Generated SDCStudio output
-│   ├── NHANES/
-│   ├── BRFSS/
-│   └── CMS/
+├── models/                      # SDC4 model packages (INCLUDED -- 7 zip files)
+│   ├── NHANES/                  #   Blood-Pressure, Cholesterol, Medications
+│   ├── BRFSS/                   #   Brfss
+│   └── CMS/                     #   Beneficiary, Inpatient, Outpatient, Prescriptions
 ├── sparql/                      # Pre-built SPARQL queries
-├── apps/                        # Generated SDCStudio application packages
+├── apps/                        # Generated enterprise app packages (INCLUDED -- 8 zip files)
 ├── sdc-agents.yaml              # SDC Agents configuration (13 datasources)
 └── requirements-pipeline.txt    # Pipeline dependencies
 ```

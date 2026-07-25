@@ -64,7 +64,7 @@ Three different study designs. Three different federal agencies. One shared sema
 ## What's Included vs. What You Download
 
 **Included in this repository:**
-- `models/` -- 7 SDC4 model packages (XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL) exported from SDCStudio
+- `models/` -- 8 SDC4 model packages (XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL) exported from SDCStudio
 - `apps/` -- 8 generated enterprise application packages (Django projects with full SDC4 integration)
 - `scripts/` -- Pipeline scripts, enrichment code, and conversion tools
 - `sparql/` -- Pre-built cross-study SPARQL queries
@@ -264,7 +264,7 @@ FAIR_Data_Demo/
 │   ├── nhanes/
 │   ├── brfss/
 │   └── cms/
-├── models/                      # SDC4 model packages (INCLUDED -- 7 zip files)
+├── models/                      # SDC4 model packages (INCLUDED -- 8 zip files)
 │   ├── NHANES/                  #   Blood-Pressure, Cholesterol, Medications
 │   ├── BRFSS/                   #   Brfss
 │   └── CMS/                     #   Beneficiary, Inpatient, Outpatient, Prescriptions

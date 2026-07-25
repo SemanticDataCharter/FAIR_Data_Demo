@@ -41,10 +41,10 @@ SDC compiles semantic meaning and constraints deterministically into the graph l
 | **BRFSS** | Telephone Survey | CDC | 1 XPT file | Direct download |
 | **CMS DE-SynPUF** | Medicare Claims (Synthetic) | CMS | CSV (Sample 1) | Direct download |
 
-**8 CDE domains** covered. **3 shared across all 3 studies**:
-- Demographics
-- Medical History
-- Medications (NHANES + CMS)
+**8 CDE domains** covered. Shared across studies:
+- Demographics — all 3 studies
+- Medical History — all 3 studies
+- Medications — NHANES + CMS
 
 Three different study designs. Three different federal agencies. One shared semantic layer.
 
@@ -276,7 +276,7 @@ FAIR_Data_Demo/
 
 ## The Public Good Guarantee
 
-The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $82.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs, plus the engineering cost of ~2,000 lines of enrichment code to extract metadata that the source datasets should have included but did not. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
+The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $72.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs, plus the engineering cost of ~2,000 lines of enrichment code to extract metadata that the source datasets should have included but did not. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
 
 ## Related Projects
 
@@ -289,4 +289,4 @@ The US taxpayers already paid for this data. Why is the industry charging resear
 
 Apache 2.0 — see [LICENSE](LICENSE).
 
-Built by [Axius SDC](https://axius-sdc.github.io).
+Built by [Axius SDC](https://axius-sdc.com).

@@ -65,7 +65,7 @@ Three different study designs. Three different federal agencies. One shared sema
 
 **Included in this repository:**
 - `models/` -- 8 SDC4 model packages (XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL) exported from SDCStudio
-- `apps/` -- 8 generated enterprise application packages (Django projects with full SDC4 integration)
+- `apps/` -- 8 generated application packages (self-contained Django projects, lightweight FOSS stack, with full SDC4 integration)
 - `scripts/` -- Pipeline scripts, enrichment code, and conversion tools
 - `sparql/` -- Pre-built cross-study SPARQL queries
 
@@ -269,7 +269,7 @@ FAIR_Data_Demo/
 │   ├── BRFSS/                   #   Brfss
 │   └── CMS/                     #   Beneficiary, Inpatient, Outpatient, Prescriptions
 ├── sparql/                      # Pre-built SPARQL queries
-├── apps/                        # Generated enterprise app packages (INCLUDED -- 8 zip files)
+├── apps/                        # Generated app packages, FOSS stack (INCLUDED -- 8 zip files)
 ├── sdc-agents.yaml              # SDC Agents configuration (13 datasources)
 └── requirements-pipeline.txt    # Pipeline dependencies
 ```

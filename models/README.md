@@ -30,4 +30,4 @@ models/
 3. Generate all 8 output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
 4. Download and place output files in the appropriate study directory
 
-The RDF files are loaded into GraphDB for cross-study SPARQL queries.
+The RDF files are loaded into Fuseki (Apache Jena) for cross-study SPARQL queries.

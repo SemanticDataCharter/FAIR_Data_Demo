@@ -25,13 +25,13 @@ The NIH CDE catalog publishes data element definitions: names, descriptions, dat
 
 Each component is identified by a permanent `ct_id` (CUID2) and carries its own compiled schema, units, constraints, and semantic links. Consider systolic blood pressure: many variables affect the measurement, including device type (manual cuff vs. automated oscillometric vs. invasive arterial line), patient position (seated, standing, supine), and anatomical location (upper arm, wrist, thigh). None of these contextual factors are captured in CDEs. At all. Ideally, each measurement context would be modeled as a distinct component with its own constraints, because a reading from an automated arm cuff and a reading from an invasive arterial line are not the same measurement. We understand that assumptions are often made in practice, but SDC4's goal is that domain experts create precisely scoped components and that those components are correctly reused across studies for the best accuracy possible.
 
-In this demo, when NHANES, BRFSS, and CMS need "systolic blood pressure," they reference the **same component**. Same `ct_id`. Same XSD schema. Same validation rules. Cross-study queries join on `ct_id`. No mapping. No ETL. No reconciliation.
+The mechanism is a shared identifier. When studies reference the *same* component, they inherit its `ct_id`, its XSD schema, and its validation rules, and a cross-study query becomes a join on that `ct_id` — no mapping, no ETL, no reconciliation. Realizing that across studies is not automatic: it requires the shared concepts to be *canonicalized* to a single component, which is a human-in-the-loop modeling decision, not something the agents can settle from sparse source metadata (see [Current Limitations and Future Work](#current-limitations-and-future-work)). In this demo, the federal source metadata was too thin for the agents to confidently match concepts across studies, so each study minted its own components. That reuse gap — not its absence — is what this demo actually documents (see [The Enrichment Story](#the-enrichment-story)).
 
 ## Why This Matters for Autonomous AI
 
 Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `BPHIGH6` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
 
-SDC compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a mathematically secure foundation for AI-driven clinical data operations: zero hallucination risk on structure, zero ambiguity on semantics.
+SDC compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a deterministic foundation for AI-driven clinical data operations: structure is validated by schema rather than guessed, so the structural layer cannot hallucinate, and each value's meaning is fixed by its component rather than inferred.
 
 ## What This Demo Contains
 
@@ -165,7 +165,7 @@ This generates validated XML instances in `output/instances/`.
 
 ## Cross-Study SPARQL Queries
 
-Six pre-built queries demonstrate structural interoperability:
+Six pre-built queries express the intended cross-study join pattern:
 
 | # | Query | What It Shows |
 |---|-------|---------------|
@@ -176,9 +176,15 @@ Six pre-built queries demonstrate structural interoperability:
 | 5 | Medication Overlap | Overlapping medication coding across studies |
 | 6 | Cross-Study Medical History | Shared history components |
 
-All queries join on `ct_id` — no mapping tables involved. See [sparql/README.md](sparql/README.md) for details.
+All queries join on `ct_id`, the intended interoperability mechanism, with no mapping tables. See [sparql/README.md](sparql/README.md) for details.
 
-**Note**: The current SPARQL queries use a placeholder vocabulary. They will be rewritten once real RDF triples are generated from SDCStudio models.
+**Note**: These queries express the *target* pattern. The regenerated models now carry real RDF, but each study currently uses its own components (see [Current Limitations and Future Work](#current-limitations-and-future-work)), so the cross-study joins return results only once shared concepts are canonicalized to common `ct_id`s. The queries are kept as the specification of what that state enables.
+
+## Current Limitations and Future Work
+
+**Cross-study component reuse is not yet realized in this demo.** The headline capability — shared concepts resolving to a single `ct_id` so a cross-study query becomes a join — requires the shared concepts to be *canonicalized*: one canonical component per concept, reused by every study that measures it. In this run the agents could not match concepts across studies confidently, because the federal source metadata was too sparse (BRFSS ships zero column labels; CMS ships none in machine-readable form; see [The Enrichment Story](#the-enrichment-story)). Each study therefore minted its own components, and the three studies currently share **no** components. The cross-study SPARQL queries above are correct as a specification but return empty against the current models.
+
+Closing that gap is not an automation problem. It is exactly the human-in-the-loop (HITL) work this demo is built to make visible: **domain experts must review the draft components and decide which ones represent the same concept**, then converge them onto a single canonical component that every study references. An LLM can propose candidates; it cannot make the clinical judgment that a systolic blood pressure recorded in NHANES, in BRFSS, and in a CMS claim are the same measurement under the same constraints — or that they are not, because of a difference in device, position, or population that only a domain expert would catch. That determination, and the canonicalization it produces, is the next step, and it is what turns the cross-study queries from a specification into a working demonstration. It is deliberately expert-driven: the point of SDC is that meaning is decided by the people who own the domain, not guessed by a model.
 
 ## The Challenge
 
@@ -196,14 +202,14 @@ FAIR means more than findable and accessible. It means the data **means what it 
 Every component in this demo was modeled in [SDCStudio](https://sdcstudio.axius-sdc.com/), the production platform for SDC-compliant data models. [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) create and reuse NIH-CDE catalog components via the SDCStudio API, and a human approves draft components before building the final data models. SDCStudio then generates the complete application from the approved models.
 
 The workflow:
-1. Use SDC_Agents API to create/reuse NIH-CDE catalog components (same `ct_id` for shared concepts)
+1. Use SDC_Agents API to create/reuse NIH-CDE catalog components (shared concepts resolve to the same `ct_id` where the agents match them; cross-study canonicalization is expert-reviewed, see Current Limitations)
 2. Agents assemble components into clusters within the FAIR Data Demo project
 3. In SDCStudio, approve draft components and build study-level data models
 4. Generate all output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
 5. SDCStudio generates the application from the data models
 6. Query across studies using SPARQL — joins on shared `ct_id`
 
-No custom integration code. No study-specific adapters. The interoperability is structural.
+No custom integration code. No study-specific adapters. The interoperability mechanism is structural — a join on shared identifiers rather than bespoke adapters — once shared concepts are canonicalized (see Current Limitations).
 
 ## The Enrichment Story
 

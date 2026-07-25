@@ -1,10 +1,12 @@
 # SPARQL Queries
 
-Pre-built cross-study SPARQL queries demonstrating SDC interoperability.
+Pre-built SPARQL queries expressing the intended SDC cross-study join pattern.
 
 ## Join Mechanism
 
-All queries exploit the fact that SDC components are identified by a permanent `ct_id` (CUID2). When NHANES, BRFSS, and CMS reuse the same NIH CDE component, their XML instances share the same schema URI (`sdc4:dm-{ct_id}`). The knowledge graph contains RDF triples extracted from each study's schemas; joining on `ct_id` gives cross-study interoperability with zero mapping.
+All queries exploit the fact that SDC components are identified by a permanent `ct_id` (CUID2). When studies reuse the *same* NIH CDE component, the knowledge graph (RDF triples extracted from each study's schemas) shares that `ct_id`, and joining on it gives cross-study interoperability with zero mapping.
+
+**This depends on the shared concepts having been canonicalized to a single component.** In the current demo models, each study uses its own components — the reuse gap documented in [Current Limitations and Future Work](../README.md#current-limitations-and-future-work) — so the three studies share no `ct_id`s. These queries therefore express the *target* pattern and return results only once the expert-reviewed canonicalization is done. They are kept as the specification of what that state enables.
 
 ## Queries
 

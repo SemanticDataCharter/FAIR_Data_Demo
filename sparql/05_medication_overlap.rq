@@ -2,10 +2,12 @@
 # Identifies medication-related components shared across studies.
 # Shared ct_id means identical semantic definition — no mapping needed.
 #
-# NOTE: These queries use a placeholder sdc4: vocabulary. They will be
-# rewritten once real RDF triples are generated from SDCStudio models.
-# Actual SDCStudio RDF output uses sdc4-meta: predicates, not this
-# placeholder vocabulary.
+# NOTE: This query expresses the TARGET cross-study join pattern. It uses an
+# illustrative placeholder vocabulary; SDCStudio RDF uses sdc4-meta: predicates.
+# It is not yet runnable against the current models: the three studies share no
+# ct_ids because their concepts have not been canonicalized to common components
+# (an expert-reviewed, human-in-the-loop step). See ../README.md, section
+# "Current Limitations and Future Work".
 
 PREFIX sdc4: <https://datacharterontology.org/sdc4/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

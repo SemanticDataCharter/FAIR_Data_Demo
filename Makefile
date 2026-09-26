@@ -14,9 +14,9 @@ WEB_URL  := http://localhost:18100
 
 help:
 	@echo "FAIR Data Demo quickstart:"
-	@echo "  make demo        Start the stack + generate + load the SMALL demo dataset"
+	@echo "  make demo        Start the stack + generate + load the seeded samples (all of NHANES, 5,000 BRFSS, 5,000 CMS)"
 	@echo "                   (the seeded samples; minutes to load). The default."
-	@echo "  make demo-full   Same, but the FULL 25,000-resident dataset"
+	@echo "  make demo-full   Same, but every row of every source file"
 	@echo "                   (101,275 records; generation takes three minutes, loading about 85 minutes)."
 	@echo "  make up          Start the stack only."
 	@echo "  make down        Stop the stack."
@@ -41,11 +41,11 @@ wait-web:
 # Generation runs on the host (Python 3.12 + cuid2); writes app/sdc4/import_data/.
 generate:
 	@python3 -m pip install -q -r datagen/requirements.txt
-	cd datagen && CORDOVA_DEMO_SCALE=1 python3 generate_all.py
+	cd datagen && python3 generate_all.py
 
 generate-full:
 	@python3 -m pip install -q -r datagen/requirements.txt
-	cd datagen && python3 generate_all.py
+	cd datagen && FAIR_FULL=1 python3 generate_all.py
 
 # Loading runs in the web container (validates each instance, writes Postgres + GraphDB).
 load: wait-web

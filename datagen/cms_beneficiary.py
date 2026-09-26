@@ -20,7 +20,7 @@ RACE = {"1": "White", "2": "Black", "3": "Others", "5": "Hispanic"}
 RACE_CDE = {"1": "White", "2": "Black or African American", "5": "Hispanic, Latino, or Spanish"}   # Others has no CDE value
 YESNO = {"1": "Yes", "2": "No"}
 CONDITIONS = {   # CMS chronic conditions flag -> the shared indicator
-    "SP_ALZHDMTA": "Condition: Alzheimer", "SP_CHF": "Condition: Congestive Heart Failure", "SP_CHRNKIDN": "Condition: Kidney Disease",
+    "SP_ALZHDMTA": "Condition: Alzheimer's Disease or Related Disorder", "SP_CHF": "Condition: Congestive Heart Failure", "SP_CHRNKIDN": "Condition: Kidney Disease",
     "SP_CNCR": "Condition: Cancer", "SP_COPD": "Condition: COPD", "SP_DEPRESSN": "Condition: Depression", "SP_DIABETES": "Condition: Diabetes",
     "SP_ISCHMCHT": "Condition: Coronary Heart Disease", "SP_OSTEOPRS": "Condition: Osteoporosis", "SP_RA_OA": "Condition: Arthritis", "SP_STRKETIA": "Condition: Stroke",
 }
@@ -67,9 +67,7 @@ def build_instance(row: dict) -> str:
     for col, label in ANNUAL.items():
         values[label] = usd(row[col])
     xml = record(TITLE, values, study="CMS", agency=AGENCY, source_key="CMS_BENE", subject=(SUBJECT, row["DESYNPUF_ID"]), row_ref=f"DESYNPUF_ID={row['DESYNPUF_ID']}")
-    # SDCStudio's instance template cuts a label at an apostrophe ("Condition: Alzheimer") while the schema fixes the full
-    # label; the template is addressed by the cut label and the record carries the label the schema fixes.
-    return xml.replace("<label>Condition: Alzheimer</label>", "<label>Condition: Alzheimer's Disease or Related Disorder</label>")
+    return xml
 
 
 def generate():

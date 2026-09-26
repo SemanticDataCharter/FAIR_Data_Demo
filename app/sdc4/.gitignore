@@ -20,6 +20,9 @@ db.sqlite3-journal
 # Ignore mediafiles/ except dmlib/ (generated schema artifacts for GraphDB)
 /mediafiles/*
 !/mediafiles/dmlib/
+!/mediafiles/keycloak/
+/mediafiles/keycloak/*
+!/mediafiles/keycloak/import/
 
 # Environment
 .env

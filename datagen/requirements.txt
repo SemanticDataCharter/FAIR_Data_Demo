@@ -1,0 +1,2 @@
+# Dependencies for the FAIR Data Demo generators (host-side). Generation reads source_data/ and writes app/sdc4/import_data/.
+lxml>=5.0

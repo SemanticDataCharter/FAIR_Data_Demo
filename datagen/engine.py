@@ -104,6 +104,14 @@ class Template:
         first occurrence in the template (the adapter is the same element in every cluster of a model) or, when
         the template has none, built from the schema with placeholders.
         """
+        # The schema fixes every label; the scaffold cuts a label at an apostrophe (SDCStudio issue #706), so the
+        # template's labels are repaired from the schema before anything is indexed by them.
+        for el in self.root.iter():
+            tag = _tag(el)
+            if tag.startswith("ms-") and tag[3:] in self.schema.label:
+                lab = el.find("label")
+                if lab is not None and lab.text != self.schema.label[tag[3:]]:
+                    lab.text = self.schema.label[tag[3:]]
         first: dict[str, etree._Element] = {}
         for el in self.root.iter():
             tag = _tag(el)

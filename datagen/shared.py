@@ -28,7 +28,7 @@ ROOT = os.path.join(os.path.dirname(__file__), "..")
 SOURCE = os.path.join(ROOT, "source_data")
 IMPORT_ROOT = os.environ.get("FAIR_IMPORT_DIR") or os.path.join(ROOT, "app", "sdc4", "import_data")
 DEMO_SCALE = os.environ.get("FAIR_FULL") != "1"   # the seeded samples by default; FAIR_FULL=1 takes every row
-SAMPLE = {"brfss": 5000, "cms": 5000}
+SAMPLE = {"brfss": 5000, "cms": 1000}   # 1,000 beneficiaries carry about 57,000 claims and events; 5,000 would carry 290,000 and load for hours
 
 ASKR = EV("ASKR")   # refused
 ASKU = EV("ASKU")   # asked, and the answer is not known

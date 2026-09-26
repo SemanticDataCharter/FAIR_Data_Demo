@@ -9,7 +9,7 @@ for m in component_models():
         if c.retired:
             retired += 1; reasons[' '.join(c.retired_reason.split(' ')[:2])] += 1
         else:
-            active += 1; labels[c.label] += 1; unpublished += (not c.published)
+            active += 1; labels[getattr(c, 'label', getattr(c, 'title', ''))] += 1; unpublished += (not c.published)
 print('ACTIVE', active, 'RETIRED', retired, 'UNPUBLISHED_ACTIVE', unpublished)
 print('REASONS', dict(reasons))
 print('DUP_LABELS', [l for l, n in labels.items() if n > 1][:10])

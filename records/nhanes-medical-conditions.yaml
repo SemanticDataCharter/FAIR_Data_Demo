@@ -1,0 +1,16 @@
+key: nhanes-medical-conditions
+label: NHANES Medical Conditions
+type: Cluster
+description: 'The medical conditions questionnaire (MCQ_J): the shared chronic condition indicators on a self-report basis, whether asthma persists,
+  and whether a doctor said the participant was overweight. Members: Chronic Condition Indicators; Still Have Asthma (MCQ035); Doctor Ever Said
+  You Were Overweight (MCQ080).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C2991
+  basis: standard
+members:
+- chronic-condition-indicators
+- nhanes-still-have-asthma
+- nhanes-doctor-said-overweight

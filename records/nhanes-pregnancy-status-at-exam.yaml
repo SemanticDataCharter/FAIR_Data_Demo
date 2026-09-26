@@ -1,0 +1,17 @@
+key: nhanes-pregnancy-status-at-exam
+label: Pregnancy Status at Exam (RIDEXPRG)
+type: XdToken
+description: Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDEXPRG
+  basis: standard
+enumeration:
+- value: Yes, positive lab pregnancy test or self-reported pregnant at exam
+  definition: http://purl.obolibrary.org/obo/NCIT_C25191
+- value: Not pregnant at exam
+  definition: http://purl.obolibrary.org/obo/NCIT_C25191
+- value: Cannot ascertain if pregnant at exam
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998

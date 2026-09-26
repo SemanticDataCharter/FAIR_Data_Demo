@@ -1,0 +1,68 @@
+{
+  "tiny_id": "cms-end-stage-renal-disease-indicator",
+  "label": "End-Stage Renal Disease Indicator (BENE_ESRD_IND)",
+  "description": "Whether the beneficiary has end-stage renal disease (BENE_ESRD_IND).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Yes",
+      "No"
+    ],
+    "enum_descr": [
+      "Yes",
+      "No"
+    ],
+    "definitions": [
+      "https://loinc.org/LA33-6/",
+      "https://loinc.org/LA32-8/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Yes",
+      "definition": "https://loinc.org/LA33-6/"
+    },
+    {
+      "value": "No",
+      "definition": "https://loinc.org/LA32-8/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-end-stage-renal-disease-indicator",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "dcterms:subject",
+      "iri": "http://snomed.info/id/46177005",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

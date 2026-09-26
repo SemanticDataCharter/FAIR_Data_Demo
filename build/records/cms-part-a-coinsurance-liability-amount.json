@@ -1,0 +1,50 @@
+{
+  "tiny_id": "cms-part-a-coinsurance-liability-amount",
+  "label": "Part A Coinsurance Liability Amount",
+  "description": "The beneficiary's Part A coinsurance liability (NCH_BENE_PTA_COINSRNC_LBLTY_AM), in US dollars.",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "total_digits": 12,
+    "fraction_digits": 2,
+    "units_slot": "https://axius-sdc.com/library/default/units-currency"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-part-a-coinsurance-liability-amount",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "https://schema.org/MonetaryAmount",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,18 @@
+key: brfss-health-status
+label: BRFSS Health Status and Access
+type: Cluster
+description: 'General health as the shared component, the days physical and mental health were not good, time since the last checkup, and exercise
+  in the past 30 days. Members: General Health Status; Days Physical Health Not Good, Past 30 (PHYSHLTH); Days Mental Health Not Good, Past 30
+  (MENTHLTH); Length of Time Since Last Routine Checkup (CHECKUP1); Exercise in Past 30 Days (EXERANY2).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C16669
+  basis: standard
+members:
+- general-health-status
+- brfss-days-physical-health-not-good
+- brfss-days-mental-health-not-good
+- brfss-length-since-last-checkup
+- brfss-exercise-in-past-30-days

@@ -1,0 +1,47 @@
+{
+  "tiny_id": "nhanes-survey-design",
+  "label": "NHANES Survey Design",
+  "description": "The survey design fields a weighted estimate needs: the release cycle, interview and examination status, the interview and MEC weights, the pseudo-PSU and pseudo-stratum. Members: Data Release Cycle (SDDSRVYR); Interview/Examination Status (RIDSTATR); Full Sample 2 Year Interview Weight (WTINT2YR); Full Sample 2 Year MEC Exam Weight (WTMEC2YR); Masked Variance Pseudo-PSU (SDMVPSU); Masked Variance Pseudo-Stratum (SDMVSTRA).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-survey-design",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C142700",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-data-release-cycle",
+    "nhanes-interview-examination-status",
+    "nhanes-interview-weight",
+    "nhanes-mec-exam-weight",
+    "nhanes-masked-variance-psu",
+    "nhanes-masked-variance-stratum"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,68 @@
+{
+  "tiny_id": "veteran-status",
+  "label": "Veteran Status",
+  "description": "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Yes",
+      "No"
+    ],
+    "enum_descr": [
+      "Yes",
+      "No"
+    ],
+    "definitions": [
+      "https://loinc.org/LA33-6/",
+      "https://loinc.org/LA32-8/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Yes",
+      "definition": "https://loinc.org/LA33-6/"
+    },
+    {
+      "value": "No",
+      "definition": "https://loinc.org/LA32-8/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/veteran-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C17742",
+      "basis": "concept",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMQMILIZ",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

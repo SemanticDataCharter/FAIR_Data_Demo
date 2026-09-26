@@ -1,0 +1,16 @@
+key: cms-outpatient-claim-governed-record
+label: CMS Outpatient Claim Governed Record
+type: Cluster
+description: 'A CMS outpatient claim record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov
+  library by identifier. Members: CMS Outpatient Claim; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:exactMatch
+  iri: http://www.w3.org/ns/prov#Entity
+  basis: standard
+members:
+- cms-outpatient-claim
+- https://axius-sdc.com/library/provgov/prov-activity
+- https://axius-sdc.com/library/provgov/prov-agent
+- https://axius-sdc.com/library/provgov/audit-event

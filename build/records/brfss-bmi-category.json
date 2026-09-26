@@ -1,0 +1,76 @@
+{
+  "tiny_id": "brfss-bmi-category",
+  "label": "Computed Body Mass Index Category (_BMI5CAT)",
+  "description": "The agency's computed BMI category (_BMI5CAT).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Underweight",
+      "Normal Weight",
+      "Overweight",
+      "Obese"
+    ],
+    "enum_descr": [
+      "Underweight",
+      "Normal Weight",
+      "Overweight",
+      "Obese"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C17962",
+      "http://purl.obolibrary.org/obo/NCIT_C17958",
+      "http://purl.obolibrary.org/obo/NCIT_C94250",
+      "http://purl.obolibrary.org/obo/NCIT_C3283"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Underweight",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17962"
+    },
+    {
+      "value": "Normal Weight",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17958"
+    },
+    {
+      "value": "Overweight",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C94250"
+    },
+    {
+      "value": "Obese",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C3283"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-bmi-category",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

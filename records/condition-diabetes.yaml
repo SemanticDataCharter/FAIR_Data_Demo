@@ -1,0 +1,16 @@
+key: condition-diabetes
+label: 'Condition: Diabetes'
+type: XdToken
+description: 'Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis:
+  told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/73211009
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

@@ -1,0 +1,19 @@
+key: brfss-disability
+label: BRFSS Disability
+type: Cluster
+description: 'The six disability questions: hearing, vision, cognition, mobility, self-care and independent living. Members: Deaf or Serious Difficulty
+  Hearing (DEAF); Blind or Serious Difficulty Seeing (BLIND); Serious Difficulty Concentrating, Remembering or Deciding (DECIDE); Serious Difficulty
+  Walking or Climbing Stairs (DIFFWALK); Difficulty Dressing or Bathing (DIFFDRES); Difficulty Doing Errands Alone (DIFFALON).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C21007
+  basis: standard
+members:
+- brfss-deaf-or-hard-of-hearing
+- brfss-blind-or-difficulty-seeing
+- brfss-difficulty-concentrating-or-remembering
+- brfss-difficulty-walking-or-climbing-stairs
+- brfss-difficulty-dressing-or-bathing
+- brfss-difficulty-doing-errands-alone

@@ -1,0 +1,62 @@
+{
+  "tiny_id": "cms-sex-code",
+  "label": "Sex (BENE_SEX_IDENT_CD)",
+  "description": "The beneficiary's sex as CMS codes it (BENE_SEX_IDENT_CD). Kept beside the Default administrative gender it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Male",
+      "Female"
+    ],
+    "enum_descr": [
+      "Male",
+      "Female"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C20197",
+      "http://purl.obolibrary.org/obo/NCIT_C16576"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Male",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C20197"
+    },
+    {
+      "value": "Female",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C16576"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-sex-code",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

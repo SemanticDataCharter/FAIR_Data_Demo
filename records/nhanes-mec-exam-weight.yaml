@@ -1,0 +1,15 @@
+key: nhanes-mec-exam-weight
+label: Full Sample 2 Year MEC Exam Weight (WTMEC2YR)
+type: XdQuantity
+description: The full-sample two-year MEC examination weight (WTMEC2YR); zero for participants not examined.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#WTMEC2YR
+  basis: standard
+constraints:
+  units: units-sample-weight
+  total_digits: 12
+  fraction_digits: 4
+  min_inclusive: 0

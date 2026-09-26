@@ -1,0 +1,20 @@
+key: cms-beneficiary
+label: CMS Beneficiary
+type: Cluster
+description: 'One DE-SynPUF beneficiary summary for the 2008 reference year: the beneficiary code, demographics, Medicare coverage, the eleven
+  chronic condition indicators on a claims basis with the ESRD indicator, and the year''s amounts. Members: Beneficiary Code (DESYNPUF_ID); CMS
+  Beneficiary Demographics; CMS Medicare Coverage; Chronic Condition Indicators; End-Stage Renal Disease Indicator (BENE_ESRD_IND); CMS Annual
+  Amounts.'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C41189
+  basis: standard
+members:
+- cms-beneficiary-code
+- cms-beneficiary-demographics
+- cms-medicare-coverage
+- chronic-condition-indicators
+- cms-end-stage-renal-disease-indicator
+- cms-annual-amounts

@@ -1,0 +1,60 @@
+{
+  "tiny_id": "brfss-demographics",
+  "label": "BRFSS Demographics",
+  "description": "The respondent's demographics: the Default administrative gender and the BRFSS sex code, the NIH CDE age and the agency's imputed age, race/ethnicity as the NIH CDE and as BRFSS imputes it, education, marital status, employment and insurance as the NIH CDE and as BRFSS codes them, veteran status, pregnancy, children in the household and the agency's income range. Members: administrative-gender (Default); Sex of Respondent (SEXVAR); Age (NIH CDE); Imputed Age Value Collapsed Above 80 (_AGE80); Race/Ethnicity Self-Identification (NIH CDE); Imputed Race/Ethnicity Value (_IMPRACE); Current Educational Attainment (NIH CDE); Education Level (EDUCA); Marital Status (NIH CDE); Marital Status (MARITAL); Employment Status (NIH CDE); Employment Status (EMPLOY1); Category of Health Insurance (NIH CDE); Primary Source of Health Insurance (PRIMINSR); Veteran Status; Are you pregnant now? (NIH CDE); Pregnancy Status (PREGNANT); Number of Children in Household (CHILDREN); Income Level (INCOME3).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-demographics",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C16495",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "https://axius-sdc.com/library/default/administrative-gender",
+    "brfss-sex-of-respondent",
+    "ct:wuvdeiwoe5bna7nlhcl1c4h9",
+    "brfss-imputed-age-80",
+    "ct:u5tietya3u56hbz2kos06ai7",
+    "brfss-imputed-race-ethnicity",
+    "ct:xtbtk7ro6s9247bcwt4ak4h1",
+    "brfss-education-level",
+    "ct:qsetd453kk9own8co1wmc5cz",
+    "brfss-marital-status",
+    "ct:oy35qocyvn0zxq8ni4azvz39",
+    "brfss-employment-status",
+    "ct:luq973ggnjoo9ixkt0dym8v6",
+    "brfss-primary-source-of-insurance",
+    "veteran-status",
+    "ct:owjt9bcgisxfbco8qnddo2fq",
+    "brfss-pregnancy-status",
+    "brfss-number-of-children-in-household",
+    "brfss-income-level"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,43 @@
+{
+  "tiny_id": "brfss-chronic-conditions",
+  "label": "BRFSS Chronic Conditions",
+  "description": "The chronic health conditions section: the shared chronic condition indicators on a self-report basis, and whether asthma persists. Members: Chronic Condition Indicators; Still Have Asthma (ASTHNOW).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-chronic-conditions",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C2991",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "chronic-condition-indicators",
+    "brfss-still-have-asthma"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

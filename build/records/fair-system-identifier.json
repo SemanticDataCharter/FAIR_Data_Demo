@@ -1,0 +1,42 @@
+{
+  "tiny_id": "fair-system-identifier",
+  "label": "FAIR Pipeline Identifier",
+  "description": "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id).",
+  "sdc_type": "XdString",
+  "excluded": false,
+  "constraints": {
+    "max_length": 120
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/fair-system-identifier",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,15 @@
+key: nhanes-maximum-inflation-level
+label: Maximum Inflation Level (BPXML1)
+type: XdQuantity
+description: The maximum inflation level used, in mm Hg (BPXML1).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPXML1
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-pressure
+  total_digits: 3
+  fraction_digits: 0
+  min_inclusive: 0

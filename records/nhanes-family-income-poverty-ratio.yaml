@@ -1,0 +1,16 @@
+key: nhanes-family-income-poverty-ratio
+label: Ratio of Family Income to Poverty (INDFMPIR)
+type: XdQuantity
+description: The ratio of family income to the poverty guideline (INDFMPIR; 5 means 5 or more).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDFMPIR
+  basis: standard
+constraints:
+  units: units-sample-weight
+  total_digits: 4
+  fraction_digits: 2
+  min_inclusive: 0
+  max_inclusive: 5

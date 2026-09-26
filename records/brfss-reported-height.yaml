@@ -1,0 +1,14 @@
+key: brfss-reported-height
+label: Reported Height in Feet and Inches (HEIGHT3)
+type: XdString
+description: 'Self-reported height as coded (HEIGHT3: feet and inches as FII, or 9xxx for metres and centimetres). The FHIR body height beside
+  it carries the value in centimetres.'
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+constraints:
+  max_length: 4
+  str_fmt: '[0-9]{3,4}'

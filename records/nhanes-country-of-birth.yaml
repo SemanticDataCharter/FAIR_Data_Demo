@@ -1,0 +1,15 @@
+key: nhanes-country-of-birth
+label: Country of Birth (DMDBORN4)
+type: XdToken
+description: Whether the participant was born in the 50 US states or Washington, DC, or elsewhere (DMDBORN4).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDBORN4
+  basis: standard
+enumeration:
+- value: Born in 50 US states or Washington, DC
+  definition: http://purl.obolibrary.org/obo/NCIT_C17234
+- value: Others
+  definition: http://purl.obolibrary.org/obo/NCIT_C17649

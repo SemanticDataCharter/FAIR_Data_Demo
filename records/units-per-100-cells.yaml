@@ -1,0 +1,13 @@
+key: units-per-100-cells
+label: Per 100 Cells
+type: Units
+description: A count per 100 white blood cells (UCUM /100{WBCs}).
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: /100{WBCs}
+  definition: https://ucum.org/ucum

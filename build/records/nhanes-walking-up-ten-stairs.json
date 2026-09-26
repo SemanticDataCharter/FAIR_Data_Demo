@@ -1,0 +1,83 @@
+{
+  "tiny_id": "nhanes-walking-up-ten-stairs",
+  "label": "Difficulty Walking Up Ten Stairs (PFQ061C)",
+  "description": "Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "No difficulty",
+      "Some difficulty",
+      "Much difficulty",
+      "Unable to do",
+      "Do not do this activity"
+    ],
+    "enum_descr": [
+      "No difficulty",
+      "Some difficulty",
+      "Much difficulty",
+      "Unable to do",
+      "Do not do this activity"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C17998",
+      "http://purl.obolibrary.org/obo/NCIT_C17998",
+      "http://purl.obolibrary.org/obo/NCIT_C17998",
+      "http://purl.obolibrary.org/obo/NCIT_C17998",
+      "http://purl.obolibrary.org/obo/NCIT_C17998"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "No difficulty",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    },
+    {
+      "value": "Some difficulty",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    },
+    {
+      "value": "Much difficulty",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    },
+    {
+      "value": "Unable to do",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    },
+    {
+      "value": "Do not do this activity",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-walking-up-ten-stairs",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061C",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

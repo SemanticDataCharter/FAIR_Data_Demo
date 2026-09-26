@@ -1,0 +1,16 @@
+key: brfss-difficulty-concentrating-or-remembering
+label: Serious Difficulty Concentrating, Remembering or Deciding (DECIDE)
+type: XdToken
+description: Serious Difficulty Concentrating, Remembering or Deciding (DECIDE), the American Community Survey disability question as BRFSS asks
+  it.
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

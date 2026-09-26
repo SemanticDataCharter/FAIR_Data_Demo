@@ -1,0 +1,22 @@
+key: brfss-respondent
+label: BRFSS Respondent
+type: Cluster
+description: 'One BRFSS 2022 respondent: the sequence number, survey design, demographics, health status and access, chronic conditions, body
+  measures, tobacco and alcohol, and disability, from the columns of the LLCP2022 file this demonstration carries. Members: Annual Sequence Number
+  (SEQNO); BRFSS Survey Design; BRFSS Demographics; BRFSS Health Status and Access; BRFSS Chronic Conditions; BRFSS Body Measures; BRFSS Tobacco
+  and Alcohol Use; BRFSS Disability.'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C41189
+  basis: standard
+members:
+- brfss-annual-sequence-number
+- brfss-survey-design
+- brfss-demographics
+- brfss-health-status
+- brfss-chronic-conditions
+- brfss-body-measures
+- brfss-tobacco-and-alcohol
+- brfss-disability

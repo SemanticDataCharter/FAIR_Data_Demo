@@ -1,0 +1,42 @@
+{
+  "tiny_id": "fair-source-file",
+  "label": "FAIR Source File",
+  "description": "The federal source file a record was generated from, as the ProvGov PROV entity by identifier: its identifier (the download URL), label (the file name), description (the release) and location. The audit's location. Members: prov-entity (Provgov).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/fair-source-file",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://www.w3.org/ns/prov#Entity",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "https://axius-sdc.com/library/provgov/prov-entity"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,20 @@
+key: cms-race-code
+label: Race (BENE_RACE_CD)
+type: XdToken
+description: The beneficiary's race as CMS codes it (BENE_RACE_CD). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to;
+  Others has no CDE value.
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+enumeration:
+- value: White
+  definition: http://purl.obolibrary.org/obo/NCIT_C41261
+- value: Black
+  definition: http://purl.obolibrary.org/obo/NCIT_C16352
+- value: Others
+  definition: http://purl.obolibrary.org/obo/NCIT_C17649
+- value: Hispanic
+  definition: http://purl.obolibrary.org/obo/NCIT_C17459

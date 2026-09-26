@@ -1,0 +1,56 @@
+{
+  "tiny_id": "nhanes-family-income-poverty-ratio",
+  "label": "Ratio of Family Income to Poverty (INDFMPIR)",
+  "description": "The ratio of family income to the poverty guideline (INDFMPIR; 5 means 5 or more).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Sample Weight",
+    "total_digits": 4,
+    "fraction_digits": 2,
+    "min_inclusive": 0,
+    "max_inclusive": 5,
+    "units_key": "units-sample-weight",
+    "units_spec": {
+      "label": "Sample Weight",
+      "enums": [
+        "1"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/NUM"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-family-income-poverty-ratio",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDFMPIR",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

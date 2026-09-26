@@ -1,0 +1,13 @@
+key: units-drinks
+label: Drinks
+type: Units
+description: A count of alcoholic drinks.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: drinks
+  definition: http://qudt.org/vocab/unit/NUM

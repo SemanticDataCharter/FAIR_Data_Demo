@@ -1,0 +1,17 @@
+key: brfss-body-measures
+label: BRFSS Body Measures
+type: Cluster
+description: 'Self-reported height and weight as the agency codes them, and as the FHIR vital signs panel by identifier (body height, body weight,
+  BMI), with the agency''s computed BMI category. Members: Reported Height in Feet and Inches (HEIGHT3); Reported Weight in Pounds (WEIGHT2);
+  vital-signs-panel (FHIR); Computed Body Mass Index Category (_BMI5CAT).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/39156-5/
+  basis: standard
+members:
+- brfss-reported-height
+- brfss-reported-weight-in-pounds
+- https://axius-sdc.com/library/fhir/vital-signs-panel
+- brfss-bmi-category

@@ -1,0 +1,55 @@
+{
+  "tiny_id": "nhanes-mec-exam-weight",
+  "label": "Full Sample 2 Year MEC Exam Weight (WTMEC2YR)",
+  "description": "The full-sample two-year MEC examination weight (WTMEC2YR); zero for participants not examined.",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Sample Weight",
+    "total_digits": 12,
+    "fraction_digits": 4,
+    "min_inclusive": 0,
+    "units_key": "units-sample-weight",
+    "units_spec": {
+      "label": "Sample Weight",
+      "enums": [
+        "1"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/NUM"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-mec-exam-weight",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#WTMEC2YR",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

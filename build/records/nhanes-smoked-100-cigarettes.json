@@ -1,0 +1,68 @@
+{
+  "tiny_id": "nhanes-smoked-100-cigarettes",
+  "label": "Smoked at Least 100 Cigarettes in Life (SMQ020)",
+  "description": "Whether the participant has smoked at least 100 cigarettes in their life (SMQ020).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Yes",
+      "No"
+    ],
+    "enum_descr": [
+      "Yes",
+      "No"
+    ],
+    "definitions": [
+      "https://loinc.org/LA33-6/",
+      "https://loinc.org/LA32-8/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Yes",
+      "definition": "https://loinc.org/LA33-6/"
+    },
+    {
+      "value": "No",
+      "definition": "https://loinc.org/LA32-8/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-smoked-100-cigarettes",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ020",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "https://loinc.org/63581-3/",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

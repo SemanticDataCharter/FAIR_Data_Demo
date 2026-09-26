@@ -1,0 +1,14 @@
+key: brfss-chronic-conditions
+label: BRFSS Chronic Conditions
+type: Cluster
+description: 'The chronic health conditions section: the shared chronic condition indicators on a self-report basis, and whether asthma persists.
+  Members: Chronic Condition Indicators; Still Have Asthma (ASTHNOW).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C2991
+  basis: standard
+members:
+- chronic-condition-indicators
+- brfss-still-have-asthma

@@ -1,0 +1,16 @@
+key: condition-liver-condition
+label: 'Condition: Liver Condition'
+type: XdToken
+description: 'Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator
+  Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/235856003
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

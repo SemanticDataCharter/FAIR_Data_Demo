@@ -1,0 +1,44 @@
+{
+  "tiny_id": "system-hcpcs",
+  "label": "Code System: HCPCS",
+  "description": "The code system of a coded value, fixed: HCPCS Level I (CPT) and Level II (http://www.ama-assn.org/go/cpt and https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system). FHIR Coding.system.",
+  "sdc_type": "XdLink",
+  "excluded": false,
+  "constraints": {
+    "link": "http://www.ama-assn.org/go/cpt",
+    "relation": "codeSystem",
+    "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/system-hcpcs",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://www.ama-assn.org/go/cpt",
+      "basis": "mechanical",
+      "note": "HCPCS"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://www.ama-assn.org/go/cpt",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

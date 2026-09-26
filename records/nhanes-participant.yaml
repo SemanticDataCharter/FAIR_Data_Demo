@@ -1,0 +1,22 @@
+key: nhanes-participant
+label: NHANES Participant
+type: Cluster
+description: 'One NHANES 2017-2018 participant: the sequence number, the survey design, demographics, the blood pressure examination, laboratory
+  results, smoking, medical conditions and physical functioning, joined on SEQN across the eight source files. Members: Respondent Sequence Number
+  (SEQN); NHANES Survey Design; NHANES Demographics; NHANES Blood Pressure; NHANES Laboratory Results; NHANES Smoking; NHANES Medical Conditions;
+  NHANES Physical Functioning.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C41189
+  basis: standard
+members:
+- nhanes-respondent-sequence-number
+- nhanes-survey-design
+- nhanes-demographics
+- nhanes-blood-pressure
+- nhanes-laboratory-results
+- nhanes-smoking
+- nhanes-medical-conditions
+- nhanes-physical-functioning

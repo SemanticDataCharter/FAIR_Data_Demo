@@ -1,0 +1,15 @@
+key: product-ndc
+label: Product (NDC)
+type: Cluster
+description: 'A dispensed product coded in the National Drug Code: the code, its display text and the fixed code system (FHIR Coding). Members:
+  Product Service ID (NDC); code-display-text (FHIR); Code System: NDC.'
+source:
+  name: NDC
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/datatypes.html#Coding
+  basis: standard
+members:
+- ndc-code
+- https://axius-sdc.com/library/fhir/code-display-text
+- system-ndc

@@ -1,0 +1,17 @@
+key: brfss-days-mental-health-not-good
+label: Days Mental Health Not Good, Past 30 (MENTHLTH)
+type: XdCount
+description: The number of days in the past 30 the respondent's mental health was not good (MENTHLTH).
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+- predicate: skos:closeMatch
+  iri: https://loinc.org/63579-7/
+  basis: concept
+constraints:
+  units: units-days
+  min_inclusive: 0
+  max_inclusive: 30

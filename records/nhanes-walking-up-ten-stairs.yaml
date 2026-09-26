@@ -1,0 +1,21 @@
+key: nhanes-walking-up-ten-stairs
+label: Difficulty Walking Up Ten Stairs (PFQ061C)
+type: XdToken
+description: Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061C
+  basis: standard
+enumeration:
+- value: No difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Some difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Much difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Unable to do
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Do not do this activity
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998

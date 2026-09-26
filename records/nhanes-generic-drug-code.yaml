@@ -1,0 +1,13 @@
+key: nhanes-generic-drug-code
+label: Generic Drug Code (RXDDRGID)
+type: XdString
+description: The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is
+  not presented as one.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRGID
+  basis: standard
+constraints:
+  max_length: 12

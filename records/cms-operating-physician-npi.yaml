@@ -1,0 +1,13 @@
+key: cms-operating-physician-npi
+label: Operating Physician NPI (OP_PHYSN_NPI)
+type: XdString
+description: The operating physician's National Provider Identifier (OP_PHYSN_NPI).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  max_length: 10
+  str_fmt: '[0-9]{10}'

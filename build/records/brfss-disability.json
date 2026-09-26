@@ -1,0 +1,47 @@
+{
+  "tiny_id": "brfss-disability",
+  "label": "BRFSS Disability",
+  "description": "The six disability questions: hearing, vision, cognition, mobility, self-care and independent living. Members: Deaf or Serious Difficulty Hearing (DEAF); Blind or Serious Difficulty Seeing (BLIND); Serious Difficulty Concentrating, Remembering or Deciding (DECIDE); Serious Difficulty Walking or Climbing Stairs (DIFFWALK); Difficulty Dressing or Bathing (DIFFDRES); Difficulty Doing Errands Alone (DIFFALON).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-disability",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C21007",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "brfss-deaf-or-hard-of-hearing",
+    "brfss-blind-or-difficulty-seeing",
+    "brfss-difficulty-concentrating-or-remembering",
+    "brfss-difficulty-walking-or-climbing-stairs",
+    "brfss-difficulty-dressing-or-bathing",
+    "brfss-difficulty-doing-errands-alone"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

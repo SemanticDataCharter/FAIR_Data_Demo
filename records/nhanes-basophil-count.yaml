@@ -1,0 +1,18 @@
+key: nhanes-basophil-count
+label: Basophils Number
+type: XdQuantity
+description: Basophils Number (LBDBANO, LOINC 704-7).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/704-7/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDBANO
+  basis: standard
+constraints:
+  units: units-thousand-per-microlitre
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

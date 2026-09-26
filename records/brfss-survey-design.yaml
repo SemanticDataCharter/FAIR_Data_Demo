@@ -1,0 +1,18 @@
+key: brfss-survey-design
+label: BRFSS Survey Design
+type: Cluster
+description: 'The survey design fields a weighted estimate needs: the state, interview date, PSU, stratum and final weight. Members: State FIPS
+  Code (_STATE); Interview Date (IDATE); Primary Sampling Unit (_PSU); Sample Design Stratification Variable (_STSTR); Final Weight: Land-line
+  and Cell-phone Data (_LLCPWT).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C142700
+  basis: standard
+members:
+- brfss-state-fips-code
+- brfss-interview-date
+- brfss-primary-sampling-unit
+- brfss-sample-design-stratum
+- brfss-final-weight

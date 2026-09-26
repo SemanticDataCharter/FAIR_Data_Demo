@@ -1,0 +1,61 @@
+{
+  "tiny_id": "nhanes-hemoglobin",
+  "label": "Hemoglobin",
+  "description": "Hemoglobin (LBXHGB, LOINC 718-7).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Grams per Decilitre",
+    "total_digits": 4,
+    "fraction_digits": 1,
+    "min_inclusive": 0,
+    "units_key": "units-gram-per-decilitre",
+    "units_spec": {
+      "label": "Grams per Decilitre",
+      "enums": [
+        "g/dL"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/GM-PER-DeciL"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-hemoglobin",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/718-7/",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXHGB",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

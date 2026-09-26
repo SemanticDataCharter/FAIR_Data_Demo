@@ -1,0 +1,44 @@
+{
+  "tiny_id": "nhanes-medical-conditions",
+  "label": "NHANES Medical Conditions",
+  "description": "The medical conditions questionnaire (MCQ_J): the shared chronic condition indicators on a self-report basis, whether asthma persists, and whether a doctor said the participant was overweight. Members: Chronic Condition Indicators; Still Have Asthma (MCQ035); Doctor Ever Said You Were Overweight (MCQ080).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-medical-conditions",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C2991",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "chronic-condition-indicators",
+    "nhanes-still-have-asthma",
+    "nhanes-doctor-said-overweight"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

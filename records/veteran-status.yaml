@@ -1,0 +1,18 @@
+key: veteran-status
+label: Veteran Status
+type: XdToken
+description: Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:closeMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C17742
+  basis: concept
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMQMILIZ
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

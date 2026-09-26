@@ -1,0 +1,16 @@
+key: brfss-respondent-governed-record
+label: BRFSS Respondent Governed Record
+type: Cluster
+description: 'A BRFSS respondent record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov
+  library by identifier. Members: BRFSS Respondent; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:exactMatch
+  iri: http://www.w3.org/ns/prov#Entity
+  basis: standard
+members:
+- brfss-respondent
+- https://axius-sdc.com/library/provgov/prov-activity
+- https://axius-sdc.com/library/provgov/prov-agent
+- https://axius-sdc.com/library/provgov/audit-event

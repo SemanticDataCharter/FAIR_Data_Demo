@@ -1,0 +1,38 @@
+key: nhanes-laboratory-results
+label: NHANES Laboratory Results
+type: Cluster
+description: 'The laboratory results carried: total cholesterol (TCHOL_J) and the complete blood count with differential (CBC_J), each analyte
+  a quantity identified by its LOINC code. Members: Total Cholesterol; Total Cholesterol (SI); White Blood Cell Count; Lymphocyte Percent; Monocyte
+  Percent; Segmented Neutrophils Percent; Eosinophils Percent; Basophils Percent; Lymphocyte Number; Monocyte Number; Segmented Neutrophils Number;
+  Eosinophils Number; Basophils Number; Red Blood Cell Count; Hemoglobin; Hematocrit; Mean Cell Volume; Mean Cell Hemoglobin; Mean Cell Hemoglobin
+  Concentration; Red Cell Distribution Width; Platelet Count; Mean Platelet Volume; Nucleated Red Blood Cells.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/StructureDefinition/Observation
+  basis: standard
+members:
+- nhanes-total-cholesterol
+- nhanes-total-cholesterol-si
+- nhanes-white-blood-cell-count
+- nhanes-lymphocyte-percent
+- nhanes-monocyte-percent
+- nhanes-neutrophil-percent
+- nhanes-eosinophil-percent
+- nhanes-basophil-percent
+- nhanes-lymphocyte-count
+- nhanes-monocyte-count
+- nhanes-neutrophil-count
+- nhanes-eosinophil-count
+- nhanes-basophil-count
+- nhanes-red-blood-cell-count
+- nhanes-hemoglobin
+- nhanes-hematocrit
+- nhanes-mean-cell-volume
+- nhanes-mean-cell-hemoglobin
+- nhanes-mean-cell-hemoglobin-concentration
+- nhanes-red-cell-distribution-width
+- nhanes-platelet-count
+- nhanes-mean-platelet-volume
+- nhanes-nucleated-red-blood-cells

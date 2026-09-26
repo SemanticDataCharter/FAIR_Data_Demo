@@ -1,0 +1,14 @@
+key: nhanes-number-of-prescription-medicines
+label: Number of Prescription Medicines Taken (RXDCOUNT)
+type: XdCount
+description: The number of prescription medicines the participant is taking (RXDCOUNT).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDCOUNT
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-items
+  min_inclusive: 0
+  max_inclusive: 50

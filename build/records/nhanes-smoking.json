@@ -1,0 +1,47 @@
+{
+  "tiny_id": "nhanes-smoking",
+  "label": "NHANES Smoking",
+  "description": "Cigarette use (SMQ_J): the two questions the smoking status derives from, the status itself as the shared component, the age started, the recent daily count and e-cigarette use. Members: Smoked at Least 100 Cigarettes in Life (SMQ020); Do You Now Smoke Cigarettes (SMQ040); Smoking Status; Age Started Smoking Cigarettes Regularly (SMD030); Average Cigarettes per Day, Past 30 Days (SMD650); Ever Used an E-cigarette (SMQ900).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-smoking",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/72166-2/",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-smoked-100-cigarettes",
+    "nhanes-now-smoke-cigarettes",
+    "smoking-status",
+    "nhanes-age-started-smoking",
+    "nhanes-cigarettes-per-day-past-30-days",
+    "nhanes-ever-used-e-cigarette"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

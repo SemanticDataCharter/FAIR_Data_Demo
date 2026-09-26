@@ -1,0 +1,19 @@
+key: brfss-computed-smoking-status
+label: Computed Smoking Status (_SMOKER3)
+type: XdToken
+description: The agency's four-level computed smoking status (_SMOKER3). The shared Smoking Status beside it is derived from the same answers.
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: Current smoker - now smokes every day
+  definition: https://loinc.org/LA18976-3/
+- value: Current smoker - now smokes some days
+  definition: https://loinc.org/LA18977-1/
+- value: Former smoker
+  definition: https://loinc.org/LA15920-4/
+- value: Never smoked
+  definition: https://loinc.org/LA18978-9/

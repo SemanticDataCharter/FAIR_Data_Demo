@@ -1,0 +1,14 @@
+key: cms-part-b-coverage-months
+label: Supplementary Medical Insurance (Part B) Coverage Months
+type: XdCount
+description: Total months of Part B coverage in the reference year (BENE_SMI_CVRAGE_TOT_MONS).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  units: units-months
+  min_inclusive: 0
+  max_inclusive: 12

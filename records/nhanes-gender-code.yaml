@@ -1,0 +1,15 @@
+key: nhanes-gender-code
+label: Gender (RIAGENDR)
+type: XdToken
+description: The participant's gender as NHANES codes it (RIAGENDR). Kept beside the Default administrative gender it is mapped to.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIAGENDR
+  basis: standard
+enumeration:
+- value: Male
+  definition: http://purl.obolibrary.org/obo/NCIT_C20197
+- value: Female
+  definition: http://purl.obolibrary.org/obo/NCIT_C16576

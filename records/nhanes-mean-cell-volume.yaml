@@ -1,0 +1,18 @@
+key: nhanes-mean-cell-volume
+label: Mean Cell Volume
+type: XdQuantity
+description: Mean Cell Volume (LBXMCVSI, LOINC 787-2).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/787-2/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMCVSI
+  basis: standard
+constraints:
+  units: units-femtolitre
+  total_digits: 5
+  fraction_digits: 1
+  min_inclusive: 0

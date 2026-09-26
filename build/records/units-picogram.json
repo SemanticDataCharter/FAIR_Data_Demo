@@ -1,0 +1,55 @@
+{
+  "tiny_id": "units-picogram",
+  "label": "Picograms",
+  "description": "Mass in picograms.",
+  "sdc_type": "Units",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "pg"
+    ],
+    "enum_descr": [
+      "pg"
+    ],
+    "definitions": [
+      "http://qudt.org/vocab/unit/PicoGM"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "pg",
+      "definition": "http://qudt.org/vocab/unit/PicoGM"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/units-picogram",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://qudt.org/",
+      "basis": "mechanical",
+      "note": "QUDT"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://qudt.org/schema/qudt/Unit",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

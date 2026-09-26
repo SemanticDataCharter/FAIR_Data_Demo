@@ -1,0 +1,16 @@
+key: condition-emphysema
+label: 'Condition: Emphysema'
+type: XdToken
+description: 'Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis:
+  told by a health professional, or found in claims. Carried by NHANES MCQ160G.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/87433001
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

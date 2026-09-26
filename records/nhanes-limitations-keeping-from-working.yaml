@@ -1,0 +1,15 @@
+key: nhanes-limitations-keeping-from-working
+label: Limitations Keeping You from Working (PFQ049)
+type: XdToken
+description: Whether a physical, mental or emotional problem keeps the participant from working (PFQ049).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ049
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

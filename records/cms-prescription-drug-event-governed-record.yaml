@@ -1,0 +1,16 @@
+key: cms-prescription-drug-event-governed-record
+label: CMS Prescription Drug Event Governed Record
+type: Cluster
+description: 'A CMS prescription drug event record. The governed record: the data cluster, the PROV activity and agent and the audit event from
+  the ProvGov library by identifier. Members: CMS Prescription Drug Event; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:exactMatch
+  iri: http://www.w3.org/ns/prov#Entity
+  basis: standard
+members:
+- cms-prescription-drug-event
+- https://axius-sdc.com/library/provgov/prov-activity
+- https://axius-sdc.com/library/provgov/prov-agent
+- https://axius-sdc.com/library/provgov/audit-event

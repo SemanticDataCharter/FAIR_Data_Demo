@@ -1,0 +1,46 @@
+{
+  "tiny_id": "brfss-reported-weight-in-pounds",
+  "label": "Reported Weight in Pounds (WEIGHT2)",
+  "description": "Self-reported weight without shoes, in pounds as reported (WEIGHT2; the agency's kilogram reports are converted). The FHIR body weight beside it carries the same value in kilograms.",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "total_digits": 4,
+    "fraction_digits": 0,
+    "min_inclusive": 50,
+    "max_inclusive": 999,
+    "units_slot": "https://axius-sdc.com/library/default/units-mass-us"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-reported-weight-in-pounds",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

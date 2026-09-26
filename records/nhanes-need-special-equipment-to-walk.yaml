@@ -1,0 +1,15 @@
+key: nhanes-need-special-equipment-to-walk
+label: Need Special Equipment to Walk (PFQ054)
+type: XdToken
+description: Whether the participant needs special equipment to walk (PFQ054).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ054
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

@@ -1,0 +1,13 @@
+key: cms-claim-hcpcs-7
+label: Claim HCPCS 7
+type: Cluster
+description: 'HCPCS code 7 on the claim (HCPCS_CD_7) as a coded value; the first ten of the file''s forty-five line slots are carried. Members:
+  Procedure (HCPCS).'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/claim-definitions.html#Claim.item
+  basis: standard
+members:
+- procedure-hcpcs

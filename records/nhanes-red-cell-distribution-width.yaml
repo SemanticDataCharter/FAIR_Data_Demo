@@ -1,0 +1,18 @@
+key: nhanes-red-cell-distribution-width
+label: Red Cell Distribution Width
+type: XdQuantity
+description: Red Cell Distribution Width (LBXRDW, LOINC 788-0).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/788-0/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXRDW
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-percentage
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

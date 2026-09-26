@@ -1,0 +1,16 @@
+key: ndc-code
+label: Product Service ID (NDC)
+type: XdString
+description: The National Drug Code of the product dispensed (PROD_SRVC_ID), eleven digits.
+source:
+  name: NDC
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/sid/ndc
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  max_length: 11
+  str_fmt: '[0-9]{11}'

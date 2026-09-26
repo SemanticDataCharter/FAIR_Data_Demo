@@ -1,0 +1,17 @@
+key: cms-annual-carrier-beneficiary-responsibility
+label: Carrier Annual Beneficiary Responsibility
+type: XdQuantity
+description: The beneficiary's responsibility for carrier services in the year (BENRES_CAR), in US dollars.
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+- predicate: skos:closeMatch
+  iri: https://schema.org/MonetaryAmount
+  basis: concept
+constraints:
+  units: https://axius-sdc.com/library/default/units-currency
+  total_digits: 12
+  fraction_digits: 2

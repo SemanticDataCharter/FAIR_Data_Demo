@@ -1,0 +1,44 @@
+{
+  "tiny_id": "system-icd9cm",
+  "label": "Code System: ICD-9-CM",
+  "description": "The code system of a coded value, fixed: ICD-9-CM (http://hl7.org/fhir/sid/icd-9-cm). FHIR Coding.system.",
+  "sdc_type": "XdLink",
+  "excluded": false,
+  "constraints": {
+    "link": "http://hl7.org/fhir/sid/icd-9-cm",
+    "relation": "codeSystem",
+    "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/system-icd9cm",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://hl7.org/fhir/sid/icd-9-cm",
+      "basis": "mechanical",
+      "note": "ICD-9-CM"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/sid/icd-9-cm",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

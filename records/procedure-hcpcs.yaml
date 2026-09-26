@@ -1,0 +1,15 @@
+key: procedure-hcpcs
+label: Procedure (HCPCS)
+type: Cluster
+description: 'A procedure or service coded in HCPCS: the code, its display text and the fixed code system (FHIR Coding). Members: HCPCS Code;
+  code-display-text (FHIR); Code System: HCPCS.'
+source:
+  name: HCPCS
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/datatypes.html#Coding
+  basis: standard
+members:
+- hcpcs-code
+- https://axius-sdc.com/library/fhir/code-display-text
+- system-hcpcs

@@ -1,0 +1,18 @@
+key: cms-end-stage-renal-disease-indicator
+label: End-Stage Renal Disease Indicator (BENE_ESRD_IND)
+type: XdToken
+description: Whether the beneficiary has end-stage renal disease (BENE_ESRD_IND).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/46177005
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

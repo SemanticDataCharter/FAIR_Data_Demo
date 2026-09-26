@@ -1,0 +1,15 @@
+key: nhanes-arm-selected
+label: Arm Selected (BPAARM)
+type: XdToken
+description: The arm the blood pressure was measured on (BPAARM).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPAARM
+  basis: standard
+enumeration:
+- value: Right
+  definition: http://snomed.info/id/368209003
+- value: Left
+  definition: http://snomed.info/id/368208006

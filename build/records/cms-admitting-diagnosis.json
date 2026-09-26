@@ -1,0 +1,42 @@
+{
+  "tiny_id": "cms-admitting-diagnosis",
+  "label": "Admitting Diagnosis",
+  "description": "The admitting diagnosis (ADMTNG_ICD9_DGNS_CD) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-admitting-diagnosis",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.diagnosis",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "diagnosis-icd9cm"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

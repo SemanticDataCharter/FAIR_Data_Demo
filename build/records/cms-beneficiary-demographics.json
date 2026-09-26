@@ -1,0 +1,50 @@
+{
+  "tiny_id": "cms-beneficiary-demographics",
+  "label": "CMS Beneficiary Demographics",
+  "description": "The beneficiary's demographics: the Default date of birth and administrative gender with the CMS sex code, the FHIR patient's deceased indicator and date by identifier, race as the NIH CDE and as CMS codes it, and the state and county of the mailing address. Members: date-of-birth (Default); administrative-gender (Default); Sex (BENE_SEX_IDENT_CD); deceased-indicator (FHIR); deceased-date (FHIR); Race/Ethnicity Self-Identification (NIH CDE); Race (BENE_RACE_CD); State Code (SP_STATE_CODE); County Code (BENE_COUNTY_CD).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-beneficiary-demographics",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C16495",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "https://axius-sdc.com/library/default/date-of-birth",
+    "https://axius-sdc.com/library/default/administrative-gender",
+    "cms-sex-code",
+    "https://axius-sdc.com/library/fhir/deceased-indicator",
+    "https://axius-sdc.com/library/fhir/deceased-date",
+    "ct:u5tietya3u56hbz2kos06ai7",
+    "cms-race-code",
+    "cms-state-code",
+    "cms-county-code"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,14 @@
+key: cms-claim-line-segment
+label: Claim Line Segment (SEGMENT)
+type: XdCount
+description: The claim line segment (SEGMENT).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-items
+  min_inclusive: 1
+  max_inclusive: 9

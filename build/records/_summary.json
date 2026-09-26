@@ -1,0 +1,19 @@
+{
+  "records": 266,
+  "by_type": {
+    "XdString": 23,
+    "XdCount": 22,
+    "XdToken": 81,
+    "Cluster": 70,
+    "XdQuantity": 49,
+    "XdTemporal": 4,
+    "XdLink": 3,
+    "Units": 14
+  },
+  "identity": {
+    "none": 124,
+    "close": 41,
+    "exact": 101
+  },
+  "supersedes": 0
+}

@@ -1,0 +1,15 @@
+key: brfss-exercise-in-past-30-days
+label: Exercise in Past 30 Days (EXERANY2)
+type: XdToken
+description: Whether the respondent took part in any physical activity or exercise in the past month other than their regular job (EXERANY2).
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

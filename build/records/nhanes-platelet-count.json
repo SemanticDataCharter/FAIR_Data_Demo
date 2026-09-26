@@ -1,0 +1,61 @@
+{
+  "tiny_id": "nhanes-platelet-count",
+  "label": "Platelet Count",
+  "description": "Platelet Count (LBXPLTSI, LOINC 777-3).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Thousands per Microlitre",
+    "total_digits": 4,
+    "fraction_digits": 0,
+    "min_inclusive": 0,
+    "units_key": "units-thousand-per-microlitre",
+    "units_spec": {
+      "label": "Thousands per Microlitre",
+      "enums": [
+        "10*3/uL"
+      ],
+      "definitions": [
+        "https://ucum.org/ucum"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-platelet-count",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/777-3/",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXPLTSI",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

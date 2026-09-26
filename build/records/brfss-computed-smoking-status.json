@@ -1,0 +1,76 @@
+{
+  "tiny_id": "brfss-computed-smoking-status",
+  "label": "Computed Smoking Status (_SMOKER3)",
+  "description": "The agency's four-level computed smoking status (_SMOKER3). The shared Smoking Status beside it is derived from the same answers.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Current smoker - now smokes every day",
+      "Current smoker - now smokes some days",
+      "Former smoker",
+      "Never smoked"
+    ],
+    "enum_descr": [
+      "Current smoker - now smokes every day",
+      "Current smoker - now smokes some days",
+      "Former smoker",
+      "Never smoked"
+    ],
+    "definitions": [
+      "https://loinc.org/LA18976-3/",
+      "https://loinc.org/LA18977-1/",
+      "https://loinc.org/LA15920-4/",
+      "https://loinc.org/LA18978-9/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Current smoker - now smokes every day",
+      "definition": "https://loinc.org/LA18976-3/"
+    },
+    {
+      "value": "Current smoker - now smokes some days",
+      "definition": "https://loinc.org/LA18977-1/"
+    },
+    {
+      "value": "Former smoker",
+      "definition": "https://loinc.org/LA15920-4/"
+    },
+    {
+      "value": "Never smoked",
+      "definition": "https://loinc.org/LA18978-9/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-computed-smoking-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

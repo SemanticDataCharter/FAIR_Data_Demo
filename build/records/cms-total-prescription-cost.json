@@ -1,0 +1,50 @@
+{
+  "tiny_id": "cms-total-prescription-cost",
+  "label": "Total Prescription Cost",
+  "description": "The gross drug cost (TOT_RX_CST_AMT), in US dollars.",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "total_digits": 12,
+    "fraction_digits": 2,
+    "units_slot": "https://axius-sdc.com/library/default/units-currency"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-total-prescription-cost",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "https://schema.org/MonetaryAmount",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

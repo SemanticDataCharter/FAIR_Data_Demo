@@ -1,0 +1,62 @@
+{
+  "tiny_id": "condition-indicator-basis",
+  "label": "Condition Indicator Basis",
+  "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Self-report of a professional diagnosis",
+      "Claims-based algorithm"
+    ],
+    "enum_descr": [
+      "Self-report of a professional diagnosis",
+      "Claims-based algorithm"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C93409",
+      "http://purl.obolibrary.org/obo/NCIT_C25404"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Self-report of a professional diagnosis",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C93409"
+    },
+    {
+      "value": "Claims-based algorithm",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25404"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/condition-indicator-basis",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C25596",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

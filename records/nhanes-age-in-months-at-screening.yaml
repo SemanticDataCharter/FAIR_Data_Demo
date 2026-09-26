@@ -1,0 +1,14 @@
+key: nhanes-age-in-months-at-screening
+label: Age in Months at Screening (RIDAGEMN)
+type: XdCount
+description: Age in months at screening, reported for participants aged 0 to 24 months (RIDAGEMN).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDAGEMN
+  basis: standard
+constraints:
+  units: units-months
+  min_inclusive: 0
+  max_inclusive: 24

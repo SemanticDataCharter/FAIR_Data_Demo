@@ -1,0 +1,55 @@
+{
+  "tiny_id": "nhanes-data-release-cycle",
+  "label": "Data Release Cycle (SDDSRVYR)",
+  "description": "The NHANES data release cycle (SDDSRVYR).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "NHANES 2017-2018 public release"
+    ],
+    "enum_descr": [
+      "NHANES 2017-2018 public release"
+    ],
+    "definitions": [
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDDSRVYR"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "NHANES 2017-2018 public release",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDDSRVYR"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-data-release-cycle",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDDSRVYR",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

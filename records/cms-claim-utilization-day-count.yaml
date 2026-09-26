@@ -1,0 +1,14 @@
+key: cms-claim-utilization-day-count
+label: Claim Utilization Day Count (CLM_UTLZTN_DAY_CNT)
+type: XdCount
+description: The number of covered days on the claim (CLM_UTLZTN_DAY_CNT).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  units: units-days
+  min_inclusive: 0
+  max_inclusive: 366

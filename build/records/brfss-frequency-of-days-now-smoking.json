@@ -1,0 +1,69 @@
+{
+  "tiny_id": "brfss-frequency-of-days-now-smoking",
+  "label": "Frequency of Days Now Smoking (SMOKDAY2)",
+  "description": "Whether the respondent now smokes cigarettes every day, some days or not at all (SMOKDAY2).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Every day",
+      "Some days",
+      "Not at all"
+    ],
+    "enum_descr": [
+      "Every day",
+      "Some days",
+      "Not at all"
+    ],
+    "definitions": [
+      "https://loinc.org/LA18976-3/",
+      "https://loinc.org/LA18977-1/",
+      "https://loinc.org/LA15920-4/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Every day",
+      "definition": "https://loinc.org/LA18976-3/"
+    },
+    {
+      "value": "Some days",
+      "definition": "https://loinc.org/LA18977-1/"
+    },
+    {
+      "value": "Not at all",
+      "definition": "https://loinc.org/LA15920-4/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-frequency-of-days-now-smoking",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

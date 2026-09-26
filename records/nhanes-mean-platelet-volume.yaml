@@ -1,0 +1,18 @@
+key: nhanes-mean-platelet-volume
+label: Mean Platelet Volume
+type: XdQuantity
+description: Mean Platelet Volume (LBXMPSI, LOINC 32623-1).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/32623-1/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMPSI
+  basis: standard
+constraints:
+  units: units-femtolitre
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

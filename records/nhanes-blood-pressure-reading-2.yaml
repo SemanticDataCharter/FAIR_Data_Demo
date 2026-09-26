@@ -1,0 +1,13 @@
+key: nhanes-blood-pressure-reading-2
+label: Blood Pressure Reading 2
+type: Cluster
+description: 'The second of the seated blood pressure readings (BPXSY2, BPXDI2): the FHIR blood pressure cluster by identifier. Members: blood-pressure
+  (FHIR).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/85354-9/
+  basis: standard
+members:
+- https://axius-sdc.com/library/fhir/blood-pressure

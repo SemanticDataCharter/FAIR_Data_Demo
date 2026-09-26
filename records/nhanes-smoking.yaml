@@ -1,0 +1,20 @@
+key: nhanes-smoking
+label: NHANES Smoking
+type: Cluster
+description: 'Cigarette use (SMQ_J): the two questions the smoking status derives from, the status itself as the shared component, the age started,
+  the recent daily count and e-cigarette use. Members: Smoked at Least 100 Cigarettes in Life (SMQ020); Do You Now Smoke Cigarettes (SMQ040);
+  Smoking Status; Age Started Smoking Cigarettes Regularly (SMD030); Average Cigarettes per Day, Past 30 Days (SMD650); Ever Used an E-cigarette
+  (SMQ900).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/72166-2/
+  basis: standard
+members:
+- nhanes-smoked-100-cigarettes
+- nhanes-now-smoke-cigarettes
+- smoking-status
+- nhanes-age-started-smoking
+- nhanes-cigarettes-per-day-past-30-days
+- nhanes-ever-used-e-cigarette

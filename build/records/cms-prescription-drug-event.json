@@ -1,0 +1,49 @@
+{
+  "tiny_id": "cms-prescription-drug-event",
+  "label": "CMS Prescription Drug Event",
+  "description": "One DE-SynPUF Part D prescription drug event (2008-2010): the beneficiary and event identifiers, the service date, the product as an NDC coded value, quantity, days supply, and the patient pay and total cost amounts. Members: Beneficiary Code (DESYNPUF_ID); Prescription Drug Event ID (PDE_ID); Service Date (SRVC_DT); Product (NDC); Quantity Dispensed (QTY_DSPNSD_NUM); Days Supply (DAYS_SUPLY_NUM); Patient Pay Amount; Total Prescription Cost.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-prescription-drug-event",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/StructureDefinition/MedicationDispense",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "cms-beneficiary-code",
+    "cms-prescription-drug-event-id",
+    "cms-service-date",
+    "product-ndc",
+    "cms-quantity-dispensed",
+    "cms-days-supply",
+    "cms-patient-pay-amount",
+    "cms-total-prescription-cost"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,12 @@
+key: cms-claim-diagnosis-10
+label: Claim Diagnosis 10
+type: Cluster
+description: 'Diagnosis code 10 on the claim (ICD9_DGNS_CD_10) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis
+  basis: standard
+members:
+- diagnosis-icd9cm

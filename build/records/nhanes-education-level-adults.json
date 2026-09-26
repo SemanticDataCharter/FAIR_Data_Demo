@@ -1,0 +1,83 @@
+{
+  "tiny_id": "nhanes-education-level-adults",
+  "label": "Education Level - Adults 20+ (DMDEDUC2)",
+  "description": "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Less than 9th grade",
+      "9-11th grade (includes 12th grade with no diploma)",
+      "High school graduate/GED or equivalent",
+      "Some college or AA degree",
+      "College graduate or above"
+    ],
+    "enum_descr": [
+      "Less than 9th grade",
+      "9-11th grade (includes 12th grade with no diploma)",
+      "High school graduate/GED or equivalent",
+      "Some college or AA degree",
+      "College graduate or above"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "http://purl.obolibrary.org/obo/NCIT_C67136",
+      "http://purl.obolibrary.org/obo/NCIT_C67137",
+      "http://purl.obolibrary.org/obo/NCIT_C39303"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Less than 9th grade",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+    },
+    {
+      "value": "9-11th grade (includes 12th grade with no diploma)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+    },
+    {
+      "value": "High school graduate/GED or equivalent",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67136"
+    },
+    {
+      "value": "Some college or AA degree",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67137"
+    },
+    {
+      "value": "College graduate or above",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C39303"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-education-level-adults",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

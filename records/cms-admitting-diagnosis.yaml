@@ -1,0 +1,12 @@
+key: cms-admitting-diagnosis
+label: Admitting Diagnosis
+type: Cluster
+description: 'The admitting diagnosis (ADMTNG_ICD9_DGNS_CD) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.diagnosis
+  basis: standard
+members:
+- diagnosis-icd9cm

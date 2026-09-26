@@ -1,0 +1,46 @@
+{
+  "tiny_id": "brfss-health-status",
+  "label": "BRFSS Health Status and Access",
+  "description": "General health as the shared component, the days physical and mental health were not good, time since the last checkup, and exercise in the past 30 days. Members: General Health Status; Days Physical Health Not Good, Past 30 (PHYSHLTH); Days Mental Health Not Good, Past 30 (MENTHLTH); Length of Time Since Last Routine Checkup (CHECKUP1); Exercise in Past 30 Days (EXERANY2).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-health-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C16669",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "general-health-status",
+    "brfss-days-physical-health-not-good",
+    "brfss-days-mental-health-not-good",
+    "brfss-length-since-last-checkup",
+    "brfss-exercise-in-past-30-days"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

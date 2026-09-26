@@ -1,0 +1,69 @@
+{
+  "tiny_id": "nhanes-pregnancy-status-at-exam",
+  "label": "Pregnancy Status at Exam (RIDEXPRG)",
+  "description": "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Yes, positive lab pregnancy test or self-reported pregnant at exam",
+      "Not pregnant at exam",
+      "Cannot ascertain if pregnant at exam"
+    ],
+    "enum_descr": [
+      "Yes, positive lab pregnancy test or self-reported pregnant at exam",
+      "Not pregnant at exam",
+      "Cannot ascertain if pregnant at exam"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C25191",
+      "http://purl.obolibrary.org/obo/NCIT_C25191",
+      "http://purl.obolibrary.org/obo/NCIT_C17998"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Yes, positive lab pregnancy test or self-reported pregnant at exam",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25191"
+    },
+    {
+      "value": "Not pregnant at exam",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25191"
+    },
+    {
+      "value": "Cannot ascertain if pregnant at exam",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-pregnancy-status-at-exam",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDEXPRG",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

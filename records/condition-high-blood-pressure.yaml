@@ -1,0 +1,16 @@
+key: condition-high-blood-pressure
+label: 'Condition: High Blood Pressure'
+type: XdToken
+description: 'Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition
+  Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/38341003
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

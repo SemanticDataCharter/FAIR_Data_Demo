@@ -40,7 +40,6 @@ Thumbs.db
 # Python packaging
 *.egg-info/
 dist/
-build/
 .eggs/
 *.egg
 

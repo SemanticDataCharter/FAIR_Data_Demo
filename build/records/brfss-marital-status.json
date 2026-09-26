@@ -1,0 +1,90 @@
+{
+  "tiny_id": "brfss-marital-status",
+  "label": "Marital Status (MARITAL)",
+  "description": "Marital status as BRFSS codes it (MARITAL). Kept beside the NIH CDE Marital Status it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Married",
+      "Divorced",
+      "Widowed",
+      "Separated",
+      "Never married",
+      "A member of an unmarried couple"
+    ],
+    "enum_descr": [
+      "Married",
+      "Divorced",
+      "Widowed",
+      "Separated",
+      "Never married",
+      "A member of an unmarried couple"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C51773",
+      "http://purl.obolibrary.org/obo/NCIT_C51776",
+      "http://purl.obolibrary.org/obo/NCIT_C51775",
+      "http://purl.obolibrary.org/obo/NCIT_C51777",
+      "http://purl.obolibrary.org/obo/NCIT_C51774",
+      "http://purl.obolibrary.org/obo/NCIT_C53262"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Married",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51773"
+    },
+    {
+      "value": "Divorced",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51776"
+    },
+    {
+      "value": "Widowed",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51775"
+    },
+    {
+      "value": "Separated",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51777"
+    },
+    {
+      "value": "Never married",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51774"
+    },
+    {
+      "value": "A member of an unmarried couple",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C53262"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-marital-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

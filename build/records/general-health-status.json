@@ -1,0 +1,89 @@
+{
+  "tiny_id": "general-health-status",
+  "label": "General Health Status",
+  "description": "The person's rating of their general health (BRFSS GENHLTH; the NHANES HSQ question is the same scale when that file is carried).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Excellent",
+      "Very good",
+      "Good",
+      "Fair",
+      "Poor"
+    ],
+    "enum_descr": [
+      "Excellent",
+      "Very good",
+      "Good",
+      "Fair",
+      "Poor"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C25184",
+      "http://purl.obolibrary.org/obo/NCIT_C42642",
+      "http://purl.obolibrary.org/obo/NCIT_C25185",
+      "http://purl.obolibrary.org/obo/NCIT_C42633",
+      "http://purl.obolibrary.org/obo/NCIT_C25187"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Excellent",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25184"
+    },
+    {
+      "value": "Very good",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C42642"
+    },
+    {
+      "value": "Good",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25185"
+    },
+    {
+      "value": "Fair",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C42633"
+    },
+    {
+      "value": "Poor",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C25187"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/general-health-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C16669",
+      "basis": "concept",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

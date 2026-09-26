@@ -1,0 +1,23 @@
+key: nhanes-marital-status
+label: Marital Status (DMDMARTL)
+type: XdToken
+description: Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDMARTL
+  basis: standard
+enumeration:
+- value: Married
+  definition: http://purl.obolibrary.org/obo/NCIT_C51773
+- value: Widowed
+  definition: http://purl.obolibrary.org/obo/NCIT_C51775
+- value: Divorced
+  definition: http://purl.obolibrary.org/obo/NCIT_C51776
+- value: Separated
+  definition: http://purl.obolibrary.org/obo/NCIT_C51777
+- value: Never married
+  definition: http://purl.obolibrary.org/obo/NCIT_C51774
+- value: Living with partner
+  definition: http://purl.obolibrary.org/obo/NCIT_C53262

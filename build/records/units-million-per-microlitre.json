@@ -1,0 +1,55 @@
+{
+  "tiny_id": "units-million-per-microlitre",
+  "label": "Millions per Microlitre",
+  "description": "Cell count in millions of cells per microlitre (UCUM 10*6/uL).",
+  "sdc_type": "Units",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "10*6/uL"
+    ],
+    "enum_descr": [
+      "10*6/uL"
+    ],
+    "definitions": [
+      "https://ucum.org/ucum"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "10*6/uL",
+      "definition": "https://ucum.org/ucum"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/units-million-per-microlitre",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://qudt.org/",
+      "basis": "mechanical",
+      "note": "QUDT"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://qudt.org/schema/qudt/Unit",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

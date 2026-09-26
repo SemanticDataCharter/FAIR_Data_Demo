@@ -1,0 +1,49 @@
+{
+  "tiny_id": "nhanes-blood-pressure",
+  "label": "NHANES Blood Pressure",
+  "description": "The blood pressure examination (BPX_J): the arm and cuff, the 60-second pulse as the FHIR heart rate by identifier and its regularity, the maximum inflation level, and up to three readings each as the FHIR blood pressure cluster. Members: Arm Selected (BPAARM); Coded Cuff Size (BPACSZ); heart-rate (FHIR); Pulse Regular or Irregular (BPXPULS); Maximum Inflation Level (BPXML1); Blood Pressure Reading 1; Blood Pressure Reading 2; Blood Pressure Reading 3.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-blood-pressure",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/85354-9/",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-arm-selected",
+    "nhanes-coded-cuff-size",
+    "https://axius-sdc.com/library/fhir/heart-rate",
+    "nhanes-pulse-regularity",
+    "nhanes-maximum-inflation-level",
+    "nhanes-blood-pressure-reading-1",
+    "nhanes-blood-pressure-reading-2",
+    "nhanes-blood-pressure-reading-3"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

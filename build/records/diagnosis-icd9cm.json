@@ -1,0 +1,44 @@
+{
+  "tiny_id": "diagnosis-icd9cm",
+  "label": "Diagnosis (ICD-9-CM)",
+  "description": "A diagnosis coded in ICD-9-CM: the code, its display text and the fixed code system (FHIR Coding). What the 2008-2010 claims carry; not mapped to ICD-10-CM. Members: Diagnosis Code (ICD-9-CM); code-display-text (FHIR); Code System: ICD-9-CM.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/diagnosis-icd9cm",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://hl7.org/fhir/sid/icd-9-cm",
+      "basis": "mechanical",
+      "note": "ICD-9-CM"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/R4/datatypes.html#Coding",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "diagnosis-icd9cm-code",
+    "https://axius-sdc.com/library/fhir/code-display-text",
+    "system-icd9cm"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

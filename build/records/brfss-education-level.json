@@ -1,0 +1,90 @@
+{
+  "tiny_id": "brfss-education-level",
+  "label": "Education Level (EDUCA)",
+  "description": "The highest grade or year of school completed (EDUCA). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Never attended school or only kindergarten",
+      "Grades 1 through 8 (Elementary)",
+      "Grades 9 through 11 (Some high school)",
+      "Grade 12 or GED (High school graduate)",
+      "College 1 year to 3 years (Some college or technical school)",
+      "College 4 years or more (College graduate)"
+    ],
+    "enum_descr": [
+      "Never attended school or only kindergarten",
+      "Grades 1 through 8 (Elementary)",
+      "Grades 9 through 11 (Some high school)",
+      "Grade 12 or GED (High school graduate)",
+      "College 1 year to 3 years (Some college or technical school)",
+      "College 4 years or more (College graduate)"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "http://purl.obolibrary.org/obo/NCIT_C67136",
+      "http://purl.obolibrary.org/obo/NCIT_C67137",
+      "http://purl.obolibrary.org/obo/NCIT_C39303"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Never attended school or only kindergarten",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+    },
+    {
+      "value": "Grades 1 through 8 (Elementary)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+    },
+    {
+      "value": "Grades 9 through 11 (Some high school)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+    },
+    {
+      "value": "Grade 12 or GED (High school graduate)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67136"
+    },
+    {
+      "value": "College 1 year to 3 years (Some college or technical school)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67137"
+    },
+    {
+      "value": "College 4 years or more (College graduate)",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C39303"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-education-level",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

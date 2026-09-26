@@ -1,0 +1,13 @@
+key: cms-prescription-drug-event-id
+label: Prescription Drug Event ID (PDE_ID)
+type: XdString
+description: The prescription drug event identifier (PDE_ID).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  max_length: 20
+  str_fmt: '[0-9]{1,20}'

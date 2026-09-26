@@ -1,0 +1,15 @@
+key: system-hcpcs
+label: 'Code System: HCPCS'
+type: XdLink
+description: 'The code system of a coded value, fixed: HCPCS Level I (CPT) and Level II (http://www.ama-assn.org/go/cpt and https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system).
+  FHIR Coding.system.'
+source:
+  name: HCPCS
+links:
+- predicate: skos:exactMatch
+  iri: http://www.ama-assn.org/go/cpt
+  basis: standard
+constraints:
+  link: http://www.ama-assn.org/go/cpt
+  relation: codeSystem
+  relation_uri: http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system

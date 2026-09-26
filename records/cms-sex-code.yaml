@@ -1,0 +1,15 @@
+key: cms-sex-code
+label: Sex (BENE_SEX_IDENT_CD)
+type: XdToken
+description: The beneficiary's sex as CMS codes it (BENE_SEX_IDENT_CD). Kept beside the Default administrative gender it is mapped to.
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+enumeration:
+- value: Male
+  definition: http://purl.obolibrary.org/obo/NCIT_C20197
+- value: Female
+  definition: http://purl.obolibrary.org/obo/NCIT_C16576

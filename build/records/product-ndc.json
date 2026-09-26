@@ -1,0 +1,44 @@
+{
+  "tiny_id": "product-ndc",
+  "label": "Product (NDC)",
+  "description": "A dispensed product coded in the National Drug Code: the code, its display text and the fixed code system (FHIR Coding). Members: Product Service ID (NDC); code-display-text (FHIR); Code System: NDC.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/product-ndc",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://hl7.org/fhir/sid/ndc",
+      "basis": "mechanical",
+      "note": "NDC"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/R4/datatypes.html#Coding",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "ndc-code",
+    "https://axius-sdc.com/library/fhir/code-display-text",
+    "system-ndc"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

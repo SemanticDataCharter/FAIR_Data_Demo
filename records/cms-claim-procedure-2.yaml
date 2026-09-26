@@ -1,0 +1,12 @@
+key: cms-claim-procedure-2
+label: Claim Procedure 2
+type: Cluster
+description: 'Procedure code 2 on the claim (ICD9_PRCDR_CD_2) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure
+  basis: standard
+members:
+- procedure-icd9cm

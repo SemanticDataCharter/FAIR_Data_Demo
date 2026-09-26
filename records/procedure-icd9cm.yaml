@@ -1,0 +1,15 @@
+key: procedure-icd9cm
+label: Procedure (ICD-9-CM)
+type: Cluster
+description: 'A procedure coded in ICD-9-CM volume 3: the code, its display text and the fixed code system (FHIR Coding). Members: Procedure Code
+  (ICD-9-CM); code-display-text (FHIR); Code System: ICD-9-CM.'
+source:
+  name: ICD-9-CM
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/datatypes.html#Coding
+  basis: standard
+members:
+- procedure-icd9cm-code
+- https://axius-sdc.com/library/fhir/code-display-text
+- system-icd9cm

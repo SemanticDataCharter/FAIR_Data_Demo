@@ -1,0 +1,13 @@
+key: nhanes-respondent-sequence-number
+label: Respondent Sequence Number (SEQN)
+type: XdString
+description: The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SEQN
+  basis: standard
+constraints:
+  max_length: 8
+  str_fmt: '[0-9]{5,6}'

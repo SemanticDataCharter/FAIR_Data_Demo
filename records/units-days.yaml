@@ -1,0 +1,13 @@
+key: units-days
+label: Days
+type: Units
+description: A duration in days.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: days
+  definition: http://qudt.org/vocab/unit/DAY

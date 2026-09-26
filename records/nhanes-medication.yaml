@@ -1,0 +1,24 @@
+key: nhanes-medication
+label: NHANES Medication
+type: Cluster
+description: 'One prescription medicine a participant reported (RXQ_RX_J): the sequence number joining it to the participant, whether any was
+  taken, the generic name and NHANES code, days taken, the count of medicines, and up to three reasons as ICD-10-CM coded values. Members: Respondent
+  Sequence Number (SEQN); Taken Prescription Medicine, Past Month (RXDUSE); Generic Drug Name (RXDDRUG); Generic Drug Code (RXDDRGID); Number
+  of Days Taken Medicine (RXDDAYS); Number of Prescription Medicines Taken (RXDCOUNT); Medication Reason 1; Medication Reason 2; Medication Reason
+  3.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/StructureDefinition/MedicationStatement
+  basis: standard
+members:
+- nhanes-respondent-sequence-number
+- nhanes-taken-prescription-past-month
+- nhanes-generic-drug-name
+- nhanes-generic-drug-code
+- nhanes-days-taken-medicine
+- nhanes-number-of-prescription-medicines
+- nhanes-medication-reason-1
+- nhanes-medication-reason-2
+- nhanes-medication-reason-3

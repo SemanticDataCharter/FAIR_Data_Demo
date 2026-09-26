@@ -1,0 +1,19 @@
+key: brfss-bmi-category
+label: Computed Body Mass Index Category (_BMI5CAT)
+type: XdToken
+description: The agency's computed BMI category (_BMI5CAT).
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: Underweight
+  definition: http://purl.obolibrary.org/obo/NCIT_C17962
+- value: Normal Weight
+  definition: http://purl.obolibrary.org/obo/NCIT_C17958
+- value: Overweight
+  definition: http://purl.obolibrary.org/obo/NCIT_C94250
+- value: Obese
+  definition: http://purl.obolibrary.org/obo/NCIT_C3283

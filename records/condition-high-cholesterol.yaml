@@ -1,0 +1,16 @@
+key: condition-high-cholesterol
+label: 'Condition: High Cholesterol'
+type: XdToken
+description: 'Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition
+  Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/13644009
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

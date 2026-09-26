@@ -50,7 +50,7 @@ SELECT ?mc ?dm (SAMPLE(?i) AS ?inst) WHERE {
 
 # Chronic conditions: one component per condition, the basis stated per record.
 CONDITIONS = PREFIXES + """
-SELECT ?condition ?study ?basis (COUNT(DISTINCT ?i) AS ?records) (SUM(IF(?v = "Yes", 1, 0)) AS ?yes) (SAMPLE(?i) AS ?inst)
+SELECT ?condition ?study ?basis (COUNT(DISTINCT ?i) AS ?records) (SUM(IF(?v = "Yes", 1, 0)) AS ?yes) (SAMPLE(?i) AS ?inst) (SAMPLE(?dm) AS ?dmid)
 WHERE {
   ?f sdc4:inInstance ?i ; sdc4:inDataModel ?dm ; rdfs:label ?condition ; rdf:reifies <<?mc ?vp ?v>> .
   FILTER(STRSTARTS(?condition, "Condition: "))
@@ -116,5 +116,5 @@ def conditions() -> dict:
         inst = _v(r, 'inst')
         out.append({'condition': _v(r, 'condition').replace('Condition: ', ''), 'study': _v(r, 'study'), 'basis': _v(r, 'basis'),
                     'records': int(_v(r, 'records', '0')), 'yes': int(_v(r, 'yes', '0')),
-                    'open': {'ct_id': inst.rsplit('/', 1)[-1] and _v(r, 'study'), 'instance_id': inst.rsplit('/', 1)[-1]} if inst else None})
+                    'open': {'ct_id': _v(r, 'dmid').rsplit('/', 1)[-1].replace('dm-', ''), 'instance_id': inst.rsplit('/', 1)[-1]} if inst else None})
     return {'rows': out, 'conditions': len({r['condition'] for r in out}), 'elapsed': f'{elapsed:.2f}', 'query': CONDITIONS}

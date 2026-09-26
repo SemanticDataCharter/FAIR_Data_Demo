@@ -62,7 +62,7 @@ def dashboard(request):
 
 
 def narrative(request):
-    """7-beat Contagion walkthrough."""
+    """Six-beat walk-through: three studies, one component library."""
     return render(request, 'demo/narrative.html', {'beats': BEATS})
 
 

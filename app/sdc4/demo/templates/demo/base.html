@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Demo{% endblock %} - FAIR Data Demo v{{ cordovaos_version }}</title>
+    <title>{% block title %}Demo{% endblock %} - FAIR Data Demo v{{ app_version }}</title>
     <link href="{% static 'vendor/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons.css' %}">
     <script src="{% static 'vendor/htmx.min.js' %}"></script>
@@ -20,19 +20,19 @@
             font-weight: 600;
             font-size: 1.25rem;
         }
-        .cordova-graph { width: 100%; height: 520px; background: #F7F9FB; }
-        .cordova-graph-legend { position: absolute; left: .75rem; bottom: .5rem; font-size: .75rem; }
-        .cordova-swatch { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; margin-right: .25rem; vertical-align: middle; }
-        .cordova-graph-side { width: 300px; flex: 0 0 300px; max-height: 520px; overflow-y: auto; background: #fff; }
-        .cordova-svg { display: block; cursor: grab; user-select: none; }
-        .cordova-svg text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; pointer-events: none; paint-order: stroke; stroke: #F7F9FB; stroke-width: 3px; stroke-linejoin: round; }
-        .cordova-svg .node-label { font-size: 9px; fill: #0A2342; }
-        .cordova-svg .id-label { font-size: 8px; font-weight: 600; fill: #4F6D7A; }
-        .cordova-svg .edge-label { font-size: 7px; fill: #4F6D7A; }
-        .cordova-svg .band-label { font-size: 9px; fill: #6c757d; }
-        .cordova-svg .node { cursor: pointer; }
-        .cordova-svg .node.selected circle, .cordova-svg .node.selected rect { stroke: #F0A500; stroke-width: 3px; }
-        .cordova-svg .edge.lit line { stroke-opacity: 1; stroke-width: 2.5px; }
+        .entity-graph { width: 100%; height: 520px; background: #F7F9FB; }
+        .entity-graph-legend { position: absolute; left: .75rem; bottom: .5rem; font-size: .75rem; }
+        .entity-swatch { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; margin-right: .25rem; vertical-align: middle; }
+        .entity-graph-side { width: 300px; flex: 0 0 300px; max-height: 520px; overflow-y: auto; background: #fff; }
+        .entity-svg { display: block; cursor: grab; user-select: none; }
+        .entity-svg text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; pointer-events: none; paint-order: stroke; stroke: #F7F9FB; stroke-width: 3px; stroke-linejoin: round; }
+        .entity-svg .node-label { font-size: 9px; fill: #0A2342; }
+        .entity-svg .id-label { font-size: 8px; font-weight: 600; fill: #4F6D7A; }
+        .entity-svg .edge-label { font-size: 7px; fill: #4F6D7A; }
+        .entity-svg .band-label { font-size: 9px; fill: #6c757d; }
+        .entity-svg .node { cursor: pointer; }
+        .entity-svg .node.selected circle, .entity-svg .node.selected rect { stroke: #F0A500; stroke-width: 3px; }
+        .entity-svg .edge.lit line { stroke-opacity: 1; stroke-width: 2.5px; }
         {% block extra_css %}{% endblock %}
     </style>
 </head>
@@ -41,7 +41,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'demo:dashboard' %}">
                 <i class="bi bi-grid-3x3-gap-fill me-2"></i>FAIR Data Demo
-                <span class="badge bg-light text-dark ms-2 align-middle" style="font-size:0.65rem;">v{{ cordovaos_version }}</span>
+                <span class="badge bg-light text-dark ms-2 align-middle" style="font-size:0.65rem;">v{{ app_version }}</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -83,7 +83,7 @@
     </div>
 
     <footer class="text-center text-muted py-3" style="font-size:0.85rem;">
-        FAIR Data Demo <strong>v{{ cordovaos_version }}</strong> &middot; three federal studies on one component library
+        FAIR Data Demo <strong>v{{ app_version }}</strong> &middot; three federal studies on one component library
     </footer>
 
     <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>

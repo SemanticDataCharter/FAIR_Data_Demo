@@ -45,11 +45,11 @@ class VersionTests(SimpleTestCase):
     def test_version_file_is_the_single_source(self):
         on_disk = (Path(settings.BASE_DIR) / 'VERSION').read_text().strip()
         self.assertRegex(on_disk, r'^\d+\.\d+\.\d+$')
-        self.assertEqual(settings.CORDOVAOS_VERSION, on_disk)
+        self.assertEqual(settings.APP_VERSION, on_disk)
 
     def test_templates_carry_the_version_not_a_literal(self):
         for template, ctx in (('demo/base.html', {}), ('index.html', {})):
             html = render(template, ctx)
-            self.assertIn(f'v{settings.CORDOVAOS_VERSION}', html, template)
+            self.assertIn(f'v{settings.APP_VERSION}', html, template)
             found = set(re.findall(r'\bv(\d+\.\d+\.\d+)\b', html))
-            self.assertEqual(found, {settings.CORDOVAOS_VERSION}, template)
+            self.assertEqual(found, {settings.APP_VERSION}, template)

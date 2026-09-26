@@ -30,13 +30,13 @@ PANES = ('table', 'document', 'graph')
 
 
 def question(request):
-    """Two cross-domain questions, and the evidence for the answers."""
+    """Two cross-study questions, and the evidence for the answers."""
     return render(request, 'console/question.html', {'q': coverage(), 't': conditions()})
 
 
 def index(request):
     """
-    The front door. Ten domains, and the records worth opening first.
+    The front door. Seven study models, and the records worth opening first.
 
     The refusal cases are surfaced deliberately rather than left to whoever
     knows an identifier: a console that only ever shows records that passed is

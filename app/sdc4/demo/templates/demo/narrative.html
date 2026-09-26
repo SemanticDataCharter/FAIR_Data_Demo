@@ -1,5 +1,5 @@
 {% extends "demo/base.html" %}
-{% block title %}The Contagion{% endblock %}
+{% block title %}Three Studies, One Component{% endblock %}
 
 {% block extra_css %}
 .beat-card {
@@ -38,8 +38,8 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="display-5 mb-1">The Contagion</h1>
-<p class="lead text-muted mb-4">A Crisis Narrative &mdash; 7 beats, 4 domains, hundreds of contacts</p>
+<h1 class="display-5 mb-1">Three Studies, One Component</h1>
+<p class="lead text-muted mb-4">A walk-through in six beats: three federal studies, one component library, and the join that is the component</p>
 
 {% for beat in beats %}
 <div class="card beat-card border-{{ beat.color }} mb-3">

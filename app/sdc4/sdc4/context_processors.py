@@ -2,5 +2,5 @@
 from django.conf import settings
 
 
-def cordovaos_version(request):
-    return {'cordovaos_version': settings.CORDOVAOS_VERSION}
+def app_version(request):
+    return {'app_version': settings.APP_VERSION}

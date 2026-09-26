@@ -181,7 +181,7 @@
     var isolatedIds = {}; data.nodes.forEach(function (n) { if (!data.edges.some(function (e) { return e.source === n.id || e.target === n.id; })) isolatedIds[n.id] = true; });
     var hubDegree = {}; data.edges.forEach(function (e) { hubDegree[e.target] = (hubDegree[e.target] || 0) + 1; });
 
-    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: '100%', height: '100%', 'class': 'cordova-svg' });
+    var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, width: '100%', height: '100%', 'class': 'entity-svg' });
     var view = el('g'); svg.appendChild(view);
     var gEdges = el('g', { 'class': 'edges' }), gNodes = el('g', { 'class': 'nodes' });
     view.appendChild(gEdges); view.appendChild(gNodes);
@@ -247,7 +247,7 @@
     var legend = document.getElementById('legend-' + uid);
     if (legend) {
       legend.innerHTML = data.legend.map(function (d) {
-        return '<span class="me-3"><span class="cordova-swatch" style="background:' + colour[d] + '"></span>' + esc(d) + '</span>';
+        return '<span class="me-3"><span class="entity-swatch" style="background:' + colour[d] + '"></span>' + esc(d) + '</span>';
       }).join('') + '<span class="text-muted">&#9670; shared identifier &middot; <span style="color:#0A2342">&#9644;</span> person &middot; <span style="color:#2CA58D">&#9644;</span> business &middot; <span style="color:#F0A500">&#9644;</span> place &middot; drag to pan, wheel to zoom, double-click to reset</span>';
     }
     host.dataset.drawn = '1';
@@ -256,10 +256,10 @@
 
   function register(uid) {
     // The graph pane starts hidden, so the host has no size. Draw on first show.
-    var btn = document.querySelector('[data-cordova-graph="' + uid + '"]');
+    var btn = document.querySelector('[data-entity-graph="' + uid + '"]');
     if (!btn) return;
     btn.addEventListener('shown.bs.tab', function () { draw(uid); });
   }
 
-  window.CordovaGraph = { register: register, draw: draw, instances: registry, layout: layout };
+  window.EntityGraph = { register: register, draw: draw, instances: registry, layout: layout };
 })();

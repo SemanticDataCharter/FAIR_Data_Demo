@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 from typing import Any, Dict, List, Optional
 
 from sdc4_shared.utils.dm_registry import get_model_for_dm_ct_id
+from sdc4_shared.utils.dm_title import dm_title
 
 # ISO 21090 null flavors, as carried by SDC4 Exceptional Values. The element tag
 # IS the code, so these are looked up by tag rather than by an xsi:type.
@@ -150,7 +151,7 @@ def instance_header(model, instance) -> Dict[str, Any]:
     return {
         'stated_absences': absences,
         'stated_absence_count': len(absences),
-        'dm_label': getattr(model, 'DM_LABEL', model.__name__),
+        'dm_label': dm_title(model),
         'ct_id': getattr(model, 'DM_CT_ID', ''),
         'instance_id': instance.instance_id,
         'validation_status': instance.validation_status,

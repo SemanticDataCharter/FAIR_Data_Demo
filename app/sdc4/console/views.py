@@ -16,6 +16,7 @@ from sdc4_shared.utils.dm_registry import get_dm_registry
 from .dmlib import governed_by
 from .graph import neighbourhood
 from .question import coverage, conditions
+from sdc4_shared.utils.dm_title import dm_title
 from .instances import (
     field_rows,
     get_instance,
@@ -46,7 +47,7 @@ def index(request):
     refused = []
 
     for ct_id, model in sorted(get_dm_registry().items(),
-                               key=lambda kv: getattr(kv[1], 'DM_LABEL', '')):
+                               key=lambda kv: dm_title(kv[1])):
         qs = model.objects.all()
         total = qs.count()
         if not total:
@@ -55,7 +56,7 @@ def index(request):
         latest = qs.order_by('-created_at').values_list('instance_id', flat=True).first()
         invalid = qs.filter(validation_status='invalid').count()
         domains.append({
-            'label': getattr(model, 'DM_LABEL', model.__name__),
+            'label': dm_title(model),
             'ct_id': ct_id,
             'count': total,
             'invalid': invalid,
@@ -67,7 +68,7 @@ def index(request):
         for obj in qs.filter(instance_id__startswith='i-ev-')[:4]:
             refused.append({
                 'ct_id': ct_id,
-                'label': getattr(model, 'DM_LABEL', model.__name__),
+                'label': dm_title(model),
                 'instance_id': obj.instance_id,
                 'status': obj.validation_status,
                 'absences': stated_absences(obj),
@@ -86,7 +87,7 @@ def _load(ct_id, instance_id):
     if model is None:
         raise Http404(f'No data model registered for CT_ID {ct_id}')
     if obj is None:
-        raise Http404(f'No instance {instance_id} in {model.DM_LABEL}')
+        raise Http404(f'No instance {instance_id} in {dm_title(model)}')
     return model, obj
 
 

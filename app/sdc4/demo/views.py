@@ -19,6 +19,7 @@ from sdc4_shared.utils.graphdb_client import GraphDBClient
 from . import entity_graph
 from .narrative import BEATS
 from .sparql_loader import load_query, load_all_queries, QUERY_CATALOG, SPARQL_DIR
+from sdc4_shared.utils.dm_title import dm_title
 
 logger = logging.getLogger(__name__)
 
@@ -30,11 +31,11 @@ def dashboard(request):
     # Build domain card data
     domains = []
     total_instances = 0
-    for dm_ct_id, model_class in sorted(registry.items(), key=lambda x: getattr(x[1], 'DM_LABEL', '')):
+    for dm_ct_id, model_class in sorted(registry.items(), key=lambda x: dm_title(x[1])):
         count = model_class.objects.count()
         total_instances += count
         domains.append({
-            'label': getattr(model_class, 'DM_LABEL', model_class.__name__),
+            'label': dm_title(model_class),
             'app_label': model_class._meta.app_label,
             'count': count,
         })

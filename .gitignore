@@ -62,3 +62,6 @@ coverage.xml
 # Generated records (the generators write them; the loader reads them)
 app/sdc4/import_data/*
 !app/sdc4/import_data/.gitkeep
+
+# Design record: internal, like CordovaOS (the PRD and the inventory it started from)
+docs/design/

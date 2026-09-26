@@ -11,6 +11,7 @@ import math
 from typing import Any, Dict, List
 
 from sdc4_shared.utils.graphdb_client import GraphDBClient
+from sdc4_shared.utils.dm_title import dm_title
 
 SDC4 = 'https://semanticdatacharter.com/ns/sdc4/'
 
@@ -90,7 +91,7 @@ def neighbourhood(model, instance, limit: int = 12) -> Dict[str, Any]:
     return {
         'width': w, 'height': h, 'cx': cx, 'cy': cy,
         'centre': {
-            'label': getattr(model, 'DM_LABEL', model.__name__),
+            'label': dm_title(model),
             'instance_id': instance.instance_id,
         },
         'model_uri': _short(f'{SDC4}dm-{getattr(model, "DM_CT_ID", "")}'),

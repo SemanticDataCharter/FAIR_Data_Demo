@@ -16,14 +16,14 @@
   <section class="answer">
     <div class="figs">
       <div class="fig">
-        <div class="v">{{ q.shared }}</div>
-        <div class="k">components carried by more than one study model</div>
-        <div class="src">{{ q.all_three }} of them by all three studies</div>
+        <div class="v">{{ q.multi_study }}</div>
+        <div class="k">components carried by more than one study</div>
+        <div class="src">{{ q.all_three }} of them by all three; {{ q.shared }} by more than one model, counting a study's own models</div>
       </div>
       <div class="fig">
         <div class="v">{{ q.records }}</div>
         <div class="k">records in the store</div>
-        <div class="src">across {{ q.models }} models and {{ q.components }} components</div>
+        <div class="src">across {{ q.models }} models</div>
       </div>
       <div class="fig">
         <div class="v">0</div>
@@ -34,14 +34,14 @@
 
     <table>
       <thead>
-        <tr><th>Component</th><th>Studies</th><th class="num">Models</th><th class="num">Records</th><th></th></tr>
+        <tr><th>Component</th><th>Models carrying it</th><th class="num">Studies</th><th class="num">Records</th><th></th></tr>
       </thead>
       <tbody>
         {% for r in q.rows %}
           <tr>
             <td>{{ r.label }}</td>
             <td>{{ r.studies }}</td>
-            <td class="num">{{ r.models }}</td>
+            <td class="num">{{ r.study_count }}</td>
             <td class="num">{{ r.records }}</td>
             <td>
               {% if r.open %}
@@ -52,8 +52,10 @@
         {% endfor %}
       </tbody>
     </table>
-    <p class="hint">Provenance and audit components are left out of the table: every model composes
-      them, which is true and not the point. The query is printed on the right.</p>
+    <p class="hint">The table shows the components more than one study carries. {{ q.within_only }} more are shared
+      between one study's own models (the CMS claim fields the inpatient and outpatient claims both carry, the
+      beneficiary identifier every CMS record carries), and the provenance and audit components every model composes
+      are left out, which is true and not the point. The query is printed on the right.</p>
   </section>
 
   <div class="grid" style="margin-top:14px">

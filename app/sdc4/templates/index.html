@@ -1,0 +1,193 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAIR Data Demo v{{ cordovaos_version }}</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons.css' %}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        .navbar .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .navbar .dropdown-item {
+            padding: 0.5rem 1rem;
+        }
+        .navbar .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+        .app-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: white;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .empty-state {
+            padding: 3rem;
+            text-align: center;
+            color: #6c757d;
+        }
+        .page-header {
+            padding: 2rem 0 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-grid-3x3-gap-fill me-2"></i>sdc4
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- System Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="systemDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-gear"></i> System
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="/admin/install-app/">
+                                    <i class="bi bi-download me-2"></i>Import App
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="/admin/">
+                                    <i class="bi bi-shield-lock me-2"></i>Django Admin
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="http://localhost:17200/graphs" target="_blank">
+                                    <i class="bi bi-diagram-3 me-2"></i>GraphDB Graphs
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="http://localhost:17200" target="_blank">
+                                    <i class="bi bi-diagram-3-fill me-2"></i>GraphDB Workbench
+                                </a>
+                            </li>
+                                            <li class="nav-item">
+                        <a class="nav-link" href="/demo/">
+                            <i class="bi bi-play-circle"></i> Demo
+                        </a>
+                    </li>
+</ul>
+                    </li>
+                    <!-- Documentation Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-book"></i> Docs
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="/docs/readme/">
+                                    <i class="bi bi-file-text me-2"></i>README
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/docs/license/">
+                                    <i class="bi bi-file-earmark-text me-2"></i>License
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="display-5 mb-2">FAIR Data Demo <span class="badge bg-secondary align-middle" style="font-size:0.8rem;">v{{ cordovaos_version }}</span></h1>
+            <p class="text-muted">SDC4 Semantic Data Charter Project</p>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <h2 class="h4 mb-3">Data Model Applications</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Data Model Apps -->
+            {% if data_apps %}
+                {% for app in data_apps %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card app-card data-app-card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                                <i class="bi bi-database"></i> {{ app.title }}
+                            </h5>
+                            <p class="card-text text-muted">
+                                {{ app.description }}
+                            </p>
+                            <div class="mt-auto">
+                                <a href="/{{ app.namespace }}/" class="btn btn-primary w-100">
+                                    Open {{ app.title }} →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body empty-state">
+                            <p class="lead">No data model applications installed yet.</p>
+                            <p class="text-muted">
+                                Generate data model apps from SDCStudio and add them to this project.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <hr>
+                <footer class="text-center text-muted py-3">
+                    <p class="mb-1">
+                        <small>Powered by SDC4 <a href="https://semanticdatacharter.com" target="_blank" class="text-decoration-none"><strong>Semantic Data Charter</strong></a></small>
+                    </p>
+                    <p class="mb-0">
+                        <small>
+                            <a href="https://axius-sdc.com/#products" target="_blank" class="text-decoration-none">
+                                Learn more about SDCStudio
+                            </a>
+                        </small>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+    <!-- Bootstrap Icons (for icons in cards) -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons.css' %}">
+</body>
+</html>

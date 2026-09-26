@@ -1,0 +1,75 @@
+{% extends "console/base.html" %}
+{% block title %}National Data Platform{% endblock %}
+
+{% block content %}
+<div class="subject">
+  <div class="who">
+    <h1>Record explorer</h1>
+    <div class="ids">
+      {{ total_records }} records across {{ domains|length }} domains, generated from one reference
+      model. Open any record to see it as a document, as a table, and as a node in the graph.
+    </div>
+  </div>
+  <div class="counts">
+    <div><span class="v">{{ total_records }}</span><span class="k">records</span></div>
+    <div><span class="v">{{ domains|length }}</span><span class="k">domains</span></div>
+    <div><span class="v">{{ total_invalid }}</span><span class="k">refused</span></div>
+  </div>
+</div>
+
+<div class="grid">
+  <section class="card">
+    <header><span class="t">Domains</span></header>
+    <table>
+      <thead>
+        <tr><th>Domain</th><th class="num">Records</th><th class="num">Refused</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for d in domains %}
+          <tr>
+            <td>{{ d.label }}<span class="brn">{{ d.ct_id }}</span></td>
+            <td class="num">{{ d.count }}</td>
+            <td class="num">{% if d.invalid %}{{ d.invalid }}{% else %}&mdash;{% endif %}</td>
+            <td>
+              {% if d.latest %}
+                <a class="why" href="{% url 'console:instance' d.ct_id d.latest %}?pane=table">open a record &rsaquo;</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">
+      Every domain here was generated from the same reference model, which is why a national
+      identifier means the same thing in a hospital record and a tax filing.
+    </p>
+  </section>
+
+  <aside>
+    <section class="card">
+      <header><span class="t">Records the platform refused</span></header>
+      {% if refused %}
+        <div class="rel">
+          {% for r in refused %}
+            <a href="{% url 'console:instance' r.ct_id r.instance_id %}?pane=table">
+              <span>
+                {{ r.label }}<br>
+                <span class="meta">{% for a in r.absences %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</span>
+              </span>
+              <span class="meta">{{ r.status }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="note">
+          These instances are <b>invalid, and that is the point</b>. A required value is missing, so
+          the record does not validate. Rather than substituting a stand-in value, it carries an
+          Exceptional Value naming the reason, so the failure explains itself instead of hiding as a
+          zero or a date in 1900.
+        </div>
+      {% else %}
+        <div class="note">No refused records in this dataset.</div>
+      {% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

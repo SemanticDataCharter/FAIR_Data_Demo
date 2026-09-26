@@ -1,0 +1,197 @@
+{% extends 'cms_inpatient_claim/base.html' %}
+{% load cms_inpatient_claim_extras %}
+
+{% block title %}{{ dm_metadata.TITLE }} - Instances{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4><i class="bi bi-list"></i> {{ dm_metadata.TITLE }} Instances</h4>
+            <div>
+                <a href="{% url 'cms_inpatient_claim:bulk-import' %}" class="btn btn-outline-primary me-2">
+                    <i class="bi bi-upload"></i> Bulk Import
+                </a>
+                <a href="{% url 'cms_inpatient_claim:wizard-start' %}" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> New Instance
+                </a>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="get" class="row g-3">
+                    <div class="col-md-4">
+                        <label for="search" class="form-label">Search</label>
+                        <input type="text" class="form-control" id="search" name="search"
+                               value="{{ search }}" placeholder="Search by ID or content...">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="status" class="form-label">Validation Status</label>
+                        <select class="form-select" id="status" name="status">
+                            <option value="">All</option>
+                            {% for value, label in validation_choices %}
+                            <option value="{{ value }}" {% if current_status == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="rdf_status" class="form-label">RDF Status</label>
+                        <select class="form-select" id="rdf_status" name="rdf_status">
+                            <option value="">All</option>
+                            {% for value, label in rdf_status_choices %}
+                            <option value="{{ value }}" {% if current_rdf_status == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="sort" class="form-label">Sort By</label>
+                        <select class="form-select" id="sort" name="sort">
+                            <option value="-created_at" {% if current_sort == '-created_at' %}selected{% endif %}>
+                                Newest First
+                            </option>
+                            <option value="created_at" {% if current_sort == 'created_at' %}selected{% endif %}>
+                                Oldest First
+                            </option>
+                            <option value="instance_id" {% if current_sort == 'instance_id' %}selected{% endif %}>
+                                ID (A-Z)
+                            </option>
+                            <option value="-instance_id" {% if current_sort == '-instance_id' %}selected{% endif %}>
+                                ID (Z-A)
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-outline-primary me-2">
+                            <i class="bi bi-search"></i> Filter
+                        </button>
+                        <a href="{% url 'cms_inpatient_claim:instance-list' %}" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Instance List -->
+        <div class="card">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Instance ID</th>
+                            <th>Validation</th>
+                            <th>RDF Sync</th>
+                            <th>Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for instance in instances %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'cms_inpatient_claim:instance-detail' pk=instance.instance_id %}">
+                                    <code>{{ instance.instance_id }}</code>
+                                </a>
+                            </td>
+                            <td>
+                                {% if instance.validation_status == 'valid' %}
+                                <span class="badge bg-success">Valid</span>
+                                {% elif instance.validation_status == 'valid_with_ev' %}
+                                <span class="badge bg-warning text-dark">Valid with EV</span>
+                                {% elif instance.validation_status == 'invalid' %}
+                                <span class="badge bg-danger">Invalid</span>
+                                {% else %}
+                                <span class="badge bg-secondary">{{ instance.validation_status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if instance.rdf_sync_status == 'synced' %}
+                                <span class="badge bg-success">Synced</span>
+                                {% elif instance.rdf_sync_status == 'pending' %}
+                                <span class="badge bg-warning text-dark">Pending</span>
+                                {% elif instance.rdf_sync_status == 'failed' %}
+                                <span class="badge bg-danger">Failed</span>
+                                {% elif instance.rdf_sync_status == 'disabled' %}
+                                <span class="badge bg-secondary">Disabled</span>
+                                {% else %}
+                                <span class="badge bg-secondary">{{ instance.rdf_sync_status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ instance.created_at|date:"Y-m-d H:i" }}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="{% url 'cms_inpatient_claim:instance-detail' pk=instance.instance_id %}"
+                                       class="btn btn-outline-primary" title="View Details">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="{% url 'cms_inpatient_claim:instance-download-xml' pk=instance.instance_id %}"
+                                       class="btn btn-outline-secondary" title="Download XML">
+                                        <i class="bi bi-file-code"></i>
+                                    </a>
+                                    <a href="{% url 'cms_inpatient_claim:instance-download-json' pk=instance.instance_id %}"
+                                       class="btn btn-outline-secondary" title="Download JSON">
+                                        <i class="bi bi-filetype-json"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center py-4 text-muted">
+                                <i class="bi bi-inbox" style="font-size: 2rem;"></i>
+                                <p class="mt-2 mb-0">No instances found</p>
+                                <a href="{% url 'cms_inpatient_claim:wizard-start' %}" class="btn btn-primary mt-3">
+                                    Create First Instance
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+        <nav class="mt-4" aria-label="Instance list pagination">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}&search={{ search }}&status={{ current_status }}&rdf_status={{ current_rdf_status }}&sort={{ current_sort }}">
+                        Previous
+                    </a>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ num }}&search={{ search }}&status={{ current_status }}&rdf_status={{ current_rdf_status }}&sort={{ current_sort }}">
+                        {{ num }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}&search={{ search }}&status={{ current_status }}&rdf_status={{ current_rdf_status }}&sort={{ current_sort }}">
+                        Next
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

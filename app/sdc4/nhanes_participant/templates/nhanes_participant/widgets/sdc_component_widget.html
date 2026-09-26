@@ -1,0 +1,215 @@
+
+<div class="sdc-component-field" id="{{ widget.name }}-container">
+    {# Primary area - value and units side-by-side #}
+    <div class="primary-area">
+        <div class="row g-2 align-items-end">
+            <div class="{% if metadata_config.is_quantified %}col-8{% else %}col-12{% endif %}">
+                {# Value input #}
+                {% with subwidget=widget.subwidgets.0 %}
+                {% include subwidget.template_name with widget=subwidget %}
+                {% endwith %}
+            </div>
+            {% if metadata_config.is_quantified %}
+            <div class="col-4">
+                <label class="form-label form-label-sm mb-1">
+                    Units{% if metadata_config.units_required %}<span class="text-danger">*</span>{% endif %}
+                </label>
+                {# Units dropdown #}
+                {% with subwidget=widget.subwidgets.1 %}
+                {% include subwidget.template_name with widget=subwidget %}
+                {% endwith %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {# Collapsible metadata section #}
+    {% if metadata_config.ev_allowed or metadata_config.vtb_allowed or metadata_config.vte_allowed or metadata_config.location_allowed or metadata_config.tr_allowed or metadata_config.mod_allowed or metadata_config.act_class %}
+    <div class="metadata-section mt-2">
+        <button class="btn btn-sm btn-outline-secondary" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#metadata-{{ widget.name }}"
+                aria-expanded="false"
+                aria-controls="metadata-{{ widget.name }}">
+            <i class="bi bi-three-dots"></i> Metadata
+        </button>
+
+        <div class="collapse mt-2" id="metadata-{{ widget.name }}">
+            <div class="card card-body p-2 bg-light">
+                <div class="row g-2">
+                    {# Exceptional Value #}
+                    {% if metadata_config.ev_allowed %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">Exceptional Value</label>
+                        {% with subwidget=widget.subwidgets.2 %}
+                        {% include subwidget.template_name with widget=subwidget %}
+                        {% endwith %}
+                        <small class="form-text text-muted d-block">Select if data cannot be provided</small>
+                    </div>
+                    {% endif %}
+
+                    {# Valid Time Begin #}
+                    {% if metadata_config.vtb_allowed or metadata_config.vtb_required %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">
+                            Valid Time Begin
+                            {% if metadata_config.vtb_required %}<span class="text-danger">*</span>{% endif %}
+                        </label>
+                        {% with subwidget=widget.subwidgets.3 %}
+                        {% include subwidget.template_name with widget=subwidget %}
+                        {% endwith %}
+                        <small class="form-text text-muted d-block">When this value became valid</small>
+                    </div>
+                    {% endif %}
+
+                    {# Valid Time End #}
+                    {% if metadata_config.vte_allowed or metadata_config.vte_required %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">
+                            Valid Time End
+                            {% if metadata_config.vte_required %}<span class="text-danger">*</span>{% endif %}
+                        </label>
+                        {% with subwidget=widget.subwidgets.4 %}
+                        {% include subwidget.template_name with widget=subwidget %}
+                        {% endwith %}
+                        <small class="form-text text-muted d-block">When this value becomes invalid</small>
+                    </div>
+                    {% endif %}
+
+                    {# Location (Latitude/Longitude) #}
+                    {% if metadata_config.location_allowed or metadata_config.location_required %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">
+                            Location
+                            {% if metadata_config.location_required %}<span class="text-danger">*</span>{% endif %}
+                        </label>
+                        <div class="row g-1">
+                            <div class="col-6">
+                                {% with subwidget=widget.subwidgets.5 %}
+                                {% include subwidget.template_name with widget=subwidget %}
+                                {% endwith %}
+                            </div>
+                            <div class="col-6">
+                                {% with subwidget=widget.subwidgets.6 %}
+                                {% include subwidget.template_name with widget=subwidget %}
+                                {% endwith %}
+                            </div>
+                        </div>
+                        <small class="form-text text-muted d-block">Decimal latitude, longitude</small>
+                    </div>
+                    {% endif %}
+
+                    {# Time Recorded (TR) - System-managed, display only #}
+                    {% if metadata_config.tr_allowed %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">Time Recorded (TR)</label>
+                        <div class="form-control-plaintext bg-light border rounded p-2 text-muted" id="{{ widget.name }}-tr-display">
+                            <em>Set automatically on save</em>
+                        </div>
+                        <small class="form-text text-muted d-block">When this value was first recorded</small>
+                    </div>
+                    {% endif %}
+
+                    {# Time Modified (MOD) - System-managed, display only #}
+                    {% if metadata_config.mod_allowed %}
+                    <div class="col-md-6">
+                        <label class="form-label form-label-sm mb-1">Time Modified (MOD)</label>
+                        <div class="form-control-plaintext bg-light border rounded p-2 text-muted" id="{{ widget.name }}-mod-display">
+                            <em>Updated automatically on save</em>
+                        </div>
+                        <small class="form-text text-muted d-block">When this value was last modified</small>
+                    </div>
+                    {% endif %}
+
+                    {# Access Control Tag (ACT) Class - Read-only display #}
+                    {% if metadata_config.act_class %}
+                    <div class="col-md-12">
+                        <label class="form-label form-label-sm mb-1">Access Control Tag (ACT)</label>
+                        <div class="form-control-plaintext bg-light border rounded p-2">
+                            <strong>{{ metadata_config.act_class }}</strong>
+                        </div>
+                        <small class="form-text text-muted d-block">Required access control classification for this field</small>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+/* SDC Branding Colors */
+:root {
+    --sdc-deep-blue: #0a2342;
+    --sdc-teal: #2ca58d;
+    --sdc-gold: #f0a500;
+    --sdc-light-blue: #8db9d9;
+    --sdc-off-white: #f7f9fb;
+    --sdc-dark-gray: #333333;
+    --sdc-light-gray: #e1e6ea;
+}
+
+.sdc-component-field {
+    position: relative;
+}
+
+.sdc-component-field .primary-area input,
+.sdc-component-field .primary-area select,
+.sdc-component-field .primary-area textarea {
+    width: 100%;
+    border-color: var(--sdc-light-blue);
+}
+
+.sdc-component-field .primary-area input:focus,
+.sdc-component-field .primary-area select:focus,
+.sdc-component-field .primary-area textarea:focus {
+    border-color: var(--sdc-teal);
+    box-shadow: 0 0 0 0.2rem rgba(44, 165, 141, 0.25);
+}
+
+.metadata-section .btn {
+    font-size: 0.875rem;
+    background-color: var(--sdc-light-gray);
+    border-color: var(--sdc-light-blue);
+    color: var(--sdc-deep-blue);
+}
+
+.metadata-section .btn:hover {
+    background-color: var(--sdc-teal);
+    border-color: var(--sdc-teal);
+    color: white;
+}
+
+.metadata-section .btn i {
+    color: var(--sdc-teal);
+}
+
+.metadata-section .btn:hover i {
+    color: white;
+}
+
+.form-label-xs {
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--sdc-deep-blue);
+}
+
+.form-label-sm {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--sdc-deep-blue);
+}
+
+.metadata-section .card {
+    border-left: 3px solid var(--sdc-teal);
+    background-color: var(--sdc-off-white);
+}
+
+.text-danger {
+    color: var(--sdc-gold) !important;
+}
+</style>
+

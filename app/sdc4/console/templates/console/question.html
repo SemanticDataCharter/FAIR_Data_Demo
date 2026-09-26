@@ -1,0 +1,154 @@
+{% extends "console/base.html" %}
+{% block title %}Cross-domain question{% endblock %}
+
+{% block content %}
+<div class="ask">
+  <span class="label">Question</span>
+  <span class="q">Which people does the state already hold records for, and how many parts of the
+    state hold one?</span>
+  {% if not q.unavailable %}<span class="run">answered in {{ q.elapsed }} s</span>{% endif %}
+</div>
+
+{% if q.unavailable %}
+  <section class="card" style="margin-top:14px">
+    <div class="note">{{ q.unavailable }}</div>
+  </section>
+{% else %}
+  <section class="answer">
+    <div class="figs">
+      <div class="fig">
+        <div class="v">{{ q.people }}</div>
+        <div class="k">people the state holds a record for</div>
+        <div class="src">joined on National ID (CID)</div>
+      </div>
+      <div class="fig">
+        <div class="v">{{ q.records }}</div>
+        <div class="k">records carrying that identifier</div>
+        <div class="src">across {{ q.domains }} domains</div>
+      </div>
+      <div class="fig">
+        <div class="v">0</div>
+        <div class="k">mapping tables consulted</div>
+        <div class="src">one published component, {{ q.domains }} domains composing it</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>National ID</th><th class="num">Domains</th><th class="num">Records</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for p in q.rows %}
+          <tr>
+            <td>{{ p.cid }}</td>
+            <td class="num">{{ p.domains }}</td>
+            <td class="num">{{ p.records }}</td>
+            <td>
+              {% if p.open %}
+                <a class="why" href="{% url 'console:instance' p.open.ct_id p.open.instance_id %}?pane=table">open a record &rsaquo;</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <div class="grid" style="margin-top:14px">
+    <section class="card">
+      <header><span class="t">How far each person reaches</span></header>
+      <table>
+        <thead><tr><th>Domains holding a record</th><th class="num">People</th></tr></thead>
+        <tbody>
+          {% for s in q.spread %}
+            <tr><td>{{ s.domains }}</td><td class="num">{{ s.people }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p class="hint">
+        A person in eight rows of this table appears in eight separately built systems, and nothing
+        had to be reconciled to find them.
+      </p>
+    </section>
+
+    <aside>
+      <section class="card">
+        <header><span class="t">The query, in full</span></header>
+        <div class="pane"><pre>{{ q.query }}</pre></div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="commit">
+    <div class="mark">Today</div>
+    <div>
+      <p><b>This question normally starts an integration project.</b> Eight systems, each holding
+      part of the answer, each with its own idea of what identifies a person.</p>
+      <p>Nothing here was integrated. The eight domains compose the same published component for the
+      national identifier, so the join is the identifier itself. There is no mapping table to
+      maintain and no reconciliation step to schedule, which is why the answer takes
+      {{ q.elapsed }} seconds rather than a quarter.</p>
+      <p><b>What this did not show until 4.4.0.</b> The question a minister would rather ask, which
+      businesses employ exposed people and what trade is at risk, could not be answered by the
+      earlier demonstration data: employment records carried the employer as free text, so the
+      chain broke between Employment and Business Registry. The 4.4.0 models compose the Business
+      Registry Number component in employment, tax and maritime records as well as the registry
+      itself, and the second question below is the chain running.</p>
+    </div>
+  </div>
+
+  <div class="ask" style="margin-top:22px">
+    <span class="label">Question</span>
+    <span class="q">Which businesses employ people exposed in Porto Sereno, and what does the state
+      already hold on those businesses?</span>
+    {% if not t.unavailable %}<span class="run">answered in {{ t.elapsed }} s</span>{% endif %}
+  </div>
+  {% if t.unavailable %}
+    <section class="card" style="margin-top:14px"><div class="note">{{ t.unavailable }}</div></section>
+  {% else %}
+  <section class="answer">
+    <div class="figs">
+      <div class="fig">
+        <div class="v">{{ t.businesses }}</div>
+        <div class="k">businesses employing an exposed person</div>
+        <div class="src">joined on Business Registry Number</div>
+      </div>
+      <div class="fig">
+        <div class="v">{{ t.exposed }}</div>
+        <div class="k">exposed employees</div>
+        <div class="src">a healthcare encounter at a Porto Sereno facility, joined on National ID (CID)</div>
+      </div>
+      <div class="fig">
+        <div class="v">{{ t.filings }}</div>
+        <div class="k">tax filings on record for those businesses</div>
+        <div class="src">the same registry number, in the tax model</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Business</th><th>Registry number</th><th class="num">Exposed employees</th><th class="num">Tax filings</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for r in t.rows %}
+          <tr>
+            <td>{{ r.org }}</td>
+            <td>{{ r.brn }}</td>
+            <td class="num">{{ r.exposed }}</td>
+            <td class="num">{{ r.filings }}</td>
+            <td>{% if r.open %}<a class="why" href="{% url 'console:instance' r.open.ct_id r.open.instance_id %}?pane=table">open the registration &rsaquo;</a>{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  <div class="grid" style="margin-top:14px">
+    <aside>
+      <section class="card">
+        <header><span class="t">The query, in full</span></header>
+        <div class="pane"><pre>{{ t.query }}</pre></div>
+      </section>
+    </aside>
+  </div>
+  {% endif %}
+{% endif %}
+{% endblock %}

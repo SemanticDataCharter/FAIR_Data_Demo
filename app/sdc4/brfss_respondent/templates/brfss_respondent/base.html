@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}brfss_respondent{% endblock %}</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons.css' %}">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 4.5rem;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: red;
+            margin-left: 0.25rem;
+        }
+
+        /* Wizard Progress Styles */
+        .wizard-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding: 0;
+            counter-reset: step;
+        }
+
+        .wizard-progress .step {
+            list-style-type: none;
+            width: 25%;
+            float: left;
+            position: relative;
+            text-align: center;
+        }
+
+        .wizard-progress .step:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border: 2px solid #6c757d;
+            display: block;
+            text-align: center;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .wizard-progress .step.active:before {
+            border-color: #0d6efd;
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .wizard-progress .step.completed:before {
+            content: "✓";
+            border-color: #198754;
+            background-color: #198754;
+            color: white;
+        }
+
+        .wizard-progress .step:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #6c757d;
+            top: 20px;
+            left: -50%;
+            z-index: -1;
+        }
+
+        .wizard-progress .step:first-child:after {
+            content: none;
+        }
+
+        .wizard-progress .step.completed:after,
+        .wizard-progress .step.active:after {
+            background-color: #198754;
+        }
+
+        /* Read-only field styling */
+        .field-readonly {
+            background-color: #f8f9fa;
+            border-color: #dee2e6;
+        }
+
+        /* Component tree styling */
+        .component-tree {
+            border-left: 2px solid #dee2e6;
+            margin-left: 1rem;
+            padding-left: 1rem;
+        }
+
+        .component-tree-root {
+            margin-left: 0;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* XML Preview styling */
+        .xml-preview {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'brfss_respondent:instance-list' %}">brfss_respondent</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'brfss_respondent:instance-list' %}">
+                            <i class="bi bi-list"></i> Instances
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'brfss_respondent:wizard-start' %}">
+                            <i class="bi bi-plus-circle"></i> New Instance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/media/dmlib/dm-iymux9kjv8ndbkoi36xzx17i.html" target="_blank">
+                            <i class="bi bi-file-earmark-text"></i> Data Model Docs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Messages -->
+        {% if messages %}
+        <div class="row mt-3">
+            <div class="col-12">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Page Content -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+
+</html>

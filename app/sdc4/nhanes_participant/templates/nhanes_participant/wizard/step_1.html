@@ -1,0 +1,355 @@
+{% extends 'nhanes_participant/wizard/wizard_base.html' %}
+
+{% block step_content %}
+<div class="row">
+    {{ form.non_field_errors }}
+
+    {% if has_subject %}
+    <!-- Subject Information -->
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100 border-primary">
+            <div class="card-header bg-primary bg-opacity-10">
+                <h6 class="mb-0"><i class="bi bi-person-circle"></i> Subject</h6>
+                <small class="text-muted">Who or what this data is about</small>
+            </div>
+            <div class="card-body">
+                <!-- Subject Name (required) -->
+                <div class="mb-3">
+                    <label for="{{ form.subject_name.id_for_label }}" class="form-label required-field">
+                        Name
+                    </label>
+                    {{ form.subject_name }}
+                    {% if form.subject_name.errors %}
+                    <div class="invalid-feedback d-block">{{ form.subject_name.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Subject Type -->
+                <div class="mb-3">
+                    <label for="{{ form.subject_type.id_for_label }}" class="form-label">
+                        Type
+                    </label>
+                    {{ form.subject_type }}
+                    {% if form.subject_type.help_text %}
+                    <small class="form-text text-muted">{{ form.subject_type.help_text }}</small>
+                    {% endif %}
+                </div>
+
+                <!-- Collapsible ID section -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#subject-id-section"
+                            aria-expanded="false">
+                        <i class="bi bi-card-heading"></i> Add Identifier (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="subject-id-section">
+                    <div class="card card-body bg-light mb-3">
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label for="{{ form.subject_id.id_for_label }}" class="form-label form-label-sm">
+                                    Identifier
+                                </label>
+                                {{ form.subject_id }}
+                                {% if form.subject_id.help_text %}
+                                <small class="form-text text-muted">{{ form.subject_id.help_text }}</small>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.subject_id_scheme.id_for_label }}" class="form-label form-label-sm">
+                                    ID Scheme
+                                </label>
+                                {{ form.subject_id_scheme }}
+                                {% if form.subject_id_scheme.help_text %}
+                                <small class="form-text text-muted">{{ form.subject_id_scheme.help_text }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collapsible External Reference -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#subject-extref-section"
+                            aria-expanded="false">
+                        <i class="bi bi-link-45deg"></i> Add External Reference (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="subject-extref-section">
+                    <div class="card card-body bg-light">
+                        <label for="{{ form.subject_external_ref.id_for_label }}" class="form-label form-label-sm">
+                            External Reference URI
+                        </label>
+                        {{ form.subject_external_ref }}
+                        {% if form.subject_external_ref.help_text %}
+                        <small class="form-text text-muted">{{ form.subject_external_ref.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if has_provider %}
+    <!-- Provider Information -->
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100 border-success">
+            <div class="card-header bg-success bg-opacity-10">
+                <h6 class="mb-0"><i class="bi bi-building"></i> Provider</h6>
+                <small class="text-muted">Who provided or recorded this data</small>
+            </div>
+            <div class="card-body">
+                <!-- Provider Name (required) -->
+                <div class="mb-3">
+                    <label for="{{ form.provider_name.id_for_label }}" class="form-label required-field">
+                        Name
+                    </label>
+                    {{ form.provider_name }}
+                    {% if form.provider_name.errors %}
+                    <div class="invalid-feedback d-block">{{ form.provider_name.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Provider Type -->
+                <div class="mb-3">
+                    <label for="{{ form.provider_type.id_for_label }}" class="form-label">
+                        Type
+                    </label>
+                    {{ form.provider_type }}
+                    {% if form.provider_type.help_text %}
+                    <small class="form-text text-muted">{{ form.provider_type.help_text }}</small>
+                    {% endif %}
+                </div>
+
+                <!-- Collapsible ID section -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#provider-id-section"
+                            aria-expanded="false">
+                        <i class="bi bi-card-heading"></i> Add Identifier (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="provider-id-section">
+                    <div class="card card-body bg-light mb-3">
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <label for="{{ form.provider_id.id_for_label }}" class="form-label form-label-sm">
+                                    Identifier
+                                </label>
+                                {{ form.provider_id }}
+                                {% if form.provider_id.help_text %}
+                                <small class="form-text text-muted">{{ form.provider_id.help_text }}</small>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="{{ form.provider_id_scheme.id_for_label }}" class="form-label form-label-sm">
+                                    ID Scheme
+                                </label>
+                                {{ form.provider_id_scheme }}
+                                {% if form.provider_id_scheme.help_text %}
+                                <small class="form-text text-muted">{{ form.provider_id_scheme.help_text }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collapsible External Reference -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#provider-extref-section"
+                            aria-expanded="false">
+                        <i class="bi bi-link-45deg"></i> Add External Reference (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="provider-extref-section">
+                    <div class="card card-body bg-light">
+                        <label for="{{ form.provider_external_ref.id_for_label }}" class="form-label form-label-sm">
+                            External Reference URI
+                        </label>
+                        {{ form.provider_external_ref }}
+                        {% if form.provider_external_ref.help_text %}
+                        <small class="form-text text-muted">{{ form.provider_external_ref.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if has_participations %}
+    <!-- Participations -->
+    <div class="col-12 mb-4">
+        <div class="card border-info">
+            <div class="card-header bg-info bg-opacity-10 d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-0"><i class="bi bi-people"></i> Participations</h6>
+                    <small class="text-muted">Other parties involved in this data collection</small>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-info" id="add-participation">
+                    <i class="bi bi-plus-lg"></i> Add Participant
+                </button>
+            </div>
+            <div class="card-body" id="participations-container">
+                <p class="text-muted text-center py-3" id="no-participations-msg">
+                    <i class="bi bi-info-circle"></i> No participations added yet. Click "Add Participant" to add one.
+                </p>
+                <!-- Hidden participation template -->
+                <template id="participation-template">
+                    <div class="card mb-3 participation-card border-0 shadow-sm" data-idx="__IDX__">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h6 class="card-title mb-0">
+                                    <i class="bi bi-person-badge"></i> Participant <span class="participation-number">__NUM__</span>
+                                </h6>
+                                <button type="button" class="btn btn-sm btn-outline-danger remove-participation" title="Remove">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label required-field">Participant Name</label>
+                                    <input type="text" name="participation___IDX___name"
+                                           class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label required-field">Function/Role</label>
+                                    <input type="text" name="participation___IDX___function"
+                                           class="form-control" placeholder="e.g., Witness, Reviewer">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Mode</label>
+                                    <select name="participation___IDX___mode" class="form-select">
+                                        <option value="face-to-face">Face to Face</option>
+                                        <option value="telephone">Telephone</option>
+                                        <option value="videoconference">Video Conference</option>
+                                        <option value="electronic">Electronic/Written</option>
+                                        <option value="delegated">Delegated</option>
+                                        <option value="physical-presence">Physical Presence</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Time</label>
+                                    <input type="datetime-local" name="participation___IDX___time"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <!-- Collapsible additional fields -->
+                            <div class="mt-2">
+                                <button type="button" class="btn btn-sm btn-link text-muted p-0"
+                                        data-bs-toggle="collapse" data-bs-target="#participation-extra-__IDX__">
+                                    <i class="bi bi-chevron-down"></i> More options
+                                </button>
+                            </div>
+                            <div class="collapse mt-2" id="participation-extra-__IDX__">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label form-label-sm">Participant ID</label>
+                                        <input type="text" name="participation___IDX___id"
+                                               class="form-control form-control-sm" placeholder="External ID (optional)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <!-- Participations will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<!-- Help text -->
+<div class="alert alert-light mt-3" role="alert">
+    <i class="bi bi-lightbulb"></i>
+    <strong>Tip:</strong> Context information helps track the provenance of your data.
+    The subject identifies what the data describes, while the provider identifies who recorded it.
+    Participations can capture additional parties involved in data collection.
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+{% if has_participations %}
+<script>
+    // Participation management
+    let participationCount = 0;
+
+    function addParticipation() {
+        const container = document.getElementById('participations-container');
+        const noMsg = document.getElementById('no-participations-msg');
+        const template = document.getElementById('participation-template');
+
+        if (noMsg) noMsg.style.display = 'none';
+
+        // Clone template and replace placeholders
+        let html = template.innerHTML;
+        html = html.replace(/__IDX__/g, participationCount);
+        html = html.replace(/__NUM__/g, participationCount + 1);
+
+        container.insertAdjacentHTML('beforeend', html);
+        participationCount++;
+
+        // Update numbers
+        updateParticipationNumbers();
+    }
+
+    function updateParticipationNumbers() {
+        const cards = document.querySelectorAll('.participation-card');
+        cards.forEach((card, idx) => {
+            const numSpan = card.querySelector('.participation-number');
+            if (numSpan) numSpan.textContent = idx + 1;
+        });
+    }
+
+    document.getElementById('add-participation').addEventListener('click', addParticipation);
+
+    document.getElementById('participations-container').addEventListener('click', function(e) {
+        if (e.target.closest('.remove-participation')) {
+            const card = e.target.closest('.participation-card');
+            card.remove();
+
+            // Update numbers
+            updateParticipationNumbers();
+
+            // Show message if no participations left
+            const cards = document.querySelectorAll('.participation-card');
+            if (cards.length === 0) {
+                document.getElementById('no-participations-msg').style.display = 'block';
+            }
+        }
+    });
+</script>
+{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+.required-field::after {
+    content: " *";
+    color: var(--bs-danger);
+}
+
+.form-label-sm {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.participation-card {
+    border-left: 3px solid var(--bs-info) !important;
+}
+
+.participation-card:hover {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1) !important;
+}
+</style>
+{% endblock %}

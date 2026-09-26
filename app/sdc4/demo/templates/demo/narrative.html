@@ -1,0 +1,68 @@
+{% extends "demo/base.html" %}
+{% block title %}The Contagion{% endblock %}
+
+{% block extra_css %}
+.beat-card {
+    border: none;
+    border-radius: 0.75rem;
+    border-left: 5px solid;
+    transition: transform 0.2s;
+}
+.beat-card:hover { transform: translateY(-2px); }
+.beat-card.border-danger { border-left-color: #dc3545 !important; }
+.beat-card.border-warning { border-left-color: #ffc107 !important; }
+.beat-card.border-info { border-left-color: #0dcaf0 !important; }
+.beat-card.border-primary { border-left-color: #0d6efd !important; }
+.beat-card.border-success { border-left-color: #198754 !important; }
+.beat-card.border-secondary { border-left-color: #6c757d !important; }
+.beat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    flex-shrink: 0;
+}
+.htmx-indicator {
+    display: none;
+}
+.htmx-request .htmx-indicator {
+    display: inline-block;
+}
+.htmx-request .btn-text {
+    display: none;
+}
+{% endblock %}
+
+{% block content %}
+<h1 class="display-5 mb-1">The Contagion</h1>
+<p class="lead text-muted mb-4">A Crisis Narrative &mdash; 7 beats, 4 domains, hundreds of contacts</p>
+
+{% for beat in beats %}
+<div class="card beat-card border-{{ beat.color }} mb-3">
+    <div class="card-body">
+        <div class="d-flex align-items-start">
+            <div class="beat-icon bg-{{ beat.color }} me-3">
+                <i class="bi {{ beat.icon }}"></i>
+            </div>
+            <div class="flex-grow-1">
+                <h5 class="card-title mb-1">Beat {{ beat.number }}: {{ beat.title }}</h5>
+                <p class="card-text text-muted mb-2">{{ beat.narrative }}</p>
+                <button class="btn btn-sm btn-outline-{{ beat.color }}"
+                        hx-post="{% url 'demo:run-query' %}"
+                        hx-vals='{"query_number": "{{ beat.query_number }}", "source": "narrative"}'
+                        hx-target="#beat-results-{{ beat.number }}"
+                        hx-swap="innerHTML">
+                    <span class="btn-text"><i class="bi bi-play-fill me-1"></i>{{ beat.query_label }}</span>
+                    <span class="htmx-indicator"><span class="spinner-border spinner-border-sm me-1"></span>Running...</span>
+                </button>
+            </div>
+        </div>
+        <div id="beat-results-{{ beat.number }}" class="mt-3"></div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

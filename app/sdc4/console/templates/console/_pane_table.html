@@ -1,0 +1,30 @@
+<div class="pane">
+  <table>
+    <thead>
+      <tr><th>Field</th><th>Value</th><th>Units</th><th class="mono">Governed by</th></tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+        <tr class="{% if r.component == selected %}on{% endif %}">
+          <td><a class="fieldlink" href="?pane=table&amp;field={{ r.component }}">{{ r.label }}</a></td>
+          <td>
+            {% if r.ev_code %}
+              <span class="badge ev" title="{{ r.ev_code }}">{{ r.ev_name }}</span>
+            {% else %}
+              {{ r.value }}
+            {% endif %}
+          </td>
+          <td>{{ r.units|default:"&mdash;" }}</td>
+          <td class="mono">{{ r.component|default:"&mdash;" }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="4" class="hint">No field values in the JSON projection for this instance.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p class="hint">
+    The same record, projected from its JSON representation. An absent value carries a stated
+    reason rather than a blank cell, so a reader cannot mistake an absence for a normal value.
+    Select a field to see what the model permitted it to hold.
+  </p>
+</div>

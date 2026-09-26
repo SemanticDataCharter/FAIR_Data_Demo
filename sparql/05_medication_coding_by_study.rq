@@ -1,0 +1,16 @@
+# How each study codes a medication. NHANES carries its own drug identifier beside the generic
+# name; CMS carries the National Drug Code. The query returns the code system each study writes
+# and how many records carry it. That they do not join is the finding: no shared component exists
+# for the product, and this demonstration says so rather than mapping one onto the other.
+PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc:   <http://purl.org/dc/elements/1.1/>
+SELECT ?study ?component_label (COUNT(DISTINCT ?inst) AS ?records) (COUNT(DISTINCT ?v) AS ?distinct_codes) (SAMPLE(?v) AS ?example) (SAMPLE(?inst) AS ?inst_2)
+WHERE {
+  VALUES ?mc { sdc4:mc-lok5ozew80qmwah6h45jr69y sdc4:mc-t1gpzvw03cgrmv30iw4yjypm sdc4:mc-efimv7gxg5ompt8m6xb2b6k5 sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c }
+  ?r rdf:reifies <<?mc ?vp ?v>> ; sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?component_label .
+  ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
+}
+GROUP BY ?study ?component_label
+ORDER BY ?component_label ?study

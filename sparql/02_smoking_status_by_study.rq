@@ -1,0 +1,13 @@
+# Smoking status by study. One component (Smoking Status, LOINC 72166-2), two studies that ask it
+# with different questions, one distribution per study with no mapping table between them.
+PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc:   <http://purl.org/dc/elements/1.1/>
+SELECT ?study ?smoking_status (COUNT(DISTINCT ?inst) AS ?records) (SAMPLE(?inst) AS ?inst_2)
+WHERE {
+  ?r rdf:reifies <<sdc4:mc-n7pn5ctqo81v0v418hez5zv5 ?vp ?smoking_status>> ; sdc4:inInstance ?inst ; sdc4:inDataModel ?dm .
+  ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
+}
+GROUP BY ?study ?smoking_status
+ORDER BY ?study DESC(?records)

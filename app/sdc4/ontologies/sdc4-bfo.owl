@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://semanticdatacharter.com/ns/sdc4-bfo/"
+    xml:base="https://semanticdatacharter.com/ns/sdc4-bfo/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sdc4="https://semanticdatacharter.com/ns/sdc4/"
+    xmlns:obo="http://purl.obolibrary.org/obo/">
+
+    <owl:Ontology rdf:about="https://semanticdatacharter.com/ns/sdc4-bfo/">
+        <owl:imports rdf:resource="https://semanticdatacharter.com/ns/sdc4/"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2020/bfo.owl"/>
+        <rdfs:label>SDC4 to BFO Alignment Ontology</rdfs:label>
+        <rdfs:comment>Maps SDC4 Reference Model classes to BFO 2020 (ISO/IEC 21838-2:2021).
+SDC4 is a meta-level ontology — all classes are information artifact specifications
+that map to BFO's GenericallyDependentContinuant.</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <!-- Root: CMC -> GenericallyDependentContinuant (covers ~45 subclasses via transitivity) -->
+    <owl:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/CMC">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    </owl:Class>
+
+    <!-- Non-CMC top-level classes -->
+    <owl:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/InvlType">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/InvlUnits">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/MagnitudeStatus">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    </owl:Class>
+
+</rdf:RDF>

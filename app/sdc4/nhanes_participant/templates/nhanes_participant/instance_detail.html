@@ -1,0 +1,209 @@
+{% extends 'nhanes_participant/base.html' %}
+{% load nhanes_participant_extras %}
+
+{% block title %}{{ instance.instance_id }} - {{ dm_metadata.TITLE }}{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="mb-1">
+                    <i class="bi bi-file-earmark-code"></i>
+                    Instance: <code>{{ instance.instance_id }}</code>
+                </h4>
+                <p class="text-muted mb-0">{{ dm_metadata.TITLE }}</p>
+            </div>
+            <div class="btn-group">
+                <a href="{% url 'nhanes_participant:instance-download-xml' pk=instance.instance_id %}"
+                   class="btn btn-outline-primary">
+                    <i class="bi bi-download"></i> XML
+                </a>
+                <a href="{% url 'nhanes_participant:instance-download-json' pk=instance.instance_id %}"
+                   class="btn btn-outline-primary">
+                    <i class="bi bi-download"></i> JSON
+                </a>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Instance Info -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h6 class="mb-0">Instance Information</h6>
+                    </div>
+                    <div class="card-body">
+                        <dl class="row mb-0">
+                            <dt class="col-sm-5">Instance ID</dt>
+                            <dd class="col-sm-7"><code>{{ instance.instance_id }}</code></dd>
+
+                            <dt class="col-sm-5">Validation</dt>
+                            <dd class="col-sm-7">
+                                {% if instance.validation_status == 'valid' %}
+                                <span class="badge bg-success">Valid</span>
+                                {% elif instance.validation_status == 'valid_with_ev' %}
+                                <span class="badge bg-warning text-dark">Valid with EV</span>
+                                {% elif instance.validation_status == 'invalid' %}
+                                <span class="badge bg-danger">Invalid</span>
+                                {% else %}
+                                <span class="badge bg-secondary">{{ instance.validation_status }}</span>
+                                {% endif %}
+                            </dd>
+
+                            <dt class="col-sm-5">RDF Status</dt>
+                            <dd class="col-sm-7">
+                                {% if instance.rdf_sync_status == 'synced' %}
+                                <span class="badge bg-success">Synced</span>
+                                {% elif instance.rdf_sync_status == 'pending' %}
+                                <span class="badge bg-warning text-dark">Pending</span>
+                                {% elif instance.rdf_sync_status == 'failed' %}
+                                <span class="badge bg-danger">Failed</span>
+                                {% elif instance.rdf_sync_status == 'disabled' %}
+                                <span class="badge bg-secondary">Disabled</span>
+                                {% endif %}
+                            </dd>
+
+                            <dt class="col-sm-5">Created</dt>
+                            <dd class="col-sm-7">{{ instance.created_at|date:"Y-m-d H:i:s" }}</dd>
+
+                            <dt class="col-sm-5">Updated</dt>
+                            <dd class="col-sm-7">{{ instance.updated_at|date:"Y-m-d H:i:s" }}</dd>
+
+                            {% if instance.fuseki_graph_uri %}
+                            <dt class="col-sm-5">Fuseki Graph</dt>
+                            <dd class="col-sm-7">
+                                <small><code>{{ instance.fuseki_graph_uri }}</code></small>
+                            </dd>
+                            {% endif %}
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Details -->
+            <div class="col-md-8 mb-4">
+                {% if instance.validation_status == 'valid_with_ev' %}
+                <div class="card border-warning mb-3">
+                    <div class="card-header bg-warning text-dark">
+                        <h6 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Auto-Corrected Fields</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-2">The following fields were auto-corrected with Exceptional Values:</p>
+                        <ul class="mb-0">
+                            {% for field in auto_corrected_display %}
+                            <li><code>{{ field }}</code></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if validation_errors_display %}
+                <div class="card border-danger mb-3">
+                    <div class="card-header bg-danger text-white">
+                        <h6 class="mb-0"><i class="bi bi-x-circle"></i> Validation Errors</h6>
+                    </div>
+                    <div class="card-body">
+                        <pre class="mb-0" style="white-space: pre-wrap;">{{ validation_errors_display }}</pre>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Content Tabs -->
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#xml-tab" type="button">
+                            <i class="bi bi-file-code"></i> XML
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#json-tab" type="button">
+                            <i class="bi bi-braces"></i> JSON
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- XML Tab -->
+                    <div class="tab-pane fade show active" id="xml-tab" role="tabpanel">
+                        <div class="d-flex justify-content-end mb-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="copyContent('xml-content')">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                        <pre id="xml-content" class="xml-preview" style="max-height: 500px;">{{ xml_display }}</pre>
+                    </div>
+
+                    <!-- JSON Tab -->
+                    <div class="tab-pane fade" id="json-tab" role="tabpanel">
+                        <div class="d-flex justify-content-end mb-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="copyContent('json-content')">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                        <pre id="json-content" class="xml-preview" style="max-height: 500px;">{{ json_display }}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-4">
+            <a href="{% url 'nhanes_participant:instance-list' %}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete instance <strong>{{ instance.instance_id }}</strong>?</p>
+                <p class="text-danger mb-0">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    This action cannot be undone. The XML data and any associated RDF graph will be permanently deleted.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form method="post" action="{% url 'nhanes_participant:instance-delete' pk=instance.instance_id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function copyContent(elementId) {
+    const content = document.getElementById(elementId).textContent;
+    navigator.clipboard.writeText(content).then(function() {
+        alert('Content copied to clipboard!');
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+    });
+}
+</script>
+{% endblock %}

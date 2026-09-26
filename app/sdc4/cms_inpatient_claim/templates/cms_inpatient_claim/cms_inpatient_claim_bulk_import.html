@@ -1,0 +1,208 @@
+{% extends "cms_inpatient_claim/base.html" %}
+
+{% block title %}Bulk Import - cms_inpatient_claim{% endblock %}
+
+{% block extra_css %}
+<style>
+    .bulk-import-form {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .bulk-import-form h2 {
+        margin-top: 0;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .form-row {
+        margin-bottom: 15px;
+    }
+    .form-row label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+    }
+    .form-row .help-text {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9em;
+        color: #666;
+    }
+    .form-row input[type="file"],
+    .form-row input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    .form-row input[type="text"] {
+        max-width: 500px;
+    }
+    .radio-group {
+        margin: 10px 0;
+    }
+    .radio-group label {
+        display: inline-block;
+        font-weight: normal;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .radio-group input[type="radio"] {
+        margin-right: 5px;
+    }
+    .import-options {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 4px;
+    }
+    .option-section {
+        display: none;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px dashed #ddd;
+    }
+    .option-section.active {
+        display: block;
+    }
+    .submit-row {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+    .instructions {
+        background: #e8f4fc;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .instructions h3 {
+        margin-top: 0;
+        color: #0d6efd;
+    }
+    .instructions ol {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+    .template-link {
+        display: inline-block;
+        margin-top: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bulk-import-form">
+    <h2>Bulk Import XML Instances</h2>
+
+    <div class="instructions">
+        <h3>Instructions</h3>
+        <ol>
+            <li>Download the XML template to see the expected format</li>
+            <li>Create XML files following the template structure</li>
+            <li>Each XML file represents one record</li>
+            <li>Instance IDs will be auto-generated during import</li>
+            <li>Upload as a zip file or specify a server directory path</li>
+        </ol>
+        <a href="{{ download_template_url }}" class="btn btn-primary template-link">
+            ⬇️ Download XML Template
+        </a>
+    </div>
+
+    {% if form.errors %}
+    <div class="alert alert-danger">
+        {% for error in form.non_field_errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-row">
+            <label>{{ form.import_source.label }}</label>
+            <div class="radio-group">
+                {% for radio in form.import_source %}
+                <label>
+                    {{ radio.tag }} {{ radio.choice_label }}
+                </label>
+                {% endfor %}
+            </div>
+            {% if form.import_source.errors %}
+            <div class="text-danger">
+                {% for error in form.import_source.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="import-options">
+            <div id="zip-section" class="option-section active">
+                <div class="form-row">
+                    <label for="{{ form.zip_file.id_for_label }}">{{ form.zip_file.label }}</label>
+                    {{ form.zip_file }}
+                    <span class="help-text">{{ form.zip_file.help_text }}</span>
+                    {% if form.zip_file.errors %}
+                    <div class="text-danger">
+                        {% for error in form.zip_file.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div id="directory-section" class="option-section">
+                <div class="form-row">
+                    <label for="{{ form.directory_path.id_for_label }}">{{ form.directory_path.label }}</label>
+                    {{ form.directory_path }}
+                    <span class="help-text">{{ form.directory_path.help_text }}</span>
+                    {% if form.directory_path.errors %}
+                    <div class="text-danger">
+                        {% for error in form.directory_path.errors %}
+                        <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-row">
+            <button type="submit" class="btn btn-success">Import</button>
+            <a href="{% url 'cms_inpatient_claim:cms_inpatient_claim-list' %}" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const radioButtons = document.querySelectorAll('input[name="import_source"]');
+    const zipSection = document.getElementById('zip-section');
+    const directorySection = document.getElementById('directory-section');
+
+    function updateSections() {
+        const selected = document.querySelector('input[name="import_source"]:checked').value;
+        zipSection.classList.toggle('active', selected === 'zip');
+        directorySection.classList.toggle('active', selected === 'directory');
+    }
+
+    radioButtons.forEach(function(radio) {
+        radio.addEventListener('change', updateSections);
+    });
+
+    // Initial state
+    updateSections();
+});
+</script>
+{% endblock %}

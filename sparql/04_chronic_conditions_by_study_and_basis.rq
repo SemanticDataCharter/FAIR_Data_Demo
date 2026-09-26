@@ -1,0 +1,17 @@
+# Chronic conditions by study and by the basis each study established them on. Every condition
+# indicator is one component composed by every study that carries it; the basis (a professional's
+# diagnosis as the person reports it, or a claims-based algorithm) is stated on each record, so the
+# comparison is honest about what is being compared.
+PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc:   <http://purl.org/dc/elements/1.1/>
+SELECT ?condition ?study ?basis (COUNT(DISTINCT ?inst) AS ?records) (SUM(IF(?v = "Yes", 1, 0)) AS ?yes) (SAMPLE(?inst) AS ?inst_2)
+WHERE {
+  ?r sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?condition ; rdf:reifies <<?mc ?vp ?v>> .
+  FILTER(STRSTARTS(?condition, "Condition: "))
+  ?b sdc4:inInstance ?inst ; rdfs:label "Condition Indicator Basis" ; rdf:reifies <<?mcb ?vpb ?basis>> .
+  ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
+}
+GROUP BY ?condition ?study ?basis
+ORDER BY ?condition ?study

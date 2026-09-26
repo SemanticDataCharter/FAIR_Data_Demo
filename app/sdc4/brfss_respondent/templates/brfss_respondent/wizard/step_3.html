@@ -1,0 +1,324 @@
+{% extends 'brfss_respondent/wizard/wizard_base.html' %}
+
+{% block step_content %}
+<div class="row">
+    {{ form.non_field_errors }}
+
+    <!-- XML Preview -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-0"><i class="bi bi-code-slash"></i> XML Preview</h6>
+                    <small class="text-muted">Review the generated XML instance document</small>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary me-1" onclick="toggleXMLPreview()">
+                        <i class="bi bi-arrows-angle-contract" id="toggle-icon"></i> Toggle
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="copyXML()">
+                        <i class="bi bi-clipboard"></i> Copy
+                    </button>
+                </div>
+            </div>
+            <div class="card-body" id="xml-preview-container">
+                <pre class="xml-preview" id="xml-preview">{{ preview_xml }}</pre>
+            </div>
+        </div>
+    </div>
+
+    {% if has_audit %}
+    <!-- Audit Information -->
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning bg-opacity-10">
+                <h6 class="mb-0"><i class="bi bi-clock-history"></i> Audit Information</h6>
+                <small class="text-muted">Record who committed this data and when</small>
+            </div>
+            <div class="card-body">
+                <!-- System ID (required) -->
+                <div class="mb-3">
+                    <label for="{{ form.audit_system.id_for_label }}" class="form-label required-field">
+                        System ID
+                    </label>
+                    {{ form.audit_system }}
+                    {% if form.audit_system.help_text %}
+                    <small class="form-text text-muted">{{ form.audit_system.help_text }}</small>
+                    {% endif %}
+                    {% if form.audit_system.errors %}
+                    <div class="invalid-feedback d-block">{{ form.audit_system.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Change Type -->
+                <div class="mb-3">
+                    <label for="{{ form.audit_change_type.id_for_label }}" class="form-label">
+                        Change Type
+                    </label>
+                    {{ form.audit_change_type }}
+                    {% if form.audit_change_type.help_text %}
+                    <small class="form-text text-muted">{{ form.audit_change_type.help_text }}</small>
+                    {% endif %}
+                </div>
+
+                <!-- Location -->
+                <div class="mb-3">
+                    <label for="{{ form.audit_location.id_for_label }}" class="form-label">
+                        Location
+                    </label>
+                    {{ form.audit_location }}
+                    {% if form.audit_location.help_text %}
+                    <small class="form-text text-muted">{{ form.audit_location.help_text }}</small>
+                    {% endif %}
+                    {% if form.audit_location.errors %}
+                    <div class="invalid-feedback d-block">{{ form.audit_location.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Committer (required) -->
+                <div class="mb-3">
+                    <label for="{{ form.audit_committer.id_for_label }}" class="form-label required-field">
+                        Committer
+                    </label>
+                    {{ form.audit_committer }}
+                    {% if form.audit_committer.help_text %}
+                    <small class="form-text text-muted">{{ form.audit_committer.help_text }}</small>
+                    {% endif %}
+                    {% if form.audit_committer.errors %}
+                    <div class="invalid-feedback d-block">{{ form.audit_committer.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Description (collapsible) -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#audit-description-section"
+                            aria-expanded="false">
+                        <i class="bi bi-card-text"></i> Add Description (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="audit-description-section">
+                    <div class="card card-body bg-light">
+                        <label for="{{ form.audit_description.id_for_label }}" class="form-label form-label-sm">
+                            Description
+                        </label>
+                        {{ form.audit_description }}
+                        {% if form.audit_description.help_text %}
+                        <small class="form-text text-muted">{{ form.audit_description.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if has_attestation %}
+    <!-- Attestation -->
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100 border-success">
+            <div class="card-header bg-success bg-opacity-10">
+                <h6 class="mb-0"><i class="bi bi-shield-check"></i> Attestation</h6>
+                <small class="text-muted">Verify and attest to the accuracy of this data</small>
+            </div>
+            <div class="card-body">
+                <!-- Attested View -->
+                <div class="mb-3">
+                    <label for="{{ form.attestation_view.id_for_label }}" class="form-label">
+                        Attested View
+                    </label>
+                    {{ form.attestation_view }}
+                    {% if form.attestation_view.help_text %}
+                    <small class="form-text text-muted">{{ form.attestation_view.help_text }}</small>
+                    {% endif %}
+                    {% if form.attestation_view.errors %}
+                    <div class="invalid-feedback d-block">{{ form.attestation_view.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Attester Name (required) -->
+                <div class="mb-3">
+                    <label for="{{ form.attester_name.id_for_label }}" class="form-label required-field">
+                        Attester Name
+                    </label>
+                    {{ form.attester_name }}
+                    {% if form.attester_name.help_text %}
+                    <small class="form-text text-muted">{{ form.attester_name.help_text }}</small>
+                    {% endif %}
+                    {% if form.attester_name.errors %}
+                    <div class="invalid-feedback d-block">{{ form.attester_name.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Reason (collapsible) -->
+                <div class="mb-3">
+                    <button type="button" class="btn btn-sm btn-outline-secondary w-100"
+                            data-bs-toggle="collapse" data-bs-target="#attestation-reason-section"
+                            aria-expanded="false">
+                        <i class="bi bi-chat-quote"></i> Add Reason (Optional)
+                    </button>
+                </div>
+
+                <div class="collapse" id="attestation-reason-section">
+                    <div class="card card-body bg-light mb-3">
+                        <label for="{{ form.attestation_reason.id_for_label }}" class="form-label form-label-sm">
+                            Reason for Attestation
+                        </label>
+                        {{ form.attestation_reason }}
+                        {% if form.attestation_reason.help_text %}
+                        <small class="form-text text-muted">{{ form.attestation_reason.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Digital Signature -->
+                <div class="mb-3">
+                    <label for="{{ form.attestation_proof.id_for_label }}" class="form-label">
+                        Digital Signature
+                    </label>
+                    {{ form.attestation_proof }}
+                    {% if form.attestation_proof.help_text %}
+                    <small class="form-text text-muted">{{ form.attestation_proof.help_text }}</small>
+                    {% endif %}
+                    {% if form.attestation_proof.errors %}
+                    <div class="invalid-feedback d-block">{{ form.attestation_proof.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <!-- Attestation Pending -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        {{ form.attestation_pending }}
+                        <label class="form-check-label" for="{{ form.attestation_pending.id_for_label }}">
+                            {{ form.attestation_pending.label }}
+                        </label>
+                        {% if form.attestation_pending.help_text %}
+                        <small class="form-text text-muted d-block">{{ form.attestation_pending.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Data Summary (if no audit/attestation, still show something) -->
+    {% if not has_audit and not has_attestation %}
+    <div class="col-12 mb-4">
+        <div class="alert alert-info" role="alert">
+            <i class="bi bi-info-circle"></i>
+            <strong>Review Complete</strong> - No audit or attestation is required for this data model.
+            Please review the XML preview above and confirm submission below.
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Confirmation -->
+    <div class="col-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary bg-opacity-10">
+                <h6 class="mb-0"><i class="bi bi-check-circle"></i> Confirmation</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-check">
+                    {{ form.confirm_submission }}
+                    <label class="form-check-label" for="{{ form.confirm_submission.id_for_label }}">
+                        {{ form.confirm_submission.label }}
+                    </label>
+                    {% if form.confirm_submission.errors %}
+                    <div class="invalid-feedback d-block">{{ form.confirm_submission.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help text -->
+<div class="alert alert-light mt-3" role="alert">
+    <i class="bi bi-lightbulb"></i>
+    <strong>Tip:</strong> Review the XML preview carefully before submitting.
+    {% if has_audit %}Audit information tracks who committed this data and when.{% endif %}
+    {% if has_attestation %}Attestation provides verification that the data is accurate and complete.{% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    function copyXML() {
+        const xmlContent = document.getElementById('xml-preview').textContent;
+        navigator.clipboard.writeText(xmlContent).then(function() {
+            // Show bootstrap toast
+            const btn = event.target.closest('button');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-check"></i> Copied!';
+            btn.classList.remove('btn-outline-primary');
+            btn.classList.add('btn-success');
+            setTimeout(function() {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-outline-primary');
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            alert('Failed to copy XML. Please select and copy manually.');
+        });
+    }
+
+    function toggleXMLPreview() {
+        const container = document.getElementById('xml-preview-container');
+        const icon = document.getElementById('toggle-icon');
+
+        if (container.style.display === 'none') {
+            container.style.display = 'block';
+            icon.classList.remove('bi-arrows-angle-expand');
+            icon.classList.add('bi-arrows-angle-contract');
+        } else {
+            container.style.display = 'none';
+            icon.classList.remove('bi-arrows-angle-contract');
+            icon.classList.add('bi-arrows-angle-expand');
+        }
+    }
+</script>
+{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<style>
+.required-field::after {
+    content: " *";
+    color: var(--bs-danger);
+}
+
+.form-label-sm {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.xml-preview {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.card.border-warning {
+    border-left: 3px solid var(--bs-warning) !important;
+}
+
+.card.border-success {
+    border-left: 3px solid var(--bs-success) !important;
+}
+
+.card.border-primary {
+    border-left: 3px solid var(--bs-primary) !important;
+}
+</style>
+{% endblock %}

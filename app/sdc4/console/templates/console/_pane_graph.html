@@ -1,0 +1,38 @@
+<div class="pane">
+{% if g.unavailable %}
+  <div class="stub">
+    <p><b>No neighbourhood to draw.</b></p>
+    <p class="hint">{{ g.unavailable }}</p>
+  </div>
+{% else %}
+  <svg viewBox="0 0 {{ g.width }} {{ g.height }}" width="100%" height="{{ g.height }}"
+       role="img" aria-label="One hop around this record in the triple store">
+    {% for n in g.nodes %}
+      <line x1="{{ g.cx }}" y1="{{ g.cy }}" x2="{{ n.x }}" y2="{{ n.y }}"
+            stroke="#c2ced8" stroke-width="1.2"/>
+    {% endfor %}
+    {% for n in g.nodes %}
+      <circle cx="{{ n.x }}" cy="{{ n.y }}" r="4.5" fill="#fff" stroke="#0e6e6e" stroke-width="1.6"/>
+      <text x="{{ n.x }}" y="{{ n.y }}" dx="{% if n.anchor == 'start' %}9{% elif n.anchor == 'end' %}-9{% else %}0{% endif %}"
+            dy="{% if n.anchor == 'middle' %}-10{% else %}4{% endif %}"
+            text-anchor="{{ n.anchor }}" font-size="11.5" fill="#243444"
+            font-family="Inter, system-ui, sans-serif">{{ n.label }}</text>
+    {% endfor %}
+
+    <rect x="{{ g.cx|add:'-96' }}" y="{{ g.cy|add:'-25' }}" width="192" height="50" rx="6" fill="#0e6e6e"/>
+    <text x="{{ g.cx }}" y="{{ g.cy|add:'-4' }}" text-anchor="middle" font-size="12" fill="#bfe3e0"
+          font-family="Inter, system-ui, sans-serif">{{ g.centre.label }}</text>
+    <text x="{{ g.cx }}" y="{{ g.cy|add:'14' }}" text-anchor="middle" font-size="11" fill="#fff"
+          font-family="ui-monospace, monospace">{{ g.centre.instance_id|truncatechars:26 }}</text>
+  </svg>
+
+  <p class="hint">
+    {{ g.shown }} of {{ g.total }} components{% if g.hidden %}, {{ g.hidden }} not drawn{% endif %},
+    each joined to the record by <code>sdc4:inInstance</code> in named graph
+    <code>{{ g.graph_uri }}</code>.
+    The canvas is the ordinary part: every graph product draws one. What is not ordinary is that
+    these nodes were generated from a governed model rather than loaded as triples, so each resolves
+    back to the validated record you can read on the Document tab.
+  </p>
+{% endif %}
+</div>

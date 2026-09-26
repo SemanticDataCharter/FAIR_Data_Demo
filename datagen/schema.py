@@ -83,8 +83,8 @@ class Schema:
                 if base == "ClusterType" and child not in ancestors:
                     self._walk(child, path + (self.label.get(child, ""),), ancestors | {child})
 
-    def _find(self, path: str) -> tuple[str, str | None]:
-        want = tuple(path.split("/"))
+    def _find(self, path) -> tuple[str, str | None]:
+        want = tuple(path) if isinstance(path, (tuple, list)) else tuple(path.split("/"))   # a tuple when a label carries a slash
         hits = {(comp, adapter) for p, comp, adapter in self.paths if p[-len(want):] == want}
         if not hits:
             raise KeyError(f"no element at {path!r} in dm-{self.dm}")

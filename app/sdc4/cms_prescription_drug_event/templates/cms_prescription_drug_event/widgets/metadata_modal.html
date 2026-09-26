@@ -1,0 +1,229 @@
+
+<!-- Metadata Modal Template -->
+<div class="modal fade" id="metadataModal-{{ field_name }}" tabindex="-1"
+     aria-labelledby="metadataModalLabel-{{ field_name }}" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-sdc-teal text-white">
+        <h5 class="modal-title" id="metadataModalLabel-{{ field_name }}">
+          <i class="bi bi-info-circle"></i> Metadata for {{ field_label }}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <!-- Temporal Metadata Section -->
+          {% if has_temporal_metadata %}
+          <div class="col-12">
+            <h6 class="text-sdc-deep-blue border-bottom pb-2">
+              <i class="bi bi-clock-history"></i> Temporal Metadata
+            </h6>
+          </div>
+
+          {% if vtb_field %}
+          <div class="col-md-6">
+            <label for="{{ vtb_field.id_for_label }}" class="form-label">
+              Valid Time Begin
+              {% if vtb_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ vtb_field }}
+            <small class="form-text text-muted d-block">When this value became valid</small>
+          </div>
+          {% endif %}
+
+          {% if vte_field %}
+          <div class="col-md-6">
+            <label for="{{ vte_field.id_for_label }}" class="form-label">
+              Valid Time End
+              {% if vte_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ vte_field }}
+            <small class="form-text text-muted d-block">When this value becomes invalid</small>
+          </div>
+          {% endif %}
+
+          {% if tr_field %}
+          <div class="col-md-6">
+            <label for="{{ tr_field.id_for_label }}" class="form-label">
+              Time Recorded
+              {% if tr_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ tr_field }}
+            <small class="form-text text-muted d-block">When this value was recorded</small>
+          </div>
+          {% endif %}
+
+          {% if mod_field %}
+          <div class="col-md-6">
+            <label for="{{ mod_field.id_for_label }}" class="form-label">
+              Time Modified
+              {% if mod_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ mod_field }}
+            <small class="form-text text-muted d-block">When this value was last modified</small>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <!-- Location Metadata Section -->
+          {% if has_location_metadata %}
+          <div class="col-12 mt-3">
+            <h6 class="text-sdc-deep-blue border-bottom pb-2">
+              <i class="bi bi-geo-alt"></i> Location Metadata
+            </h6>
+          </div>
+
+          {% if location_lat_field %}
+          <div class="col-md-6">
+            <label for="{{ location_lat_field.id_for_label }}" class="form-label">
+              Latitude
+              {% if location_lat_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ location_lat_field }}
+            <small class="form-text text-muted d-block">Decimal degrees (-90 to 90)</small>
+          </div>
+          {% endif %}
+
+          {% if location_lon_field %}
+          <div class="col-md-6">
+            <label for="{{ location_lon_field.id_for_label }}" class="form-label">
+              Longitude
+              {% if location_lon_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ location_lon_field }}
+            <small class="form-text text-muted d-block">Decimal degrees (-180 to 180)</small>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <!-- Security Metadata Section -->
+          {% if has_security_metadata %}
+          <div class="col-12 mt-3">
+            <h6 class="text-sdc-deep-blue border-bottom pb-2">
+              <i class="bi bi-shield-lock"></i> Security Metadata
+            </h6>
+          </div>
+
+          {% if act_field %}
+          <div class="col-md-6">
+            <label for="{{ act_field.id_for_label }}" class="form-label">
+              Access Control Tag
+              {% if act_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ act_field }}
+            <small class="form-text text-muted d-block">Security classification tag</small>
+          </div>
+          {% endif %}
+
+          {% if act_class_field %}
+          <div class="col-md-6">
+            <label for="{{ act_class_field.id_for_label }}" class="form-label">
+              ACT Class
+              {% if act_class_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ act_class_field }}
+            <small class="form-text text-muted d-block">Classification level</small>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <!-- Quantified Metadata Section -->
+          {% if has_quantified_metadata %}
+          <div class="col-12 mt-3">
+            <h6 class="text-sdc-deep-blue border-bottom pb-2">
+              <i class="bi bi-calculator"></i> Quantified Metadata
+            </h6>
+          </div>
+
+          {% if magnitude_status_field %}
+          <div class="col-md-4">
+            <label for="{{ magnitude_status_field.id_for_label }}" class="form-label">
+              Magnitude Status
+              {% if magnitude_status_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ magnitude_status_field }}
+            <small class="form-text text-muted d-block">=, &lt;, &gt;, &lt;=, &gt;=</small>
+          </div>
+          {% endif %}
+
+          {% if error_field %}
+          <div class="col-md-4">
+            <label for="{{ error_field.id_for_label }}" class="form-label">
+              Error (±%)
+              {% if error_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ error_field }}
+            <small class="form-text text-muted d-block">Error margin percentage</small>
+          </div>
+          {% endif %}
+
+          {% if accuracy_field %}
+          <div class="col-md-4">
+            <label for="{{ accuracy_field.id_for_label }}" class="form-label">
+              Accuracy (0-100)
+              {% if accuracy_field.field.required %}<span class="text-danger">*</span>{% endif %}
+            </label>
+            {{ accuracy_field }}
+            <small class="form-text text-muted d-block">Accuracy percentage</small>
+          </div>
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* SDC Branding Colors */
+:root {
+    --sdc-deep-blue: #0a2342;
+    --sdc-teal: #2ca58d;
+    --sdc-gold: #f0a500;
+    --sdc-light-blue: #8db9d9;
+    --sdc-off-white: #f7f9fb;
+    --sdc-dark-gray: #333333;
+    --sdc-light-gray: #e1e6ea;
+}
+
+.bg-sdc-teal {
+    background-color: var(--sdc-teal) !important;
+}
+
+.text-sdc-deep-blue {
+    color: var(--sdc-deep-blue) !important;
+}
+
+.modal-body h6 {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.modal-body .form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--sdc-deep-blue);
+}
+
+.modal-body .form-text {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.modal-body input[type="text"],
+.modal-body input[type="number"],
+.modal-body input[type="datetime-local"],
+.modal-body select {
+    border-color: var(--sdc-light-blue);
+}
+
+.modal-body input:focus,
+.modal-body select:focus {
+    border-color: var(--sdc-teal);
+    box-shadow: 0 0 0 0.2rem rgba(44, 165, 141, 0.25);
+}
+</style>
+

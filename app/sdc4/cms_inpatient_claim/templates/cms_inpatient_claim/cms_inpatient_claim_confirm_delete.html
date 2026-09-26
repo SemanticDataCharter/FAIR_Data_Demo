@@ -1,0 +1,33 @@
+{% extends 'cms_inpatient_claim/base.html' %}
+
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="bi bi-exclamation-triangle-fill"></i> Confirm Deletion</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Are you sure you want to delete this record?</p>
+
+                <div class="alert alert-warning">
+                    <strong>Record ID:</strong> {{ object.pk }}<br>
+                    <strong>Created:</strong> {{ object.created_at }}
+                </div>
+
+                <p class="text-danger">This action cannot be undone.</p>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'cms_inpatient_claim:cms_inpatient_claim-list' %}" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-danger">Delete Record</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1068 @@
+{
+  "@context": "https://semanticdatacharter.com/ns/sdc4/",
+  "dm_id": "mllwhe842wtnim4ms48qonio",
+  "dm_type": "dm-mllwhe842wtnim4ms48qonio",
+  "metadata": {
+    "dm_language": "en-US",
+    "dm_label": "CMS Outpatient Claim",
+    "dm_encoding": "utf-8",
+    "instance_id": "yal49xy5838nsu47mqzohpwy",
+    "instance_version": "1.0",
+    "creation_timestamp": "2026-09-26T22:13:50.201021",
+    "current_state": ""
+  },
+  "data": {
+    "component_id": "cfbimjxaeo7964wdjqelryzr",
+    "label": "CMS Outpatient Claim Governed Record",
+    "type": "Cluster",
+    "description": "A CMS outpatient claim record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: CMS Outpatient Claim; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).",
+    "items": [
+      {
+        "component_id": "t2tvd3wylxrstdeu5aw6gkw1",
+        "label": "Audit Event",
+        "type": "Cluster",
+        "description": "A logged access or custody event as data: what was done, by whom, on what, with what outcome and for what purpose. The audit-only case of sdc5 issue 002; state-changing operations are workflow transitions.",
+        "items": [
+          {
+            "component_id": "dkc2ccj5te35z9gd4bu1blcq",
+            "label": "Audit Agent Reference",
+            "type": "XdString",
+            "description": "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gcjyjrnp0wsfoelcp4m05c67",
+            "label": "Audit Entity Reference",
+            "type": "XdString",
+            "description": "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "fjhgr5fyqxt2crmg2cb5c513",
+            "label": "Audit Event Identifier",
+            "type": "XdString",
+            "description": "The identifier of the audit event.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+            "label": "Data Subject Reference",
+            "type": "XdString",
+            "description": "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "nf1air1zbj8v9w66jozdxmyl",
+            "label": "On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "h3kdbvdtyalpvik97saaf0an",
+            "label": "System Identifier",
+            "type": "XdString",
+            "description": "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ujir739mf1g8ajeczs9nzh9m",
+            "label": "System Location Name",
+            "type": "XdString",
+            "description": "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ce1c8sydkov8bkv4dgdmwe5x",
+            "label": "Audit Event Action",
+            "type": "XdToken",
+            "description": "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.",
+            "value": "U",
+            "constraints": {
+              "enumerations": [
+                "C",
+                "R",
+                "U",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "component_id": "rpz1czz06jhpahmfz30rblvp",
+            "label": "Audit Event Outcome",
+            "type": "XdToken",
+            "description": "The result of an audited event (FHIR AuditEvent.outcome).",
+            "value": "8",
+            "constraints": {
+              "enumerations": [
+                "0",
+                "4",
+                "8",
+                "12"
+              ]
+            }
+          },
+          {
+            "component_id": "vbctgmdcwps5b3r3l6sboa6y",
+            "label": "Confidentiality",
+            "type": "XdToken",
+            "description": "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.",
+            "value": "M",
+            "constraints": {
+              "enumerations": [
+                "U",
+                "L",
+                "M",
+                "N",
+                "R",
+                "V"
+              ]
+            }
+          },
+          {
+            "component_id": "jujsdur1igws8orw6tvvlqco",
+            "label": "Provenance Agent Type",
+            "type": "XdToken",
+            "description": "The functional role of an agent in an activity (FHIR Provenance.agent.type).",
+            "value": "legal",
+            "constraints": {
+              "enumerations": [
+                "enterer",
+                "performer",
+                "author",
+                "editor",
+                "verifier",
+                "legal",
+                "attester",
+                "informant",
+                "custodian",
+                "transmitter",
+                "assembler",
+                "transformer",
+                "composer"
+              ]
+            }
+          },
+          {
+            "component_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+            "label": "Purpose of Use",
+            "type": "XdToken",
+            "description": "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.",
+            "value": "HRESCH",
+            "constraints": {
+              "enumerations": [
+                "TREAT",
+                "ETREAT",
+                "COC",
+                "HPAYMT",
+                "HOPERAT",
+                "HRESCH",
+                "CLINTRCH",
+                "PUBHLTH",
+                "PATRQT",
+                "HLEGAL",
+                "HMARKT"
+              ]
+            }
+          },
+          {
+            "component_id": "uwiosm2q9ym3ewr4de910s70",
+            "label": "Audit Recorded At",
+            "type": "XdTemporal",
+            "description": "When the audit event was recorded (FHIR AuditEvent.recorded).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "ls6pcoy94kbq68aa9v5y1qr8",
+        "label": "CMS Outpatient Claim",
+        "type": "Cluster",
+        "description": "One DE-SynPUF outpatient claim (2008-2010): the beneficiary and claim identifiers, the visit as the FHIR encounter by identifier, provider and physicians, the payment and blood deductible amounts, the Part B coinsurance and deductible, the admitting diagnosis, up to ten diagnoses, six procedures and ten HCPCS codes. Members: Beneficiary Code (DESYNPUF_ID); Claim ID (CLM_ID); Claim Line Segment (SEGMENT); encounter (FHIR); Provider Institution (PRVDR_NUM); Claim Payment Amount; Primary Payer Claim Paid Amount; Attending Physician NPI (AT_PHYSN_NPI); Operating Physician NPI (OP_PHYSN_NPI); Other Physician NPI (OT_PHYSN_NPI); Blood Deductible Liability Amount; Part B Coinsurance Amount; Part B Deductible Amount; Admitting Diagnosis; Claim Diagnosis 1; Claim Diagnosis 2; Claim Diagnosis 3; Claim Diagnosis 4; Claim Diagnosis 5; Claim Diagnosis 6; Claim Diagnosis 7; Claim Diagnosis 8; Claim Diagnosis 9; Claim Diagnosis 10; Claim Procedure 1; Claim Procedure 2; Claim Procedure 3; Claim Procedure 4; Claim Procedure 5; Claim Procedure 6; Claim HCPCS 1; Claim HCPCS 2; Claim HCPCS 3; Claim HCPCS 4; Claim HCPCS 5; Claim HCPCS 6; Claim HCPCS 7; Claim HCPCS 8; Claim HCPCS 9; Claim HCPCS 10.",
+        "items": [
+          {
+            "component_id": "b5h4gc4jje1imwkzdt6xg5wb",
+            "label": "Attending Physician NPI (AT_PHYSN_NPI)",
+            "type": "XdString",
+            "description": "The attending physician's National Provider Identifier (AT_PHYSN_NPI).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 10
+            }
+          },
+          {
+            "component_id": "zshx6rx7ca1j00eda9kxyh6h",
+            "label": "Beneficiary Code (DESYNPUF_ID)",
+            "type": "XdString",
+            "description": "The synthetic beneficiary identifier every DE-SynPUF file carries (DESYNPUF_ID); not traceable to a real Medicare beneficiary.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 16
+            }
+          },
+          {
+            "component_id": "skyz3ht3zv3j5qwsx8x0dyru",
+            "label": "Claim ID (CLM_ID)",
+            "type": "XdString",
+            "description": "The claim identifier (CLM_ID).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 20
+            }
+          },
+          {
+            "component_id": "lq0eu7o1fizlst28weyv3z2t",
+            "label": "Operating Physician NPI (OP_PHYSN_NPI)",
+            "type": "XdString",
+            "description": "The operating physician's National Provider Identifier (OP_PHYSN_NPI).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 10
+            }
+          },
+          {
+            "component_id": "d3c64u25m9yvux5qe9eu2ur9",
+            "label": "Other Physician NPI (OT_PHYSN_NPI)",
+            "type": "XdString",
+            "description": "The other physician's National Provider Identifier (OT_PHYSN_NPI).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 10
+            }
+          },
+          {
+            "component_id": "lv5pcw6w5e15mo1t2oiofatl",
+            "label": "Provider Institution (PRVDR_NUM)",
+            "type": "XdString",
+            "description": "The provider institution number (PRVDR_NUM).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 10
+            }
+          },
+          {
+            "component_id": "x30sghfdhlvgw2gn7trxp9u6",
+            "label": "Claim Line Segment (SEGMENT)",
+            "type": "XdCount",
+            "description": "The claim line segment (SEGMENT).",
+            "value": 32,
+            "units": {
+              "label": "Items",
+              "value": "Default : Items"
+            }
+          },
+          {
+            "component_id": "s7najsv11bd33calnyktjcon",
+            "label": "Blood Deductible Liability Amount",
+            "type": "XdQuantity",
+            "description": "The beneficiary's blood deductible liability (NCH_BENE_BLOOD_DDCTBL_LBLTY_AM), in US dollars.",
+            "value": 64.4,
+            "magnitude": {
+              "value": 64.4
+            },
+            "units": {
+              "label": "Currency",
+              "symbol": "%",
+              "system": "ISO"
+            }
+          },
+          {
+            "component_id": "bgis0a73v9ncnwhicmjmvhl1",
+            "label": "Claim Payment Amount",
+            "type": "XdQuantity",
+            "description": "The amount Medicare paid on the claim (CLM_PMT_AMT), in US dollars.",
+            "value": 20.2,
+            "magnitude": {
+              "value": 20.2
+            },
+            "units": {
+              "label": "Currency",
+              "symbol": "%",
+              "system": "ISO"
+            }
+          },
+          {
+            "component_id": "d3wdaw6x7seq2wist9v1ebch",
+            "label": "Part B Coinsurance Amount",
+            "type": "XdQuantity",
+            "description": "The beneficiary's Part B coinsurance (NCH_BENE_PTB_COINSRNC_AMT), in US dollars.",
+            "value": 85.3,
+            "magnitude": {
+              "value": 85.3
+            },
+            "units": {
+              "label": "Currency",
+              "symbol": "%",
+              "system": "ISO"
+            }
+          },
+          {
+            "component_id": "tg2j38jv33c2b34s21m1on28",
+            "label": "Part B Deductible Amount",
+            "type": "XdQuantity",
+            "description": "The beneficiary's Part B deductible (NCH_BENE_PTB_DDCTBL_AMT), in US dollars.",
+            "value": 6.9,
+            "magnitude": {
+              "value": 6.9
+            },
+            "units": {
+              "label": "Currency",
+              "symbol": "%",
+              "system": "ISO"
+            }
+          },
+          {
+            "component_id": "rnpfh6mpz8jfq28dfjp17rf9",
+            "label": "Primary Payer Claim Paid Amount",
+            "type": "XdQuantity",
+            "description": "The amount a primary payer paid on the claim (NCH_PRMRY_PYR_CLM_PD_AMT), in US dollars.",
+            "value": 37.5,
+            "magnitude": {
+              "value": 37.5
+            },
+            "units": {
+              "label": "Currency",
+              "symbol": "%",
+              "system": "ISO"
+            }
+          },
+          {
+            "component_id": "av5ztq8he6ot9ubpc4mhtp3s",
+            "label": "Admitting Diagnosis",
+            "type": "Cluster",
+            "description": "The admitting diagnosis (ADMTNG_ICD9_DGNS_CD) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": [
+              {
+                "component_id": "f9y0zpvphrny3gapgnjss0w1",
+                "label": "Diagnosis (ICD-9-CM)",
+                "type": "Cluster",
+                "description": "A diagnosis coded in ICD-9-CM: the code, its display text and the fixed code system (FHIR Coding). What the 2008-2010 claims carry; not mapped to ICD-10-CM. Members: Diagnosis Code (ICD-9-CM); code-display-text (FHIR); Code System: ICD-9-CM.",
+                "items": [
+                  {
+                    "component_id": "qdl35df54hlauu2mhwac6goe",
+                    "label": "Code System: ICD-9-CM",
+                    "type": "XdLink",
+                    "description": "The code system of a coded value, fixed: ICD-9-CM (http://hl7.org/fhir/sid/icd-9-cm). FHIR Coding.system.",
+                    "value": "http://example.org/resource"
+                  },
+                  {
+                    "component_id": "jpr4t7i8lrhxen4x63s6jp2c",
+                    "label": "Diagnosis Code (ICD-9-CM)",
+                    "type": "XdString",
+                    "description": "An ICD-9-CM diagnosis code as recorded on a 2008-2010 Medicare claim, without the decimal point as CMS files carry it.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 5
+                    }
+                  },
+                  {
+                    "component_id": "eo5tlfr0576ypknys5alvcn0",
+                    "label": "Code Display Text",
+                    "type": "XdString",
+                    "description": "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display).",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 500
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component_id": "v6cz7f7o7q0e1ziekrn7oam5",
+            "label": "Claim Diagnosis 1",
+            "type": "Cluster",
+            "description": "Diagnosis code 1 on the claim (ICD9_DGNS_CD_1) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "c7up53lff6ip0zyv8dkkt868",
+            "label": "Claim Diagnosis 10",
+            "type": "Cluster",
+            "description": "Diagnosis code 10 on the claim (ICD9_DGNS_CD_10) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "x1942izf02stqs3kiu2yepf5",
+            "label": "Claim Diagnosis 2",
+            "type": "Cluster",
+            "description": "Diagnosis code 2 on the claim (ICD9_DGNS_CD_2) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "n1asylnn94ejo14l8us3wxf6",
+            "label": "Claim Diagnosis 3",
+            "type": "Cluster",
+            "description": "Diagnosis code 3 on the claim (ICD9_DGNS_CD_3) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "lpc82x2o46h4uixol7vdj05b",
+            "label": "Claim Diagnosis 4",
+            "type": "Cluster",
+            "description": "Diagnosis code 4 on the claim (ICD9_DGNS_CD_4) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "zd43681w5jtanaml4wiaz1yo",
+            "label": "Claim Diagnosis 5",
+            "type": "Cluster",
+            "description": "Diagnosis code 5 on the claim (ICD9_DGNS_CD_5) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "xvdtx5vxlu8pl9dyfz8x8m1r",
+            "label": "Claim Diagnosis 6",
+            "type": "Cluster",
+            "description": "Diagnosis code 6 on the claim (ICD9_DGNS_CD_6) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "pelxyum1gkog2kgqhndrluo7",
+            "label": "Claim Diagnosis 7",
+            "type": "Cluster",
+            "description": "Diagnosis code 7 on the claim (ICD9_DGNS_CD_7) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "p2y70uqn5j1mrktvht2tf6u4",
+            "label": "Claim Diagnosis 8",
+            "type": "Cluster",
+            "description": "Diagnosis code 8 on the claim (ICD9_DGNS_CD_8) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "it3x0l7q5js77eubgxkv0eij",
+            "label": "Claim Diagnosis 9",
+            "type": "Cluster",
+            "description": "Diagnosis code 9 on the claim (ICD9_DGNS_CD_9) as an ICD-9-CM coded value. Members: Diagnosis (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "e8mpixmhxaxlcrxmdfepx9za",
+            "label": "Claim HCPCS 1",
+            "type": "Cluster",
+            "description": "HCPCS code 1 on the claim (HCPCS_CD_1) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": [
+              {
+                "component_id": "embtq0y4cmyk5em87e3jbdjx",
+                "label": "Procedure (HCPCS)",
+                "type": "Cluster",
+                "description": "A procedure or service coded in HCPCS: the code, its display text and the fixed code system (FHIR Coding). Members: HCPCS Code; code-display-text (FHIR); Code System: HCPCS.",
+                "items": [
+                  {
+                    "component_id": "u3euzufk7txuf1u20g0ca89l",
+                    "label": "Code System: HCPCS",
+                    "type": "XdLink",
+                    "description": "The code system of a coded value, fixed: HCPCS Level I (CPT) and Level II (http://www.ama-assn.org/go/cpt and https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system). FHIR Coding.system.",
+                    "value": "http://example.org/resource"
+                  },
+                  {
+                    "component_id": "sqy06x5fv64a322dtl308lmw",
+                    "label": "HCPCS Code",
+                    "type": "XdString",
+                    "description": "A HCPCS code as recorded on a Medicare claim line: five characters, CPT (Level I) or Level II.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 5
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component_id": "uso6k4nxb3m5ju33iqric9as",
+            "label": "Claim HCPCS 10",
+            "type": "Cluster",
+            "description": "HCPCS code 10 on the claim (HCPCS_CD_10) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "xfvr55ap2rv2nokf9v12gggl",
+            "label": "Claim HCPCS 2",
+            "type": "Cluster",
+            "description": "HCPCS code 2 on the claim (HCPCS_CD_2) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "jrlt189phj31y3vwgbpd79fw",
+            "label": "Claim HCPCS 3",
+            "type": "Cluster",
+            "description": "HCPCS code 3 on the claim (HCPCS_CD_3) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "f9j6mhy2vd2tjjms2r2w5hls",
+            "label": "Claim HCPCS 4",
+            "type": "Cluster",
+            "description": "HCPCS code 4 on the claim (HCPCS_CD_4) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "g9uatlpz9l8bg2d168yileej",
+            "label": "Claim HCPCS 5",
+            "type": "Cluster",
+            "description": "HCPCS code 5 on the claim (HCPCS_CD_5) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "l9jnt4o3wpofp22dvqjrez9t",
+            "label": "Claim HCPCS 6",
+            "type": "Cluster",
+            "description": "HCPCS code 6 on the claim (HCPCS_CD_6) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "e9wisxqgslfvwzf8f9g2ns1a",
+            "label": "Claim HCPCS 7",
+            "type": "Cluster",
+            "description": "HCPCS code 7 on the claim (HCPCS_CD_7) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "zkshfzesnopszu12m8yt656o",
+            "label": "Claim HCPCS 8",
+            "type": "Cluster",
+            "description": "HCPCS code 8 on the claim (HCPCS_CD_8) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "uv5qgddm3wuigsszk0o80bk9",
+            "label": "Claim HCPCS 9",
+            "type": "Cluster",
+            "description": "HCPCS code 9 on the claim (HCPCS_CD_9) as a coded value; the first ten of the file's forty-five line slots are carried. Members: Procedure (HCPCS).",
+            "items": []
+          },
+          {
+            "component_id": "mzga0gpl0rsdppkx89slwi9z",
+            "label": "Claim Procedure 1",
+            "type": "Cluster",
+            "description": "Procedure code 1 on the claim (ICD9_PRCDR_CD_1) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": [
+              {
+                "component_id": "mrjuxhrc2jvbxslo2rlzndyv",
+                "label": "Procedure (ICD-9-CM)",
+                "type": "Cluster",
+                "description": "A procedure coded in ICD-9-CM volume 3: the code, its display text and the fixed code system (FHIR Coding). Members: Procedure Code (ICD-9-CM); code-display-text (FHIR); Code System: ICD-9-CM.",
+                "items": [
+                  {
+                    "component_id": "nwmv4c2ogjk8ohxzum1zuprf",
+                    "label": "Procedure Code (ICD-9-CM)",
+                    "type": "XdString",
+                    "description": "An ICD-9-CM volume 3 procedure code as recorded on a Medicare inpatient claim, without the decimal point.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 4
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component_id": "s5duw4mmis3a4auw1fwvkctt",
+            "label": "Claim Procedure 2",
+            "type": "Cluster",
+            "description": "Procedure code 2 on the claim (ICD9_PRCDR_CD_2) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "wph20dg6mu7bwrm4gbw6wao9",
+            "label": "Claim Procedure 3",
+            "type": "Cluster",
+            "description": "Procedure code 3 on the claim (ICD9_PRCDR_CD_3) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "a50e7whycfue1qianqp65rq9",
+            "label": "Claim Procedure 4",
+            "type": "Cluster",
+            "description": "Procedure code 4 on the claim (ICD9_PRCDR_CD_4) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "lg86shb5pwq1r3sann4tyxzq",
+            "label": "Claim Procedure 5",
+            "type": "Cluster",
+            "description": "Procedure code 5 on the claim (ICD9_PRCDR_CD_5) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "mfk506g2b5l0gvz9m2stpljy",
+            "label": "Claim Procedure 6",
+            "type": "Cluster",
+            "description": "Procedure code 6 on the claim (ICD9_PRCDR_CD_6) as an ICD-9-CM coded value. Members: Procedure (ICD-9-CM).",
+            "items": []
+          },
+          {
+            "component_id": "rghkif2x2xhe0e82mc85qwvm",
+            "label": "Encounter",
+            "type": "Cluster",
+            "description": "An interaction between a patient and healthcare providers: status, class, priority, reason, period, length and hospitalization.",
+            "items": [
+              {
+                "component_id": "f8vsfzqb1m8ecfosdzhc9out",
+                "label": "Encounter Class",
+                "type": "XdToken",
+                "description": "The setting of the encounter (HL7 v3 ActEncounterCode). FHIR Encounter.class; ActCode, version 11.0.0.",
+                "value": "IMP",
+                "constraints": {
+                  "enumerations": [
+                    "AMB",
+                    "EMER",
+                    "FLD",
+                    "HH",
+                    "IMP",
+                    "ACUTE",
+                    "NONAC",
+                    "OBSENC",
+                    "PRENC",
+                    "SS",
+                    "VR"
+                  ]
+                }
+              },
+              {
+                "component_id": "jcsoakfsmdndfvw6p0nh879m",
+                "label": "Encounter Priority",
+                "type": "XdToken",
+                "description": "The urgency of the encounter (HL7 v3 ActPriority). FHIR Encounter.priority; ActPriority, version 5.0.0.",
+                "value": "UR",
+                "constraints": {
+                  "enumerations": [
+                    "A",
+                    "CR",
+                    "CS",
+                    "CSP",
+                    "CSR",
+                    "EL",
+                    "EM",
+                    "P",
+                    "PRN",
+                    "R",
+                    "RR",
+                    "S",
+                    "T",
+                    "UD",
+                    "UR"
+                  ]
+                }
+              },
+              {
+                "component_id": "mpkqsp6zn1gbc1zhqai9y40b",
+                "label": "Encounter Status",
+                "type": "XdToken",
+                "description": "The lifecycle state of the encounter. FHIR Encounter.status; EncounterStatus, version 4.0.1.",
+                "value": "onleave",
+                "constraints": {
+                  "enumerations": [
+                    "planned",
+                    "arrived",
+                    "triaged",
+                    "in-progress",
+                    "onleave",
+                    "finished",
+                    "cancelled",
+                    "entered-in-error",
+                    "unknown"
+                  ]
+                }
+              },
+              {
+                "component_id": "gdcfl9ghwkswdbmxww4senbt",
+                "label": "Encounter Length",
+                "type": "XdQuantity",
+                "description": "How long the encounter lasted, in the Default time units. FHIR Encounter.length.",
+                "value": 18.4,
+                "magnitude": {
+                  "value": 18.4,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Time Units",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "pkren9mdq1ve6mdcn5hdu4xq",
+                "label": "Encounter End",
+                "type": "XdTemporal",
+                "description": "When the encounter ended. FHIR Encounter.period.end.",
+                "value": "2024-01-01T00:00:00"
+              },
+              {
+                "component_id": "anbcg4rhacgmv8lkfofymmv0",
+                "label": "Encounter Start",
+                "type": "XdTemporal",
+                "description": "When the encounter started. FHIR Encounter.period.start.",
+                "value": "2024-01-01T00:00:00"
+              },
+              {
+                "component_id": "u6u23oip0dinxve95ub0kwma",
+                "label": "Encounter Reason (SNOMED CT)",
+                "type": "Cluster",
+                "description": "The reason the encounter takes place. A coded value: the SNOMED CT code, its display text and the fixed code system, resolved on the code system IRI (FHIR Coding). FHIR Encounter.reasonCode.",
+                "items": [
+                  {
+                    "component_id": "q75pzzv36or6dxgjrrbvmun5",
+                    "label": "Code System: SNOMED CT",
+                    "type": "XdLink",
+                    "description": "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system.",
+                    "value": "http://example.org/resource"
+                  },
+                  {
+                    "component_id": "cmtzyf0esp2hbf8ze2q0d3bh",
+                    "label": "Encounter Reason Code (SNOMED CT)",
+                    "type": "XdString",
+                    "description": "The SNOMED CT code for the reason the encounter takes place. FHIR Encounter.reasonCode, coded in http://snomed.info/sct.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 40
+                    }
+                  }
+                ]
+              },
+              {
+                "component_id": "fnxiiamw1uk1hvsxmjgsu1xy",
+                "label": "Hospitalization",
+                "type": "Cluster",
+                "description": "The admission and discharge facts of an inpatient encounter.",
+                "items": [
+                  {
+                    "component_id": "awvbv44gmq5co6prxcnhdz09",
+                    "label": "Admit Source",
+                    "type": "XdToken",
+                    "description": "Where the patient was admitted from. FHIR Encounter.hospitalization.admitSource; Admit source, version 4.0.1.",
+                    "value": "emd",
+                    "constraints": {
+                      "enumerations": [
+                        "hosp-trans",
+                        "emd",
+                        "outp",
+                        "born",
+                        "gp",
+                        "mp",
+                        "nursing",
+                        "psych",
+                        "rehab",
+                        "other"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "wd1txyosw8ha21sohphne92e",
+                    "label": "Discharge Disposition",
+                    "type": "XdToken",
+                    "description": "Where the patient went on discharge. FHIR Encounter.hospitalization.dischargeDisposition; Discharge disposition, version 4.0.1.",
+                    "value": "exp",
+                    "constraints": {
+                      "enumerations": [
+                        "home",
+                        "alt-home",
+                        "other-hcf",
+                        "hosp",
+                        "long",
+                        "aadvice",
+                        "exp",
+                        "psy",
+                        "rehab",
+                        "snf",
+                        "oth"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component_id": "vmikfu0irht9fmq7q02t3oqs",
+        "label": "PROV Activity",
+        "type": "Cluster",
+        "description": "A PROV activity: what it was, when it ran, its status, and the entities, activities, agent and plan it relates to.",
+        "items": [
+          {
+            "component_id": "hhusuzzig19rs46ngz23k5g7",
+            "label": "Activity Description",
+            "type": "XdString",
+            "description": "A description of what the activity does and why.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "wr06h54xqqw2q9id8i9673jy",
+            "label": "Activity Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV activity: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "r6hkunjm2q0hlxiknlc9ljix",
+            "label": "Activity Label",
+            "type": "XdString",
+            "description": "A human-readable label for a PROV activity.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "uzai5uey5p1fnn9ezj9u6vor",
+            "label": "Activity Location",
+            "type": "XdString",
+            "description": "Where the activity took place (prov:atLocation), as text.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "jjzmhdxvbt97pq81iwqubtxk",
+            "label": "Activity Type",
+            "type": "XdString",
+            "description": "The kind of activity, in the vocabulary of the domain (prov:type).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+            "label": "Error Message",
+            "type": "XdString",
+            "description": "The error the activity reported, if it failed.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "vhezo2cckpe92x4c3j2memeh",
+            "label": "Had Plan Reference",
+            "type": "XdString",
+            "description": "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "t0whhrqtnb54te4mk48i1ooj",
+            "label": "Used Entity Reference",
+            "type": "XdString",
+            "description": "An entity the activity used (prov:used). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "r48alj7hc3797qfjnf2uj71n",
+            "label": "Was Associated With Reference",
+            "type": "XdString",
+            "description": "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+            "label": "Was Ended By Reference",
+            "type": "XdString",
+            "description": "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "qh84jdzp1kxt85aq4ilo0svk",
+            "label": "Was Informed By Reference",
+            "type": "XdString",
+            "description": "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ginfqbk7q59ld2r4us8sjnv1",
+            "label": "Was Started By Reference",
+            "type": "XdString",
+            "description": "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+            "label": "Activity Status",
+            "type": "XdToken",
+            "description": "The state of an activity, from the Data Privacy Vocabulary activity status concepts.",
+            "value": "ActivityProposed",
+            "constraints": {
+              "enumerations": [
+                "ActivityProposed",
+                "ActivityPlanned",
+                "ActivityOngoing",
+                "ActivityHalted",
+                "ActivityCompleted",
+                "ActivityNotCompleted"
+              ]
+            }
+          },
+          {
+            "component_id": "a5scyosu6j84vz350mqyrzl2",
+            "label": "Ended At",
+            "type": "XdTemporal",
+            "description": "When the activity ended (prov:endedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          },
+          {
+            "component_id": "sa4nl1kbpdr842fkucvfjkpq",
+            "label": "Started At",
+            "type": "XdTemporal",
+            "description": "When the activity started (prov:startedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "c179ilk2ns15cd5rzzdfd6f6",
+        "label": "PROV Agent",
+        "type": "Cluster",
+        "description": "A PROV agent: a person, organization or software agent, with its identity, contact and delegation.",
+        "items": [
+          {
+            "component_id": "og08xf6bu928uuz6t3y0e23f",
+            "label": "Acted On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gb78cmuyo72hqs5apymdki7l",
+            "label": "Agent Description",
+            "type": "XdString",
+            "description": "A description of the agent and its responsibilities.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "qb90a0sp9vvb6c5cbcf236ys",
+            "label": "Agent Email",
+            "type": "XdString",
+            "description": "The agent's email address (foaf:mbox).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "w2ruemcfy35rw60jl1t9dew2",
+            "label": "Agent Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV agent: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xxe21o9ojzmy9wxxky1tnmog",
+            "label": "Agent Name",
+            "type": "XdString",
+            "description": "The name of the agent (foaf:name).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "eftvwi5byq6cdtd931qyxzw0",
+            "label": "Agent Organization Name",
+            "type": "XdString",
+            "description": "The organization the agent belongs to or is.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "aa663ivutjf2fs4757t0bbzy",
+            "label": "Software Name",
+            "type": "XdString",
+            "description": "The name of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "x0lebwtobgaelj5pev3258sd",
+            "label": "Software Version",
+            "type": "XdString",
+            "description": "The version of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 60
+            }
+          },
+          {
+            "component_id": "i16vqj89it3db7d3c5qjko9p",
+            "label": "PROV Agent Type",
+            "type": "XdToken",
+            "description": "The kind of PROV agent: person, organization or software agent.",
+            "value": "SoftwareAgent",
+            "constraints": {
+              "enumerations": [
+                "Person",
+                "Organization",
+                "SoftwareAgent"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3226 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sdc4: <https://semanticdatacharter.com/ns/sdc4/> .
+@prefix sdc4-meta: <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sdc4:AttestationBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Attestation view must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:attestation-view ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Attestation proof must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:attestation-proof ] ;
+    sh:targetClass sdc4:AttestationType .
+
+sdc4:AuditBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "Audit must have a timestamp" ;
+            sh:minCount 1 ;
+            sh:path sdc4:audit-time ],
+        [ sh:class sdc4:PartyType ;
+            sh:maxCount 1 ;
+            sh:message "Audit committer must be a Party" ;
+            sh:minCount 0 ;
+            sh:path sdc4:audit-committer ] ;
+    sh:targetClass sdc4:AuditType .
+
+sdc4:ParticipationBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Participation function must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:participation-function ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Participation mode must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:participation-mode ] ;
+    sh:targetClass sdc4:ParticipationType .
+
+sdc4:PartyBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Party must have a name" ;
+            sh:minCount 1 ;
+            sh:path sdc4:party-name ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Party ID must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:party-id ] ;
+    sh:targetClass sdc4:PartyType .
+
+sdc4:ReferenceRangeBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "ReferenceRange must have a meaning" ;
+            sh:minCount 1 ;
+            sh:path sdc4:range-meaning ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "ReferenceRange lower bound must be a decimal" ;
+            sh:minCount 0 ;
+            sh:path sdc4:range-lower ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "ReferenceRange upper bound must be a decimal" ;
+            sh:minCount 0 ;
+            sh:path sdc4:range-upper ] ;
+    sh:targetClass sdc4:ReferenceRangeType .
+
+sdc4:SDC4ComponentShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "All SDC4 components must have a label" ;
+            sh:minCount 1 ;
+            sh:path rdfs:label ],
+        [ sh:class rdfs:Class ;
+            sh:message "All SDC4 components must have an rdf:type" ;
+            sh:minCount 1 ;
+            sh:path rdf:type ] ;
+    sh:targetClass rdfs:Class .
+
+sdc4:SimpleReferenceRangeBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "SimpleReferenceRange lower bound must be a decimal" ;
+            sh:minCount 0 ;
+            sh:path sdc4:simple-range-lower ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "SimpleReferenceRange upper bound must be a decimal" ;
+            sh:minCount 0 ;
+            sh:path sdc4:simple-range-upper ] ;
+    sh:targetClass sdc4:SimpleReferenceRangeType .
+
+sdc4:UnitsBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Units must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Units code must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:units-code ] ;
+    sh:targetClass sdc4:UnitsType .
+
+sdc4:XdBooleanBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdBoolean must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+            sh:message "XdBoolean must have a boolean value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdboolean-value ] ;
+    sh:targetClass sdc4:XdBooleanType .
+
+sdc4:XdDoubleBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdDouble must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:double ;
+            sh:maxCount 1 ;
+            sh:message "XdDouble must have a double value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xddouble-value ],
+        [ sh:class sdc4:UnitsType ;
+            sh:maxCount 1 ;
+            sh:message "XdDouble requires a Units component" ;
+            sh:minCount 1 ;
+            sh:path sdc4-meta:hasUnit ] ;
+    sh:targetClass sdc4:XdDoubleType .
+
+sdc4:XdFileBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdFile must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "XdFile must have a valid URI" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdfile-uri ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdFile media type must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdfile-media-type ] ;
+    sh:targetClass sdc4:XdFileType .
+
+sdc4:XdFloatBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdFloat must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:float ;
+            sh:maxCount 1 ;
+            sh:message "XdFloat must have a float value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdfloat-value ],
+        [ sh:class sdc4:UnitsType ;
+            sh:maxCount 1 ;
+            sh:message "XdFloat requires a Units component" ;
+            sh:minCount 1 ;
+            sh:path sdc4-meta:hasUnit ] ;
+    sh:targetClass sdc4:XdFloatType .
+
+sdc4:XdIntervalBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdInterval must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:maxCount 1 ;
+            sh:message "XdInterval lower bound is optional" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdinterval-lower ],
+        [ sh:maxCount 1 ;
+            sh:message "XdInterval upper bound is optional" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdinterval-upper ] ;
+    sh:targetClass sdc4:XdIntervalType .
+
+sdc4:XdOrdinalBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdOrdinal must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:message "XdOrdinal must have an integer value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdordinal-value ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdOrdinal symbol must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdordinal-symbol ] ;
+    sh:targetClass sdc4:XdOrdinalType .
+
+sdc4:mc-fl5quyfd88rajs0egsgbq7ou-shape a sh:NodeShape ;
+    rdfs:label "FAIR Source File" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/fair-source-file> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue prov:Entity ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://github.com/SemanticDataCharter/FAIR_Data_Demo> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-fl5quyfd88rajs0egsgbq7ou .
+
+sdc4:mc-ji1eccop92mlmikwq5gwp7cr-shape a sh:NodeShape ;
+    rdfs:label "CMS Inpatient Claim" ;
+    sh:node sdc4:DMBaseShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:message "Data Model must have a root data Cluster" ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-zv342hb79qgder7lfsaewzli-shape ;
+            sh:path sdc4:dm-data ] ;
+    sh:targetNode sdc4:mc-ji1eccop92mlmikwq5gwp7cr ;
+    sdc4-meta:generatedAt "2026-09-26T22:13:19.928169+00:00"^^xsd:dateTime .
+
+sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4-shape a sh:NodeShape ;
+    rdfs:label "FAIR Pipeline Identifier" ;
+    rdfs:comment "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://github.com/SemanticDataCharter/FAIR_Data_Demo> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 120 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue prov:SoftwareAgent ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/fair-system-identifier> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:DMBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Data Model must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:dm-label ],
+        [ sh:datatype xsd:language ;
+            sh:maxCount 1 ;
+            sh:message "Data Model must specify a language" ;
+            sh:minCount 1 ;
+            sh:path sdc4:dm-language ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Data Model must specify encoding" ;
+            sh:minCount 1 ;
+            sh:path sdc4:dm-encoding ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Data Model must have a mandatory instance_id (CUID2)" ;
+            sh:minCount 1 ;
+            sh:path sdc4:instance_id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path sdc4:source_instance_id ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:path sdc4:source_version_id ] ;
+    sh:targetClass sdc4:DMType .
+
+sdc4:mc-a4kurktiltk4z2h5viravbvj-shape a sh:NodeShape ;
+    rdfs:label "Part A Coinsurance Liability Amount" ;
+    rdfs:comment "The beneficiary's Part A coinsurance liability (NCH_BENE_PTA_COINSRNC_LBLTY_AM), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-part-a-coinsurance-liability-amount> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-a4kurktiltk4z2h5viravbvj ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-a50e7whycfue1qianqp65rq9-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 4" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-4> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-a50e7whycfue1qianqp65rq9 .
+
+sdc4:mc-a5scyosu6j84vz350mqyrzl2-shape a sh:NodeShape ;
+    rdfs:label "Ended At" ;
+    rdfs:comment "When the activity ended (prov:endedAtTime)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue prov:endedAtTime ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/ended-at-time> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-a5scyosu6j84vz350mqyrzl2 ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-aa663ivutjf2fs4757t0bbzy-shape a sh:NodeShape ;
+    rdfs:label "Software Name" ;
+    rdfs:comment "The name of a software agent." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue schema: ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/software-name> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue schema:SoftwareApplication ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-rsjfjz8m5z7a58h5793duqbs ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-aa663ivutjf2fs4757t0bbzy ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-abub2eah26yd2uzni3p9l58i-shape a sh:NodeShape ;
+    rdfs:label "Entity Description" ;
+    rdfs:comment "A description of a PROV entity." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 4000 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-rlhiv24i689xhko5dp426y7o ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/entity-description> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue dcterms:description ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-abub2eah26yd2uzni3p9l58i ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-anbcg4rhacgmv8lkfofymmv0-shape a sh:NodeShape ;
+    rdfs:label "Encounter Start" ;
+    rdfs:comment "When the encounter started. FHIR Encounter.period.start." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.period.start> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-n0nymcfopzp382j8kc6t3k2z ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-start> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ] ;
+    sh:targetNode sdc4:mc-anbcg4rhacgmv8lkfofymmv0 ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-av5ztq8he6ot9ubpc4mhtp3s-shape a sh:NodeShape ;
+    rdfs:label "Admitting Diagnosis" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-admitting-diagnosis> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-av5ztq8he6ot9ubpc4mhtp3s .
+
+sdc4:mc-awvbv44gmq5co6prxcnhdz09-shape a sh:NodeShape ;
+    rdfs:label "Admit Source" ;
+    rdfs:comment "Where the patient was admitted from. FHIR Encounter.hospitalization.admitSource; Admit source, version 4.0.1." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fhir/admit-source> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-d6fhrxgpx4yrg0wyqu29ryvv ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/admit-source> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.hospitalization.admitSource> ;
+            sh:path skos:closeMatch ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "hosp-trans" "emd" "outp" "born" "gp" "mp" "nursing" "psych" "rehab" "other" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-awvbv44gmq5co6prxcnhdz09 ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-b5h4gc4jje1imwkzdt6xg5wb-shape a sh:NodeShape ;
+    rdfs:label "Attending Physician NPI (AT_PHYSN_NPI)" ;
+    rdfs:comment "The attending physician's National Provider Identifier (AT_PHYSN_NPI)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{10}" ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-attending-physician-npi> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-b5h4gc4jje1imwkzdt6xg5wb ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-bfn83x3fw1cyuqriuoquu9t1-shape a sh:NodeShape ;
+    rdfs:label "Was Generated By Reference" ;
+    rdfs:comment "The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue prov:wasGeneratedBy ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-yr3a0f87dtmzlv8ruiys1axa ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-generated-by-reference> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-bfn83x3fw1cyuqriuoquu9t1 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-bgis0a73v9ncnwhicmjmvhl1-shape a sh:NodeShape ;
+    rdfs:label "Claim Payment Amount" ;
+    rdfs:comment "The amount Medicare paid on the claim (CLM_PMT_AMT), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-payment-amount> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-bgis0a73v9ncnwhicmjmvhl1 ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-c179ilk2ns15cd5rzzdfd6f6-shape a sh:NodeShape ;
+    rdfs:label "PROV Agent" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-gb78cmuyo72hqs5apymdki7l-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-i16vqj89it3db7d3c5qjko9p-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-og08xf6bu928uuz6t3y0e23f-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-agent> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-qb90a0sp9vvb6c5cbcf236ys-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-w2ruemcfy35rw60jl1t9dew2-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue prov:Agent ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-x0lebwtobgaelj5pev3258sd-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-xxe21o9ojzmy9wxxky1tnmog-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-aa663ivutjf2fs4757t0bbzy-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-eftvwi5byq6cdtd931qyxzw0-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-c179ilk2ns15cd5rzzdfd6f6 .
+
+sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn-shape a sh:NodeShape ;
+    rdfs:label "Items" ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://qudt.org/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/default/units-items> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-c7up53lff6ip0zyv8dkkt868-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 10" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-10> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-c7up53lff6ip0zyv8dkkt868 .
+
+sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x-shape a sh:NodeShape ;
+    rdfs:label "Audit Event Action" ;
+    rdfs:comment "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-event-action> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-o8lawuczf9vry55e98cjg12r ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "C" "R" "U" "D" "E" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <http://hl7.org/fhir/audit-event-action> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-cmtzyf0esp2hbf8ze2q0d3bh-shape a sh:NodeShape ;
+    rdfs:label "Encounter Reason Code (SNOMED CT)" ;
+    rdfs:comment "The SNOMED CT code for the reason the encounter takes place. FHIR Encounter.reasonCode, coded in http://snomed.info/sct." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-reason-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-s7dqnduaqd5go4ztlhai2uzs ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.reasonCode> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://snomed.info/sct> ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{6,18}" ],
+        [ sh:hasValue <http://snomed.info/sct> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-cmtzyf0esp2hbf8ze2q0d3bh ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-credrxhz4hg4c42sihm0wb6s-shape a sh:NodeShape ;
+    rdfs:label "Was Derived From Reference" ;
+    rdfs:comment "The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-derived-from-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-e6f9p3xngi5eyq851iq457ru ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue prov:wasDerivedFrom ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-credrxhz4hg4c42sihm0wb6s ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj-shape a sh:NodeShape ;
+    rdfs:label "Purpose of Use" ;
+    rdfs:comment "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/purpose-of-use> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "TREAT" "ETREAT" "COC" "HPAYMT" "HOPERAT" "HRESCH" "CLINTRCH" "PUBHLTH" "PATRQT" "HLEGAL" "HMARKT" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://terminology.hl7.org/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/v3-ActReason> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-y87ikto4p56zlkx4o2d63ain ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-d3c64u25m9yvux5qe9eu2ur9-shape a sh:NodeShape ;
+    rdfs:label "Other Physician NPI (OT_PHYSN_NPI)" ;
+    rdfs:comment "The other physician's National Provider Identifier (OT_PHYSN_NPI)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{10}" ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-other-physician-npi> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-d3c64u25m9yvux5qe9eu2ur9 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-d6fyaym5f5x8os7bvqbnoskt-shape a sh:NodeShape ;
+    rdfs:label "Beneficiary Discharge Date (NCH_BENE_DSCHRG_DT)" ;
+    rdfs:comment "The inpatient discharge date (NCH_BENE_DSCHRG_DT)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-date ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-beneficiary-discharge-date> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-d6fyaym5f5x8os7bvqbnoskt ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-dkc2ccj5te35z9gd4bu1blcq-shape a sh:NodeShape ;
+    rdfs:label "Audit Agent Reference" ;
+    rdfs:comment "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-agent-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-bads7w1q6wmhn18u6dxwt28t ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.who> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-dkc2ccj5te35z9gd4bu1blcq ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-dnt6k247fxuu4f11iscbmatc-shape a sh:NodeShape ;
+    rdfs:label "Diagnosis Related Group Code (CLM_DRG_CD)" ;
+    rdfs:comment "The claim's diagnosis related group code (CLM_DRG_CD)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-diagnosis-related-group-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{3}" ] ;
+    sh:targetNode sdc4:mc-dnt6k247fxuu4f11iscbmatc ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-e0cmaixbn1ip7wt1lqvuas0d-shape a sh:NodeShape ;
+    rdfs:label "Claim Pass-Through Per Diem Amount" ;
+    rdfs:comment "The pass-through per diem amount (CLM_PASS_THRU_PER_DIEM_AMT), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-pass-through-per-diem-amount> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-e0cmaixbn1ip7wt1lqvuas0d ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-e8mpixmhxaxlcrxmdfepx9za-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 1" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-1> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-e8mpixmhxaxlcrxmdfepx9za .
+
+sdc4:mc-e9wisxqgslfvwzf8f9g2ns1a-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 7" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-7> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-e9wisxqgslfvwzf8f9g2ns1a .
+
+sdc4:mc-eftvwi5byq6cdtd931qyxzw0-shape a sh:NodeShape ;
+    rdfs:label "Agent Organization Name" ;
+    rdfs:comment "The organization the agent belongs to or is." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue schema:legalName ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/agent-organization-name> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue schema: ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-ifw5zfe4oiijbxjn1ylc2wm3 ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-eftvwi5byq6cdtd931qyxzw0 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-f8vsfzqb1m8ecfosdzhc9out-shape a sh:NodeShape ;
+    rdfs:label "Encounter Class" ;
+    rdfs:comment "The setting of the encounter (HL7 v3 ActEncounterCode). FHIR Encounter.class; ActCode, version 11.0.0." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.class> ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue sdc4:mc-mogsgkfr8h5hk18jvqysphpq ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "AMB" "EMER" "FLD" "HH" "IMP" "ACUTE" "NONAC" "OBSENC" "PRENC" "SS" "VR" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-class> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/v3-ActCode> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://terminology.hl7.org/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-f8vsfzqb1m8ecfosdzhc9out ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-f9j6mhy2vd2tjjms2r2w5hls-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 4" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-4> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-f9j6mhy2vd2tjjms2r2w5hls .
+
+sdc4:mc-fjhgr5fyqxt2crmg2cb5c513-shape a sh:NodeShape ;
+    rdfs:label "Audit Event Identifier" ;
+    rdfs:comment "The identifier of the audit event." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue dcterms:identifier ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-event-identifier> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-fjhgr5fyqxt2crmg2cb5c513 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-fnxiiamw1uk1hvsxmjgsu1xy-shape a sh:NodeShape ;
+    rdfs:label "Hospitalization" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-wd1txyosw8ha21sohphne92e-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-qxa1fowjvhe4zb0xbdxnf4yc ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.hospitalization> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/hospitalization> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-awvbv44gmq5co6prxcnhdz09-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-fnxiiamw1uk1hvsxmjgsu1xy .
+
+sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3-shape a sh:NodeShape ;
+    rdfs:label "PROV Derivation Type" ;
+    rdfs:comment "How one entity was derived from another: a general derivation, a revision, a quotation or a primary source." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:datatype xsd:token ;
+            sh:in ( "Derivation" "Revision" "Quotation" "PrimarySource" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue prov:Derivation ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-derivation-type> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-cdhr25b0ezdbcmjo3boafgas ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-g9uatlpz9l8bg2d168yileej-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 5" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-5> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-g9uatlpz9l8bg2d168yileej .
+
+sdc4:mc-gb78cmuyo72hqs5apymdki7l-shape a sh:NodeShape ;
+    rdfs:label "Agent Description" ;
+    rdfs:comment "A description of the agent and its responsibilities." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue dcterms:description ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-w79xppnskig5vq31er8gh7nk ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 4000 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/agent-description> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-gb78cmuyo72hqs5apymdki7l ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-gcjyjrnp0wsfoelcp4m05c67-shape a sh:NodeShape ;
+    rdfs:label "Audit Entity Reference" ;
+    rdfs:comment "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-sjp1x177mlpq3howdltptm3c ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.entity.what> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-entity-reference> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-gcjyjrnp0wsfoelcp4m05c67 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-gdcfl9ghwkswdbmxww4senbt-shape a sh:NodeShape ;
+    rdfs:label "Encounter Length" ;
+    rdfs:comment "How long the encounter lasted, in the Default time units. FHIR Encounter.length." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.length> ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-length> ;
+            sh:path dcterms:identifier ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue sdc4:mc-y2bp9qn2xbkpnyj4el6489bs ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-gdcfl9ghwkswdbmxww4senbt ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-ginfqbk7q59ld2r4us8sjnv1-shape a sh:NodeShape ;
+    rdfs:label "Was Started By Reference" ;
+    rdfs:comment "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue prov:wasStartedBy ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-started-by-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-kmodjk1e5xu9z94zgiaxx1hu ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-ginfqbk7q59ld2r4us8sjnv1 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf-shape a sh:NodeShape ;
+    rdfs:label "Was Invalidated By Reference" ;
+    rdfs:comment "The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue prov:wasInvalidatedBy ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-invalidated-by-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-h3kdbvdtyalpvik97saaf0an-shape a sh:NodeShape ;
+    rdfs:label "System Identifier" ;
+    rdfs:comment "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-des67jo3ki9w0zgaz2i2t2cq ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.source.observer> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/system-identifier> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-h3kdbvdtyalpvik97saaf0an ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-hhusuzzig19rs46ngz23k5g7-shape a sh:NodeShape ;
+    rdfs:label "Activity Description" ;
+    rdfs:comment "A description of what the activity does and why." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 4000 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-m9xg6e182m1oq77ssrf9iujv ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue dcterms:description ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-description> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-hhusuzzig19rs46ngz23k5g7 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-hswapeutuik067dokidnbv88-shape a sh:NodeShape ;
+    rdfs:label "Invalidated At" ;
+    rdfs:comment "When the entity ceased to be usable (prov:invalidatedAtTime)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue prov:invalidatedAtTime ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/invalidated-at-time> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-hswapeutuik067dokidnbv88 ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-i16vqj89it3db7d3c5qjko9p-shape a sh:NodeShape ;
+    rdfs:label "PROV Agent Type" ;
+    rdfs:comment "The kind of PROV agent: person, organization or software agent." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-nesxtz8c5o665swc9lhvqkjj ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue prov:Agent ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-agent-type> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "Person" "Organization" "SoftwareAgent" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ] ;
+    sh:targetNode sdc4:mc-i16vqj89it3db7d3c5qjko9p ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-i1defiugxfdcwfb9rqv4p5tz-shape a sh:NodeShape ;
+    rdfs:label "Entity Identifier" ;
+    rdfs:comment "The identifier of a PROV entity: a URI or another globally unique identifier." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue dcterms:identifier ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-lk4wonh72gbfl4xoo6mwbva1 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/entity-identifier> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-i1defiugxfdcwfb9rqv4p5tz ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-i4e2nod7ss9d4cumhn2pah8b-shape a sh:NodeShape ;
+    rdfs:label "PROV Entity Type" ;
+    rdfs:comment "The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue sdc4:mc-u3zwz3b7hkwkxg6mn1o6o4c5 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue prov:Entity ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-entity-type> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "Entity" "Collection" "EmptyCollection" "Bundle" "Plan" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ] ;
+    sh:targetNode sdc4:mc-i4e2nod7ss9d4cumhn2pah8b ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-it3x0l7q5js77eubgxkv0eij-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 9" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-9> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-it3x0l7q5js77eubgxkv0eij .
+
+sdc4:mc-jcsoakfsmdndfvw6p0nh879m-shape a sh:NodeShape ;
+    rdfs:label "Encounter Priority" ;
+    rdfs:comment "The urgency of the encounter (HL7 v3 ActPriority). FHIR Encounter.priority; ActPriority, version 5.0.0." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <http://terminology.hl7.org/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-bf6yz6dbpwau77wke189an3c ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-priority> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.priority> ;
+            sh:path skos:closeMatch ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "A" "CR" "CS" "CSP" "CSR" "EL" "EM" "P" "PRN" "R" "RR" "S" "T" "UD" "UR" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/v3-ActPriority> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-jcsoakfsmdndfvw6p0nh879m ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-jjzmhdxvbt97pq81iwqubtxk-shape a sh:NodeShape ;
+    rdfs:label "Activity Type" ;
+    rdfs:comment "The kind of activity, in the vocabulary of the domain (prov:type)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue prov:type ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-ceusvbe55b266gcdzf5qnurc ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-type> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-jjzmhdxvbt97pq81iwqubtxk ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c-shape a sh:NodeShape ;
+    rdfs:label "Diagnosis Code (ICD-9-CM)" ;
+    rdfs:comment "An ICD-9-CM diagnosis code as recorded on a 2008-2010 Medicare claim, without the decimal point as CMS files carry it." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9EV][0-9]{2,4}" ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/diagnosis-icd9cm-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-jrlt189phj31y3vwgbpd79fw-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 3" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-3> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-jrlt189phj31y3vwgbpd79fw .
+
+sdc4:mc-jujsdur1igws8orw6tvvlqco-shape a sh:NodeShape ;
+    rdfs:label "Provenance Agent Type" ;
+    rdfs:comment "The functional role of an agent in an activity (FHIR Provenance.agent.type)." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:datatype xsd:token ;
+            sh:in ( "enterer" "performer" "author" "editor" "verifier" "legal" "attester" "informant" "custodian" "transmitter" "assembler" "transformer" "composer" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue sdc4:mc-syt8l7pmb64eym2chcn43ai7 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/provenance-agent-type> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/provenance-participant-type> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-jujsdur1igws8orw6tvvlqco ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-kmcck093437mfdlnxnrzm0xw-shape a sh:NodeShape ;
+    rdfs:label "Entity Value" ;
+    rdfs:comment "The value of a PROV entity, or a reference to where its content can be found (prov:value)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 4000 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue prov:value ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/entity-value> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-r1166br2deauav0uoencq7uk ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-kmcck093437mfdlnxnrzm0xw ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-kqlatg3rz00z58muv7j8toyl-shape a sh:NodeShape ;
+    rdfs:label "Was Attributed To Reference" ;
+    rdfs:comment "The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue prov:wasAttributedTo ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-fp9x4nydhjv480jovw9tjtlhw ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-attributed-to-reference> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-kqlatg3rz00z58muv7j8toyl ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-l9jnt4o3wpofp22dvqjrez9t-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 6" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-6> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-l9jnt4o3wpofp22dvqjrez9t .
+
+sdc4:mc-lg86shb5pwq1r3sann4tyxzq-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 5" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-5> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-lg86shb5pwq1r3sann4tyxzq .
+
+sdc4:mc-lghqkvp7vapqk10l248kzqs8-shape a sh:NodeShape ;
+    rdfs:label "Was Revision Of Reference" ;
+    rdfs:comment "The entity this entity revises (prov:wasRevisionOf). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue prov:wasRevisionOf ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-elg5v5gidcfnuj4b5vfvpo80 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-revision-of-reference> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-lghqkvp7vapqk10l248kzqs8 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-lpc82x2o46h4uixol7vdj05b-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 4" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-4> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-lpc82x2o46h4uixol7vdj05b .
+
+sdc4:mc-lq0eu7o1fizlst28weyv3z2t-shape a sh:NodeShape ;
+    rdfs:label "Operating Physician NPI (OP_PHYSN_NPI)" ;
+    rdfs:comment "The operating physician's National Provider Identifier (OP_PHYSN_NPI)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{10}" ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-operating-physician-npi> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-lq0eu7o1fizlst28weyv3z2t ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-lv5pcw6w5e15mo1t2oiofatl-shape a sh:NodeShape ;
+    rdfs:label "Provider Institution (PRVDR_NUM)" ;
+    rdfs:comment "The provider institution number (PRVDR_NUM)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 10 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-provider-institution> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ] ;
+    sh:targetNode sdc4:mc-lv5pcw6w5e15mo1t2oiofatl ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-lyp1z2xr7we4g8tuooygoymb-shape a sh:NodeShape ;
+    rdfs:label "CMS Inpatient Claim" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-c7up53lff6ip0zyv8dkkt868-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-pxa2yzf6codttkyfa7nyx2ei-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-lv5pcw6w5e15mo1t2oiofatl-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-lq0eu7o1fizlst28weyv3z2t-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-it3x0l7q5js77eubgxkv0eij-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-mzga0gpl0rsdppkx89slwi9z-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-e8mpixmhxaxlcrxmdfepx9za-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-xfvr55ap2rv2nokf9v12gggl-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-zshx6rx7ca1j00eda9kxyh6h-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-p2y70uqn5j1mrktvht2tf6u4-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-skyz3ht3zv3j5qwsx8x0dyru-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-d6fyaym5f5x8os7bvqbnoskt-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-bgis0a73v9ncnwhicmjmvhl1-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-g9uatlpz9l8bg2d168yileej-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-a50e7whycfue1qianqp65rq9-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-l9jnt4o3wpofp22dvqjrez9t-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-f9j6mhy2vd2tjjms2r2w5hls-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-jrlt189phj31y3vwgbpd79fw-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-s7najsv11bd33calnyktjcon-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-uso6k4nxb3m5ju33iqric9as-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-a4kurktiltk4z2h5viravbvj-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-d3c64u25m9yvux5qe9eu2ur9-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-rnpfh6mpz8jfq28dfjp17rf9-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-rghkif2x2xhe0e82mc85qwvm-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-x1942izf02stqs3kiu2yepf5-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-uv5qgddm3wuigsszk0o80bk9-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-pelxyum1gkog2kgqhndrluo7-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-lpc82x2o46h4uixol7vdj05b-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-b5h4gc4jje1imwkzdt6xg5wb-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-x30sghfdhlvgw2gn7trxp9u6-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-e0cmaixbn1ip7wt1lqvuas0d-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-mfk506g2b5l0gvz9m2stpljy-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-av5ztq8he6ot9ubpc4mhtp3s-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-n5r1n5jkpnfzr0ie7jrrbpc3-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-wph20dg6mu7bwrm4gbw6wao9-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/StructureDefinition/Claim> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-lg86shb5pwq1r3sann4tyxzq-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-s5duw4mmis3a4auw1fwvkctt-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-n1asylnn94ejo14l8us3wxf6-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-v6cz7f7o7q0e1ziekrn7oam5-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-e9wisxqgslfvwzf8f9g2ns1a-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-t50t5aje4wj35czk6p4i2bse-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-zd43681w5jtanaml4wiaz1yo-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-inpatient-claim> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-xvdtx5vxlu8pl9dyfz8x8m1r-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-dnt6k247fxuu4f11iscbmatc-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-zkshfzesnopszu12m8yt656o-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-lyp1z2xr7we4g8tuooygoymb .
+
+sdc4:mc-m9minyaug6ypyzt52zfxlyyi-shape a sh:NodeShape ;
+    rdfs:label "Entity Label" ;
+    rdfs:comment "A human-readable label for a PROV entity." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue rdfs:label ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/entity-label> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-elqsmgj1lwc30gmxgcewiu8y ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-m9minyaug6ypyzt52zfxlyyi ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-mfk506g2b5l0gvz9m2stpljy-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 6" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-6> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-mfk506g2b5l0gvz9m2stpljy .
+
+sdc4:mc-mjl0vv39zsbigqiuyqm66fkv-shape a sh:NodeShape ;
+    rdfs:label "Was Quoted From Reference" ;
+    rdfs:comment "The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-quoted-from-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue sdc4:mc-q69bq5dd4e3v0z8ybm578y89 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue prov:wasQuotedFrom ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-mjl0vv39zsbigqiuyqm66fkv ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-mpkqsp6zn1gbc1zhqai9y40b-shape a sh:NodeShape ;
+    rdfs:label "Encounter Status" ;
+    rdfs:comment "The lifecycle state of the encounter. FHIR Encounter.status; EncounterStatus, version 4.0.1." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.status> ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-status> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-yq8mjdfv83g4l9cauiwxaxof ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/encounter-status> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "planned" "arrived" "triaged" "in-progress" "onleave" "finished" "cancelled" "entered-in-error" "unknown" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-mpkqsp6zn1gbc1zhqai9y40b ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-mzga0gpl0rsdppkx89slwi9z-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 1" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-1> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-mzga0gpl0rsdppkx89slwi9z .
+
+sdc4:mc-n1asylnn94ejo14l8us3wxf6-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 3" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-3> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-n1asylnn94ejo14l8us3wxf6 .
+
+sdc4:mc-n5r1n5jkpnfzr0ie7jrrbpc3-shape a sh:NodeShape ;
+    rdfs:label "Claim Utilization Day Count (CLM_UTLZTN_DAY_CNT)" ;
+    rdfs:comment "The number of covered days on the claim (CLM_UTLZTN_DAY_CNT)." ;
+    sh:node sdc4:XdCountBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:maxInclusive 366 ;
+            sh:minCount 1 ;
+            sh:minInclusive 0 ;
+            sh:path sdc4:xdcount-value ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-utilization-day-count> ;
+            sh:path dcterms:identifier ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-yht0x4rmqyu32sd90jl0rzbo-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-n5r1n5jkpnfzr0ie7jrrbpc3 ;
+    sdc4-meta:sdcType "XdCountType" .
+
+sdc4:mc-nf1air1zbj8v9w66jozdxmyl-shape a sh:NodeShape ;
+    rdfs:label "On Behalf Of Reference" ;
+    rdfs:comment "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/provenance-definitions.html#Provenance.agent.onBehalfOf> ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/on-behalf-of-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-j9gvyx6u9pb7v1dd0m6joxd6 ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-nf1air1zbj8v9w66jozdxmyl ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-nwmv4c2ogjk8ohxzum1zuprf-shape a sh:NodeShape ;
+    rdfs:label "Procedure Code (ICD-9-CM)" ;
+    rdfs:comment "An ICD-9-CM volume 3 procedure code as recorded on a Medicare inpatient claim, without the decimal point." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{2,4}" ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/procedure-icd9cm-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-nwmv4c2ogjk8ohxzum1zuprf ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-og08xf6bu928uuz6t3y0e23f-shape a sh:NodeShape ;
+    rdfs:label "Acted On Behalf Of Reference" ;
+    rdfs:comment "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-dce4w62jxjngjnmc5y26fq66 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue prov:actedOnBehalfOf ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/acted-on-behalf-of-reference> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-og08xf6bu928uuz6t3y0e23f ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-p2y70uqn5j1mrktvht2tf6u4-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 8" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-8> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-p2y70uqn5j1mrktvht2tf6u4 .
+
+sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi-shape a sh:NodeShape ;
+    rdfs:label "Time Units" ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://qudt.org/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/default/units-time> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-vv5irjgqr4a7aqm6wt0tr7um ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://qudt.org/vocab/quantitykind/Time> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-pelxyum1gkog2kgqhndrluo7-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 7" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-7> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-pelxyum1gkog2kgqhndrluo7 .
+
+sdc4:mc-phus5105uw30xejqs7baamyx-shape a sh:NodeShape ;
+    rdfs:label "Had Primary Source Reference" ;
+    rdfs:comment "The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/had-primary-source-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue sdc4:mc-b2cclldvwij0n1ewhgrkk1ul ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue prov:hadPrimarySource ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-phus5105uw30xejqs7baamyx ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-pkren9mdq1ve6mdcn5hdu4xq-shape a sh:NodeShape ;
+    rdfs:label "Encounter End" ;
+    rdfs:comment "When the encounter ended. FHIR Encounter.period.end." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-q2f2ixoppgfbosedoytboovu ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-end> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.period.end> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-pkren9mdq1ve6mdcn5hdu4xq ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-pxa2yzf6codttkyfa7nyx2ei-shape a sh:NodeShape ;
+    rdfs:label "Inpatient Deductible Amount" ;
+    rdfs:comment "The beneficiary's inpatient deductible (NCH_BENE_IP_DDCTBL_AMT), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-inpatient-deductible-amount> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-pxa2yzf6codttkyfa7nyx2ei ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l-shape a sh:NodeShape ;
+    rdfs:label "PROV Entity" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-kqlatg3rz00z58muv7j8toyl-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-hswapeutuik067dokidnbv88-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-i1defiugxfdcwfb9rqv4p5tz-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-lghqkvp7vapqk10l248kzqs8-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-abub2eah26yd2uzni3p9l58i-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-m9minyaug6ypyzt52zfxlyyi-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue prov:Entity ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-phus5105uw30xejqs7baamyx-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-bfn83x3fw1cyuqriuoquu9t1-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-yk5nrxndulhebpi3hiywk8u8-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-wn77qo3b1xjwc4dudtyme2io-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-i4e2nod7ss9d4cumhn2pah8b-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-entity> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-credrxhz4hg4c42sihm0wb6s-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-mjl0vv39zsbigqiuyqm66fkv-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-kmcck093437mfdlnxnrzm0xw-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l .
+
+sdc4:mc-q75pzzv36or6dxgjrrbvmun5-shape a sh:NodeShape ;
+    rdfs:label "Code System: SNOMED CT" ;
+    rdfs:comment "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system." ;
+    sh:node sdc4:XdLinkBaseShape ;
+    sh:property [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:link ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://snomed.info/sct> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation-uri ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/system-snomed> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://snomed.info/sct> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-q75pzzv36or6dxgjrrbvmun5 ;
+    sdc4-meta:sdcType "XdLinkType" .
+
+sdc4:mc-qb90a0sp9vvb6c5cbcf236ys-shape a sh:NodeShape ;
+    rdfs:label "Agent Email" ;
+    rdfs:comment "The agent's email address (foaf:mbox)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue foaf:mbox ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/agent-email> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-yp6pm5xyovxhkjimrrb8h9xy ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-qb90a0sp9vvb6c5cbcf236ys ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-qh84jdzp1kxt85aq4ilo0svk-shape a sh:NodeShape ;
+    rdfs:label "Was Informed By Reference" ;
+    rdfs:comment "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue prov:wasInformedBy ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-informed-by-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue sdc4:mc-rz60y6aujd274j4i7jpyxvpr ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-qh84jdzp1kxt85aq4ilo0svk ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-r48alj7hc3797qfjnf2uj71n-shape a sh:NodeShape ;
+    rdfs:label "Was Associated With Reference" ;
+    rdfs:comment "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue prov:wasAssociatedWith ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/was-associated-with-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-gs0e1hp2rpjl6qfg9v8d047f ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-r48alj7hc3797qfjnf2uj71n ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-r6hkunjm2q0hlxiknlc9ljix-shape a sh:NodeShape ;
+    rdfs:label "Activity Label" ;
+    rdfs:comment "A human-readable label for a PROV activity." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-n4kaez29vbknku2jy8n56gfm ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue rdfs:label ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-label> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-r6hkunjm2q0hlxiknlc9ljix ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-rghkif2x2xhe0e82mc85qwvm-shape a sh:NodeShape ;
+    rdfs:label "Encounter" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-jcsoakfsmdndfvw6p0nh879m-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-pkren9mdq1ve6mdcn5hdu4xq-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-gdcfl9ghwkswdbmxww4senbt-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-f8vsfzqb1m8ecfosdzhc9out-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-mpkqsp6zn1gbc1zhqai9y40b-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/StructureDefinition/Encounter> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-ixcrz5r9vrahm36nzsol3xea ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:node sdc4:mc-anbcg4rhacgmv8lkfofymmv0-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-u6u23oip0dinxve95ub0kwma-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-fnxiiamw1uk1hvsxmjgsu1xy-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-rghkif2x2xhe0e82mc85qwvm .
+
+sdc4:mc-rnpfh6mpz8jfq28dfjp17rf9-shape a sh:NodeShape ;
+    rdfs:label "Primary Payer Claim Paid Amount" ;
+    rdfs:comment "The amount a primary payer paid on the claim (NCH_PRMRY_PYR_CLM_PD_AMT), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-primary-payer-claim-paid-amount> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ] ;
+    sh:targetNode sdc4:mc-rnpfh6mpz8jfq28dfjp17rf9 ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-rpz1czz06jhpahmfz30rblvp-shape a sh:NodeShape ;
+    rdfs:label "Audit Event Outcome" ;
+    rdfs:comment "The result of an audited event (FHIR AuditEvent.outcome)." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue sdc4:mc-lgmleqp52a6kl268drrtfjk5 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-event-outcome> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "0" "4" "8" "12" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <http://hl7.org/fhir/audit-event-outcome> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-rpz1czz06jhpahmfz30rblvp ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-s5duw4mmis3a4auw1fwvkctt-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 2" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-2> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-s5duw4mmis3a4auw1fwvkctt .
+
+sdc4:mc-s7najsv11bd33calnyktjcon-shape a sh:NodeShape ;
+    rdfs:label "Blood Deductible Liability Amount" ;
+    rdfs:comment "The beneficiary's blood deductible liability (NCH_BENE_BLOOD_DDCTBL_LBLTY_AM), in US dollars." ;
+    sh:node sdc4:XdQuantityBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:hasValue schema:MonetaryAmount ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-blood-deductible-liability-amount> ;
+            sh:path dcterms:identifier ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-s7najsv11bd33calnyktjcon ;
+    sdc4-meta:sdcType "XdQuantityType" .
+
+sdc4:mc-sa4nl1kbpdr842fkucvfjkpq-shape a sh:NodeShape ;
+    rdfs:label "Started At" ;
+    rdfs:comment "When the activity started (prov:startedAtTime)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue prov:startedAtTime ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/started-at-time> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-sa4nl1kbpdr842fkucvfjkpq ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-skyz3ht3zv3j5qwsx8x0dyru-shape a sh:NodeShape ;
+    rdfs:label "Claim ID (CLM_ID)" ;
+    rdfs:comment "The claim identifier (CLM_ID)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-id> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9]{1,20}" ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-skyz3ht3zv3j5qwsx8x0dyru ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e-shape a sh:NodeShape ;
+    rdfs:label "Data Subject Reference" ;
+    rdfs:comment "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/data-subject-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.patient> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-x2rc9cg84d2famryqzdic0as ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-sqy06x5fv64a322dtl308lmw-shape a sh:NodeShape ;
+    rdfs:label "HCPCS Code" ;
+    rdfs:comment "A HCPCS code as recorded on a Medicare claim line: five characters, CPT (Level I) or Level II." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9A-Z][0-9]{3}[0-9A-Z]" ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://www.ama-assn.org/go/cpt> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/hcpcs-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://www.ama-assn.org/go/cpt> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-sqy06x5fv64a322dtl308lmw ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-t0whhrqtnb54te4mk48i1ooj-shape a sh:NodeShape ;
+    rdfs:label "Used Entity Reference" ;
+    rdfs:comment "An entity the activity used (prov:used). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/used-entity-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue prov:used ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-ixv0fa8xlde52mdeymr4zaka ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ] ;
+    sh:targetNode sdc4:mc-t0whhrqtnb54te4mk48i1ooj ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1-shape a sh:NodeShape ;
+    rdfs:label "Audit Event" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-h3kdbvdtyalpvik97saaf0an-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-rpz1czz06jhpahmfz30rblvp-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-jujsdur1igws8orw6tvvlqco-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-fjhgr5fyqxt2crmg2cb5c513-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-nf1air1zbj8v9w66jozdxmyl-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-vbctgmdcwps5b3r3l6sboa6y-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-gcjyjrnp0wsfoelcp4m05c67-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-ujir739mf1g8ajeczs9nzh9m-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-uwiosm2q9ym3ewr4de910s70-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-event> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-dkc2ccj5te35z9gd4bu1blcq-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/StructureDefinition/AuditEvent> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1 .
+
+sdc4:mc-t50t5aje4wj35czk6p4i2bse-shape a sh:NodeShape ;
+    rdfs:label "Claim Admission Date (CLM_ADMSN_DT)" ;
+    rdfs:comment "The inpatient admission date (CLM_ADMSN_DT)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-admission-date> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-date ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-t50t5aje4wj35czk6p4i2bse ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-u3euzufk7txuf1u20g0ca89l-shape a sh:NodeShape ;
+    rdfs:label "Code System: HCPCS" ;
+    rdfs:comment "The code system of a coded value, fixed: HCPCS Level I (CPT) and Level II (http://www.ama-assn.org/go/cpt and https://www.cms.gov/medicare/coding-billing/healthcare-common-procedure-system). FHIR Coding.system." ;
+    sh:node sdc4:XdLinkBaseShape ;
+    sh:property [ sh:hasValue <http://www.ama-assn.org/go/cpt> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://www.ama-assn.org/go/cpt> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation-uri ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/system-hcpcs> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:link ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation ] ;
+    sh:targetNode sdc4:mc-u3euzufk7txuf1u20g0ca89l ;
+    sdc4-meta:sdcType "XdLinkType" .
+
+sdc4:mc-u6u23oip0dinxve95ub0kwma-shape a sh:NodeShape ;
+    rdfs:label "Encounter Reason (SNOMED CT)" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://snomed.info/sct> ;
+            sh:path skos:closeMatch ],
+        [ sh:node sdc4:mc-eo5tlfr0576ypknys5alvcn0-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.reasonCode> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-q75pzzv36or6dxgjrrbvmun5-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/encounter-reason> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-cmtzyf0esp2hbf8ze2q0d3bh-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-u6u23oip0dinxve95ub0kwma .
+
+sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl-shape a sh:NodeShape ;
+    rdfs:label "Was Ended By Reference" ;
+    rdfs:comment "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/was-ended-by-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue prov:wasEndedBy ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-jr1e3n5kg31nqz1ynh28kitp ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-ujir739mf1g8ajeczs9nzh9m-shape a sh:NodeShape ;
+    rdfs:label "System Location Name" ;
+    rdfs:comment "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.location> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-l6fwy1a2l5i43t308pknygp7 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/system-location-name> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-ujir739mf1g8ajeczs9nzh9m ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-uso6k4nxb3m5ju33iqric9as-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 10" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-10> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-uso6k4nxb3m5ju33iqric9as .
+
+sdc4:mc-uv5qgddm3wuigsszk0o80bk9-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 9" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-9> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-uv5qgddm3wuigsszk0o80bk9 .
+
+sdc4:mc-uwiosm2q9ym3ewr4de910s70-shape a sh:NodeShape ;
+    rdfs:label "Audit Recorded At" ;
+    rdfs:comment "When the audit event was recorded (FHIR AuditEvent.recorded)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/audit-recorded-at> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.recorded> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-uwiosm2q9ym3ewr4de910s70 ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-uzai5uey5p1fnn9ezj9u6vor-shape a sh:NodeShape ;
+    rdfs:label "Activity Location" ;
+    rdfs:comment "Where the activity took place (prov:atLocation), as text." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue prov:atLocation ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-ciuklf1kl8bphpudye4i47am ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-location> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-uzai5uey5p1fnn9ezj9u6vor ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-v6cz7f7o7q0e1ziekrn7oam5-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 1" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-1> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-v6cz7f7o7q0e1ziekrn7oam5 .
+
+sdc4:mc-vbctgmdcwps5b3r3l6sboa6y-shape a sh:NodeShape ;
+    rdfs:label "Confidentiality" ;
+    rdfs:comment "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "U" "L" "M" "N" "R" "V" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <http://terminology.hl7.org/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-hp8q52t8tgmis92c4ljrfy7e ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/confidentiality> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/v3-Confidentiality> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-vbctgmdcwps5b3r3l6sboa6y ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-vhezo2cckpe92x4c3j2memeh-shape a sh:NodeShape ;
+    rdfs:label "Had Plan Reference" ;
+    rdfs:comment "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "\\S+" ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/had-plan-reference> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue prov:hadPlan ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-xvdfh1nzfar33yxmgl3jgvqo ;
+            sh:path prov:wasRevisionOf ] ;
+    sh:targetNode sdc4:mc-vhezo2cckpe92x4c3j2memeh ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-vmikfu0irht9fmq7q02t3oqs-shape a sh:NodeShape ;
+    rdfs:label "PROV Activity" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-a5scyosu6j84vz350mqyrzl2-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-jjzmhdxvbt97pq81iwqubtxk-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-vhezo2cckpe92x4c3j2memeh-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-uzai5uey5p1fnn9ezj9u6vor-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue prov:Activity ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-t0whhrqtnb54te4mk48i1ooj-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-wr06h54xqqw2q9id8i9673jy-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/prov-activity> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-r48alj7hc3797qfjnf2uj71n-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-sa4nl1kbpdr842fkucvfjkpq-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-r6hkunjm2q0hlxiknlc9ljix-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-ginfqbk7q59ld2r4us8sjnv1-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-hhusuzzig19rs46ngz23k5g7-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-qh84jdzp1kxt85aq4ilo0svk-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-vmikfu0irht9fmq7q02t3oqs .
+
+sdc4:mc-w2ruemcfy35rw60jl1t9dew2-shape a sh:NodeShape ;
+    rdfs:label "Agent Identifier" ;
+    rdfs:comment "The identifier of a PROV agent: a URI or another globally unique identifier." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue dcterms:identifier ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/agent-identifier> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-hhfnj5hd1yzt252jfq5pdjj1 ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-w2ruemcfy35rw60jl1t9dew2 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-wd1txyosw8ha21sohphne92e-shape a sh:NodeShape ;
+    rdfs:label "Discharge Disposition" ;
+    rdfs:comment "Where the patient went on discharge. FHIR Encounter.hospitalization.dischargeDisposition; Discharge disposition, version 4.0.1." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:datatype xsd:token ;
+            sh:in ( "home" "alt-home" "other-hcf" "hosp" "long" "aadvice" "exp" "psy" "rehab" "snf" "oth" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/discharge-disposition> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-t7iyfamfrzty7ev82gl15w4g ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://terminology.hl7.org/CodeSystem/discharge-disposition> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/encounter-definitions.html#Encounter.hospitalization.dischargeDisposition> ;
+            sh:path skos:closeMatch ] ;
+    sh:targetNode sdc4:mc-wd1txyosw8ha21sohphne92e ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8-shape a sh:NodeShape ;
+    rdfs:label "Activity Status" ;
+    rdfs:comment "The state of an activity, from the Data Privacy Vocabulary activity status concepts." ;
+    sh:node sdc4:XdTokenBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-status> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://w3id.org/dpv> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://w3id.org/dpv#ActivityStatus> ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue sdc4:mc-yehcpzf43j0b5zp9ck59t9eg ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:datatype xsd:token ;
+            sh:in ( "ActivityProposed" "ActivityPlanned" "ActivityOngoing" "ActivityHalted" "ActivityCompleted" "ActivityNotCompleted" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ] ;
+    sh:targetNode sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 ;
+    sdc4-meta:sdcType "XdTokenType" .
+
+sdc4:mc-wn77qo3b1xjwc4dudtyme2io-shape a sh:NodeShape ;
+    rdfs:label "Entity Location" ;
+    rdfs:comment "Where a PROV entity is (prov:atLocation), as text." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue sdc4:mc-tlezj37gdjxud7b2gefblv1e ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/entity-location> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue prov:atLocation ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ] ;
+    sh:targetNode sdc4:mc-wn77qo3b1xjwc4dudtyme2io ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-wph20dg6mu7bwrm4gbw6wao9-shape a sh:NodeShape ;
+    rdfs:label "Claim Procedure 3" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-procedure-3> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.procedure> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-wph20dg6mu7bwrm4gbw6wao9 .
+
+sdc4:mc-wr06h54xqqw2q9id8i9673jy-shape a sh:NodeShape ;
+    rdfs:label "Activity Identifier" ;
+    rdfs:comment "The identifier of a PROV activity: a URI or another globally unique identifier." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/activity-identifier> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue dcterms:identifier ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue sdc4:mc-fpnn1dew0kcevc8ptohndc5t ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-wr06h54xqqw2q9id8i9673jy ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-x0lebwtobgaelj5pev3258sd-shape a sh:NodeShape ;
+    rdfs:label "Software Version" ;
+    rdfs:comment "The version of a software agent." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue schema: ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/software-version> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue schema:softwareVersion ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue sdc4:mc-tep9wanrrtqfw0k76huv6tvd ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 60 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ] ;
+    sh:targetNode sdc4:mc-x0lebwtobgaelj5pev3258sd ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-x1942izf02stqs3kiu2yepf5-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 2" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-2> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-x1942izf02stqs3kiu2yepf5 .
+
+sdc4:mc-x30sghfdhlvgw2gn7trxp9u6-shape a sh:NodeShape ;
+    rdfs:label "Claim Line Segment (SEGMENT)" ;
+    rdfs:comment "The claim line segment (SEGMENT)." ;
+    sh:node sdc4:XdCountBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:maxInclusive 9 ;
+            sh:minCount 1 ;
+            sh:minInclusive 1 ;
+            sh:path sdc4:xdcount-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-line-segment> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
+            sh:path sdc4-meta:hasUnit ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:node sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn-shape ;
+            sh:path sdc4-meta:hasUnit ] ;
+    sh:targetNode sdc4:mc-x30sghfdhlvgw2gn7trxp9u6 ;
+    sdc4-meta:sdcType "XdCountType" .
+
+sdc4:mc-xfvr55ap2rv2nokf9v12gggl-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 2" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-2> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-xfvr55ap2rv2nokf9v12gggl .
+
+sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk-shape a sh:NodeShape ;
+    rdfs:label "Error Message" ;
+    rdfs:comment "The error the activity reported, if it failed." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue schema:error ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 4000 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/error-message> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue sdc4:mc-eakhqr9l9nbblppgxc5fq25n ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue schema: ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-xvdtx5vxlu8pl9dyfz8x8m1r-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 6" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-6> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-xvdtx5vxlu8pl9dyfz8x8m1r .
+
+sdc4:mc-xxe21o9ojzmy9wxxky1tnmog-shape a sh:NodeShape ;
+    rdfs:label "Agent Name" ;
+    rdfs:comment "The name of the agent (foaf:name)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue foaf:name ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/provgov/agent-name> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue sdc4:mc-yya0pdgjd2w0wlz5r3h516om ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 255 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ] ;
+    sh:targetNode sdc4:mc-xxe21o9ojzmy9wxxky1tnmog ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-yht0x4rmqyu32sd90jl0rzbo-shape a sh:NodeShape ;
+    rdfs:label "Days" ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/units-days> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://qudt.org/schema/qudt/Unit> ;
+            sh:path skos:closeMatch ],
+        [ sh:hasValue <http://qudt.org/> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-yk5nrxndulhebpi3hiywk8u8-shape a sh:NodeShape ;
+    rdfs:label "Generated At" ;
+    rdfs:comment "When the entity was generated (prov:generatedAtTime)." ;
+    sh:node sdc4:XdTemporalBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/provgov/generated-at-time> ;
+            sh:path dcterms:identifier ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:hasValue prov:generatedAtTime ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.w3.org/TR/prov-o/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-yk5nrxndulhebpi3hiywk8u8 ;
+    sdc4-meta:sdcType "XdTemporalType" .
+
+sdc4:mc-zd43681w5jtanaml4wiaz1yo-shape a sh:NodeShape ;
+    rdfs:label "Claim Diagnosis 5" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-diagnosis-5> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.diagnosis> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-zd43681w5jtanaml4wiaz1yo .
+
+sdc4:mc-zkshfzesnopszu12m8yt656o-shape a sh:NodeShape ;
+    rdfs:label "Claim HCPCS 8" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/claim-definitions.html#Claim.item> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-claim-hcpcs-8> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-zkshfzesnopszu12m8yt656o .
+
+sdc4:mc-zshx6rx7ca1j00eda9kxyh6h-shape a sh:NodeShape ;
+    rdfs:label "Beneficiary Code (DESYNPUF_ID)" ;
+    rdfs:comment "The synthetic beneficiary identifier every DE-SynPUF file carries (DESYNPUF_ID); not traceable to a real Medicare beneficiary." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ;
+            sh:pattern "[0-9A-F]{16}" ],
+        [ sh:hasValue <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
+            sh:path rdfs:seeAlso ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-beneficiary-code> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-zshx6rx7ca1j00eda9kxyh6h ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-zv342hb79qgder7lfsaewzli-shape a sh:NodeShape ;
+    rdfs:label "CMS Inpatient Claim Governed Record" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-c179ilk2ns15cd5rzzdfd6f6-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://github.com/SemanticDataCharter/FAIR_Data_Demo> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue prov:Entity ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-vmikfu0irht9fmq7q02t3oqs-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/cms-inpatient-claim-governed-record> ;
+            sh:path dcterms:identifier ],
+        [ sh:node sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1-shape ;
+            sh:path sdc4:hasCluster ],
+        [ sh:node sdc4:mc-lyp1z2xr7we4g8tuooygoymb-shape ;
+            sh:path sdc4:hasCluster ] ;
+    sh:targetNode sdc4:mc-zv342hb79qgder7lfsaewzli .
+
+sdc4:XdCountBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdCount must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+            sh:message "XdCount must have an integer value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdcount-value ],
+        [ sh:class sdc4:UnitsType ;
+            sh:maxCount 1 ;
+            sh:message "XdCount requires a Units component" ;
+            sh:minCount 1 ;
+            sh:path sdc4-meta:hasUnit ] ;
+    sh:targetClass sdc4:XdCountType .
+
+sdc4:mc-qdl35df54hlauu2mhwac6goe-shape a sh:NodeShape ;
+    rdfs:label "Code System: ICD-9-CM" ;
+    rdfs:comment "The code system of a coded value, fixed: ICD-9-CM (http://hl7.org/fhir/sid/icd-9-cm). FHIR Coding.system." ;
+    sh:node sdc4:XdLinkBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path dcterms:source ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:link ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/system-icd9cm> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:relation-uri ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-qdl35df54hlauu2mhwac6goe ;
+    sdc4-meta:sdcType "XdLinkType" .
+
+sdc4:XdLinkBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdLink must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:anyURI ;
+            sh:maxCount 1 ;
+            sh:message "XdLink must have a valid URI" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdlink-url ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdLink relation must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdlink-relation ] ;
+    sh:targetClass sdc4:XdLinkType .
+
+sdc4:mc-eo5tlfr0576ypknys5alvcn0-shape a sh:NodeShape ;
+    rdfs:label "Code Display Text" ;
+    rdfs:comment "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)." ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/R4/> ;
+            sh:path dcterms:source ],
+        [ sh:hasValue <https://axius-sdc.com/library/fhir/code-display-text> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.display> ;
+            sh:path skos:exactMatch ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:maxLength 500 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ] ;
+    sh:targetNode sdc4:mc-eo5tlfr0576ypknys5alvcn0 ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-hjjou19np3pohe63fxmqtkoi-shape a sh:NodeShape ;
+    rdfs:label "Currency" ;
+    sh:node sdc4:XdStringBaseShape ;
+    sh:property [ sh:hasValue sdc4:mc-wab4687wp76ntxrz27nqybgp ;
+            sh:path prov:wasRevisionOf ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:hasValue <https://axius-sdc.com/library/default/units-currency> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <http://qudt.org/vocab/quantitykind/Currency> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <https://www.iso.org/iso-4217-currency-codes.html> ;
+            sh:path dcterms:source ] ;
+    sh:targetNode sdc4:mc-hjjou19np3pohe63fxmqtkoi ;
+    sdc4-meta:sdcType "XdStringType" .
+
+sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv-shape a sh:NodeShape ;
+    rdfs:label "Procedure (ICD-9-CM)" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:node sdc4:mc-qdl35df54hlauu2mhwac6goe-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/datatypes.html#Coding> ;
+            sh:path skos:exactMatch ],
+        [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-nwmv4c2ogjk8ohxzum1zuprf-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-eo5tlfr0576ypknys5alvcn0-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/procedure-icd9cm> ;
+            sh:path dcterms:identifier ] ;
+    sh:targetNode sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv .
+
+sdc4:XdQuantityBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdQuantity must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:decimal ;
+            sh:maxCount 1 ;
+            sh:message "XdQuantity must have a decimal value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdquantity-value ],
+        [ sh:class sdc4:UnitsType ;
+            sh:maxCount 1 ;
+            sh:message "XdQuantity requires a Units component" ;
+            sh:minCount 1 ;
+            sh:path sdc4-meta:hasUnit ] ;
+    sh:targetClass sdc4:XdQuantityType .
+
+sdc4:XdTemporalBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdTemporal must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:message "XdTemporal date must be a valid date" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdtemporal-date ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "XdTemporal datetime must be a valid datetime" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdtemporal-datetime ],
+        [ sh:datatype xsd:time ;
+            sh:maxCount 1 ;
+            sh:message "XdTemporal time must be a valid time" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdtemporal-time ],
+        [ sh:datatype xsd:gYearMonth ;
+            sh:maxCount 1 ;
+            sh:message "XdTemporal year-month must be a valid gYearMonth" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdtemporal-year-month ] ;
+    sh:targetClass sdc4:XdTemporalType .
+
+sdc4:mc-embtq0y4cmyk5em87e3jbdjx-shape a sh:NodeShape ;
+    rdfs:label "Procedure (HCPCS)" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <https://axius-sdc.com/library/fair/procedure-hcpcs> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:hasValue <http://www.ama-assn.org/go/cpt> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-sqy06x5fv64a322dtl308lmw-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-eo5tlfr0576ypknys5alvcn0-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:node sdc4:mc-u3euzufk7txuf1u20g0ca89l-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/datatypes.html#Coding> ;
+            sh:path skos:exactMatch ] ;
+    sh:targetNode sdc4:mc-embtq0y4cmyk5em87e3jbdjx .
+
+sdc4:mc-f9y0zpvphrny3gapgnjss0w1-shape a sh:NodeShape ;
+    rdfs:label "Diagnosis (ICD-9-CM)" ;
+    sh:node sdc4:ClusterBaseShape ;
+    sh:property [ sh:hasValue <http://hl7.org/fhir/sid/icd-9-cm> ;
+            sh:path dcterms:source ],
+        [ sh:node sdc4:mc-eo5tlfr0576ypknys5alvcn0-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <http://hl7.org/fhir/R4/datatypes.html#Coding> ;
+            sh:path skos:exactMatch ],
+        [ sh:node sdc4:mc-qdl35df54hlauu2mhwac6goe-shape ;
+            sh:path sdc4:hasComponent ],
+        [ sh:hasValue <https://axius-sdc.com/library/fair/diagnosis-icd9cm> ;
+            sh:path dcterms:identifier ],
+        [ sh:hasValue <https://axius-sdc.com> ;
+            sh:path dcterms:publisher ],
+        [ sh:node sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c-shape ;
+            sh:path sdc4:hasComponent ] ;
+    sh:targetNode sdc4:mc-f9y0zpvphrny3gapgnjss0w1 .
+
+sdc4:XdTokenBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdToken must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:token ;
+            sh:maxCount 1 ;
+            sh:message "XdToken must have a token value" ;
+            sh:minCount 1 ;
+            sh:path sdc4:xdtoken-value ] ;
+    sh:targetClass sdc4:XdTokenType .
+
+sdc4:ClusterBaseShape a sh:NodeShape ;
+    sh:property [ sh:message "Cluster can contain zero or more components" ;
+            sh:minCount 0 ;
+            sh:path sdc4:hasComponent ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Cluster must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ] ;
+    sh:targetClass sdc4:ClusterType .
+
+sdc4:XdStringBaseShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdString must have a label" ;
+            sh:minCount 1 ;
+            sh:path sdc4:label ],
+        [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "XdString value must be a string" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdstring-value ],
+        [ sh:datatype xsd:language ;
+            sh:maxCount 1 ;
+            sh:message "XdString language must be a valid language code" ;
+            sh:minCount 0 ;
+            sh:path sdc4:xdstring-language ] ;
+    sh:targetClass sdc4:XdStringType .
+

@@ -1,0 +1,17 @@
+# Blood pressure by study. NHANES measured it at the examination center; BRFSS carries no reading
+# (it asks whether a professional ever said the respondent's pressure was high). The FHIR systolic
+# and diastolic components are the same in both models, so the query joins on them and the store
+# says which study has readings and which has an indicator.
+PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc:   <http://purl.org/dc/elements/1.1/>
+SELECT ?study ?component_label (COUNT(DISTINCT ?inst) AS ?records) (MIN(xsd:decimal(?v)) AS ?lowest) (AVG(xsd:decimal(?v)) AS ?mean) (MAX(xsd:decimal(?v)) AS ?highest) (SAMPLE(?inst) AS ?inst_2)
+WHERE {
+  VALUES ?mc { sdc4:mc-r1ve12xphsb5hu2yjmhksw5h sdc4:mc-s3qzwxxz9b42lcd2wryok8jd sdc4:mc-oy0jwif5pi86xtimzxzhapvu }
+  ?r rdf:reifies <<?mc ?vp ?v>> ; sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?component_label .
+  ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
+  FILTER(isLiteral(?v) && REGEX(STR(?v), "^[0-9.]+$"))
+}
+GROUP BY ?study ?component_label
+ORDER BY ?component_label ?study

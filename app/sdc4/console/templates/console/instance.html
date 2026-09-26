@@ -1,0 +1,169 @@
+{% extends "console/base.html" %}
+{% block title %}{{ h.dm_label }} {{ h.instance_id }}{% endblock %}
+
+{% block content %}
+<div class="subject">
+  <div class="who">
+    <h1>{{ h.dm_label }}</h1>
+    <div class="ids">
+      {{ h.instance_id }} &middot; model {{ h.ct_id }} &middot; recorded {{ h.created_at|date:"Y-m-d H:i" }}
+    </div>
+  </div>
+  <div class="counts">
+    <div>
+      <span class="v">
+        {% if h.validation_status == 'invalid' %}&#10007;{% else %}&#10003;{% endif %}
+      </span>
+      <span class="k">{{ h.validation_label|lower }}</span>
+    </div>
+    <div>
+      <span class="v">{{ h.stated_absence_count }}</span>
+      <span class="k">stated absences</span>
+    </div>
+  </div>
+</div>
+
+<nav class="pager" aria-label="Records in this domain">
+  {% if nav.prev %}
+    <a class="step" href="{% url 'console:instance' h.ct_id nav.prev %}?pane={{ pane }}"
+       accesskey="," rel="prev">&lsaquo; Previous</a>
+  {% else %}
+    <span class="step off">&lsaquo; Previous</span>
+  {% endif %}
+
+  <span class="where">
+    {% if nav.position %}Record <b>{{ nav.position }}</b> of {{ nav.total }}{% else %}{{ nav.total }} records{% endif %}
+    in {{ h.dm_label }}
+    <a class="all" href="{% url 'console:index' %}">all domains</a>
+  </span>
+
+  {% if nav.next %}
+    <a class="step" href="{% url 'console:instance' h.ct_id nav.next %}?pane={{ pane }}"
+       accesskey="." rel="next">Next &rsaquo;</a>
+  {% else %}
+    <span class="step off">Next &rsaquo;</span>
+  {% endif %}
+</nav>
+
+<div class="grid">
+  <section class="card">
+    <header>
+      <span class="t">Projections of one record</span>
+      {% comment %}
+        Real links first. HTMX upgrades them to an in-place swap when it is
+        available; without it the browser follows the href and the projection
+        still changes. A demo that needs a CDN to switch tabs is not one you
+        can run on an air-gapped machine.
+      {% endcomment %}
+      <span class="tabs">
+      {% for p in panes %}
+        <a class="tab {% if p == pane %}on{% endif %}"
+           href="?pane={{ p }}"
+           hx-get="{% url 'console:pane' h.ct_id h.instance_id p %}"
+           hx-target="#projection" hx-swap="innerHTML"
+           hx-push-url="?pane={{ p }}"
+           onclick="document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('on')});this.classList.add('on');">
+          {{ p|title }}
+        </a>
+      {% endfor %}
+      </span>
+    </header>
+    <div id="projection">
+      {% include "console/_pane_"|add:pane|add:".html" %}
+    </div>
+  </section>
+
+  <aside>
+    <section class="card">
+      <header><span class="t">Governed by</span></header>
+      {% if governed %}
+        <div style="padding:16px">
+          <dl>
+            <dt>Component</dt><dd>{{ governed.label }}</dd>
+            <dt>Identifier</dt><dd>ms-{{ governed.component }}</dd>
+            <dt>Reference model</dt><dd>{{ governed.rm_type }}</dd>
+            {% if governed.units %}<dt>Units</dt><dd>{{ governed.units }}</dd>{% endif %}
+            {% if governed.facets %}
+              <dt>Constraint</dt>
+              <dd>{% for f, v in governed.facets %}{{ f }} {{ v }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</dd>
+            {% endif %}
+            <dt>Value</dt>
+            <dd>{% if governed.value_required %}required{% else %}optional{% endif %}
+                &middot; {{ governed.value_element }}</dd>
+            <dt>If absent</dt>
+            <dd>{% if governed.ev_allowed %}Exceptional Value permitted{% else %}no stated absence{% endif %}</dd>
+          </dl>
+          {% if governed.definition %}
+            <p class="hint" style="border-top:1px dashed var(--rule);padding-top:10px;margin-top:12px">
+              {{ governed.definition }}
+            </p>
+          {% endif %}
+          {% if governed.defined_by %}
+            <p class="hint">Bound to
+              <a href="{{ governed.defined_by }}" target="_blank" rel="noopener">{{ governed.defined_by }}</a>
+            </p>
+          {% endif %}
+        </div>
+        <div class="note">
+          Read from the published data model, not from this record. A resource view in a triple
+          store shows what a node <b>asserts</b>; this shows what the schema <b>permitted</b> it to
+          assert, and it is the same file any counterparty validates against.
+        </div>
+      {% else %}
+        <div class="note">
+          No component selected, or this data model is not in the local library.
+          {% if pane != 'table' %}Open the <b>Table</b> projection and choose a field.{% endif %}
+        </div>
+      {% endif %}
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <header><span class="t">Assurance</span></header>
+      <div style="padding:16px">
+        <dl>
+          <dt>Instance</dt><dd>{{ h.instance_id }}</dd>
+          <dt>Data model</dt><dd>{{ h.dm_label }} &middot; {{ h.ct_id }}</dd>
+          <dt>Validation</dt>
+          <dd>
+            {% if h.validation_status == 'invalid' %}
+              <span class="badge bad">failed</span>
+            {% elif h.validation_status == 'valid_with_ev' %}
+              <span class="badge ok">passed</span> <span class="badge ev">with stated absences</span>
+            {% else %}
+              <span class="badge ok">passed</span>
+            {% endif %}
+          </dd>
+          {% if h.stated_absences %}
+            <dt>Stated absences</dt>
+            <dd>{% for a in h.stated_absences %}{{ a }}{% if not forloop.last %}, {% endif %}{% endfor %}</dd>
+          {% endif %}
+          <dt>Graph projection</dt><dd>{{ h.rdf_sync_status }}</dd>
+          {% if h.graph_uri %}<dt>Named graph</dt><dd>{{ h.graph_uri }}</dd>{% endif %}
+        </dl>
+      </div>
+      <div class="note">
+        A stated absence is carried by the record rather than inferred here: the field holds an
+        Exceptional Value naming the reason it is absent, so a reader cannot mistake it for a
+        normal value.
+        {% if h.stated_absences and not h.is_ev_instance %}
+          <br><br><b>Known gap:</b> this instance is not marked <b>i-ev-</b> and its status reads
+          <b>valid</b> rather than <b>valid_with_ev</b>. The record is right; the importer does not
+          set either marker yet.
+        {% endif %}
+      </div>
+    </section>
+  </aside>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('keydown', function (e) {
+  if (e.target.matches('input, textarea, select')) return;
+  var rel = e.key === 'ArrowLeft' ? 'prev' : e.key === 'ArrowRight' ? 'next' : null;
+  if (!rel) return;
+  var a = document.querySelector('.pager a[rel="' + rel + '"]');
+  if (a) window.location = a.href;
+});
+</script>
+{% endblock %}

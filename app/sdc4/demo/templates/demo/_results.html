@@ -1,0 +1,56 @@
+{# One query result: the table, and the entity graph drawn from the records behind it. #}
+<div class="card border-0 shadow-sm">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <span class="fw-semibold">
+            <i class="bi bi-table me-1"></i>{{ row_count }} result{{ row_count|pluralize }} in {{ elapsed }}s
+        </span>
+        {% if graph %}
+        <ul class="nav nav-pills nav-sm" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active py-1 px-2" data-bs-toggle="pill" data-bs-target="#table-{{ uid }}" type="button" role="tab">
+                    <i class="bi bi-table me-1"></i>Table
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link py-1 px-2" data-bs-toggle="pill" data-bs-target="#graph-{{ uid }}" type="button" role="tab"
+                        data-cordova-graph="{{ uid }}">
+                    <i class="bi bi-diagram-3 me-1"></i>Graph
+                    <span class="badge bg-secondary ms-1">{{ node_count }} record{{ node_count|pluralize }}, {{ edge_count }} link{{ edge_count|pluralize }}</span>
+                </button>
+            </li>
+        </ul>
+        {% endif %}
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="table-{{ uid }}" role="tabpanel">
+            <div class="card-body p-0" style="max-height: 500px; overflow-y: auto;">
+                {% include "demo/_results_table.html" %}
+            </div>
+        </div>
+        {% if graph %}
+        <div class="tab-pane fade" id="graph-{{ uid }}" role="tabpanel">
+            <div class="card-body p-0">
+                {% if graph.reason %}
+                <div class="p-4 text-muted">{{ graph.reason }}</div>
+                {% else %}
+                <div class="d-flex" style="min-height: 520px;">
+                    <div class="flex-grow-1 position-relative">
+                        <div class="cordova-graph" id="cy-{{ uid }}"></div>
+                        <div class="cordova-graph-legend" id="legend-{{ uid }}"></div>
+                    </div>
+                    <div class="cordova-graph-side border-start p-3" id="side-{{ uid }}">
+                        <div class="text-muted small">
+                            <p class="mb-2"><strong>Every node is a validated record.</strong> Click one to open it as document, table and graph, with the model that governs it.</p>
+                            <p class="mb-2"><strong>Every link is a shared identifier.</strong> Nothing in the store joins two records; the join is the component both records carry, and the link names it.</p>
+                            {% if graph.truncated %}<p class="mb-0 text-warning">Drawn for the first {{ node_count }} records of this result.</p>{% endif %}
+                        </div>
+                    </div>
+                </div>
+                {{ graph|json_script:graph_script_id }}
+                <script>CordovaGraph.register("{{ uid }}");</script>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

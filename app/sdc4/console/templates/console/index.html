@@ -1,28 +1,28 @@
 {% extends "console/base.html" %}
-{% block title %}National Data Platform{% endblock %}
+{% block title %}Record explorer{% endblock %}
 
 {% block content %}
 <div class="subject">
   <div class="who">
     <h1>Record explorer</h1>
     <div class="ids">
-      {{ total_records }} records across {{ domains|length }} domains, generated from one reference
-      model. Open any record to see it as a document, as a table, and as a node in the graph.
+      {{ total_records }} records across {{ domains|length }} study models, generated from the federal
+      files on one reference model. Open any record to see it as a document, as a table, and as a node in the graph.
     </div>
   </div>
   <div class="counts">
     <div><span class="v">{{ total_records }}</span><span class="k">records</span></div>
-    <div><span class="v">{{ domains|length }}</span><span class="k">domains</span></div>
+    <div><span class="v">{{ domains|length }}</span><span class="k">models</span></div>
     <div><span class="v">{{ total_invalid }}</span><span class="k">refused</span></div>
   </div>
 </div>
 
 <div class="grid">
   <section class="card">
-    <header><span class="t">Domains</span></header>
+    <header><span class="t">Models</span></header>
     <table>
       <thead>
-        <tr><th>Domain</th><th class="num">Records</th><th class="num">Refused</th><th></th></tr>
+        <tr><th>Model</th><th class="num">Records</th><th class="num">Refused</th><th></th></tr>
       </thead>
       <tbody>
         {% for d in domains %}

@@ -1,3 +1,7 @@
+# The compose project name: without it the project is named after this directory (sdc4), which every
+# generated stack shares, and two stacks on one machine reconcile each other's containers away.
+name: fair
+
 # Enterprise SDC4 Stack: PostgreSQL, GraphDB (OWL 2), SirixDB (Temporal), Keycloak (SSO/RBAC)
 # Omit version field for maximum Docker/Podman compatibility
 services:

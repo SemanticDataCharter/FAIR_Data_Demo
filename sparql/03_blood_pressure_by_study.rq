@@ -1,7 +1,7 @@
 # Blood pressure by study. NHANES measured it at the examination center; BRFSS carries no reading
-# (it asks whether a professional ever said the respondent's pressure was high). The FHIR systolic
-# and diastolic components are the same in both models, so the query joins on them and the store
-# says which study has readings and which has an indicator.
+# (the 2022 core questionnaire did not ask about it). The query anchors on the FHIR systolic,
+# diastolic and heart rate components, and the store says which study has readings: NHANES does,
+# BRFSS returns no row, and the query says so rather than finding a substitute.
 PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

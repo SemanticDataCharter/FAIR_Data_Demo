@@ -23,6 +23,8 @@ from urllib.parse import quote
 
 from django.conf import settings
 
+from sdc4_shared.utils.dm_components import by_label, reifier_iri
+
 SDC4 = 'https://semanticdatacharter.com/ns/sdc4/'
 
 #: Variables in a saved query that carry a record IRI rather than a cell.
@@ -94,10 +96,6 @@ def _values(var: str, iris: Iterable[str]) -> str:
     return f'VALUES ?{var} {{ ' + ' '.join(f'<{i}>' for i in iris) + ' }'
 
 
-def _mc_values(var: str, ct_ids: Iterable[str]) -> str:
-    return f'VALUES ?{var} {{ ' + ' '.join(f'sdc4:mc-{c}' for c in ct_ids) + ' }'
-
-
 def _local(iri: str) -> str:
     return iri.rsplit('/', 1)[-1]
 
@@ -150,18 +148,26 @@ SELECT ?inst ?dm ?status ?title WHERE {{
   OPTIONAL {{ ?inst sdc4:validationStatus ?status }}
   OPTIONAL {{ ?dm dc:title ?title FILTER(CONTAINS(?title, " ")) }}
 }}"""))
-        wanted = sorted({lbl for groups in TITLE_LABELS.values() for g in groups for lbl in g})
+        # A reifier is addressed by its own IRI, built from the component and the record: a triple
+        # term with the component unbound would scan every reifier in the store.
+        dm_of = {r['inst']: _local(r['dm']).replace('dm-', '', 1) for r in node_rows}
+        title_reifiers = []
+        for iri, dm_ct in dm_of.items():
+            labels = by_label(dm_ct)
+            for group in TITLE_LABELS.get(dm_ct, []):
+                for lbl in group:
+                    if lbl in labels:
+                        title_reifiers.append(reifier_iri(labels[lbl], iri))
         title_rows = _rows(client.query_sparql(PREFIXES + f"""
 SELECT ?inst ?label ?v WHERE {{
-  {_values('inst', iris)}
-  VALUES ?label {{ {' '.join(chr(34) + w + chr(34) for w in wanted)} }}
+  {_values('r', title_reifiers)}
   ?r sdc4:inInstance ?inst ; rdfs:label ?label ; rdf:reifies <<?mc ?vp ?v>> .
-}}"""))
-        all_mcs = [ct for comps in JOIN_KEYS.values() for ct in comps] + list(SHARED_COMPONENTS)
+}}""")) if title_reifiers else []
+        all_cts = [ct for comps in JOIN_KEYS.values() for ct in comps] + list(SHARED_COMPONENTS)
+        value_reifiers = [reifier_iri(ct, iri) for iri in iris for ct in all_cts]
         value_rows = _rows(client.query_sparql(PREFIXES + f"""
 SELECT ?a ?la ?mc ?v WHERE {{
-  {_values('a', iris)}
-  {_mc_values('mc', all_mcs)}
+  {_values('ra', value_reifiers)}
   ?ra sdc4:inInstance ?a ; rdfs:label ?la ; rdf:reifies <<?mc ?vp ?v>> .
 }}"""))
         party_rows = _rows(client.query_sparql(PREFIXES + f"""

@@ -31,9 +31,9 @@ class FakeClient:
             raise RuntimeError('down')
         if 'sdc4:partyRef' in q:
             return _res(self.parties)
-        if 'VALUES ?mc ' in q:
+        if 'VALUES ?ra ' in q:
             return _res(self.values)
-        if 'VALUES ?label' in q:
+        if 'VALUES ?r ' in q:
             return _res(self.titles)
         return _res(self.nodes)
 
@@ -118,13 +118,13 @@ class EntityGraphTests(SimpleTestCase):
 
     def test_the_join_components_are_the_only_ones_asked_for(self):
         c = client(); eg.build([PART, RESP], c)
-        value_query = next(q for q in c.queries if 'VALUES ?mc ' in q)
+        value_query = next(q for q in c.queries if 'VALUES ?ra ' in q)
         for comps in eg.JOIN_KEYS.values():
             for ct in comps:
-                self.assertIn(f'sdc4:mc-{ct}', value_query)
+                self.assertIn(f'/dm/v_{ct}_nhanesp0000000000000001>', value_query)   # the reifier of the component in the record
         for ct in eg.SHARED_COMPONENTS:
-            self.assertIn(f'sdc4:mc-{ct}', value_query)
-        self.assertNotIn('mc-uk8p1ggkgmm2ma4q97htm5lb', value_query)  # income-to-poverty ratio: one study, not a join
+            self.assertIn(f'/dm/v_{ct}_brfss000000000000000001>', value_query)
+        self.assertNotIn('v_uk8p1ggkgmm2ma4q97htm5lb_', value_query)  # income-to-poverty ratio: one study, not a join
 
     def test_a_record_the_store_cannot_describe_still_counts(self):
         ghost = f'{SDC4}i-ghost0000000000000000001'

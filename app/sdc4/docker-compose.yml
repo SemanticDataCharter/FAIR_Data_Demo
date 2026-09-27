@@ -26,7 +26,7 @@ services:
     container_name: ${APP_NAME:-fair}_graphdb
     environment:
       GDB_JAVA_OPTS: >-
-        -Xms1g -Xmx2g
+        -Xms2g -Xmx4g
         -Dgraphdb.home=/opt/graphdb/home
         -Dgraphdb.workbench.importDirectory=/opt/graphdb/home/graphdb-import
     ports:

@@ -1,16 +1,23 @@
 # Chronic conditions by study and by the basis each study established them on. Every condition
 # indicator is one component composed by every study that carries it; the basis (a professional's
 # diagnosis as the person reports it, or a claims-based algorithm) is stated on each record, so the
-# comparison is honest about what is being compared.
+# comparison is honest about what is being compared. The twenty-one condition components are
+# named, and the basis reifier is reached by the IRI it has in each record.
 PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
 SELECT ?condition ?study ?basis (COUNT(DISTINCT ?inst) AS ?records) (SUM(IF(?v = "Yes", 1, 0)) AS ?yes) (SAMPLE(?inst) AS ?inst_2)
 WHERE {
-  ?r sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?condition ; rdf:reifies <<?mc ?vp ?v>> .
-  FILTER(STRSTARTS(?condition, "Condition: "))
-  ?b sdc4:inInstance ?inst ; rdfs:label "Condition Indicator Basis" ; rdf:reifies <<?mcb ?vpb ?basis>> .
+  VALUES ?mc { sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s sdc4:mc-o4d67oubyyunugx3la44f53u sdc4:mc-nd1v8jk7wtm1tthzw1f4987t sdc4:mc-acr1xvqppf1b3rjsrst6tt4p
+               sdc4:mc-ix0my2v2z79s002g0r8orosf sdc4:mc-jyx7rxfktazhgxgq84fxf6wr sdc4:mc-hyqlz591lhj54sdt1a1mup70 sdc4:mc-mijr18ynaqde2l8jps70l2g6
+               sdc4:mc-udbydjqj76l8kl6mi2s3v7vd sdc4:mc-of4crvmnrr3s5q5396kmt0jv sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h sdc4:mc-sbulkq80j4fkbiql4zgje4qr
+               sdc4:mc-yshoeps2dm0j1ueusqs825v6 sdc4:mc-lvockfc8lce5p15wuwxc1kwa sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu
+               sdc4:mc-atqkooccakulfhkt18c008fx sdc4:mc-l784ggegqcvrpnmw2yvo4il7 sdc4:mc-xsohkckyof7y1xj8h1ab4pxu sdc4:mc-zc6p008h5naqev8zngtzvyx9
+               sdc4:mc-p8u71b4lhct4ra0szgkex7xo }
+  ?r rdf:reifies <<?mc ?vp ?v>> ; sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?condition .
+  BIND(IRI(CONCAT("https://semanticdatacharter.com/ns/dm/v_hc79skkfionpgw87dsg5yrgw_", STRAFTER(STR(?inst), "/i-"))) AS ?b)
+  ?b rdf:reifies <<sdc4:mc-hc79skkfionpgw87dsg5yrgw ?vpb ?basis>> .
   ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
 }
 GROUP BY ?condition ?study ?basis

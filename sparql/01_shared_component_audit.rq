@@ -1,17 +1,20 @@
 # Which components do the studies share? For every component that records of more than one
 # model carry, the component's label, how many models and how many records carry it. This is the
 # join the demonstration exists to show, answered by the store rather than asserted by a README.
+# The component is read from the reifier's own IRI (.../dm/v_<component>_<instance>): a triple
+# term with the component unbound would scan every reifier in the store.
 PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dc:   <http://purl.org/dc/elements/1.1/>
-SELECT ?component_label ?mc (COUNT(DISTINCT ?dm) AS ?models) (COUNT(DISTINCT ?inst) AS ?records) (GROUP_CONCAT(DISTINCT ?title; separator=", ") AS ?studies)
+SELECT ?component_label ?ct_id (COUNT(DISTINCT ?dm) AS ?models) (COUNT(DISTINCT ?inst) AS ?records) (GROUP_CONCAT(DISTINCT ?title; separator=", ") AS ?studies)
 WHERE {
-  ?r sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?component_label ; rdf:reifies <<?mc ?vp ?v>> .
+  ?r sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?component_label .
+  BIND(STRBEFORE(STRAFTER(STR(?r), "/dm/v_"), "_") AS ?ct_id)
   ?dm dc:title ?title . FILTER(CONTAINS(?title, " "))
   FILTER(!STRSTARTS(?component_label, "Audit ") && !STRSTARTS(?component_label, "Activity ") && !STRSTARTS(?component_label, "Agent ")
          && !STRSTARTS(?component_label, "Was ") && !STRSTARTS(?component_label, "Software ") && ?component_label NOT IN ("Started At", "Ended At", "Purpose of Use", "Confidentiality", "Provenance Agent Type", "PROV Agent Type", "System Identifier", "System Location Name", "Data Subject Reference", "Used Entity Reference", "Had Plan Reference", "On Behalf Of Reference", "Acted On Behalf Of Reference", "Error Message"))
 }
-GROUP BY ?component_label ?mc
+GROUP BY ?component_label ?ct_id
 HAVING (COUNT(DISTINCT ?dm) > 1)
 ORDER BY DESC(?models) DESC(?records) ?component_label

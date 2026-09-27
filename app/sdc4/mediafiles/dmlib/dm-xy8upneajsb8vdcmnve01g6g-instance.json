@@ -1,0 +1,2053 @@
+{
+  "@context": "https://semanticdatacharter.com/ns/sdc4/",
+  "dm_id": "xy8upneajsb8vdcmnve01g6g",
+  "dm_type": "dm-xy8upneajsb8vdcmnve01g6g",
+  "metadata": {
+    "dm_language": "en-US",
+    "dm_label": "NHANES Participant",
+    "dm_encoding": "utf-8",
+    "instance_id": "kttfkh1nze30m7v3l3ixn6l2",
+    "instance_version": "1.0",
+    "creation_timestamp": "2026-09-26T22:14:44.494623",
+    "current_state": ""
+  },
+  "data": {
+    "component_id": "l6t9agg233vswxyv60quiu6w",
+    "label": "NHANES Participant Governed Record",
+    "type": "Cluster",
+    "description": "An NHANES participant record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: NHANES Participant; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).",
+    "items": [
+      {
+        "component_id": "t2tvd3wylxrstdeu5aw6gkw1",
+        "label": "Audit Event",
+        "type": "Cluster",
+        "description": "A logged access or custody event as data: what was done, by whom, on what, with what outcome and for what purpose. The audit-only case of sdc5 issue 002; state-changing operations are workflow transitions.",
+        "items": [
+          {
+            "component_id": "dkc2ccj5te35z9gd4bu1blcq",
+            "label": "Audit Agent Reference",
+            "type": "XdString",
+            "description": "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gcjyjrnp0wsfoelcp4m05c67",
+            "label": "Audit Entity Reference",
+            "type": "XdString",
+            "description": "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "fjhgr5fyqxt2crmg2cb5c513",
+            "label": "Audit Event Identifier",
+            "type": "XdString",
+            "description": "The identifier of the audit event.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+            "label": "Data Subject Reference",
+            "type": "XdString",
+            "description": "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "nf1air1zbj8v9w66jozdxmyl",
+            "label": "On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "h3kdbvdtyalpvik97saaf0an",
+            "label": "System Identifier",
+            "type": "XdString",
+            "description": "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ujir739mf1g8ajeczs9nzh9m",
+            "label": "System Location Name",
+            "type": "XdString",
+            "description": "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ce1c8sydkov8bkv4dgdmwe5x",
+            "label": "Audit Event Action",
+            "type": "XdToken",
+            "description": "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.",
+            "value": "R",
+            "constraints": {
+              "enumerations": [
+                "C",
+                "R",
+                "U",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "component_id": "rpz1czz06jhpahmfz30rblvp",
+            "label": "Audit Event Outcome",
+            "type": "XdToken",
+            "description": "The result of an audited event (FHIR AuditEvent.outcome).",
+            "value": "0",
+            "constraints": {
+              "enumerations": [
+                "0",
+                "4",
+                "8",
+                "12"
+              ]
+            }
+          },
+          {
+            "component_id": "vbctgmdcwps5b3r3l6sboa6y",
+            "label": "Confidentiality",
+            "type": "XdToken",
+            "description": "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.",
+            "value": "R",
+            "constraints": {
+              "enumerations": [
+                "U",
+                "L",
+                "M",
+                "N",
+                "R",
+                "V"
+              ]
+            }
+          },
+          {
+            "component_id": "jujsdur1igws8orw6tvvlqco",
+            "label": "Provenance Agent Type",
+            "type": "XdToken",
+            "description": "The functional role of an agent in an activity (FHIR Provenance.agent.type).",
+            "value": "composer",
+            "constraints": {
+              "enumerations": [
+                "enterer",
+                "performer",
+                "author",
+                "editor",
+                "verifier",
+                "legal",
+                "attester",
+                "informant",
+                "custodian",
+                "transmitter",
+                "assembler",
+                "transformer",
+                "composer"
+              ]
+            }
+          },
+          {
+            "component_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+            "label": "Purpose of Use",
+            "type": "XdToken",
+            "description": "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.",
+            "value": "COC",
+            "constraints": {
+              "enumerations": [
+                "TREAT",
+                "ETREAT",
+                "COC",
+                "HPAYMT",
+                "HOPERAT",
+                "HRESCH",
+                "CLINTRCH",
+                "PUBHLTH",
+                "PATRQT",
+                "HLEGAL",
+                "HMARKT"
+              ]
+            }
+          },
+          {
+            "component_id": "uwiosm2q9ym3ewr4de910s70",
+            "label": "Audit Recorded At",
+            "type": "XdTemporal",
+            "description": "When the audit event was recorded (FHIR AuditEvent.recorded).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "e3gwv95m8jjx7578urmx8ppz",
+        "label": "NHANES Participant",
+        "type": "Cluster",
+        "description": "One NHANES 2017-2018 participant: the sequence number, the survey design, demographics, the blood pressure examination, laboratory results, smoking, medical conditions and physical functioning, joined on SEQN across the eight source files. Members: Respondent Sequence Number (SEQN); NHANES Survey Design; NHANES Demographics; NHANES Blood Pressure; NHANES Laboratory Results; NHANES Smoking; NHANES Medical Conditions; NHANES Physical Functioning.",
+        "items": [
+          {
+            "component_id": "uto4zszvpicva38wx77knz5y",
+            "label": "Respondent Sequence Number (SEQN)",
+            "type": "XdString",
+            "description": "The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 8
+            }
+          },
+          {
+            "component_id": "k8t5396w5kh1zzf6vhp4ola2",
+            "label": "NHANES Blood Pressure",
+            "type": "Cluster",
+            "description": "The blood pressure examination (BPX_J): the arm and cuff, the 60-second pulse as the FHIR heart rate by identifier and its regularity, the maximum inflation level, and up to three readings each as the FHIR blood pressure cluster. Members: Arm Selected (BPAARM); Coded Cuff Size (BPACSZ); heart-rate (FHIR); Pulse Regular or Irregular (BPXPULS); Maximum Inflation Level (BPXML1); Blood Pressure Reading 1; Blood Pressure Reading 2; Blood Pressure Reading 3.",
+            "items": [
+              {
+                "component_id": "f98c865cpjza5wwh3odh9nv3",
+                "label": "Arm Selected (BPAARM)",
+                "type": "XdToken",
+                "description": "The arm the blood pressure was measured on (BPAARM).",
+                "value": "Left",
+                "constraints": {
+                  "enumerations": [
+                    "Right",
+                    "Left"
+                  ]
+                }
+              },
+              {
+                "component_id": "qv6ytjstrquvfr20cyfjqq2d",
+                "label": "Coded Cuff Size (BPACSZ)",
+                "type": "XdToken",
+                "description": "The blood pressure cuff size used (BPACSZ).",
+                "value": "Large (17 x 36 cm)",
+                "constraints": {
+                  "enumerations": [
+                    "Infant (9 x 18 cm)",
+                    "Child (12 x 22 cm)",
+                    "Adult (15 x 32 cm)",
+                    "Large (17 x 36 cm)",
+                    "Thigh (23 x 38 cm)"
+                  ]
+                }
+              },
+              {
+                "component_id": "uy2fly38y0ghl10xgo4e7svh",
+                "label": "Pulse Regular or Irregular (BPXPULS)",
+                "type": "XdToken",
+                "description": "Whether the pulse was regular or irregular (BPXPULS).",
+                "value": "Irregular",
+                "constraints": {
+                  "enumerations": [
+                    "Regular",
+                    "Irregular"
+                  ]
+                }
+              },
+              {
+                "component_id": "ujpg1m8po18ynniqpwhltxld",
+                "label": "Maximum Inflation Level (BPXML1)",
+                "type": "XdQuantity",
+                "description": "The maximum inflation level used, in mm Hg (BPXML1).",
+                "value": 67.2,
+                "magnitude": {
+                  "value": 67.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Pressure",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "oy0jwif5pi86xtimzxzhapvu",
+                "label": "Heart Rate",
+                "type": "XdQuantity",
+                "description": "Heart Rate (LOINC 8867-4), in the Default units by slot. FHIR Observation.valueQuantity.",
+                "value": 47.6,
+                "magnitude": {
+                  "value": 47.6,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Rate",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "x69rhb0rc8sn1e6qkirhcnum",
+                "label": "Blood Pressure Reading 1",
+                "type": "Cluster",
+                "description": "The first of the seated blood pressure readings (BPXSY1, BPXDI1): the FHIR blood pressure cluster by identifier. Members: blood-pressure (FHIR).",
+                "items": [
+                  {
+                    "component_id": "wyk9e1d74y5xrgv97o9y75ib",
+                    "label": "Blood Pressure",
+                    "type": "Cluster",
+                    "description": "A blood pressure reading: systolic and diastolic, body site, status and time.",
+                    "items": [
+                      {
+                        "component_id": "q9vmn1cvdclgr757aer5v1rg",
+                        "label": "Observation Status",
+                        "type": "XdToken",
+                        "description": "The status of the observation result. FHIR Observation.status; ObservationStatus, version 4.0.1.",
+                        "value": "cancelled",
+                        "constraints": {
+                          "enumerations": [
+                            "registered",
+                            "preliminary",
+                            "final",
+                            "amended",
+                            "corrected",
+                            "cancelled",
+                            "entered-in-error",
+                            "unknown"
+                          ]
+                        }
+                      },
+                      {
+                        "component_id": "s3qzwxxz9b42lcd2wryok8jd",
+                        "label": "Diastolic Blood Pressure",
+                        "type": "XdQuantity",
+                        "description": "Diastolic Blood Pressure (LOINC 8462-4), in the Default units by slot. FHIR Observation.valueQuantity.",
+                        "value": 83.3,
+                        "magnitude": {
+                          "value": 83.3,
+                          "min_inclusive": 0.0
+                        },
+                        "units": {
+                          "label": "Pressure",
+                          "symbol": "%",
+                          "system": "ISO"
+                        }
+                      },
+                      {
+                        "component_id": "r1ve12xphsb5hu2yjmhksw5h",
+                        "label": "Systolic Blood Pressure",
+                        "type": "XdQuantity",
+                        "description": "Systolic Blood Pressure (LOINC 8480-6), in the Default units by slot. FHIR Observation.valueQuantity.",
+                        "value": 12.7,
+                        "magnitude": {
+                          "value": 12.7,
+                          "min_inclusive": 0.0
+                        },
+                        "units": {
+                          "label": "Pressure",
+                          "symbol": "%",
+                          "system": "ISO"
+                        }
+                      },
+                      {
+                        "component_id": "dkyyj01tksb7h7akq2w7moum",
+                        "label": "Observation Date Time",
+                        "type": "XdTemporal",
+                        "description": "The clinically relevant time of the observation. FHIR Observation.effectiveDateTime.",
+                        "value": "2024-01-01T00:00:00"
+                      },
+                      {
+                        "component_id": "r5koa840csi3zcewts0uo0r5",
+                        "label": "Body Site (SNOMED CT)",
+                        "type": "Cluster",
+                        "description": "The body site the observation was made on. A coded value: the SNOMED CT code, its display text and the fixed code system, resolved on the code system IRI (FHIR Coding). FHIR Observation.bodySite.",
+                        "items": [
+                          {
+                            "component_id": "q75pzzv36or6dxgjrrbvmun5",
+                            "label": "Code System: SNOMED CT",
+                            "type": "XdLink",
+                            "description": "The code system of a coded value, fixed: SNOMED CT (http://snomed.info/sct). FHIR Coding.system.",
+                            "value": "http://example.org/resource"
+                          },
+                          {
+                            "component_id": "vi7yvq0b8nler3g6alaamrzm",
+                            "label": "Body Site Code (SNOMED CT)",
+                            "type": "XdString",
+                            "description": "The SNOMED CT code for the body site the observation was made on. FHIR Observation.bodySite, coded in http://snomed.info/sct.",
+                            "value": "DefaultString",
+                            "constraints": {
+                              "max_length": 40
+                            }
+                          },
+                          {
+                            "component_id": "eo5tlfr0576ypknys5alvcn0",
+                            "label": "Code Display Text",
+                            "type": "XdString",
+                            "description": "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display).",
+                            "value": "DefaultString",
+                            "constraints": {
+                              "max_length": 500
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "component_id": "so1r0ndetw0artjnbfirxd5y",
+                "label": "Blood Pressure Reading 2",
+                "type": "Cluster",
+                "description": "The second of the seated blood pressure readings (BPXSY2, BPXDI2): the FHIR blood pressure cluster by identifier. Members: blood-pressure (FHIR).",
+                "items": []
+              },
+              {
+                "component_id": "izygcyh1wupij0st4iy0ir1k",
+                "label": "Blood Pressure Reading 3",
+                "type": "Cluster",
+                "description": "The third of the seated blood pressure readings (BPXSY3, BPXDI3): the FHIR blood pressure cluster by identifier. Members: blood-pressure (FHIR).",
+                "items": []
+              }
+            ]
+          },
+          {
+            "component_id": "b6bz6qun3frba85kw1a539h2",
+            "label": "NHANES Demographics",
+            "type": "Cluster",
+            "description": "The participant's demographics: the Default administrative gender and the NHANES gender code, the NIH CDE age with age in months for infants, race/ethnicity as the NIH CDE and as NHANES codes it, country of birth, citizenship, education and marital status as the NIH CDE and as NHANES codes them, pregnancy status, household size, the agency's income range and the income-to-poverty ratio. Members: administrative-gender (Default); Gender (RIAGENDR); Age (NIH CDE); Age in Months at Screening (RIDAGEMN); Race/Ethnicity Self-Identification (NIH CDE); Race/Hispanic Origin with NH Asian (RIDRETH3); Country of Birth (DMDBORN4); Citizenship Status (DMDCITZN); Current Educational Attainment (NIH CDE); Education Level - Adults 20+ (DMDEDUC2); Marital Status (NIH CDE); Marital Status (DMDMARTL); Are you pregnant now? (NIH CDE); Pregnancy Status at Exam (RIDEXPRG); Veteran Status; Total Number of People in the Household (DMDHHSIZ); Annual Household Income (INDHHIN2); Ratio of Family Income to Poverty (INDFMPIR).",
+            "items": [
+              {
+                "component_id": "ex88a2s3ys6hm5pvv77j0q2u",
+                "label": "Annual Household Income (INDHHIN2)",
+                "type": "XdToken",
+                "description": "Annual household income in the agency's ranges (INDHHIN2). Not harmonized: the NHANES, BRFSS and NIH CDE income ranges do not nest, so each study keeps its own.",
+                "value": "$25,000 to $34,999",
+                "constraints": {
+                  "enumerations": [
+                    "$0 to $4,999",
+                    "$5,000 to $9,999",
+                    "$10,000 to $14,999",
+                    "$15,000 to $19,999",
+                    "$20,000 to $24,999",
+                    "$25,000 to $34,999",
+                    "$35,000 to $44,999",
+                    "$45,000 to $54,999",
+                    "$55,000 to $64,999",
+                    "$65,000 to $74,999",
+                    "$20,000 and Over",
+                    "Under $20,000",
+                    "$75,000 to $99,999",
+                    "$100,000 and Over"
+                  ]
+                }
+              },
+              {
+                "component_id": "m67ncwhc9s1j36f9w9qsrxfx",
+                "label": "Citizenship Status (DMDCITZN)",
+                "type": "XdToken",
+                "description": "Citizenship status (DMDCITZN).",
+                "value": "Citizen by birth or naturalization",
+                "constraints": {
+                  "enumerations": [
+                    "Citizen by birth or naturalization",
+                    "Not a citizen of the US"
+                  ]
+                }
+              },
+              {
+                "component_id": "nwsj84veb6u9g1v0h2a3a793",
+                "label": "Country of Birth (DMDBORN4)",
+                "type": "XdToken",
+                "description": "Whether the participant was born in the 50 US states or Washington, DC, or elsewhere (DMDBORN4).",
+                "value": "Born in 50 US states or Washington, DC",
+                "constraints": {
+                  "enumerations": [
+                    "Born in 50 US states or Washington, DC",
+                    "Others"
+                  ]
+                }
+              },
+              {
+                "component_id": "fqjd2lvp9jamdpf0f3kpkwnp",
+                "label": "Education Level - Adults 20+ (DMDEDUC2)",
+                "type": "XdToken",
+                "description": "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
+                "value": "Less than 9th grade",
+                "constraints": {
+                  "enumerations": [
+                    "Less than 9th grade",
+                    "9-11th grade (includes 12th grade with no diploma)",
+                    "High school graduate/GED or equivalent",
+                    "Some college or AA degree",
+                    "College graduate or above"
+                  ]
+                }
+              },
+              {
+                "component_id": "sigmhjzuw16w0k8op92lk9sd",
+                "label": "Gender (RIAGENDR)",
+                "type": "XdToken",
+                "description": "The participant's gender as NHANES codes it (RIAGENDR). Kept beside the Default administrative gender it is mapped to.",
+                "value": "Male",
+                "constraints": {
+                  "enumerations": [
+                    "Male",
+                    "Female"
+                  ]
+                }
+              },
+              {
+                "component_id": "i3uys2dmi257jkdzavsst5az",
+                "label": "Marital Status (DMDMARTL)",
+                "type": "XdToken",
+                "description": "Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to.",
+                "value": "Married",
+                "constraints": {
+                  "enumerations": [
+                    "Married",
+                    "Widowed",
+                    "Divorced",
+                    "Separated",
+                    "Never married",
+                    "Living with partner"
+                  ]
+                }
+              },
+              {
+                "component_id": "r0j6yo8zvo4q8x0ovdr6j9yz",
+                "label": "Pregnancy Status at Exam (RIDEXPRG)",
+                "type": "XdToken",
+                "description": "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to.",
+                "value": "Not pregnant at exam",
+                "constraints": {
+                  "enumerations": [
+                    "Yes, positive lab pregnancy test or self-reported pregnant at exam",
+                    "Not pregnant at exam",
+                    "Cannot ascertain if pregnant at exam"
+                  ]
+                }
+              },
+              {
+                "component_id": "hs44ipuqgvc3azbt3mirxtsz",
+                "label": "Race/Hispanic Origin with NH Asian (RIDRETH3)",
+                "type": "XdToken",
+                "description": "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value.",
+                "value": "Non-Hispanic Black",
+                "constraints": {
+                  "enumerations": [
+                    "Mexican American",
+                    "Other Hispanic",
+                    "Non-Hispanic White",
+                    "Non-Hispanic Black",
+                    "Non-Hispanic Asian",
+                    "Other Race - Including Multi-Racial"
+                  ]
+                }
+              },
+              {
+                "component_id": "eimlsgbawhm8aa4i6gbdrja0",
+                "label": "Veteran Status",
+                "type": "XdToken",
+                "description": "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "owjt9bcgisxfbco8qnddo2fq",
+                "label": "Are you pregnant now?",
+                "type": "XdToken",
+                "description": "A textual description of the person's current pregnancy status. Also known as: Current Pregnancy Indicator. NIH CDE Repository, steward Project 5, tinyId LiUWCWluP, NIH endorsed.",
+                "value": "Unknown",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No",
+                    "Unknown"
+                  ]
+                }
+              },
+              {
+                "component_id": "xtbtk7ro6s9247bcwt4ak4h1",
+                "label": "Current Educational Attainment",
+                "type": "XdToken",
+                "description": "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed.",
+                "value": "6th Grade",
+                "constraints": {
+                  "enumerations": [
+                    "Never Attended/ Kindergarten Only",
+                    "1st Grade",
+                    "2nd Grade",
+                    "3rd Grade",
+                    "4th Grade",
+                    "5th Grade",
+                    "6th Grade",
+                    "7th Grade",
+                    "8th Grade",
+                    "9th Grade",
+                    "10th Grade",
+                    "11th Grade",
+                    "12th Grade/No HS diploma",
+                    "GED or Equivalent",
+                    "HS Graduate",
+                    "Some College, No Degree",
+                    "Occupational, Technical, or Vocational Program",
+                    "Associates Degree - Academic Program",
+                    "Bachelors Degree (Example: BA, AB, BS, BBA)",
+                    "Masters Degree (Example:  MA, MS, MEng, MEd, MBA)",
+                    "Professional Degree (Example: MD, DDS, JD)",
+                    "Doctoral Degree (Example: PhD, EdD)",
+                    "Refused to Answer",
+                    "Dont Know"
+                  ]
+                }
+              },
+              {
+                "component_id": "qsetd453kk9own8co1wmc5cz",
+                "label": "Marital Status",
+                "type": "XdToken",
+                "description": "A demographic parameter indicating a person's current conjugal status. Question text: What is your current marital status? NIH CDE Repository, steward NIMHD, tinyId C6SezX_mKG, NIH endorsed.",
+                "value": "Living as married or living with a romantic partner",
+                "constraints": {
+                  "enumerations": [
+                    "Married",
+                    "Living as married or living with a romantic partner",
+                    "Married or partnered, but not living together",
+                    "Divorced",
+                    "Widowed",
+                    "Separated",
+                    "Single, never been married-not living with romantic partner",
+                    "Prefer not to answer"
+                  ]
+                }
+              },
+              {
+                "component_id": "u5tietya3u56hbz2kos06ai7",
+                "label": "Race/Ethnicity Self-Identification",
+                "type": "XdToken",
+                "description": "A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed.",
+                "value": "Asian or Asian American",
+                "constraints": {
+                  "enumerations": [
+                    "American Indian or Alaska Native",
+                    "Asian or Asian American",
+                    "Black or African American",
+                    "Hispanic, Latino, or Spanish",
+                    "Native Hawaiian or Other Pacific Islander",
+                    "Middle Eastern or North African",
+                    "White"
+                  ]
+                }
+              },
+              {
+                "component_id": "gxzbm758mhdz51xd4bawlfhh",
+                "label": "Administrative Gender",
+                "type": "XdToken",
+                "description": "The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded).",
+                "value": "male",
+                "constraints": {
+                  "enumerations": [
+                    "male",
+                    "female",
+                    "other",
+                    "unknown"
+                  ]
+                }
+              },
+              {
+                "component_id": "qg7or0c34grde4gprzwifukh",
+                "label": "Age in Months at Screening (RIDAGEMN)",
+                "type": "XdCount",
+                "description": "Age in months at screening, reported for participants aged 0 to 24 months (RIDAGEMN).",
+                "value": 54,
+                "units": {
+                  "label": "Months",
+                  "value": "FAIR Data Demo : Months"
+                }
+              },
+              {
+                "component_id": "qbp08a1gscple2aiuiwyfz2s",
+                "label": "Total Number of People in the Household (DMDHHSIZ)",
+                "type": "XdCount",
+                "description": "Total number of people in the household (DMDHHSIZ; 7 means 7 or more).",
+                "value": 25,
+                "units": {
+                  "label": "Items",
+                  "value": "Default : Items"
+                }
+              },
+              {
+                "component_id": "wuvdeiwoe5bna7nlhcl1c4h9",
+                "label": "Age",
+                "type": "XdCount",
+                "description": "The number of years (if more than 24 months old) or months (if 24 months or younger) that the person has been alive. Question text: What is the person's age (in years if more than 24 months old or months if 24 months or younger)? NIH CDE Repository, steward NIMHD, tinyId PDjBiGXjO, NIH endorsed.",
+                "value": 30,
+                "units": {
+                  "label": "years or months",
+                  "value": "NIH_CDE : years or months"
+                }
+              },
+              {
+                "component_id": "dwd4pk56w0pjchsyzl81fzya",
+                "label": "Ratio of Family Income to Poverty (INDFMPIR)",
+                "type": "XdQuantity",
+                "description": "The ratio of family income to the poverty guideline (INDFMPIR; 5 means 5 or more).",
+                "value": 59.7,
+                "magnitude": {
+                  "value": 59.7,
+                  "min_inclusive": 0.0,
+                  "max_inclusive": 5.0
+                },
+                "units": {
+                  "label": "Sample Weight",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "c73687ou0pkc7qy6n2kksfc7",
+            "label": "NHANES Laboratory Results",
+            "type": "Cluster",
+            "description": "The laboratory results carried: total cholesterol (TCHOL_J) and the complete blood count with differential (CBC_J), each analyte a quantity identified by its LOINC code. Members: Total Cholesterol; Total Cholesterol (SI); White Blood Cell Count; Lymphocyte Percent; Monocyte Percent; Segmented Neutrophils Percent; Eosinophils Percent; Basophils Percent; Lymphocyte Number; Monocyte Number; Segmented Neutrophils Number; Eosinophils Number; Basophils Number; Red Blood Cell Count; Hemoglobin; Hematocrit; Mean Cell Volume; Mean Cell Hemoglobin; Mean Cell Hemoglobin Concentration; Red Cell Distribution Width; Platelet Count; Mean Platelet Volume; Nucleated Red Blood Cells.",
+            "items": [
+              {
+                "component_id": "ncskx5im3if41mqo9pm8ydx0",
+                "label": "Basophils Number",
+                "type": "XdQuantity",
+                "description": "Basophils Number (LBDBANO, LOINC 704-7).",
+                "value": 27.0,
+                "magnitude": {
+                  "value": 27.0,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "wcasfq02d9hukvn2bar4r67d",
+                "label": "Basophils Percent",
+                "type": "XdQuantity",
+                "description": "Basophils Percent (LBXBAPCT, LOINC 706-2).",
+                "value": 29.9,
+                "magnitude": {
+                  "value": 29.9,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "f49ynlsmh5zex122r4i2jeqg",
+                "label": "Eosinophils Number",
+                "type": "XdQuantity",
+                "description": "Eosinophils Number (LBDEONO, LOINC 711-2).",
+                "value": 20.5,
+                "magnitude": {
+                  "value": 20.5,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "zsikpg1vrhzoydvk26gpg6nb",
+                "label": "Eosinophils Percent",
+                "type": "XdQuantity",
+                "description": "Eosinophils Percent (LBXEOPCT, LOINC 713-8).",
+                "value": 87.2,
+                "magnitude": {
+                  "value": 87.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "kn0gsgklvqcbbz2f20dg1koy",
+                "label": "Hematocrit",
+                "type": "XdQuantity",
+                "description": "Hematocrit (LBXHCT, LOINC 4544-3).",
+                "value": 78.3,
+                "magnitude": {
+                  "value": 78.3,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "z9jeqoghnlvlyy8sgxk5lwne",
+                "label": "Hemoglobin",
+                "type": "XdQuantity",
+                "description": "Hemoglobin (LBXHGB, LOINC 718-7).",
+                "value": 2.6,
+                "magnitude": {
+                  "value": 2.6,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Grams per Decilitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "cdzb3xhl10wivkk305sm09wf",
+                "label": "Lymphocyte Number",
+                "type": "XdQuantity",
+                "description": "Lymphocyte Number (LBDLYMNO, LOINC 731-0).",
+                "value": 10.5,
+                "magnitude": {
+                  "value": 10.5,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "ia77g23fvigr9b9dkx6a1rcl",
+                "label": "Lymphocyte Percent",
+                "type": "XdQuantity",
+                "description": "Lymphocyte Percent (LBXLYPCT, LOINC 736-9).",
+                "value": 75.3,
+                "magnitude": {
+                  "value": 75.3,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "scmpca8vlisbmmfa3njyx2o2",
+                "label": "Mean Cell Hemoglobin",
+                "type": "XdQuantity",
+                "description": "Mean Cell Hemoglobin (LBXMCHSI, LOINC 785-6).",
+                "value": 87.9,
+                "magnitude": {
+                  "value": 87.9,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Picograms",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "pf1abnd8c9cfwb4hw9lc65b0",
+                "label": "Mean Cell Hemoglobin Concentration",
+                "type": "XdQuantity",
+                "description": "Mean Cell Hemoglobin Concentration (LBXMC, LOINC 786-4).",
+                "value": 54.1,
+                "magnitude": {
+                  "value": 54.1,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Grams per Decilitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "sqjdwrx3kpuuxkwa69bodut2",
+                "label": "Mean Cell Volume",
+                "type": "XdQuantity",
+                "description": "Mean Cell Volume (LBXMCVSI, LOINC 787-2).",
+                "value": 63.2,
+                "magnitude": {
+                  "value": 63.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Femtolitres",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "n6mstjwsss62iruurp7utrn4",
+                "label": "Mean Platelet Volume",
+                "type": "XdQuantity",
+                "description": "Mean Platelet Volume (LBXMPSI, LOINC 32623-1).",
+                "value": 13.8,
+                "magnitude": {
+                  "value": 13.8,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Femtolitres",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "hesbothq9s8ihc33ihsbv3bi",
+                "label": "Monocyte Number",
+                "type": "XdQuantity",
+                "description": "Monocyte Number (LBDMONO, LOINC 742-7).",
+                "value": 10.2,
+                "magnitude": {
+                  "value": 10.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "cyu9eutfs28y6tl8bsxwr3qe",
+                "label": "Monocyte Percent",
+                "type": "XdQuantity",
+                "description": "Monocyte Percent (LBXMOPCT, LOINC 5905-5).",
+                "value": 94.9,
+                "magnitude": {
+                  "value": 94.9,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "swvr4xwxui5idfg7r6tfa1mr",
+                "label": "Nucleated Red Blood Cells",
+                "type": "XdQuantity",
+                "description": "Nucleated red blood cells per 100 white blood cells (LBXNRBC).",
+                "value": 79.7,
+                "magnitude": {
+                  "value": 79.7,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Per 100 Cells",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "o3jk44vqom9ne0v4tiay1ys7",
+                "label": "Platelet Count",
+                "type": "XdQuantity",
+                "description": "Platelet Count (LBXPLTSI, LOINC 777-3).",
+                "value": 47.4,
+                "magnitude": {
+                  "value": 47.4,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "uraf13ojset6tivrdptohfbr",
+                "label": "Red Blood Cell Count",
+                "type": "XdQuantity",
+                "description": "Red Blood Cell Count (LBXRBCSI, LOINC 789-8).",
+                "value": 58.7,
+                "magnitude": {
+                  "value": 58.7,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Millions per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "pf6ne2nf0ef5xeba7q73a2s8",
+                "label": "Red Cell Distribution Width",
+                "type": "XdQuantity",
+                "description": "Red Cell Distribution Width (LBXRDW, LOINC 788-0).",
+                "value": 93.2,
+                "magnitude": {
+                  "value": 93.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "a3bccid1kdgem2m5rix68o1y",
+                "label": "Segmented Neutrophils Number",
+                "type": "XdQuantity",
+                "description": "Segmented Neutrophils Number (LBDNENO, LOINC 751-8).",
+                "value": 9.1,
+                "magnitude": {
+                  "value": 9.1,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "n13vv8g72h826o4o1jxm1o91",
+                "label": "Segmented Neutrophils Percent",
+                "type": "XdQuantity",
+                "description": "Segmented Neutrophils Percent (LBXNEPCT, LOINC 770-8).",
+                "value": 39.7,
+                "magnitude": {
+                  "value": 39.7,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Percentage",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "rl42ns60wqjt2jr4kgmfomsd",
+                "label": "Total Cholesterol",
+                "type": "XdQuantity",
+                "description": "Total cholesterol in serum, mg/dL (LBXTC, LOINC 2093-3).",
+                "value": 15.2,
+                "magnitude": {
+                  "value": 15.2,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Milligrams per Decilitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "qp5mdgab3s37zwqzyfzq8rvi",
+                "label": "Total Cholesterol (SI)",
+                "type": "XdQuantity",
+                "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3).",
+                "value": 42.7,
+                "magnitude": {
+                  "value": 42.7,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Millimoles per Litre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "cujdlrpxv7byme6c5z3ai1ui",
+                "label": "White Blood Cell Count",
+                "type": "XdQuantity",
+                "description": "White Blood Cell Count (LBXWBCSI, LOINC 6690-2).",
+                "value": 73.3,
+                "magnitude": {
+                  "value": 73.3,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Thousands per Microlitre",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "mc8by65nv7wa59lw4oj54e2w",
+            "label": "NHANES Medical Conditions",
+            "type": "Cluster",
+            "description": "The medical conditions questionnaire (MCQ_J): the shared chronic condition indicators on a self-report basis, whether asthma persists, and whether a doctor said the participant was overweight. Members: Chronic Condition Indicators; Still Have Asthma (MCQ035); Doctor Ever Said You Were Overweight (MCQ080).",
+            "items": [
+              {
+                "component_id": "fwyb9ukfypotqkvahtygrjo5",
+                "label": "Doctor Ever Said You Were Overweight (MCQ080)",
+                "type": "XdToken",
+                "description": "Whether a doctor or health professional ever said the participant was overweight (MCQ080).",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "ejjthi5lftrx9a7rv3fedq6m",
+                "label": "Still Have Asthma (MCQ035)",
+                "type": "XdToken",
+                "description": "Whether the participant still has asthma (MCQ035).",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "wa0mknvfo83hej635n48s0ig",
+                "label": "Chronic Condition Indicators",
+                "type": "Cluster",
+                "description": "The chronic conditions a study records for a person, one indicator per condition, with the basis on which the study established them. NHANES and BRFSS carry the ones their questionnaires ask; CMS carries the eleven its chronic conditions flags define; every study that carries an indicator carries the same component. Members: Condition Indicator Basis; Condition: Asthma; Condition: Arthritis; Condition: Congestive Heart Failure; Condition: Coronary Heart Disease; Condition: Angina; Condition: Heart Attack; Condition: Stroke; Condition: Emphysema; Condition: Chronic Bronchitis; Condition: COPD; Condition: Liver Condition; Condition: Thyroid Problem; Condition: Cancer; Condition: Skin Cancer; Condition: Depression; Condition: Kidney Disease; Condition: Diabetes; Condition: Alzheimer's Disease or Related Disorder; Condition: Osteoporosis; Condition: High Blood Pressure; Condition: High Cholesterol.",
+                "items": [
+                  {
+                    "component_id": "d9z9mcx6gs9zbz4k6f0v738s",
+                    "label": "Condition: Alzheimer's Disease or Related Disorder",
+                    "type": "XdToken",
+                    "description": "Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "o4d67oubyyunugx3la44f53u",
+                    "label": "Condition: Angina",
+                    "type": "XdToken",
+                    "description": "Whether the person has angina (Angina, SNOMED CT 194828000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160D.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "nd1v8jk7wtm1tthzw1f4987t",
+                    "label": "Condition: Arthritis",
+                    "type": "XdToken",
+                    "description": "Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "acr1xvqppf1b3rjsrst6tt4p",
+                    "label": "Condition: Asthma",
+                    "type": "XdToken",
+                    "description": "Whether the person has asthma (Asthma, SNOMED CT 195967001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ010, BRFSS ASTHMA3.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "ix0my2v2z79s002g0r8orosf",
+                    "label": "Condition: Cancer",
+                    "type": "XdToken",
+                    "description": "Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "jyx7rxfktazhgxgq84fxf6wr",
+                    "label": "Condition: Chronic Bronchitis",
+                    "type": "XdToken",
+                    "description": "Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "hyqlz591lhj54sdt1a1mup70",
+                    "label": "Condition: Congestive Heart Failure",
+                    "type": "XdToken",
+                    "description": "Whether the person has congestive heart failure (Congestive Heart Failure, SNOMED CT 42343007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160B, CMS SP_CHF.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "mijr18ynaqde2l8jps70l2g6",
+                    "label": "Condition: COPD",
+                    "type": "XdToken",
+                    "description": "Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "udbydjqj76l8kl6mi2s3v7vd",
+                    "label": "Condition: Coronary Heart Disease",
+                    "type": "XdToken",
+                    "description": "Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "of4crvmnrr3s5q5396kmt0jv",
+                    "label": "Condition: Depression",
+                    "type": "XdToken",
+                    "description": "Whether the person has depression (Depression, SNOMED CT 35489007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS ADDEPEV3, CMS SP_DEPRESSN.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "fzpb9xr5jg2m3e3dzmvi1v3h",
+                    "label": "Condition: Diabetes",
+                    "type": "XdToken",
+                    "description": "Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "sbulkq80j4fkbiql4zgje4qr",
+                    "label": "Condition: Emphysema",
+                    "type": "XdToken",
+                    "description": "Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "yshoeps2dm0j1ueusqs825v6",
+                    "label": "Condition: Heart Attack",
+                    "type": "XdToken",
+                    "description": "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "lvockfc8lce5p15wuwxc1kwa",
+                    "label": "Condition: High Blood Pressure",
+                    "type": "XdToken",
+                    "description": "Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "gp3jxw3xzs761ll6u5rvc6jr",
+                    "label": "Condition: High Cholesterol",
+                    "type": "XdToken",
+                    "description": "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "hc79skkfionpgw87dsg5yrgw",
+                    "label": "Condition Indicator Basis",
+                    "type": "XdToken",
+                    "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
+                    "value": "Self-report of a professional diagnosis",
+                    "constraints": {
+                      "enumerations": [
+                        "Self-report of a professional diagnosis",
+                        "Claims-based algorithm"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "sw5rt0k2uap0e3xgl4rznfgu",
+                    "label": "Condition: Kidney Disease",
+                    "type": "XdToken",
+                    "description": "Whether the person has kidney disease (Kidney Disease, SNOMED CT 709044004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCKDNY2, CMS SP_CHRNKIDN.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "atqkooccakulfhkt18c008fx",
+                    "label": "Condition: Liver Condition",
+                    "type": "XdToken",
+                    "description": "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "l784ggegqcvrpnmw2yvo4il7",
+                    "label": "Condition: Osteoporosis",
+                    "type": "XdToken",
+                    "description": "Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "xsohkckyof7y1xj8h1ab4pxu",
+                    "label": "Condition: Skin Cancer",
+                    "type": "XdToken",
+                    "description": "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "zc6p008h5naqev8zngtzvyx9",
+                    "label": "Condition: Stroke",
+                    "type": "XdToken",
+                    "description": "Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA.",
+                    "value": "No",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "p8u71b4lhct4ra0szgkex7xo",
+                    "label": "Condition: Thyroid Problem",
+                    "type": "XdToken",
+                    "description": "Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M.",
+                    "value": "Yes",
+                    "constraints": {
+                      "enumerations": [
+                        "Yes",
+                        "No"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component_id": "ky7lvmote5jfn5gt6n89q79s",
+            "label": "NHANES Physical Functioning",
+            "type": "Cluster",
+            "description": "Physical functioning (PFQ_J): work limitation, equipment to walk, confusion or memory problems, and nine activity items on the four-point difficulty scale. Members: Limitations Keeping You from Working (PFQ049); Need Special Equipment to Walk (PFQ054); Experience Confusion or Memory Problems (PFQ057); Difficulty Walking a Quarter Mile (PFQ061B); Difficulty Walking Up Ten Stairs (PFQ061C); Difficulty Stooping, Crouching or Kneeling (PFQ061D); Difficulty Lifting or Carrying (PFQ061E); Difficulty Walking Between Rooms (PFQ061H); Difficulty Standing Up from an Armless Chair (PFQ061I); Difficulty Getting In and Out of Bed (PFQ061J); Difficulty Dressing Yourself (PFQ061L); Difficulty Standing for Long Periods (PFQ061M).",
+            "items": [
+              {
+                "component_id": "p4jxl2rur1agjhdpvj2g9u4k",
+                "label": "Difficulty Dressing Yourself (PFQ061L)",
+                "type": "XdToken",
+                "description": "Difficulty Dressing Yourself (PFQ061L), on the four-point difficulty scale.",
+                "value": "Do not do this activity",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "cy6k5rxvhvg2v27cfp7pjwyx",
+                "label": "Difficulty Getting In and Out of Bed (PFQ061J)",
+                "type": "XdToken",
+                "description": "Difficulty Getting In and Out of Bed (PFQ061J), on the four-point difficulty scale.",
+                "value": "Unable to do",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "b1mxr233mgqvzr39c90ly8cv",
+                "label": "Difficulty Lifting or Carrying (PFQ061E)",
+                "type": "XdToken",
+                "description": "Difficulty Lifting or Carrying (PFQ061E), on the four-point difficulty scale.",
+                "value": "Do not do this activity",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "vp4ow7t3q8w2phcft0qvyj4u",
+                "label": "Difficulty Standing for Long Periods (PFQ061M)",
+                "type": "XdToken",
+                "description": "Difficulty Standing for Long Periods (PFQ061M), on the four-point difficulty scale.",
+                "value": "No difficulty",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "y52y4mpq95zcknal0be1uc7v",
+                "label": "Difficulty Standing Up from an Armless Chair (PFQ061I)",
+                "type": "XdToken",
+                "description": "Difficulty Standing Up from an Armless Chair (PFQ061I), on the four-point difficulty scale.",
+                "value": "Unable to do",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "knrs4clih4pi26tm2zra1ai0",
+                "label": "Difficulty Stooping, Crouching or Kneeling (PFQ061D)",
+                "type": "XdToken",
+                "description": "Difficulty Stooping, Crouching or Kneeling (PFQ061D), on the four-point difficulty scale.",
+                "value": "Unable to do",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "mktq5xr8slz67q85idl8bsky",
+                "label": "Difficulty Walking a Quarter Mile (PFQ061B)",
+                "type": "XdToken",
+                "description": "Difficulty Walking a Quarter Mile (PFQ061B), on the four-point difficulty scale.",
+                "value": "Much difficulty",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "crr2z3b2l7hlq1kvevppt8kt",
+                "label": "Difficulty Walking Between Rooms (PFQ061H)",
+                "type": "XdToken",
+                "description": "Difficulty Walking Between Rooms (PFQ061H), on the four-point difficulty scale.",
+                "value": "Do not do this activity",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "rot4z5ny8gdkfmimedcjl1te",
+                "label": "Difficulty Walking Up Ten Stairs (PFQ061C)",
+                "type": "XdToken",
+                "description": "Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale.",
+                "value": "Some difficulty",
+                "constraints": {
+                  "enumerations": [
+                    "No difficulty",
+                    "Some difficulty",
+                    "Much difficulty",
+                    "Unable to do",
+                    "Do not do this activity"
+                  ]
+                }
+              },
+              {
+                "component_id": "jxdk8rs1m133yzb52rfs08hy",
+                "label": "Experience Confusion or Memory Problems (PFQ057)",
+                "type": "XdToken",
+                "description": "Whether the participant experiences confusion or memory problems (PFQ057).",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "gxy0s65v35djnq875rzhcmby",
+                "label": "Limitations Keeping You from Working (PFQ049)",
+                "type": "XdToken",
+                "description": "Whether a physical, mental or emotional problem keeps the participant from working (PFQ049).",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "wh4zkqhos44fbb5p0b5c7w1d",
+                "label": "Need Special Equipment to Walk (PFQ054)",
+                "type": "XdToken",
+                "description": "Whether the participant needs special equipment to walk (PFQ054).",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "u3nopo5pxqb1dwwk3u0fyp6e",
+            "label": "NHANES Smoking",
+            "type": "Cluster",
+            "description": "Cigarette use (SMQ_J): the two questions the smoking status derives from, the status itself as the shared component, the age started, the recent daily count and e-cigarette use. Members: Smoked at Least 100 Cigarettes in Life (SMQ020); Do You Now Smoke Cigarettes (SMQ040); Smoking Status; Age Started Smoking Cigarettes Regularly (SMD030); Average Cigarettes per Day, Past 30 Days (SMD650); Ever Used an E-cigarette (SMQ900).",
+            "items": [
+              {
+                "component_id": "mq5xicyh1n3d8ofhyroazip2",
+                "label": "Do You Now Smoke Cigarettes (SMQ040)",
+                "type": "XdToken",
+                "description": "Whether the participant now smokes cigarettes every day, some days or not at all (SMQ040).",
+                "value": "Some days",
+                "constraints": {
+                  "enumerations": [
+                    "Every day",
+                    "Some days",
+                    "Not at all"
+                  ]
+                }
+              },
+              {
+                "component_id": "gy1045dipmx8udv1bndk7hrv",
+                "label": "Ever Used an E-cigarette (SMQ900)",
+                "type": "XdToken",
+                "description": "Whether the participant has ever used an e-cigarette (SMQ900).",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "lnbzdjsluc4ebnri7k4dvn2i",
+                "label": "Smoked at Least 100 Cigarettes in Life (SMQ020)",
+                "type": "XdToken",
+                "description": "Whether the participant has smoked at least 100 cigarettes in their life (SMQ020).",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "n7pn5ctqo81v0v418hez5zv5",
+                "label": "Smoking Status",
+                "type": "XdToken",
+                "description": "Tobacco smoking status (LOINC 72166-2) as the survey establishes it: NHANES from SMQ020 and SMQ040, BRFSS from SMOKE100 and SMOKDAY2 (the agency's _SMOKER3 is kept beside it). The LOINC answer list LL2201-3.",
+                "value": "Current some day smoker",
+                "constraints": {
+                  "enumerations": [
+                    "Current every day smoker",
+                    "Current some day smoker",
+                    "Former smoker",
+                    "Never smoker",
+                    "Smoker, current status unknown"
+                  ]
+                }
+              },
+              {
+                "component_id": "wlfal1j4vnwy76szun72madm",
+                "label": "Age Started Smoking Cigarettes Regularly (SMD030)",
+                "type": "XdCount",
+                "description": "The age the participant started smoking cigarettes regularly (SMD030).",
+                "value": 97,
+                "units": {
+                  "label": "Years",
+                  "value": "FAIR Data Demo : Years"
+                }
+              },
+              {
+                "component_id": "v9wj86qu70lda3tt2dh299wz",
+                "label": "Average Cigarettes per Day, Past 30 Days (SMD650)",
+                "type": "XdCount",
+                "description": "The average number of cigarettes smoked per day during the past 30 days (SMD650).",
+                "value": 6,
+                "units": {
+                  "label": "Cigarettes",
+                  "value": "FAIR Data Demo : Cigarettes"
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "mgqswj92qaeasqjjvfcyxon5",
+            "label": "NHANES Survey Design",
+            "type": "Cluster",
+            "description": "The survey design fields a weighted estimate needs: the release cycle, interview and examination status, the interview and MEC weights, the pseudo-PSU and pseudo-stratum. Members: Data Release Cycle (SDDSRVYR); Interview/Examination Status (RIDSTATR); Full Sample 2 Year Interview Weight (WTINT2YR); Full Sample 2 Year MEC Exam Weight (WTMEC2YR); Masked Variance Pseudo-PSU (SDMVPSU); Masked Variance Pseudo-Stratum (SDMVSTRA).",
+            "items": [
+              {
+                "component_id": "k52nvzllwurg016nvsulpm32",
+                "label": "Data Release Cycle (SDDSRVYR)",
+                "type": "XdToken",
+                "description": "The NHANES data release cycle (SDDSRVYR).",
+                "value": "NHANES 2017-2018 public release",
+                "constraints": {
+                  "enumerations": [
+                    "NHANES 2017-2018 public release"
+                  ]
+                }
+              },
+              {
+                "component_id": "j9l0spojx47xnjqipfl9mzte",
+                "label": "Interview/Examination Status (RIDSTATR)",
+                "type": "XdToken",
+                "description": "Whether the participant was interviewed only, or interviewed and examined at the mobile examination center (RIDSTATR).",
+                "value": "Both interviewed and MEC examined",
+                "constraints": {
+                  "enumerations": [
+                    "Interviewed only",
+                    "Both interviewed and MEC examined"
+                  ]
+                }
+              },
+              {
+                "component_id": "vxldr9jodr9eu5uol3g4c189",
+                "label": "Masked Variance Pseudo-PSU (SDMVPSU)",
+                "type": "XdCount",
+                "description": "The masked variance pseudo primary sampling unit (SDMVPSU).",
+                "value": 85,
+                "units": {
+                  "label": "Items",
+                  "value": "Default : Items"
+                }
+              },
+              {
+                "component_id": "yksuiithtrif7jdrjpi4o7eg",
+                "label": "Masked Variance Pseudo-Stratum (SDMVSTRA)",
+                "type": "XdCount",
+                "description": "The masked variance pseudo stratum (SDMVSTRA).",
+                "value": 5,
+                "units": {
+                  "label": "Items",
+                  "value": "Default : Items"
+                }
+              },
+              {
+                "component_id": "zmw9684hejwjsfcg6t71jkgl",
+                "label": "Full Sample 2 Year Interview Weight (WTINT2YR)",
+                "type": "XdQuantity",
+                "description": "The full-sample two-year interview weight (WTINT2YR), for weighted estimates of the interviewed sample.",
+                "value": 54.4,
+                "magnitude": {
+                  "value": 54.4,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Sample Weight",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "w7xdjmfmoev4of0gd76mtnto",
+                "label": "Full Sample 2 Year MEC Exam Weight (WTMEC2YR)",
+                "type": "XdQuantity",
+                "description": "The full-sample two-year MEC examination weight (WTMEC2YR); zero for participants not examined.",
+                "value": 85.7,
+                "magnitude": {
+                  "value": 85.7,
+                  "min_inclusive": 0.0
+                },
+                "units": {
+                  "label": "Sample Weight",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component_id": "vmikfu0irht9fmq7q02t3oqs",
+        "label": "PROV Activity",
+        "type": "Cluster",
+        "description": "A PROV activity: what it was, when it ran, its status, and the entities, activities, agent and plan it relates to.",
+        "items": [
+          {
+            "component_id": "hhusuzzig19rs46ngz23k5g7",
+            "label": "Activity Description",
+            "type": "XdString",
+            "description": "A description of what the activity does and why.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "wr06h54xqqw2q9id8i9673jy",
+            "label": "Activity Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV activity: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "r6hkunjm2q0hlxiknlc9ljix",
+            "label": "Activity Label",
+            "type": "XdString",
+            "description": "A human-readable label for a PROV activity.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "uzai5uey5p1fnn9ezj9u6vor",
+            "label": "Activity Location",
+            "type": "XdString",
+            "description": "Where the activity took place (prov:atLocation), as text.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "jjzmhdxvbt97pq81iwqubtxk",
+            "label": "Activity Type",
+            "type": "XdString",
+            "description": "The kind of activity, in the vocabulary of the domain (prov:type).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+            "label": "Error Message",
+            "type": "XdString",
+            "description": "The error the activity reported, if it failed.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "vhezo2cckpe92x4c3j2memeh",
+            "label": "Had Plan Reference",
+            "type": "XdString",
+            "description": "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "t0whhrqtnb54te4mk48i1ooj",
+            "label": "Used Entity Reference",
+            "type": "XdString",
+            "description": "An entity the activity used (prov:used). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "r48alj7hc3797qfjnf2uj71n",
+            "label": "Was Associated With Reference",
+            "type": "XdString",
+            "description": "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+            "label": "Was Ended By Reference",
+            "type": "XdString",
+            "description": "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "qh84jdzp1kxt85aq4ilo0svk",
+            "label": "Was Informed By Reference",
+            "type": "XdString",
+            "description": "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ginfqbk7q59ld2r4us8sjnv1",
+            "label": "Was Started By Reference",
+            "type": "XdString",
+            "description": "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+            "label": "Activity Status",
+            "type": "XdToken",
+            "description": "The state of an activity, from the Data Privacy Vocabulary activity status concepts.",
+            "value": "ActivityPlanned",
+            "constraints": {
+              "enumerations": [
+                "ActivityProposed",
+                "ActivityPlanned",
+                "ActivityOngoing",
+                "ActivityHalted",
+                "ActivityCompleted",
+                "ActivityNotCompleted"
+              ]
+            }
+          },
+          {
+            "component_id": "a5scyosu6j84vz350mqyrzl2",
+            "label": "Ended At",
+            "type": "XdTemporal",
+            "description": "When the activity ended (prov:endedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          },
+          {
+            "component_id": "sa4nl1kbpdr842fkucvfjkpq",
+            "label": "Started At",
+            "type": "XdTemporal",
+            "description": "When the activity started (prov:startedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "c179ilk2ns15cd5rzzdfd6f6",
+        "label": "PROV Agent",
+        "type": "Cluster",
+        "description": "A PROV agent: a person, organization or software agent, with its identity, contact and delegation.",
+        "items": [
+          {
+            "component_id": "og08xf6bu928uuz6t3y0e23f",
+            "label": "Acted On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gb78cmuyo72hqs5apymdki7l",
+            "label": "Agent Description",
+            "type": "XdString",
+            "description": "A description of the agent and its responsibilities.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "qb90a0sp9vvb6c5cbcf236ys",
+            "label": "Agent Email",
+            "type": "XdString",
+            "description": "The agent's email address (foaf:mbox).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "w2ruemcfy35rw60jl1t9dew2",
+            "label": "Agent Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV agent: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xxe21o9ojzmy9wxxky1tnmog",
+            "label": "Agent Name",
+            "type": "XdString",
+            "description": "The name of the agent (foaf:name).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "eftvwi5byq6cdtd931qyxzw0",
+            "label": "Agent Organization Name",
+            "type": "XdString",
+            "description": "The organization the agent belongs to or is.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "aa663ivutjf2fs4757t0bbzy",
+            "label": "Software Name",
+            "type": "XdString",
+            "description": "The name of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "x0lebwtobgaelj5pev3258sd",
+            "label": "Software Version",
+            "type": "XdString",
+            "description": "The version of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 60
+            }
+          },
+          {
+            "component_id": "i16vqj89it3db7d3c5qjko9p",
+            "label": "PROV Agent Type",
+            "type": "XdToken",
+            "description": "The kind of PROV agent: person, organization or software agent.",
+            "value": "Organization",
+            "constraints": {
+              "enumerations": [
+                "Person",
+                "Organization",
+                "SoftwareAgent"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

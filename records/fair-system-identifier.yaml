@@ -1,0 +1,12 @@
+key: fair-system-identifier
+label: FAIR Pipeline Identifier
+type: XdString
+description: The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id).
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:exactMatch
+  iri: http://www.w3.org/ns/prov#SoftwareAgent
+  basis: standard
+constraints:
+  max_length: 120

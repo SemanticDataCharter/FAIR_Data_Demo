@@ -1,0 +1,13 @@
+key: units-months
+label: Months
+type: Units
+description: A duration in months.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: months
+  definition: http://qudt.org/vocab/unit/MO

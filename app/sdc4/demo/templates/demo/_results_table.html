@@ -1,0 +1,26 @@
+{% if rows %}
+<table class="table table-striped table-hover mb-0">
+    <thead class="table-dark" style="position: sticky; top: 0; z-index: 1;">
+        <tr>
+            {% for var in variables %}<th>{{ var }}</th>{% endfor %}
+            <th class="text-end" title="The record behind this row"><i class="bi bi-file-earmark-text"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+        <tr class="{% if '1 -' in row.cells.0 %}tier-1{% elif '2 -' in row.cells.0 %}tier-2{% elif '3 -' in row.cells.0 %}tier-3{% elif '4 -' in row.cells.0 %}tier-4{% endif %}">
+            {% for cell in row.cells %}
+            <td class="text-truncate" style="max-width: 300px;" title="{{ cell }}">{{ cell }}</td>
+            {% endfor %}
+            <td class="text-end text-nowrap">
+                {% for link in row.links %}
+                <a href="{{ link.url }}" target="_blank" rel="noopener" class="text-decoration-none" title="{{ link.domain }}: {{ link.title }}"><i class="bi bi-box-arrow-up-right"></i></a>
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="p-4 text-center text-muted">No results returned.</div>
+{% endif %}

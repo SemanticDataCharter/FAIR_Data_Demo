@@ -1,0 +1,13 @@
+key: units-sample-weight
+label: Sample Weight
+type: Units
+description: A dimensionless survey sample weight.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: '1'
+  definition: http://qudt.org/vocab/unit/NUM

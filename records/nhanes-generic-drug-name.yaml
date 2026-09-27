@@ -1,0 +1,12 @@
+key: nhanes-generic-drug-name
+label: Generic Drug Name (RXDDRUG)
+type: XdString
+description: The generic drug name as NHANES records it (RXDDRUG).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRUG
+  basis: standard
+constraints:
+  max_length: 200

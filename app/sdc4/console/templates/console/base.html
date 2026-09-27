@@ -1,0 +1,43 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Record{% endblock %} &middot; National Data Platform</title>
+<link rel="stylesheet" href="{% static 'console/console.css' %}">
+{% comment %}
+  Vendored, not from a CDN: this stack is meant to clone and run on a machine
+  with no outbound network. The tabs are plain links regardless, so the console
+  still works if this file is missing.
+{% endcomment %}
+<script src="{% static 'vendor/htmx.min.js' %}" defer></script>
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+
+<div class="topbar">
+  <div class="crest">
+    <div class="seal">RC</div>
+    <div class="name">FAIR Data Demo: NHANES, BRFSS, CMS</div>
+    <div class="sys">National Data Platform</div>
+  </div>
+  <div class="who">{% block role %}Demonstration environment{% endblock %}</div>
+</div>
+
+<div class="shell">
+  <nav class="rail">
+    <h4>Ask</h4>
+    <a href="{% url 'console:question' %}">Cross-study question</a>
+    <h4>Explore</h4>
+    <a href="{% url 'console:index' %}" class="on">Record explorer</a>
+    <a href="/demo/explorer/">Query explorer</a>
+    <a href="/demo/">Domain dashboard</a>
+    <h4>Assurance</h4>
+    <a href="#">Model versions</a>
+    <a href="#">Validation log</a>
+  </nav>
+  <main>{% block content %}{% endblock %}</main>
+</div>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

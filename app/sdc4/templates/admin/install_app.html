@@ -1,0 +1,54 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-main">
+    <h1>Install SDC4 App</h1>
+
+    <div class="module">
+        <p>
+            Upload a generated SDC4 app ZIP file to automatically install it into this project.
+        </p>
+
+        <form method="post" enctype="multipart/form-data" class="form-horizontal">
+            {% csrf_token %}
+
+            <div class="form-row">
+                <div>
+                    <label for="{{ form.zip_file.id_for_label }}">{{ form.zip_file.label }}:</label>
+                    {{ form.zip_file }}
+                    {% if form.zip_file.help_text %}
+                        <p class="help">{{ form.zip_file.help_text }}</p>
+                    {% endif %}
+                    {% if form.zip_file.errors %}
+                        <p class="errornote">{{ form.zip_file.errors }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="submit-row">
+                <input type="submit" value="Install App" class="default" />
+                <a href="{% url 'admin:index' %}" class="button cancel-link">Cancel</a>
+            </div>
+        </form>
+
+        <h2>Installation Process</h2>
+        <p>The installer will:</p>
+        <ol>
+            <li>Validate the ZIP file structure</li>
+            <li>Extract and copy the app to the project</li>
+            <li>Copy schema files (dm-*.xsd, dm-*.ttl, dm-*.rdf, dm-*_shacl.ttl) to mediafiles/dmlib/</li>
+            <li>Update settings.py (add to INSTALLED_APPS)</li>
+            <li>Update urls.py (add URL patterns)</li>
+            <li>Run database migrations</li>
+            <li>Upload RDF data to triplestore (Fuseki/GraphDB)</li>
+        </ol>
+
+        <h2>After Installation</h2>
+        <p>
+            After successful installation, you'll need to <strong>restart your Django server</strong>
+            for the changes to take effect.
+        </p>
+    </div>
+</div>
+{% endblock %}

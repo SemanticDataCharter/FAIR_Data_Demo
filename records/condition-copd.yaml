@@ -1,0 +1,16 @@
+key: condition-copd
+label: 'Condition: COPD'
+type: XdToken
+description: 'Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by
+  a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/13645005
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

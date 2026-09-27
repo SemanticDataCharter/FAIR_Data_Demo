@@ -1,0 +1,47 @@
+{
+  "tiny_id": "cms-beneficiary",
+  "label": "CMS Beneficiary",
+  "description": "One DE-SynPUF beneficiary summary for the 2008 reference year: the beneficiary code, demographics, Medicare coverage, the eleven chronic condition indicators on a claims basis with the ESRD indicator, and the year's amounts. Members: Beneficiary Code (DESYNPUF_ID); CMS Beneficiary Demographics; CMS Medicare Coverage; Chronic Condition Indicators; End-Stage Renal Disease Indicator (BENE_ESRD_IND); CMS Annual Amounts.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-beneficiary",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C41189",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "cms-beneficiary-code",
+    "cms-beneficiary-demographics",
+    "cms-medicare-coverage",
+    "chronic-condition-indicators",
+    "cms-end-stage-renal-disease-indicator",
+    "cms-annual-amounts"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

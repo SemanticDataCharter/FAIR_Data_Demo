@@ -1,0 +1,22 @@
+key: brfss-tobacco-and-alcohol
+label: BRFSS Tobacco and Alcohol Use
+type: Cluster
+description: 'Cigarette use: the two questions the shared smoking status derives from, the status, the agency''s computed status, e-cigarette
+  use; alcohol: days drinking, average drinks and binge occasions in the past 30 days. Members: Smoked at Least 100 Cigarettes (SMOKE100); Frequency
+  of Days Now Smoking (SMOKDAY2); Smoking Status; Computed Smoking Status (_SMOKER3); Current E-cigarette Use (ECIGNOW2); Days in Past 30 Had
+  Alcoholic Beverage (ALCDAY4); Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3); Binge Drinking Occasions in Past 30 (DRNK3GE5).'
+source:
+  name: BRFSS 2022
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/72166-2/
+  basis: standard
+members:
+- brfss-smoked-100-cigarettes
+- brfss-frequency-of-days-now-smoking
+- smoking-status
+- brfss-computed-smoking-status
+- brfss-e-cigarette-use
+- brfss-days-drank-alcohol
+- brfss-average-drinks-per-day
+- brfss-binge-drinking-occasions

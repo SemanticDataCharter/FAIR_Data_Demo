@@ -1,0 +1,53 @@
+{
+  "tiny_id": "nhanes-physical-functioning",
+  "label": "NHANES Physical Functioning",
+  "description": "Physical functioning (PFQ_J): work limitation, equipment to walk, confusion or memory problems, and nine activity items on the four-point difficulty scale. Members: Limitations Keeping You from Working (PFQ049); Need Special Equipment to Walk (PFQ054); Experience Confusion or Memory Problems (PFQ057); Difficulty Walking a Quarter Mile (PFQ061B); Difficulty Walking Up Ten Stairs (PFQ061C); Difficulty Stooping, Crouching or Kneeling (PFQ061D); Difficulty Lifting or Carrying (PFQ061E); Difficulty Walking Between Rooms (PFQ061H); Difficulty Standing Up from an Armless Chair (PFQ061I); Difficulty Getting In and Out of Bed (PFQ061J); Difficulty Dressing Yourself (PFQ061L); Difficulty Standing for Long Periods (PFQ061M).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-physical-functioning",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C20000",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-limitations-keeping-from-working",
+    "nhanes-need-special-equipment-to-walk",
+    "nhanes-confusion-memory-problems",
+    "nhanes-walking-quarter-mile",
+    "nhanes-walking-up-ten-stairs",
+    "nhanes-stooping-crouching-kneeling",
+    "nhanes-lifting-or-carrying",
+    "nhanes-walking-between-rooms",
+    "nhanes-standing-up-from-chair",
+    "nhanes-getting-in-and-out-of-bed",
+    "nhanes-dressing",
+    "nhanes-standing-for-long-periods"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

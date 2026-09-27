@@ -1,0 +1,76 @@
+{
+  "tiny_id": "cms-race-code",
+  "label": "Race (BENE_RACE_CD)",
+  "description": "The beneficiary's race as CMS codes it (BENE_RACE_CD). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; Others has no CDE value.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "White",
+      "Black",
+      "Others",
+      "Hispanic"
+    ],
+    "enum_descr": [
+      "White",
+      "Black",
+      "Others",
+      "Hispanic"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C41261",
+      "http://purl.obolibrary.org/obo/NCIT_C16352",
+      "http://purl.obolibrary.org/obo/NCIT_C17649",
+      "http://purl.obolibrary.org/obo/NCIT_C17459"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "White",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C41261"
+    },
+    {
+      "value": "Black",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C16352"
+    },
+    {
+      "value": "Others",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17649"
+    },
+    {
+      "value": "Hispanic",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17459"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-race-code",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

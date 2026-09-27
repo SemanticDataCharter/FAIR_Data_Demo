@@ -1,0 +1,17 @@
+key: cms-primary-payer-claim-paid-amount
+label: Primary Payer Claim Paid Amount
+type: XdQuantity
+description: The amount a primary payer paid on the claim (NCH_PRMRY_PYR_CLM_PD_AMT), in US dollars.
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+- predicate: skos:closeMatch
+  iri: https://schema.org/MonetaryAmount
+  basis: concept
+constraints:
+  units: https://axius-sdc.com/library/default/units-currency
+  total_digits: 12
+  fraction_digits: 2

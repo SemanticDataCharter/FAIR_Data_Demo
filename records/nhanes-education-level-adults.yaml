@@ -1,0 +1,22 @@
+key: nhanes-education-level-adults
+label: Education Level - Adults 20+ (DMDEDUC2)
+type: XdToken
+description: The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment
+  it is mapped to.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2
+  basis: standard
+enumeration:
+- value: Less than 9th grade
+  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+- value: 9-11th grade (includes 12th grade with no diploma)
+  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+- value: High school graduate/GED or equivalent
+  definition: http://purl.obolibrary.org/obo/NCIT_C67136
+- value: Some college or AA degree
+  definition: http://purl.obolibrary.org/obo/NCIT_C67137
+- value: College graduate or above
+  definition: http://purl.obolibrary.org/obo/NCIT_C39303

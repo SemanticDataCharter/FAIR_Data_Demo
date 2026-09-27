@@ -1,0 +1,15 @@
+key: nhanes-ever-used-e-cigarette
+label: Ever Used an E-cigarette (SMQ900)
+type: XdToken
+description: Whether the participant has ever used an e-cigarette (SMQ900).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ900
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

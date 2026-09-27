@@ -1,0 +1,18 @@
+key: nhanes-red-blood-cell-count
+label: Red Blood Cell Count
+type: XdQuantity
+description: Red Blood Cell Count (LBXRBCSI, LOINC 789-8).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/789-8/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXRBCSI
+  basis: standard
+constraints:
+  units: units-million-per-microlitre
+  total_digits: 4
+  fraction_digits: 2
+  min_inclusive: 0

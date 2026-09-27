@@ -1,0 +1,49 @@
+{
+  "tiny_id": "brfss-respondent",
+  "label": "BRFSS Respondent",
+  "description": "One BRFSS 2022 respondent: the sequence number, survey design, demographics, health status and access, chronic conditions, body measures, tobacco and alcohol, and disability, from the columns of the LLCP2022 file this demonstration carries. Members: Annual Sequence Number (SEQNO); BRFSS Survey Design; BRFSS Demographics; BRFSS Health Status and Access; BRFSS Chronic Conditions; BRFSS Body Measures; BRFSS Tobacco and Alcohol Use; BRFSS Disability.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-respondent",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C41189",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "brfss-annual-sequence-number",
+    "brfss-survey-design",
+    "brfss-demographics",
+    "brfss-health-status",
+    "brfss-chronic-conditions",
+    "brfss-body-measures",
+    "brfss-tobacco-and-alcohol",
+    "brfss-disability"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

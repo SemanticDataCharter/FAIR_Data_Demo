@@ -1,0 +1,18 @@
+key: nhanes-basophil-percent
+label: Basophils Percent
+type: XdQuantity
+description: Basophils Percent (LBXBAPCT, LOINC 706-2).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/706-2/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXBAPCT
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-percentage
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

@@ -1,0 +1,5297 @@
+{
+  "@context": {
+    "@vocab": "https://semanticdatacharter.com/ns/sdc4/",
+    "sdc4": "https://semanticdatacharter.com/ns/sdc4/",
+    "sdc4-meta": "https://semanticdatacharter.com/ontology/sdc4-meta/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "label": "rdfs:label",
+    "description": "rdfs:comment",
+    "type": "@type",
+    "id": "@id"
+  },
+  "@type": "DataModel",
+  "@id": "sdc4:dm-fnv3zi2btk3s0sfodjsc25eb",
+  "identifier": "fnv3zi2btk3s0sfodjsc25eb",
+  "label": "CMS Beneficiary",
+  "description": "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo",
+  "metadata": {
+    "dc:title": "CMS Beneficiary",
+    "dc:creator": "Timothy Cook",
+    "dc:description": "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo",
+    "dc:rights": "CC-BY http://creativecommons.org/licenses/by/3.0/",
+    "dc:language": "en-US",
+    "dc:format": "text/xml",
+    "dc:date": "2026-09-26T22:03:40.721481+00:00"
+  },
+  "components": [
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-dkc2ccj5te35z9gd4bu1blcq",
+      "label": "Audit Agent Reference",
+      "description": "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-agent-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.who"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-bads7w1q6wmhn18u6dxwt28t"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-gcjyjrnp0wsfoelcp4m05c67",
+      "label": "Audit Entity Reference",
+      "description": "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-entity-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.entity.what"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-sjp1x177mlpq3howdltptm3c"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-fjhgr5fyqxt2crmg2cb5c513",
+      "label": "Audit Event Identifier",
+      "description": "The identifier of the audit event.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-event-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/identifier"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e",
+      "label": "Data Subject Reference",
+      "description": "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/data-subject-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.patient"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-x2rc9cg84d2famryqzdic0as"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-nf1air1zbj8v9w66jozdxmyl",
+      "label": "On Behalf Of Reference",
+      "description": "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/on-behalf-of-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/provenance-definitions.html#Provenance.agent.onBehalfOf"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-j9gvyx6u9pb7v1dd0m6joxd6"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-h3kdbvdtyalpvik97saaf0an",
+      "label": "System Identifier",
+      "description": "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/system-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.source.observer"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-des67jo3ki9w0zgaz2i2t2cq"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-ujir739mf1g8ajeczs9nzh9m",
+      "label": "System Location Name",
+      "description": "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/system-location-name"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.location"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-l6fwy1a2l5i43t308pknygp7"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x",
+      "label": "Audit Event Action",
+      "description": "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "C",
+          "R",
+          "U",
+          "D",
+          "E"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-event-action"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/audit-event-action"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-o8lawuczf9vry55e98cjg12r"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-rpz1czz06jhpahmfz30rblvp",
+      "label": "Audit Event Outcome",
+      "description": "The result of an audited event (FHIR AuditEvent.outcome).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "0",
+          "4",
+          "8",
+          "12"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-event-outcome"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/audit-event-outcome"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-lgmleqp52a6kl268drrtfjk5"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-vbctgmdcwps5b3r3l6sboa6y",
+      "label": "Confidentiality",
+      "description": "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "U",
+          "L",
+          "M",
+          "N",
+          "R",
+          "V"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://terminology.hl7.org/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/confidentiality"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hp8q52t8tgmis92c4ljrfy7e"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-jujsdur1igws8orw6tvvlqco",
+      "label": "Provenance Agent Type",
+      "description": "The functional role of an agent in an activity (FHIR Provenance.agent.type).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "enterer",
+          "performer",
+          "author",
+          "editor",
+          "verifier",
+          "legal",
+          "attester",
+          "informant",
+          "custodian",
+          "transmitter",
+          "assembler",
+          "transformer",
+          "composer"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/provenance-agent-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/provenance-participant-type"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-syt8l7pmb64eym2chcn43ai7"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj",
+      "label": "Purpose of Use",
+      "description": "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "TREAT",
+          "ETREAT",
+          "COC",
+          "HPAYMT",
+          "HOPERAT",
+          "HRESCH",
+          "CLINTRCH",
+          "PUBHLTH",
+          "PATRQT",
+          "HLEGAL",
+          "HMARKT"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://terminology.hl7.org/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/purpose-of-use"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/v3-ActReason"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-y87ikto4p56zlkx4o2d63ain"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-uwiosm2q9ym3ewr4de910s70",
+      "label": "Audit Recorded At",
+      "description": "When the audit event was recorded (FHIR AuditEvent.recorded).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-recorded-at"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.recorded"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-zshx6rx7ca1j00eda9kxyh6h",
+      "label": "Beneficiary Code (DESYNPUF_ID)",
+      "description": "The synthetic beneficiary identifier every DE-SynPUF file carries (DESYNPUF_ID); not traceable to a real Medicare beneficiary.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "[0-9A-F]{16}"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-beneficiary-code"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-pczjiz8bjdg20api47gmeq0e",
+      "label": "End-Stage Renal Disease Indicator (BENE_ESRD_IND)",
+      "description": "Whether the beneficiary has end-stage renal disease (BENE_ESRD_IND).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/46177005"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-end-stage-renal-disease-indicator"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s",
+      "label": "Condition: Alzheimer's Disease or Related Disorder",
+      "description": "Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/26929004"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-alzheimers-disease"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-o4d67oubyyunugx3la44f53u",
+      "label": "Condition: Angina",
+      "description": "Whether the person has angina (Angina, SNOMED CT 194828000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160D.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/194828000"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-angina"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-nd1v8jk7wtm1tthzw1f4987t",
+      "label": "Condition: Arthritis",
+      "description": "Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/3723001"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-arthritis"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-acr1xvqppf1b3rjsrst6tt4p",
+      "label": "Condition: Asthma",
+      "description": "Whether the person has asthma (Asthma, SNOMED CT 195967001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ010, BRFSS ASTHMA3.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/195967001"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-asthma"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-ix0my2v2z79s002g0r8orosf",
+      "label": "Condition: Cancer",
+      "description": "Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/363346000"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-cancer"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-jyx7rxfktazhgxgq84fxf6wr",
+      "label": "Condition: Chronic Bronchitis",
+      "description": "Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/63480004"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-chronic-bronchitis"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-hyqlz591lhj54sdt1a1mup70",
+      "label": "Condition: Congestive Heart Failure",
+      "description": "Whether the person has congestive heart failure (Congestive Heart Failure, SNOMED CT 42343007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160B, CMS SP_CHF.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/42343007"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-congestive-heart-failure"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-mijr18ynaqde2l8jps70l2g6",
+      "label": "Condition: COPD",
+      "description": "Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/13645005"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-copd"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-udbydjqj76l8kl6mi2s3v7vd",
+      "label": "Condition: Coronary Heart Disease",
+      "description": "Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/53741008"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-coronary-heart-disease"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-of4crvmnrr3s5q5396kmt0jv",
+      "label": "Condition: Depression",
+      "description": "Whether the person has depression (Depression, SNOMED CT 35489007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS ADDEPEV3, CMS SP_DEPRESSN.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/35489007"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-depression"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h",
+      "label": "Condition: Diabetes",
+      "description": "Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/73211009"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-diabetes"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-sbulkq80j4fkbiql4zgje4qr",
+      "label": "Condition: Emphysema",
+      "description": "Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/87433001"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-emphysema"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-yshoeps2dm0j1ueusqs825v6",
+      "label": "Condition: Heart Attack",
+      "description": "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/22298006"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-heart-attack"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-lvockfc8lce5p15wuwxc1kwa",
+      "label": "Condition: High Blood Pressure",
+      "description": "Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/38341003"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-high-blood-pressure"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr",
+      "label": "Condition: High Cholesterol",
+      "description": "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/13644009"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-high-cholesterol"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw",
+      "label": "Condition Indicator Basis",
+      "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Self-report of a professional diagnosis",
+          "Claims-based algorithm"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-indicator-basis"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C25596"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu",
+      "label": "Condition: Kidney Disease",
+      "description": "Whether the person has kidney disease (Kidney Disease, SNOMED CT 709044004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCKDNY2, CMS SP_CHRNKIDN.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/709044004"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-kidney-disease"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-atqkooccakulfhkt18c008fx",
+      "label": "Condition: Liver Condition",
+      "description": "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/235856003"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-liver-condition"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-l784ggegqcvrpnmw2yvo4il7",
+      "label": "Condition: Osteoporosis",
+      "description": "Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/64859006"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-osteoporosis"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-xsohkckyof7y1xj8h1ab4pxu",
+      "label": "Condition: Skin Cancer",
+      "description": "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/372130007"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-skin-cancer"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-zc6p008h5naqev8zngtzvyx9",
+      "label": "Condition: Stroke",
+      "description": "Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/230690007"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-stroke"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-p8u71b4lhct4ra0szgkex7xo",
+      "label": "Condition: Thyroid Problem",
+      "description": "Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Yes",
+          "No"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/subject",
+          "object": "http://snomed.info/id/14304000"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/condition-thyroid-problem"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-nr2ylxsejuy6awcwqts30rpv",
+      "label": "Carrier Annual Beneficiary Responsibility",
+      "description": "The beneficiary's responsibility for carrier services in the year (BENRES_CAR), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-carrier-beneficiary-responsibility"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi",
+      "label": "Currency",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.iso.org/iso-4217-currency-codes.html"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/default/units-currency"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://qudt.org/vocab/quantitykind/Currency"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-wab4687wp76ntxrz27nqybgp"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-uqamp46mdscugwy7z99jaxsp",
+      "label": "Carrier Annual Medicare Reimbursement",
+      "description": "Medicare reimbursement for carrier (physician and supplier) services in the year (MEDREIMB_CAR), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-carrier-medicare-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-qbla2qbmgnvijbzpvgsivygy",
+      "label": "Carrier Annual Primary Payer Reimbursement",
+      "description": "Primary payer reimbursement for carrier services in the year (PPPYMT_CAR), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-carrier-primary-payer-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-xk3apd6exhme1to143takg17",
+      "label": "Inpatient Annual Beneficiary Responsibility",
+      "description": "The beneficiary's responsibility for inpatient services in the year (BENRES_IP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-inpatient-beneficiary-responsibility"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-ir7e2d7vwws6yisjvxgfm7ou",
+      "label": "Inpatient Annual Medicare Reimbursement",
+      "description": "Medicare reimbursement for inpatient services in the year (MEDREIMB_IP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-inpatient-medicare-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-afusetixnkfrt5zheumblskw",
+      "label": "Inpatient Annual Primary Payer Reimbursement",
+      "description": "Primary payer reimbursement for inpatient services in the year (PPPYMT_IP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-inpatient-primary-payer-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-gxyr702hyrvi5bxp2rn9avd5",
+      "label": "Outpatient Annual Beneficiary Responsibility",
+      "description": "The beneficiary's responsibility for outpatient services in the year (BENRES_OP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-outpatient-beneficiary-responsibility"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-hnvzazgaw60pz193376698lu",
+      "label": "Outpatient Annual Medicare Reimbursement",
+      "description": "Medicare reimbursement for outpatient services in the year (MEDREIMB_OP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-outpatient-medicare-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-wl1enu6oomssv6fn1kvvdx9f",
+      "label": "Outpatient Annual Primary Payer Reimbursement",
+      "description": "Primary payer reimbursement for outpatient services in the year (PPPYMT_OP), in US dollars.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-outpatient-primary-payer-reimbursement"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "XdBooleanType",
+      "@id": "sdc4:mc-fnr5q1tfq42ez9jia9dqueho",
+      "label": "Deceased Indicator",
+      "description": "Whether the patient is deceased. FHIR Patient.deceasedBoolean.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "false"
+        ]
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/deceased-indicator"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/patient-definitions.html#Patient.deceasedBoolean"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-dw20tfw9y0qzzwlyhp6d9koz"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-hb937iiq8di6mrtn10j8n1vk",
+      "label": "County Code (BENE_COUNTY_CD)",
+      "description": "The SSA county code of the beneficiary's mailing address (BENE_COUNTY_CD).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "[0-9]{1,3}"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-county-code"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-n8s2hvs4vrt5bwdykfzna5a6",
+      "label": "State Code (SP_STATE_CODE)",
+      "description": "The SSA state code of the beneficiary's mailing address (SP_STATE_CODE).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "[0-9]{1,2}"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-state-code"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-u5xln0mppl3qk6vhgxdu0wcn",
+      "label": "Race (BENE_RACE_CD)",
+      "description": "The beneficiary's race as CMS codes it (BENE_RACE_CD). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; Others has no CDE value.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "White",
+          "Black",
+          "Others",
+          "Hispanic"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-race-code"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-u4lkrbqp88mvp1m81ipglaov",
+      "label": "Sex (BENE_SEX_IDENT_CD)",
+      "description": "The beneficiary's sex as CMS codes it (BENE_SEX_IDENT_CD). Kept beside the Default administrative gender it is mapped to.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Male",
+          "Female"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-sex-code"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-u5tietya3u56hbz2kos06ai7",
+      "label": "Race/Ethnicity Self-Identification",
+      "description": "A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "American Indian or Alaska Native",
+          "Asian or Asian American",
+          "Black or African American",
+          "Hispanic, Latino, or Spanish",
+          "Native Hawaiian or Other Pacific Islander",
+          "Middle Eastern or North African",
+          "White"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C16564"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C74528"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://cde.nlm.nih.gov/deView?tinyId=LakF0YkywC"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "http://www.wikidata.org/entity/Q6973755"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C17049"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hmc3dce8i1muhh9nr5bkbj92"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-gxzbm758mhdz51xd4bawlfhh",
+      "label": "Administrative Gender",
+      "description": "The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "male",
+          "female",
+          "other",
+          "unknown"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/default/administrative-gender"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/administrative-gender"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-tnyh2ude3db9smwfin0vai5h"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-vnlhr9c3ykayyegumhb09snf",
+      "label": "Deceased Date",
+      "description": "The date and time of death. FHIR Patient.deceasedDateTime.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/deceased-date"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/patient-definitions.html#Patient.deceasedDateTime"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rqpcsr1pv41osf7sxwlr7lix"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-js564tazefb6udqlh12rj04l",
+      "label": "Date of Birth",
+      "description": "The date a person was born.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/default/date-of-birth"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://schema.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C68615"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/birthDate"
+        }
+      ]
+    },
+    {
+      "@type": "XdCountType",
+      "@id": "sdc4:mc-v3kyd703i6kwzmmnasehyiks",
+      "label": "HMO Coverage Months",
+      "description": "Total months of HMO coverage in the reference year (BENE_HMO_CVRAGE_TOT_MONS).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "minInclusive": 0.0,
+        "maxInclusive": 12.0,
+        "units": {
+          "@type": "Units",
+          "label": "Months",
+          "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj"
+        }
+      },
+      "dataType": "xsd:integer",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-hmo-coverage-months"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj",
+      "label": "Months",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/units-months"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://qudt.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://qudt.org/schema/qudt/Unit"
+        }
+      ]
+    },
+    {
+      "@type": "XdCountType",
+      "@id": "sdc4:mc-z7hdfvo8n55ebh3hqs2devzz",
+      "label": "Hospital Insurance (Part A) Coverage Months",
+      "description": "Total months of Part A coverage in the reference year (BENE_HI_CVRAGE_TOT_MONS).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "minInclusive": 0.0,
+        "maxInclusive": 12.0,
+        "units": {
+          "@type": "Units",
+          "label": "Months",
+          "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj"
+        }
+      },
+      "dataType": "xsd:integer",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-part-a-coverage-months"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdCountType",
+      "@id": "sdc4:mc-uzjspmfqya7qwbg2vhfdlgzv",
+      "label": "Part D Plan Coverage Months",
+      "description": "Total months of Part D plan coverage in the reference year (PLAN_CVRG_MOS_NUM).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "minInclusive": 0.0,
+        "maxInclusive": 12.0,
+        "units": {
+          "@type": "Units",
+          "label": "Months",
+          "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj"
+        }
+      },
+      "dataType": "xsd:integer",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-part-d-coverage-months"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdCountType",
+      "@id": "sdc4:mc-xftatfclhnwcyy2k96v7k638",
+      "label": "Supplementary Medical Insurance (Part B) Coverage Months",
+      "description": "Total months of Part B coverage in the reference year (BENE_SMI_CVRAGE_TOT_MONS).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "minInclusive": 0.0,
+        "maxInclusive": 12.0,
+        "units": {
+          "@type": "Units",
+          "label": "Months",
+          "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj"
+        }
+      },
+      "dataType": "xsd:integer",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-part-b-coverage-months"
+        },
+        {
+          "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        }
+      ]
+    },
+    {
+      "@type": "XdBooleanType",
+      "@id": "sdc4:mc-zc3g4e4kjtzehn3kkffkeu29",
+      "label": "Subrogation Indicator",
+      "description": "Whether the insurer may recover costs from a third party. FHIR Coverage.subrogation.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "false"
+        ]
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/subrogation-indicator"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.subrogation"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-y1nox8retusmnhen28x87owb"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-ngyypbb7lmlj2g3kibcjqjmn",
+      "label": "Dependent Sequence",
+      "description": "The dependent number on the policy. FHIR Coverage.dependent.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 16
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/dependent-sequence"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.dependent"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-q43cuwriiuhzqgul1d8av9ez"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-of5kk46yrln1ok8nuajeg2f8",
+      "label": "Member ID",
+      "description": "The member or subscriber identifier. FHIR Coverage.subscriberId.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 64
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/member-id"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.subscriberId"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-anzcptbbjd641d1lbainrp3q"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-ng1e2u43yhfura3vf0ahm609",
+      "label": "Plan Network",
+      "description": "The insurer network. FHIR Coverage.network.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/plan-network"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.network"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-kc5dn4tz1em2pu4vmktfk37l"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-hicvzztm4xzxnzp9f6tyu016",
+      "label": "Coverage Status",
+      "description": "The state of the coverage. FHIR Coverage.status; Financial Resource Status Codes, version 4.0.1.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "active",
+          "cancelled",
+          "draft",
+          "entered-in-error"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-status"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.status"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/fm-status"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-clz7nbfsxok0sd7bsb5sbqmm"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-wpnvu6f56drsy767ucx60scd",
+      "label": "Coverage Type",
+      "description": "The kind of coverage (HL7 v3 ActCoverageTypeCode). FHIR Coverage.type; ActCode, version 11.0.0.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "EHCPOL",
+          "HSAPOL",
+          "AUTOPOL",
+          "COL",
+          "UNINSMOT",
+          "PUBLICPOL",
+          "DENTPRG",
+          "DISEASEPRG",
+          "CANPRG",
+          "ENDRENAL",
+          "HIVAIDS",
+          "MANDPOL",
+          "MENTPRG",
+          "SAFNET",
+          "SUBPRG",
+          "SUBSIDIZ",
+          "SUBSIDMC",
+          "SUBSUPP",
+          "WCBPOL",
+          "DENTAL",
+          "DISEASE",
+          "DRUGPOL",
+          "HIP",
+          "LTC",
+          "MCPOL",
+          "POS",
+          "HMO",
+          "PPO",
+          "MENTPOL",
+          "SUBPOL",
+          "VISPOL",
+          "DIS",
+          "EWB",
+          "FLEXP",
+          "LIFE",
+          "ANNU",
+          "TLIFE",
+          "ULIFE",
+          "PNC",
+          "REI",
+          "SURPL",
+          "UMBRL",
+          "CHAR",
+          "CRIME",
+          "EAP",
+          "GOVEMP",
+          "HIRISK",
+          "IND",
+          "MILITARY",
+          "RETIRE",
+          "SOCIAL",
+          "VET"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://terminology.hl7.org/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-j4otsvy3knfqm8bchyftbpvc"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-zxoxt5fc40bzigieoh044gsy",
+      "label": "Subscriber Relationship",
+      "description": "The beneficiary's relationship to the subscriber. FHIR Coverage.relationship; SubscriberPolicyholder Relationship Codes, version 4.0.1.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "child",
+          "parent",
+          "spouse",
+          "common",
+          "other",
+          "self",
+          "injured"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/subscriber-relationship"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.relationship"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-mq99s6z0n14sc9gt8ouf6ar0"
+        }
+      ]
+    },
+    {
+      "@type": "XdCountType",
+      "@id": "sdc4:mc-rcl099nhkwzl6lu24lz9i01r",
+      "label": "Coverage Order",
+      "description": "The order of the coverage: 1 primary, 2 secondary. FHIR Coverage.order.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "minInclusive": 1.0,
+        "units": {
+          "@type": "Units",
+          "label": "Items",
+          "@id": "sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn"
+        }
+      },
+      "dataType": "xsd:integer",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-order"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.order"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-lhhm09e0u1asjl6yuarn0i6b"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn",
+      "label": "Items",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/default/units-items"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://qudt.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://qudt.org/vocab/quantitykind/Dimensionless"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-asmfpl0h2pw2xlldhiydibbn",
+      "label": "Coverage Period End",
+      "description": "When the coverage ends. FHIR Coverage.period.end.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-period-end"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.period.end"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-mkc3jd1tl6863y2lvde7x8s6"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-onaqlxn6vzh5r1ub5oxn65iv",
+      "label": "Coverage Period Start",
+      "description": "When the coverage takes effect. FHIR Coverage.period.start.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-period-start"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.period.start"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-nwi9cgajaafeu2ucxo2oxm3g"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-fdtpvqw0se658x5m3zormi5v",
+      "label": "Copay Type",
+      "description": "The kind of cost sharing. FHIR Coverage.costToBeneficiary.type; Coverage Copay Type Codes, version 4.0.1.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "gpvisit",
+          "spvisit",
+          "emergency",
+          "inpthosp",
+          "televisit",
+          "urgentcare",
+          "copaypct",
+          "copay",
+          "deductible",
+          "maxoutofpocket"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/copay-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.costToBeneficiary.type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/coverage-copay-type"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-wmm71yrcg8yxepq3d57h75oo"
+        }
+      ]
+    },
+    {
+      "@type": "XdQuantityType",
+      "@id": "sdc4:mc-h4ngotmyyx8yflaxicrxaba8",
+      "label": "Copay Amount",
+      "description": "The amount of the cost sharing, in the Default currency units. FHIR Coverage.costToBeneficiary.valueMoney.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "units": {
+          "@type": "Units",
+          "label": "Currency",
+          "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi"
+        }
+      },
+      "dataType": "xsd:decimal",
+      "semanticLinks": [
+        {
+          "predicate": "https://semanticdatacharter.com/ontology/sdc4-meta/hasUnit",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/copay-amount"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.costToBeneficiary.value_x_"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-tx7y1x6g5riscegp98y4jg1r"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-dro3p4hqu4ovk0uj7uu2upvq",
+      "label": "Coverage Class Name",
+      "description": "The name of the class. FHIR Coverage.class.name.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-class-name"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.class.name"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ox1v16fjy8sn3n600ajp93gk"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-zwmu2x9s8tx628rvb1trh0ij",
+      "label": "Coverage Class Value",
+      "description": "The value of the class, such as a group or plan number. FHIR Coverage.class.value.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 64
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-class-value"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.class.value"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-vp10ylrirmj2x89mweq2o0c7"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-m3m7ow1e7b27ejx6usxtgnbg",
+      "label": "Coverage Class Type",
+      "description": "The kind of class. FHIR Coverage.class.type; Coverage Class Codes, version 4.0.1.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "group",
+          "subgroup",
+          "plan",
+          "subplan",
+          "class",
+          "subclass",
+          "sequence",
+          "rxbin",
+          "rxpcn",
+          "rxid",
+          "rxgroup"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-class-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.class.type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://terminology.hl7.org/CodeSystem/coverage-class"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-pdap69ljyikykrugqdyckf6o"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-hhusuzzig19rs46ngz23k5g7",
+      "label": "Activity Description",
+      "description": "A description of what the activity does and why.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 4000
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-description"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/description"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-m9xg6e182m1oq77ssrf9iujv"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-wr06h54xqqw2q9id8i9673jy",
+      "label": "Activity Identifier",
+      "description": "The identifier of a PROV activity: a URI or another globally unique identifier.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-fpnn1dew0kcevc8ptohndc5t"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-r6hkunjm2q0hlxiknlc9ljix",
+      "label": "Activity Label",
+      "description": "A human-readable label for a PROV activity.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-label"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-n4kaez29vbknku2jy8n56gfm"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-uzai5uey5p1fnn9ezj9u6vor",
+      "label": "Activity Location",
+      "description": "Where the activity took place (prov:atLocation), as text.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-location"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#atLocation"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ciuklf1kl8bphpudye4i47am"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-jjzmhdxvbt97pq81iwqubtxk",
+      "label": "Activity Type",
+      "description": "The kind of activity, in the vocabulary of the domain (prov:type).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#type"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ceusvbe55b266gcdzf5qnurc"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk",
+      "label": "Error Message",
+      "description": "The error the activity reported, if it failed.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 4000
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/error-message"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://schema.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/error"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-eakhqr9l9nbblppgxc5fq25n"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-vhezo2cckpe92x4c3j2memeh",
+      "label": "Had Plan Reference",
+      "description": "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/had-plan-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#hadPlan"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-xvdfh1nzfar33yxmgl3jgvqo"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-t0whhrqtnb54te4mk48i1ooj",
+      "label": "Used Entity Reference",
+      "description": "An entity the activity used (prov:used). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/used-entity-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#used"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ixv0fa8xlde52mdeymr4zaka"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-r48alj7hc3797qfjnf2uj71n",
+      "label": "Was Associated With Reference",
+      "description": "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-associated-with-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasAssociatedWith"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-gs0e1hp2rpjl6qfg9v8d047f"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl",
+      "label": "Was Ended By Reference",
+      "description": "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-ended-by-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasEndedBy"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-jr1e3n5kg31nqz1ynh28kitp"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-qh84jdzp1kxt85aq4ilo0svk",
+      "label": "Was Informed By Reference",
+      "description": "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-informed-by-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasInformedBy"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rz60y6aujd274j4i7jpyxvpr"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-ginfqbk7q59ld2r4us8sjnv1",
+      "label": "Was Started By Reference",
+      "description": "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-started-by-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasStartedBy"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-kmodjk1e5xu9z94zgiaxx1hu"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8",
+      "label": "Activity Status",
+      "description": "The state of an activity, from the Data Privacy Vocabulary activity status concepts.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "ActivityProposed",
+          "ActivityPlanned",
+          "ActivityOngoing",
+          "ActivityHalted",
+          "ActivityCompleted",
+          "ActivityNotCompleted"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://w3id.org/dpv"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/activity-status"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "https://w3id.org/dpv#ActivityStatus"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-yehcpzf43j0b5zp9ck59t9eg"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-a5scyosu6j84vz350mqyrzl2",
+      "label": "Ended At",
+      "description": "When the activity ended (prov:endedAtTime).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/ended-at-time"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#endedAtTime"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-sa4nl1kbpdr842fkucvfjkpq",
+      "label": "Started At",
+      "description": "When the activity started (prov:startedAtTime).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/started-at-time"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#startedAtTime"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-og08xf6bu928uuz6t3y0e23f",
+      "label": "Acted On Behalf Of Reference",
+      "description": "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/acted-on-behalf-of-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#actedOnBehalfOf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-dce4w62jxjngjnmc5y26fq66"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-gb78cmuyo72hqs5apymdki7l",
+      "label": "Agent Description",
+      "description": "A description of the agent and its responsibilities.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 4000
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/agent-description"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/description"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-w79xppnskig5vq31er8gh7nk"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-qb90a0sp9vvb6c5cbcf236ys",
+      "label": "Agent Email",
+      "description": "The agent's email address (foaf:mbox).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/agent-email"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://xmlns.com/foaf/0.1/mbox"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-yp6pm5xyovxhkjimrrb8h9xy"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-w2ruemcfy35rw60jl1t9dew2",
+      "label": "Agent Identifier",
+      "description": "The identifier of a PROV agent: a URI or another globally unique identifier.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/agent-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hhfnj5hd1yzt252jfq5pdjj1"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-xxe21o9ojzmy9wxxky1tnmog",
+      "label": "Agent Name",
+      "description": "The name of the agent (foaf:name).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/agent-name"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-yya0pdgjd2w0wlz5r3h516om"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-eftvwi5byq6cdtd931qyxzw0",
+      "label": "Agent Organization Name",
+      "description": "The organization the agent belongs to or is.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/agent-organization-name"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://schema.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/legalName"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ifw5zfe4oiijbxjn1ylc2wm3"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-aa663ivutjf2fs4757t0bbzy",
+      "label": "Software Name",
+      "description": "The name of a software agent.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/software-name"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://schema.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/SoftwareApplication"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rsjfjz8m5z7a58h5793duqbs"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-x0lebwtobgaelj5pev3258sd",
+      "label": "Software Version",
+      "description": "The version of a software agent.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 60
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/software-version"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://schema.org/"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/softwareVersion"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-tep9wanrrtqfw0k76huv6tvd"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-i16vqj89it3db7d3c5qjko9p",
+      "label": "PROV Agent Type",
+      "description": "The kind of PROV agent: person, organization or software agent.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Person",
+          "Organization",
+          "SoftwareAgent"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-agent-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Agent"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-nesxtz8c5o665swc9lhvqkjj"
+        }
+      ]
+    },
+    {
+      "@type": "AuditType",
+      "@id": "sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t",
+      "label": "FAIR Pipeline Audit",
+      "description": "The audit of a record generated from a federal source file: the pipeline that generated it, its run, and the source file it read (the ProvGov PROV entity).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:string"
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4",
+      "label": "FAIR Pipeline Identifier",
+      "description": "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 120
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/fair-system-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#SoftwareAgent"
+        }
+      ]
+    },
+    {
+      "@type": "PartyType",
+      "@id": "sdc4:mc-p6smy5wa25ug4yhgdswyuklx",
+      "label": "FAIR Pipeline User",
+      "description": "The pipeline run that generated the record from a federal source file (PROV agent).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:string"
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-abub2eah26yd2uzni3p9l58i",
+      "label": "Entity Description",
+      "description": "A description of a PROV entity.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 4000
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/entity-description"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/description"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rlhiv24i689xhko5dp426y7o"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-i1defiugxfdcwfb9rqv4p5tz",
+      "label": "Entity Identifier",
+      "description": "The identifier of a PROV entity: a URI or another globally unique identifier.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/entity-identifier"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-lk4wonh72gbfl4xoo6mwbva1"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-m9minyaug6ypyzt52zfxlyyi",
+      "label": "Entity Label",
+      "description": "A human-readable label for a PROV entity.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/entity-label"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-elqsmgj1lwc30gmxgcewiu8y"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-wn77qo3b1xjwc4dudtyme2io",
+      "label": "Entity Location",
+      "description": "Where a PROV entity is (prov:atLocation), as text.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 255
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/entity-location"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#atLocation"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-tlezj37gdjxud7b2gefblv1e"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-kmcck093437mfdlnxnrzm0xw",
+      "label": "Entity Value",
+      "description": "The value of a PROV entity, or a reference to where its content can be found (prov:value).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "maxLength": 4000
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/entity-value"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#value"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-r1166br2deauav0uoencq7uk"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-phus5105uw30xejqs7baamyx",
+      "label": "Had Primary Source Reference",
+      "description": "The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/had-primary-source-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#hadPrimarySource"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-b2cclldvwij0n1ewhgrkk1ul"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-kqlatg3rz00z58muv7j8toyl",
+      "label": "Was Attributed To Reference",
+      "description": "The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-attributed-to-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasAttributedTo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-fp9x4nydhjv480jovw9tjtlhw"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-credrxhz4hg4c42sihm0wb6s",
+      "label": "Was Derived From Reference",
+      "description": "The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-derived-from-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasDerivedFrom"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-e6f9p3xngi5eyq851iq457ru"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-bfn83x3fw1cyuqriuoquu9t1",
+      "label": "Was Generated By Reference",
+      "description": "The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-generated-by-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasGeneratedBy"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-yr3a0f87dtmzlv8ruiys1axa"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf",
+      "label": "Was Invalidated By Reference",
+      "description": "The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-invalidated-by-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasInvalidatedBy"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-mjl0vv39zsbigqiuyqm66fkv",
+      "label": "Was Quoted From Reference",
+      "description": "The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-quoted-from-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasQuotedFrom"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-q69bq5dd4e3v0z8ybm578y89"
+        }
+      ]
+    },
+    {
+      "@type": "XdStringType",
+      "@id": "sdc4:mc-lghqkvp7vapqk10l248kzqs8",
+      "label": "Was Revision Of Reference",
+      "description": "The entity this entity revises (prov:wasRevisionOf). Holds the IRI of the referenced thing.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "pattern": "\\S+"
+      },
+      "dataType": "xsd:string",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/was-revision-of-reference"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#wasRevisionOf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-elg5v5gidcfnuj4b5vfvpo80"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3",
+      "label": "PROV Derivation Type",
+      "description": "How one entity was derived from another: a general derivation, a revision, a quotation or a primary source.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Derivation",
+          "Revision",
+          "Quotation",
+          "PrimarySource"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-derivation-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Derivation"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-cdhr25b0ezdbcmjo3boafgas"
+        }
+      ]
+    },
+    {
+      "@type": "XdTokenType",
+      "@id": "sdc4:mc-i4e2nod7ss9d4cumhn2pah8b",
+      "label": "PROV Entity Type",
+      "description": "The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan.",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "Entity",
+          "Collection",
+          "EmptyCollection",
+          "Bundle",
+          "Plan"
+        ]
+      },
+      "dataType": "xsd:token",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-entity-type"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Entity"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-u3zwz3b7hkwkxg6mn1o6o4c5"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-yk5nrxndulhebpi3hiywk8u8",
+      "label": "Generated At",
+      "description": "When the entity was generated (prov:generatedAtTime).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/generated-at-time"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#generatedAtTime"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "XdTemporalType",
+      "@id": "sdc4:mc-hswapeutuik067dokidnbv88",
+      "label": "Invalidated At",
+      "description": "When the entity ceased to be usable (prov:invalidatedAtTime).",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "dataType": "xsd:dateTime",
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/invalidated-at-time"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#invalidatedAtTime"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-io2h28pi3yktedurk8ye3oq0",
+      "label": "CMS Beneficiary Governed Record",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"
+        },
+        {
+          "@id": "sdc4:mc-kkdy1kjdruxvx8s1ra8eh231"
+        },
+        {
+          "@id": "sdc4:mc-vmikfu0irht9fmq7q02t3oqs"
+        },
+        {
+          "@id": "sdc4:mc-c179ilk2ns15cd5rzzdfd6f6"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-beneficiary-governed-record"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Entity"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1",
+      "label": "Audit Event",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-dkc2ccj5te35z9gd4bu1blcq"
+        },
+        {
+          "@id": "sdc4:mc-gcjyjrnp0wsfoelcp4m05c67"
+        },
+        {
+          "@id": "sdc4:mc-fjhgr5fyqxt2crmg2cb5c513"
+        },
+        {
+          "@id": "sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e"
+        },
+        {
+          "@id": "sdc4:mc-nf1air1zbj8v9w66jozdxmyl"
+        },
+        {
+          "@id": "sdc4:mc-h3kdbvdtyalpvik97saaf0an"
+        },
+        {
+          "@id": "sdc4:mc-ujir739mf1g8ajeczs9nzh9m"
+        },
+        {
+          "@id": "sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x"
+        },
+        {
+          "@id": "sdc4:mc-rpz1czz06jhpahmfz30rblvp"
+        },
+        {
+          "@id": "sdc4:mc-vbctgmdcwps5b3r3l6sboa6y"
+        },
+        {
+          "@id": "sdc4:mc-jujsdur1igws8orw6tvvlqco"
+        },
+        {
+          "@id": "sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj"
+        },
+        {
+          "@id": "sdc4:mc-uwiosm2q9ym3ewr4de910s70"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/audit-event"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/StructureDefinition/AuditEvent"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-kkdy1kjdruxvx8s1ra8eh231",
+      "label": "CMS Beneficiary",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig"
+        },
+        {
+          "@id": "sdc4:mc-vas0n7gpt46lxe3t2klb0ihw"
+        },
+        {
+          "@id": "sdc4:mc-frvayvpr4jkzykc8ykchaev6"
+        },
+        {
+          "@id": "sdc4:mc-shug78mge6b16gz073rt23ih"
+        },
+        {
+          "@id": "sdc4:mc-zshx6rx7ca1j00eda9kxyh6h"
+        },
+        {
+          "@id": "sdc4:mc-pczjiz8bjdg20api47gmeq0e"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-beneficiary"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C41189"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig",
+      "label": "Chronic Condition Indicators",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s"
+        },
+        {
+          "@id": "sdc4:mc-o4d67oubyyunugx3la44f53u"
+        },
+        {
+          "@id": "sdc4:mc-nd1v8jk7wtm1tthzw1f4987t"
+        },
+        {
+          "@id": "sdc4:mc-acr1xvqppf1b3rjsrst6tt4p"
+        },
+        {
+          "@id": "sdc4:mc-ix0my2v2z79s002g0r8orosf"
+        },
+        {
+          "@id": "sdc4:mc-jyx7rxfktazhgxgq84fxf6wr"
+        },
+        {
+          "@id": "sdc4:mc-hyqlz591lhj54sdt1a1mup70"
+        },
+        {
+          "@id": "sdc4:mc-mijr18ynaqde2l8jps70l2g6"
+        },
+        {
+          "@id": "sdc4:mc-udbydjqj76l8kl6mi2s3v7vd"
+        },
+        {
+          "@id": "sdc4:mc-of4crvmnrr3s5q5396kmt0jv"
+        },
+        {
+          "@id": "sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h"
+        },
+        {
+          "@id": "sdc4:mc-sbulkq80j4fkbiql4zgje4qr"
+        },
+        {
+          "@id": "sdc4:mc-yshoeps2dm0j1ueusqs825v6"
+        },
+        {
+          "@id": "sdc4:mc-lvockfc8lce5p15wuwxc1kwa"
+        },
+        {
+          "@id": "sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"
+        },
+        {
+          "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw"
+        },
+        {
+          "@id": "sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"
+        },
+        {
+          "@id": "sdc4:mc-atqkooccakulfhkt18c008fx"
+        },
+        {
+          "@id": "sdc4:mc-l784ggegqcvrpnmw2yvo4il7"
+        },
+        {
+          "@id": "sdc4:mc-xsohkckyof7y1xj8h1ab4pxu"
+        },
+        {
+          "@id": "sdc4:mc-zc6p008h5naqev8zngtzvyx9"
+        },
+        {
+          "@id": "sdc4:mc-p8u71b4lhct4ra0szgkex7xo"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/chronic-condition-indicators"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-vas0n7gpt46lxe3t2klb0ihw",
+      "label": "CMS Annual Amounts",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-nr2ylxsejuy6awcwqts30rpv"
+        },
+        {
+          "@id": "sdc4:mc-uqamp46mdscugwy7z99jaxsp"
+        },
+        {
+          "@id": "sdc4:mc-qbla2qbmgnvijbzpvgsivygy"
+        },
+        {
+          "@id": "sdc4:mc-xk3apd6exhme1to143takg17"
+        },
+        {
+          "@id": "sdc4:mc-ir7e2d7vwws6yisjvxgfm7ou"
+        },
+        {
+          "@id": "sdc4:mc-afusetixnkfrt5zheumblskw"
+        },
+        {
+          "@id": "sdc4:mc-gxyr702hyrvi5bxp2rn9avd5"
+        },
+        {
+          "@id": "sdc4:mc-hnvzazgaw60pz193376698lu"
+        },
+        {
+          "@id": "sdc4:mc-wl1enu6oomssv6fn1kvvdx9f"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-annual-amounts"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "https://schema.org/MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-frvayvpr4jkzykc8ykchaev6",
+      "label": "CMS Beneficiary Demographics",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-fnr5q1tfq42ez9jia9dqueho"
+        },
+        {
+          "@id": "sdc4:mc-hb937iiq8di6mrtn10j8n1vk"
+        },
+        {
+          "@id": "sdc4:mc-n8s2hvs4vrt5bwdykfzna5a6"
+        },
+        {
+          "@id": "sdc4:mc-u5xln0mppl3qk6vhgxdu0wcn"
+        },
+        {
+          "@id": "sdc4:mc-u4lkrbqp88mvp1m81ipglaov"
+        },
+        {
+          "@id": "sdc4:mc-u5tietya3u56hbz2kos06ai7"
+        },
+        {
+          "@id": "sdc4:mc-gxzbm758mhdz51xd4bawlfhh"
+        },
+        {
+          "@id": "sdc4:mc-vnlhr9c3ykayyegumhb09snf"
+        },
+        {
+          "@id": "sdc4:mc-js564tazefb6udqlh12rj04l"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-beneficiary-demographics"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C16495"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-shug78mge6b16gz073rt23ih",
+      "label": "CMS Medicare Coverage",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-hbnmrivnia0qrqidvtdryusj"
+        },
+        {
+          "@id": "sdc4:mc-v3kyd703i6kwzmmnasehyiks"
+        },
+        {
+          "@id": "sdc4:mc-z7hdfvo8n55ebh3hqs2devzz"
+        },
+        {
+          "@id": "sdc4:mc-uzjspmfqya7qwbg2vhfdlgzv"
+        },
+        {
+          "@id": "sdc4:mc-xftatfclhnwcyy2k96v7k638"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/cms-medicare-coverage"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/StructureDefinition/Coverage"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-hbnmrivnia0qrqidvtdryusj",
+      "label": "Insurance Coverage",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-oc8phvc3wtcfr5x5aauliaih"
+        },
+        {
+          "@id": "sdc4:mc-jqrxnqz7o48ay00s8y4ft7ju"
+        },
+        {
+          "@id": "sdc4:mc-zc3g4e4kjtzehn3kkffkeu29"
+        },
+        {
+          "@id": "sdc4:mc-ngyypbb7lmlj2g3kibcjqjmn"
+        },
+        {
+          "@id": "sdc4:mc-of5kk46yrln1ok8nuajeg2f8"
+        },
+        {
+          "@id": "sdc4:mc-ng1e2u43yhfura3vf0ahm609"
+        },
+        {
+          "@id": "sdc4:mc-hicvzztm4xzxnzp9f6tyu016"
+        },
+        {
+          "@id": "sdc4:mc-wpnvu6f56drsy767ucx60scd"
+        },
+        {
+          "@id": "sdc4:mc-zxoxt5fc40bzigieoh044gsy"
+        },
+        {
+          "@id": "sdc4:mc-rcl099nhkwzl6lu24lz9i01r"
+        },
+        {
+          "@id": "sdc4:mc-asmfpl0h2pw2xlldhiydibbn"
+        },
+        {
+          "@id": "sdc4:mc-onaqlxn6vzh5r1ub5oxn65iv"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/insurance-coverage"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/StructureDefinition/Coverage"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rrieq6eqf7zakso7kw55wfoi"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-oc8phvc3wtcfr5x5aauliaih",
+      "label": "Cost Sharing",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-fdtpvqw0se658x5m3zormi5v"
+        },
+        {
+          "@id": "sdc4:mc-h4ngotmyyx8yflaxicrxaba8"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/cost-sharing"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.costToBeneficiary"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-p0forxwcjbev3pug7emnye9i"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-jqrxnqz7o48ay00s8y4ft7ju",
+      "label": "Coverage Class",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-dro3p4hqu4ovk0uj7uu2upvq"
+        },
+        {
+          "@id": "sdc4:mc-zwmu2x9s8tx628rvb1trh0ij"
+        },
+        {
+          "@id": "sdc4:mc-m3m7ow1e7b27ejx6usxtgnbg"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "http://hl7.org/fhir/R4/"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fhir/coverage-class"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://hl7.org/fhir/R4/coverage-definitions.html#Coverage.class"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-sfxqqi30iz71da17vxfzyh3g"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-vmikfu0irht9fmq7q02t3oqs",
+      "label": "PROV Activity",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-hhusuzzig19rs46ngz23k5g7"
+        },
+        {
+          "@id": "sdc4:mc-wr06h54xqqw2q9id8i9673jy"
+        },
+        {
+          "@id": "sdc4:mc-r6hkunjm2q0hlxiknlc9ljix"
+        },
+        {
+          "@id": "sdc4:mc-uzai5uey5p1fnn9ezj9u6vor"
+        },
+        {
+          "@id": "sdc4:mc-jjzmhdxvbt97pq81iwqubtxk"
+        },
+        {
+          "@id": "sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk"
+        },
+        {
+          "@id": "sdc4:mc-vhezo2cckpe92x4c3j2memeh"
+        },
+        {
+          "@id": "sdc4:mc-t0whhrqtnb54te4mk48i1ooj"
+        },
+        {
+          "@id": "sdc4:mc-r48alj7hc3797qfjnf2uj71n"
+        },
+        {
+          "@id": "sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl"
+        },
+        {
+          "@id": "sdc4:mc-qh84jdzp1kxt85aq4ilo0svk"
+        },
+        {
+          "@id": "sdc4:mc-ginfqbk7q59ld2r4us8sjnv1"
+        },
+        {
+          "@id": "sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8"
+        },
+        {
+          "@id": "sdc4:mc-a5scyosu6j84vz350mqyrzl2"
+        },
+        {
+          "@id": "sdc4:mc-sa4nl1kbpdr842fkucvfjkpq"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-activity"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Activity"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-c179ilk2ns15cd5rzzdfd6f6",
+      "label": "PROV Agent",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-og08xf6bu928uuz6t3y0e23f"
+        },
+        {
+          "@id": "sdc4:mc-gb78cmuyo72hqs5apymdki7l"
+        },
+        {
+          "@id": "sdc4:mc-qb90a0sp9vvb6c5cbcf236ys"
+        },
+        {
+          "@id": "sdc4:mc-w2ruemcfy35rw60jl1t9dew2"
+        },
+        {
+          "@id": "sdc4:mc-xxe21o9ojzmy9wxxky1tnmog"
+        },
+        {
+          "@id": "sdc4:mc-eftvwi5byq6cdtd931qyxzw0"
+        },
+        {
+          "@id": "sdc4:mc-aa663ivutjf2fs4757t0bbzy"
+        },
+        {
+          "@id": "sdc4:mc-x0lebwtobgaelj5pev3258sd"
+        },
+        {
+          "@id": "sdc4:mc-i16vqj89it3db7d3c5qjko9p"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-agent"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Agent"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-fl5quyfd88rajs0egsgbq7ou",
+      "label": "FAIR Source File",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://github.com/SemanticDataCharter/FAIR_Data_Demo"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/fair/fair-source-file"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Entity"
+        }
+      ]
+    },
+    {
+      "@type": "ClusterType",
+      "@id": "sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l",
+      "label": "PROV Entity",
+      "cardinality": {
+        "minOccurs": 0,
+        "maxOccurs": 1
+      },
+      "contains": [
+        {
+          "@id": "sdc4:mc-abub2eah26yd2uzni3p9l58i"
+        },
+        {
+          "@id": "sdc4:mc-i1defiugxfdcwfb9rqv4p5tz"
+        },
+        {
+          "@id": "sdc4:mc-m9minyaug6ypyzt52zfxlyyi"
+        },
+        {
+          "@id": "sdc4:mc-wn77qo3b1xjwc4dudtyme2io"
+        },
+        {
+          "@id": "sdc4:mc-kmcck093437mfdlnxnrzm0xw"
+        },
+        {
+          "@id": "sdc4:mc-phus5105uw30xejqs7baamyx"
+        },
+        {
+          "@id": "sdc4:mc-kqlatg3rz00z58muv7j8toyl"
+        },
+        {
+          "@id": "sdc4:mc-credrxhz4hg4c42sihm0wb6s"
+        },
+        {
+          "@id": "sdc4:mc-bfn83x3fw1cyuqriuoquu9t1"
+        },
+        {
+          "@id": "sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf"
+        },
+        {
+          "@id": "sdc4:mc-mjl0vv39zsbigqiuyqm66fkv"
+        },
+        {
+          "@id": "sdc4:mc-lghqkvp7vapqk10l248kzqs8"
+        },
+        {
+          "@id": "sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3"
+        },
+        {
+          "@id": "sdc4:mc-i4e2nod7ss9d4cumhn2pah8b"
+        },
+        {
+          "@id": "sdc4:mc-yk5nrxndulhebpi3hiywk8u8"
+        },
+        {
+          "@id": "sdc4:mc-hswapeutuik067dokidnbv88"
+        }
+      ],
+      "semanticLinks": [
+        {
+          "predicate": "http://purl.org/dc/terms/publisher",
+          "object": "https://axius-sdc.com"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/identifier",
+          "object": "https://axius-sdc.com/library/provgov/prov-entity"
+        },
+        {
+          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
+          "object": "http://www.w3.org/ns/prov#Entity"
+        },
+        {
+          "predicate": "http://purl.org/dc/terms/source",
+          "object": "https://www.w3.org/TR/prov-o/"
+        }
+      ]
+    }
+  ]
+}

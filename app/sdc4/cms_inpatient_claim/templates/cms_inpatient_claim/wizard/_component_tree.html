@@ -1,0 +1,272 @@
+{% comment %}
+Recursive template for rendering the component tree in Step 2 (Data Entry).
+
+Expected context:
+- tree: dict with 'label', 'ct_id', 'type', 'children' keys
+- form: The DataEntryForm instance (inherited from parent)
+- field_metadata: Metadata for each field (inherited from parent)
+{% endcomment %}
+{% load cms_inpatient_claim_extras %}
+
+{% for component in tree.children %}
+<div class="card mb-3 {% if component.type == 'Cluster' %}cluster-card{% else %}component-card{% endif %}"
+     data-ct-id="{{ component.ct_id }}"
+     data-component-type="{{ component.type }}">
+
+    {% if component.type == 'Cluster' %}
+    <!-- Cluster: Collapsible header with nested components -->
+    <div class="card-header py-2 d-flex justify-content-between align-items-center cluster-header"
+         data-bs-toggle="collapse"
+         data-bs-target="#cluster-{{ component.ct_id }}"
+         aria-expanded="true"
+         aria-controls="cluster-{{ component.ct_id }}"
+         style="cursor: pointer;">
+        <div>
+            <i class="bi bi-chevron-down collapse-icon me-2"></i>
+            <strong>{{ component.label }}</strong>
+            <span class="badge bg-info ms-2">Cluster</span>
+        </div>
+        {% if component.min_occurs is not None or component.max_occurs is not None %}
+        <small class="text-muted">
+            [{{ component.min_occurs|default:0 }}..{{ component.max_occurs|default:"*" }}]
+        </small>
+        {% endif %}
+    </div>
+    <div class="collapse show" id="cluster-{{ component.ct_id }}">
+        <div class="card-body component-tree">
+            {% include 'cms_inpatient_claim/wizard/_component_tree.html' with tree=component %}
+        </div>
+    </div>
+
+    {% else %}
+    <!-- Data Component: Form field with optional metadata -->
+    <div class="card-header py-2 d-flex justify-content-between align-items-center">
+        <div>
+            <strong>{{ component.label }}</strong>
+            <span class="badge bg-secondary ms-2">{{ component.type }}</span>
+        </div>
+        {% if component.allow_vtb or component.allow_vte or component.allow_tr %}
+        <button type="button" class="btn btn-sm btn-outline-secondary metadata-toggle"
+                data-bs-toggle="collapse"
+                data-bs-target="#metadata-{{ component.ct_id }}"
+                aria-expanded="false"
+                title="Show/hide metadata fields">
+            <i class="bi bi-three-dots"></i>
+        </button>
+        {% endif %}
+    </div>
+
+    <div class="card-body py-3">
+        {% with field=form|get_field:component.ct_id %}
+        {% if field %}
+        <div class="sdc-component-field">
+            <!-- Primary value input -->
+            <div class="row g-2 align-items-start">
+                <div class="col-md-4">
+                    <label for="{{ field.id_for_label }}"
+                           class="form-label mb-1 {% if field.field.required %}required-field{% endif %}">
+                        {{ field.label }}
+                    </label>
+                    {% if component.description %}
+                    <small class="d-block text-muted" style="font-size: 0.75rem;">
+                        {{ component.description|truncatechars:100 }}
+                    </small>
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group">
+                        {{ field }}
+                        <!-- EV Button -->
+                        <button type="button" class="btn btn-outline-warning ev-toggle"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#ev-{{ component.ct_id }}"
+                                aria-expanded="false"
+                                title="Exceptional Value (if data unavailable)">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </button>
+                    </div>
+                    {% if field.errors %}
+                    <div class="invalid-feedback d-block">{{ field.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Exceptional Value selector (collapsed by default) -->
+            <div class="collapse mt-2" id="ev-{{ component.ct_id }}">
+                <div class="card card-body py-2 bg-warning bg-opacity-10 border-warning">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <label class="form-label form-label-sm">Exceptional Value</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select name="{{ component.ct_id }}_ev" class="form-select form-select-sm ev-selector"
+                                    data-field-id="{{ field.id_for_label }}">
+                                <option value="">-- Select if data unavailable --</option>
+                                <option value="NI">NI - No Information</option>
+                                <option value="MSK">MSK - Masked</option>
+                                <option value="INV">INV - Invalid</option>
+                                <option value="UNK">UNK - Unknown</option>
+                                <option value="NASK">NASK - Not Asked</option>
+                                <option value="ASKR">ASKR - Asked and Refused</option>
+                                <option value="NAV">NAV - Not Available</option>
+                                <option value="NA">NA - Not Applicable</option>
+                                <option value="ASKU">ASKU - Asked but Unknown</option>
+                                <option value="OTH">OTH - Other</option>
+                            </select>
+                            <small class="form-text text-muted">
+                                Select an exceptional value code when the actual data cannot be provided
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metadata section (collapsed by default) -->
+            {% if component.allow_vtb or component.allow_vte or component.allow_tr or component.allow_modified or component.allow_latitude or component.allow_longitude %}
+            <div class="collapse mt-2" id="metadata-{{ component.ct_id }}">
+                <div class="card card-body py-2 bg-light border-info" style="border-left: 3px solid var(--bs-info);">
+                    <h6 class="text-muted mb-2"><i class="bi bi-clock-history"></i> Value Metadata</h6>
+                    <div class="row g-2">
+                        {% if component.allow_vtb %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Valid Time Begin (VTB)</label>
+                            <input type="datetime-local" name="{{ component.ct_id }}_vtb"
+                                   class="form-control form-control-sm">
+                            <small class="form-text text-muted">When this value became valid</small>
+                        </div>
+                        {% endif %}
+                        {% if component.allow_vte %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Valid Time End (VTE)</label>
+                            <input type="datetime-local" name="{{ component.ct_id }}_vte"
+                                   class="form-control form-control-sm">
+                            <small class="form-text text-muted">When this value expires</small>
+                        </div>
+                        {% endif %}
+                        {% if component.allow_tr %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Time Recorded (TR)</label>
+                            <input type="datetime-local" name="{{ component.ct_id }}_tr"
+                                   class="form-control form-control-sm bg-light" readonly>
+                            <small class="form-text text-muted">Auto-set on save</small>
+                        </div>
+                        {% endif %}
+                        {% if component.allow_modified %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Modified</label>
+                            <input type="datetime-local" name="{{ component.ct_id }}_modified"
+                                   class="form-control form-control-sm bg-light" readonly>
+                            <small class="form-text text-muted">Auto-updated on changes</small>
+                        </div>
+                        {% endif %}
+                        {% if component.allow_latitude or component.allow_longitude %}
+                        <div class="col-12 mt-2">
+                            <h6 class="text-muted mb-2"><i class="bi bi-geo-alt"></i> Location</h6>
+                        </div>
+                        {% if component.allow_latitude %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Latitude</label>
+                            <input type="number" step="any" name="{{ component.ct_id }}_latitude"
+                                   class="form-control form-control-sm"
+                                   min="-90" max="90" placeholder="-90 to 90">
+                        </div>
+                        {% endif %}
+                        {% if component.allow_longitude %}
+                        <div class="col-md-6">
+                            <label class="form-label form-label-sm mb-1">Longitude</label>
+                            <input type="number" step="any" name="{{ component.ct_id }}_longitude"
+                                   class="form-control form-control-sm"
+                                   min="-180" max="180" placeholder="-180 to 180">
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% else %}
+        <p class="text-muted mb-0"><i class="bi bi-exclamation-circle"></i> Field not found: {{ component.ct_id }}</p>
+        {% endif %}
+        {% endwith %}
+    </div>
+    {% endif %}
+</div>
+{% empty %}
+<p class="text-muted">No components defined in this section.</p>
+{% endfor %}
+
+<script>
+// EV selector interaction - disable value field when EV is selected
+document.querySelectorAll('.ev-selector').forEach(function(evSelect) {
+    evSelect.addEventListener('change', function() {
+        const fieldId = this.dataset.fieldId;
+        const field = document.getElementById(fieldId);
+        if (field) {
+            if (this.value) {
+                field.disabled = true;
+                field.dataset.originalValue = field.value;
+                field.value = '';
+                field.classList.add('bg-light', 'text-muted');
+            } else {
+                field.disabled = false;
+                if (field.dataset.originalValue) {
+                    field.value = field.dataset.originalValue;
+                }
+                field.classList.remove('bg-light', 'text-muted');
+            }
+        }
+    });
+});
+
+// Cluster collapse icon toggle
+document.querySelectorAll('.cluster-header').forEach(function(header) {
+    const collapseTarget = header.getAttribute('data-bs-target');
+    const collapseEl = document.querySelector(collapseTarget);
+    if (collapseEl) {
+        collapseEl.addEventListener('hidden.bs.collapse', function() {
+            header.querySelector('.collapse-icon').classList.remove('bi-chevron-down');
+            header.querySelector('.collapse-icon').classList.add('bi-chevron-right');
+        });
+        collapseEl.addEventListener('shown.bs.collapse', function() {
+            header.querySelector('.collapse-icon').classList.remove('bi-chevron-right');
+            header.querySelector('.collapse-icon').classList.add('bi-chevron-down');
+        });
+    }
+});
+</script>
+
+<style>
+.cluster-card {
+    border-left: 3px solid var(--bs-info);
+}
+
+.component-card {
+    border-left: 3px solid var(--bs-secondary);
+}
+
+.cluster-header:hover {
+    background-color: rgba(var(--bs-info-rgb), 0.1);
+}
+
+.collapse-icon {
+    transition: transform 0.2s ease;
+}
+
+.ev-toggle.active,
+.ev-toggle:hover {
+    background-color: var(--bs-warning);
+    color: var(--bs-dark);
+}
+
+.metadata-toggle:hover {
+    background-color: var(--bs-info);
+    color: white;
+}
+
+.sdc-component-field .form-label-sm {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--bs-secondary);
+}
+</style>

@@ -1,0 +1,13 @@
+key: units-cigarettes
+label: Cigarettes
+type: Units
+description: A count of cigarettes.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: cigarettes
+  definition: http://qudt.org/vocab/unit/NUM

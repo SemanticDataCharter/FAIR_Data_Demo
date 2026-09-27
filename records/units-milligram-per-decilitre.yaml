@@ -1,0 +1,13 @@
+key: units-milligram-per-decilitre
+label: Milligrams per Decilitre
+type: Units
+description: Mass concentration in milligrams per decilitre.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: mg/dL
+  definition: http://qudt.org/vocab/unit/MilliGM-PER-DeciL

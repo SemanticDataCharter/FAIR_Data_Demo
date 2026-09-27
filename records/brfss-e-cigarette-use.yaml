@@ -1,0 +1,19 @@
+key: brfss-e-cigarette-use
+label: Current E-cigarette Use (ECIGNOW2)
+type: XdToken
+description: Whether the respondent now uses e-cigarettes every day, some days, or not at all, or never used them (ECIGNOW2).
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: Never used e-cigarettes in your entire life
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Use them every day
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Use them some days
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Not at all (right now)
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf

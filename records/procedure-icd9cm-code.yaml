@@ -1,0 +1,13 @@
+key: procedure-icd9cm-code
+label: Procedure Code (ICD-9-CM)
+type: XdString
+description: An ICD-9-CM volume 3 procedure code as recorded on a Medicare inpatient claim, without the decimal point.
+source:
+  name: ICD-9-CM
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/sid/icd-9-cm
+  basis: standard
+constraints:
+  max_length: 4
+  str_fmt: '[0-9]{2,4}'

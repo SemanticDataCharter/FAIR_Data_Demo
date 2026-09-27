@@ -1,0 +1,15 @@
+key: nhanes-interview-examination-status
+label: Interview/Examination Status (RIDSTATR)
+type: XdToken
+description: Whether the participant was interviewed only, or interviewed and examined at the mobile examination center (RIDSTATR).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR
+  basis: standard
+enumeration:
+- value: Interviewed only
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR
+- value: Both interviewed and MEC examined
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR

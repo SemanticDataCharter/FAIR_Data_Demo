@@ -1,0 +1,13 @@
+key: cms-claim-admission-date
+label: Claim Admission Date (CLM_ADMSN_DT)
+type: XdTemporal
+description: The inpatient admission date (CLM_ADMSN_DT).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  allow:
+  - date

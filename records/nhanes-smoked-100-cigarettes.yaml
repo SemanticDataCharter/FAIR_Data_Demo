@@ -1,0 +1,18 @@
+key: nhanes-smoked-100-cigarettes
+label: Smoked at Least 100 Cigarettes in Life (SMQ020)
+type: XdToken
+description: Whether the participant has smoked at least 100 cigarettes in their life (SMQ020).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ020
+  basis: standard
+- predicate: skos:closeMatch
+  iri: https://loinc.org/63581-3/
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

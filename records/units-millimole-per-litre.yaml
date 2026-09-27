@@ -1,0 +1,13 @@
+key: units-millimole-per-litre
+label: Millimoles per Litre
+type: Units
+description: Substance concentration in millimoles per litre.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: mmol/L
+  definition: http://qudt.org/vocab/unit/MilliMOL-PER-L

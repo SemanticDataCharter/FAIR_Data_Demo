@@ -1,0 +1,16 @@
+key: condition-alzheimers-disease
+label: 'Condition: Alzheimer''s Disease or Related Disorder'
+type: XdToken
+description: 'Whether the person has alzheimer''s disease or related disorder (Alzheimer''s Disease or Related Disorder, SNOMED CT 26929004),
+  on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/26929004
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

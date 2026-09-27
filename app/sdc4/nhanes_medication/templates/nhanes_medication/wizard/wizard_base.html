@@ -1,0 +1,78 @@
+{% extends 'nhanes_medication/base.html' %}
+{% load nhanes_medication_extras %}
+
+{% block title %}{{ dm_metadata.TITLE }} - {{ step_name }}{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12">
+        <!-- Data Model Info -->
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-diagram-3"></i> {{ dm_metadata.TITLE }}
+                </h5>
+                <small class="text-muted">Instance: {{ instance_id }}</small>
+            </div>
+        </div>
+
+        <!-- Wizard Progress -->
+        <ul class="wizard-progress">
+            {% for vstep in visible_steps %}
+            <li class="step {% if vstep < step %}completed{% elif vstep == step %}active{% endif %}">
+                <span>{{ step_names|dict_get:vstep }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Step Content -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Step {{ current_step_index }} of {{ total_steps }}: {{ step_name }}</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {% block step_content %}{% endblock %}
+
+                    <!-- Navigation Buttons -->
+                    <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                        <div>
+                            {% if not is_first_step %}
+                            <button type="submit" name="prev" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Previous
+                            </button>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <button type="submit" name="save_draft" class="btn btn-outline-primary me-2">
+                                <i class="bi bi-save"></i> Save Draft
+                            </button>
+
+                            {% if is_last_step %}
+                            <button type="submit" name="next" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Complete
+                            </button>
+                            {% else %}
+                            <button type="submit" name="next" class="btn btn-primary">
+                                Next <i class="bi bi-arrow-right"></i>
+                            </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+    // Dict get filter implementation for JS
+    // (handled by custom template tag in Django)
+</script>
+{% endblock %}

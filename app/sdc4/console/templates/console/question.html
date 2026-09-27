@@ -1,0 +1,138 @@
+{% extends "console/base.html" %}
+{% block title %}Cross-study question{% endblock %}
+
+{% block content %}
+<div class="ask">
+  <span class="label">Question</span>
+  <span class="q">Which components do the three studies share, and how many records carry each?</span>
+  {% if not q.unavailable %}<span class="run">answered in {{ q.elapsed }} s</span>{% endif %}
+</div>
+
+{% if q.unavailable %}
+  <section class="card" style="margin-top:14px">
+    <div class="note">{{ q.unavailable }}</div>
+  </section>
+{% else %}
+  <section class="answer">
+    <div class="figs">
+      <div class="fig">
+        <div class="v">{{ q.multi_study }}</div>
+        <div class="k">components carried by more than one study</div>
+        <div class="src">{{ q.all_three }} of them by all three; {{ q.shared }} by more than one model, counting a study's own models</div>
+      </div>
+      <div class="fig">
+        <div class="v">{{ q.records }}</div>
+        <div class="k">records in the store</div>
+        <div class="src">across {{ q.models }} models</div>
+      </div>
+      <div class="fig">
+        <div class="v">0</div>
+        <div class="k">mapping tables consulted</div>
+        <div class="src">the join is the component itself</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Models carrying it</th><th class="num">Studies</th><th class="num">Records</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for r in q.rows %}
+          <tr>
+            <td>{{ r.label }}</td>
+            <td>{{ r.studies }}</td>
+            <td class="num">{{ r.study_count }}</td>
+            <td class="num">{{ r.records }}</td>
+            <td>
+              {% if r.open %}
+                <a class="why" href="{% url 'console:instance' r.open.ct_id r.open.instance_id %}?pane=table">open a record &rsaquo;</a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">The table shows the components more than one study carries. {{ q.within_only }} more are shared
+      between one study's own models (the CMS claim fields the inpatient and outpatient claims both carry, the
+      beneficiary identifier every CMS record carries), and the provenance and audit components every model composes
+      are left out, which is true and not the point. The query is printed on the right.</p>
+  </section>
+
+  <div class="grid" style="margin-top:14px">
+    <section class="card">
+      <header><span class="t">What the first build could not answer</span></header>
+      <p class="hint" style="padding:12px">
+        The first build of this demonstration published 976 components for these three studies, and the
+        studies shared none of them: each minted its own, and a query that joined on a shared component
+        returned nothing. The README said so and kept the queries as a specification. The second build
+        composes the three study models from the same component libraries, so the join is the component,
+        and this page is the specification running.
+      </p>
+    </section>
+
+    <aside>
+      <section class="card">
+        <header><span class="t">The query, in full</span></header>
+        <div class="pane"><pre>{{ q.query }}</pre></div>
+      </section>
+    </aside>
+  </div>
+
+  <div class="ask" style="margin-top:22px">
+    <span class="label">Question</span>
+    <span class="q">What does each study say about each chronic condition, and on what basis?</span>
+    {% if not t.unavailable %}<span class="run">answered in {{ t.elapsed }} s</span>{% endif %}
+  </div>
+  {% if t.unavailable %}
+    <section class="card" style="margin-top:14px"><div class="note">{{ t.unavailable }}</div></section>
+  {% else %}
+  <section class="answer">
+    <div class="figs">
+      <div class="fig">
+        <div class="v">{{ t.conditions }}</div>
+        <div class="k">chronic conditions</div>
+        <div class="src">one shared component per condition, with a SNOMED CT subject</div>
+      </div>
+      <div class="fig">
+        <div class="v">2</div>
+        <div class="k">bases a study can state</div>
+        <div class="src">told by a health professional, or found in claims</div>
+      </div>
+      <div class="fig">
+        <div class="v">0</div>
+        <div class="k">rows reconciled</div>
+        <div class="src">the basis is a value in the record, not a footnote in a codebook</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Condition</th><th>Study</th><th>Basis</th><th class="num">Records</th><th class="num">Yes</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for r in t.rows %}
+          <tr>
+            <td>{{ r.condition }}</td>
+            <td>{{ r.study }}</td>
+            <td>{{ r.basis }}</td>
+            <td class="num">{{ r.records }}</td>
+            <td class="num">{{ r.yes }}</td>
+            <td>{% if r.open %}<a class="why" href="{% url 'console:instance' r.open.ct_id r.open.instance_id %}?pane=table">open a record &rsaquo;</a>{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p class="hint">A survey asks whether a doctor ever said so; a claims file records whether a claim
+      was ever paid for it. Both are answers to the same component, and the record says which kind it is,
+      so nobody has to remember that a CMS "yes" and a BRFSS "yes" were established differently.</p>
+  </section>
+  <div class="grid" style="margin-top:14px">
+    <aside>
+      <section class="card">
+        <header><span class="t">The query, in full</span></header>
+        <div class="pane"><pre>{{ t.query }}</pre></div>
+      </section>
+    </aside>
+  </div>
+  {% endif %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{
+  "tiny_id": "nhanes-participant",
+  "label": "NHANES Participant",
+  "description": "One NHANES 2017-2018 participant: the sequence number, the survey design, demographics, the blood pressure examination, laboratory results, smoking, medical conditions and physical functioning, joined on SEQN across the eight source files. Members: Respondent Sequence Number (SEQN); NHANES Survey Design; NHANES Demographics; NHANES Blood Pressure; NHANES Laboratory Results; NHANES Smoking; NHANES Medical Conditions; NHANES Physical Functioning.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-participant",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C41189",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-respondent-sequence-number",
+    "nhanes-survey-design",
+    "nhanes-demographics",
+    "nhanes-blood-pressure",
+    "nhanes-laboratory-results",
+    "nhanes-smoking",
+    "nhanes-medical-conditions",
+    "nhanes-physical-functioning"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

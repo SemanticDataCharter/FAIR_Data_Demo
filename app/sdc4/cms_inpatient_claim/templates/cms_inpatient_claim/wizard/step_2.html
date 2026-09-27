@@ -1,0 +1,42 @@
+{% extends 'cms_inpatient_claim/wizard/wizard_base.html' %}
+{% load cms_inpatient_claim_extras %}
+
+{% block step_content %}
+<div class="row">
+    {{ form.non_field_errors }}
+
+    <!-- Data Entry Fields -->
+    <div class="col-12">
+        <p class="text-muted mb-4">
+            Enter data values for the components below. Fields marked with
+            <span class="required-field"></span> are required.
+        </p>
+
+        <!-- Component Tree Rendering -->
+        <div class="component-tree component-tree-root">
+            {% include 'cms_inpatient_claim/wizard/_component_tree.html' with tree=component_tree %}
+        </div>
+
+        <!-- Alternative: Flat field rendering if tree not available -->
+        {% if not component_tree %}
+        <div class="row">
+            {% for field in form %}
+            <div class="col-md-6 mb-3">
+                <label for="{{ field.id_for_label }}"
+                       class="form-label {% if field.field.required %}required-field{% endif %}">
+                    {{ field.label }}
+                </label>
+                {{ field }}
+                {% if field.errors %}
+                <div class="invalid-feedback d-block">{{ field.errors.0 }}</div>
+                {% endif %}
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

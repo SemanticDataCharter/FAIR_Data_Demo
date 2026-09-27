@@ -1,0 +1,18 @@
+key: nhanes-mean-cell-hemoglobin
+label: Mean Cell Hemoglobin
+type: XdQuantity
+description: Mean Cell Hemoglobin (LBXMCHSI, LOINC 785-6).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/785-6/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMCHSI
+  basis: standard
+constraints:
+  units: units-picogram
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

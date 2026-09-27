@@ -1,0 +1,14 @@
+key: system-ndc
+label: 'Code System: NDC'
+type: XdLink
+description: 'The code system of a coded value, fixed: the National Drug Code (http://hl7.org/fhir/sid/ndc). FHIR Coding.system.'
+source:
+  name: NDC
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/sid/ndc
+  basis: standard
+constraints:
+  link: http://hl7.org/fhir/sid/ndc
+  relation: codeSystem
+  relation_uri: http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system

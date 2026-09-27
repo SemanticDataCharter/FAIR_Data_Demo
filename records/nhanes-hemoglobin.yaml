@@ -1,0 +1,18 @@
+key: nhanes-hemoglobin
+label: Hemoglobin
+type: XdQuantity
+description: Hemoglobin (LBXHGB, LOINC 718-7).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/718-7/
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXHGB
+  basis: standard
+constraints:
+  units: units-gram-per-decilitre
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

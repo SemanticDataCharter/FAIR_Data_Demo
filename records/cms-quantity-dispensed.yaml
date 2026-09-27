@@ -1,0 +1,15 @@
+key: cms-quantity-dispensed
+label: Quantity Dispensed (QTY_DSPNSD_NUM)
+type: XdQuantity
+description: The quantity dispensed (QTY_DSPNSD_NUM).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-items
+  total_digits: 8
+  fraction_digits: 2
+  min_inclusive: 0

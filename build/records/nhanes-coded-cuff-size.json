@@ -1,0 +1,83 @@
+{
+  "tiny_id": "nhanes-coded-cuff-size",
+  "label": "Coded Cuff Size (BPACSZ)",
+  "description": "The blood pressure cuff size used (BPACSZ).",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Infant (9 x 18 cm)",
+      "Child (12 x 22 cm)",
+      "Adult (15 x 32 cm)",
+      "Large (17 x 36 cm)",
+      "Thigh (23 x 38 cm)"
+    ],
+    "enum_descr": [
+      "Infant (9 x 18 cm)",
+      "Child (12 x 22 cm)",
+      "Adult (15 x 32 cm)",
+      "Large (17 x 36 cm)",
+      "Thigh (23 x 38 cm)"
+    ],
+    "definitions": [
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Infant (9 x 18 cm)",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    },
+    {
+      "value": "Child (12 x 22 cm)",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    },
+    {
+      "value": "Adult (15 x 32 cm)",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    },
+    {
+      "value": "Large (17 x 36 cm)",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    },
+    {
+      "value": "Thigh (23 x 38 cm)",
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-coded-cuff-size",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

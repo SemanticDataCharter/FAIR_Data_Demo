@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdc4:dm-mllwhe842wtnim4ms48qonio
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:sdc4="https://semanticdatacharter.com/ns/sdc4/"
+  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-mllwhe842wtnim4ms48qonio.xsd">
+
+  <dm-label>CMS Outpatient Claim</dm-label>
+  <dm-language>en-US</dm-language>
+  <dm-encoding>utf-8</dm-encoding>
+  <creation_timestamp>_PH_</creation_timestamp>
+  <instance_id>yal49xy5838nsu47mqzohpwy</instance_id>
+  <instance_version>_PH_</instance_version>
+  <source_instance_id>_OPT_PH_</source_instance_id>
+  <source_version_id>_OPT_PH_</source_version_id>
+  <current-state>_OPT_PH_</current-state>
+  <sdc4:ms-cfbimjxaeo7964wdjqelryzr>
+    <label>CMS Outpatient Claim Governed Record</label>
+  <sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
+    <label>Audit Event</label>
+  <sdc4:ms-hpkc8xrccpwc3shm4ubm5o47>
+    <sdc4:ms-dkc2ccj5te35z9gd4bu1blcq>
+      <label>Audit Agent Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-dkc2ccj5te35z9gd4bu1blcq>
+  </sdc4:ms-hpkc8xrccpwc3shm4ubm5o47>
+  <sdc4:ms-ynnnvgi8748h2d01z2gf4z8x>
+    <sdc4:ms-gcjyjrnp0wsfoelcp4m05c67>
+      <label>Audit Entity Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-gcjyjrnp0wsfoelcp4m05c67>
+  </sdc4:ms-ynnnvgi8748h2d01z2gf4z8x>
+  <sdc4:ms-uf11uwd9s5x5t9bw98z9dr5l>
+    <sdc4:ms-fjhgr5fyqxt2crmg2cb5c513>
+      <label>Audit Event Identifier</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-fjhgr5fyqxt2crmg2cb5c513>
+  </sdc4:ms-uf11uwd9s5x5t9bw98z9dr5l>
+  <sdc4:ms-jwpkqjchavj885uwt5v1jgid>
+    <sdc4:ms-sndpbhm3xbd6qtbyxmvh3i0e>
+      <label>Data Subject Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-sndpbhm3xbd6qtbyxmvh3i0e>
+  </sdc4:ms-jwpkqjchavj885uwt5v1jgid>
+  <sdc4:ms-lbor36zlwkf6u7yx9lgqfx0d>
+    <sdc4:ms-nf1air1zbj8v9w66jozdxmyl>
+      <label>On Behalf Of Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-nf1air1zbj8v9w66jozdxmyl>
+  </sdc4:ms-lbor36zlwkf6u7yx9lgqfx0d>
+  <sdc4:ms-yec6svv50u9d1tz9rp6kmv3v>
+    <sdc4:ms-h3kdbvdtyalpvik97saaf0an>
+      <label>System Identifier</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-h3kdbvdtyalpvik97saaf0an>
+  </sdc4:ms-yec6svv50u9d1tz9rp6kmv3v>
+  <sdc4:ms-r6x55vvha5ci3rl1o29adk03>
+    <sdc4:ms-ujir739mf1g8ajeczs9nzh9m>
+      <label>System Location Name</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-ujir739mf1g8ajeczs9nzh9m>
+  </sdc4:ms-r6x55vvha5ci3rl1o29adk03>
+  <sdc4:ms-lcsns9hrrzcg74jlit8srxgp>
+    <sdc4:ms-ce1c8sydkov8bkv4dgdmwe5x>
+      <label>Audit Event Action</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-ce1c8sydkov8bkv4dgdmwe5x>
+  </sdc4:ms-lcsns9hrrzcg74jlit8srxgp>
+  <sdc4:ms-wu8f1x11e6ihbltdd6w20rg5>
+    <sdc4:ms-rpz1czz06jhpahmfz30rblvp>
+      <label>Audit Event Outcome</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-rpz1czz06jhpahmfz30rblvp>
+  </sdc4:ms-wu8f1x11e6ihbltdd6w20rg5>
+  <sdc4:ms-kce8557jd9vg6ei59m7o1kc2>
+    <sdc4:ms-vbctgmdcwps5b3r3l6sboa6y>
+      <label>Confidentiality</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-vbctgmdcwps5b3r3l6sboa6y>
+  </sdc4:ms-kce8557jd9vg6ei59m7o1kc2>
+  <sdc4:ms-vgvl7vcmbiz2z7zn9v7ayc04>
+    <sdc4:ms-jujsdur1igws8orw6tvvlqco>
+      <label>Provenance Agent Type</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-jujsdur1igws8orw6tvvlqco>
+  </sdc4:ms-vgvl7vcmbiz2z7zn9v7ayc04>
+  <sdc4:ms-xcmayroyt4krhroimfb3e859>
+    <sdc4:ms-d1evlz8yvdlwt6ia9fjq4pgj>
+      <label>Purpose of Use</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-d1evlz8yvdlwt6ia9fjq4pgj>
+  </sdc4:ms-xcmayroyt4krhroimfb3e859>
+  <sdc4:ms-r5fply6fvzhg90zybxgdx5cb>
+    <sdc4:ms-uwiosm2q9ym3ewr4de910s70>
+      <label>Audit Recorded At</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-uwiosm2q9ym3ewr4de910s70>
+  </sdc4:ms-r5fply6fvzhg90zybxgdx5cb>
+  </sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
+  <sdc4:ms-ls6pcoy94kbq68aa9v5y1qr8>
+    <label>CMS Outpatient Claim</label>
+  <sdc4:ms-av5ztq8he6ot9ubpc4mhtp3s>
+    <label>Admitting Diagnosis</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  <sdc4:ms-isfdjjnpue8yz1b0vyipqh22>
+    <sdc4:ms-qdl35df54hlauu2mhwac6goe>
+      <label>Code System: ICD-9-CM</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <link>http://hl7.org/fhir/sid/icd-9-cm</link>
+      <relation>codeSystem</relation>
+      <relation-uri>http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system</relation-uri>
+    </sdc4:ms-qdl35df54hlauu2mhwac6goe>
+  </sdc4:ms-isfdjjnpue8yz1b0vyipqh22>
+  <sdc4:ms-skh5si3dihf58memlh1or4ov>
+    <sdc4:ms-jpr4t7i8lrhxen4x63s6jp2c>
+      <label>Diagnosis Code (ICD-9-CM)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-jpr4t7i8lrhxen4x63s6jp2c>
+  </sdc4:ms-skh5si3dihf58memlh1or4ov>
+  <sdc4:ms-deau6rxprq0zivzdddupk7cj>
+    <sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+      <label>Code Display Text</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+  </sdc4:ms-deau6rxprq0zivzdddupk7cj>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-av5ztq8he6ot9ubpc4mhtp3s>
+  <sdc4:ms-v6cz7f7o7q0e1ziekrn7oam5>
+    <label>Claim Diagnosis 1</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-v6cz7f7o7q0e1ziekrn7oam5>
+  <sdc4:ms-c7up53lff6ip0zyv8dkkt868>
+    <label>Claim Diagnosis 10</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-c7up53lff6ip0zyv8dkkt868>
+  <sdc4:ms-x1942izf02stqs3kiu2yepf5>
+    <label>Claim Diagnosis 2</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-x1942izf02stqs3kiu2yepf5>
+  <sdc4:ms-n1asylnn94ejo14l8us3wxf6>
+    <label>Claim Diagnosis 3</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-n1asylnn94ejo14l8us3wxf6>
+  <sdc4:ms-lpc82x2o46h4uixol7vdj05b>
+    <label>Claim Diagnosis 4</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-lpc82x2o46h4uixol7vdj05b>
+  <sdc4:ms-zd43681w5jtanaml4wiaz1yo>
+    <label>Claim Diagnosis 5</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-zd43681w5jtanaml4wiaz1yo>
+  <sdc4:ms-xvdtx5vxlu8pl9dyfz8x8m1r>
+    <label>Claim Diagnosis 6</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-xvdtx5vxlu8pl9dyfz8x8m1r>
+  <sdc4:ms-pelxyum1gkog2kgqhndrluo7>
+    <label>Claim Diagnosis 7</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-pelxyum1gkog2kgqhndrluo7>
+  <sdc4:ms-p2y70uqn5j1mrktvht2tf6u4>
+    <label>Claim Diagnosis 8</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-p2y70uqn5j1mrktvht2tf6u4>
+  <sdc4:ms-it3x0l7q5js77eubgxkv0eij>
+    <label>Claim Diagnosis 9</label>
+  <sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+    <label>Diagnosis (ICD-9-CM)</label>
+  </sdc4:ms-f9y0zpvphrny3gapgnjss0w1>
+  </sdc4:ms-it3x0l7q5js77eubgxkv0eij>
+  <sdc4:ms-e8mpixmhxaxlcrxmdfepx9za>
+    <label>Claim HCPCS 1</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  <sdc4:ms-p3ibv9ghyuiq4fdo7pzafi1b>
+    <sdc4:ms-u3euzufk7txuf1u20g0ca89l>
+      <label>Code System: HCPCS</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <link>http://www.ama-assn.org/go/cpt</link>
+      <relation>codeSystem</relation>
+      <relation-uri>http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system</relation-uri>
+    </sdc4:ms-u3euzufk7txuf1u20g0ca89l>
+  </sdc4:ms-p3ibv9ghyuiq4fdo7pzafi1b>
+  <sdc4:ms-yq8081214dxxn8i5lcop56ol>
+    <sdc4:ms-sqy06x5fv64a322dtl308lmw>
+      <label>HCPCS Code</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-sqy06x5fv64a322dtl308lmw>
+  </sdc4:ms-yq8081214dxxn8i5lcop56ol>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-e8mpixmhxaxlcrxmdfepx9za>
+  <sdc4:ms-uso6k4nxb3m5ju33iqric9as>
+    <label>Claim HCPCS 10</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-uso6k4nxb3m5ju33iqric9as>
+  <sdc4:ms-xfvr55ap2rv2nokf9v12gggl>
+    <label>Claim HCPCS 2</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-xfvr55ap2rv2nokf9v12gggl>
+  <sdc4:ms-jrlt189phj31y3vwgbpd79fw>
+    <label>Claim HCPCS 3</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-jrlt189phj31y3vwgbpd79fw>
+  <sdc4:ms-f9j6mhy2vd2tjjms2r2w5hls>
+    <label>Claim HCPCS 4</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-f9j6mhy2vd2tjjms2r2w5hls>
+  <sdc4:ms-g9uatlpz9l8bg2d168yileej>
+    <label>Claim HCPCS 5</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-g9uatlpz9l8bg2d168yileej>
+  <sdc4:ms-l9jnt4o3wpofp22dvqjrez9t>
+    <label>Claim HCPCS 6</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-l9jnt4o3wpofp22dvqjrez9t>
+  <sdc4:ms-e9wisxqgslfvwzf8f9g2ns1a>
+    <label>Claim HCPCS 7</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-e9wisxqgslfvwzf8f9g2ns1a>
+  <sdc4:ms-zkshfzesnopszu12m8yt656o>
+    <label>Claim HCPCS 8</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-zkshfzesnopszu12m8yt656o>
+  <sdc4:ms-uv5qgddm3wuigsszk0o80bk9>
+    <label>Claim HCPCS 9</label>
+  <sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+    <label>Procedure (HCPCS)</label>
+  </sdc4:ms-embtq0y4cmyk5em87e3jbdjx>
+  </sdc4:ms-uv5qgddm3wuigsszk0o80bk9>
+  <sdc4:ms-mzga0gpl0rsdppkx89slwi9z>
+    <label>Claim Procedure 1</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  <sdc4:ms-t22t4zqcji83jc42pxdfg7w6>
+    <sdc4:ms-nwmv4c2ogjk8ohxzum1zuprf>
+      <label>Procedure Code (ICD-9-CM)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-nwmv4c2ogjk8ohxzum1zuprf>
+  </sdc4:ms-t22t4zqcji83jc42pxdfg7w6>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-mzga0gpl0rsdppkx89slwi9z>
+  <sdc4:ms-s5duw4mmis3a4auw1fwvkctt>
+    <label>Claim Procedure 2</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-s5duw4mmis3a4auw1fwvkctt>
+  <sdc4:ms-wph20dg6mu7bwrm4gbw6wao9>
+    <label>Claim Procedure 3</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-wph20dg6mu7bwrm4gbw6wao9>
+  <sdc4:ms-a50e7whycfue1qianqp65rq9>
+    <label>Claim Procedure 4</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-a50e7whycfue1qianqp65rq9>
+  <sdc4:ms-lg86shb5pwq1r3sann4tyxzq>
+    <label>Claim Procedure 5</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-lg86shb5pwq1r3sann4tyxzq>
+  <sdc4:ms-mfk506g2b5l0gvz9m2stpljy>
+    <label>Claim Procedure 6</label>
+  <sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+    <label>Procedure (ICD-9-CM)</label>
+  </sdc4:ms-mrjuxhrc2jvbxslo2rlzndyv>
+  </sdc4:ms-mfk506g2b5l0gvz9m2stpljy>
+  <sdc4:ms-rghkif2x2xhe0e82mc85qwvm>
+    <label>Encounter</label>
+  <sdc4:ms-u6u23oip0dinxve95ub0kwma>
+    <label>Encounter Reason (SNOMED CT)</label>
+  <sdc4:ms-n3n7ow0d22saquarrg9ajpod>
+    <sdc4:ms-q75pzzv36or6dxgjrrbvmun5>
+      <label>Code System: SNOMED CT</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <link>http://snomed.info/sct</link>
+      <relation>codeSystem</relation>
+      <relation-uri>http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system</relation-uri>
+    </sdc4:ms-q75pzzv36or6dxgjrrbvmun5>
+  </sdc4:ms-n3n7ow0d22saquarrg9ajpod>
+  <sdc4:ms-lfjymfyzuvudb2p4zmk0xh27>
+    <sdc4:ms-cmtzyf0esp2hbf8ze2q0d3bh>
+      <label>Encounter Reason Code (SNOMED CT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-cmtzyf0esp2hbf8ze2q0d3bh>
+  </sdc4:ms-lfjymfyzuvudb2p4zmk0xh27>
+  </sdc4:ms-u6u23oip0dinxve95ub0kwma>
+  <sdc4:ms-fnxiiamw1uk1hvsxmjgsu1xy>
+    <label>Hospitalization</label>
+  <sdc4:ms-novdnteegq5wu0apemjhu4gp>
+    <sdc4:ms-awvbv44gmq5co6prxcnhdz09>
+      <label>Admit Source</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-awvbv44gmq5co6prxcnhdz09>
+  </sdc4:ms-novdnteegq5wu0apemjhu4gp>
+  <sdc4:ms-cuvz6f4g1cdtdid8uv9r3de4>
+    <sdc4:ms-wd1txyosw8ha21sohphne92e>
+      <label>Discharge Disposition</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-wd1txyosw8ha21sohphne92e>
+  </sdc4:ms-cuvz6f4g1cdtdid8uv9r3de4>
+  </sdc4:ms-fnxiiamw1uk1hvsxmjgsu1xy>
+  <sdc4:ms-pu93arecbavoy4l7r7l09iym>
+    <sdc4:ms-f8vsfzqb1m8ecfosdzhc9out>
+      <label>Encounter Class</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-f8vsfzqb1m8ecfosdzhc9out>
+  </sdc4:ms-pu93arecbavoy4l7r7l09iym>
+  <sdc4:ms-ijg30re1kxzgbmg7qsna43fq>
+    <sdc4:ms-jcsoakfsmdndfvw6p0nh879m>
+      <label>Encounter Priority</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-jcsoakfsmdndfvw6p0nh879m>
+  </sdc4:ms-ijg30re1kxzgbmg7qsna43fq>
+  <sdc4:ms-f80jar38kwzkv9fy3yw34ocn>
+    <sdc4:ms-mpkqsp6zn1gbc1zhqai9y40b>
+      <label>Encounter Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-mpkqsp6zn1gbc1zhqai9y40b>
+  </sdc4:ms-f80jar38kwzkv9fy3yw34ocn>
+  <sdc4:ms-bgmsi0bk92htaphh214o3c9a>
+    <sdc4:ms-gdcfl9ghwkswdbmxww4senbt>
+      <label>Encounter Length</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Time Units</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-gdcfl9ghwkswdbmxww4senbt>
+  </sdc4:ms-bgmsi0bk92htaphh214o3c9a>
+  <sdc4:ms-jooc2ref3taxn5ww7yvxj6vj>
+    <sdc4:ms-pkren9mdq1ve6mdcn5hdu4xq>
+      <label>Encounter End</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-pkren9mdq1ve6mdcn5hdu4xq>
+  </sdc4:ms-jooc2ref3taxn5ww7yvxj6vj>
+  <sdc4:ms-tqidgku8z1urlxrunr807i80>
+    <sdc4:ms-anbcg4rhacgmv8lkfofymmv0>
+      <label>Encounter Start</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-anbcg4rhacgmv8lkfofymmv0>
+  </sdc4:ms-tqidgku8z1urlxrunr807i80>
+  </sdc4:ms-rghkif2x2xhe0e82mc85qwvm>
+  <sdc4:ms-yjrycyitjsxuk1v36kag9kif>
+    <sdc4:ms-b5h4gc4jje1imwkzdt6xg5wb>
+      <label>Attending Physician NPI (AT_PHYSN_NPI)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-b5h4gc4jje1imwkzdt6xg5wb>
+  </sdc4:ms-yjrycyitjsxuk1v36kag9kif>
+  <sdc4:ms-eityhljg7w30a835qcc9h4c1>
+    <sdc4:ms-zshx6rx7ca1j00eda9kxyh6h>
+      <label>Beneficiary Code (DESYNPUF_ID)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-zshx6rx7ca1j00eda9kxyh6h>
+  </sdc4:ms-eityhljg7w30a835qcc9h4c1>
+  <sdc4:ms-qfu6jw6oc1788xo5bqp6gf4f>
+    <sdc4:ms-skyz3ht3zv3j5qwsx8x0dyru>
+      <label>Claim ID (CLM_ID)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-skyz3ht3zv3j5qwsx8x0dyru>
+  </sdc4:ms-qfu6jw6oc1788xo5bqp6gf4f>
+  <sdc4:ms-wzcw32kxx2jf4z4oaldq4n3v>
+    <sdc4:ms-lq0eu7o1fizlst28weyv3z2t>
+      <label>Operating Physician NPI (OP_PHYSN_NPI)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-lq0eu7o1fizlst28weyv3z2t>
+  </sdc4:ms-wzcw32kxx2jf4z4oaldq4n3v>
+  <sdc4:ms-q9fexg56xm10h5rz4pikhfsg>
+    <sdc4:ms-d3c64u25m9yvux5qe9eu2ur9>
+      <label>Other Physician NPI (OT_PHYSN_NPI)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-d3c64u25m9yvux5qe9eu2ur9>
+  </sdc4:ms-q9fexg56xm10h5rz4pikhfsg>
+  <sdc4:ms-lv2vjlsfb92qrcpj49qwyu3b>
+    <sdc4:ms-lv5pcw6w5e15mo1t2oiofatl>
+      <label>Provider Institution (PRVDR_NUM)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-lv5pcw6w5e15mo1t2oiofatl>
+  </sdc4:ms-lv2vjlsfb92qrcpj49qwyu3b>
+  <sdc4:ms-bmc7ykbucsqiv9le0avkt7oq>
+    <sdc4:ms-x30sghfdhlvgw2gn7trxp9u6>
+      <label>Claim Line Segment (SEGMENT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Items</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-x30sghfdhlvgw2gn7trxp9u6>
+  </sdc4:ms-bmc7ykbucsqiv9le0avkt7oq>
+  <sdc4:ms-yz9cfjns50s6lelah9omrkwr>
+    <sdc4:ms-s7najsv11bd33calnyktjcon>
+      <label>Blood Deductible Liability Amount</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Currency</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-s7najsv11bd33calnyktjcon>
+  </sdc4:ms-yz9cfjns50s6lelah9omrkwr>
+  <sdc4:ms-udo62rz9q0dd11g4jh5r17ts>
+    <sdc4:ms-bgis0a73v9ncnwhicmjmvhl1>
+      <label>Claim Payment Amount</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Currency</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-bgis0a73v9ncnwhicmjmvhl1>
+  </sdc4:ms-udo62rz9q0dd11g4jh5r17ts>
+  <sdc4:ms-eerfxodl02cljzugftfe7lma>
+    <sdc4:ms-d3wdaw6x7seq2wist9v1ebch>
+      <label>Part B Coinsurance Amount</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Currency</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-d3wdaw6x7seq2wist9v1ebch>
+  </sdc4:ms-eerfxodl02cljzugftfe7lma>
+  <sdc4:ms-wpavbmmpsz32n7p2avt1u7fn>
+    <sdc4:ms-tg2j38jv33c2b34s21m1on28>
+      <label>Part B Deductible Amount</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Currency</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-tg2j38jv33c2b34s21m1on28>
+  </sdc4:ms-wpavbmmpsz32n7p2avt1u7fn>
+  <sdc4:ms-xkyqavyqrcqypnr99sinyuzw>
+    <sdc4:ms-rnpfh6mpz8jfq28dfjp17rf9>
+      <label>Primary Payer Claim Paid Amount</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Currency</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-rnpfh6mpz8jfq28dfjp17rf9>
+  </sdc4:ms-xkyqavyqrcqypnr99sinyuzw>
+  </sdc4:ms-ls6pcoy94kbq68aa9v5y1qr8>
+  <sdc4:ms-vmikfu0irht9fmq7q02t3oqs>
+    <label>PROV Activity</label>
+  <sdc4:ms-vycps7awt38y25jhnrr4okxt>
+    <sdc4:ms-hhusuzzig19rs46ngz23k5g7>
+      <label>Activity Description</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-hhusuzzig19rs46ngz23k5g7>
+  </sdc4:ms-vycps7awt38y25jhnrr4okxt>
+  <sdc4:ms-o9p6k7c9ie20j5du0jmd3749>
+    <sdc4:ms-wr06h54xqqw2q9id8i9673jy>
+      <label>Activity Identifier</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-wr06h54xqqw2q9id8i9673jy>
+  </sdc4:ms-o9p6k7c9ie20j5du0jmd3749>
+  <sdc4:ms-o0qu77y6w4lwvu2qhms3ilbw>
+    <sdc4:ms-r6hkunjm2q0hlxiknlc9ljix>
+      <label>Activity Label</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-r6hkunjm2q0hlxiknlc9ljix>
+  </sdc4:ms-o0qu77y6w4lwvu2qhms3ilbw>
+  <sdc4:ms-rat798vb1tfxjuf56sqrvtty>
+    <sdc4:ms-uzai5uey5p1fnn9ezj9u6vor>
+      <label>Activity Location</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-uzai5uey5p1fnn9ezj9u6vor>
+  </sdc4:ms-rat798vb1tfxjuf56sqrvtty>
+  <sdc4:ms-qeu9jq1owxxh2woqo1f7m8jk>
+    <sdc4:ms-jjzmhdxvbt97pq81iwqubtxk>
+      <label>Activity Type</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-jjzmhdxvbt97pq81iwqubtxk>
+  </sdc4:ms-qeu9jq1owxxh2woqo1f7m8jk>
+  <sdc4:ms-jwvcklvakotmdztpikyodwkx>
+    <sdc4:ms-xlgjqdpwdbn2re3mdh5yy2rk>
+      <label>Error Message</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-xlgjqdpwdbn2re3mdh5yy2rk>
+  </sdc4:ms-jwvcklvakotmdztpikyodwkx>
+  <sdc4:ms-r48fyfvuhl62i5yihku0hws1>
+    <sdc4:ms-vhezo2cckpe92x4c3j2memeh>
+      <label>Had Plan Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-vhezo2cckpe92x4c3j2memeh>
+  </sdc4:ms-r48fyfvuhl62i5yihku0hws1>
+  <sdc4:ms-mjj6mlhqgzcprfwuwnhu5npz>
+    <sdc4:ms-t0whhrqtnb54te4mk48i1ooj>
+      <label>Used Entity Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-t0whhrqtnb54te4mk48i1ooj>
+  </sdc4:ms-mjj6mlhqgzcprfwuwnhu5npz>
+  <sdc4:ms-in4ct2aoguzdvzg4mlsmsxfd>
+    <sdc4:ms-r48alj7hc3797qfjnf2uj71n>
+      <label>Was Associated With Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-r48alj7hc3797qfjnf2uj71n>
+  </sdc4:ms-in4ct2aoguzdvzg4mlsmsxfd>
+  <sdc4:ms-k87dda72y8upko7dnrcs425s>
+    <sdc4:ms-ueb5g1ojzlwwt0mnds5zb6wl>
+      <label>Was Ended By Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-ueb5g1ojzlwwt0mnds5zb6wl>
+  </sdc4:ms-k87dda72y8upko7dnrcs425s>
+  <sdc4:ms-eeyxfka9q0b81swhc0cpvd1l>
+    <sdc4:ms-qh84jdzp1kxt85aq4ilo0svk>
+      <label>Was Informed By Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-qh84jdzp1kxt85aq4ilo0svk>
+  </sdc4:ms-eeyxfka9q0b81swhc0cpvd1l>
+  <sdc4:ms-vmiyaznvvl2jw19cyv414jj3>
+    <sdc4:ms-ginfqbk7q59ld2r4us8sjnv1>
+      <label>Was Started By Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-ginfqbk7q59ld2r4us8sjnv1>
+  </sdc4:ms-vmiyaznvvl2jw19cyv414jj3>
+  <sdc4:ms-q4rwxzoldz452g7rbii2an1h>
+    <sdc4:ms-wl6j4ekcmu4hvt2m12zw4zp8>
+      <label>Activity Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-wl6j4ekcmu4hvt2m12zw4zp8>
+  </sdc4:ms-q4rwxzoldz452g7rbii2an1h>
+  <sdc4:ms-xiy4gn6vievei3614sso5vmk>
+    <sdc4:ms-a5scyosu6j84vz350mqyrzl2>
+      <label>Ended At</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-a5scyosu6j84vz350mqyrzl2>
+  </sdc4:ms-xiy4gn6vievei3614sso5vmk>
+  <sdc4:ms-vzyuqpkegby4er3pw12gxw2c>
+    <sdc4:ms-sa4nl1kbpdr842fkucvfjkpq>
+      <label>Started At</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-sa4nl1kbpdr842fkucvfjkpq>
+  </sdc4:ms-vzyuqpkegby4er3pw12gxw2c>
+  </sdc4:ms-vmikfu0irht9fmq7q02t3oqs>
+  <sdc4:ms-c179ilk2ns15cd5rzzdfd6f6>
+    <label>PROV Agent</label>
+  <sdc4:ms-j9gccgohqlb59l1t37doseiq>
+    <sdc4:ms-og08xf6bu928uuz6t3y0e23f>
+      <label>Acted On Behalf Of Reference</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-og08xf6bu928uuz6t3y0e23f>
+  </sdc4:ms-j9gccgohqlb59l1t37doseiq>
+  <sdc4:ms-px1s852i5pfng3v0ikk6fw4m>
+    <sdc4:ms-gb78cmuyo72hqs5apymdki7l>
+      <label>Agent Description</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-gb78cmuyo72hqs5apymdki7l>
+  </sdc4:ms-px1s852i5pfng3v0ikk6fw4m>
+  <sdc4:ms-wi324lr48j1pzugpnw17p87m>
+    <sdc4:ms-qb90a0sp9vvb6c5cbcf236ys>
+      <label>Agent Email</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-qb90a0sp9vvb6c5cbcf236ys>
+  </sdc4:ms-wi324lr48j1pzugpnw17p87m>
+  <sdc4:ms-qfmes86biux1nl7gbaowsgc4>
+    <sdc4:ms-w2ruemcfy35rw60jl1t9dew2>
+      <label>Agent Identifier</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-w2ruemcfy35rw60jl1t9dew2>
+  </sdc4:ms-qfmes86biux1nl7gbaowsgc4>
+  <sdc4:ms-ljldab8e1bjizncv01akb0n5>
+    <sdc4:ms-xxe21o9ojzmy9wxxky1tnmog>
+      <label>Agent Name</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-xxe21o9ojzmy9wxxky1tnmog>
+  </sdc4:ms-ljldab8e1bjizncv01akb0n5>
+  <sdc4:ms-f6z431hl60ra8eqbrcyrsvji>
+    <sdc4:ms-eftvwi5byq6cdtd931qyxzw0>
+      <label>Agent Organization Name</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-eftvwi5byq6cdtd931qyxzw0>
+  </sdc4:ms-f6z431hl60ra8eqbrcyrsvji>
+  <sdc4:ms-cpaj0unbnudntl1brmdnuqhu>
+    <sdc4:ms-aa663ivutjf2fs4757t0bbzy>
+      <label>Software Name</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-aa663ivutjf2fs4757t0bbzy>
+  </sdc4:ms-cpaj0unbnudntl1brmdnuqhu>
+  <sdc4:ms-ebn1a6s1d1dy724l4y692qsl>
+    <sdc4:ms-x0lebwtobgaelj5pev3258sd>
+      <label>Software Version</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-x0lebwtobgaelj5pev3258sd>
+  </sdc4:ms-ebn1a6s1d1dy724l4y692qsl>
+  <sdc4:ms-y1u3ladafqtryhgyetpn5ild>
+    <sdc4:ms-i16vqj89it3db7d3c5qjko9p>
+      <label>PROV Agent Type</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-i16vqj89it3db7d3c5qjko9p>
+  </sdc4:ms-y1u3ladafqtryhgyetpn5ild>
+  </sdc4:ms-c179ilk2ns15cd5rzzdfd6f6>
+  </sdc4:ms-cfbimjxaeo7964wdjqelryzr>
+  <sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
+    <label>FAIR Pipeline Audit</label>
+    <system-id>
+      <label>FAIR Pipeline Identifier</label>
+      <xdstring-value>_PH_</xdstring-value>
+    </system-id>
+    <system-user>
+      <label>FAIR Pipeline User</label>
+    </system-user>
+    <location>
+      <label>FAIR Source File</label>
+    </location>
+    <timestamp>2024-01-01T00:00:00</timestamp>
+  </sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
+</sdc4:dm-mllwhe842wtnim4ms48qonio>

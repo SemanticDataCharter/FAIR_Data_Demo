@@ -1,0 +1,19 @@
+key: nhanes-survey-design
+label: NHANES Survey Design
+type: Cluster
+description: 'The survey design fields a weighted estimate needs: the release cycle, interview and examination status, the interview and MEC weights,
+  the pseudo-PSU and pseudo-stratum. Members: Data Release Cycle (SDDSRVYR); Interview/Examination Status (RIDSTATR); Full Sample 2 Year Interview
+  Weight (WTINT2YR); Full Sample 2 Year MEC Exam Weight (WTMEC2YR); Masked Variance Pseudo-PSU (SDMVPSU); Masked Variance Pseudo-Stratum (SDMVSTRA).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C142700
+  basis: standard
+members:
+- nhanes-data-release-cycle
+- nhanes-interview-examination-status
+- nhanes-interview-weight
+- nhanes-mec-exam-weight
+- nhanes-masked-variance-psu
+- nhanes-masked-variance-stratum

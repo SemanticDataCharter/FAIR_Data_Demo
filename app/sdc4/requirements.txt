@@ -1,0 +1,36 @@
+# Django Core
+Django==5.2.17  # Security: CVE-2026-5766/6907/35192 + 35193/48587/48588/6873/7666/8404/53877/53878
+psycopg2-binary==2.9.12
+djangorestframework==3.18.0
+gunicorn==23.0.0
+
+# Django Extensions
+django-crispy-forms==2.7
+crispy-bootstrap5==2025.6
+django-htmx==1.29.0
+python-decouple==3.8
+whitenoise==6.12.0
+dj-database-url==3.1.2
+django-widget-tweaks==1.5.1
+
+# Utilities
+cuid2==2.0.1
+requests==2.34.2  # Security: fix insecure temp file reuse
+markdown==3.10.3
+
+# Task Queue
+celery==5.6.2
+redis==5.2.1
+
+# RDF/Semantic Web
+rdflib==7.6.0
+pyshacl==0.30.0
+
+# XML Processing
+lxml==6.1.0  # Security: CVE-2026-41066 (XXE in default iterparse config)
+sdcvalidator==4.5.0  # XSD 1.1 substitution-group restriction support (>=4.4.0) + ExceptionalValue recovery (>=4.3.0); 4.1.x/4.2.x are structural-only
+sdcgovernance==4.1.0  # governed execution (DMN decisions + tamper-evident receipts) over the v2 ProvGov/Audit components
+
+# SirixDB client (HTTPS requests)
+httpx==0.28.1
+urllib3==2.7.0  # Security: CVE-2026-44431/44432

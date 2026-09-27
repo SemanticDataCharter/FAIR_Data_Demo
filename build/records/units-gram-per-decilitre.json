@@ -1,0 +1,55 @@
+{
+  "tiny_id": "units-gram-per-decilitre",
+  "label": "Grams per Decilitre",
+  "description": "Mass concentration in grams per decilitre.",
+  "sdc_type": "Units",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "g/dL"
+    ],
+    "enum_descr": [
+      "g/dL"
+    ],
+    "definitions": [
+      "http://qudt.org/vocab/unit/GM-PER-DeciL"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "g/dL",
+      "definition": "http://qudt.org/vocab/unit/GM-PER-DeciL"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/units-gram-per-decilitre",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://qudt.org/",
+      "basis": "mechanical",
+      "note": "QUDT"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://qudt.org/schema/qudt/Unit",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

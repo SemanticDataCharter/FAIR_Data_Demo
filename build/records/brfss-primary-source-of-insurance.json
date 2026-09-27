@@ -1,0 +1,125 @@
+{
+  "tiny_id": "brfss-primary-source-of-insurance",
+  "label": "Primary Source of Health Insurance (PRIMINSR)",
+  "description": "The current primary source of health insurance coverage (PRIMINSR). Kept beside the NIH CDE Category of Health Insurance it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "A plan purchased through an employer or union",
+      "A private nongovernmental plan that you or another family member buys on your own",
+      "Medicare",
+      "Medigap",
+      "Medicaid",
+      "CHIP",
+      "Military related health care",
+      "Indian Health Service",
+      "State sponsored health plan",
+      "Other government program",
+      "No coverage of any type"
+    ],
+    "enum_descr": [
+      "A plan purchased through an employer or union",
+      "A private nongovernmental plan that you or another family member buys on your own",
+      "Medicare",
+      "Medigap",
+      "Medicaid",
+      "CHIP",
+      "Military related health care",
+      "Indian Health Service",
+      "State sponsored health plan",
+      "Other government program",
+      "No coverage of any type"
+    ],
+    "definitions": [
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "A plan purchased through an employer or union",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "A private nongovernmental plan that you or another family member buys on your own",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Medicare",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Medigap",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Medicaid",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "CHIP",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Military related health care",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Indian Health Service",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "State sponsored health plan",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "Other government program",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    },
+    {
+      "value": "No coverage of any type",
+      "definition": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-primary-source-of-insurance",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

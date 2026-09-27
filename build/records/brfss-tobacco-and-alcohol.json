@@ -1,0 +1,49 @@
+{
+  "tiny_id": "brfss-tobacco-and-alcohol",
+  "label": "BRFSS Tobacco and Alcohol Use",
+  "description": "Cigarette use: the two questions the shared smoking status derives from, the status, the agency's computed status, e-cigarette use; alcohol: days drinking, average drinks and binge occasions in the past 30 days. Members: Smoked at Least 100 Cigarettes (SMOKE100); Frequency of Days Now Smoking (SMOKDAY2); Smoking Status; Computed Smoking Status (_SMOKER3); Current E-cigarette Use (ECIGNOW2); Days in Past 30 Had Alcoholic Beverage (ALCDAY4); Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3); Binge Drinking Occasions in Past 30 (DRNK3GE5).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-tobacco-and-alcohol",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/72166-2/",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "brfss-smoked-100-cigarettes",
+    "brfss-frequency-of-days-now-smoking",
+    "smoking-status",
+    "brfss-computed-smoking-status",
+    "brfss-e-cigarette-use",
+    "brfss-days-drank-alcohol",
+    "brfss-average-drinks-per-day",
+    "brfss-binge-drinking-occasions"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

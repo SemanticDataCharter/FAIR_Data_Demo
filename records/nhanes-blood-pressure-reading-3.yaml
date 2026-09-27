@@ -1,0 +1,13 @@
+key: nhanes-blood-pressure-reading-3
+label: Blood Pressure Reading 3
+type: Cluster
+description: 'The third of the seated blood pressure readings (BPXSY3, BPXDI3): the FHIR blood pressure cluster by identifier. Members: blood-pressure
+  (FHIR).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/85354-9/
+  basis: standard
+members:
+- https://axius-sdc.com/library/fhir/blood-pressure

@@ -1,0 +1,205 @@
+# Enterprise SDC4 Stack: PostgreSQL, GraphDB (OWL 2), SirixDB (Temporal), Keycloak (SSO/RBAC)
+# Omit version field for maximum Docker/Podman compatibility
+services:
+  postgres:
+    image: postgres:16
+    container_name: ${APP_NAME:-fair}_postgres
+    environment:
+      POSTGRES_DB: sdc4_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-admin123}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./mediafiles/postgres:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-15433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d sdc4_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # GraphDB Free - OWL 2 Reasoning Triplestore
+  # Supports OWL 2 RL, RDFS, SHACL validation
+  graphdb:
+    image: ontotext/graphdb:10.8.0
+    container_name: ${APP_NAME:-fair}_graphdb
+    environment:
+      GDB_JAVA_OPTS: >-
+        -Xms2g -Xmx4g
+        -Dgraphdb.home=/opt/graphdb/home
+        -Dgraphdb.workbench.importDirectory=/opt/graphdb/home/graphdb-import
+    ports:
+      - "${GRAPHDB_PORT:-17300}:7200"
+    volumes:
+      - ./mediafiles/graphdb/home:/opt/graphdb/home
+      - ./mediafiles/graphdb/import:/opt/graphdb/home/graphdb-import
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:7200/rest/repositories || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  # SirixDB - Temporal JSON/XML Database
+  # Provides temporal versioning and time-travel queries
+  sirixdb:
+    image: axiussdc/sirix:0.11.2
+    container_name: ${APP_NAME:-fair}_sirixdb
+    environment:
+      SIRIX_USER: admin
+      SIRIX_PASSWORD: ${SIRIX_PASSWORD:-admin123}
+      # Keycloak configuration for SirixDB authentication
+      KEYCLOAK_URL: http://keycloak:8080
+    ports:
+      - "${SIRIX_PORT:-19444}:9443"
+    volumes:
+      - ./mediafiles/sirixdb:/opt/sirix/sirix-data
+    depends_on:
+      keycloak:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:9443/ || exit 0"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  # Keycloak - SSO/RBAC Authentication
+  # Provides OAuth2, OIDC, SAML 2.0 support
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.2
+    container_name: ${APP_NAME:-fair}_keycloak
+    command: start-dev --import-realm
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/sdc4_db
+      KC_DB_USERNAME: admin
+      KC_DB_PASSWORD: ${DB_PASSWORD:-admin123}
+      KC_HOSTNAME: keycloak
+      KC_HOSTNAME_PORT: 8080
+      KC_HTTP_ENABLED: "true"
+      KC_HOSTNAME_STRICT: "false"
+      KC_HOSTNAME_STRICT_HTTPS: "false"
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_PASSWORD:-admin123}
+    ports:
+      - "${KEYCLOAK_PORT:-18081}:8080"
+    volumes:
+      - ./mediafiles/keycloak/import:/opt/keycloak/data/import
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo 'Keycloak is up'"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  redis:
+    image: redis:7-alpine
+    container_name: ${APP_NAME:-fair}_redis
+    ports:
+      - "${REDIS_PORT:-16380}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    image: ghcr.io/semanticdatacharter/fair-data-demo:${FAIR_IMAGE_TAG:-local}
+    build:
+      context: ../..
+      dockerfile: app/sdc4/Dockerfile
+    container_name: ${APP_NAME:-fair}_web
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py create_default_superuser &&
+             python manage.py init_graphdb &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ../../sparql:/sparql:ro
+      - .:/app
+      - ./import_data:/import_data
+    ports:
+      - "${WEB_PORT:-18100}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      graphdb:
+        condition: service_healthy
+      sirixdb:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      # Database
+      DATABASE_URL: postgresql://admin:${DB_PASSWORD:-admin123}@postgres:5432/sdc4_db
+      # GraphDB Triplestore
+      GRAPHDB_URL: http://graphdb:7200
+      GRAPHDB_WORKBENCH_URL: ${GRAPHDB_WORKBENCH_URL:-http://localhost:${GRAPHDB_PORT:-17300}}
+      GRAPHDB_REPOSITORY: sdc4_rdf
+      GRAPHDB_USER: ${GRAPHDB_USER:-admin}
+      GRAPHDB_PASSWORD: ${GRAPHDB_PASSWORD:-admin123}
+      # SirixDB Temporal Storage
+      SIRIX_URL: https://sirixdb:9443
+      SIRIX_USER: ${SIRIX_USER:-admin}
+      SIRIX_PASSWORD: ${SIRIX_PASSWORD:-admin123}
+      SIRIX_DATABASE: sdc4_temporal
+      # Keycloak SSO
+      KEYCLOAK_URL: http://keycloak:8080
+      KEYCLOAK_REALM: sdc4
+      KEYCLOAK_CLIENT_ID: sdc4-web
+      KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET:-changeme}
+      # Celery
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      # Django
+      DJANGO_SECRET_KEY: ${SECRET_KEY:-changeme-generate-secure-key-in-production}
+      DEBUG: "${DEBUG:-True}"
+      ALLOWED_HOSTS: "${ALLOWED_HOSTS:-localhost,127.0.0.1}"
+      # Enterprise Stack Indicator
+      SDC4_STACK: enterprise
+
+  celery:
+    image: ghcr.io/semanticdatacharter/fair-data-demo:${FAIR_IMAGE_TAG:-local}
+    build:
+      context: ../..
+      dockerfile: app/sdc4/Dockerfile
+    container_name: ${APP_NAME:-fair}_celery
+    command: celery -A sdc4 worker -l info
+    volumes:
+      - .:/app
+      - ./import_data:/import_data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      graphdb:
+        condition: service_healthy
+      sirixdb:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://admin:${DB_PASSWORD:-admin123}@postgres:5432/sdc4_db
+      GRAPHDB_URL: http://graphdb:7200
+      GRAPHDB_WORKBENCH_URL: ${GRAPHDB_WORKBENCH_URL:-http://localhost:${GRAPHDB_PORT:-17300}}
+      GRAPHDB_REPOSITORY: sdc4_rdf
+      GRAPHDB_USER: ${GRAPHDB_USER:-admin}
+      GRAPHDB_PASSWORD: ${GRAPHDB_PASSWORD:-admin123}
+      SIRIX_URL: https://sirixdb:9443
+      SIRIX_USER: ${SIRIX_USER:-admin}
+      SIRIX_PASSWORD: ${SIRIX_PASSWORD:-admin123}
+      SIRIX_DATABASE: sdc4_temporal
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      DJANGO_SECRET_KEY: ${SECRET_KEY:-changeme-generate-secure-key-in-production}
+      SDC4_STACK: enterprise
+
+# Volumes are stored in ./mediafiles/ directory for easy backup and portability

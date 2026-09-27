@@ -1,0 +1,17 @@
+key: nhanes-now-smoke-cigarettes
+label: Do You Now Smoke Cigarettes (SMQ040)
+type: XdToken
+description: Whether the participant now smokes cigarettes every day, some days or not at all (SMQ040).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ040
+  basis: standard
+enumeration:
+- value: Every day
+  definition: https://loinc.org/LA18976-3/
+- value: Some days
+  definition: https://loinc.org/LA18977-1/
+- value: Not at all
+  definition: https://loinc.org/LA15920-4/

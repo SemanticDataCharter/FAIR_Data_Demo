@@ -1,0 +1,74 @@
+{% extends "demo/base.html" %}
+{% block title %}Query Explorer{% endblock %}
+
+{% block extra_css %}
+#sparql-editor {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    min-height: 250px;
+    resize: vertical;
+}
+.htmx-indicator {
+    display: none;
+}
+.htmx-request .htmx-indicator {
+    display: inline-block;
+}
+.htmx-request .btn-text {
+    display: none;
+}
+{% endblock %}
+
+{% block content %}
+{{ queries_json|json_script:"query-data" }}
+
+<h1 class="display-5 mb-1">SPARQL Query Explorer</h1>
+<p class="text-muted mb-4">Run the cross-study queries against the knowledge graph</p>
+
+<div class="card border-0 shadow-sm mb-3">
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="query-select" class="form-label fw-semibold">Pre-loaded Queries</label>
+            <select id="query-select" class="form-select">
+                <option value="">-- Select a query --</option>
+                {% for num, q in queries.items %}
+                <option value="{{ num }}">{{ num }}. {{ q.title }} ({{ q.domains|join:", " }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="sparql-editor" class="form-label fw-semibold">SPARQL Query</label>
+            <textarea id="sparql-editor" class="form-control" name="sparql"
+                      placeholder="Enter SPARQL query or select one above..."></textarea>
+        </div>
+        <button id="execute-btn" class="btn btn-primary"
+                hx-post="{% url 'demo:run-query' %}"
+                hx-include="#sparql-editor"
+                hx-vals='{"source": "explorer"}'
+                hx-target="#query-results"
+                hx-swap="innerHTML">
+            <span class="btn-text"><i class="bi bi-play-fill me-1"></i>Execute Query</span>
+            <span class="htmx-indicator"><span class="spinner-border spinner-border-sm me-1"></span>Executing...</span>
+        </button>
+    </div>
+</div>
+
+<div id="query-results"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+    const queryData = JSON.parse(document.getElementById('query-data').textContent);
+    const select = document.getElementById('query-select');
+    const editor = document.getElementById('sparql-editor');
+
+    select.addEventListener('change', function() {
+        const num = this.value;
+        if (num && queryData[num]) {
+            editor.value = queryData[num];
+        }
+    });
+})();
+</script>
+{% endblock %}

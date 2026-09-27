@@ -1,0 +1,13 @@
+key: brfss-annual-sequence-number
+label: Annual Sequence Number (SEQNO)
+type: XdString
+description: The BRFSS annual sequence number identifying the respondent within the year (SEQNO).
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+constraints:
+  max_length: 12
+  str_fmt: '[0-9]{10}'

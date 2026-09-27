@@ -1,0 +1,15 @@
+key: nhanes-citizenship-status
+label: Citizenship Status (DMDCITZN)
+type: XdToken
+description: Citizenship status (DMDCITZN).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN
+  basis: standard
+enumeration:
+- value: Citizen by birth or naturalization
+  definition: http://purl.obolibrary.org/obo/NCIT_C41130
+- value: Not a citizen of the US
+  definition: http://purl.obolibrary.org/obo/NCIT_C41130

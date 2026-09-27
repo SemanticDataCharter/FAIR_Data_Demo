@@ -1,0 +1,152 @@
+<!-- Validation and RDF Status Component -->
+<!-- Include this in your detail view template -->
+
+<div class="row mb-4">
+    <!-- Validation Status Card -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-shield-check me-2"></i>
+                    Validation Status
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <span class="badge {{ validation_badge_class }} fs-6">
+                        {% if record.validation_status == 'valid' %}
+                            <i class="bi bi-check-circle me-1"></i> Valid
+                        {% elif record.validation_status == 'valid_with_ev' %}
+                            <i class="bi bi-exclamation-triangle me-1"></i> Valid with Auto-Corrections
+                        {% else %}
+                            <i class="bi bi-x-circle me-1"></i> Invalid
+                        {% endif %}
+                    </span>
+                </div>
+
+                <dl class="row mb-0">
+                    <dt class="col-sm-4">Instance ID:</dt>
+                    <dd class="col-sm-8">
+                        <code>{{ record.instance_id }}</code>
+                        {% if record.instance_id|slice:":4" == "i-ev" %}
+                            <span class="badge bg-warning text-dark ms-2">Auto-Corrected</span>
+                        {% endif %}
+                    </dd>
+
+                    {% if record.validation_status == 'valid_with_ev' and record.auto_corrected_fields %}
+                    <dt class="col-sm-4">Auto-Corrections:</dt>
+                    <dd class="col-sm-8">
+                        <ul class="list-unstyled mb-0">
+                            {% for field_label in record.auto_corrected_fields %}
+                            <li>
+                                <i class="bi bi-arrow-right-circle text-warning me-1"></i>
+                                {{ field_label }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </dd>
+                    {% endif %}
+
+                    {% if record.validation_errors %}
+                    <dt class="col-sm-4">Original Errors:</dt>
+                    <dd class="col-sm-8">
+                        <details>
+                            <summary class="text-muted small">Show validation errors</summary>
+                            <ul class="list-unstyled mt-2 small">
+                                {% for ct_id, error in record.validation_errors.items %}
+                                <li class="text-danger">
+                                    <code>{{ ct_id }}</code>: {{ error }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </details>
+                    </dd>
+                    {% endif %}
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- RDF Sync Status Card -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-diagram-3 me-2"></i>
+                    RDF Knowledge Graph
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <span class="badge {{ rdf_badge_class }} fs-6">
+                        {% if record.rdf_sync_status == 'synced' %}
+                            <i class="bi bi-cloud-check me-1"></i> Synced
+                        {% elif record.rdf_sync_status == 'pending' %}
+                            <i class="bi bi-hourglass-split me-1"></i> Pending
+                        {% else %}
+                            <i class="bi bi-cloud-slash me-1"></i> Failed
+                        {% endif %}
+                    </span>
+                </div>
+
+                <dl class="row mb-0">
+                    {% if record.fuseki_graph_uri %}
+                    <dt class="col-sm-4">Graph URI:</dt>
+                    <dd class="col-sm-8">
+                        <small class="text-break">{{ record.fuseki_graph_uri }}</small>
+                    </dd>
+                    {% endif %}
+
+                    {% if record.rdf_uploaded_at %}
+                    <dt class="col-sm-4">Last Uploaded:</dt>
+                    <dd class="col-sm-8">
+                        {{ record.rdf_uploaded_at|date:"Y-m-d H:i:s" }}
+                    </dd>
+                    {% endif %}
+
+                    <dt class="col-sm-4">Created:</dt>
+                    <dd class="col-sm-8">{{ record.created_at|date:"Y-m-d H:i:s" }}</dd>
+
+                    <dt class="col-sm-4">Updated:</dt>
+                    <dd class="col-sm-8">{{ record.updated_at|date:"Y-m-d H:i:s" }}</dd>
+                </dl>
+
+                {% if record.rdf_sync_status == 'pending' %}
+                <div class="alert alert-info mt-3 mb-0 small">
+                    <i class="bi bi-info-circle me-1"></i>
+                    RDF extraction is in progress. Refresh this page to check status.
+                </div>
+                {% elif record.rdf_sync_status == 'failed' %}
+                <div class="alert alert-danger mt-3 mb-0 small">
+                    <i class="bi bi-exclamation-triangle me-1"></i>
+                    RDF extraction failed. Contact support if this persists.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- XML Download Button -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-file-earmark-code me-2"></i>
+                    SDC4 XML Instance
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted mb-3">
+                    Download the canonical SDC4-compliant XML instance document.
+                </p>
+                <a href="{% url 'cms_prescription_drug_event-download-xml' record.pk %}"
+                   class="btn btn-outline-primary">
+                    <i class="bi bi-download me-2"></i>
+                    Download XML
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

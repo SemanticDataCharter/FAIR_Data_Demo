@@ -1,0 +1,63 @@
+{
+  "realm": "sirixdb",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "admin",
+        "description": "Administrator role for SirixDB"
+      },
+      {
+        "name": "create",
+        "description": "Create databases and resources"
+      },
+      {
+        "name": "modify",
+        "description": "Modify databases and resources"
+      },
+      {
+        "name": "delete",
+        "description": "Delete databases and resources"
+      },
+      {
+        "name": "view",
+        "description": "View databases and resources"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["admin", "create", "modify", "delete", "view"]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "sirix",
+      "enabled": true,
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"]
+    }
+  ]
+}

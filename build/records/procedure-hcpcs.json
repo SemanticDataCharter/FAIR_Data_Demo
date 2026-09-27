@@ -1,0 +1,44 @@
+{
+  "tiny_id": "procedure-hcpcs",
+  "label": "Procedure (HCPCS)",
+  "description": "A procedure or service coded in HCPCS: the code, its display text and the fixed code system (FHIR Coding). Members: HCPCS Code; code-display-text (FHIR); Code System: HCPCS.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/procedure-hcpcs",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://www.ama-assn.org/go/cpt",
+      "basis": "mechanical",
+      "note": "HCPCS"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/R4/datatypes.html#Coding",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "hcpcs-code",
+    "https://axius-sdc.com/library/fhir/code-display-text",
+    "system-hcpcs"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

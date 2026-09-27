@@ -1,0 +1,1369 @@
+{
+  "@context": "https://semanticdatacharter.com/ns/sdc4/",
+  "dm_id": "fnv3zi2btk3s0sfodjsc25eb",
+  "dm_type": "dm-fnv3zi2btk3s0sfodjsc25eb",
+  "metadata": {
+    "dm_language": "en-US",
+    "dm_label": "CMS Beneficiary",
+    "dm_encoding": "utf-8",
+    "instance_id": "ibnzvbkrxxihtsxqi0uolbh8",
+    "instance_version": "1.0",
+    "creation_timestamp": "2026-09-26T22:12:58.859005",
+    "current_state": ""
+  },
+  "data": {
+    "component_id": "io2h28pi3yktedurk8ye3oq0",
+    "label": "CMS Beneficiary Governed Record",
+    "type": "Cluster",
+    "description": "A CMS beneficiary summary record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: CMS Beneficiary; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).",
+    "items": [
+      {
+        "component_id": "t2tvd3wylxrstdeu5aw6gkw1",
+        "label": "Audit Event",
+        "type": "Cluster",
+        "description": "A logged access or custody event as data: what was done, by whom, on what, with what outcome and for what purpose. The audit-only case of sdc5 issue 002; state-changing operations are workflow transitions.",
+        "items": [
+          {
+            "component_id": "dkc2ccj5te35z9gd4bu1blcq",
+            "label": "Audit Agent Reference",
+            "type": "XdString",
+            "description": "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gcjyjrnp0wsfoelcp4m05c67",
+            "label": "Audit Entity Reference",
+            "type": "XdString",
+            "description": "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "fjhgr5fyqxt2crmg2cb5c513",
+            "label": "Audit Event Identifier",
+            "type": "XdString",
+            "description": "The identifier of the audit event.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+            "label": "Data Subject Reference",
+            "type": "XdString",
+            "description": "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "nf1air1zbj8v9w66jozdxmyl",
+            "label": "On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "h3kdbvdtyalpvik97saaf0an",
+            "label": "System Identifier",
+            "type": "XdString",
+            "description": "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ujir739mf1g8ajeczs9nzh9m",
+            "label": "System Location Name",
+            "type": "XdString",
+            "description": "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ce1c8sydkov8bkv4dgdmwe5x",
+            "label": "Audit Event Action",
+            "type": "XdToken",
+            "description": "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.",
+            "value": "R",
+            "constraints": {
+              "enumerations": [
+                "C",
+                "R",
+                "U",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "component_id": "rpz1czz06jhpahmfz30rblvp",
+            "label": "Audit Event Outcome",
+            "type": "XdToken",
+            "description": "The result of an audited event (FHIR AuditEvent.outcome).",
+            "value": "12",
+            "constraints": {
+              "enumerations": [
+                "0",
+                "4",
+                "8",
+                "12"
+              ]
+            }
+          },
+          {
+            "component_id": "vbctgmdcwps5b3r3l6sboa6y",
+            "label": "Confidentiality",
+            "type": "XdToken",
+            "description": "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.",
+            "value": "L",
+            "constraints": {
+              "enumerations": [
+                "U",
+                "L",
+                "M",
+                "N",
+                "R",
+                "V"
+              ]
+            }
+          },
+          {
+            "component_id": "jujsdur1igws8orw6tvvlqco",
+            "label": "Provenance Agent Type",
+            "type": "XdToken",
+            "description": "The functional role of an agent in an activity (FHIR Provenance.agent.type).",
+            "value": "transmitter",
+            "constraints": {
+              "enumerations": [
+                "enterer",
+                "performer",
+                "author",
+                "editor",
+                "verifier",
+                "legal",
+                "attester",
+                "informant",
+                "custodian",
+                "transmitter",
+                "assembler",
+                "transformer",
+                "composer"
+              ]
+            }
+          },
+          {
+            "component_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+            "label": "Purpose of Use",
+            "type": "XdToken",
+            "description": "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.",
+            "value": "CLINTRCH",
+            "constraints": {
+              "enumerations": [
+                "TREAT",
+                "ETREAT",
+                "COC",
+                "HPAYMT",
+                "HOPERAT",
+                "HRESCH",
+                "CLINTRCH",
+                "PUBHLTH",
+                "PATRQT",
+                "HLEGAL",
+                "HMARKT"
+              ]
+            }
+          },
+          {
+            "component_id": "uwiosm2q9ym3ewr4de910s70",
+            "label": "Audit Recorded At",
+            "type": "XdTemporal",
+            "description": "When the audit event was recorded (FHIR AuditEvent.recorded).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "kkdy1kjdruxvx8s1ra8eh231",
+        "label": "CMS Beneficiary",
+        "type": "Cluster",
+        "description": "One DE-SynPUF beneficiary summary for the 2008 reference year: the beneficiary code, demographics, Medicare coverage, the eleven chronic condition indicators on a claims basis with the ESRD indicator, and the year's amounts. Members: Beneficiary Code (DESYNPUF_ID); CMS Beneficiary Demographics; CMS Medicare Coverage; Chronic Condition Indicators; End-Stage Renal Disease Indicator (BENE_ESRD_IND); CMS Annual Amounts.",
+        "items": [
+          {
+            "component_id": "zshx6rx7ca1j00eda9kxyh6h",
+            "label": "Beneficiary Code (DESYNPUF_ID)",
+            "type": "XdString",
+            "description": "The synthetic beneficiary identifier every DE-SynPUF file carries (DESYNPUF_ID); not traceable to a real Medicare beneficiary.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 16
+            }
+          },
+          {
+            "component_id": "pczjiz8bjdg20api47gmeq0e",
+            "label": "End-Stage Renal Disease Indicator (BENE_ESRD_IND)",
+            "type": "XdToken",
+            "description": "Whether the beneficiary has end-stage renal disease (BENE_ESRD_IND).",
+            "value": "Yes",
+            "constraints": {
+              "enumerations": [
+                "Yes",
+                "No"
+              ]
+            }
+          },
+          {
+            "component_id": "wa0mknvfo83hej635n48s0ig",
+            "label": "Chronic Condition Indicators",
+            "type": "Cluster",
+            "description": "The chronic conditions a study records for a person, one indicator per condition, with the basis on which the study established them. NHANES and BRFSS carry the ones their questionnaires ask; CMS carries the eleven its chronic conditions flags define; every study that carries an indicator carries the same component. Members: Condition Indicator Basis; Condition: Asthma; Condition: Arthritis; Condition: Congestive Heart Failure; Condition: Coronary Heart Disease; Condition: Angina; Condition: Heart Attack; Condition: Stroke; Condition: Emphysema; Condition: Chronic Bronchitis; Condition: COPD; Condition: Liver Condition; Condition: Thyroid Problem; Condition: Cancer; Condition: Skin Cancer; Condition: Depression; Condition: Kidney Disease; Condition: Diabetes; Condition: Alzheimer's Disease or Related Disorder; Condition: Osteoporosis; Condition: High Blood Pressure; Condition: High Cholesterol.",
+            "items": [
+              {
+                "component_id": "d9z9mcx6gs9zbz4k6f0v738s",
+                "label": "Condition: Alzheimer's Disease or Related Disorder",
+                "type": "XdToken",
+                "description": "Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "o4d67oubyyunugx3la44f53u",
+                "label": "Condition: Angina",
+                "type": "XdToken",
+                "description": "Whether the person has angina (Angina, SNOMED CT 194828000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160D.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "nd1v8jk7wtm1tthzw1f4987t",
+                "label": "Condition: Arthritis",
+                "type": "XdToken",
+                "description": "Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "acr1xvqppf1b3rjsrst6tt4p",
+                "label": "Condition: Asthma",
+                "type": "XdToken",
+                "description": "Whether the person has asthma (Asthma, SNOMED CT 195967001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ010, BRFSS ASTHMA3.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "ix0my2v2z79s002g0r8orosf",
+                "label": "Condition: Cancer",
+                "type": "XdToken",
+                "description": "Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "jyx7rxfktazhgxgq84fxf6wr",
+                "label": "Condition: Chronic Bronchitis",
+                "type": "XdToken",
+                "description": "Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "hyqlz591lhj54sdt1a1mup70",
+                "label": "Condition: Congestive Heart Failure",
+                "type": "XdToken",
+                "description": "Whether the person has congestive heart failure (Congestive Heart Failure, SNOMED CT 42343007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160B, CMS SP_CHF.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "mijr18ynaqde2l8jps70l2g6",
+                "label": "Condition: COPD",
+                "type": "XdToken",
+                "description": "Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "udbydjqj76l8kl6mi2s3v7vd",
+                "label": "Condition: Coronary Heart Disease",
+                "type": "XdToken",
+                "description": "Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "of4crvmnrr3s5q5396kmt0jv",
+                "label": "Condition: Depression",
+                "type": "XdToken",
+                "description": "Whether the person has depression (Depression, SNOMED CT 35489007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS ADDEPEV3, CMS SP_DEPRESSN.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "fzpb9xr5jg2m3e3dzmvi1v3h",
+                "label": "Condition: Diabetes",
+                "type": "XdToken",
+                "description": "Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "sbulkq80j4fkbiql4zgje4qr",
+                "label": "Condition: Emphysema",
+                "type": "XdToken",
+                "description": "Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "yshoeps2dm0j1ueusqs825v6",
+                "label": "Condition: Heart Attack",
+                "type": "XdToken",
+                "description": "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "lvockfc8lce5p15wuwxc1kwa",
+                "label": "Condition: High Blood Pressure",
+                "type": "XdToken",
+                "description": "Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "gp3jxw3xzs761ll6u5rvc6jr",
+                "label": "Condition: High Cholesterol",
+                "type": "XdToken",
+                "description": "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "hc79skkfionpgw87dsg5yrgw",
+                "label": "Condition Indicator Basis",
+                "type": "XdToken",
+                "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
+                "value": "Self-report of a professional diagnosis",
+                "constraints": {
+                  "enumerations": [
+                    "Self-report of a professional diagnosis",
+                    "Claims-based algorithm"
+                  ]
+                }
+              },
+              {
+                "component_id": "sw5rt0k2uap0e3xgl4rznfgu",
+                "label": "Condition: Kidney Disease",
+                "type": "XdToken",
+                "description": "Whether the person has kidney disease (Kidney Disease, SNOMED CT 709044004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCKDNY2, CMS SP_CHRNKIDN.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "atqkooccakulfhkt18c008fx",
+                "label": "Condition: Liver Condition",
+                "type": "XdToken",
+                "description": "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "l784ggegqcvrpnmw2yvo4il7",
+                "label": "Condition: Osteoporosis",
+                "type": "XdToken",
+                "description": "Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "xsohkckyof7y1xj8h1ab4pxu",
+                "label": "Condition: Skin Cancer",
+                "type": "XdToken",
+                "description": "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "zc6p008h5naqev8zngtzvyx9",
+                "label": "Condition: Stroke",
+                "type": "XdToken",
+                "description": "Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA.",
+                "value": "No",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              },
+              {
+                "component_id": "p8u71b4lhct4ra0szgkex7xo",
+                "label": "Condition: Thyroid Problem",
+                "type": "XdToken",
+                "description": "Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M.",
+                "value": "Yes",
+                "constraints": {
+                  "enumerations": [
+                    "Yes",
+                    "No"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "vas0n7gpt46lxe3t2klb0ihw",
+            "label": "CMS Annual Amounts",
+            "type": "Cluster",
+            "description": "The year's Medicare reimbursement, beneficiary responsibility and primary payer reimbursement for inpatient, outpatient and carrier services. Members: Inpatient Annual Medicare Reimbursement; Inpatient Annual Beneficiary Responsibility; Inpatient Annual Primary Payer Reimbursement; Outpatient Annual Medicare Reimbursement; Outpatient Annual Beneficiary Responsibility; Outpatient Annual Primary Payer Reimbursement; Carrier Annual Medicare Reimbursement; Carrier Annual Beneficiary Responsibility; Carrier Annual Primary Payer Reimbursement.",
+            "items": [
+              {
+                "component_id": "nr2ylxsejuy6awcwqts30rpv",
+                "label": "Carrier Annual Beneficiary Responsibility",
+                "type": "XdQuantity",
+                "description": "The beneficiary's responsibility for carrier services in the year (BENRES_CAR), in US dollars.",
+                "value": 77.1,
+                "magnitude": {
+                  "value": 77.1
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "uqamp46mdscugwy7z99jaxsp",
+                "label": "Carrier Annual Medicare Reimbursement",
+                "type": "XdQuantity",
+                "description": "Medicare reimbursement for carrier (physician and supplier) services in the year (MEDREIMB_CAR), in US dollars.",
+                "value": 65.2,
+                "magnitude": {
+                  "value": 65.2
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "qbla2qbmgnvijbzpvgsivygy",
+                "label": "Carrier Annual Primary Payer Reimbursement",
+                "type": "XdQuantity",
+                "description": "Primary payer reimbursement for carrier services in the year (PPPYMT_CAR), in US dollars.",
+                "value": 35.4,
+                "magnitude": {
+                  "value": 35.4
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "xk3apd6exhme1to143takg17",
+                "label": "Inpatient Annual Beneficiary Responsibility",
+                "type": "XdQuantity",
+                "description": "The beneficiary's responsibility for inpatient services in the year (BENRES_IP), in US dollars.",
+                "value": 11.6,
+                "magnitude": {
+                  "value": 11.6
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "ir7e2d7vwws6yisjvxgfm7ou",
+                "label": "Inpatient Annual Medicare Reimbursement",
+                "type": "XdQuantity",
+                "description": "Medicare reimbursement for inpatient services in the year (MEDREIMB_IP), in US dollars.",
+                "value": 24.9,
+                "magnitude": {
+                  "value": 24.9
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "afusetixnkfrt5zheumblskw",
+                "label": "Inpatient Annual Primary Payer Reimbursement",
+                "type": "XdQuantity",
+                "description": "Primary payer reimbursement for inpatient services in the year (PPPYMT_IP), in US dollars.",
+                "value": 99.4,
+                "magnitude": {
+                  "value": 99.4
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "gxyr702hyrvi5bxp2rn9avd5",
+                "label": "Outpatient Annual Beneficiary Responsibility",
+                "type": "XdQuantity",
+                "description": "The beneficiary's responsibility for outpatient services in the year (BENRES_OP), in US dollars.",
+                "value": 99.2,
+                "magnitude": {
+                  "value": 99.2
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "hnvzazgaw60pz193376698lu",
+                "label": "Outpatient Annual Medicare Reimbursement",
+                "type": "XdQuantity",
+                "description": "Medicare reimbursement for outpatient services in the year (MEDREIMB_OP), in US dollars.",
+                "value": 40.8,
+                "magnitude": {
+                  "value": 40.8
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              },
+              {
+                "component_id": "wl1enu6oomssv6fn1kvvdx9f",
+                "label": "Outpatient Annual Primary Payer Reimbursement",
+                "type": "XdQuantity",
+                "description": "Primary payer reimbursement for outpatient services in the year (PPPYMT_OP), in US dollars.",
+                "value": 41.3,
+                "magnitude": {
+                  "value": 41.3
+                },
+                "units": {
+                  "label": "Currency",
+                  "symbol": "%",
+                  "system": "ISO"
+                }
+              }
+            ]
+          },
+          {
+            "component_id": "frvayvpr4jkzykc8ykchaev6",
+            "label": "CMS Beneficiary Demographics",
+            "type": "Cluster",
+            "description": "The beneficiary's demographics: the Default date of birth and administrative gender with the CMS sex code, the FHIR patient's deceased indicator and date by identifier, race as the NIH CDE and as CMS codes it, and the state and county of the mailing address. Members: date-of-birth (Default); administrative-gender (Default); Sex (BENE_SEX_IDENT_CD); deceased-indicator (FHIR); deceased-date (FHIR); Race/Ethnicity Self-Identification (NIH CDE); Race (BENE_RACE_CD); State Code (SP_STATE_CODE); County Code (BENE_COUNTY_CD).",
+            "items": [
+              {
+                "component_id": "fnr5q1tfq42ez9jia9dqueho",
+                "label": "Deceased Indicator",
+                "type": "XdBoolean",
+                "description": "Whether the patient is deceased. FHIR Patient.deceasedBoolean.",
+                "value": true,
+                "constraints": {
+                  "true_values": [
+                    "true"
+                  ],
+                  "false_values": [
+                    "false"
+                  ]
+                }
+              },
+              {
+                "component_id": "hb937iiq8di6mrtn10j8n1vk",
+                "label": "County Code (BENE_COUNTY_CD)",
+                "type": "XdString",
+                "description": "The SSA county code of the beneficiary's mailing address (BENE_COUNTY_CD).",
+                "value": "DefaultString",
+                "constraints": {
+                  "max_length": 3
+                }
+              },
+              {
+                "component_id": "n8s2hvs4vrt5bwdykfzna5a6",
+                "label": "State Code (SP_STATE_CODE)",
+                "type": "XdString",
+                "description": "The SSA state code of the beneficiary's mailing address (SP_STATE_CODE).",
+                "value": "DefaultString",
+                "constraints": {
+                  "max_length": 2
+                }
+              },
+              {
+                "component_id": "u5xln0mppl3qk6vhgxdu0wcn",
+                "label": "Race (BENE_RACE_CD)",
+                "type": "XdToken",
+                "description": "The beneficiary's race as CMS codes it (BENE_RACE_CD). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; Others has no CDE value.",
+                "value": "White",
+                "constraints": {
+                  "enumerations": [
+                    "White",
+                    "Black",
+                    "Others",
+                    "Hispanic"
+                  ]
+                }
+              },
+              {
+                "component_id": "u4lkrbqp88mvp1m81ipglaov",
+                "label": "Sex (BENE_SEX_IDENT_CD)",
+                "type": "XdToken",
+                "description": "The beneficiary's sex as CMS codes it (BENE_SEX_IDENT_CD). Kept beside the Default administrative gender it is mapped to.",
+                "value": "Female",
+                "constraints": {
+                  "enumerations": [
+                    "Male",
+                    "Female"
+                  ]
+                }
+              },
+              {
+                "component_id": "u5tietya3u56hbz2kos06ai7",
+                "label": "Race/Ethnicity Self-Identification",
+                "type": "XdToken",
+                "description": "A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed.",
+                "value": "Hispanic, Latino, or Spanish",
+                "constraints": {
+                  "enumerations": [
+                    "American Indian or Alaska Native",
+                    "Asian or Asian American",
+                    "Black or African American",
+                    "Hispanic, Latino, or Spanish",
+                    "Native Hawaiian or Other Pacific Islander",
+                    "Middle Eastern or North African",
+                    "White"
+                  ]
+                }
+              },
+              {
+                "component_id": "gxzbm758mhdz51xd4bawlfhh",
+                "label": "Administrative Gender",
+                "type": "XdToken",
+                "description": "The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded).",
+                "value": "other",
+                "constraints": {
+                  "enumerations": [
+                    "male",
+                    "female",
+                    "other",
+                    "unknown"
+                  ]
+                }
+              },
+              {
+                "component_id": "vnlhr9c3ykayyegumhb09snf",
+                "label": "Deceased Date",
+                "type": "XdTemporal",
+                "description": "The date and time of death. FHIR Patient.deceasedDateTime.",
+                "value": "2024-01-01T00:00:00"
+              },
+              {
+                "component_id": "js564tazefb6udqlh12rj04l",
+                "label": "Date of Birth",
+                "type": "XdTemporal",
+                "description": "The date a person was born.",
+                "value": "2024-01-01T00:00:00"
+              }
+            ]
+          },
+          {
+            "component_id": "shug78mge6b16gz073rt23ih",
+            "label": "CMS Medicare Coverage",
+            "type": "Cluster",
+            "description": "The beneficiary's Medicare coverage in the reference year: the FHIR insurance coverage by identifier (Medicare as the coverage type), and the months of Part A, Part B, HMO and Part D coverage. Members: insurance-coverage (FHIR); Hospital Insurance (Part A) Coverage Months; Supplementary Medical Insurance (Part B) Coverage Months; HMO Coverage Months; Part D Plan Coverage Months.",
+            "items": [
+              {
+                "component_id": "v3kyd703i6kwzmmnasehyiks",
+                "label": "HMO Coverage Months",
+                "type": "XdCount",
+                "description": "Total months of HMO coverage in the reference year (BENE_HMO_CVRAGE_TOT_MONS).",
+                "value": 90,
+                "units": {
+                  "label": "Months",
+                  "value": "FAIR Data Demo : Months"
+                }
+              },
+              {
+                "component_id": "z7hdfvo8n55ebh3hqs2devzz",
+                "label": "Hospital Insurance (Part A) Coverage Months",
+                "type": "XdCount",
+                "description": "Total months of Part A coverage in the reference year (BENE_HI_CVRAGE_TOT_MONS).",
+                "value": 47,
+                "units": {
+                  "label": "Months",
+                  "value": "FAIR Data Demo : Months"
+                }
+              },
+              {
+                "component_id": "uzjspmfqya7qwbg2vhfdlgzv",
+                "label": "Part D Plan Coverage Months",
+                "type": "XdCount",
+                "description": "Total months of Part D plan coverage in the reference year (PLAN_CVRG_MOS_NUM).",
+                "value": 42,
+                "units": {
+                  "label": "Months",
+                  "value": "FAIR Data Demo : Months"
+                }
+              },
+              {
+                "component_id": "xftatfclhnwcyy2k96v7k638",
+                "label": "Supplementary Medical Insurance (Part B) Coverage Months",
+                "type": "XdCount",
+                "description": "Total months of Part B coverage in the reference year (BENE_SMI_CVRAGE_TOT_MONS).",
+                "value": 66,
+                "units": {
+                  "label": "Months",
+                  "value": "FAIR Data Demo : Months"
+                }
+              },
+              {
+                "component_id": "hbnmrivnia0qrqidvtdryusj",
+                "label": "Insurance Coverage",
+                "type": "Cluster",
+                "description": "An insurance coverage: status, type, subscriber relationship, member and dependent identifiers, network, order, period, subrogation, classes and cost sharing.",
+                "items": [
+                  {
+                    "component_id": "zc3g4e4kjtzehn3kkffkeu29",
+                    "label": "Subrogation Indicator",
+                    "type": "XdBoolean",
+                    "description": "Whether the insurer may recover costs from a third party. FHIR Coverage.subrogation.",
+                    "value": true,
+                    "constraints": {
+                      "true_values": [
+                        "true"
+                      ],
+                      "false_values": [
+                        "false"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "ngyypbb7lmlj2g3kibcjqjmn",
+                    "label": "Dependent Sequence",
+                    "type": "XdString",
+                    "description": "The dependent number on the policy. FHIR Coverage.dependent.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 16
+                    }
+                  },
+                  {
+                    "component_id": "of5kk46yrln1ok8nuajeg2f8",
+                    "label": "Member ID",
+                    "type": "XdString",
+                    "description": "The member or subscriber identifier. FHIR Coverage.subscriberId.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 64
+                    }
+                  },
+                  {
+                    "component_id": "ng1e2u43yhfura3vf0ahm609",
+                    "label": "Plan Network",
+                    "type": "XdString",
+                    "description": "The insurer network. FHIR Coverage.network.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 255
+                    }
+                  },
+                  {
+                    "component_id": "hicvzztm4xzxnzp9f6tyu016",
+                    "label": "Coverage Status",
+                    "type": "XdToken",
+                    "description": "The state of the coverage. FHIR Coverage.status; Financial Resource Status Codes, version 4.0.1.",
+                    "value": "active",
+                    "constraints": {
+                      "enumerations": [
+                        "active",
+                        "cancelled",
+                        "draft",
+                        "entered-in-error"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "wpnvu6f56drsy767ucx60scd",
+                    "label": "Coverage Type",
+                    "type": "XdToken",
+                    "description": "The kind of coverage (HL7 v3 ActCoverageTypeCode). FHIR Coverage.type; ActCode, version 11.0.0.",
+                    "value": "DISEASE",
+                    "constraints": {
+                      "enumerations": [
+                        "EHCPOL",
+                        "HSAPOL",
+                        "AUTOPOL",
+                        "COL",
+                        "UNINSMOT",
+                        "PUBLICPOL",
+                        "DENTPRG",
+                        "DISEASEPRG",
+                        "CANPRG",
+                        "ENDRENAL",
+                        "HIVAIDS",
+                        "MANDPOL",
+                        "MENTPRG",
+                        "SAFNET",
+                        "SUBPRG",
+                        "SUBSIDIZ",
+                        "SUBSIDMC",
+                        "SUBSUPP",
+                        "WCBPOL",
+                        "DENTAL",
+                        "DISEASE",
+                        "DRUGPOL",
+                        "HIP",
+                        "LTC",
+                        "MCPOL",
+                        "POS",
+                        "HMO",
+                        "PPO",
+                        "MENTPOL",
+                        "SUBPOL",
+                        "VISPOL",
+                        "DIS",
+                        "EWB",
+                        "FLEXP",
+                        "LIFE",
+                        "ANNU",
+                        "TLIFE",
+                        "ULIFE",
+                        "PNC",
+                        "REI",
+                        "SURPL",
+                        "UMBRL",
+                        "CHAR",
+                        "CRIME",
+                        "EAP",
+                        "GOVEMP",
+                        "HIRISK",
+                        "IND",
+                        "MILITARY",
+                        "RETIRE",
+                        "SOCIAL",
+                        "VET"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "zxoxt5fc40bzigieoh044gsy",
+                    "label": "Subscriber Relationship",
+                    "type": "XdToken",
+                    "description": "The beneficiary's relationship to the subscriber. FHIR Coverage.relationship; SubscriberPolicyholder Relationship Codes, version 4.0.1.",
+                    "value": "self",
+                    "constraints": {
+                      "enumerations": [
+                        "child",
+                        "parent",
+                        "spouse",
+                        "common",
+                        "other",
+                        "self",
+                        "injured"
+                      ]
+                    }
+                  },
+                  {
+                    "component_id": "rcl099nhkwzl6lu24lz9i01r",
+                    "label": "Coverage Order",
+                    "type": "XdCount",
+                    "description": "The order of the coverage: 1 primary, 2 secondary. FHIR Coverage.order.",
+                    "value": 93,
+                    "units": {
+                      "label": "Items",
+                      "value": "Default : Items"
+                    }
+                  },
+                  {
+                    "component_id": "asmfpl0h2pw2xlldhiydibbn",
+                    "label": "Coverage Period End",
+                    "type": "XdTemporal",
+                    "description": "When the coverage ends. FHIR Coverage.period.end.",
+                    "value": "2024-01-01T00:00:00"
+                  },
+                  {
+                    "component_id": "onaqlxn6vzh5r1ub5oxn65iv",
+                    "label": "Coverage Period Start",
+                    "type": "XdTemporal",
+                    "description": "When the coverage takes effect. FHIR Coverage.period.start.",
+                    "value": "2024-01-01T00:00:00"
+                  },
+                  {
+                    "component_id": "oc8phvc3wtcfr5x5aauliaih",
+                    "label": "Cost Sharing",
+                    "type": "Cluster",
+                    "description": "A cost the beneficiary bears: type and amount.",
+                    "items": [
+                      {
+                        "component_id": "fdtpvqw0se658x5m3zormi5v",
+                        "label": "Copay Type",
+                        "type": "XdToken",
+                        "description": "The kind of cost sharing. FHIR Coverage.costToBeneficiary.type; Coverage Copay Type Codes, version 4.0.1.",
+                        "value": "inpthosp",
+                        "constraints": {
+                          "enumerations": [
+                            "gpvisit",
+                            "spvisit",
+                            "emergency",
+                            "inpthosp",
+                            "televisit",
+                            "urgentcare",
+                            "copaypct",
+                            "copay",
+                            "deductible",
+                            "maxoutofpocket"
+                          ]
+                        }
+                      },
+                      {
+                        "component_id": "h4ngotmyyx8yflaxicrxaba8",
+                        "label": "Copay Amount",
+                        "type": "XdQuantity",
+                        "description": "The amount of the cost sharing, in the Default currency units. FHIR Coverage.costToBeneficiary.valueMoney.",
+                        "value": 77.7,
+                        "magnitude": {
+                          "value": 77.7,
+                          "min_inclusive": 0.0
+                        },
+                        "units": {
+                          "label": "Currency",
+                          "symbol": "%",
+                          "system": "ISO"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "component_id": "jqrxnqz7o48ay00s8y4ft7ju",
+                    "label": "Coverage Class",
+                    "type": "Cluster",
+                    "description": "A classification of the coverage: type, name and value.",
+                    "items": [
+                      {
+                        "component_id": "dro3p4hqu4ovk0uj7uu2upvq",
+                        "label": "Coverage Class Name",
+                        "type": "XdString",
+                        "description": "The name of the class. FHIR Coverage.class.name.",
+                        "value": "DefaultString",
+                        "constraints": {
+                          "max_length": 255
+                        }
+                      },
+                      {
+                        "component_id": "zwmu2x9s8tx628rvb1trh0ij",
+                        "label": "Coverage Class Value",
+                        "type": "XdString",
+                        "description": "The value of the class, such as a group or plan number. FHIR Coverage.class.value.",
+                        "value": "DefaultString",
+                        "constraints": {
+                          "max_length": 64
+                        }
+                      },
+                      {
+                        "component_id": "m3m7ow1e7b27ejx6usxtgnbg",
+                        "label": "Coverage Class Type",
+                        "type": "XdToken",
+                        "description": "The kind of class. FHIR Coverage.class.type; Coverage Class Codes, version 4.0.1.",
+                        "value": "subgroup",
+                        "constraints": {
+                          "enumerations": [
+                            "group",
+                            "subgroup",
+                            "plan",
+                            "subplan",
+                            "class",
+                            "subclass",
+                            "sequence",
+                            "rxbin",
+                            "rxpcn",
+                            "rxid",
+                            "rxgroup"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component_id": "vmikfu0irht9fmq7q02t3oqs",
+        "label": "PROV Activity",
+        "type": "Cluster",
+        "description": "A PROV activity: what it was, when it ran, its status, and the entities, activities, agent and plan it relates to.",
+        "items": [
+          {
+            "component_id": "hhusuzzig19rs46ngz23k5g7",
+            "label": "Activity Description",
+            "type": "XdString",
+            "description": "A description of what the activity does and why.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "wr06h54xqqw2q9id8i9673jy",
+            "label": "Activity Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV activity: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "r6hkunjm2q0hlxiknlc9ljix",
+            "label": "Activity Label",
+            "type": "XdString",
+            "description": "A human-readable label for a PROV activity.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "uzai5uey5p1fnn9ezj9u6vor",
+            "label": "Activity Location",
+            "type": "XdString",
+            "description": "Where the activity took place (prov:atLocation), as text.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "jjzmhdxvbt97pq81iwqubtxk",
+            "label": "Activity Type",
+            "type": "XdString",
+            "description": "The kind of activity, in the vocabulary of the domain (prov:type).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+            "label": "Error Message",
+            "type": "XdString",
+            "description": "The error the activity reported, if it failed.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "vhezo2cckpe92x4c3j2memeh",
+            "label": "Had Plan Reference",
+            "type": "XdString",
+            "description": "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "t0whhrqtnb54te4mk48i1ooj",
+            "label": "Used Entity Reference",
+            "type": "XdString",
+            "description": "An entity the activity used (prov:used). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "r48alj7hc3797qfjnf2uj71n",
+            "label": "Was Associated With Reference",
+            "type": "XdString",
+            "description": "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+            "label": "Was Ended By Reference",
+            "type": "XdString",
+            "description": "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "qh84jdzp1kxt85aq4ilo0svk",
+            "label": "Was Informed By Reference",
+            "type": "XdString",
+            "description": "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ginfqbk7q59ld2r4us8sjnv1",
+            "label": "Was Started By Reference",
+            "type": "XdString",
+            "description": "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+            "label": "Activity Status",
+            "type": "XdToken",
+            "description": "The state of an activity, from the Data Privacy Vocabulary activity status concepts.",
+            "value": "ActivityOngoing",
+            "constraints": {
+              "enumerations": [
+                "ActivityProposed",
+                "ActivityPlanned",
+                "ActivityOngoing",
+                "ActivityHalted",
+                "ActivityCompleted",
+                "ActivityNotCompleted"
+              ]
+            }
+          },
+          {
+            "component_id": "a5scyosu6j84vz350mqyrzl2",
+            "label": "Ended At",
+            "type": "XdTemporal",
+            "description": "When the activity ended (prov:endedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          },
+          {
+            "component_id": "sa4nl1kbpdr842fkucvfjkpq",
+            "label": "Started At",
+            "type": "XdTemporal",
+            "description": "When the activity started (prov:startedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "c179ilk2ns15cd5rzzdfd6f6",
+        "label": "PROV Agent",
+        "type": "Cluster",
+        "description": "A PROV agent: a person, organization or software agent, with its identity, contact and delegation.",
+        "items": [
+          {
+            "component_id": "og08xf6bu928uuz6t3y0e23f",
+            "label": "Acted On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gb78cmuyo72hqs5apymdki7l",
+            "label": "Agent Description",
+            "type": "XdString",
+            "description": "A description of the agent and its responsibilities.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "qb90a0sp9vvb6c5cbcf236ys",
+            "label": "Agent Email",
+            "type": "XdString",
+            "description": "The agent's email address (foaf:mbox).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "w2ruemcfy35rw60jl1t9dew2",
+            "label": "Agent Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV agent: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xxe21o9ojzmy9wxxky1tnmog",
+            "label": "Agent Name",
+            "type": "XdString",
+            "description": "The name of the agent (foaf:name).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "eftvwi5byq6cdtd931qyxzw0",
+            "label": "Agent Organization Name",
+            "type": "XdString",
+            "description": "The organization the agent belongs to or is.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "aa663ivutjf2fs4757t0bbzy",
+            "label": "Software Name",
+            "type": "XdString",
+            "description": "The name of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "x0lebwtobgaelj5pev3258sd",
+            "label": "Software Version",
+            "type": "XdString",
+            "description": "The version of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 60
+            }
+          },
+          {
+            "component_id": "i16vqj89it3db7d3c5qjko9p",
+            "label": "PROV Agent Type",
+            "type": "XdToken",
+            "description": "The kind of PROV agent: person, organization or software agent.",
+            "value": "Organization",
+            "constraints": {
+              "enumerations": [
+                "Person",
+                "Organization",
+                "SoftwareAgent"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

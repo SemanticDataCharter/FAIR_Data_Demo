@@ -1,0 +1,24 @@
+<!-- Status Badges for List View -->
+<!-- Use this in table cells or list items to show validation and RDF status -->
+
+<!-- Validation Status Badge -->
+<span class="badge {% if record.validation_status == 'valid' %}bg-success{% elif record.validation_status == 'valid_with_ev' %}bg-warning text-dark{% else %}bg-danger{% endif %} me-1">
+    {% if record.validation_status == 'valid' %}
+        <i class="bi bi-check-circle me-1"></i>Valid
+    {% elif record.validation_status == 'valid_with_ev' %}
+        <i class="bi bi-exclamation-triangle me-1"></i>Auto-EV
+    {% else %}
+        <i class="bi bi-x-circle me-1"></i>Invalid
+    {% endif %}
+</span>
+
+<!-- RDF Sync Status Badge -->
+<span class="badge {% if record.rdf_sync_status == 'synced' %}bg-success{% elif record.rdf_sync_status == 'pending' %}bg-info{% else %}bg-danger{% endif %}">
+    {% if record.rdf_sync_status == 'synced' %}
+        <i class="bi bi-cloud-check me-1"></i>RDF Synced
+    {% elif record.rdf_sync_status == 'pending' %}
+        <i class="bi bi-hourglass-split me-1"></i>RDF Pending
+    {% else %}
+        <i class="bi bi-cloud-slash me-1"></i>RDF Failed
+    {% endif %}
+</span>

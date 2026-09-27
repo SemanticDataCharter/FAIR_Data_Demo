@@ -1,0 +1,13 @@
+key: hcpcs-code
+label: HCPCS Code
+type: XdString
+description: 'A HCPCS code as recorded on a Medicare claim line: five characters, CPT (Level I) or Level II.'
+source:
+  name: HCPCS
+links:
+- predicate: skos:exactMatch
+  iri: http://www.ama-assn.org/go/cpt
+  basis: standard
+constraints:
+  max_length: 5
+  str_fmt: '[0-9A-Z][0-9]{3}[0-9A-Z]'

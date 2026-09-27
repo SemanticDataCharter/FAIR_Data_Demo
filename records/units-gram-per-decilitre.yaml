@@ -1,0 +1,13 @@
+key: units-gram-per-decilitre
+label: Grams per Decilitre
+type: Units
+description: Mass concentration in grams per decilitre.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: g/dL
+  definition: http://qudt.org/vocab/unit/GM-PER-DeciL

@@ -1,0 +1,55 @@
+{
+  "tiny_id": "brfss-final-weight",
+  "label": "Final Weight: Land-line and Cell-phone Data (_LLCPWT)",
+  "description": "The final raked weight for the combined landline and cellphone sample (_LLCPWT).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Sample Weight",
+    "total_digits": 12,
+    "fraction_digits": 4,
+    "min_inclusive": 0,
+    "units_key": "units-sample-weight",
+    "units_spec": {
+      "label": "Sample Weight",
+      "enums": [
+        "1"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/NUM"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-final-weight",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

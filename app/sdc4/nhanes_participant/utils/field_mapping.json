@@ -1,0 +1,1386 @@
+{
+  "dkc2ccj5te35z9gd4bu1blcq": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_dkc2ccj5te35z9gd4bu1blcq",
+    "ct_id": "dkc2ccj5te35z9gd4bu1blcq",
+    "adapter_ctid": "hpkc8xrccpwc3shm4ubm5o47",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Agent Reference"
+  },
+  "gcjyjrnp0wsfoelcp4m05c67": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_gcjyjrnp0wsfoelcp4m05c67",
+    "ct_id": "gcjyjrnp0wsfoelcp4m05c67",
+    "adapter_ctid": "ynnnvgi8748h2d01z2gf4z8x",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Entity Reference"
+  },
+  "fjhgr5fyqxt2crmg2cb5c513": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_fjhgr5fyqxt2crmg2cb5c513",
+    "ct_id": "fjhgr5fyqxt2crmg2cb5c513",
+    "adapter_ctid": "uf11uwd9s5x5t9bw98z9dr5l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Event Identifier"
+  },
+  "sndpbhm3xbd6qtbyxmvh3i0e": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_sndpbhm3xbd6qtbyxmvh3i0e",
+    "ct_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+    "adapter_ctid": "jwpkqjchavj885uwt5v1jgid",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Data Subject Reference"
+  },
+  "nf1air1zbj8v9w66jozdxmyl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_nf1air1zbj8v9w66jozdxmyl",
+    "ct_id": "nf1air1zbj8v9w66jozdxmyl",
+    "adapter_ctid": "lbor36zlwkf6u7yx9lgqfx0d",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "On Behalf Of Reference"
+  },
+  "h3kdbvdtyalpvik97saaf0an": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_h3kdbvdtyalpvik97saaf0an",
+    "ct_id": "h3kdbvdtyalpvik97saaf0an",
+    "adapter_ctid": "yec6svv50u9d1tz9rp6kmv3v",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "System Identifier"
+  },
+  "ujir739mf1g8ajeczs9nzh9m": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ujir739mf1g8ajeczs9nzh9m",
+    "ct_id": "ujir739mf1g8ajeczs9nzh9m",
+    "adapter_ctid": "r6x55vvha5ci3rl1o29adk03",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "System Location Name"
+  },
+  "ce1c8sydkov8bkv4dgdmwe5x": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ce1c8sydkov8bkv4dgdmwe5x",
+    "ct_id": "ce1c8sydkov8bkv4dgdmwe5x",
+    "adapter_ctid": "lcsns9hrrzcg74jlit8srxgp",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Audit Event Action"
+  },
+  "rpz1czz06jhpahmfz30rblvp": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_rpz1czz06jhpahmfz30rblvp",
+    "ct_id": "rpz1czz06jhpahmfz30rblvp",
+    "adapter_ctid": "wu8f1x11e6ihbltdd6w20rg5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Audit Event Outcome"
+  },
+  "vbctgmdcwps5b3r3l6sboa6y": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vbctgmdcwps5b3r3l6sboa6y",
+    "ct_id": "vbctgmdcwps5b3r3l6sboa6y",
+    "adapter_ctid": "kce8557jd9vg6ei59m7o1kc2",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Confidentiality"
+  },
+  "jujsdur1igws8orw6tvvlqco": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jujsdur1igws8orw6tvvlqco",
+    "ct_id": "jujsdur1igws8orw6tvvlqco",
+    "adapter_ctid": "vgvl7vcmbiz2z7zn9v7ayc04",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Provenance Agent Type"
+  },
+  "d1evlz8yvdlwt6ia9fjq4pgj": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_d1evlz8yvdlwt6ia9fjq4pgj",
+    "ct_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+    "adapter_ctid": "xcmayroyt4krhroimfb3e859",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Purpose of Use"
+  },
+  "uwiosm2q9ym3ewr4de910s70": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_uwiosm2q9ym3ewr4de910s70",
+    "ct_id": "uwiosm2q9ym3ewr4de910s70",
+    "adapter_ctid": "r5fply6fvzhg90zybxgdx5cb",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Audit Recorded At"
+  },
+  "uto4zszvpicva38wx77knz5y": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_uto4zszvpicva38wx77knz5y",
+    "ct_id": "uto4zszvpicva38wx77knz5y",
+    "adapter_ctid": "ijj1g8r7gy94nivsf80yzp3y",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Respondent Sequence Number (SEQN)"
+  },
+  "f98c865cpjza5wwh3odh9nv3": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_f98c865cpjza5wwh3odh9nv3",
+    "ct_id": "f98c865cpjza5wwh3odh9nv3",
+    "adapter_ctid": "p7303pb2ogbtgs2acuxohohq",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Arm Selected (BPAARM)"
+  },
+  "qv6ytjstrquvfr20cyfjqq2d": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_qv6ytjstrquvfr20cyfjqq2d",
+    "ct_id": "qv6ytjstrquvfr20cyfjqq2d",
+    "adapter_ctid": "mmkalj25h599aimdf8iw8lh5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Coded Cuff Size (BPACSZ)"
+  },
+  "uy2fly38y0ghl10xgo4e7svh": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_uy2fly38y0ghl10xgo4e7svh",
+    "ct_id": "uy2fly38y0ghl10xgo4e7svh",
+    "adapter_ctid": "kifolli7gof56b7chejyhfru",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Pulse Regular or Irregular (BPXPULS)"
+  },
+  "ujpg1m8po18ynniqpwhltxld": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_ujpg1m8po18ynniqpwhltxld",
+    "ct_id": "ujpg1m8po18ynniqpwhltxld",
+    "adapter_ctid": "atd2j6lf6e1m0n5ltmoey689",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Maximum Inflation Level (BPXML1)"
+  },
+  "an4r6ds6zhk334liqf3uhses": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_an4r6ds6zhk334liqf3uhses",
+    "ct_id": "an4r6ds6zhk334liqf3uhses",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Pressure"
+  },
+  "oy0jwif5pi86xtimzxzhapvu": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_oy0jwif5pi86xtimzxzhapvu",
+    "ct_id": "oy0jwif5pi86xtimzxzhapvu",
+    "adapter_ctid": "d38u61t1jg8gp54srfyue7yo",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Heart Rate"
+  },
+  "r493514xykrtgyz8dyyqjcxg": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_r493514xykrtgyz8dyyqjcxg",
+    "ct_id": "r493514xykrtgyz8dyyqjcxg",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Rate"
+  },
+  "q9vmn1cvdclgr757aer5v1rg": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_q9vmn1cvdclgr757aer5v1rg",
+    "ct_id": "q9vmn1cvdclgr757aer5v1rg",
+    "adapter_ctid": "ff7i1of52y9suz5zbqm82nlq",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Observation Status"
+  },
+  "s3qzwxxz9b42lcd2wryok8jd": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_s3qzwxxz9b42lcd2wryok8jd",
+    "ct_id": "s3qzwxxz9b42lcd2wryok8jd",
+    "adapter_ctid": "fjcyy99nhq87163iarzemyin",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Diastolic Blood Pressure"
+  },
+  "r1ve12xphsb5hu2yjmhksw5h": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_r1ve12xphsb5hu2yjmhksw5h",
+    "ct_id": "r1ve12xphsb5hu2yjmhksw5h",
+    "adapter_ctid": "do05huhfa5l1ttu2ngbptzy0",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Systolic Blood Pressure"
+  },
+  "dkyyj01tksb7h7akq2w7moum": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_dkyyj01tksb7h7akq2w7moum",
+    "ct_id": "dkyyj01tksb7h7akq2w7moum",
+    "adapter_ctid": "napfyd7sikk7d4k8ksjd8buv",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Observation Date Time"
+  },
+  "q75pzzv36or6dxgjrrbvmun5": {
+    "placeholder": "__PLACEHOLDER__xdlink-value_q75pzzv36or6dxgjrrbvmun5",
+    "ct_id": "q75pzzv36or6dxgjrrbvmun5",
+    "adapter_ctid": "n3n7ow0d22saquarrg9ajpod",
+    "element_name": "xdlink-value",
+    "type": "XdLink",
+    "label": "Code System: SNOMED CT"
+  },
+  "vi7yvq0b8nler3g6alaamrzm": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_vi7yvq0b8nler3g6alaamrzm",
+    "ct_id": "vi7yvq0b8nler3g6alaamrzm",
+    "adapter_ctid": "h5skbx08jplwn6e46n6disg1",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Body Site Code (SNOMED CT)"
+  },
+  "eo5tlfr0576ypknys5alvcn0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_eo5tlfr0576ypknys5alvcn0",
+    "ct_id": "eo5tlfr0576ypknys5alvcn0",
+    "adapter_ctid": "deau6rxprq0zivzdddupk7cj",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Code Display Text"
+  },
+  "ex88a2s3ys6hm5pvv77j0q2u": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ex88a2s3ys6hm5pvv77j0q2u",
+    "ct_id": "ex88a2s3ys6hm5pvv77j0q2u",
+    "adapter_ctid": "hd2y9az4fiex1lhvh3orhjw3",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Annual Household Income (INDHHIN2)"
+  },
+  "m67ncwhc9s1j36f9w9qsrxfx": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_m67ncwhc9s1j36f9w9qsrxfx",
+    "ct_id": "m67ncwhc9s1j36f9w9qsrxfx",
+    "adapter_ctid": "jyned2v1w8klg2txlktsbpnq",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Citizenship Status (DMDCITZN)"
+  },
+  "nwsj84veb6u9g1v0h2a3a793": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_nwsj84veb6u9g1v0h2a3a793",
+    "ct_id": "nwsj84veb6u9g1v0h2a3a793",
+    "adapter_ctid": "zd9y12at0wi7s2s86h1kn1w5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Country of Birth (DMDBORN4)"
+  },
+  "fqjd2lvp9jamdpf0f3kpkwnp": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_fqjd2lvp9jamdpf0f3kpkwnp",
+    "ct_id": "fqjd2lvp9jamdpf0f3kpkwnp",
+    "adapter_ctid": "mh21uzqd20mzuwzwbdbk7u8g",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Education Level - Adults 20+ (DMDEDUC2)"
+  },
+  "sigmhjzuw16w0k8op92lk9sd": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_sigmhjzuw16w0k8op92lk9sd",
+    "ct_id": "sigmhjzuw16w0k8op92lk9sd",
+    "adapter_ctid": "f9sq1hdi3posurxbfkf3dwc5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Gender (RIAGENDR)"
+  },
+  "i3uys2dmi257jkdzavsst5az": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_i3uys2dmi257jkdzavsst5az",
+    "ct_id": "i3uys2dmi257jkdzavsst5az",
+    "adapter_ctid": "eztp6dodpjmprjv81ihocegs",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Marital Status (DMDMARTL)"
+  },
+  "r0j6yo8zvo4q8x0ovdr6j9yz": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_r0j6yo8zvo4q8x0ovdr6j9yz",
+    "ct_id": "r0j6yo8zvo4q8x0ovdr6j9yz",
+    "adapter_ctid": "ur3qx130yhm8orpom57ebtpg",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Pregnancy Status at Exam (RIDEXPRG)"
+  },
+  "hs44ipuqgvc3azbt3mirxtsz": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_hs44ipuqgvc3azbt3mirxtsz",
+    "ct_id": "hs44ipuqgvc3azbt3mirxtsz",
+    "adapter_ctid": "uv7bw85npbla560z3qmik4md",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Race/Hispanic Origin with NH Asian (RIDRETH3)"
+  },
+  "eimlsgbawhm8aa4i6gbdrja0": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_eimlsgbawhm8aa4i6gbdrja0",
+    "ct_id": "eimlsgbawhm8aa4i6gbdrja0",
+    "adapter_ctid": "elfq9fc70w7vrblzcx9gr7iz",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Veteran Status"
+  },
+  "owjt9bcgisxfbco8qnddo2fq": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_owjt9bcgisxfbco8qnddo2fq",
+    "ct_id": "owjt9bcgisxfbco8qnddo2fq",
+    "adapter_ctid": "oqehyqreytbvds2qyaq8rof3",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Are you pregnant now?"
+  },
+  "xtbtk7ro6s9247bcwt4ak4h1": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_xtbtk7ro6s9247bcwt4ak4h1",
+    "ct_id": "xtbtk7ro6s9247bcwt4ak4h1",
+    "adapter_ctid": "whbmbdx6w88jtct1o3xofw6u",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Current Educational Attainment"
+  },
+  "qsetd453kk9own8co1wmc5cz": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_qsetd453kk9own8co1wmc5cz",
+    "ct_id": "qsetd453kk9own8co1wmc5cz",
+    "adapter_ctid": "lt5ldcz6erg3hhsij4pv7c43",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Marital Status"
+  },
+  "u5tietya3u56hbz2kos06ai7": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_u5tietya3u56hbz2kos06ai7",
+    "ct_id": "u5tietya3u56hbz2kos06ai7",
+    "adapter_ctid": "wzy3g7mcg3shr1ah8fhzxgkb",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Race/Ethnicity Self-Identification"
+  },
+  "gxzbm758mhdz51xd4bawlfhh": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_gxzbm758mhdz51xd4bawlfhh",
+    "ct_id": "gxzbm758mhdz51xd4bawlfhh",
+    "adapter_ctid": "cpcvbb0xq072zk086ukfl41m",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Administrative Gender"
+  },
+  "qg7or0c34grde4gprzwifukh": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_qg7or0c34grde4gprzwifukh",
+    "ct_id": "qg7or0c34grde4gprzwifukh",
+    "adapter_ctid": "uhrxmsm02slm534pea8rjx3f",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Age in Months at Screening (RIDAGEMN)"
+  },
+  "uixgck0xt60055m4bdcxkhyj": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_uixgck0xt60055m4bdcxkhyj",
+    "ct_id": "uixgck0xt60055m4bdcxkhyj",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Months"
+  },
+  "qbp08a1gscple2aiuiwyfz2s": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_qbp08a1gscple2aiuiwyfz2s",
+    "ct_id": "qbp08a1gscple2aiuiwyfz2s",
+    "adapter_ctid": "z1jdmme2x4b6i9dw8wj4ma79",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Total Number of People in the Household (DMDHHSIZ)"
+  },
+  "c3ycqqk7ns1bvmsc0ricnsbn": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_c3ycqqk7ns1bvmsc0ricnsbn",
+    "ct_id": "c3ycqqk7ns1bvmsc0ricnsbn",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Items"
+  },
+  "wuvdeiwoe5bna7nlhcl1c4h9": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_wuvdeiwoe5bna7nlhcl1c4h9",
+    "ct_id": "wuvdeiwoe5bna7nlhcl1c4h9",
+    "adapter_ctid": "zm46otmwkxgersw3y93icjp4",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Age"
+  },
+  "t6znwhu1i6tg52lv4v3upb10": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_t6znwhu1i6tg52lv4v3upb10",
+    "ct_id": "t6znwhu1i6tg52lv4v3upb10",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "years or months"
+  },
+  "dwd4pk56w0pjchsyzl81fzya": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_dwd4pk56w0pjchsyzl81fzya",
+    "ct_id": "dwd4pk56w0pjchsyzl81fzya",
+    "adapter_ctid": "d7w94loovd5ur41vqfam4vuj",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Ratio of Family Income to Poverty (INDFMPIR)"
+  },
+  "warylvhshpbc5eqkt0n9mz30": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_warylvhshpbc5eqkt0n9mz30",
+    "ct_id": "warylvhshpbc5eqkt0n9mz30",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Sample Weight"
+  },
+  "ncskx5im3if41mqo9pm8ydx0": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_ncskx5im3if41mqo9pm8ydx0",
+    "ct_id": "ncskx5im3if41mqo9pm8ydx0",
+    "adapter_ctid": "qfhd7wv1otd5i3znla2bx7dn",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Basophils Number"
+  },
+  "ebtwma3vz90nci5or2gtxx0d": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ebtwma3vz90nci5or2gtxx0d",
+    "ct_id": "ebtwma3vz90nci5or2gtxx0d",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Thousands per Microlitre"
+  },
+  "wcasfq02d9hukvn2bar4r67d": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_wcasfq02d9hukvn2bar4r67d",
+    "ct_id": "wcasfq02d9hukvn2bar4r67d",
+    "adapter_ctid": "jgld1cx3arhjwk1c5dmgomyk",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Basophils Percent"
+  },
+  "bvz91uwa2c28sr0k5u85zx04": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_bvz91uwa2c28sr0k5u85zx04",
+    "ct_id": "bvz91uwa2c28sr0k5u85zx04",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Percentage"
+  },
+  "f49ynlsmh5zex122r4i2jeqg": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_f49ynlsmh5zex122r4i2jeqg",
+    "ct_id": "f49ynlsmh5zex122r4i2jeqg",
+    "adapter_ctid": "k64k1xvkxew3e2qooja6z4i4",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Eosinophils Number"
+  },
+  "zsikpg1vrhzoydvk26gpg6nb": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_zsikpg1vrhzoydvk26gpg6nb",
+    "ct_id": "zsikpg1vrhzoydvk26gpg6nb",
+    "adapter_ctid": "c45fulh17zjkeqvwnvkjk4uj",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Eosinophils Percent"
+  },
+  "kn0gsgklvqcbbz2f20dg1koy": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_kn0gsgklvqcbbz2f20dg1koy",
+    "ct_id": "kn0gsgklvqcbbz2f20dg1koy",
+    "adapter_ctid": "covaemuc6f8nxgbc15r0tb3d",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Hematocrit"
+  },
+  "z9jeqoghnlvlyy8sgxk5lwne": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_z9jeqoghnlvlyy8sgxk5lwne",
+    "ct_id": "z9jeqoghnlvlyy8sgxk5lwne",
+    "adapter_ctid": "ooyyz179drgxv7zslyf8a78g",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Hemoglobin"
+  },
+  "gj5enh9y0km64ww0oa5vk7v3": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_gj5enh9y0km64ww0oa5vk7v3",
+    "ct_id": "gj5enh9y0km64ww0oa5vk7v3",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Grams per Decilitre"
+  },
+  "cdzb3xhl10wivkk305sm09wf": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_cdzb3xhl10wivkk305sm09wf",
+    "ct_id": "cdzb3xhl10wivkk305sm09wf",
+    "adapter_ctid": "jc6me7dqxu3rnhxv1xuvy76l",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Lymphocyte Number"
+  },
+  "ia77g23fvigr9b9dkx6a1rcl": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_ia77g23fvigr9b9dkx6a1rcl",
+    "ct_id": "ia77g23fvigr9b9dkx6a1rcl",
+    "adapter_ctid": "oun5ydkfsebllsb4es719ixv",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Lymphocyte Percent"
+  },
+  "scmpca8vlisbmmfa3njyx2o2": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_scmpca8vlisbmmfa3njyx2o2",
+    "ct_id": "scmpca8vlisbmmfa3njyx2o2",
+    "adapter_ctid": "e2ibralcpuvrni46q4lpjaiy",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Mean Cell Hemoglobin"
+  },
+  "pwew1ssov8df0h199h7r1d0v": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_pwew1ssov8df0h199h7r1d0v",
+    "ct_id": "pwew1ssov8df0h199h7r1d0v",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Picograms"
+  },
+  "pf1abnd8c9cfwb4hw9lc65b0": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_pf1abnd8c9cfwb4hw9lc65b0",
+    "ct_id": "pf1abnd8c9cfwb4hw9lc65b0",
+    "adapter_ctid": "zcmuvqcxez5j8c9vb1rxvwp0",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Mean Cell Hemoglobin Concentration"
+  },
+  "sqjdwrx3kpuuxkwa69bodut2": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_sqjdwrx3kpuuxkwa69bodut2",
+    "ct_id": "sqjdwrx3kpuuxkwa69bodut2",
+    "adapter_ctid": "u44n1uc1fgnsist81jtadloc",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Mean Cell Volume"
+  },
+  "u9ijfragaqhnsuqzaajjrz2m": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_u9ijfragaqhnsuqzaajjrz2m",
+    "ct_id": "u9ijfragaqhnsuqzaajjrz2m",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Femtolitres"
+  },
+  "n6mstjwsss62iruurp7utrn4": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_n6mstjwsss62iruurp7utrn4",
+    "ct_id": "n6mstjwsss62iruurp7utrn4",
+    "adapter_ctid": "d6yfrb98tlsp6sn670z7k0dt",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Mean Platelet Volume"
+  },
+  "hesbothq9s8ihc33ihsbv3bi": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_hesbothq9s8ihc33ihsbv3bi",
+    "ct_id": "hesbothq9s8ihc33ihsbv3bi",
+    "adapter_ctid": "perm9hfbp5gc0qzubdg5nury",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Monocyte Number"
+  },
+  "cyu9eutfs28y6tl8bsxwr3qe": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_cyu9eutfs28y6tl8bsxwr3qe",
+    "ct_id": "cyu9eutfs28y6tl8bsxwr3qe",
+    "adapter_ctid": "q1c45aulm4mp1o8pwh2twpry",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Monocyte Percent"
+  },
+  "swvr4xwxui5idfg7r6tfa1mr": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_swvr4xwxui5idfg7r6tfa1mr",
+    "ct_id": "swvr4xwxui5idfg7r6tfa1mr",
+    "adapter_ctid": "vquizwp5eb8fcugy0dtvbtpr",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Nucleated Red Blood Cells"
+  },
+  "ezm3xazl3vdpmykpasxccal0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ezm3xazl3vdpmykpasxccal0",
+    "ct_id": "ezm3xazl3vdpmykpasxccal0",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Per 100 Cells"
+  },
+  "o3jk44vqom9ne0v4tiay1ys7": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_o3jk44vqom9ne0v4tiay1ys7",
+    "ct_id": "o3jk44vqom9ne0v4tiay1ys7",
+    "adapter_ctid": "lardvrmw5jhbs06q9y49eg90",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Platelet Count"
+  },
+  "uraf13ojset6tivrdptohfbr": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_uraf13ojset6tivrdptohfbr",
+    "ct_id": "uraf13ojset6tivrdptohfbr",
+    "adapter_ctid": "ja9jvdmqmay2xx5hc8rcv0l7",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Red Blood Cell Count"
+  },
+  "nqxrp9pb7b9rdzn0fh3y2gs4": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_nqxrp9pb7b9rdzn0fh3y2gs4",
+    "ct_id": "nqxrp9pb7b9rdzn0fh3y2gs4",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Millions per Microlitre"
+  },
+  "pf6ne2nf0ef5xeba7q73a2s8": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_pf6ne2nf0ef5xeba7q73a2s8",
+    "ct_id": "pf6ne2nf0ef5xeba7q73a2s8",
+    "adapter_ctid": "a1l52n2o0ssurktwykolj9af",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Red Cell Distribution Width"
+  },
+  "a3bccid1kdgem2m5rix68o1y": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_a3bccid1kdgem2m5rix68o1y",
+    "ct_id": "a3bccid1kdgem2m5rix68o1y",
+    "adapter_ctid": "z0yowq6bzlefllzlscq31nki",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Segmented Neutrophils Number"
+  },
+  "n13vv8g72h826o4o1jxm1o91": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_n13vv8g72h826o4o1jxm1o91",
+    "ct_id": "n13vv8g72h826o4o1jxm1o91",
+    "adapter_ctid": "kp1ywn07wltx28b4j8t3itki",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Segmented Neutrophils Percent"
+  },
+  "rl42ns60wqjt2jr4kgmfomsd": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_rl42ns60wqjt2jr4kgmfomsd",
+    "ct_id": "rl42ns60wqjt2jr4kgmfomsd",
+    "adapter_ctid": "ab8miajf7qzeuyyokahettz2",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Total Cholesterol"
+  },
+  "rpu89r6jz2mhu8yoiuv2j6k5": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_rpu89r6jz2mhu8yoiuv2j6k5",
+    "ct_id": "rpu89r6jz2mhu8yoiuv2j6k5",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Milligrams per Decilitre"
+  },
+  "qp5mdgab3s37zwqzyfzq8rvi": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_qp5mdgab3s37zwqzyfzq8rvi",
+    "ct_id": "qp5mdgab3s37zwqzyfzq8rvi",
+    "adapter_ctid": "g82u3cw1lueodrdqwcwqacix",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Total Cholesterol (SI)"
+  },
+  "xpa0i073e6fml5g0sz794dfs": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_xpa0i073e6fml5g0sz794dfs",
+    "ct_id": "xpa0i073e6fml5g0sz794dfs",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Millimoles per Litre"
+  },
+  "cujdlrpxv7byme6c5z3ai1ui": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_cujdlrpxv7byme6c5z3ai1ui",
+    "ct_id": "cujdlrpxv7byme6c5z3ai1ui",
+    "adapter_ctid": "gil6lqt1tee6x90m30trs2e5",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "White Blood Cell Count"
+  },
+  "fwyb9ukfypotqkvahtygrjo5": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_fwyb9ukfypotqkvahtygrjo5",
+    "ct_id": "fwyb9ukfypotqkvahtygrjo5",
+    "adapter_ctid": "l94h9ni4l2siqaclko1rqluo",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Doctor Ever Said You Were Overweight (MCQ080)"
+  },
+  "ejjthi5lftrx9a7rv3fedq6m": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ejjthi5lftrx9a7rv3fedq6m",
+    "ct_id": "ejjthi5lftrx9a7rv3fedq6m",
+    "adapter_ctid": "yyuoe930w598j9fw60spexie",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Still Have Asthma (MCQ035)"
+  },
+  "d9z9mcx6gs9zbz4k6f0v738s": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_d9z9mcx6gs9zbz4k6f0v738s",
+    "ct_id": "d9z9mcx6gs9zbz4k6f0v738s",
+    "adapter_ctid": "ijbp8d16nkpgd3rlw8mc6b00",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Alzheimer"
+  },
+  "o4d67oubyyunugx3la44f53u": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_o4d67oubyyunugx3la44f53u",
+    "ct_id": "o4d67oubyyunugx3la44f53u",
+    "adapter_ctid": "qwr8oppceuigsrirvnpcjyed",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Angina"
+  },
+  "nd1v8jk7wtm1tthzw1f4987t": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_nd1v8jk7wtm1tthzw1f4987t",
+    "ct_id": "nd1v8jk7wtm1tthzw1f4987t",
+    "adapter_ctid": "cpjtssbqqnsi8kosc7cta973",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Arthritis"
+  },
+  "acr1xvqppf1b3rjsrst6tt4p": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_acr1xvqppf1b3rjsrst6tt4p",
+    "ct_id": "acr1xvqppf1b3rjsrst6tt4p",
+    "adapter_ctid": "lm8riadasawyvighwhidnfmr",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Asthma"
+  },
+  "ix0my2v2z79s002g0r8orosf": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ix0my2v2z79s002g0r8orosf",
+    "ct_id": "ix0my2v2z79s002g0r8orosf",
+    "adapter_ctid": "e0tdiylevix76r3l64fh8j4x",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Cancer"
+  },
+  "jyx7rxfktazhgxgq84fxf6wr": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jyx7rxfktazhgxgq84fxf6wr",
+    "ct_id": "jyx7rxfktazhgxgq84fxf6wr",
+    "adapter_ctid": "c2ley3g1nu17i3djd4cotr88",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Chronic Bronchitis"
+  },
+  "hyqlz591lhj54sdt1a1mup70": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_hyqlz591lhj54sdt1a1mup70",
+    "ct_id": "hyqlz591lhj54sdt1a1mup70",
+    "adapter_ctid": "x6hucojdpiqdr60u3zxse3dl",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Congestive Heart Failure"
+  },
+  "mijr18ynaqde2l8jps70l2g6": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_mijr18ynaqde2l8jps70l2g6",
+    "ct_id": "mijr18ynaqde2l8jps70l2g6",
+    "adapter_ctid": "byxxuau9d2hajbla9wwc442t",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: COPD"
+  },
+  "udbydjqj76l8kl6mi2s3v7vd": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_udbydjqj76l8kl6mi2s3v7vd",
+    "ct_id": "udbydjqj76l8kl6mi2s3v7vd",
+    "adapter_ctid": "livh99p75uo3mssipi40v044",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Coronary Heart Disease"
+  },
+  "of4crvmnrr3s5q5396kmt0jv": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_of4crvmnrr3s5q5396kmt0jv",
+    "ct_id": "of4crvmnrr3s5q5396kmt0jv",
+    "adapter_ctid": "jy09m0fa7skhj3w2h4vfak7b",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Depression"
+  },
+  "fzpb9xr5jg2m3e3dzmvi1v3h": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_fzpb9xr5jg2m3e3dzmvi1v3h",
+    "ct_id": "fzpb9xr5jg2m3e3dzmvi1v3h",
+    "adapter_ctid": "f5o4ld7fm5kqhzf102q4y2r9",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Diabetes"
+  },
+  "sbulkq80j4fkbiql4zgje4qr": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_sbulkq80j4fkbiql4zgje4qr",
+    "ct_id": "sbulkq80j4fkbiql4zgje4qr",
+    "adapter_ctid": "zosryxykww1exsfjtb0s3fzv",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Emphysema"
+  },
+  "yshoeps2dm0j1ueusqs825v6": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_yshoeps2dm0j1ueusqs825v6",
+    "ct_id": "yshoeps2dm0j1ueusqs825v6",
+    "adapter_ctid": "p4c4kczn0x3qkvzk6vty9vrs",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Heart Attack"
+  },
+  "lvockfc8lce5p15wuwxc1kwa": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_lvockfc8lce5p15wuwxc1kwa",
+    "ct_id": "lvockfc8lce5p15wuwxc1kwa",
+    "adapter_ctid": "vt4f46t22mnqwcqhpriuotu4",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: High Blood Pressure"
+  },
+  "gp3jxw3xzs761ll6u5rvc6jr": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_gp3jxw3xzs761ll6u5rvc6jr",
+    "ct_id": "gp3jxw3xzs761ll6u5rvc6jr",
+    "adapter_ctid": "zmk00yz0hbtqwnhag2uzczil",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: High Cholesterol"
+  },
+  "hc79skkfionpgw87dsg5yrgw": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_hc79skkfionpgw87dsg5yrgw",
+    "ct_id": "hc79skkfionpgw87dsg5yrgw",
+    "adapter_ctid": "sqz385aell855p97kpkdwuop",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition Indicator Basis"
+  },
+  "sw5rt0k2uap0e3xgl4rznfgu": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_sw5rt0k2uap0e3xgl4rznfgu",
+    "ct_id": "sw5rt0k2uap0e3xgl4rznfgu",
+    "adapter_ctid": "f3h2velkrit4w56qlfceatjl",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Kidney Disease"
+  },
+  "atqkooccakulfhkt18c008fx": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_atqkooccakulfhkt18c008fx",
+    "ct_id": "atqkooccakulfhkt18c008fx",
+    "adapter_ctid": "rhb4ksmdy1b0rx39kbpt9l2f",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Liver Condition"
+  },
+  "l784ggegqcvrpnmw2yvo4il7": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_l784ggegqcvrpnmw2yvo4il7",
+    "ct_id": "l784ggegqcvrpnmw2yvo4il7",
+    "adapter_ctid": "xepqnpyehgct9s378tinmz0t",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Osteoporosis"
+  },
+  "xsohkckyof7y1xj8h1ab4pxu": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_xsohkckyof7y1xj8h1ab4pxu",
+    "ct_id": "xsohkckyof7y1xj8h1ab4pxu",
+    "adapter_ctid": "ibjm0hmb9xywzwptvh4wsuzh",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Skin Cancer"
+  },
+  "zc6p008h5naqev8zngtzvyx9": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_zc6p008h5naqev8zngtzvyx9",
+    "ct_id": "zc6p008h5naqev8zngtzvyx9",
+    "adapter_ctid": "fblg9innykrg6wveclrn2gz7",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Stroke"
+  },
+  "p8u71b4lhct4ra0szgkex7xo": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_p8u71b4lhct4ra0szgkex7xo",
+    "ct_id": "p8u71b4lhct4ra0szgkex7xo",
+    "adapter_ctid": "y429feu1qzr7lnagv9ua2cc6",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Condition: Thyroid Problem"
+  },
+  "p4jxl2rur1agjhdpvj2g9u4k": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_p4jxl2rur1agjhdpvj2g9u4k",
+    "ct_id": "p4jxl2rur1agjhdpvj2g9u4k",
+    "adapter_ctid": "jezrrijbbouq94eti060f80t",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Dressing Yourself (PFQ061L)"
+  },
+  "cy6k5rxvhvg2v27cfp7pjwyx": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_cy6k5rxvhvg2v27cfp7pjwyx",
+    "ct_id": "cy6k5rxvhvg2v27cfp7pjwyx",
+    "adapter_ctid": "tdgsv3z7rd96b7r1gfpbkvz7",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Getting In and Out of Bed (PFQ061J)"
+  },
+  "b1mxr233mgqvzr39c90ly8cv": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_b1mxr233mgqvzr39c90ly8cv",
+    "ct_id": "b1mxr233mgqvzr39c90ly8cv",
+    "adapter_ctid": "p8862179iadfsl5z6jpbgy3l",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Lifting or Carrying (PFQ061E)"
+  },
+  "vp4ow7t3q8w2phcft0qvyj4u": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vp4ow7t3q8w2phcft0qvyj4u",
+    "ct_id": "vp4ow7t3q8w2phcft0qvyj4u",
+    "adapter_ctid": "aixw24icqtjc1ea6v2ctfzxr",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Standing for Long Periods (PFQ061M)"
+  },
+  "y52y4mpq95zcknal0be1uc7v": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_y52y4mpq95zcknal0be1uc7v",
+    "ct_id": "y52y4mpq95zcknal0be1uc7v",
+    "adapter_ctid": "web3bzbt7f10eg8dqlnnjw5q",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Standing Up from an Armless Chair (PFQ061I)"
+  },
+  "knrs4clih4pi26tm2zra1ai0": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_knrs4clih4pi26tm2zra1ai0",
+    "ct_id": "knrs4clih4pi26tm2zra1ai0",
+    "adapter_ctid": "g9lpvt02dlurrv5dm8vpspkf",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Stooping, Crouching or Kneeling (PFQ061D)"
+  },
+  "mktq5xr8slz67q85idl8bsky": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_mktq5xr8slz67q85idl8bsky",
+    "ct_id": "mktq5xr8slz67q85idl8bsky",
+    "adapter_ctid": "qsz3mb7zjbxrlwvix2glfnzf",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Walking a Quarter Mile (PFQ061B)"
+  },
+  "crr2z3b2l7hlq1kvevppt8kt": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_crr2z3b2l7hlq1kvevppt8kt",
+    "ct_id": "crr2z3b2l7hlq1kvevppt8kt",
+    "adapter_ctid": "ujucqerfx02j9an65lovws8y",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Walking Between Rooms (PFQ061H)"
+  },
+  "rot4z5ny8gdkfmimedcjl1te": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_rot4z5ny8gdkfmimedcjl1te",
+    "ct_id": "rot4z5ny8gdkfmimedcjl1te",
+    "adapter_ctid": "j66le40jandysvfcdr4ifkg2",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Difficulty Walking Up Ten Stairs (PFQ061C)"
+  },
+  "jxdk8rs1m133yzb52rfs08hy": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jxdk8rs1m133yzb52rfs08hy",
+    "ct_id": "jxdk8rs1m133yzb52rfs08hy",
+    "adapter_ctid": "fgx8wb0e1gi2a073zfqic3dx",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Experience Confusion or Memory Problems (PFQ057)"
+  },
+  "gxy0s65v35djnq875rzhcmby": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_gxy0s65v35djnq875rzhcmby",
+    "ct_id": "gxy0s65v35djnq875rzhcmby",
+    "adapter_ctid": "vlhnalk1yx6kagpbnl4oxdct",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Limitations Keeping You from Working (PFQ049)"
+  },
+  "wh4zkqhos44fbb5p0b5c7w1d": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_wh4zkqhos44fbb5p0b5c7w1d",
+    "ct_id": "wh4zkqhos44fbb5p0b5c7w1d",
+    "adapter_ctid": "q5uzvt51xpffw2hs4ckqujib",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Need Special Equipment to Walk (PFQ054)"
+  },
+  "mq5xicyh1n3d8ofhyroazip2": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_mq5xicyh1n3d8ofhyroazip2",
+    "ct_id": "mq5xicyh1n3d8ofhyroazip2",
+    "adapter_ctid": "zko914e71af1esesgxbk5c9y",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Do You Now Smoke Cigarettes (SMQ040)"
+  },
+  "gy1045dipmx8udv1bndk7hrv": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_gy1045dipmx8udv1bndk7hrv",
+    "ct_id": "gy1045dipmx8udv1bndk7hrv",
+    "adapter_ctid": "oak69ptv9frzss1o4h5c8ezc",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Ever Used an E-cigarette (SMQ900)"
+  },
+  "lnbzdjsluc4ebnri7k4dvn2i": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_lnbzdjsluc4ebnri7k4dvn2i",
+    "ct_id": "lnbzdjsluc4ebnri7k4dvn2i",
+    "adapter_ctid": "l43uev0e8s98gwnuin5af2ix",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Smoked at Least 100 Cigarettes in Life (SMQ020)"
+  },
+  "n7pn5ctqo81v0v418hez5zv5": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_n7pn5ctqo81v0v418hez5zv5",
+    "ct_id": "n7pn5ctqo81v0v418hez5zv5",
+    "adapter_ctid": "gltl14s59crclwwf1pp1j5l5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Smoking Status"
+  },
+  "wlfal1j4vnwy76szun72madm": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_wlfal1j4vnwy76szun72madm",
+    "ct_id": "wlfal1j4vnwy76szun72madm",
+    "adapter_ctid": "qm62rjqhrpnh1rjwaa4x8jet",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Age Started Smoking Cigarettes Regularly (SMD030)"
+  },
+  "skxvr3cdab7dmc5y66zr3mr0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_skxvr3cdab7dmc5y66zr3mr0",
+    "ct_id": "skxvr3cdab7dmc5y66zr3mr0",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Years"
+  },
+  "v9wj86qu70lda3tt2dh299wz": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_v9wj86qu70lda3tt2dh299wz",
+    "ct_id": "v9wj86qu70lda3tt2dh299wz",
+    "adapter_ctid": "jdi4c589tsk0eqivcwhcz8c2",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Average Cigarettes per Day, Past 30 Days (SMD650)"
+  },
+  "x5usbr8d1n8gd0ojbzbgp6m2": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_x5usbr8d1n8gd0ojbzbgp6m2",
+    "ct_id": "x5usbr8d1n8gd0ojbzbgp6m2",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Cigarettes"
+  },
+  "k52nvzllwurg016nvsulpm32": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_k52nvzllwurg016nvsulpm32",
+    "ct_id": "k52nvzllwurg016nvsulpm32",
+    "adapter_ctid": "rfd1vy3yaf6dmvs3kttlh6wx",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Data Release Cycle (SDDSRVYR)"
+  },
+  "j9l0spojx47xnjqipfl9mzte": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_j9l0spojx47xnjqipfl9mzte",
+    "ct_id": "j9l0spojx47xnjqipfl9mzte",
+    "adapter_ctid": "kmpj9imo70j9yer5ygkphykm",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Interview/Examination Status (RIDSTATR)"
+  },
+  "vxldr9jodr9eu5uol3g4c189": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_vxldr9jodr9eu5uol3g4c189",
+    "ct_id": "vxldr9jodr9eu5uol3g4c189",
+    "adapter_ctid": "jz23efi6l8wv5da4n8coe5x2",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Masked Variance Pseudo-PSU (SDMVPSU)"
+  },
+  "yksuiithtrif7jdrjpi4o7eg": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_yksuiithtrif7jdrjpi4o7eg",
+    "ct_id": "yksuiithtrif7jdrjpi4o7eg",
+    "adapter_ctid": "twkp89xeg2dr6pnwxsxl35ys",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Masked Variance Pseudo-Stratum (SDMVSTRA)"
+  },
+  "zmw9684hejwjsfcg6t71jkgl": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_zmw9684hejwjsfcg6t71jkgl",
+    "ct_id": "zmw9684hejwjsfcg6t71jkgl",
+    "adapter_ctid": "jpt3gmoetoatx49enk7dl1zy",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Full Sample 2 Year Interview Weight (WTINT2YR)"
+  },
+  "w7xdjmfmoev4of0gd76mtnto": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_w7xdjmfmoev4of0gd76mtnto",
+    "ct_id": "w7xdjmfmoev4of0gd76mtnto",
+    "adapter_ctid": "st2ei5u3i891t2z0lw42o1nr",
+    "element_name": "xdquantity-value",
+    "type": "XdQuantity",
+    "label": "Full Sample 2 Year MEC Exam Weight (WTMEC2YR)"
+  },
+  "hhusuzzig19rs46ngz23k5g7": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_hhusuzzig19rs46ngz23k5g7",
+    "ct_id": "hhusuzzig19rs46ngz23k5g7",
+    "adapter_ctid": "vycps7awt38y25jhnrr4okxt",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Description"
+  },
+  "wr06h54xqqw2q9id8i9673jy": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_wr06h54xqqw2q9id8i9673jy",
+    "ct_id": "wr06h54xqqw2q9id8i9673jy",
+    "adapter_ctid": "o9p6k7c9ie20j5du0jmd3749",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Identifier"
+  },
+  "r6hkunjm2q0hlxiknlc9ljix": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_r6hkunjm2q0hlxiknlc9ljix",
+    "ct_id": "r6hkunjm2q0hlxiknlc9ljix",
+    "adapter_ctid": "o0qu77y6w4lwvu2qhms3ilbw",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Label"
+  },
+  "uzai5uey5p1fnn9ezj9u6vor": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_uzai5uey5p1fnn9ezj9u6vor",
+    "ct_id": "uzai5uey5p1fnn9ezj9u6vor",
+    "adapter_ctid": "rat798vb1tfxjuf56sqrvtty",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Location"
+  },
+  "jjzmhdxvbt97pq81iwqubtxk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_jjzmhdxvbt97pq81iwqubtxk",
+    "ct_id": "jjzmhdxvbt97pq81iwqubtxk",
+    "adapter_ctid": "qeu9jq1owxxh2woqo1f7m8jk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Type"
+  },
+  "xlgjqdpwdbn2re3mdh5yy2rk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_xlgjqdpwdbn2re3mdh5yy2rk",
+    "ct_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+    "adapter_ctid": "jwvcklvakotmdztpikyodwkx",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Error Message"
+  },
+  "vhezo2cckpe92x4c3j2memeh": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_vhezo2cckpe92x4c3j2memeh",
+    "ct_id": "vhezo2cckpe92x4c3j2memeh",
+    "adapter_ctid": "r48fyfvuhl62i5yihku0hws1",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Had Plan Reference"
+  },
+  "t0whhrqtnb54te4mk48i1ooj": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_t0whhrqtnb54te4mk48i1ooj",
+    "ct_id": "t0whhrqtnb54te4mk48i1ooj",
+    "adapter_ctid": "mjj6mlhqgzcprfwuwnhu5npz",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Used Entity Reference"
+  },
+  "r48alj7hc3797qfjnf2uj71n": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_r48alj7hc3797qfjnf2uj71n",
+    "ct_id": "r48alj7hc3797qfjnf2uj71n",
+    "adapter_ctid": "in4ct2aoguzdvzg4mlsmsxfd",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Associated With Reference"
+  },
+  "ueb5g1ojzlwwt0mnds5zb6wl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ueb5g1ojzlwwt0mnds5zb6wl",
+    "ct_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+    "adapter_ctid": "k87dda72y8upko7dnrcs425s",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Ended By Reference"
+  },
+  "qh84jdzp1kxt85aq4ilo0svk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_qh84jdzp1kxt85aq4ilo0svk",
+    "ct_id": "qh84jdzp1kxt85aq4ilo0svk",
+    "adapter_ctid": "eeyxfka9q0b81swhc0cpvd1l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Informed By Reference"
+  },
+  "ginfqbk7q59ld2r4us8sjnv1": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ginfqbk7q59ld2r4us8sjnv1",
+    "ct_id": "ginfqbk7q59ld2r4us8sjnv1",
+    "adapter_ctid": "vmiyaznvvl2jw19cyv414jj3",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Started By Reference"
+  },
+  "wl6j4ekcmu4hvt2m12zw4zp8": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_wl6j4ekcmu4hvt2m12zw4zp8",
+    "ct_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+    "adapter_ctid": "q4rwxzoldz452g7rbii2an1h",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Activity Status"
+  },
+  "a5scyosu6j84vz350mqyrzl2": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_a5scyosu6j84vz350mqyrzl2",
+    "ct_id": "a5scyosu6j84vz350mqyrzl2",
+    "adapter_ctid": "xiy4gn6vievei3614sso5vmk",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Ended At"
+  },
+  "sa4nl1kbpdr842fkucvfjkpq": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_sa4nl1kbpdr842fkucvfjkpq",
+    "ct_id": "sa4nl1kbpdr842fkucvfjkpq",
+    "adapter_ctid": "vzyuqpkegby4er3pw12gxw2c",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Started At"
+  },
+  "og08xf6bu928uuz6t3y0e23f": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_og08xf6bu928uuz6t3y0e23f",
+    "ct_id": "og08xf6bu928uuz6t3y0e23f",
+    "adapter_ctid": "j9gccgohqlb59l1t37doseiq",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Acted On Behalf Of Reference"
+  },
+  "gb78cmuyo72hqs5apymdki7l": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_gb78cmuyo72hqs5apymdki7l",
+    "ct_id": "gb78cmuyo72hqs5apymdki7l",
+    "adapter_ctid": "px1s852i5pfng3v0ikk6fw4m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Description"
+  },
+  "qb90a0sp9vvb6c5cbcf236ys": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_qb90a0sp9vvb6c5cbcf236ys",
+    "ct_id": "qb90a0sp9vvb6c5cbcf236ys",
+    "adapter_ctid": "wi324lr48j1pzugpnw17p87m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Email"
+  },
+  "w2ruemcfy35rw60jl1t9dew2": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_w2ruemcfy35rw60jl1t9dew2",
+    "ct_id": "w2ruemcfy35rw60jl1t9dew2",
+    "adapter_ctid": "qfmes86biux1nl7gbaowsgc4",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Identifier"
+  },
+  "xxe21o9ojzmy9wxxky1tnmog": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_xxe21o9ojzmy9wxxky1tnmog",
+    "ct_id": "xxe21o9ojzmy9wxxky1tnmog",
+    "adapter_ctid": "ljldab8e1bjizncv01akb0n5",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Name"
+  },
+  "eftvwi5byq6cdtd931qyxzw0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_eftvwi5byq6cdtd931qyxzw0",
+    "ct_id": "eftvwi5byq6cdtd931qyxzw0",
+    "adapter_ctid": "f6z431hl60ra8eqbrcyrsvji",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Organization Name"
+  },
+  "aa663ivutjf2fs4757t0bbzy": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_aa663ivutjf2fs4757t0bbzy",
+    "ct_id": "aa663ivutjf2fs4757t0bbzy",
+    "adapter_ctid": "cpaj0unbnudntl1brmdnuqhu",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Software Name"
+  },
+  "x0lebwtobgaelj5pev3258sd": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_x0lebwtobgaelj5pev3258sd",
+    "ct_id": "x0lebwtobgaelj5pev3258sd",
+    "adapter_ctid": "ebn1a6s1d1dy724l4y692qsl",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Software Version"
+  },
+  "i16vqj89it3db7d3c5qjko9p": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_i16vqj89it3db7d3c5qjko9p",
+    "ct_id": "i16vqj89it3db7d3c5qjko9p",
+    "adapter_ctid": "y1u3ladafqtryhgyetpn5ild",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Agent Type"
+  },
+  "k3rgauqfh9vs4bqq5q4nsbp4": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_k3rgauqfh9vs4bqq5q4nsbp4",
+    "ct_id": "k3rgauqfh9vs4bqq5q4nsbp4",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "FAIR Pipeline Identifier"
+  },
+  "abub2eah26yd2uzni3p9l58i": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_abub2eah26yd2uzni3p9l58i",
+    "ct_id": "abub2eah26yd2uzni3p9l58i",
+    "adapter_ctid": "wy38zv02dmcp5gjul57yejmk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Description"
+  },
+  "i1defiugxfdcwfb9rqv4p5tz": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_i1defiugxfdcwfb9rqv4p5tz",
+    "ct_id": "i1defiugxfdcwfb9rqv4p5tz",
+    "adapter_ctid": "gujvcggdotm3z1hmygdrey09",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Identifier"
+  },
+  "m9minyaug6ypyzt52zfxlyyi": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_m9minyaug6ypyzt52zfxlyyi",
+    "ct_id": "m9minyaug6ypyzt52zfxlyyi",
+    "adapter_ctid": "s0xrd3gbobtgtexdxkxcor3l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Label"
+  },
+  "wn77qo3b1xjwc4dudtyme2io": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_wn77qo3b1xjwc4dudtyme2io",
+    "ct_id": "wn77qo3b1xjwc4dudtyme2io",
+    "adapter_ctid": "jdugzq309qlimui7675txmyi",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Location"
+  },
+  "kmcck093437mfdlnxnrzm0xw": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_kmcck093437mfdlnxnrzm0xw",
+    "ct_id": "kmcck093437mfdlnxnrzm0xw",
+    "adapter_ctid": "bk8actrinati1b6smyypwj6m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Value"
+  },
+  "phus5105uw30xejqs7baamyx": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_phus5105uw30xejqs7baamyx",
+    "ct_id": "phus5105uw30xejqs7baamyx",
+    "adapter_ctid": "fti6dssqpaatbprjx0mqu2mj",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Had Primary Source Reference"
+  },
+  "kqlatg3rz00z58muv7j8toyl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_kqlatg3rz00z58muv7j8toyl",
+    "ct_id": "kqlatg3rz00z58muv7j8toyl",
+    "adapter_ctid": "hj4gt95jsr6xvywruyi9ip51",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Attributed To Reference"
+  },
+  "credrxhz4hg4c42sihm0wb6s": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_credrxhz4hg4c42sihm0wb6s",
+    "ct_id": "credrxhz4hg4c42sihm0wb6s",
+    "adapter_ctid": "e793unvukokgt3c5y0kilui1",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Derived From Reference"
+  },
+  "bfn83x3fw1cyuqriuoquu9t1": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_bfn83x3fw1cyuqriuoquu9t1",
+    "ct_id": "bfn83x3fw1cyuqriuoquu9t1",
+    "adapter_ctid": "vsnnmsojiqwcx33jeavt4bkf",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Generated By Reference"
+  },
+  "h1vwqq8ulrb27qpl6zuzppnf": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_h1vwqq8ulrb27qpl6zuzppnf",
+    "ct_id": "h1vwqq8ulrb27qpl6zuzppnf",
+    "adapter_ctid": "o31fztf2l2gj0nuljugpl1s9",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Invalidated By Reference"
+  },
+  "mjl0vv39zsbigqiuyqm66fkv": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_mjl0vv39zsbigqiuyqm66fkv",
+    "ct_id": "mjl0vv39zsbigqiuyqm66fkv",
+    "adapter_ctid": "bh5kiii8wc47sp8hibxv9qtk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Quoted From Reference"
+  },
+  "lghqkvp7vapqk10l248kzqs8": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_lghqkvp7vapqk10l248kzqs8",
+    "ct_id": "lghqkvp7vapqk10l248kzqs8",
+    "adapter_ctid": "an1yte2y7kubvf64ao70apuu",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Revision Of Reference"
+  },
+  "g2xnh3uhnlrnqlo7ki2s0fs3": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_g2xnh3uhnlrnqlo7ki2s0fs3",
+    "ct_id": "g2xnh3uhnlrnqlo7ki2s0fs3",
+    "adapter_ctid": "p5zjm3c1d2x9jxc2n3wyzbth",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Derivation Type"
+  },
+  "i4e2nod7ss9d4cumhn2pah8b": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_i4e2nod7ss9d4cumhn2pah8b",
+    "ct_id": "i4e2nod7ss9d4cumhn2pah8b",
+    "adapter_ctid": "dlu1btnja2h37jfx3vj694rv",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Entity Type"
+  },
+  "yk5nrxndulhebpi3hiywk8u8": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_yk5nrxndulhebpi3hiywk8u8",
+    "ct_id": "yk5nrxndulhebpi3hiywk8u8",
+    "adapter_ctid": "n6j7bwq9qmuzzf8w89gwxeml",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Generated At"
+  },
+  "hswapeutuik067dokidnbv88": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_hswapeutuik067dokidnbv88",
+    "ct_id": "hswapeutuik067dokidnbv88",
+    "adapter_ctid": "uc64yt3ys0s0xrj51rue2ofb",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Invalidated At"
+  }
+}

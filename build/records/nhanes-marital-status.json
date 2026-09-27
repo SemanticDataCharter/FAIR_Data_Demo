@@ -1,0 +1,90 @@
+{
+  "tiny_id": "nhanes-marital-status",
+  "label": "Marital Status (DMDMARTL)",
+  "description": "Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Married",
+      "Widowed",
+      "Divorced",
+      "Separated",
+      "Never married",
+      "Living with partner"
+    ],
+    "enum_descr": [
+      "Married",
+      "Widowed",
+      "Divorced",
+      "Separated",
+      "Never married",
+      "Living with partner"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C51773",
+      "http://purl.obolibrary.org/obo/NCIT_C51775",
+      "http://purl.obolibrary.org/obo/NCIT_C51776",
+      "http://purl.obolibrary.org/obo/NCIT_C51777",
+      "http://purl.obolibrary.org/obo/NCIT_C51774",
+      "http://purl.obolibrary.org/obo/NCIT_C53262"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Married",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51773"
+    },
+    {
+      "value": "Widowed",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51775"
+    },
+    {
+      "value": "Divorced",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51776"
+    },
+    {
+      "value": "Separated",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51777"
+    },
+    {
+      "value": "Never married",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C51774"
+    },
+    {
+      "value": "Living with partner",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C53262"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-marital-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDMARTL",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

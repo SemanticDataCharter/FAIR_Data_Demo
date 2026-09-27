@@ -1,0 +1,15 @@
+key: nhanes-nucleated-red-blood-cells
+label: Nucleated Red Blood Cells
+type: XdQuantity
+description: Nucleated red blood cells per 100 white blood cells (LBXNRBC).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXNRBC
+  basis: standard
+constraints:
+  units: units-per-100-cells
+  total_digits: 4
+  fraction_digits: 1
+  min_inclusive: 0

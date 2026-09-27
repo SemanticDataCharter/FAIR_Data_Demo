@@ -1,0 +1,592 @@
+{
+  "@context": "https://semanticdatacharter.com/ns/sdc4/",
+  "dm_id": "epbdfmvxc3gbh5f66hhb3o2m",
+  "dm_type": "dm-epbdfmvxc3gbh5f66hhb3o2m",
+  "metadata": {
+    "dm_language": "en-US",
+    "dm_label": "NHANES Medication",
+    "dm_encoding": "utf-8",
+    "instance_id": "msb1llb7rhouq857yq2j14bz",
+    "instance_version": "1.0",
+    "creation_timestamp": "2026-09-26T22:14:26.293713",
+    "current_state": ""
+  },
+  "data": {
+    "component_id": "jo2kw48cijwgg64s6cud2el1",
+    "label": "NHANES Medication Governed Record",
+    "type": "Cluster",
+    "description": "An NHANES medication record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: NHANES Medication; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).",
+    "items": [
+      {
+        "component_id": "t2tvd3wylxrstdeu5aw6gkw1",
+        "label": "Audit Event",
+        "type": "Cluster",
+        "description": "A logged access or custody event as data: what was done, by whom, on what, with what outcome and for what purpose. The audit-only case of sdc5 issue 002; state-changing operations are workflow transitions.",
+        "items": [
+          {
+            "component_id": "dkc2ccj5te35z9gd4bu1blcq",
+            "label": "Audit Agent Reference",
+            "type": "XdString",
+            "description": "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gcjyjrnp0wsfoelcp4m05c67",
+            "label": "Audit Entity Reference",
+            "type": "XdString",
+            "description": "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "fjhgr5fyqxt2crmg2cb5c513",
+            "label": "Audit Event Identifier",
+            "type": "XdString",
+            "description": "The identifier of the audit event.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+            "label": "Data Subject Reference",
+            "type": "XdString",
+            "description": "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "nf1air1zbj8v9w66jozdxmyl",
+            "label": "On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "h3kdbvdtyalpvik97saaf0an",
+            "label": "System Identifier",
+            "type": "XdString",
+            "description": "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ujir739mf1g8ajeczs9nzh9m",
+            "label": "System Location Name",
+            "type": "XdString",
+            "description": "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "ce1c8sydkov8bkv4dgdmwe5x",
+            "label": "Audit Event Action",
+            "type": "XdToken",
+            "description": "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.",
+            "value": "D",
+            "constraints": {
+              "enumerations": [
+                "C",
+                "R",
+                "U",
+                "D",
+                "E"
+              ]
+            }
+          },
+          {
+            "component_id": "rpz1czz06jhpahmfz30rblvp",
+            "label": "Audit Event Outcome",
+            "type": "XdToken",
+            "description": "The result of an audited event (FHIR AuditEvent.outcome).",
+            "value": "4",
+            "constraints": {
+              "enumerations": [
+                "0",
+                "4",
+                "8",
+                "12"
+              ]
+            }
+          },
+          {
+            "component_id": "vbctgmdcwps5b3r3l6sboa6y",
+            "label": "Confidentiality",
+            "type": "XdToken",
+            "description": "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.",
+            "value": "V",
+            "constraints": {
+              "enumerations": [
+                "U",
+                "L",
+                "M",
+                "N",
+                "R",
+                "V"
+              ]
+            }
+          },
+          {
+            "component_id": "jujsdur1igws8orw6tvvlqco",
+            "label": "Provenance Agent Type",
+            "type": "XdToken",
+            "description": "The functional role of an agent in an activity (FHIR Provenance.agent.type).",
+            "value": "informant",
+            "constraints": {
+              "enumerations": [
+                "enterer",
+                "performer",
+                "author",
+                "editor",
+                "verifier",
+                "legal",
+                "attester",
+                "informant",
+                "custodian",
+                "transmitter",
+                "assembler",
+                "transformer",
+                "composer"
+              ]
+            }
+          },
+          {
+            "component_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+            "label": "Purpose of Use",
+            "type": "XdToken",
+            "description": "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.",
+            "value": "ETREAT",
+            "constraints": {
+              "enumerations": [
+                "TREAT",
+                "ETREAT",
+                "COC",
+                "HPAYMT",
+                "HOPERAT",
+                "HRESCH",
+                "CLINTRCH",
+                "PUBHLTH",
+                "PATRQT",
+                "HLEGAL",
+                "HMARKT"
+              ]
+            }
+          },
+          {
+            "component_id": "uwiosm2q9ym3ewr4de910s70",
+            "label": "Audit Recorded At",
+            "type": "XdTemporal",
+            "description": "When the audit event was recorded (FHIR AuditEvent.recorded).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "ncudsi2t2ij3rd2pmnnfr2j9",
+        "label": "NHANES Medication",
+        "type": "Cluster",
+        "description": "One prescription medicine a participant reported (RXQ_RX_J): the sequence number joining it to the participant, whether any was taken, the generic name and NHANES code, days taken, the count of medicines, and up to three reasons as ICD-10-CM coded values. Members: Respondent Sequence Number (SEQN); Taken Prescription Medicine, Past Month (RXDUSE); Generic Drug Name (RXDDRUG); Generic Drug Code (RXDDRGID); Number of Days Taken Medicine (RXDDAYS); Number of Prescription Medicines Taken (RXDCOUNT); Medication Reason 1; Medication Reason 2; Medication Reason 3.",
+        "items": [
+          {
+            "component_id": "wypildaam8rrd87zkkjxl732",
+            "label": "Generic Drug Code (RXDDRGID)",
+            "type": "XdString",
+            "description": "The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 12
+            }
+          },
+          {
+            "component_id": "lok5ozew80qmwah6h45jr69y",
+            "label": "Generic Drug Name (RXDDRUG)",
+            "type": "XdString",
+            "description": "The generic drug name as NHANES records it (RXDDRUG).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 200
+            }
+          },
+          {
+            "component_id": "uto4zszvpicva38wx77knz5y",
+            "label": "Respondent Sequence Number (SEQN)",
+            "type": "XdString",
+            "description": "The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 8
+            }
+          },
+          {
+            "component_id": "a1zr74c1vayeeglk54da7gaf",
+            "label": "Taken Prescription Medicine, Past Month (RXDUSE)",
+            "type": "XdToken",
+            "description": "Whether the participant took prescription medicine in the past 30 days (RXDUSE).",
+            "value": "No",
+            "constraints": {
+              "enumerations": [
+                "Yes",
+                "No"
+              ]
+            }
+          },
+          {
+            "component_id": "jwgah039kcz574bbjvpxvfdj",
+            "label": "Number of Days Taken Medicine (RXDDAYS)",
+            "type": "XdCount",
+            "description": "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).",
+            "value": 78,
+            "units": {
+              "label": "Days",
+              "value": "FAIR Data Demo : Days"
+            }
+          },
+          {
+            "component_id": "v28gzpjsaxkkgjm470icwipg",
+            "label": "Number of Prescription Medicines Taken (RXDCOUNT)",
+            "type": "XdCount",
+            "description": "The number of prescription medicines the participant is taking (RXDCOUNT).",
+            "value": 77,
+            "units": {
+              "label": "Items",
+              "value": "Default : Items"
+            }
+          },
+          {
+            "component_id": "i213d6dp9r4c0nmzxkgc0tja",
+            "label": "Medication Reason 1",
+            "type": "Cluster",
+            "description": "The first reason the medicine is taken (RXDRSC1, RXDRSD1), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).",
+            "items": [
+              {
+                "component_id": "jk4cboqk4me0yj2i04m8c2ad",
+                "label": "Diagnosis (ICD-10-CM)",
+                "type": "Cluster",
+                "description": "The condition, problem or diagnosis. A coded value: the ICD-10-CM code, its display text and the fixed code system, resolved on the code system IRI (FHIR Coding). FHIR Condition.code.",
+                "items": [
+                  {
+                    "component_id": "jwgx8nvbtsim7ck4uqmpqyl2",
+                    "label": "Code System: ICD-10-CM",
+                    "type": "XdLink",
+                    "description": "The code system of a coded value, fixed: ICD-10-CM (http://hl7.org/fhir/sid/icd-10-cm). FHIR Coding.system.",
+                    "value": "http://example.org/resource"
+                  },
+                  {
+                    "component_id": "eo5tlfr0576ypknys5alvcn0",
+                    "label": "Code Display Text",
+                    "type": "XdString",
+                    "description": "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display).",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 500
+                    }
+                  },
+                  {
+                    "component_id": "efimv7gxg5ompt8m6xb2b6k5",
+                    "label": "Diagnosis Code (ICD-10-CM)",
+                    "type": "XdString",
+                    "description": "The ICD-10-CM code for the condition, problem or diagnosis. FHIR Condition.code, coded in http://hl7.org/fhir/sid/icd-10-cm.",
+                    "value": "DefaultString",
+                    "constraints": {
+                      "max_length": 40
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component_id": "u3qz0js9emqn2i7s5nyynmgt",
+            "label": "Medication Reason 2",
+            "type": "Cluster",
+            "description": "The second reason the medicine is taken (RXDRSC2, RXDRSD2), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).",
+            "items": []
+          },
+          {
+            "component_id": "rozfpmwczk4yuw4c2vom4gyx",
+            "label": "Medication Reason 3",
+            "type": "Cluster",
+            "description": "The third reason the medicine is taken (RXDRSC3, RXDRSD3), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).",
+            "items": []
+          }
+        ]
+      },
+      {
+        "component_id": "vmikfu0irht9fmq7q02t3oqs",
+        "label": "PROV Activity",
+        "type": "Cluster",
+        "description": "A PROV activity: what it was, when it ran, its status, and the entities, activities, agent and plan it relates to.",
+        "items": [
+          {
+            "component_id": "hhusuzzig19rs46ngz23k5g7",
+            "label": "Activity Description",
+            "type": "XdString",
+            "description": "A description of what the activity does and why.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "wr06h54xqqw2q9id8i9673jy",
+            "label": "Activity Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV activity: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "r6hkunjm2q0hlxiknlc9ljix",
+            "label": "Activity Label",
+            "type": "XdString",
+            "description": "A human-readable label for a PROV activity.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "uzai5uey5p1fnn9ezj9u6vor",
+            "label": "Activity Location",
+            "type": "XdString",
+            "description": "Where the activity took place (prov:atLocation), as text.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "jjzmhdxvbt97pq81iwqubtxk",
+            "label": "Activity Type",
+            "type": "XdString",
+            "description": "The kind of activity, in the vocabulary of the domain (prov:type).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+            "label": "Error Message",
+            "type": "XdString",
+            "description": "The error the activity reported, if it failed.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "vhezo2cckpe92x4c3j2memeh",
+            "label": "Had Plan Reference",
+            "type": "XdString",
+            "description": "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "t0whhrqtnb54te4mk48i1ooj",
+            "label": "Used Entity Reference",
+            "type": "XdString",
+            "description": "An entity the activity used (prov:used). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "r48alj7hc3797qfjnf2uj71n",
+            "label": "Was Associated With Reference",
+            "type": "XdString",
+            "description": "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+            "label": "Was Ended By Reference",
+            "type": "XdString",
+            "description": "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "qh84jdzp1kxt85aq4ilo0svk",
+            "label": "Was Informed By Reference",
+            "type": "XdString",
+            "description": "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "ginfqbk7q59ld2r4us8sjnv1",
+            "label": "Was Started By Reference",
+            "type": "XdString",
+            "description": "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+            "label": "Activity Status",
+            "type": "XdToken",
+            "description": "The state of an activity, from the Data Privacy Vocabulary activity status concepts.",
+            "value": "ActivityPlanned",
+            "constraints": {
+              "enumerations": [
+                "ActivityProposed",
+                "ActivityPlanned",
+                "ActivityOngoing",
+                "ActivityHalted",
+                "ActivityCompleted",
+                "ActivityNotCompleted"
+              ]
+            }
+          },
+          {
+            "component_id": "a5scyosu6j84vz350mqyrzl2",
+            "label": "Ended At",
+            "type": "XdTemporal",
+            "description": "When the activity ended (prov:endedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          },
+          {
+            "component_id": "sa4nl1kbpdr842fkucvfjkpq",
+            "label": "Started At",
+            "type": "XdTemporal",
+            "description": "When the activity started (prov:startedAtTime).",
+            "value": "2024-01-01T00:00:00"
+          }
+        ]
+      },
+      {
+        "component_id": "c179ilk2ns15cd5rzzdfd6f6",
+        "label": "PROV Agent",
+        "type": "Cluster",
+        "description": "A PROV agent: a person, organization or software agent, with its identity, contact and delegation.",
+        "items": [
+          {
+            "component_id": "og08xf6bu928uuz6t3y0e23f",
+            "label": "Acted On Behalf Of Reference",
+            "type": "XdString",
+            "description": "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 2000
+            }
+          },
+          {
+            "component_id": "gb78cmuyo72hqs5apymdki7l",
+            "label": "Agent Description",
+            "type": "XdString",
+            "description": "A description of the agent and its responsibilities.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 4000
+            }
+          },
+          {
+            "component_id": "qb90a0sp9vvb6c5cbcf236ys",
+            "label": "Agent Email",
+            "type": "XdString",
+            "description": "The agent's email address (foaf:mbox).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "w2ruemcfy35rw60jl1t9dew2",
+            "label": "Agent Identifier",
+            "type": "XdString",
+            "description": "The identifier of a PROV agent: a URI or another globally unique identifier.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "xxe21o9ojzmy9wxxky1tnmog",
+            "label": "Agent Name",
+            "type": "XdString",
+            "description": "The name of the agent (foaf:name).",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "eftvwi5byq6cdtd931qyxzw0",
+            "label": "Agent Organization Name",
+            "type": "XdString",
+            "description": "The organization the agent belongs to or is.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "aa663ivutjf2fs4757t0bbzy",
+            "label": "Software Name",
+            "type": "XdString",
+            "description": "The name of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 255
+            }
+          },
+          {
+            "component_id": "x0lebwtobgaelj5pev3258sd",
+            "label": "Software Version",
+            "type": "XdString",
+            "description": "The version of a software agent.",
+            "value": "DefaultString",
+            "constraints": {
+              "max_length": 60
+            }
+          },
+          {
+            "component_id": "i16vqj89it3db7d3c5qjko9p",
+            "label": "PROV Agent Type",
+            "type": "XdToken",
+            "description": "The kind of PROV agent: person, organization or software agent.",
+            "value": "SoftwareAgent",
+            "constraints": {
+              "enumerations": [
+                "Person",
+                "Organization",
+                "SoftwareAgent"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

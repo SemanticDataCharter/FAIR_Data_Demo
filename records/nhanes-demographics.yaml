@@ -1,0 +1,36 @@
+key: nhanes-demographics
+label: NHANES Demographics
+type: Cluster
+description: 'The participant''s demographics: the Default administrative gender and the NHANES gender code, the NIH CDE age with age in months
+  for infants, race/ethnicity as the NIH CDE and as NHANES codes it, country of birth, citizenship, education and marital status as the NIH CDE
+  and as NHANES codes them, pregnancy status, household size, the agency''s income range and the income-to-poverty ratio. Members: administrative-gender
+  (Default); Gender (RIAGENDR); Age (NIH CDE); Age in Months at Screening (RIDAGEMN); Race/Ethnicity Self-Identification (NIH CDE); Race/Hispanic
+  Origin with NH Asian (RIDRETH3); Country of Birth (DMDBORN4); Citizenship Status (DMDCITZN); Current Educational Attainment (NIH CDE); Education
+  Level - Adults 20+ (DMDEDUC2); Marital Status (NIH CDE); Marital Status (DMDMARTL); Are you pregnant now? (NIH CDE); Pregnancy Status at Exam
+  (RIDEXPRG); Veteran Status; Total Number of People in the Household (DMDHHSIZ); Annual Household Income (INDHHIN2); Ratio of Family Income to
+  Poverty (INDFMPIR).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C16495
+  basis: standard
+members:
+- https://axius-sdc.com/library/default/administrative-gender
+- nhanes-gender-code
+- ct:wuvdeiwoe5bna7nlhcl1c4h9
+- nhanes-age-in-months-at-screening
+- ct:u5tietya3u56hbz2kos06ai7
+- nhanes-race-hispanic-origin
+- nhanes-country-of-birth
+- nhanes-citizenship-status
+- ct:xtbtk7ro6s9247bcwt4ak4h1
+- nhanes-education-level-adults
+- ct:qsetd453kk9own8co1wmc5cz
+- nhanes-marital-status
+- ct:owjt9bcgisxfbco8qnddo2fq
+- nhanes-pregnancy-status-at-exam
+- veteran-status
+- nhanes-household-size
+- nhanes-annual-household-income
+- nhanes-family-income-poverty-ratio

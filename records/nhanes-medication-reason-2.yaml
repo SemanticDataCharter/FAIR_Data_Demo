@@ -1,0 +1,13 @@
+key: nhanes-medication-reason-2
+label: Medication Reason 2
+type: Cluster
+description: 'The second reason the medicine is taken (RXDRSC2, RXDRSD2), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members:
+  diagnosis-icd10cm (FHIR).'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode
+  basis: standard
+members:
+- https://axius-sdc.com/library/fhir/diagnosis-icd10cm

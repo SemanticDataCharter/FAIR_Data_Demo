@@ -1,0 +1,15 @@
+key: nhanes-still-have-asthma
+label: Still Have Asthma (MCQ035)
+type: XdToken
+description: Whether the participant still has asthma (MCQ035).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/MCQ_J.htm#MCQ035
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

@@ -1,0 +1,50 @@
+{
+  "tiny_id": "cms-annual-amounts",
+  "label": "CMS Annual Amounts",
+  "description": "The year's Medicare reimbursement, beneficiary responsibility and primary payer reimbursement for inpatient, outpatient and carrier services. Members: Inpatient Annual Medicare Reimbursement; Inpatient Annual Beneficiary Responsibility; Inpatient Annual Primary Payer Reimbursement; Outpatient Annual Medicare Reimbursement; Outpatient Annual Beneficiary Responsibility; Outpatient Annual Primary Payer Reimbursement; Carrier Annual Medicare Reimbursement; Carrier Annual Beneficiary Responsibility; Carrier Annual Primary Payer Reimbursement.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-annual-amounts",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://schema.org/MonetaryAmount",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "cms-annual-inpatient-medicare-reimbursement",
+    "cms-annual-inpatient-beneficiary-responsibility",
+    "cms-annual-inpatient-primary-payer-reimbursement",
+    "cms-annual-outpatient-medicare-reimbursement",
+    "cms-annual-outpatient-beneficiary-responsibility",
+    "cms-annual-outpatient-primary-payer-reimbursement",
+    "cms-annual-carrier-medicare-reimbursement",
+    "cms-annual-carrier-beneficiary-responsibility",
+    "cms-annual-carrier-primary-payer-reimbursement"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,16 @@
+key: condition-skin-cancer
+label: 'Condition: Skin Cancer'
+type: XdToken
+description: 'Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator
+  Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/372130007
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

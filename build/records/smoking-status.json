@@ -1,0 +1,83 @@
+{
+  "tiny_id": "smoking-status",
+  "label": "Smoking Status",
+  "description": "Tobacco smoking status (LOINC 72166-2) as the survey establishes it: NHANES from SMQ020 and SMQ040, BRFSS from SMOKE100 and SMOKDAY2 (the agency's _SMOKER3 is kept beside it). The LOINC answer list LL2201-3.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Current every day smoker",
+      "Current some day smoker",
+      "Former smoker",
+      "Never smoker",
+      "Smoker, current status unknown"
+    ],
+    "enum_descr": [
+      "Current every day smoker",
+      "Current some day smoker",
+      "Former smoker",
+      "Never smoker",
+      "Smoker, current status unknown"
+    ],
+    "definitions": [
+      "https://loinc.org/LA18976-3/",
+      "https://loinc.org/LA18977-1/",
+      "https://loinc.org/LA15920-4/",
+      "https://loinc.org/LA18978-9/",
+      "https://loinc.org/LA18979-7/"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Current every day smoker",
+      "definition": "https://loinc.org/LA18976-3/"
+    },
+    {
+      "value": "Current some day smoker",
+      "definition": "https://loinc.org/LA18977-1/"
+    },
+    {
+      "value": "Former smoker",
+      "definition": "https://loinc.org/LA15920-4/"
+    },
+    {
+      "value": "Never smoker",
+      "definition": "https://loinc.org/LA18978-9/"
+    },
+    {
+      "value": "Smoker, current status unknown",
+      "definition": "https://loinc.org/LA18979-7/"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/smoking-status",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/72166-2/",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

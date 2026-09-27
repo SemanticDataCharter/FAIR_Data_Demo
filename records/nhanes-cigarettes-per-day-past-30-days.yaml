@@ -1,0 +1,14 @@
+key: nhanes-cigarettes-per-day-past-30-days
+label: Average Cigarettes per Day, Past 30 Days (SMD650)
+type: XdCount
+description: The average number of cigarettes smoked per day during the past 30 days (SMD650).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMD650
+  basis: standard
+constraints:
+  units: units-cigarettes
+  min_inclusive: 0
+  max_inclusive: 100

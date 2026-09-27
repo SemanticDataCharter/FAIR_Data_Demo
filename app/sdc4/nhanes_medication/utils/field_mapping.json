@@ -1,0 +1,522 @@
+{
+  "dkc2ccj5te35z9gd4bu1blcq": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_dkc2ccj5te35z9gd4bu1blcq",
+    "ct_id": "dkc2ccj5te35z9gd4bu1blcq",
+    "adapter_ctid": "hpkc8xrccpwc3shm4ubm5o47",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Agent Reference"
+  },
+  "gcjyjrnp0wsfoelcp4m05c67": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_gcjyjrnp0wsfoelcp4m05c67",
+    "ct_id": "gcjyjrnp0wsfoelcp4m05c67",
+    "adapter_ctid": "ynnnvgi8748h2d01z2gf4z8x",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Entity Reference"
+  },
+  "fjhgr5fyqxt2crmg2cb5c513": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_fjhgr5fyqxt2crmg2cb5c513",
+    "ct_id": "fjhgr5fyqxt2crmg2cb5c513",
+    "adapter_ctid": "uf11uwd9s5x5t9bw98z9dr5l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Audit Event Identifier"
+  },
+  "sndpbhm3xbd6qtbyxmvh3i0e": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_sndpbhm3xbd6qtbyxmvh3i0e",
+    "ct_id": "sndpbhm3xbd6qtbyxmvh3i0e",
+    "adapter_ctid": "jwpkqjchavj885uwt5v1jgid",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Data Subject Reference"
+  },
+  "nf1air1zbj8v9w66jozdxmyl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_nf1air1zbj8v9w66jozdxmyl",
+    "ct_id": "nf1air1zbj8v9w66jozdxmyl",
+    "adapter_ctid": "lbor36zlwkf6u7yx9lgqfx0d",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "On Behalf Of Reference"
+  },
+  "h3kdbvdtyalpvik97saaf0an": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_h3kdbvdtyalpvik97saaf0an",
+    "ct_id": "h3kdbvdtyalpvik97saaf0an",
+    "adapter_ctid": "yec6svv50u9d1tz9rp6kmv3v",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "System Identifier"
+  },
+  "ujir739mf1g8ajeczs9nzh9m": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ujir739mf1g8ajeczs9nzh9m",
+    "ct_id": "ujir739mf1g8ajeczs9nzh9m",
+    "adapter_ctid": "r6x55vvha5ci3rl1o29adk03",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "System Location Name"
+  },
+  "ce1c8sydkov8bkv4dgdmwe5x": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ce1c8sydkov8bkv4dgdmwe5x",
+    "ct_id": "ce1c8sydkov8bkv4dgdmwe5x",
+    "adapter_ctid": "lcsns9hrrzcg74jlit8srxgp",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Audit Event Action"
+  },
+  "rpz1czz06jhpahmfz30rblvp": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_rpz1czz06jhpahmfz30rblvp",
+    "ct_id": "rpz1czz06jhpahmfz30rblvp",
+    "adapter_ctid": "wu8f1x11e6ihbltdd6w20rg5",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Audit Event Outcome"
+  },
+  "vbctgmdcwps5b3r3l6sboa6y": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vbctgmdcwps5b3r3l6sboa6y",
+    "ct_id": "vbctgmdcwps5b3r3l6sboa6y",
+    "adapter_ctid": "kce8557jd9vg6ei59m7o1kc2",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Confidentiality"
+  },
+  "jujsdur1igws8orw6tvvlqco": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jujsdur1igws8orw6tvvlqco",
+    "ct_id": "jujsdur1igws8orw6tvvlqco",
+    "adapter_ctid": "vgvl7vcmbiz2z7zn9v7ayc04",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Provenance Agent Type"
+  },
+  "d1evlz8yvdlwt6ia9fjq4pgj": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_d1evlz8yvdlwt6ia9fjq4pgj",
+    "ct_id": "d1evlz8yvdlwt6ia9fjq4pgj",
+    "adapter_ctid": "xcmayroyt4krhroimfb3e859",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Purpose of Use"
+  },
+  "uwiosm2q9ym3ewr4de910s70": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_uwiosm2q9ym3ewr4de910s70",
+    "ct_id": "uwiosm2q9ym3ewr4de910s70",
+    "adapter_ctid": "r5fply6fvzhg90zybxgdx5cb",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Audit Recorded At"
+  },
+  "wypildaam8rrd87zkkjxl732": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_wypildaam8rrd87zkkjxl732",
+    "ct_id": "wypildaam8rrd87zkkjxl732",
+    "adapter_ctid": "jd13g95pzsr1brs8skc01ffl",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Generic Drug Code (RXDDRGID)"
+  },
+  "lok5ozew80qmwah6h45jr69y": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_lok5ozew80qmwah6h45jr69y",
+    "ct_id": "lok5ozew80qmwah6h45jr69y",
+    "adapter_ctid": "o1vger3dnfnogl7pakpj849k",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Generic Drug Name (RXDDRUG)"
+  },
+  "uto4zszvpicva38wx77knz5y": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_uto4zszvpicva38wx77knz5y",
+    "ct_id": "uto4zszvpicva38wx77knz5y",
+    "adapter_ctid": "ijj1g8r7gy94nivsf80yzp3y",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Respondent Sequence Number (SEQN)"
+  },
+  "a1zr74c1vayeeglk54da7gaf": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_a1zr74c1vayeeglk54da7gaf",
+    "ct_id": "a1zr74c1vayeeglk54da7gaf",
+    "adapter_ctid": "r6lzzcxjuphediq43gde5dwf",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Taken Prescription Medicine, Past Month (RXDUSE)"
+  },
+  "jwgah039kcz574bbjvpxvfdj": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_jwgah039kcz574bbjvpxvfdj",
+    "ct_id": "jwgah039kcz574bbjvpxvfdj",
+    "adapter_ctid": "qtsby21a4f98wbmvc3hh5ifl",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Number of Days Taken Medicine (RXDDAYS)"
+  },
+  "yht0x4rmqyu32sd90jl0rzbo": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_yht0x4rmqyu32sd90jl0rzbo",
+    "ct_id": "yht0x4rmqyu32sd90jl0rzbo",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Days"
+  },
+  "v28gzpjsaxkkgjm470icwipg": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_v28gzpjsaxkkgjm470icwipg",
+    "ct_id": "v28gzpjsaxkkgjm470icwipg",
+    "adapter_ctid": "b8p0fzjgozu22ylsddyy3ki6",
+    "element_name": "xdcount-value",
+    "type": "XdCount",
+    "label": "Number of Prescription Medicines Taken (RXDCOUNT)"
+  },
+  "c3ycqqk7ns1bvmsc0ricnsbn": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_c3ycqqk7ns1bvmsc0ricnsbn",
+    "ct_id": "c3ycqqk7ns1bvmsc0ricnsbn",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Items"
+  },
+  "jwgx8nvbtsim7ck4uqmpqyl2": {
+    "placeholder": "__PLACEHOLDER__xdlink-value_jwgx8nvbtsim7ck4uqmpqyl2",
+    "ct_id": "jwgx8nvbtsim7ck4uqmpqyl2",
+    "adapter_ctid": "ist2xk6m5ews6vch4d7tezej",
+    "element_name": "xdlink-value",
+    "type": "XdLink",
+    "label": "Code System: ICD-10-CM"
+  },
+  "eo5tlfr0576ypknys5alvcn0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_eo5tlfr0576ypknys5alvcn0",
+    "ct_id": "eo5tlfr0576ypknys5alvcn0",
+    "adapter_ctid": "deau6rxprq0zivzdddupk7cj",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Code Display Text"
+  },
+  "efimv7gxg5ompt8m6xb2b6k5": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_efimv7gxg5ompt8m6xb2b6k5",
+    "ct_id": "efimv7gxg5ompt8m6xb2b6k5",
+    "adapter_ctid": "dpzwsqo29f64gp2snh4y5lly",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Diagnosis Code (ICD-10-CM)"
+  },
+  "hhusuzzig19rs46ngz23k5g7": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_hhusuzzig19rs46ngz23k5g7",
+    "ct_id": "hhusuzzig19rs46ngz23k5g7",
+    "adapter_ctid": "vycps7awt38y25jhnrr4okxt",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Description"
+  },
+  "wr06h54xqqw2q9id8i9673jy": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_wr06h54xqqw2q9id8i9673jy",
+    "ct_id": "wr06h54xqqw2q9id8i9673jy",
+    "adapter_ctid": "o9p6k7c9ie20j5du0jmd3749",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Identifier"
+  },
+  "r6hkunjm2q0hlxiknlc9ljix": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_r6hkunjm2q0hlxiknlc9ljix",
+    "ct_id": "r6hkunjm2q0hlxiknlc9ljix",
+    "adapter_ctid": "o0qu77y6w4lwvu2qhms3ilbw",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Label"
+  },
+  "uzai5uey5p1fnn9ezj9u6vor": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_uzai5uey5p1fnn9ezj9u6vor",
+    "ct_id": "uzai5uey5p1fnn9ezj9u6vor",
+    "adapter_ctid": "rat798vb1tfxjuf56sqrvtty",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Location"
+  },
+  "jjzmhdxvbt97pq81iwqubtxk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_jjzmhdxvbt97pq81iwqubtxk",
+    "ct_id": "jjzmhdxvbt97pq81iwqubtxk",
+    "adapter_ctid": "qeu9jq1owxxh2woqo1f7m8jk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Activity Type"
+  },
+  "xlgjqdpwdbn2re3mdh5yy2rk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_xlgjqdpwdbn2re3mdh5yy2rk",
+    "ct_id": "xlgjqdpwdbn2re3mdh5yy2rk",
+    "adapter_ctid": "jwvcklvakotmdztpikyodwkx",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Error Message"
+  },
+  "vhezo2cckpe92x4c3j2memeh": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_vhezo2cckpe92x4c3j2memeh",
+    "ct_id": "vhezo2cckpe92x4c3j2memeh",
+    "adapter_ctid": "r48fyfvuhl62i5yihku0hws1",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Had Plan Reference"
+  },
+  "t0whhrqtnb54te4mk48i1ooj": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_t0whhrqtnb54te4mk48i1ooj",
+    "ct_id": "t0whhrqtnb54te4mk48i1ooj",
+    "adapter_ctid": "mjj6mlhqgzcprfwuwnhu5npz",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Used Entity Reference"
+  },
+  "r48alj7hc3797qfjnf2uj71n": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_r48alj7hc3797qfjnf2uj71n",
+    "ct_id": "r48alj7hc3797qfjnf2uj71n",
+    "adapter_ctid": "in4ct2aoguzdvzg4mlsmsxfd",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Associated With Reference"
+  },
+  "ueb5g1ojzlwwt0mnds5zb6wl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ueb5g1ojzlwwt0mnds5zb6wl",
+    "ct_id": "ueb5g1ojzlwwt0mnds5zb6wl",
+    "adapter_ctid": "k87dda72y8upko7dnrcs425s",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Ended By Reference"
+  },
+  "qh84jdzp1kxt85aq4ilo0svk": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_qh84jdzp1kxt85aq4ilo0svk",
+    "ct_id": "qh84jdzp1kxt85aq4ilo0svk",
+    "adapter_ctid": "eeyxfka9q0b81swhc0cpvd1l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Informed By Reference"
+  },
+  "ginfqbk7q59ld2r4us8sjnv1": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_ginfqbk7q59ld2r4us8sjnv1",
+    "ct_id": "ginfqbk7q59ld2r4us8sjnv1",
+    "adapter_ctid": "vmiyaznvvl2jw19cyv414jj3",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Started By Reference"
+  },
+  "wl6j4ekcmu4hvt2m12zw4zp8": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_wl6j4ekcmu4hvt2m12zw4zp8",
+    "ct_id": "wl6j4ekcmu4hvt2m12zw4zp8",
+    "adapter_ctid": "q4rwxzoldz452g7rbii2an1h",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "Activity Status"
+  },
+  "a5scyosu6j84vz350mqyrzl2": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_a5scyosu6j84vz350mqyrzl2",
+    "ct_id": "a5scyosu6j84vz350mqyrzl2",
+    "adapter_ctid": "xiy4gn6vievei3614sso5vmk",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Ended At"
+  },
+  "sa4nl1kbpdr842fkucvfjkpq": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_sa4nl1kbpdr842fkucvfjkpq",
+    "ct_id": "sa4nl1kbpdr842fkucvfjkpq",
+    "adapter_ctid": "vzyuqpkegby4er3pw12gxw2c",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Started At"
+  },
+  "og08xf6bu928uuz6t3y0e23f": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_og08xf6bu928uuz6t3y0e23f",
+    "ct_id": "og08xf6bu928uuz6t3y0e23f",
+    "adapter_ctid": "j9gccgohqlb59l1t37doseiq",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Acted On Behalf Of Reference"
+  },
+  "gb78cmuyo72hqs5apymdki7l": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_gb78cmuyo72hqs5apymdki7l",
+    "ct_id": "gb78cmuyo72hqs5apymdki7l",
+    "adapter_ctid": "px1s852i5pfng3v0ikk6fw4m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Description"
+  },
+  "qb90a0sp9vvb6c5cbcf236ys": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_qb90a0sp9vvb6c5cbcf236ys",
+    "ct_id": "qb90a0sp9vvb6c5cbcf236ys",
+    "adapter_ctid": "wi324lr48j1pzugpnw17p87m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Email"
+  },
+  "w2ruemcfy35rw60jl1t9dew2": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_w2ruemcfy35rw60jl1t9dew2",
+    "ct_id": "w2ruemcfy35rw60jl1t9dew2",
+    "adapter_ctid": "qfmes86biux1nl7gbaowsgc4",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Identifier"
+  },
+  "xxe21o9ojzmy9wxxky1tnmog": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_xxe21o9ojzmy9wxxky1tnmog",
+    "ct_id": "xxe21o9ojzmy9wxxky1tnmog",
+    "adapter_ctid": "ljldab8e1bjizncv01akb0n5",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Name"
+  },
+  "eftvwi5byq6cdtd931qyxzw0": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_eftvwi5byq6cdtd931qyxzw0",
+    "ct_id": "eftvwi5byq6cdtd931qyxzw0",
+    "adapter_ctid": "f6z431hl60ra8eqbrcyrsvji",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Agent Organization Name"
+  },
+  "aa663ivutjf2fs4757t0bbzy": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_aa663ivutjf2fs4757t0bbzy",
+    "ct_id": "aa663ivutjf2fs4757t0bbzy",
+    "adapter_ctid": "cpaj0unbnudntl1brmdnuqhu",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Software Name"
+  },
+  "x0lebwtobgaelj5pev3258sd": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_x0lebwtobgaelj5pev3258sd",
+    "ct_id": "x0lebwtobgaelj5pev3258sd",
+    "adapter_ctid": "ebn1a6s1d1dy724l4y692qsl",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Software Version"
+  },
+  "i16vqj89it3db7d3c5qjko9p": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_i16vqj89it3db7d3c5qjko9p",
+    "ct_id": "i16vqj89it3db7d3c5qjko9p",
+    "adapter_ctid": "y1u3ladafqtryhgyetpn5ild",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Agent Type"
+  },
+  "k3rgauqfh9vs4bqq5q4nsbp4": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_k3rgauqfh9vs4bqq5q4nsbp4",
+    "ct_id": "k3rgauqfh9vs4bqq5q4nsbp4",
+    "adapter_ctid": null,
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "FAIR Pipeline Identifier"
+  },
+  "abub2eah26yd2uzni3p9l58i": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_abub2eah26yd2uzni3p9l58i",
+    "ct_id": "abub2eah26yd2uzni3p9l58i",
+    "adapter_ctid": "wy38zv02dmcp5gjul57yejmk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Description"
+  },
+  "i1defiugxfdcwfb9rqv4p5tz": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_i1defiugxfdcwfb9rqv4p5tz",
+    "ct_id": "i1defiugxfdcwfb9rqv4p5tz",
+    "adapter_ctid": "gujvcggdotm3z1hmygdrey09",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Identifier"
+  },
+  "m9minyaug6ypyzt52zfxlyyi": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_m9minyaug6ypyzt52zfxlyyi",
+    "ct_id": "m9minyaug6ypyzt52zfxlyyi",
+    "adapter_ctid": "s0xrd3gbobtgtexdxkxcor3l",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Label"
+  },
+  "wn77qo3b1xjwc4dudtyme2io": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_wn77qo3b1xjwc4dudtyme2io",
+    "ct_id": "wn77qo3b1xjwc4dudtyme2io",
+    "adapter_ctid": "jdugzq309qlimui7675txmyi",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Location"
+  },
+  "kmcck093437mfdlnxnrzm0xw": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_kmcck093437mfdlnxnrzm0xw",
+    "ct_id": "kmcck093437mfdlnxnrzm0xw",
+    "adapter_ctid": "bk8actrinati1b6smyypwj6m",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Entity Value"
+  },
+  "phus5105uw30xejqs7baamyx": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_phus5105uw30xejqs7baamyx",
+    "ct_id": "phus5105uw30xejqs7baamyx",
+    "adapter_ctid": "fti6dssqpaatbprjx0mqu2mj",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Had Primary Source Reference"
+  },
+  "kqlatg3rz00z58muv7j8toyl": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_kqlatg3rz00z58muv7j8toyl",
+    "ct_id": "kqlatg3rz00z58muv7j8toyl",
+    "adapter_ctid": "hj4gt95jsr6xvywruyi9ip51",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Attributed To Reference"
+  },
+  "credrxhz4hg4c42sihm0wb6s": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_credrxhz4hg4c42sihm0wb6s",
+    "ct_id": "credrxhz4hg4c42sihm0wb6s",
+    "adapter_ctid": "e793unvukokgt3c5y0kilui1",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Derived From Reference"
+  },
+  "bfn83x3fw1cyuqriuoquu9t1": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_bfn83x3fw1cyuqriuoquu9t1",
+    "ct_id": "bfn83x3fw1cyuqriuoquu9t1",
+    "adapter_ctid": "vsnnmsojiqwcx33jeavt4bkf",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Generated By Reference"
+  },
+  "h1vwqq8ulrb27qpl6zuzppnf": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_h1vwqq8ulrb27qpl6zuzppnf",
+    "ct_id": "h1vwqq8ulrb27qpl6zuzppnf",
+    "adapter_ctid": "o31fztf2l2gj0nuljugpl1s9",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Invalidated By Reference"
+  },
+  "mjl0vv39zsbigqiuyqm66fkv": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_mjl0vv39zsbigqiuyqm66fkv",
+    "ct_id": "mjl0vv39zsbigqiuyqm66fkv",
+    "adapter_ctid": "bh5kiii8wc47sp8hibxv9qtk",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Quoted From Reference"
+  },
+  "lghqkvp7vapqk10l248kzqs8": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_lghqkvp7vapqk10l248kzqs8",
+    "ct_id": "lghqkvp7vapqk10l248kzqs8",
+    "adapter_ctid": "an1yte2y7kubvf64ao70apuu",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Was Revision Of Reference"
+  },
+  "g2xnh3uhnlrnqlo7ki2s0fs3": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_g2xnh3uhnlrnqlo7ki2s0fs3",
+    "ct_id": "g2xnh3uhnlrnqlo7ki2s0fs3",
+    "adapter_ctid": "p5zjm3c1d2x9jxc2n3wyzbth",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Derivation Type"
+  },
+  "i4e2nod7ss9d4cumhn2pah8b": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_i4e2nod7ss9d4cumhn2pah8b",
+    "ct_id": "i4e2nod7ss9d4cumhn2pah8b",
+    "adapter_ctid": "dlu1btnja2h37jfx3vj694rv",
+    "element_name": "xdtoken-value",
+    "type": "XdToken",
+    "label": "PROV Entity Type"
+  },
+  "yk5nrxndulhebpi3hiywk8u8": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_yk5nrxndulhebpi3hiywk8u8",
+    "ct_id": "yk5nrxndulhebpi3hiywk8u8",
+    "adapter_ctid": "n6j7bwq9qmuzzf8w89gwxeml",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Generated At"
+  },
+  "hswapeutuik067dokidnbv88": {
+    "placeholder": "__PLACEHOLDER__xdtemporal-value_hswapeutuik067dokidnbv88",
+    "ct_id": "hswapeutuik067dokidnbv88",
+    "adapter_ctid": "uc64yt3ys0s0xrj51rue2ofb",
+    "element_name": "xdtemporal-value",
+    "type": "XdTemporal",
+    "label": "Invalidated At"
+  }
+}

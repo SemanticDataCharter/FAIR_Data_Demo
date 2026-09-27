@@ -1,0 +1,702 @@
+@base <https://semanticdatacharter.com/ns/sdc4/dm-epbdfmvxc3gbh5f66hhb3o2m> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdc4: <https://semanticdatacharter.com/ns/sdc4/> .
+@prefix sdc4-meta: <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-a1zr74c1vayeeglk54da7gaf/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-a1zr74c1vayeeglk54da7gaf .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-a1zr74c1vayeeglk54da7gaf/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-a1zr74c1vayeeglk54da7gaf .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/C> a rdfs:Class ;
+    rdfs:label "C" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#C" ;
+    rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/D> a rdfs:Class ;
+    rdfs:label "D" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#D" ;
+    rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/E> a rdfs:Class ;
+    rdfs:label "E" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#E" ;
+    rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/R> a rdfs:Class ;
+    rdfs:label "R" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#R" ;
+    rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/U> a rdfs:Class ;
+    rdfs:label "U" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#U" ;
+    rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/CLINTRCH> a rdfs:Class ;
+    rdfs:label "CLINTRCH" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/COC> a rdfs:Class ;
+    rdfs:label "COC" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#COC" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/ETREAT> a rdfs:Class ;
+    rdfs:label "ETREAT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#ETREAT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HLEGAL> a rdfs:Class ;
+    rdfs:label "HLEGAL" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#HLEGAL" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HMARKT> a rdfs:Class ;
+    rdfs:label "HMARKT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#HMARKT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HOPERAT> a rdfs:Class ;
+    rdfs:label "HOPERAT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#HOPERAT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HPAYMT> a rdfs:Class ;
+    rdfs:label "HPAYMT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#HPAYMT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HRESCH> a rdfs:Class ;
+    rdfs:label "HRESCH" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/PATRQT> a rdfs:Class ;
+    rdfs:label "PATRQT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#PATRQT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/PUBHLTH> a rdfs:Class ;
+    rdfs:label "PUBHLTH" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/TREAT> a rdfs:Class ;
+    rdfs:label "TREAT" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT" ;
+    rdfs:subPropertyOf sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Derivation> a rdfs:Class ;
+    rdfs:label "Derivation" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Derivation" ;
+    rdfs:subPropertyOf sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/PrimarySource> a rdfs:Class ;
+    rdfs:label "PrimarySource" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#PrimarySource" ;
+    rdfs:subPropertyOf sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Quotation> a rdfs:Class ;
+    rdfs:label "Quotation" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Quotation" ;
+    rdfs:subPropertyOf sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Revision> a rdfs:Class ;
+    rdfs:label "Revision" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Revision" ;
+    rdfs:subPropertyOf sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/Organization> a rdfs:Class ;
+    rdfs:label "Organization" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Organization" ;
+    rdfs:subPropertyOf sdc4:mc-i16vqj89it3db7d3c5qjko9p .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/Person> a rdfs:Class ;
+    rdfs:label "Person" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Person" ;
+    rdfs:subPropertyOf sdc4:mc-i16vqj89it3db7d3c5qjko9p .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/SoftwareAgent> a rdfs:Class ;
+    rdfs:label "SoftwareAgent" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#SoftwareAgent" ;
+    rdfs:subPropertyOf sdc4:mc-i16vqj89it3db7d3c5qjko9p .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Bundle> a rdfs:Class ;
+    rdfs:label "Bundle" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Bundle" ;
+    rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Collection> a rdfs:Class ;
+    rdfs:label "Collection" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Collection" ;
+    rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/EmptyCollection> a rdfs:Class ;
+    rdfs:label "EmptyCollection" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#EmptyCollection" ;
+    rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Entity> a rdfs:Class ;
+    rdfs:label "Entity" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Entity" ;
+    rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Plan> a rdfs:Class ;
+    rdfs:label "Plan" ;
+    rdfs:isDefinedBy "http://www.w3.org/ns/prov#Plan" ;
+    rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/assembler> a rdfs:Class ;
+    rdfs:label "assembler" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/attester> a rdfs:Class ;
+    rdfs:label "attester" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/author> a rdfs:Class ;
+    rdfs:label "author" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#author" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/composer> a rdfs:Class ;
+    rdfs:label "composer" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#composer" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/custodian> a rdfs:Class ;
+    rdfs:label "custodian" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/editor> a rdfs:Class ;
+    rdfs:label "editor" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#editor" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/enterer> a rdfs:Class ;
+    rdfs:label "enterer" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#enterer" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/informant> a rdfs:Class ;
+    rdfs:label "informant" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#informant" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/legal> a rdfs:Class ;
+    rdfs:label "legal" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#legal" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/performer> a rdfs:Class ;
+    rdfs:label "performer" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#performer" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/transformer> a rdfs:Class ;
+    rdfs:label "transformer" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#transformer" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/transmitter> a rdfs:Class ;
+    rdfs:label "transmitter" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#transmitter" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/verifier> a rdfs:Class ;
+    rdfs:label "verifier" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#verifier" ;
+    rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/0> a rdfs:Class ;
+    rdfs:label "0" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-outcome#0" ;
+    rdfs:subPropertyOf sdc4:mc-rpz1czz06jhpahmfz30rblvp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/12> a rdfs:Class ;
+    rdfs:label "12" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-outcome#12" ;
+    rdfs:subPropertyOf sdc4:mc-rpz1czz06jhpahmfz30rblvp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/4> a rdfs:Class ;
+    rdfs:label "4" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-outcome#4" ;
+    rdfs:subPropertyOf sdc4:mc-rpz1czz06jhpahmfz30rblvp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/8> a rdfs:Class ;
+    rdfs:label "8" ;
+    rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-outcome#8" ;
+    rdfs:subPropertyOf sdc4:mc-rpz1czz06jhpahmfz30rblvp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/L> a rdfs:Class ;
+    rdfs:label "L" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#L" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/M> a rdfs:Class ;
+    rdfs:label "M" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#M" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/N> a rdfs:Class ;
+    rdfs:label "N" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/R> a rdfs:Class ;
+    rdfs:label "R" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/U> a rdfs:Class ;
+    rdfs:label "U" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#U" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/V> a rdfs:Class ;
+    rdfs:label "V" ;
+    rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#V" ;
+    rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityCompleted> a rdfs:Class ;
+    rdfs:label "ActivityCompleted" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityCompleted" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityHalted> a rdfs:Class ;
+    rdfs:label "ActivityHalted" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityHalted" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityNotCompleted> a rdfs:Class ;
+    rdfs:label "ActivityNotCompleted" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityNotCompleted" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityOngoing> a rdfs:Class ;
+    rdfs:label "ActivityOngoing" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityOngoing" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityPlanned> a rdfs:Class ;
+    rdfs:label "ActivityPlanned" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityPlanned" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityProposed> a rdfs:Class ;
+    rdfs:label "ActivityProposed" ;
+    rdfs:isDefinedBy "https://w3id.org/dpv#ActivityProposed" ;
+    rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
+
+<> dc:coverage "Universal" ;
+    dc:creator "Timothy Cook" ;
+    dc:date "2026-09-26 22:03:38.938420+00:00" ;
+    dc:description "SDC4 data model for National Health and Nutrition Examination Survey (nhanes_medications) — FAIR Data Demo" ;
+    dc:format "text/xml" ;
+    dc:identifier "dm-epbdfmvxc3gbh5f66hhb3o2m" ;
+    dc:language "en-US" ;
+    dc:relation "None" ;
+    dc:rights "CC-BY http://creativecommons.org/licenses/by/3.0/" ;
+    dc:title "NHANES Medication" ;
+    dc:type "SDC Data Model (DM)" .
+
+sdc4:mc-a5scyosu6j84vz350mqyrzl2 a sdc4-meta:ModelComponent ;
+    rdfs:label "Ended At" ;
+    rdfs:comment "When the activity ended (prov:endedAtTime)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
+
+sdc4:mc-aa663ivutjf2fs4757t0bbzy a sdc4-meta:ModelComponent ;
+    rdfs:label "Software Name" ;
+    rdfs:comment "The name of a software agent." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-abub2eah26yd2uzni3p9l58i a sdc4-meta:ModelComponent ;
+    rdfs:label "Entity Description" ;
+    rdfs:comment "A description of a PROV entity." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-bfn83x3fw1cyuqriuoquu9t1 a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Generated By Reference" ;
+    rdfs:comment "The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-c179ilk2ns15cd5rzzdfd6f6 a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Agent" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-credrxhz4hg4c42sihm0wb6s a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Derived From Reference" ;
+    rdfs:comment "The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-dkc2ccj5te35z9gd4bu1blcq a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Agent Reference" ;
+    rdfs:comment "The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-efimv7gxg5ompt8m6xb2b6k5 a sdc4-meta:ModelComponent ;
+    rdfs:label "Diagnosis Code (ICD-10-CM)" ;
+    rdfs:comment "The ICD-10-CM code for the condition, problem or diagnosis. FHIR Condition.code, coded in http://hl7.org/fhir/sid/icd-10-cm." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-eftvwi5byq6cdtd931qyxzw0 a sdc4-meta:ModelComponent ;
+    rdfs:label "Agent Organization Name" ;
+    rdfs:comment "The organization the agent belongs to or is." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-eo5tlfr0576ypknys5alvcn0 a sdc4-meta:ModelComponent ;
+    rdfs:label "Code Display Text" ;
+    rdfs:comment "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-epbdfmvxc3gbh5f66hhb3o2m a sdc4-meta:ModelComponent ;
+    rdfs:label "NHANES Medication" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType> .
+
+sdc4:mc-fjhgr5fyqxt2crmg2cb5c513 a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Event Identifier" ;
+    rdfs:comment "The identifier of the audit event." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-fl5quyfd88rajs0egsgbq7ou a sdc4-meta:ModelComponent ;
+    rdfs:label "FAIR Source File" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-gb78cmuyo72hqs5apymdki7l a sdc4-meta:ModelComponent ;
+    rdfs:label "Agent Description" ;
+    rdfs:comment "A description of the agent and its responsibilities." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-gcjyjrnp0wsfoelcp4m05c67 a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Entity Reference" ;
+    rdfs:comment "The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-ginfqbk7q59ld2r4us8sjnv1 a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Started By Reference" ;
+    rdfs:comment "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Invalidated By Reference" ;
+    rdfs:comment "The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-h3kdbvdtyalpvik97saaf0an a sdc4-meta:ModelComponent ;
+    rdfs:label "System Identifier" ;
+    rdfs:comment "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-hhusuzzig19rs46ngz23k5g7 a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Description" ;
+    rdfs:comment "A description of what the activity does and why." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-hswapeutuik067dokidnbv88 a sdc4-meta:ModelComponent ;
+    rdfs:label "Invalidated At" ;
+    rdfs:comment "When the entity ceased to be usable (prov:invalidatedAtTime)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
+
+sdc4:mc-i1defiugxfdcwfb9rqv4p5tz a sdc4-meta:ModelComponent ;
+    rdfs:label "Entity Identifier" ;
+    rdfs:comment "The identifier of a PROV entity: a URI or another globally unique identifier." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-i213d6dp9r4c0nmzxkgc0tja a sdc4-meta:ModelComponent ;
+    rdfs:label "Medication Reason 1" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-jjzmhdxvbt97pq81iwqubtxk a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Type" ;
+    rdfs:comment "The kind of activity, in the vocabulary of the domain (prov:type)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-jk4cboqk4me0yj2i04m8c2ad a sdc4-meta:ModelComponent ;
+    rdfs:label "Diagnosis (ICD-10-CM)" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-jo2kw48cijwgg64s6cud2el1 a sdc4-meta:ModelComponent ;
+    rdfs:label "NHANES Medication Governed Record" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-jwgah039kcz574bbjvpxvfdj a sdc4-meta:ModelComponent ;
+    rdfs:label "Number of Days Taken Medicine (RXDDAYS)" ;
+    rdfs:comment "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDAYS> ;
+    sdc4-meta:hasUnit sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
+sdc4:mc-jwgx8nvbtsim7ck4uqmpqyl2 a sdc4-meta:ModelComponent ;
+    rdfs:label "Code System: ICD-10-CM" ;
+    rdfs:comment "The code system of a coded value, fixed: ICD-10-CM (http://hl7.org/fhir/sid/icd-10-cm). FHIR Coding.system." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdLinkType> .
+
+sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4 a sdc4-meta:ModelComponent ;
+    rdfs:label "FAIR Pipeline Identifier" ;
+    rdfs:comment "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-kmcck093437mfdlnxnrzm0xw a sdc4-meta:ModelComponent ;
+    rdfs:label "Entity Value" ;
+    rdfs:comment "The value of a PROV entity, or a reference to where its content can be found (prov:value)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-kqlatg3rz00z58muv7j8toyl a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Attributed To Reference" ;
+    rdfs:comment "The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-lghqkvp7vapqk10l248kzqs8 a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Revision Of Reference" ;
+    rdfs:comment "The entity this entity revises (prov:wasRevisionOf). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-lok5ozew80qmwah6h45jr69y a sdc4-meta:ModelComponent ;
+    rdfs:label "Generic Drug Name (RXDDRUG)" ;
+    rdfs:comment "The generic drug name as NHANES records it (RXDDRUG)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRUG> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-m9minyaug6ypyzt52zfxlyyi a sdc4-meta:ModelComponent ;
+    rdfs:label "Entity Label" ;
+    rdfs:comment "A human-readable label for a PROV entity." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-mjl0vv39zsbigqiuyqm66fkv a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Quoted From Reference" ;
+    rdfs:comment "The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-ncudsi2t2ij3rd2pmnnfr2j9 a sdc4-meta:ModelComponent ;
+    rdfs:label "NHANES Medication" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-nf1air1zbj8v9w66jozdxmyl a sdc4-meta:ModelComponent ;
+    rdfs:label "On Behalf Of Reference" ;
+    rdfs:comment "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t a sdc4-meta:ModelComponent ;
+    rdfs:label "FAIR Pipeline Audit" ;
+    rdfs:comment "The audit of a record generated from a federal source file: the pipeline that generated it, its run, and the source file it read (the ProvGov PROV entity)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#AuditType> .
+
+sdc4:mc-og08xf6bu928uuz6t3y0e23f a sdc4-meta:ModelComponent ;
+    rdfs:label "Acted On Behalf Of Reference" ;
+    rdfs:comment "The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-p6smy5wa25ug4yhgdswyuklx a sdc4-meta:ModelComponent ;
+    rdfs:label "FAIR Pipeline User" ;
+    rdfs:comment "The pipeline run that generated the record from a federal source file (PROV agent)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#PartyType> .
+
+sdc4:mc-phus5105uw30xejqs7baamyx a sdc4-meta:ModelComponent ;
+    rdfs:label "Had Primary Source Reference" ;
+    rdfs:comment "The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Entity" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-qb90a0sp9vvb6c5cbcf236ys a sdc4-meta:ModelComponent ;
+    rdfs:label "Agent Email" ;
+    rdfs:comment "The agent's email address (foaf:mbox)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-qh84jdzp1kxt85aq4ilo0svk a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Informed By Reference" ;
+    rdfs:comment "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-r48alj7hc3797qfjnf2uj71n a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Associated With Reference" ;
+    rdfs:comment "The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-r6hkunjm2q0hlxiknlc9ljix a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Label" ;
+    rdfs:comment "A human-readable label for a PROV activity." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-rozfpmwczk4yuw4c2vom4gyx a sdc4-meta:ModelComponent ;
+    rdfs:label "Medication Reason 3" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-sa4nl1kbpdr842fkucvfjkpq a sdc4-meta:ModelComponent ;
+    rdfs:label "Started At" ;
+    rdfs:comment "When the activity started (prov:startedAtTime)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
+
+sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e a sdc4-meta:ModelComponent ;
+    rdfs:label "Data Subject Reference" ;
+    rdfs:comment "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-t0whhrqtnb54te4mk48i1ooj a sdc4-meta:ModelComponent ;
+    rdfs:label "Used Entity Reference" ;
+    rdfs:comment "An entity the activity used (prov:used). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1 a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Event" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-u3qz0js9emqn2i7s5nyynmgt a sdc4-meta:ModelComponent ;
+    rdfs:label "Medication Reason 2" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl a sdc4-meta:ModelComponent ;
+    rdfs:label "Was Ended By Reference" ;
+    rdfs:comment "The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-ujir739mf1g8ajeczs9nzh9m a sdc4-meta:ModelComponent ;
+    rdfs:label "System Location Name" ;
+    rdfs:comment "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-uto4zszvpicva38wx77knz5y a sdc4-meta:ModelComponent ;
+    rdfs:label "Respondent Sequence Number (SEQN)" ;
+    rdfs:comment "The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SEQN> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-uwiosm2q9ym3ewr4de910s70 a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Recorded At" ;
+    rdfs:comment "When the audit event was recorded (FHIR AuditEvent.recorded)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
+
+sdc4:mc-uzai5uey5p1fnn9ezj9u6vor a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Location" ;
+    rdfs:comment "Where the activity took place (prov:atLocation), as text." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-v28gzpjsaxkkgjm470icwipg a sdc4-meta:ModelComponent ;
+    rdfs:label "Number of Prescription Medicines Taken (RXDCOUNT)" ;
+    rdfs:comment "The number of prescription medicines the participant is taking (RXDCOUNT)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDCOUNT> ;
+    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
+sdc4:mc-vhezo2cckpe92x4c3j2memeh a sdc4-meta:ModelComponent ;
+    rdfs:label "Had Plan Reference" ;
+    rdfs:comment "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-vmikfu0irht9fmq7q02t3oqs a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Activity" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-w2ruemcfy35rw60jl1t9dew2 a sdc4-meta:ModelComponent ;
+    rdfs:label "Agent Identifier" ;
+    rdfs:comment "The identifier of a PROV agent: a URI or another globally unique identifier." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-wn77qo3b1xjwc4dudtyme2io a sdc4-meta:ModelComponent ;
+    rdfs:label "Entity Location" ;
+    rdfs:comment "Where a PROV entity is (prov:atLocation), as text." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-wr06h54xqqw2q9id8i9673jy a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Identifier" ;
+    rdfs:comment "The identifier of a PROV activity: a URI or another globally unique identifier." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-wypildaam8rrd87zkkjxl732 a sdc4-meta:ModelComponent ;
+    rdfs:label "Generic Drug Code (RXDDRGID)" ;
+    rdfs:comment "The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRGID> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-x0lebwtobgaelj5pev3258sd a sdc4-meta:ModelComponent ;
+    rdfs:label "Software Version" ;
+    rdfs:comment "The version of a software agent." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk a sdc4-meta:ModelComponent ;
+    rdfs:label "Error Message" ;
+    rdfs:comment "The error the activity reported, if it failed." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-xxe21o9ojzmy9wxxky1tnmog a sdc4-meta:ModelComponent ;
+    rdfs:label "Agent Name" ;
+    rdfs:comment "The name of the agent (foaf:name)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-yk5nrxndulhebpi3hiywk8u8 a sdc4-meta:ModelComponent ;
+    rdfs:label "Generated At" ;
+    rdfs:comment "When the entity was generated (prov:generatedAtTime)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
+
+sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn a sdc4-meta:ModelComponent ;
+    rdfs:label "Items" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-yht0x4rmqyu32sd90jl0rzbo a sdc4-meta:ModelComponent ;
+    rdfs:label "Days" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-a1zr74c1vayeeglk54da7gaf a sdc4-meta:ModelComponent ;
+    rdfs:label "Taken Prescription Medicine, Past Month (RXDUSE)" ;
+    rdfs:comment "Whether the participant took prescription medicine in the past 30 days (RXDUSE)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDUSE> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-i16vqj89it3db7d3c5qjko9p a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Agent Type" ;
+    rdfs:comment "The kind of PROV agent: person, organization or software agent." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Derivation Type" ;
+    rdfs:comment "How one entity was derived from another: a general derivation, a revision, a quotation or a primary source." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-rpz1czz06jhpahmfz30rblvp a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Event Outcome" ;
+    rdfs:comment "The result of an audited event (FHIR AuditEvent.outcome)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x a sdc4-meta:ModelComponent ;
+    rdfs:label "Audit Event Action" ;
+    rdfs:comment "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-i4e2nod7ss9d4cumhn2pah8b a sdc4-meta:ModelComponent ;
+    rdfs:label "PROV Entity Type" ;
+    rdfs:comment "The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-vbctgmdcwps5b3r3l6sboa6y a sdc4-meta:ModelComponent ;
+    rdfs:label "Confidentiality" ;
+    rdfs:comment "The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 a sdc4-meta:ModelComponent ;
+    rdfs:label "Activity Status" ;
+    rdfs:comment "The state of an activity, from the Data Privacy Vocabulary activity status concepts." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj a sdc4-meta:ModelComponent ;
+    rdfs:label "Purpose of Use" ;
+    rdfs:comment "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-jujsdur1igws8orw6tvvlqco a sdc4-meta:ModelComponent ;
+    rdfs:label "Provenance Agent Type" ;
+    rdfs:comment "The functional role of an agent in an activity (FHIR Provenance.agent.type)." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+

@@ -1,0 +1,90 @@
+{
+  "tiny_id": "nhanes-race-hispanic-origin",
+  "label": "Race/Hispanic Origin with NH Asian (RIDRETH3)",
+  "description": "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value.",
+  "sdc_type": "XdToken",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "Mexican American",
+      "Other Hispanic",
+      "Non-Hispanic White",
+      "Non-Hispanic Black",
+      "Non-Hispanic Asian",
+      "Other Race - Including Multi-Racial"
+    ],
+    "enum_descr": [
+      "Mexican American",
+      "Other Hispanic",
+      "Non-Hispanic White",
+      "Non-Hispanic Black",
+      "Non-Hispanic Asian",
+      "Other Race - Including Multi-Racial"
+    ],
+    "definitions": [
+      "http://purl.obolibrary.org/obo/NCIT_C67175",
+      "http://purl.obolibrary.org/obo/NCIT_C17459",
+      "http://purl.obolibrary.org/obo/NCIT_C41261",
+      "http://purl.obolibrary.org/obo/NCIT_C16352",
+      "http://purl.obolibrary.org/obo/NCIT_C41260",
+      "http://purl.obolibrary.org/obo/NCIT_C17649"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "Mexican American",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67175"
+    },
+    {
+      "value": "Other Hispanic",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17459"
+    },
+    {
+      "value": "Non-Hispanic White",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C41261"
+    },
+    {
+      "value": "Non-Hispanic Black",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C16352"
+    },
+    {
+      "value": "Non-Hispanic Asian",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C41260"
+    },
+    {
+      "value": "Other Race - Including Multi-Racial",
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C17649"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-race-hispanic-origin",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDRETH3",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

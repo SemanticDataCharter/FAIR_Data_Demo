@@ -1,0 +1,13 @@
+key: units-years
+label: Years
+type: Units
+description: A duration in years.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: years
+  definition: http://qudt.org/vocab/unit/YR

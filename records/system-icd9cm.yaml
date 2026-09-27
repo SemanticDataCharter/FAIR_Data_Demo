@@ -1,0 +1,14 @@
+key: system-icd9cm
+label: 'Code System: ICD-9-CM'
+type: XdLink
+description: 'The code system of a coded value, fixed: ICD-9-CM (http://hl7.org/fhir/sid/icd-9-cm). FHIR Coding.system.'
+source:
+  name: ICD-9-CM
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/sid/icd-9-cm
+  basis: standard
+constraints:
+  link: http://hl7.org/fhir/sid/icd-9-cm
+  relation: codeSystem
+  relation_uri: http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system

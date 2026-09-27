@@ -1,0 +1,61 @@
+{
+  "tiny_id": "nhanes-total-cholesterol-si",
+  "label": "Total Cholesterol (SI)",
+  "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "units": "Millimoles per Litre",
+    "total_digits": 5,
+    "fraction_digits": 2,
+    "min_inclusive": 0,
+    "units_key": "units-millimole-per-litre",
+    "units_spec": {
+      "label": "Millimoles per Litre",
+      "enums": [
+        "mmol/L"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/MilliMOL-PER-L"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-total-cholesterol-si",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/2093-3/",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/TCHOL_J.htm#LBDTCSI",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

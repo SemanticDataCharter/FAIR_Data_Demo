@@ -1,0 +1,15 @@
+key: nhanes-doctor-said-overweight
+label: Doctor Ever Said You Were Overweight (MCQ080)
+type: XdToken
+description: Whether a doctor or health professional ever said the participant was overweight (MCQ080).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/MCQ_J.htm#MCQ080
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

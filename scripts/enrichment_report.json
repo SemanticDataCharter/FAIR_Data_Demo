@@ -1,0 +1,92 @@
+{
+  "timestamp": "2026-03-25T16:31:59.736801+00:00",
+  "study": "all",
+  "dry_run": false,
+  "total_unpublished": 968,
+  "mapped": 7,
+  "unmapped": 961,
+  "results": [
+    {
+      "ct_id": "g46mlb32co4iy0mzebt598b2",
+      "column": "CPDEMO1C",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdQuantity",
+      "status": "no_changes",
+      "changes": {}
+    },
+    {
+      "ct_id": "h5w5nwm7pq1uzpz7uzo9szat",
+      "column": "DIABAGE4",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdQuantity",
+      "status": "no_changes",
+      "changes": {}
+    },
+    {
+      "ct_id": "jdbbi0ur0baxthg1wv1h8r9h",
+      "column": "NUMPHON4",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdQuantity",
+      "status": "no_changes",
+      "changes": {}
+    },
+    {
+      "ct_id": "ps2aikhmpjyexahgjpsbg8u5",
+      "column": "_RACEG22",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdQuantity",
+      "status": "error",
+      "changes": {
+        "label": "Create Computed Non-Hispanic Whites/All Others Race Categories Race/Ethnic Group Codes Used In Post-Stratification Variable",
+        "description": "BRFSS 2022: White non-Hispanic race group. Section: Calculated Race Variables",
+        "semantic_links_added": 2
+      },
+      "error": "Client error '400 Bad Request' for url 'https://sdcstudio.axius-sdc.com/api/v1/dmgen/xd-quantities/ps2aikhmpjyexahgjpsbg8u5/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    },
+    {
+      "ct_id": "nw6d0xc4mm6q6y73sls6bns8",
+      "column": "_SBONTI1",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdQuantity",
+      "status": "error",
+      "changes": {
+        "label": "Respondents aged 45-75 who have had a sigmoidoscopy within the past ten years and a blood stool test in the past year",
+        "description": "BRFSS 2022: Respondents aged 45-75 who have had a sigmoidoscopy within the past ten years and a blood stool test in the past year. Section: Calculated Variables",
+        "semantic_links_added": 2
+      },
+      "error": "Client error '400 Bad Request' for url 'https://sdcstudio.axius-sdc.com/api/v1/dmgen/xd-quantities/nw6d0xc4mm6q6y73sls6bns8/'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    },
+    {
+      "ct_id": "vpib1sfkuwg0505mvqh203wh",
+      "column": "_SEX",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdCount",
+      "status": "enriched",
+      "changes": {
+        "label": "Calculated sex variable",
+        "description": "BRFSS 2022: Calculated sex variable. Section: Calculated Variables",
+        "semantic_links_added": 2
+      }
+    },
+    {
+      "ct_id": "ttwwqbbs91acobpbgnnk74ag",
+      "column": "USEMRJN4",
+      "study": "brfss",
+      "dataset": "brfss",
+      "type": "XdString",
+      "status": "no_changes",
+      "changes": {}
+    }
+  ],
+  "summary": {
+    "no_changes": 4,
+    "error": 2,
+    "enriched": 1
+  }
+}

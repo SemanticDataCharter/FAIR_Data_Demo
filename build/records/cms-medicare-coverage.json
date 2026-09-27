@@ -1,0 +1,46 @@
+{
+  "tiny_id": "cms-medicare-coverage",
+  "label": "CMS Medicare Coverage",
+  "description": "The beneficiary's Medicare coverage in the reference year: the FHIR insurance coverage by identifier (Medicare as the coverage type), and the months of Part A, Part B, HMO and Part D coverage. Members: insurance-coverage (FHIR); Hospital Insurance (Part A) Coverage Months; Supplementary Medical Insurance (Part B) Coverage Months; HMO Coverage Months; Part D Plan Coverage Months.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/cms-medicare-coverage",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf",
+      "basis": "mechanical",
+      "note": "CMS DE-SynPUF"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/StructureDefinition/Coverage",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "https://axius-sdc.com/library/fhir/insurance-coverage",
+    "cms-part-a-coverage-months",
+    "cms-part-b-coverage-months",
+    "cms-hmo-coverage-months",
+    "cms-part-d-coverage-months"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

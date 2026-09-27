@@ -1,0 +1,3550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHANES Medication - Schema Documentation</title>
+    <style>
+        :root {
+            --sdc-primary: #2ca58d;
+            --sdc-primary-dark: #1a7a6b;
+            --sdc-primary-light: #dcfce7;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f9fafb; padding: 1.5rem; margin: 0; color: #1f2937; line-height: 1.6; }
+        .container { max-width: 64rem; margin: 0 auto; }
+        h1 { font-size: 2rem; font-weight: 700; margin: 0 0 0.5rem 0; color: var(--sdc-primary); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin: 0 0 1rem 0; color: var(--sdc-primary); }
+        h3 { font-size: 1.125rem; font-weight: 600; margin: 0 0 0.5rem 0; }
+        h4 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.5rem 0; color: var(--sdc-primary); }
+        p { margin: 0 0 0.5rem 0; }
+        a { color: #2563eb; }
+        a:hover { text-decoration: underline; }
+        code { background: #f3f4f6; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; }
+        .section-card { background: white; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .info-grid { display: grid; grid-template-columns: 180px 1fr; gap: 1rem; }
+        .info-label { font-weight: 600; color: #4b5563; }
+        .info-value { color: #1f2937; }
+        .badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+        .badge-published { background-color: var(--sdc-primary-light); color: var(--sdc-primary-dark); }
+        .component-card { background: #f9fafb; border-left: 4px solid var(--sdc-primary); padding: 1rem; margin-bottom: 1rem; border-radius: 0.5rem; }
+        .constraint-item { background: #f3f4f6; padding: 0.5rem; margin: 0.25rem 0; border-radius: 0.375rem; font-size: 0.875rem; }
+        .download-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .download-link { display: inline-block; padding: 0.5rem 1rem; color: white; border-radius: 0.5rem; text-decoration: none; font-weight: 500; }
+        .download-link:hover { opacity: 0.9; color: white; text-decoration: none; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; }
+        .note-box { margin-top: 1rem; padding: 0.75rem; background: #eff6ff; border-radius: 0.5rem; font-size: 0.875rem; color: #374151; }
+        .muted { color: #6b7280; }
+        .italic { font-style: italic; }
+        .small { font-size: 0.875rem; }
+        ol { padding-left: 1.5rem; }
+        ol li { margin-bottom: 0.5rem; }
+        details { cursor: pointer; margin-top: 1rem; }
+        details summary { font-weight: 600; padding: 0.5rem; background: #f3f4f6; border-radius: 0.375rem; margin-bottom: 0.5rem; }
+        details[open] summary { background: var(--sdc-primary-light); color: var(--sdc-primary-dark); }
+        .footer { text-align: center; font-size: 0.875rem; color: #6b7280; }
+        @media print { body { background: white; } .section-card { box-shadow: none; border: 1px solid #e5e7eb; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header Section -->
+        <header class="section-card" style="margin-bottom: 2rem;">
+            <h1>NHANES Medication</h1>
+            <span class="badge badge-published">Published</span>
+            <p style="font-size: 1.125rem; margin-top: 1rem;">SDC4 data model for National Health and Nutrition Examination Survey (nhanes_medications) — FAIR Data Demo</p>
+        </header>
+
+        <!-- Metadata Section -->
+        <section class="section-card">
+            <h2>Metadata</h2>
+            <div class="info-grid">
+
+                <div class="info-label">Identifier:</div>
+                <div class="info-value">dm-epbdfmvxc3gbh5f66hhb3o2m</div>
+
+                <div class="info-label">Author:</div>
+                <div class="info-value">Timothy Cook</div>
+
+                <div class="info-label">Published:</div>
+                <div class="info-value">2026-09-26 22:03</div>
+
+                <div class="info-label">Language:</div>
+                <div class="info-value">en-US</div>
+
+                <div class="info-label">Format:</div>
+                <div class="info-value">text/xml</div>
+
+                <div class="info-label">Rights:</div>
+                <div class="info-value">CC-BY http://creativecommons.org/licenses/by/3.0/</div>
+
+                <div class="info-label">Coverage:</div>
+                <div class="info-value">Universal</div>
+
+                <div class="info-label">Relation:</div>
+                <div class="info-value">None</div>
+
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="section-card">
+            <h2>Downloads</h2>
+            <div class="download-links">
+
+                <a href="https://storage.googleapis.com/sdcstudio-user-uploads/dmlib/FAIR_Data_Demo/NHANES_Medication/dm-epbdfmvxc3gbh5f66hhb3o2m.xsd" class="download-link" style="background-color: #3b82f6;">
+                    XSD Schema
+                </a>
+
+                <a href="https://storage.googleapis.com/sdcstudio-user-uploads/dmlib/FAIR_Data_Demo/NHANES_Medication/dm-epbdfmvxc3gbh5f66hhb3o2m.xml" class="download-link" style="background-color: #10b981;">
+                    XML Instance
+                </a>
+
+                <a href="https://storage.googleapis.com/sdcstudio-user-uploads/dmlib/FAIR_Data_Demo/NHANES_Medication/dm-epbdfmvxc3gbh5f66hhb3o2m-instance.json" class="download-link" style="background-color: #f59e0b;">
+                    JSON Instance
+                </a>
+
+                <a href="https://storage.googleapis.com/sdcstudio-user-uploads/dmlib/FAIR_Data_Demo/NHANES_Medication/dm-epbdfmvxc3gbh5f66hhb3o2m.jsonld" class="download-link" style="background-color: #f97316;">
+                    JSON-LD Schema
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Schema Overview -->
+        <section class="section-card">
+            <h2>Schema Overview</h2>
+            <div>
+                <p><strong>Target Namespace:</strong> https://semanticdatacharter.com/ns/sdc4/</p>
+                <p><strong>Total Components:</strong> 74</p>
+                <p><strong>Encoding:</strong> utf-8</p>
+            </div>
+
+            <details>
+                <summary>Component Type Breakdown</summary>
+                <div class="stat-grid">
+
+                    <div class="constraint-item">
+                        <strong>Clusters:</strong> 11
+                    </div>
+
+                    <div class="constraint-item">
+                        <strong>XdLink:</strong> 1
+                    </div>
+
+                    <div class="constraint-item">
+                        <strong>XdString:</strong> 45
+                    </div>
+
+                    <div class="constraint-item">
+                        <strong>XdToken:</strong> 10
+                    </div>
+
+                    <div class="constraint-item">
+                        <strong>XdCount:</strong> 2
+                    </div>
+
+                    <div class="constraint-item">
+                        <strong>XdTemporal:</strong> 5
+                    </div>
+
+                </div>
+            </details>
+        </section>
+
+        <!-- Component Documentation -->
+        <section class="section-card">
+            <h2>Components</h2>
+            <p class="muted">Detailed documentation of all components in this data model.</p>
+
+            <details>
+                <summary>Clusters (11)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Audit Event</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> t2tvd3wylxrstdeu5aw6gkw1</p>
+
+                        <p style="margin-top: 0.5rem;">A logged access or custody event as data: what was done, by whom, on what, with what outcome and for what purpose. The audit-only case of sdc5 issue 002; state-changing operations are workflow transitions.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-event" target="_blank">https://axius-sdc.com/library/provgov/audit-event</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/StructureDefinition/AuditEvent" target="_blank">http://hl7.org/fhir/StructureDefinition/AuditEvent</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Diagnosis (ICD-10-CM)</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> jk4cboqk4me0yj2i04m8c2ad</p>
+
+                        <p style="margin-top: 0.5rem;">The condition, problem or diagnosis. A coded value: the ICD-10-CM code, its display text and the fixed code system, resolved on the code system IRI (FHIR Coding). FHIR Condition.code.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fhir/diagnosis-icd10cm" target="_blank">https://axius-sdc.com/library/fhir/diagnosis-icd10cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:closeMatch:</strong>
+                                <a href="http://hl7.org/fhir/sid/icd-10-cm" target="_blank">http://hl7.org/fhir/sid/icd-10-cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/condition-definitions.html#Condition.code" target="_blank">http://hl7.org/fhir/R4/condition-definitions.html#Condition.code</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>FAIR Source File</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> fl5quyfd88rajs0egsgbq7ou</p>
+
+                        <p style="margin-top: 0.5rem;">The federal source file a record was generated from, as the ProvGov PROV entity by identifier: its identifier (the download URL), label (the file name), description (the release) and location. The audit's location. Members: prov-entity (Provgov).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://github.com/SemanticDataCharter/FAIR_Data_Demo" target="_blank">https://github.com/SemanticDataCharter/FAIR_Data_Demo</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/fair-source-file" target="_blank">https://axius-sdc.com/library/fair/fair-source-file</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Entity" target="_blank">http://www.w3.org/ns/prov#Entity</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Medication Reason 1</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> i213d6dp9r4c0nmzxkgc0tja</p>
+
+                        <p style="margin-top: 0.5rem;">The first reason the medicine is taken (RXDRSC1, RXDRSD1), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-medication-reason-1" target="_blank">https://axius-sdc.com/library/fair/nhanes-medication-reason-1</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode" target="_blank">http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Medication Reason 2</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> u3qz0js9emqn2i7s5nyynmgt</p>
+
+                        <p style="margin-top: 0.5rem;">The second reason the medicine is taken (RXDRSC2, RXDRSD2), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-medication-reason-2" target="_blank">https://axius-sdc.com/library/fair/nhanes-medication-reason-2</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode" target="_blank">http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Medication Reason 3</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> rozfpmwczk4yuw4c2vom4gyx</p>
+
+                        <p style="margin-top: 0.5rem;">The third reason the medicine is taken (RXDRSC3, RXDRSD3), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-medication-reason-3" target="_blank">https://axius-sdc.com/library/fair/nhanes-medication-reason-3</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode" target="_blank">http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>NHANES Medication</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> ncudsi2t2ij3rd2pmnnfr2j9</p>
+
+                        <p style="margin-top: 0.5rem;">One prescription medicine a participant reported (RXQ_RX_J): the sequence number joining it to the participant, whether any was taken, the generic name and NHANES code, days taken, the count of medicines, and up to three reasons as ICD-10-CM coded values. Members: Respondent Sequence Number (SEQN); Taken Prescription Medicine, Past Month (RXDUSE); Generic Drug Name (RXDDRUG); Generic Drug Code (RXDDRGID); Number of Days Taken Medicine (RXDDAYS); Number of Prescription Medicines Taken (RXDCOUNT); Medication Reason 1; Medication Reason 2; Medication Reason 3.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-medication" target="_blank">https://axius-sdc.com/library/fair/nhanes-medication</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/StructureDefinition/MedicationStatement" target="_blank">http://hl7.org/fhir/StructureDefinition/MedicationStatement</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>NHANES Medication Governed Record</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> jo2kw48cijwgg64s6cud2el1</p>
+
+                        <p style="margin-top: 0.5rem;">An NHANES medication record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: NHANES Medication; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://github.com/SemanticDataCharter/FAIR_Data_Demo" target="_blank">https://github.com/SemanticDataCharter/FAIR_Data_Demo</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-medication-governed-record" target="_blank">https://axius-sdc.com/library/fair/nhanes-medication-governed-record</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Entity" target="_blank">http://www.w3.org/ns/prov#Entity</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Activity</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> vmikfu0irht9fmq7q02t3oqs</p>
+
+                        <p style="margin-top: 0.5rem;">A PROV activity: what it was, when it ran, its status, and the entities, activities, agent and plan it relates to.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-activity" target="_blank">https://axius-sdc.com/library/provgov/prov-activity</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Activity" target="_blank">http://www.w3.org/ns/prov#Activity</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Agent</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> c179ilk2ns15cd5rzzdfd6f6</p>
+
+                        <p style="margin-top: 0.5rem;">A PROV agent: a person, organization or software agent, with its identity, contact and delegation.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-agent" target="_blank">https://axius-sdc.com/library/provgov/prov-agent</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Agent" target="_blank">http://www.w3.org/ns/prov#Agent</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Entity</h4>
+                        <p class="small muted"><strong>Type:</strong> Cluster</p>
+                        <p class="small muted"><strong>ID:</strong> q0ckidtsg1x3iav6nrt8fo0l</p>
+
+                        <p style="margin-top: 0.5rem;">A PROV entity: what it is, its value and location, when it was generated and invalidated, and the entities, activity and agent it relates to.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-entity" target="_blank">https://axius-sdc.com/library/provgov/prov-entity</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Entity" target="_blank">http://www.w3.org/ns/prov#Entity</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>Link Components (1)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Code System: ICD-10-CM</h4>
+                        <p class="small muted"><strong>Type:</strong> XdLink</p>
+                        <p class="small muted"><strong>ID:</strong> jwgx8nvbtsim7ck4uqmpqyl2</p>
+
+                        <p style="margin-top: 0.5rem;">The code system of a coded value, fixed: ICD-10-CM (http://hl7.org/fhir/sid/icd-10-cm). FHIR Coding.system.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/sid/icd-10-cm" target="_blank">http://hl7.org/fhir/sid/icd-10-cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fhir/system-icd10cm" target="_blank">https://axius-sdc.com/library/fhir/system-icd10cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/sid/icd-10-cm" target="_blank">http://hl7.org/fhir/sid/icd-10-cm</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>String Components (45)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Acted On Behalf Of Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> og08xf6bu928uuz6t3y0e23f</p>
+
+                        <p style="margin-top: 0.5rem;">The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/acted-on-behalf-of-reference" target="_blank">https://axius-sdc.com/library/provgov/acted-on-behalf-of-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#actedOnBehalfOf" target="_blank">http://www.w3.org/ns/prov#actedOnBehalfOf</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-dce4w62jxjngjnmc5y26fq66" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-dce4w62jxjngjnmc5y26fq66</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Activity Description</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> hhusuzzig19rs46ngz23k5g7</p>
+
+                        <p style="margin-top: 0.5rem;">A description of what the activity does and why.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 4000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-description" target="_blank">https://axius-sdc.com/library/provgov/activity-description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/description" target="_blank">http://purl.org/dc/terms/description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-m9xg6e182m1oq77ssrf9iujv" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-m9xg6e182m1oq77ssrf9iujv</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Activity Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> wr06h54xqqw2q9id8i9673jy</p>
+
+                        <p style="margin-top: 0.5rem;">The identifier of a PROV activity: a URI or another globally unique identifier.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-identifier" target="_blank">https://axius-sdc.com/library/provgov/activity-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/identifier" target="_blank">http://purl.org/dc/terms/identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-fpnn1dew0kcevc8ptohndc5t" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-fpnn1dew0kcevc8ptohndc5t</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Activity Label</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> r6hkunjm2q0hlxiknlc9ljix</p>
+
+                        <p style="margin-top: 0.5rem;">A human-readable label for a PROV activity.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-label" target="_blank">https://axius-sdc.com/library/provgov/activity-label</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/2000/01/rdf-schema#label" target="_blank">http://www.w3.org/2000/01/rdf-schema#label</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-n4kaez29vbknku2jy8n56gfm" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-n4kaez29vbknku2jy8n56gfm</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Activity Location</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> uzai5uey5p1fnn9ezj9u6vor</p>
+
+                        <p style="margin-top: 0.5rem;">Where the activity took place (prov:atLocation), as text.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-location" target="_blank">https://axius-sdc.com/library/provgov/activity-location</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#atLocation" target="_blank">http://www.w3.org/ns/prov#atLocation</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-ciuklf1kl8bphpudye4i47am" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-ciuklf1kl8bphpudye4i47am</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Activity Type</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> jjzmhdxvbt97pq81iwqubtxk</p>
+
+                        <p style="margin-top: 0.5rem;">The kind of activity, in the vocabulary of the domain (prov:type).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-type" target="_blank">https://axius-sdc.com/library/provgov/activity-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#type" target="_blank">http://www.w3.org/ns/prov#type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-ceusvbe55b266gcdzf5qnurc" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-ceusvbe55b266gcdzf5qnurc</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Agent Description</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> gb78cmuyo72hqs5apymdki7l</p>
+
+                        <p style="margin-top: 0.5rem;">A description of the agent and its responsibilities.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 4000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/agent-description" target="_blank">https://axius-sdc.com/library/provgov/agent-description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/description" target="_blank">http://purl.org/dc/terms/description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-w79xppnskig5vq31er8gh7nk" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-w79xppnskig5vq31er8gh7nk</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Agent Email</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> qb90a0sp9vvb6c5cbcf236ys</p>
+
+                        <p style="margin-top: 0.5rem;">The agent's email address (foaf:mbox).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/agent-email" target="_blank">https://axius-sdc.com/library/provgov/agent-email</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://xmlns.com/foaf/0.1/mbox" target="_blank">http://xmlns.com/foaf/0.1/mbox</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-yp6pm5xyovxhkjimrrb8h9xy" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-yp6pm5xyovxhkjimrrb8h9xy</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Agent Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> w2ruemcfy35rw60jl1t9dew2</p>
+
+                        <p style="margin-top: 0.5rem;">The identifier of a PROV agent: a URI or another globally unique identifier.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/agent-identifier" target="_blank">https://axius-sdc.com/library/provgov/agent-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/identifier" target="_blank">http://purl.org/dc/terms/identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-hhfnj5hd1yzt252jfq5pdjj1" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-hhfnj5hd1yzt252jfq5pdjj1</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Agent Name</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> xxe21o9ojzmy9wxxky1tnmog</p>
+
+                        <p style="margin-top: 0.5rem;">The name of the agent (foaf:name).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/agent-name" target="_blank">https://axius-sdc.com/library/provgov/agent-name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://xmlns.com/foaf/0.1/name" target="_blank">http://xmlns.com/foaf/0.1/name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-yya0pdgjd2w0wlz5r3h516om" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-yya0pdgjd2w0wlz5r3h516om</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Agent Organization Name</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> eftvwi5byq6cdtd931qyxzw0</p>
+
+                        <p style="margin-top: 0.5rem;">The organization the agent belongs to or is.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/agent-organization-name" target="_blank">https://axius-sdc.com/library/provgov/agent-organization-name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://schema.org/" target="_blank">https://schema.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="https://schema.org/legalName" target="_blank">https://schema.org/legalName</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-ifw5zfe4oiijbxjn1ylc2wm3" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-ifw5zfe4oiijbxjn1ylc2wm3</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Audit Agent Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> dkc2ccj5te35z9gd4bu1blcq</p>
+
+                        <p style="margin-top: 0.5rem;">The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-agent-reference" target="_blank">https://axius-sdc.com/library/provgov/audit-agent-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.who" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.who</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-bads7w1q6wmhn18u6dxwt28t" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-bads7w1q6wmhn18u6dxwt28t</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Audit Entity Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> gcjyjrnp0wsfoelcp4m05c67</p>
+
+                        <p style="margin-top: 0.5rem;">The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-entity-reference" target="_blank">https://axius-sdc.com/library/provgov/audit-entity-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.entity.what" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.entity.what</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-sjp1x177mlpq3howdltptm3c" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-sjp1x177mlpq3howdltptm3c</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Audit Event Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> fjhgr5fyqxt2crmg2cb5c513</p>
+
+                        <p style="margin-top: 0.5rem;">The identifier of the audit event.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-event-identifier" target="_blank">https://axius-sdc.com/library/provgov/audit-event-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/identifier" target="_blank">http://purl.org/dc/terms/identifier</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Code Display Text</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> eo5tlfr0576ypknys5alvcn0</p>
+
+                        <p style="margin-top: 0.5rem;">The human-readable display of a coded value, as recorded with the code (FHIR Coding.display).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 500
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fhir/code-display-text" target="_blank">https://axius-sdc.com/library/fhir/code-display-text</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.display" target="_blank">http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.display</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Data Subject Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> sndpbhm3xbd6qtbyxmvh3i0e</p>
+
+                        <p style="margin-top: 0.5rem;">The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/data-subject-reference" target="_blank">https://axius-sdc.com/library/provgov/data-subject-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.patient" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.patient</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-x2rc9cg84d2famryqzdic0as" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-x2rc9cg84d2famryqzdic0as</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Diagnosis Code (ICD-10-CM)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> efimv7gxg5ompt8m6xb2b6k5</p>
+
+                        <p style="margin-top: 0.5rem;">The ICD-10-CM code for the condition, problem or diagnosis. FHIR Condition.code, coded in http://hl7.org/fhir/sid/icd-10-cm.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 40
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/sid/icd-10-cm" target="_blank">http://hl7.org/fhir/sid/icd-10-cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fhir/diagnosis-icd10cm-code" target="_blank">https://axius-sdc.com/library/fhir/diagnosis-icd10cm-code</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/condition-definitions.html#Condition.code" target="_blank">http://hl7.org/fhir/R4/condition-definitions.html#Condition.code</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/sid/icd-10-cm" target="_blank">http://hl7.org/fhir/sid/icd-10-cm</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-gnssdkny454dgbykbs16wuew" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-gnssdkny454dgbykbs16wuew</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Entity Description</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> abub2eah26yd2uzni3p9l58i</p>
+
+                        <p style="margin-top: 0.5rem;">A description of a PROV entity.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 4000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/entity-description" target="_blank">https://axius-sdc.com/library/provgov/entity-description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/description" target="_blank">http://purl.org/dc/terms/description</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-rlhiv24i689xhko5dp426y7o" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-rlhiv24i689xhko5dp426y7o</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Entity Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> i1defiugxfdcwfb9rqv4p5tz</p>
+
+                        <p style="margin-top: 0.5rem;">The identifier of a PROV entity: a URI or another globally unique identifier.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/entity-identifier" target="_blank">https://axius-sdc.com/library/provgov/entity-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://purl.org/dc/terms/identifier" target="_blank">http://purl.org/dc/terms/identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-lk4wonh72gbfl4xoo6mwbva1" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-lk4wonh72gbfl4xoo6mwbva1</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Entity Label</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> m9minyaug6ypyzt52zfxlyyi</p>
+
+                        <p style="margin-top: 0.5rem;">A human-readable label for a PROV entity.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/entity-label" target="_blank">https://axius-sdc.com/library/provgov/entity-label</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/2000/01/rdf-schema#label" target="_blank">http://www.w3.org/2000/01/rdf-schema#label</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-elqsmgj1lwc30gmxgcewiu8y" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-elqsmgj1lwc30gmxgcewiu8y</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Entity Location</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> wn77qo3b1xjwc4dudtyme2io</p>
+
+                        <p style="margin-top: 0.5rem;">Where a PROV entity is (prov:atLocation), as text.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/entity-location" target="_blank">https://axius-sdc.com/library/provgov/entity-location</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#atLocation" target="_blank">http://www.w3.org/ns/prov#atLocation</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-tlezj37gdjxud7b2gefblv1e" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-tlezj37gdjxud7b2gefblv1e</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Entity Value</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> kmcck093437mfdlnxnrzm0xw</p>
+
+                        <p style="margin-top: 0.5rem;">The value of a PROV entity, or a reference to where its content can be found (prov:value).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 4000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/entity-value" target="_blank">https://axius-sdc.com/library/provgov/entity-value</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#value" target="_blank">http://www.w3.org/ns/prov#value</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-r1166br2deauav0uoencq7uk" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-r1166br2deauav0uoencq7uk</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Error Message</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> xlgjqdpwdbn2re3mdh5yy2rk</p>
+
+                        <p style="margin-top: 0.5rem;">The error the activity reported, if it failed.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 4000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/error-message" target="_blank">https://axius-sdc.com/library/provgov/error-message</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://schema.org/" target="_blank">https://schema.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="https://schema.org/error" target="_blank">https://schema.org/error</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-eakhqr9l9nbblppgxc5fq25n" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-eakhqr9l9nbblppgxc5fq25n</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>FAIR Pipeline Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> k3rgauqfh9vs4bqq5q4nsbp4</p>
+
+                        <p style="margin-top: 0.5rem;">The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 120
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://github.com/SemanticDataCharter/FAIR_Data_Demo" target="_blank">https://github.com/SemanticDataCharter/FAIR_Data_Demo</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/fair-system-identifier" target="_blank">https://axius-sdc.com/library/fair/fair-system-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#SoftwareAgent" target="_blank">http://www.w3.org/ns/prov#SoftwareAgent</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Generic Drug Code (RXDDRGID)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> wypildaam8rrd87zkkjxl732</p>
+
+                        <p style="margin-top: 0.5rem;">The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 12
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-generic-drug-code" target="_blank">https://axius-sdc.com/library/fair/nhanes-generic-drug-code</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRGID" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRGID</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Generic Drug Name (RXDDRUG)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> lok5ozew80qmwah6h45jr69y</p>
+
+                        <p style="margin-top: 0.5rem;">The generic drug name as NHANES records it (RXDDRUG).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 200
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-generic-drug-name" target="_blank">https://axius-sdc.com/library/fair/nhanes-generic-drug-name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRUG" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDRUG</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Had Plan Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> vhezo2cckpe92x4c3j2memeh</p>
+
+                        <p style="margin-top: 0.5rem;">The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/had-plan-reference" target="_blank">https://axius-sdc.com/library/provgov/had-plan-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#hadPlan" target="_blank">http://www.w3.org/ns/prov#hadPlan</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-xvdfh1nzfar33yxmgl3jgvqo" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-xvdfh1nzfar33yxmgl3jgvqo</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Had Primary Source Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> phus5105uw30xejqs7baamyx</p>
+
+                        <p style="margin-top: 0.5rem;">The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/had-primary-source-reference" target="_blank">https://axius-sdc.com/library/provgov/had-primary-source-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#hadPrimarySource" target="_blank">http://www.w3.org/ns/prov#hadPrimarySource</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-b2cclldvwij0n1ewhgrkk1ul" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-b2cclldvwij0n1ewhgrkk1ul</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>On Behalf Of Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> nf1air1zbj8v9w66jozdxmyl</p>
+
+                        <p style="margin-top: 0.5rem;">The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/on-behalf-of-reference" target="_blank">https://axius-sdc.com/library/provgov/on-behalf-of-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/provenance-definitions.html#Provenance.agent.onBehalfOf" target="_blank">http://hl7.org/fhir/R4/provenance-definitions.html#Provenance.agent.onBehalfOf</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-j9gvyx6u9pb7v1dd0m6joxd6" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-j9gvyx6u9pb7v1dd0m6joxd6</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Respondent Sequence Number (SEQN)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> uto4zszvpicva38wx77knz5y</p>
+
+                        <p style="margin-top: 0.5rem;">The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 8
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-respondent-sequence-number" target="_blank">https://axius-sdc.com/library/fair/nhanes-respondent-sequence-number</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SEQN" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SEQN</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Software Name</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> aa663ivutjf2fs4757t0bbzy</p>
+
+                        <p style="margin-top: 0.5rem;">The name of a software agent.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/software-name" target="_blank">https://axius-sdc.com/library/provgov/software-name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://schema.org/" target="_blank">https://schema.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="https://schema.org/SoftwareApplication" target="_blank">https://schema.org/SoftwareApplication</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-rsjfjz8m5z7a58h5793duqbs" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-rsjfjz8m5z7a58h5793duqbs</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Software Version</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> x0lebwtobgaelj5pev3258sd</p>
+
+                        <p style="margin-top: 0.5rem;">The version of a software agent.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 60
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/software-version" target="_blank">https://axius-sdc.com/library/provgov/software-version</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://schema.org/" target="_blank">https://schema.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="https://schema.org/softwareVersion" target="_blank">https://schema.org/softwareVersion</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-tep9wanrrtqfw0k76huv6tvd" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-tep9wanrrtqfw0k76huv6tvd</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>System Identifier</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> h3kdbvdtyalpvik97saaf0an</p>
+
+                        <p style="margin-top: 0.5rem;">The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/system-identifier" target="_blank">https://axius-sdc.com/library/provgov/system-identifier</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.source.observer" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.source.observer</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-des67jo3ki9w0zgaz2i2t2cq" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-des67jo3ki9w0zgaz2i2t2cq</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>System Location Name</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> ujir739mf1g8ajeczs9nzh9m</p>
+
+                        <p style="margin-top: 0.5rem;">The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 255
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/system-location-name" target="_blank">https://axius-sdc.com/library/provgov/system-location-name</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.location" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.agent.location</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-l6fwy1a2l5i43t308pknygp7" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-l6fwy1a2l5i43t308pknygp7</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Used Entity Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> t0whhrqtnb54te4mk48i1ooj</p>
+
+                        <p style="margin-top: 0.5rem;">An entity the activity used (prov:used). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/used-entity-reference" target="_blank">https://axius-sdc.com/library/provgov/used-entity-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#used" target="_blank">http://www.w3.org/ns/prov#used</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-ixv0fa8xlde52mdeymr4zaka" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-ixv0fa8xlde52mdeymr4zaka</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Associated With Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> r48alj7hc3797qfjnf2uj71n</p>
+
+                        <p style="margin-top: 0.5rem;">The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-associated-with-reference" target="_blank">https://axius-sdc.com/library/provgov/was-associated-with-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasAssociatedWith" target="_blank">http://www.w3.org/ns/prov#wasAssociatedWith</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-gs0e1hp2rpjl6qfg9v8d047f" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-gs0e1hp2rpjl6qfg9v8d047f</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Attributed To Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> kqlatg3rz00z58muv7j8toyl</p>
+
+                        <p style="margin-top: 0.5rem;">The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-attributed-to-reference" target="_blank">https://axius-sdc.com/library/provgov/was-attributed-to-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasAttributedTo" target="_blank">http://www.w3.org/ns/prov#wasAttributedTo</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-fp9x4nydhjv480jovw9tjtlhw" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-fp9x4nydhjv480jovw9tjtlhw</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Derived From Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> credrxhz4hg4c42sihm0wb6s</p>
+
+                        <p style="margin-top: 0.5rem;">The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-derived-from-reference" target="_blank">https://axius-sdc.com/library/provgov/was-derived-from-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasDerivedFrom" target="_blank">http://www.w3.org/ns/prov#wasDerivedFrom</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-e6f9p3xngi5eyq851iq457ru" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-e6f9p3xngi5eyq851iq457ru</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Ended By Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> ueb5g1ojzlwwt0mnds5zb6wl</p>
+
+                        <p style="margin-top: 0.5rem;">The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-ended-by-reference" target="_blank">https://axius-sdc.com/library/provgov/was-ended-by-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasEndedBy" target="_blank">http://www.w3.org/ns/prov#wasEndedBy</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-jr1e3n5kg31nqz1ynh28kitp" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-jr1e3n5kg31nqz1ynh28kitp</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Generated By Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> bfn83x3fw1cyuqriuoquu9t1</p>
+
+                        <p style="margin-top: 0.5rem;">The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-generated-by-reference" target="_blank">https://axius-sdc.com/library/provgov/was-generated-by-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasGeneratedBy" target="_blank">http://www.w3.org/ns/prov#wasGeneratedBy</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-yr3a0f87dtmzlv8ruiys1axa" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-yr3a0f87dtmzlv8ruiys1axa</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Informed By Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> qh84jdzp1kxt85aq4ilo0svk</p>
+
+                        <p style="margin-top: 0.5rem;">An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-informed-by-reference" target="_blank">https://axius-sdc.com/library/provgov/was-informed-by-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasInformedBy" target="_blank">http://www.w3.org/ns/prov#wasInformedBy</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-rz60y6aujd274j4i7jpyxvpr" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-rz60y6aujd274j4i7jpyxvpr</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Invalidated By Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> h1vwqq8ulrb27qpl6zuzppnf</p>
+
+                        <p style="margin-top: 0.5rem;">The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-invalidated-by-reference" target="_blank">https://axius-sdc.com/library/provgov/was-invalidated-by-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasInvalidatedBy" target="_blank">http://www.w3.org/ns/prov#wasInvalidatedBy</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Quoted From Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> mjl0vv39zsbigqiuyqm66fkv</p>
+
+                        <p style="margin-top: 0.5rem;">The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-quoted-from-reference" target="_blank">https://axius-sdc.com/library/provgov/was-quoted-from-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasQuotedFrom" target="_blank">http://www.w3.org/ns/prov#wasQuotedFrom</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-q69bq5dd4e3v0z8ybm578y89" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-q69bq5dd4e3v0z8ybm578y89</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Revision Of Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> lghqkvp7vapqk10l248kzqs8</p>
+
+                        <p style="margin-top: 0.5rem;">The entity this entity revises (prov:wasRevisionOf). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-revision-of-reference" target="_blank">https://axius-sdc.com/library/provgov/was-revision-of-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasRevisionOf" target="_blank">http://www.w3.org/ns/prov#wasRevisionOf</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-elg5v5gidcfnuj4b5vfvpo80" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-elg5v5gidcfnuj4b5vfvpo80</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Was Started By Reference</h4>
+                        <p class="small muted"><strong>Type:</strong> XdString</p>
+                        <p class="small muted"><strong>ID:</strong> ginfqbk7q59ld2r4us8sjnv1</p>
+
+                        <p style="margin-top: 0.5rem;">The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum Length:</strong> 2000
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/was-started-by-reference" target="_blank">https://axius-sdc.com/library/provgov/was-started-by-reference</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#wasStartedBy" target="_blank">http://www.w3.org/ns/prov#wasStartedBy</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-kmodjk1e5xu9z94zgiaxx1hu" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-kmodjk1e5xu9z94zgiaxx1hu</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>Token Components (10)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Activity Status</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> wl6j4ekcmu4hvt2m12zw4zp8</p>
+
+                        <p style="margin-top: 0.5rem;">The state of an activity, from the Data Privacy Vocabulary activity status concepts.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> ActivityProposed, ActivityPlanned, ActivityOngoing, ActivityHalted, ActivityCompleted ...
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://w3id.org/dpv" target="_blank">https://w3id.org/dpv</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/activity-status" target="_blank">https://axius-sdc.com/library/provgov/activity-status</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:closeMatch:</strong>
+                                <a href="https://w3id.org/dpv#ActivityStatus" target="_blank">https://w3id.org/dpv#ActivityStatus</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-yehcpzf43j0b5zp9ck59t9eg" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-yehcpzf43j0b5zp9ck59t9eg</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Audit Event Action</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> ce1c8sydkov8bkv4dgdmwe5x</p>
+
+                        <p style="margin-top: 0.5rem;">The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> C, R, U, D, E
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-event-action" target="_blank">https://axius-sdc.com/library/provgov/audit-event-action</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/audit-event-action" target="_blank">http://hl7.org/fhir/audit-event-action</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-o8lawuczf9vry55e98cjg12r" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-o8lawuczf9vry55e98cjg12r</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Audit Event Outcome</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> rpz1czz06jhpahmfz30rblvp</p>
+
+                        <p style="margin-top: 0.5rem;">The result of an audited event (FHIR AuditEvent.outcome).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> 0, 4, 8, 12
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-event-outcome" target="_blank">https://axius-sdc.com/library/provgov/audit-event-outcome</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/audit-event-outcome" target="_blank">http://hl7.org/fhir/audit-event-outcome</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-lgmleqp52a6kl268drrtfjk5" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-lgmleqp52a6kl268drrtfjk5</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Confidentiality</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> vbctgmdcwps5b3r3l6sboa6y</p>
+
+                        <p style="margin-top: 0.5rem;">The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> U, L, M, N, R ...
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://terminology.hl7.org/" target="_blank">http://terminology.hl7.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/confidentiality" target="_blank">https://axius-sdc.com/library/provgov/confidentiality</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://terminology.hl7.org/CodeSystem/v3-Confidentiality" target="_blank">http://terminology.hl7.org/CodeSystem/v3-Confidentiality</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-hp8q52t8tgmis92c4ljrfy7e" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-hp8q52t8tgmis92c4ljrfy7e</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Agent Type</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> i16vqj89it3db7d3c5qjko9p</p>
+
+                        <p style="margin-top: 0.5rem;">The kind of PROV agent: person, organization or software agent.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> Person, Organization, SoftwareAgent
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-agent-type" target="_blank">https://axius-sdc.com/library/provgov/prov-agent-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Agent" target="_blank">http://www.w3.org/ns/prov#Agent</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-nesxtz8c5o665swc9lhvqkjj" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-nesxtz8c5o665swc9lhvqkjj</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Derivation Type</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> g2xnh3uhnlrnqlo7ki2s0fs3</p>
+
+                        <p style="margin-top: 0.5rem;">How one entity was derived from another: a general derivation, a revision, a quotation or a primary source.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> Derivation, Revision, Quotation, PrimarySource
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-derivation-type" target="_blank">https://axius-sdc.com/library/provgov/prov-derivation-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Derivation" target="_blank">http://www.w3.org/ns/prov#Derivation</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-cdhr25b0ezdbcmjo3boafgas" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-cdhr25b0ezdbcmjo3boafgas</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Provenance Agent Type</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> jujsdur1igws8orw6tvvlqco</p>
+
+                        <p style="margin-top: 0.5rem;">The functional role of an agent in an activity (FHIR Provenance.agent.type).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> enterer, performer, author, editor, verifier ...
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/provenance-agent-type" target="_blank">https://axius-sdc.com/library/provgov/provenance-agent-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://terminology.hl7.org/CodeSystem/provenance-participant-type" target="_blank">http://terminology.hl7.org/CodeSystem/provenance-participant-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-syt8l7pmb64eym2chcn43ai7" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-syt8l7pmb64eym2chcn43ai7</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>PROV Entity Type</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> i4e2nod7ss9d4cumhn2pah8b</p>
+
+                        <p style="margin-top: 0.5rem;">The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> Entity, Collection, EmptyCollection, Bundle, Plan
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/prov-entity-type" target="_blank">https://axius-sdc.com/library/provgov/prov-entity-type</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#Entity" target="_blank">http://www.w3.org/ns/prov#Entity</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-u3zwz3b7hkwkxg6mn1o6o4c5" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-u3zwz3b7hkwkxg6mn1o6o4c5</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Purpose of Use</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> d1evlz8yvdlwt6ia9fjq4pgj</p>
+
+                        <p style="margin-top: 0.5rem;">Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> TREAT, ETREAT, COC, HPAYMT, HOPERAT ...
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://terminology.hl7.org/" target="_blank">http://terminology.hl7.org/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/purpose-of-use" target="_blank">https://axius-sdc.com/library/provgov/purpose-of-use</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://terminology.hl7.org/CodeSystem/v3-ActReason" target="_blank">http://terminology.hl7.org/CodeSystem/v3-ActReason</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>prov:wasRevisionOf:</strong>
+                                <a href="https://semanticdatacharter.com/ns/sdc4/mc-y87ikto4p56zlkx4o2d63ain" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-y87ikto4p56zlkx4o2d63ain</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Taken Prescription Medicine, Past Month (RXDUSE)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdToken</p>
+                        <p class="small muted"><strong>ID:</strong> a1zr74c1vayeeglk54da7gaf</p>
+
+                        <p style="margin-top: 0.5rem;">Whether the participant took prescription medicine in the past 30 days (RXDUSE).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Allowed Values:</strong> Yes, No
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-taken-prescription-past-month" target="_blank">https://axius-sdc.com/library/fair/nhanes-taken-prescription-past-month</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDUSE" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDUSE</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>Count Components (2)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Number of Days Taken Medicine (RXDDAYS)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdCount</p>
+                        <p class="small muted"><strong>ID:</strong> jwgah039kcz574bbjvpxvfdj</p>
+
+                        <p style="margin-top: 0.5rem;">The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum (inclusive):</strong> 99999.00000
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>Units:</strong> FAIR Data Demo : Days
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-days-taken-medicine" target="_blank">https://axius-sdc.com/library/fair/nhanes-days-taken-medicine</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDAYS" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDAYS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Number of Prescription Medicines Taken (RXDCOUNT)</h4>
+                        <p class="small muted"><strong>Type:</strong> XdCount</p>
+                        <p class="small muted"><strong>ID:</strong> v28gzpjsaxkkgjm470icwipg</p>
+
+                        <p style="margin-top: 0.5rem;">The number of prescription medicines the participant is taking (RXDCOUNT).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Constraints:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>Maximum (inclusive):</strong> 50.00000
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>Units:</strong> Default : Items
+                            </div>
+
+                        </div>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/fair/nhanes-number-of-prescription-medicines" target="_blank">https://axius-sdc.com/library/fair/nhanes-number-of-prescription-medicines</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017" target="_blank">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>rdfs:seeAlso:</strong>
+                                <a href="https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDCOUNT" target="_blank">https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDCOUNT</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+            <details>
+                <summary>Temporal Components (5)</summary>
+                <div>
+
+                    <div class="component-card">
+                        <h4>Audit Recorded At</h4>
+                        <p class="small muted"><strong>Type:</strong> XdTemporal</p>
+                        <p class="small muted"><strong>ID:</strong> uwiosm2q9ym3ewr4de910s70</p>
+
+                        <p style="margin-top: 0.5rem;">When the audit event was recorded (FHIR AuditEvent.recorded).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="http://hl7.org/fhir/R4/" target="_blank">http://hl7.org/fhir/R4/</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/audit-recorded-at" target="_blank">https://axius-sdc.com/library/provgov/audit-recorded-at</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.recorded" target="_blank">http://hl7.org/fhir/R4/auditevent-definitions.html#AuditEvent.recorded</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Ended At</h4>
+                        <p class="small muted"><strong>Type:</strong> XdTemporal</p>
+                        <p class="small muted"><strong>ID:</strong> a5scyosu6j84vz350mqyrzl2</p>
+
+                        <p style="margin-top: 0.5rem;">When the activity ended (prov:endedAtTime).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/ended-at-time" target="_blank">https://axius-sdc.com/library/provgov/ended-at-time</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#endedAtTime" target="_blank">http://www.w3.org/ns/prov#endedAtTime</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Generated At</h4>
+                        <p class="small muted"><strong>Type:</strong> XdTemporal</p>
+                        <p class="small muted"><strong>ID:</strong> yk5nrxndulhebpi3hiywk8u8</p>
+
+                        <p style="margin-top: 0.5rem;">When the entity was generated (prov:generatedAtTime).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/generated-at-time" target="_blank">https://axius-sdc.com/library/provgov/generated-at-time</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#generatedAtTime" target="_blank">http://www.w3.org/ns/prov#generatedAtTime</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Invalidated At</h4>
+                        <p class="small muted"><strong>Type:</strong> XdTemporal</p>
+                        <p class="small muted"><strong>ID:</strong> hswapeutuik067dokidnbv88</p>
+
+                        <p style="margin-top: 0.5rem;">When the entity ceased to be usable (prov:invalidatedAtTime).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/invalidated-at-time" target="_blank">https://axius-sdc.com/library/provgov/invalidated-at-time</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#invalidatedAtTime" target="_blank">http://www.w3.org/ns/prov#invalidatedAtTime</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="component-card">
+                        <h4>Started At</h4>
+                        <p class="small muted"><strong>Type:</strong> XdTemporal</p>
+                        <p class="small muted"><strong>ID:</strong> sa4nl1kbpdr842fkucvfjkpq</p>
+
+                        <p style="margin-top: 0.5rem;">When the activity started (prov:startedAtTime).</p>
+
+                        <div style="margin-top: 0.75rem;">
+                            <p class="small"><strong>Semantic Links:</strong></p>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:publisher:</strong>
+                                <a href="https://axius-sdc.com" target="_blank">https://axius-sdc.com</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:identifier:</strong>
+                                <a href="https://axius-sdc.com/library/provgov/started-at-time" target="_blank">https://axius-sdc.com/library/provgov/started-at-time</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>skos:exactMatch:</strong>
+                                <a href="http://www.w3.org/ns/prov#startedAtTime" target="_blank">http://www.w3.org/ns/prov#startedAtTime</a>
+                            </div>
+
+                            <div class="constraint-item">
+                                <strong>dcterms:source:</strong>
+                                <a href="https://www.w3.org/TR/prov-o/" target="_blank">https://www.w3.org/TR/prov-o/</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </details>
+
+        </section>
+
+        <!-- Semantic Links -->
+        <section class="section-card">
+            <h2>Semantic Links</h2>
+            <p class="muted">Ontology mappings and semantic relationships defined in this schema.</p>
+
+            <div style="margin-top: 0.75rem;">
+                <h3>Data Model Level Links:</h3>
+
+                <div class="constraint-item">
+                    <strong>prov:wasRevisionOf:</strong>
+                    <a href="https://semanticdatacharter.com/ns/sdc4/mc-g72xhdxvd7q53qnxx6dsczg5" target="_blank">https://semanticdatacharter.com/ns/sdc4/mc-g72xhdxvd7q53qnxx6dsczg5</a>
+                </div>
+
+            </div>
+
+            <div class="note-box">
+                <p>
+                    <strong>Note:</strong> Additional semantic data is available in the extracted RDF file
+                    (<code>dm-epbdfmvxc3gbh5f66hhb3o2m.rdf</code>) included in the complete package.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Usage Guide -->
+        <section class="section-card">
+            <h2>Usage Guide</h2>
+
+            <h3>How to Use This Schema</h3>
+            <ol>
+                <li>Use the XSD schema file to validate XML instances conforming to this data model.</li>
+                <li>Refer to the XML instance file for an example of valid data structure.</li>
+                <li>Use the JSON file for JSON-based data exchange formats.</li>
+                <li>Use the SHACL shapes file (dm-epbdfmvxc3gbh5f66hhb3o2m_shacl.ttl) to validate RDF data.</li>
+            </ol>
+
+            <h3>Validation</h3>
+            <p>
+                <strong>Recommended:</strong> <a href="https://pypi.org/project/sdcvalidator/" target="_blank">sdcvalidator</a> -
+                A Python XML Schema validator with SDC extensions including ExceptionValue injection for documenting
+                justified constraint violations.
+            </p>
+            <p>
+                <strong>Alternatives:</strong> Standard XML validators like Xerces and Saxon EE support XSD 1.1 validation
+                but do not include SDC-specific extension capabilities.
+            </p>
+
+            <h3>SHACL Validation</h3>
+            <p>For detailed instructions on using the SHACL shapes file, refer to the SHACL_README.md included in the complete package.</p>
+
+            <h3>Example Data</h3>
+            <p>
+                The XML instance file (<code>dm-epbdfmvxc3gbh5f66hhb3o2m.xml</code>) provides a complete example
+                showing the structure and data types used in this schema.
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="section-card footer">
+            <p>Generated by SDCStudio on 2026-09-26 22:14:32</p>
+            <p>Semantic Data Charter (SDC4) Compliant Schema</p>
+        </footer>
+    </div>
+</body>
+</html>

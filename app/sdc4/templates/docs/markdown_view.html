@@ -1,0 +1,104 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - sdc4</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+    <style>
+        body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            background-color: #f8f9fa;
+        }
+        .doc-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .doc-content h1 {
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .doc-content h2 {
+            margin-top: 2rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .doc-content h3 {
+            margin-top: 1.5rem;
+        }
+        .doc-content pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .doc-content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .doc-content pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .doc-content table {
+            width: 100%;
+            margin: 1rem 0;
+            border-collapse: collapse;
+        }
+        .doc-content th, .doc-content td {
+            border: 1px solid #dee2e6;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .doc-content th {
+            background: #f8f9fa;
+        }
+        .back-link {
+            margin-bottom: 1rem;
+        }
+        .warning-banner {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-link">
+            <a href="/" class="btn btn-outline-secondary btn-sm">
+                ← Back to Home
+            </a>
+        </div>
+
+        {% if not markdown_available %}
+        <div class="warning-banner">
+            <strong>Note:</strong> The <code>markdown</code> Python package is not installed.
+            Install it with <code>pip install markdown</code> for better formatting.
+        </div>
+        {% endif %}
+
+        <div class="doc-content">
+            {{ content|safe }}
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">
+                ← Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

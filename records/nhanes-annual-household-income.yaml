@@ -1,0 +1,40 @@
+key: nhanes-annual-household-income
+label: Annual Household Income (INDHHIN2)
+type: XdToken
+description: 'Annual household income in the agency''s ranges (INDHHIN2). Not harmonized: the NHANES, BRFSS and NIH CDE income ranges do not nest,
+  so each study keeps its own.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+  basis: standard
+enumeration:
+- value: $0 to $4,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $5,000 to $9,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $10,000 to $14,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $15,000 to $19,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $20,000 to $24,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $25,000 to $34,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $35,000 to $44,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $45,000 to $54,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $55,000 to $64,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $65,000 to $74,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $20,000 and Over
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: Under $20,000
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $75,000 to $99,999
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2
+- value: $100,000 and Over
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2

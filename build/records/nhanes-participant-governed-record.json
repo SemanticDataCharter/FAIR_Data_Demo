@@ -1,0 +1,45 @@
+{
+  "tiny_id": "nhanes-participant-governed-record",
+  "label": "NHANES Participant Governed Record",
+  "description": "An NHANES participant record. The governed record: the data cluster, the PROV activity and agent and the audit event from the ProvGov library by identifier. Members: NHANES Participant; prov-activity (Provgov); prov-agent (Provgov); audit-event (Provgov).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-participant-governed-record",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://www.w3.org/ns/prov#Entity",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-participant",
+    "https://axius-sdc.com/library/provgov/prov-activity",
+    "https://axius-sdc.com/library/provgov/prov-agent",
+    "https://axius-sdc.com/library/provgov/audit-event"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

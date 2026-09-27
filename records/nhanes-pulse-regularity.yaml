@@ -1,0 +1,15 @@
+key: nhanes-pulse-regularity
+label: Pulse Regular or Irregular (BPXPULS)
+type: XdToken
+description: Whether the pulse was regular or irregular (BPXPULS).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPXPULS
+  basis: standard
+enumeration:
+- value: Regular
+  definition: http://snomed.info/id/271636001
+- value: Irregular
+  definition: http://snomed.info/id/61086009

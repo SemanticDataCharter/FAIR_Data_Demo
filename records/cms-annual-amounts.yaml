@@ -1,0 +1,23 @@
+key: cms-annual-amounts
+label: CMS Annual Amounts
+type: Cluster
+description: 'The year''s Medicare reimbursement, beneficiary responsibility and primary payer reimbursement for inpatient, outpatient and carrier
+  services. Members: Inpatient Annual Medicare Reimbursement; Inpatient Annual Beneficiary Responsibility; Inpatient Annual Primary Payer Reimbursement;
+  Outpatient Annual Medicare Reimbursement; Outpatient Annual Beneficiary Responsibility; Outpatient Annual Primary Payer Reimbursement; Carrier
+  Annual Medicare Reimbursement; Carrier Annual Beneficiary Responsibility; Carrier Annual Primary Payer Reimbursement.'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: https://schema.org/MonetaryAmount
+  basis: standard
+members:
+- cms-annual-inpatient-medicare-reimbursement
+- cms-annual-inpatient-beneficiary-responsibility
+- cms-annual-inpatient-primary-payer-reimbursement
+- cms-annual-outpatient-medicare-reimbursement
+- cms-annual-outpatient-beneficiary-responsibility
+- cms-annual-outpatient-primary-payer-reimbursement
+- cms-annual-carrier-medicare-reimbursement
+- cms-annual-carrier-beneficiary-responsibility
+- cms-annual-carrier-primary-payer-reimbursement

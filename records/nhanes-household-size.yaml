@@ -1,0 +1,14 @@
+key: nhanes-household-size
+label: Total Number of People in the Household (DMDHHSIZ)
+type: XdCount
+description: Total number of people in the household (DMDHHSIZ; 7 means 7 or more).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDHHSIZ
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-items
+  min_inclusive: 1
+  max_inclusive: 7

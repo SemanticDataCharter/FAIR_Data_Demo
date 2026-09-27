@@ -1,0 +1,15 @@
+# Demographics side by side: administrative gender (Default) and race/ethnicity (the NIH CDE) as
+# every study carries them, one distribution per study. The agency's own coding stays on each
+# record beside the harmonized value; this query reads the harmonized one.
+PREFIX sdc4: <https://semanticdatacharter.com/ns/sdc4/>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc:   <http://purl.org/dc/elements/1.1/>
+SELECT ?component_label ?study ?value (COUNT(DISTINCT ?inst) AS ?records) (SAMPLE(?inst) AS ?inst_2)
+WHERE {
+  VALUES ?mc { sdc4:mc-gxzbm758mhdz51xd4bawlfhh sdc4:mc-u5tietya3u56hbz2kos06ai7 }
+  ?r rdf:reifies <<?mc ?vp ?value>> ; sdc4:inInstance ?inst ; sdc4:inDataModel ?dm ; rdfs:label ?component_label .
+  ?dm dc:title ?study . FILTER(CONTAINS(?study, " "))
+}
+GROUP BY ?component_label ?study ?value
+ORDER BY ?component_label ?study DESC(?records)

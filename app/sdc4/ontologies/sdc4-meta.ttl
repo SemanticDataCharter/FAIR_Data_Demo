@@ -1,0 +1,2875 @@
+@prefix : <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdc4: <https://semanticdatacharter.com/ns/sdc4/> .
+@prefix sdc4-meta: <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+@base <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+
+<https://semanticdatacharter.com/ontology/sdc4-meta/> rdf:type owl:Ontology ;
+                                                           rdfs:comment """
+            This ontology describes the meta-level concepts and relationships of the
+            Semantic Data Charter (SDC) Reference Model, defining how XML Schema
+            structures map to conceptual entities and their metadata.
+        """@en ;
+                                                           rdfs:label "Semantic Data Charter Reference Model Meta-Ontology"@en ;
+                                                           owl:versionInfo "1.0" .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  sdc4:BooleanListSimpleType
+<sdc4:BooleanListSimpleType> rdf:type rdfs:Datatype ;
+                             rdfs:comment "A simple type for a white space-delimited list of boolean values."@en ;
+                             rdfs:label "BooleanListSimpleType"@en .
+
+
+###  sdc4:DecimalListSimpleType
+<sdc4:DecimalListSimpleType> rdf:type rdfs:Datatype ;
+                             rdfs:comment "A simple type for a white space-delimited list of decimal values."@en ;
+                             rdfs:label "DecimalListSimpleType"@en .
+
+
+###  sdc4:DoubleListSimpleType
+<sdc4:DoubleListSimpleType> rdf:type rdfs:Datatype ;
+                            rdfs:comment "A simple type for a white space-delimited list of double precision values."@en ;
+                            rdfs:label "DoubleListSimpleType"@en .
+
+
+###  sdc4:IntegerListSimpleType
+<sdc4:IntegerListSimpleType> rdf:type rdfs:Datatype ;
+                             rdfs:comment "A simple type for a white space-delimited list of integer values."@en ;
+                             rdfs:label "IntegerListSimpleType"@en .
+
+
+###  sdc4:NonNegativeIntegerListSimpleType
+<sdc4:NonNegativeIntegerListSimpleType> rdf:type rdfs:Datatype ;
+                                        rdfs:comment "A simple type for a white space-delimited list of non-negative integer values."@en ;
+                                        rdfs:label "NonNegativeIntegerListSimpleType"@en .
+
+
+###  sdc4:PositiveIntegerListSimpleType
+<sdc4:PositiveIntegerListSimpleType> rdf:type rdfs:Datatype ;
+                                     rdfs:comment "A simple type for a white space-delimited list of positive integer values."@en ;
+                                     rdfs:label "PositiveIntegerListSimpleType"@en .
+
+
+###  sdc4:StringListSimpleType
+<sdc4:StringListSimpleType> rdf:type rdfs:Datatype ;
+                            rdfs:comment "A simple type for a white space-delimited list of string values."@en ;
+                            rdfs:label "StringListSimpleType"@en .
+
+
+###  sdc4:TokenListSimpleType
+<sdc4:TokenListSimpleType> rdf:type rdfs:Datatype ;
+                           rdfs:comment "A simple type for a white space-delimited list of normalized token values."@en ;
+                           rdfs:label "TokenListSimpleType"@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/definesComponent
+sdc4-meta:definesComponent rdf:type owl:ObjectProperty ;
+                           rdfs:domain sdc4-meta:ReferenceModel ;
+                           rdfs:range sdc4-meta:ReferenceModelComponent ;
+                           rdfs:comment "Links an SDC Reference Model to its defined Reference Model Components."@en ;
+                           rdfs:label "defines component"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/describesConceptualAspect
+sdc4-meta:describesConceptualAspect rdf:type owl:ObjectProperty ;
+                                    rdfs:domain sdc4-meta:ReferenceModelElement ;
+                                    rdfs:range sdc4-meta:ConceptualAspect ;
+                                    rdfs:comment """
+            States that a specific Reference Model Element describes a particular Conceptual Aspect
+            of the Conceptual Entity it is associated with.
+        """@en ;
+                                    rdfs:label "describes conceptual aspect"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/hasConceptualLabelValue
+sdc4-meta:hasConceptualLabelValue rdf:type owl:ObjectProperty ;
+                                  rdfs:domain sdc4-meta:ConceptualEntity .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/hasDescriptiveElement
+sdc4-meta:hasDescriptiveElement rdf:type owl:ObjectProperty ;
+                                rdfs:domain sdc4-meta:ReferenceModelComponent ;
+                                rdfs:range sdc4-meta:ReferenceModelElement ;
+                                rdfs:comment """
+            Links a Reference Model Component to its sub-elements that provide descriptive information.
+        """@en ;
+                                rdfs:label "has descriptive element"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/isComposedOf
+sdc4-meta:isComposedOf rdf:type owl:ObjectProperty ;
+                       rdfs:domain sdc4-meta:DataModel ;
+                       rdfs:range sdc4-meta:ModelComponent ;
+                       rdfs:comment "Links a Data Model to its constituent Model Components."@en ;
+                       rdfs:label "is composed of"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/isConceptualEntityFor
+sdc4-meta:isConceptualEntityFor rdf:type owl:ObjectProperty ;
+                                rdfs:domain sdc4-meta:ConceptualEntity ;
+                                rdfs:range sdc4-meta:ReferenceModelComponent ;
+                                rdfs:comment """
+            States that a Conceptual Entity (e.g., 'City') is conceptually identified or
+            represented by a specific Reference Model Component (e.g., XdStringType when
+            its 'label' element is fixed to 'City').
+        """@en ;
+                                rdfs:label "is conceptual entity for"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/isConstrainedByRmComponent
+sdc4-meta:isConstrainedByRmComponent rdf:type owl:ObjectProperty ;
+                                     rdfs:domain sdc4-meta:ModelComponent ;
+                                     rdfs:range sdc4-meta:ReferenceModelComponent ;
+                                     rdfs:comment """
+            Links a Model Component (from a specific Data Model) to the Reference Model Component
+            from which it is derived or by which it is constrained (e.g., via xsd:extension or xsd:restriction).
+        """@en ;
+                                     rdfs:label "is constrained by RM component"@en .
+
+
+###  sdc4:xddecimallist-units
+<sdc4:xddecimallist-units> rdf:type owl:ObjectProperty ;
+                           rdfs:comment "The name or type of the decimal list values. Examples are \"kg\", \"mmHg\", \"ms-1\", \"km/h\". Should come from a standard terminology. All values in the list share these units."@en ;
+                           rdfs:label "xddecimallist-units"@en .
+
+
+###  sdc4:xddoublelist-units
+<sdc4:xddoublelist-units> rdf:type owl:ObjectProperty ;
+                          rdfs:comment "The name or type of the double list values. Examples are \"kg\", \"mmHg\", \"ms-1\", \"km/h\". Should come from a standard terminology. All values in the list share these units."@en ;
+                          rdfs:label "xddoublelist-units"@en .
+
+
+###  sdc4:xdintegerlist-units
+<sdc4:xdintegerlist-units> rdf:type owl:ObjectProperty ;
+                           rdfs:comment "The name or type of the integer list values. Examples are \"items\", \"counts\", \"indices\". Should come from a standard terminology. All values in the list share these units."@en ;
+                           rdfs:label "xdintegerlist-units"@en .
+
+
+###  sdc4:xdnonnegativeintegerlist-units
+<sdc4:xdnonnegativeintegerlist-units> rdf:type owl:ObjectProperty ;
+                                      rdfs:comment "The name or type of the non-negative integer list values. Examples are \"items\", \"counts\", \"indices\". Should come from a standard terminology. All values in the list share these units."@en ;
+                                      rdfs:label "xdnonnegativeintegerlist-units"@en .
+
+
+###  sdc4:xdpositiveintegerlist-units
+<sdc4:xdpositiveintegerlist-units> rdf:type owl:ObjectProperty ;
+                                   rdfs:comment "The name or type of the positive integer list values. Examples are \"items\", \"counts\", \"indices\". Should come from a standard terminology. All values in the list share these units."@en ;
+                                   rdfs:label "xdpositiveintegerlist-units"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/hasConceptualLabelValue
+sdc4-meta:hasConceptualLabelValue rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdbooleanlist-value
+<sdc4:xdbooleanlist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xddecimallist-value
+<sdc4:xddecimallist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xddoublelist-value
+<sdc4:xddoublelist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdintegerlist-value
+<sdc4:xdintegerlist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdnonnegativeintegerlist-value
+<sdc4:xdnonnegativeintegerlist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdpositiveintegerlist-value
+<sdc4:xdpositiveintegerlist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdstringlist-value
+<sdc4:xdstringlist-value> rdf:type owl:DatatypeProperty .
+
+
+###  sdc4:xdtokenlist-value
+<sdc4:xdtokenlist-value> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ConceptualAspect
+sdc4-meta:ConceptualAspect rdf:type owl:Class ;
+                           rdfs:comment """
+            Represents an abstract characteristic or metadata type that can be associated
+            with a Conceptual Entity. (e.g., 'Valid Time Beginning', 'Conceptual Value').
+        """@en ;
+                           rdfs:label "Conceptual Aspect"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ConceptualEntity
+sdc4-meta:ConceptualEntity rdf:type owl:Class ;
+                           rdfs:comment """
+            This is the meta-level concept representing \"the thing\" that a 'label' element
+            describes in an SDC Data Model, regardless of its underlying XML Schema type.
+            It's the abstract idea of a \"City,\" \"Person,\" \"Measurement,\" etc., as identified
+            by the 'label'.
+        """@en ;
+                           rdfs:label "Conceptual Entity"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataModel
+sdc4-meta:DataModel rdf:type owl:Class ;
+                    rdfs:comment """
+            Represents a specific \"Data Model (DM)\" built according to the SDC Reference Model.
+            This is the conceptual representation of what DMType in the XML Schema signifies
+            at the schema level (not the data instance level).
+        """@en ;
+                    rdfs:label "Data Model"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent
+sdc4-meta:ModelComponent rdf:type owl:Class ;
+                         rdfs:comment """
+            Represents a generic concept of a \"Model Component (MC)\" as described in the SDC
+            documentation. These are the reusable building blocks within a Data Model.
+            (e.g., XdAnyType, ClusterType, XdAdapterType, and their concrete subtypes).
+        """@en ;
+                         rdfs:label "Model Component"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceModel
+sdc4-meta:ReferenceModel rdf:type owl:Class ;
+                         rdfs:comment """
+            Represents the overarching conceptual framework defined by an XML Schema
+            like sdc4.xsd itself. It is the blueprint for building concrete data models.
+        """@en ;
+                         rdfs:label "Reference Model"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceModelComponent
+sdc4-meta:ReferenceModelComponent rdf:type owl:Class ;
+                                  rdfs:subClassOf sdc4-meta:ModelComponent ;
+                                  rdfs:comment """
+            Represents the specific \"core datatypes and structures\" defined within the
+            sdc4.xsd file (e.g., XdAnyType, XdStringType, XdLinkType) that act as the
+            foundational building blocks for Data Models. These are instances of this class.
+        """@en ;
+                                  rdfs:label "Reference Model Component"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceModelElement
+sdc4-meta:ReferenceModelElement rdf:type owl:Class ;
+                                rdfs:comment """
+            Represents a specific XML element defined within a Reference Model Component
+            (e.g., 'vtb', 'xdstring-value', 'label'). These are instances of this class.
+        """@en ;
+                                rdfs:label "Reference Model Element"@en .
+
+
+###  sdc4:ASKRType
+<sdc4:ASKRType> rdf:type owl:Class ;
+                rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:ASKUType
+<sdc4:ASKUType> rdf:type owl:Class ;
+                rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:ClusterType
+<sdc4:ClusterType> rdf:type owl:Class ;
+                   rdfs:subClassOf <sdc4:ItemType> .
+
+
+###  sdc4:DERType
+<sdc4:DERType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:ExceptionalValueType
+<sdc4:ExceptionalValueType> rdf:type owl:Class .
+
+
+###  sdc4:INVType
+<sdc4:INVType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:ItemType
+<sdc4:ItemType> rdf:type owl:Class .
+
+
+###  sdc4:MSKType
+<sdc4:MSKType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:NASKType
+<sdc4:NASKType> rdf:type owl:Class ;
+                rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:NAType
+<sdc4:NAType> rdf:type owl:Class ;
+              rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:NAVType
+<sdc4:NAVType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:NINFType
+<sdc4:NINFType> rdf:type owl:Class ;
+                rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:NIType
+<sdc4:NIType> rdf:type owl:Class ;
+              rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:OTHType
+<sdc4:OTHType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:PINFType
+<sdc4:PINFType> rdf:type owl:Class ;
+                rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:QSType
+<sdc4:QSType> rdf:type owl:Class ;
+              rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:ReferenceRangeType
+<sdc4:ReferenceRangeType> rdf:type owl:Class ;
+                          rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:TRCType
+<sdc4:TRCType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:UNCType
+<sdc4:UNCType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:UNKType
+<sdc4:UNKType> rdf:type owl:Class ;
+               rdfs:subClassOf <sdc4:ExceptionalValueType> .
+
+
+###  sdc4:XdAdapterType
+<sdc4:XdAdapterType> rdf:type owl:Class ;
+                     rdfs:subClassOf <sdc4:ItemType> .
+
+
+###  sdc4:XdAnyType
+<sdc4:XdAnyType> rdf:type owl:Class .
+
+
+###  sdc4:XdBooleanListType
+<sdc4:XdBooleanListType> rdf:type owl:Class ;
+                         rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdBooleanType
+<sdc4:XdBooleanType> rdf:type owl:Class ;
+                     rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdCountType
+<sdc4:XdCountType> rdf:type owl:Class ;
+                   rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdDecimalListType
+<sdc4:XdDecimalListType> rdf:type owl:Class ;
+                         rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdDoubleListType
+<sdc4:XdDoubleListType> rdf:type owl:Class ;
+                        rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdDoubleType
+<sdc4:XdDoubleType> rdf:type owl:Class ;
+                    rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdFileType
+<sdc4:XdFileType> rdf:type owl:Class ;
+                  rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdFloatType
+<sdc4:XdFloatType> rdf:type owl:Class ;
+                   rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdIntegerListType
+<sdc4:XdIntegerListType> rdf:type owl:Class ;
+                         rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdIntervalType
+<sdc4:XdIntervalType> rdf:type owl:Class ;
+                      rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdLinkType
+<sdc4:XdLinkType> rdf:type owl:Class ;
+                  rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdNonNegativeIntegerListType
+<sdc4:XdNonNegativeIntegerListType> rdf:type owl:Class ;
+                                    rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdOrderedType
+<sdc4:XdOrderedType> rdf:type owl:Class ;
+                     rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdOrdinalType
+<sdc4:XdOrdinalType> rdf:type owl:Class ;
+                     rdfs:subClassOf <sdc4:XdOrderedType> .
+
+
+###  sdc4:XdPositiveIntegerListType
+<sdc4:XdPositiveIntegerListType> rdf:type owl:Class ;
+                                 rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdQuantifiedType
+<sdc4:XdQuantifiedType> rdf:type owl:Class ;
+                        rdfs:subClassOf <sdc4:XdOrderedType> .
+
+
+###  sdc4:XdQuantityType
+<sdc4:XdQuantityType> rdf:type owl:Class ;
+                      rdfs:subClassOf <sdc4:XdQuantifiedType> .
+
+
+###  sdc4:XdStringListType
+<sdc4:XdStringListType> rdf:type owl:Class ;
+                        rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdStringType
+<sdc4:XdStringType> rdf:type owl:Class ;
+                    rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+###  sdc4:XdTemporalType
+<sdc4:XdTemporalType> rdf:type owl:Class ;
+                      rdfs:subClassOf <sdc4:XdOrderedType> .
+
+
+###  sdc4:XdTokenListType
+<sdc4:XdTokenListType> rdf:type owl:Class ;
+                       rdfs:subClassOf <sdc4:XdAnyType> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://semanticdatacharter.com/ns/sdc4/sdc4.xsd
+sdc4:sdc4.xsd rdf:type owl:NamedIndividual ,
+                       sdc4-meta:ReferenceModel ;
+              sdc4-meta:definesComponent <sdc4:ASKRType> ,
+                                         <sdc4:ASKUType> ,
+                                         <sdc4:AttestationType> ,
+                                         <sdc4:AuditType> ,
+                                         <sdc4:ClusterType> ,
+                                         <sdc4:DERType> ,
+                                         <sdc4:DMType> ,
+                                         <sdc4:ExceptionalValueType> ,
+                                         <sdc4:INVType> ,
+                                         <sdc4:InvlType> ,
+                                         <sdc4:InvlUnits> ,
+                                         <sdc4:ItemType> ,
+                                         <sdc4:MSKType> ,
+                                         <sdc4:MagnitudeStatus> ,
+                                         <sdc4:NASKType> ,
+                                         <sdc4:NAType> ,
+                                         <sdc4:NAVType> ,
+                                         <sdc4:NINFType> ,
+                                         <sdc4:NIType> ,
+                                         <sdc4:OTHType> ,
+                                         <sdc4:PINFType> ,
+                                         <sdc4:ParticipationType> ,
+                                         <sdc4:PartyType> ,
+                                         <sdc4:QSType> ,
+                                         <sdc4:ReferenceRangeType> ,
+                                         <sdc4:TRCType> ,
+                                         <sdc4:UNCType> ,
+                                         <sdc4:UNKType> ,
+                                         <sdc4:XdAdapterType> ,
+                                         <sdc4:XdAnyType> ,
+                                         <sdc4:XdBooleanListType> ,
+                                         <sdc4:XdBooleanType> ,
+                                         <sdc4:XdCountType> ,
+                                         <sdc4:XdDecimalListType> ,
+                                         <sdc4:XdDoubleListType> ,
+                                         <sdc4:XdDoubleType> ,
+                                         <sdc4:XdFileType> ,
+                                         <sdc4:XdFloatType> ,
+                                         <sdc4:XdIntegerListType> ,
+                                         <sdc4:XdIntervalType> ,
+                                         <sdc4:XdLinkType> ,
+                                         <sdc4:XdNonNegativeIntegerListType> ,
+                                         <sdc4:XdOrderedType> ,
+                                         <sdc4:XdOrdinalType> ,
+                                         <sdc4:XdPositiveIntegerListType> ,
+                                         <sdc4:XdQuantifiedType> ,
+                                         <sdc4:XdQuantityType> ,
+                                         <sdc4:XdStringListType> ,
+                                         <sdc4:XdStringType> ,
+                                         <sdc4:XdTemporalType> ,
+                                         <sdc4:XdTokenListType> ;
+              rdfs:comment """
+            This is the concrete instance of the SDC Reference Model, represented by the sdc4.xsd file.
+        """@en ;
+              rdfs:label "Semantic Data Charter Release 4 Reference Model XML Schema"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AccessControlSystem
+sdc4-meta:AccessControlSystem rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ConceptualAspect ;
+                              rdfs:comment "Represents the identifier of an external access control system."@en ;
+                              rdfs:label "Access Control System"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AccessControlTag
+sdc4-meta:AccessControlTag rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the access control tag aspect of a conceptual entity."@en ;
+                           rdfs:label "Access Control Tag"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AccuracyMargin
+sdc4-meta:AccuracyMargin rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ConceptualAspect ;
+                         rdfs:comment "Represents the margin of systematic error for a measurement."@en ;
+                         rdfs:label "Accuracy Margin"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AdaptedValue
+sdc4-meta:AdaptedValue rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the data value type attached to an XdAdapterType."@en ;
+                       rdfs:label "Adapted Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationCommittedTimestamp
+sdc4-meta:AttestationCommittedTimestamp rdf:type owl:NamedIndividual ,
+                                                 sdc4-meta:ConceptualAspect ;
+                                        rdfs:comment "Represents the timestamp of committal of the attested item."@en ;
+                                        rdfs:label "Attestation Committed Timestamp"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationCommitter
+sdc4-meta:AttestationCommitter rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ConceptualAspect ;
+                               rdfs:comment "Represents the identity of the person who committed the attested item."@en ;
+                               rdfs:label "Attestation Committer"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationLabel
+sdc4-meta:AttestationLabel rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the descriptive label for an attestation."@en ;
+                           rdfs:label "Attestation Label"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationPendingStatus
+sdc4-meta:AttestationPendingStatus rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ConceptualAspect ;
+                                   rdfs:comment "Represents whether an attestation is outstanding or completed."@en ;
+                                   rdfs:label "Attestation Pending Status"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationProof
+sdc4-meta:AttestationProof rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the proof of attestation (e.g., signature)."@en ;
+                           rdfs:label "Attestation Proof"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationReason
+sdc4-meta:AttestationReason rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the reason for an attestation."@en ;
+                            rdfs:label "Attestation Reason"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AttestationView
+sdc4-meta:AttestationView rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the visual representation of attested content."@en ;
+                          rdfs:label "Attestation View"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AuditLabel
+sdc4-meta:AuditLabel rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the descriptive label for an audit record."@en ;
+                     rdfs:label "Audit Label"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AuditLocation
+sdc4-meta:AuditLocation rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the location of an audit event."@en ;
+                        rdfs:label "Audit Location"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/AuditTimestamp
+sdc4-meta:AuditTimestamp rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ConceptualAspect ;
+                         rdfs:comment "Represents the timestamp of an audit event."@en ;
+                         rdfs:label "Audit Timestamp"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/BooleanFalseValue
+sdc4-meta:BooleanFalseValue rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the false value aspect for a boolean conceptual entity."@en ;
+                            rdfs:label "Boolean False Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/BooleanTrueValue
+sdc4-meta:BooleanTrueValue rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the true value aspect for a boolean conceptual entity."@en ;
+                           rdfs:label "Boolean True Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ClusterLabel
+sdc4-meta:ClusterLabel rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the descriptive label for a cluster component."@en ;
+                       rdfs:label "Cluster Label"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ConceptualEntityIdentity
+sdc4-meta:ConceptualEntityIdentity rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ConceptualAspect ;
+                                   rdfs:comment "Represents the aspect of a conceptual entity that identifies it, typically via the 'label' element."@en ;
+                                   rdfs:label "Conceptual Entity Identity"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ConceptualValue
+sdc4-meta:ConceptualValue rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the primary data value aspect of a conceptual entity (e.g., xdstring-value)."@en ;
+                          rdfs:label "Conceptual Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ContainedComponents
+sdc4-meta:ContainedComponents rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ConceptualAspect ;
+                              rdfs:comment "Represents the list of components contained within a cluster."@en ;
+                              rdfs:label "Contained Components"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/CountUnits
+sdc4-meta:CountUnits rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the units or type of items being counted."@en ;
+                     rdfs:label "Count Units"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/CountValue
+sdc4-meta:CountValue rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the integer value of counted items."@en ;
+                     rdfs:label "Count Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataAttestation
+sdc4-meta:DataAttestation rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the attestation record of a data instance."@en ;
+                          rdfs:label "Data Attestation"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataAudits
+sdc4-meta:DataAudits rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents a list of audit records for the data."@en ;
+                     rdfs:label "Data Audits"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataModelEncoding
+sdc4-meta:DataModelEncoding rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the character set encoding of a Data Model."@en ;
+                            rdfs:label "Data Model Encoding"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataModelLanguage
+sdc4-meta:DataModelLanguage rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the language in which a Data Model is written."@en ;
+                            rdfs:label "Data Model Language"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataModelName
+sdc4-meta:DataModelName rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the descriptive name of a Data Model."@en ;
+                        rdfs:label "Data Model Name"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataModelPayload
+sdc4-meta:DataModelPayload rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the main data structure or payload of a Data Model."@en ;
+                           rdfs:label "Data Model Payload"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataParticipations
+sdc4-meta:DataParticipations rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents a list of participations related to the data."@en ;
+                             rdfs:label "Data Participations"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataProtocol
+sdc4-meta:DataProtocol rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the protocol used for data collection."@en ;
+                       rdfs:label "Data Protocol"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataProvider
+sdc4-meta:DataProvider rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the source or provider of the data."@en ;
+                       rdfs:label "Data Provider"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataQualityStatus
+sdc4-meta:DataQualityStatus rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the data quality status (e.g., exceptional value) aspect of a conceptual entity."@en ;
+                            rdfs:label "Data Quality Status"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DataSubject
+sdc4-meta:DataSubject rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ConceptualAspect ;
+                      rdfs:comment "Represents the human subject of the data."@en ;
+                      rdfs:label "Data Subject"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DoubleUnits
+sdc4-meta:DoubleUnits rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ConceptualAspect ;
+                      rdfs:comment "Represents the units of a double quantity."@en ;
+                      rdfs:label "Double Units"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/DoubleValue
+sdc4-meta:DoubleValue rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ConceptualAspect ;
+                      rdfs:comment "Represents the double value of a quantity."@en ;
+                      rdfs:label "Double Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ExceptionalValueName
+sdc4-meta:ExceptionalValueName rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ConceptualAspect ;
+                               rdfs:comment "Represents the name or type of an exceptional value."@en ;
+                               rdfs:label "Exceptional Value Name"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ExternalLinks
+sdc4-meta:ExternalLinks rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents external links associated with the data model."@en ;
+                        rdfs:label "External Links"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileAltText
+sdc4-meta:FileAltText rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ConceptualAspect ;
+                      rdfs:comment "Represents the alternative text for a file conceptual entity."@en ;
+                      rdfs:label "File Alt Text"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileCompressionType
+sdc4-meta:FileCompressionType rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ConceptualAspect ;
+                              rdfs:comment "Represents the compression type of a file conceptual entity."@en ;
+                              rdfs:label "File Compression Type"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileEncoding
+sdc4-meta:FileEncoding rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the character encoding scheme of a file conceptual entity."@en ;
+                       rdfs:label "File Encoding"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileFormalism
+sdc4-meta:FileFormalism rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the formalism or syntax of a file conceptual entity."@en ;
+                        rdfs:label "File Formalism"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileHashFunction
+sdc4-meta:FileHashFunction rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the hash function used for a file conceptual entity."@en ;
+                           rdfs:label "File Hash Function"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileHashResult
+sdc4-meta:FileHashResult rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ConceptualAspect ;
+                         rdfs:comment "Represents the hash result of a file conceptual entity."@en ;
+                         rdfs:label "File Hash Result"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileMediaContent
+sdc4-meta:FileMediaContent rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the embedded media content of a file conceptual entity."@en ;
+                           rdfs:label "File Media Content"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileMediaType
+sdc4-meta:FileMediaType rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the MIME type of a file conceptual entity."@en ;
+                        rdfs:label "File Media Type"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileSize
+sdc4-meta:FileSize rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ConceptualAspect ;
+                   rdfs:comment "Represents the size in bytes of a file conceptual entity."@en ;
+                   rdfs:label "File Size"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FileURI
+sdc4-meta:FileURI rdf:type owl:NamedIndividual ,
+                           sdc4-meta:ConceptualAspect ;
+                  rdfs:comment "Represents the URI of a file conceptual entity."@en ;
+                  rdfs:label "File URI"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FloatUnits
+sdc4-meta:FloatUnits rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the units of a float quantity."@en ;
+                     rdfs:label "Float Units"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/FloatValue
+sdc4-meta:FloatValue rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the float value of a quantity."@en ;
+                     rdfs:label "Float Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/GeospatialLatitude
+sdc4-meta:GeospatialLatitude rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the latitude aspect of a conceptual entity."@en ;
+                             rdfs:label "Geospatial Latitude"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/GeospatialLongitude
+sdc4-meta:GeospatialLongitude rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ConceptualAspect ;
+                              rdfs:comment "Represents the longitude aspect of a conceptual entity."@en ;
+                              rdfs:label "Geospatial Longitude"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/InstanceCreationTimestamp
+sdc4-meta:InstanceCreationTimestamp rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ConceptualAspect ;
+                                    rdfs:comment "Represents the timestamp of a data instance's creation."@en ;
+                                    rdfs:label "Instance Creation Timestamp"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/InstanceIdentifier
+sdc4-meta:InstanceIdentifier rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the unique identifier for a data instance."@en ;
+                             rdfs:label "Instance Identifier"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/InstanceVersion
+sdc4-meta:InstanceVersion rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the version identifier for a data instance."@en ;
+                          rdfs:label "Instance Version"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalLowerBound
+sdc4-meta:IntervalLowerBound rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the lower boundary of an interval."@en ;
+                             rdfs:label "Interval Lower Bound"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalLowerBounded
+sdc4-meta:IntervalLowerBounded rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ConceptualAspect ;
+                               rdfs:comment "Represents whether an interval has a lower bound."@en ;
+                               rdfs:label "Interval Lower Bounded"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalLowerIncluded
+sdc4-meta:IntervalLowerIncluded rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ConceptualAspect ;
+                                rdfs:comment "Represents whether the lower boundary of an interval is included."@en ;
+                                rdfs:label "Interval Lower Included"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalUnitsDefinition
+sdc4-meta:IntervalUnitsDefinition rdf:type owl:NamedIndividual ,
+                                           sdc4-meta:ConceptualAspect ;
+                                  rdfs:comment "Represents the units definition for an interval."@en ;
+                                  rdfs:label "Interval Units Definition"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalUpperBound
+sdc4-meta:IntervalUpperBound rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the upper boundary of an interval."@en ;
+                             rdfs:label "Interval Upper Bound"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalUpperBounded
+sdc4-meta:IntervalUpperBounded rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ConceptualAspect ;
+                               rdfs:comment "Represents whether an interval has an upper bound."@en ;
+                               rdfs:label "Interval Upper Bounded"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/IntervalUpperIncluded
+sdc4-meta:IntervalUpperIncluded rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ConceptualAspect ;
+                                rdfs:comment "Represents whether the upper boundary of an interval is included."@en ;
+                                rdfs:label "Interval Upper Included"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/LanguageCode
+sdc4-meta:LanguageCode rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the language code aspect of a conceptual entity."@en ;
+                       rdfs:label "Language Code"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/LinkRelationTerm
+sdc4-meta:LinkRelationTerm rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the descriptive term for a link's relation."@en ;
+                           rdfs:label "Link Relation Term"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/LinkRelationURI
+sdc4-meta:LinkRelationURI rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the URI defining a link's relation term."@en ;
+                          rdfs:label "Link Relation URI"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/LinkTargetURI
+sdc4-meta:LinkTargetURI rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the target URI of a link conceptual entity."@en ;
+                        rdfs:label "Link Target URI"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/MagnitudeStatusIndicator
+sdc4-meta:MagnitudeStatusIndicator rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ConceptualAspect ;
+                                   rdfs:comment "Represents the status of a quantity's magnitude relative to a target."@en ;
+                                   rdfs:label "Magnitude Status Indicator"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/NormalStatusIndicator
+sdc4-meta:NormalStatusIndicator rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ConceptualAspect ;
+                                rdfs:comment "Represents the normal status indicator for an ordered value."@en ;
+                                rdfs:label "Normal Status Indicator"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/OrdinalSymbol
+sdc4-meta:OrdinalSymbol rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the symbolic representation of an ordinal value."@en ;
+                        rdfs:label "Ordinal Symbol"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/OrdinalValue
+sdc4-meta:OrdinalValue rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the numerical ordinal value."@en ;
+                       rdfs:label "Ordinal Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationEndTime
+sdc4-meta:ParticipationEndTime rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ConceptualAspect ;
+                               rdfs:comment "Represents the end datetime of a participation."@en ;
+                               rdfs:label "Participation End Time"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationFunction
+sdc4-meta:ParticipationFunction rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ConceptualAspect ;
+                                rdfs:comment "Represents the function of the performer in a participation."@en ;
+                                rdfs:label "Participation Function"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationLabel
+sdc4-meta:ParticipationLabel rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the descriptive label for a participation."@en ;
+                             rdfs:label "Participation Label"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationMode
+sdc4-meta:ParticipationMode rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents the mode of interaction in a participation."@en ;
+                            rdfs:label "Participation Mode"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationPerformer
+sdc4-meta:ParticipationPerformer rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ConceptualAspect ;
+                                 rdfs:comment "Represents the party performing a participation."@en ;
+                                 rdfs:label "Participation Performer"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ParticipationStartTime
+sdc4-meta:ParticipationStartTime rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ConceptualAspect ;
+                                 rdfs:comment "Represents the start datetime of a participation."@en ;
+                                 rdfs:label "Participation Start Time"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/PartyDetails
+sdc4-meta:PartyDetails rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents structured details about a party."@en ;
+                       rdfs:label "Party Details"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/PartyLabel
+sdc4-meta:PartyLabel rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the descriptive label for a party."@en ;
+                     rdfs:label "Party Label"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/PartyName
+sdc4-meta:PartyName rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ConceptualAspect ;
+                    rdfs:comment "Represents the human-readable name of a party."@en ;
+                    rdfs:label "Party Name"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/PartyReference
+sdc4-meta:PartyReference rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ConceptualAspect ;
+                         rdfs:comment "Represents a reference to more detailed information about a party."@en ;
+                         rdfs:label "Party Reference"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/PrecisionDigits
+sdc4-meta:PrecisionDigits rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ConceptualAspect ;
+                          rdfs:comment "Represents the number of significant decimal digits for a measurement."@en ;
+                          rdfs:label "Precision Digits"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/QuantityUnits
+sdc4-meta:QuantityUnits rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the units of a quantity."@en ;
+                        rdfs:label "Quantity Units"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/QuantityValue
+sdc4-meta:QuantityValue rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the numeric decimal value of a quantity."@en ;
+                        rdfs:label "Quantity Value"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceRangeDefinition
+sdc4-meta:ReferenceRangeDefinition rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ConceptualAspect ;
+                                   rdfs:comment "Represents the definition of a reference range."@en ;
+                                   rdfs:label "Reference Range Definition"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceRangeDefinitionTerm
+sdc4-meta:ReferenceRangeDefinitionTerm rdf:type owl:NamedIndividual ,
+                                                sdc4-meta:ConceptualAspect ;
+                                       rdfs:comment "Represents the term defining the meaning of a reference range."@en ;
+                                       rdfs:label "Reference Range Definition Term"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceRangeInterval
+sdc4-meta:ReferenceRangeInterval rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ConceptualAspect ;
+                                 rdfs:comment "Represents the data range for a reference range."@en ;
+                                 rdfs:label "Reference Range Interval"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ReferenceRangeIsNormal
+sdc4-meta:ReferenceRangeIsNormal rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ConceptualAspect ;
+                                 rdfs:comment "Represents whether a reference range is considered normal."@en ;
+                                 rdfs:label "Reference Range Is Normal"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/StructuralComponent
+sdc4-meta:StructuralComponent rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ConceptualAspect ;
+                              rdfs:comment "Represents a generic structural component within a data model (e.g., Item, Cluster, XdAdapter)."@en ;
+                              rdfs:label "Structural Component"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/SystemIdentifier
+sdc4-meta:SystemIdentifier rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents the identifier of a system involved in an audit."@en ;
+                           rdfs:label "System Identifier"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/SystemUser
+sdc4-meta:SystemUser rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ConceptualAspect ;
+                     rdfs:comment "Represents the user involved in an audit."@en ;
+                     rdfs:label "System User"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalDate
+sdc4-meta:TemporalDate rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents a specific calendar date."@en ;
+                       rdfs:label "Temporal Date"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalDateTime
+sdc4-meta:TemporalDateTime rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents a specific instant in time."@en ;
+                           rdfs:label "Temporal Date Time"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalDay
+sdc4-meta:TemporalDay rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ConceptualAspect ;
+                      rdfs:comment "Represents a recurring Gregorian day."@en ;
+                      rdfs:label "Temporal Day"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalDuration
+sdc4-meta:TemporalDuration rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents a duration of time."@en ;
+                           rdfs:label "Temporal Duration"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalMonth
+sdc4-meta:TemporalMonth rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents a recurring Gregorian month."@en ;
+                        rdfs:label "Temporal Month"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalMonthDay
+sdc4-meta:TemporalMonthDay rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ConceptualAspect ;
+                           rdfs:comment "Represents a recurring Gregorian day in a recurring month."@en ;
+                           rdfs:label "Temporal Month Day"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalTime
+sdc4-meta:TemporalTime rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents a recurring time of day."@en ;
+                       rdfs:label "Temporal Time"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalYear
+sdc4-meta:TemporalYear rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents a specific Gregorian calendar year."@en ;
+                       rdfs:label "Temporal Year"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TemporalYearMonth
+sdc4-meta:TemporalYearMonth rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ConceptualAspect ;
+                            rdfs:comment "Represents a specific Gregorian month in a specific year."@en ;
+                            rdfs:label "Temporal Year Month"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TimeModified
+sdc4-meta:TimeModified rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the aspect of a conceptual entity related to when its data was last modified."@en ;
+                       rdfs:label "Time Modified"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/TimeRecorded
+sdc4-meta:TimeRecorded rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the aspect of a conceptual entity related to when its data was recorded."@en ;
+                       rdfs:label "Time Recorded"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/UnitsName
+sdc4-meta:UnitsName rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ConceptualAspect ;
+                    rdfs:comment "Represents the name of units."@en ;
+                    rdfs:label "Units Name"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/UnitsURI
+sdc4-meta:UnitsURI rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ConceptualAspect ;
+                   rdfs:comment "Represents the URI for units definition."@en ;
+                   rdfs:label "Units URI"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ValidTimeBeginning
+sdc4-meta:ValidTimeBeginning rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the aspect of a conceptual entity related to its valid start time."@en ;
+                             rdfs:label "Valid Time Beginning"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/ValidTimeEnd
+sdc4-meta:ValidTimeEnd rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ConceptualAspect ;
+                       rdfs:comment "Represents the aspect of a conceptual entity related to its valid end time."@en ;
+                       rdfs:label "Valid Time End"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/WorkflowIdentifier
+sdc4-meta:WorkflowIdentifier rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ConceptualAspect ;
+                             rdfs:comment "Represents the identifier of an external workflow engine."@en ;
+                             rdfs:label "Workflow Identifier"@en .
+
+
+###  https://semanticdatacharter.com/ontology/sdc4-meta/WorkflowState
+sdc4-meta:WorkflowState rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ConceptualAspect ;
+                        rdfs:comment "Represents the current state within a workflow."@en ;
+                        rdfs:label "Workflow State"@en .
+
+
+###  sdc4:ASKRType
+<sdc4:ASKRType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                sdc4-meta:hasDescriptiveElement <sdc4:ASKRType/ev-name> .
+
+
+###  sdc4:ASKUType
+<sdc4:ASKUType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                sdc4-meta:hasDescriptiveElement <sdc4:ASKUType/ev-name> .
+
+
+###  sdc4:AttestationType
+<sdc4:AttestationType> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelComponent ;
+                       sdc4-meta:hasDescriptiveElement <sdc4:AttestationType/committed> ,
+                                                       <sdc4:AttestationType/committer> ,
+                                                       <sdc4:AttestationType/label> ,
+                                                       <sdc4:AttestationType/pending> ,
+                                                       <sdc4:AttestationType/proof> ,
+                                                       <sdc4:AttestationType/reason> ,
+                                                       <sdc4:AttestationType/view> ;
+                       rdfs:comment "Record an attestation by a party of the DM content."@en ;
+                       rdfs:label "AttestationType"@en .
+
+
+###  sdc4:AuditType
+<sdc4:AuditType> rdf:type owl:NamedIndividual ,
+                          sdc4-meta:ReferenceModelComponent ;
+                 sdc4-meta:hasDescriptiveElement <sdc4:AuditType/label> ,
+                                                 <sdc4:AuditType/location> ,
+                                                 <sdc4:AuditType/system-id> ,
+                                                 <sdc4:AuditType/system-user> ,
+                                                 <sdc4:AuditType/timestamp> ;
+                 rdfs:comment "AuditType provides a mechanism to identify the who/where/when tracking of instances as they move from system to system."@en ;
+                 rdfs:label "AuditType"@en .
+
+
+###  sdc4:ClusterType
+<sdc4:ClusterType> rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ReferenceModelComponent ;
+                   sdc4-meta:hasDescriptiveElement <sdc4:ClusterType/Items> ,
+                                                   <sdc4:ClusterType/label> .
+
+
+###  sdc4:DERType
+<sdc4:DERType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:DERType/ev-name> .
+
+
+###  sdc4:DMType
+<sdc4:DMType> rdf:type owl:NamedIndividual ,
+                       sdc4-meta:ReferenceModelComponent ;
+              sdc4-meta:hasDescriptiveElement <sdc4:DMType/acs> ,
+                                              <sdc4:DMType/attestation> ,
+                                              <sdc4:DMType/audit> ,
+                                              <sdc4:DMType/creation_timestamp> ,
+                                              <sdc4:DMType/current-state> ,
+                                              <sdc4:DMType/data> ,
+                                              <sdc4:DMType/dm-encoding> ,
+                                              <sdc4:DMType/dm-language> ,
+                                              <sdc4:DMType/instance_id> ,
+                                              <sdc4:DMType/instance_version> ,
+                                              <sdc4:DMType/label> ,
+                                              <sdc4:DMType/links> ,
+                                              <sdc4:DMType/participations> ,
+                                              <sdc4:DMType/protocol> ,
+                                              <sdc4:DMType/provider> ,
+                                              <sdc4:DMType/subject> ,
+                                              <sdc4:DMType/workflow> ;
+              rdfs:comment "This is the root node of a Data Model (DM)."@en ;
+              rdfs:label "DMType"@en .
+
+
+###  sdc4:ExceptionalValue
+<sdc4:ExceptionalValue> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:DataQualityStatus ;
+                        rdfs:comment "In an invalid instance, the application can indicate here why data is missing or invalid."@en ;
+                        rdfs:label "ExceptionalValue"@en .
+
+
+###  sdc4:ExceptionalValueType
+<sdc4:ExceptionalValueType> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelComponent ;
+                            sdc4-meta:hasDescriptiveElement <sdc4:ExceptionalValueType/ev-name> .
+
+
+###  sdc4:INVType
+<sdc4:INVType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:INVType/ev-name> .
+
+
+###  sdc4:InvlType
+<sdc4:InvlType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                rdfs:comment "Defines the set of permissible, comparable datatypes that can be used as the boundary for an interval."@en ;
+                rdfs:label "InvlType"@en .
+
+
+###  sdc4:InvlUnits
+<sdc4:InvlUnits> rdf:type owl:NamedIndividual ,
+                          sdc4-meta:ReferenceModelComponent ;
+                 sdc4-meta:hasDescriptiveElement <sdc4:InvlUnits/units-name> ,
+                                                 <sdc4:InvlUnits/units-uri> ;
+                 rdfs:comment "The units designation for an Interval."@en ;
+                 rdfs:label "InvlUnits"@en .
+
+
+###  sdc4:Item
+<sdc4:Item> rdf:type owl:NamedIndividual ,
+                     sdc4-meta:ReferenceModelElement ;
+            sdc4-meta:describesConceptualAspect sdc4-meta:StructuralComponent ;
+            rdfs:comment "The abstract parent of ClusterType and XdAdapterType structural representation types, used as a substitution group."@en ;
+            rdfs:label "Item (Element)"@en .
+
+
+###  sdc4:ItemType
+<sdc4:ItemType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent .
+
+
+###  sdc4:MSKType
+<sdc4:MSKType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:MSKType/ev-name> .
+
+
+###  sdc4:MagnitudeStatus
+<sdc4:MagnitudeStatus> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelComponent ;
+                       rdfs:comment "MagnitudeStatus provides a general indication of the accuracy of the magnitude expressed in the XdQuantified subtypes."@en ;
+                       rdfs:label "MagnitudeStatus"@en .
+
+
+###  sdc4:NASKType
+<sdc4:NASKType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                sdc4-meta:hasDescriptiveElement <sdc4:NASKType/ev-name> .
+
+
+###  sdc4:NAType
+<sdc4:NAType> rdf:type owl:NamedIndividual ,
+                       sdc4-meta:ReferenceModelComponent ;
+              sdc4-meta:hasDescriptiveElement <sdc4:NAType/ev-name> .
+
+
+###  sdc4:NAVType
+<sdc4:NAVType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:NAVType/ev-name> .
+
+
+###  sdc4:NINFType
+<sdc4:NINFType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                sdc4-meta:hasDescriptiveElement <sdc4:NINFType/ev-name> .
+
+
+###  sdc4:NIType
+<sdc4:NIType> rdf:type owl:NamedIndividual ,
+                       sdc4-meta:ReferenceModelComponent ;
+              sdc4-meta:hasDescriptiveElement <sdc4:NIType/ev-name> .
+
+
+###  sdc4:OTHType
+<sdc4:OTHType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:OTHType/ev-name> .
+
+
+###  sdc4:PINFType
+<sdc4:PINFType> rdf:type owl:NamedIndividual ,
+                         sdc4-meta:ReferenceModelComponent ;
+                sdc4-meta:hasDescriptiveElement <sdc4:PINFType/ev-name> .
+
+
+###  sdc4:ParticipationType
+<sdc4:ParticipationType> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelComponent ;
+                         sdc4-meta:hasDescriptiveElement <sdc4:ParticipationType/end> ,
+                                                         <sdc4:ParticipationType/function> ,
+                                                         <sdc4:ParticipationType/label> ,
+                                                         <sdc4:ParticipationType/mode> ,
+                                                         <sdc4:ParticipationType/performer> ,
+                                                         <sdc4:ParticipationType/start> ;
+                         rdfs:comment "Model of a participation of a Party (any Actor or Role) in an activity."@en ;
+                         rdfs:label "ParticipationType"@en .
+
+
+###  sdc4:PartyType
+<sdc4:PartyType> rdf:type owl:NamedIndividual ,
+                          sdc4-meta:ReferenceModelComponent ;
+                 sdc4-meta:hasDescriptiveElement <sdc4:PartyType/label> ,
+                                                 <sdc4:PartyType/party-details> ,
+                                                 <sdc4:PartyType/party-name> ,
+                                                 <sdc4:PartyType/party-ref> ;
+                 rdfs:comment "Description of a party, including an optional external link to data for this party."@en ;
+                 rdfs:label "PartyType"@en .
+
+
+###  sdc4:QSType
+<sdc4:QSType> rdf:type owl:NamedIndividual ,
+                       sdc4-meta:ReferenceModelComponent ;
+              sdc4-meta:hasDescriptiveElement <sdc4:QSType/ev-name> .
+
+
+###  sdc4:ReferenceRange
+<sdc4:ReferenceRange> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:ReferenceRangeDefinition ;
+                      rdfs:comment "Optional list of ReferenceRanges for this value in its particular measurement context."@en ;
+                      rdfs:label "ReferenceRange"@en .
+
+
+###  sdc4:ReferenceRangeType
+<sdc4:ReferenceRangeType> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelComponent ;
+                          sdc4-meta:hasDescriptiveElement <sdc4:ReferenceRangeType/definition> ,
+                                                          <sdc4:ReferenceRangeType/interval> ,
+                                                          <sdc4:ReferenceRangeType/is-normal> .
+
+
+###  sdc4:TRCType
+<sdc4:TRCType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:TRCType/ev-name> .
+
+
+###  sdc4:UNCType
+<sdc4:UNCType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:UNCType/ev-name> .
+
+
+###  sdc4:UNKType
+<sdc4:UNKType> rdf:type owl:NamedIndividual ,
+                        sdc4-meta:ReferenceModelComponent ;
+               sdc4-meta:hasDescriptiveElement <sdc4:UNKType/ev-name> .
+
+
+###  sdc4:XdAdapterType
+<sdc4:XdAdapterType> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelComponent ;
+                     sdc4-meta:hasDescriptiveElement <sdc4:XdAdapterType/XdAdapter-value> .
+
+
+###  sdc4:XdAnyType
+<sdc4:XdAnyType> rdf:type owl:NamedIndividual ,
+                          sdc4-meta:ReferenceModelComponent ;
+                 sdc4-meta:hasDescriptiveElement <sdc4:ExceptionalValue> ,
+                                                 <sdc4:XdAnyType/act> ,
+                                                 <sdc4:XdAnyType/label> ,
+                                                 <sdc4:XdAnyType/latitude> ,
+                                                 <sdc4:XdAnyType/longitude> ,
+                                                 <sdc4:XdAnyType/modified> ,
+                                                 <sdc4:XdAnyType/tr> ,
+                                                 <sdc4:XdAnyType/vtb> ,
+                                                 <sdc4:XdAnyType/vte> .
+
+
+###  sdc4:XdBooleanListType
+<sdc4:XdBooleanListType> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelComponent ;
+                         sdc4-meta:hasDescriptiveElement <sdc4:XdBooleanListType/xdbooleanlist-value> .
+
+
+###  sdc4:XdBooleanType
+<sdc4:XdBooleanType> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelComponent ;
+                     sdc4-meta:hasDescriptiveElement <sdc4:XdBooleanType/false-value> ,
+                                                     <sdc4:XdBooleanType/true-value> .
+
+
+###  sdc4:XdCountType
+<sdc4:XdCountType> rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ReferenceModelComponent ;
+                   sdc4-meta:hasDescriptiveElement <sdc4:XdCountType/xdcount-units> ,
+                                                   <sdc4:XdCountType/xdcount-value> .
+
+
+###  sdc4:XdDecimalListType
+<sdc4:XdDecimalListType> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelComponent ;
+                         sdc4-meta:hasDescriptiveElement <sdc4:XdDecimalListType/xddecimallist-value> .
+
+
+###  sdc4:XdDoubleListType
+<sdc4:XdDoubleListType> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelComponent ;
+                        sdc4-meta:hasDescriptiveElement <sdc4:XdDoubleListType/xddoublelist-value> .
+
+
+###  sdc4:XdDoubleType
+<sdc4:XdDoubleType> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelComponent ;
+                    sdc4-meta:hasDescriptiveElement <sdc4:XdDoubleType/xddouble-units> ,
+                                                    <sdc4:XdDoubleType/xddouble-value> .
+
+
+###  sdc4:XdFileType
+<sdc4:XdFileType> rdf:type owl:NamedIndividual ,
+                           sdc4-meta:ReferenceModelComponent ;
+                  sdc4-meta:hasDescriptiveElement <sdc4:XdFileType/alt-txt> ,
+                                                  <sdc4:XdFileType/compression-type> ,
+                                                  <sdc4:XdFileType/encoding> ,
+                                                  <sdc4:XdFileType/formalism> ,
+                                                  <sdc4:XdFileType/hash-function> ,
+                                                  <sdc4:XdFileType/hash-result> ,
+                                                  <sdc4:XdFileType/media-content> ,
+                                                  <sdc4:XdFileType/media-type> ,
+                                                  <sdc4:XdFileType/size> ,
+                                                  <sdc4:XdFileType/uri> ,
+                                                  <sdc4:XdFileType/xdfile-language> .
+
+
+###  sdc4:XdFloatType
+<sdc4:XdFloatType> rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ReferenceModelComponent ;
+                   sdc4-meta:hasDescriptiveElement <sdc4:XdFloatType/xdfloat-units> ,
+                                                   <sdc4:XdFloatType/xdfloat-value> .
+
+
+###  sdc4:XdIntegerListType
+<sdc4:XdIntegerListType> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelComponent ;
+                         sdc4-meta:hasDescriptiveElement <sdc4:XdIntegerListType/xdintegerlist-value> .
+
+
+###  sdc4:XdIntervalType
+<sdc4:XdIntervalType> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelComponent ;
+                      sdc4-meta:hasDescriptiveElement <sdc4:XdIntervalType/interval-units> ,
+                                                      <sdc4:XdIntervalType/lower> ,
+                                                      <sdc4:XdIntervalType/lower_bounded> ,
+                                                      <sdc4:XdIntervalType/lower_included> ,
+                                                      <sdc4:XdIntervalType/upper> ,
+                                                      <sdc4:XdIntervalType/upper_bounded> ,
+                                                      <sdc4:XdIntervalType/upper_included> .
+
+
+###  sdc4:XdLinkType
+<sdc4:XdLinkType> rdf:type owl:NamedIndividual ,
+                           sdc4-meta:ReferenceModelComponent ;
+                  sdc4-meta:hasDescriptiveElement <sdc4:XdLinkType/link> ,
+                                                  <sdc4:XdLinkType/relation> ,
+                                                  <sdc4:XdLinkType/relation-uri> .
+
+
+###  sdc4:XdNonNegativeIntegerListType
+<sdc4:XdNonNegativeIntegerListType> rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ReferenceModelComponent ;
+                                    sdc4-meta:hasDescriptiveElement <sdc4:XdNonNegativeIntegerListType/xdnonnegativeintegerlist-value> .
+
+
+###  sdc4:XdOrderedType
+<sdc4:XdOrderedType> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelComponent ;
+                     sdc4-meta:hasDescriptiveElement <sdc4:ReferenceRange> ,
+                                                     <sdc4:XdOrderedType/normal-status> .
+
+
+###  sdc4:XdOrdinalType
+<sdc4:XdOrdinalType> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelComponent ;
+                     sdc4-meta:hasDescriptiveElement <sdc4:XdOrdinalType/ordinal> ,
+                                                     <sdc4:XdOrdinalType/symbol> .
+
+
+###  sdc4:XdPositiveIntegerListType
+<sdc4:XdPositiveIntegerListType> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelComponent ;
+                                 sdc4-meta:hasDescriptiveElement <sdc4:XdPositiveIntegerListType/xdpositiveintegerlist-value> .
+
+
+###  sdc4:XdQuantifiedType
+<sdc4:XdQuantifiedType> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelComponent ;
+                        sdc4-meta:hasDescriptiveElement <sdc4:XdQuantifiedType/accuracy_margin> ,
+                                                        <sdc4:XdQuantifiedType/magnitude-status> ,
+                                                        <sdc4:XdQuantifiedType/precision_digits> .
+
+
+###  sdc4:XdQuantityType
+<sdc4:XdQuantityType> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelComponent ;
+                      sdc4-meta:hasDescriptiveElement <sdc4:XdQuantityType/xdquantity-units> ,
+                                                      <sdc4:XdQuantityType/xdquantity-value> .
+
+
+###  sdc4:XdStringListType
+<sdc4:XdStringListType> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelComponent ;
+                        sdc4-meta:hasDescriptiveElement <sdc4:XdStringListType/xdstringlist-value> .
+
+
+###  sdc4:XdStringType
+<sdc4:XdStringType> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelComponent ;
+                    sdc4-meta:hasDescriptiveElement <sdc4:XdStringType/xdstring-language> ,
+                                                    <sdc4:XdStringType/xdstring-value> .
+
+
+###  sdc4:XdTemporalType
+<sdc4:XdTemporalType> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelComponent ;
+                      sdc4-meta:hasDescriptiveElement <sdc4:XdTemporalType/xdtemporal-date> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-datetime> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-day> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-duration> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-month> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-month-day> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-time> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-year> ,
+                                                      <sdc4:XdTemporalType/xdtemporal-year-month> .
+
+
+###  sdc4:XdTokenListType
+<sdc4:XdTokenListType> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelComponent ;
+                       sdc4-meta:hasDescriptiveElement <sdc4:XdTokenListType/xdtokenlist-value> .
+
+
+###  sdc4:ASKRType/ev-name
+<sdc4:ASKRType/ev-name> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                        rdfs:comment "Fixed value \"Asked and Refused\" for ASKRType."@en ;
+                        rdfs:label "ev-name (ASKR)"@en .
+
+
+###  sdc4:ASKUType/ev-name
+<sdc4:ASKUType/ev-name> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                        rdfs:comment "Fixed value \"Asked but Unknown\" for ASKUType."@en ;
+                        rdfs:label "ev-name (ASKU)"@en .
+
+
+###  sdc4:AttestationType/committed
+<sdc4:AttestationType/committed> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:AttestationCommittedTimestamp ;
+                                 rdfs:comment "Timestamp of committal of the item."@en ;
+                                 rdfs:label "committed"@en .
+
+
+###  sdc4:AttestationType/committer
+<sdc4:AttestationType/committer> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:AttestationCommitter ;
+                                 rdfs:comment "Identity of person who committed the item."@en ;
+                                 rdfs:label "committer"@en .
+
+
+###  sdc4:AttestationType/label
+<sdc4:AttestationType/label> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:AttestationLabel ;
+                             rdfs:comment "Descriptive name of this datatype model for AttestationType."@en ;
+                             rdfs:label "label (AttestationType)"@en .
+
+
+###  sdc4:AttestationType/pending
+<sdc4:AttestationType/pending> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:AttestationPendingStatus ;
+                               rdfs:comment "True if this attestation is outstanding; 'false' means it has been completed."@en ;
+                               rdfs:label "pending"@en .
+
+
+###  sdc4:AttestationType/proof
+<sdc4:AttestationType/proof> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:AttestationProof ;
+                             rdfs:comment "Proof of attestation such as an GPG signature."@en ;
+                             rdfs:label "proof"@en .
+
+
+###  sdc4:AttestationType/reason
+<sdc4:AttestationType/reason> rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ReferenceModelElement ;
+                              sdc4-meta:describesConceptualAspect sdc4-meta:AttestationReason ;
+                              rdfs:comment "Reason of this attestation. Usually coded from a standardized vocabulary."@en ;
+                              rdfs:label "reason (AttestationType)"@en .
+
+
+###  sdc4:AttestationType/view
+<sdc4:AttestationType/view> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:AttestationView ;
+                            rdfs:comment "Optional visual representation of content attested e.g. screen image."@en ;
+                            rdfs:label "view"@en .
+
+
+###  sdc4:AuditType/label
+<sdc4:AuditType/label> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:AuditLabel ;
+                       rdfs:comment "Descriptive name of this datatype model for AuditType."@en ;
+                       rdfs:label "label (AuditType)"@en .
+
+
+###  sdc4:AuditType/location
+<sdc4:AuditType/location> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:AuditLocation ;
+                          rdfs:comment "Location information of the particular site/facility within an organisation which handled the item."@en ;
+                          rdfs:label "location (AuditType)"@en .
+
+
+###  sdc4:AuditType/system-id
+<sdc4:AuditType/system-id> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:SystemIdentifier ;
+                           rdfs:comment "Identifier of systems which created or handled the information item."@en ;
+                           rdfs:label "system-id"@en .
+
+
+###  sdc4:AuditType/system-user
+<sdc4:AuditType/system-user> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:SystemUser ;
+                             rdfs:comment "User(s) who created, committed, forwarded or otherwise handled the item."@en ;
+                             rdfs:label "system-user"@en .
+
+
+###  sdc4:AuditType/timestamp
+<sdc4:AuditType/timestamp> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:AuditTimestamp ;
+                           rdfs:comment "Timestamp of handling the item."@en ;
+                           rdfs:label "timestamp (AuditType)"@en .
+
+
+###  sdc4:ClusterType/Items
+<sdc4:ClusterType/Items> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelElement ;
+                         sdc4-meta:describesConceptualAspect sdc4-meta:ContainedComponents ;
+                         rdfs:comment "List of ItemTypes which may be XdAdapterTypes and/or ClusterTypes."@en ;
+                         rdfs:label "Items (ClusterType)"@en .
+
+
+###  sdc4:ClusterType/label
+<sdc4:ClusterType/label> rdf:type owl:NamedIndividual ,
+                                  sdc4-meta:ReferenceModelElement ;
+                         sdc4-meta:describesConceptualAspect sdc4-meta:ClusterLabel ;
+                         rdfs:comment "Descriptive subject line for this group of CMCs."@en ;
+                         rdfs:label "label (ClusterType)"@en .
+
+
+###  sdc4:DERType/ev-name
+<sdc4:DERType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Derived\" for DERType."@en ;
+                       rdfs:label "ev-name (DER)"@en .
+
+
+###  sdc4:DMType/acs
+<sdc4:DMType/acs> rdf:type owl:NamedIndividual ,
+                           sdc4-meta:ReferenceModelElement ;
+                  sdc4-meta:describesConceptualAspect sdc4-meta:AccessControlSystem ;
+                  rdfs:comment "Identifier of an externally held access control system."@en ;
+                  rdfs:label "acs (DMType)"@en .
+
+
+###  sdc4:DMType/attestation
+<sdc4:DMType/attestation> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:DataAttestation ;
+                          rdfs:comment "Attestation record of an instance of data."@en ;
+                          rdfs:label "attestation (DMType)"@en .
+
+
+###  sdc4:DMType/audit
+<sdc4:DMType/audit> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelElement ;
+                    sdc4-meta:describesConceptualAspect sdc4-meta:DataAudits ;
+                    rdfs:comment "List of audits from the system of original commit of information forming the content."@en ;
+                    rdfs:label "audit (DMType)"@en .
+
+
+###  sdc4:DMType/creation_timestamp
+<sdc4:DMType/creation_timestamp> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:InstanceCreationTimestamp ;
+                                 rdfs:comment "An optional run-time timestamp that indicates the exact moment this specific data instance was created or generated."@en ;
+                                 rdfs:label "creation_timestamp"@en .
+
+
+###  sdc4:DMType/current-state
+<sdc4:DMType/current-state> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:WorkflowState ;
+                            rdfs:comment "The current state according to the state machine / workflow engine."@en ;
+                            rdfs:label "current-state"@en .
+
+
+###  sdc4:DMType/data
+<sdc4:DMType/data> rdf:type owl:NamedIndividual ,
+                            sdc4-meta:ReferenceModelElement ;
+                   sdc4-meta:describesConceptualAspect sdc4-meta:DataModelPayload ;
+                   rdfs:comment "The data structure of the model."@en ;
+                   rdfs:label "data (DMType)"@en .
+
+
+###  sdc4:DMType/dm-encoding
+<sdc4:DMType/dm-encoding> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:DataModelEncoding ;
+                          rdfs:comment "Name of character set encoding in which text values in this DM are encoded."@en ;
+                          rdfs:label "dm-encoding"@en .
+
+
+###  sdc4:DMType/dm-language
+<sdc4:DMType/dm-language> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:DataModelLanguage ;
+                          rdfs:comment "Mandatory indicator of the localised language in which this DM is written."@en ;
+                          rdfs:label "dm-language"@en .
+
+
+###  sdc4:DMType/instance_id
+<sdc4:DMType/instance_id> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:InstanceIdentifier ;
+                          rdfs:comment "An optional, globally unique identifier for this specific data instance."@en ;
+                          rdfs:label "instance_id"@en .
+
+
+###  sdc4:DMType/instance_version
+<sdc4:DMType/instance_version> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:InstanceVersion ;
+                               rdfs:comment "An optional identifier for the specific version of this data instance."@en ;
+                               rdfs:label "instance_version"@en .
+
+
+###  sdc4:DMType/label
+<sdc4:DMType/label> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelElement ;
+                    sdc4-meta:describesConceptualAspect sdc4-meta:DataModelName ;
+                    rdfs:comment "Descriptive name of this datatype model. Provides the semantic 'name' for the model."@en ;
+                    rdfs:label "label (DMType)"@en .
+
+
+###  sdc4:DMType/links
+<sdc4:DMType/links> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelElement ;
+                    sdc4-meta:describesConceptualAspect sdc4-meta:ExternalLinks ;
+                    rdfs:comment "Optional link(s) to other locatable structures or external entities."@en ;
+                    rdfs:label "links (DMType)"@en .
+
+
+###  sdc4:DMType/participations
+<sdc4:DMType/participations> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:DataParticipations ;
+                             rdfs:comment "List of other participations in the data."@en ;
+                             rdfs:label "participations (DMType)"@en .
+
+
+###  sdc4:DMType/protocol
+<sdc4:DMType/protocol> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:DataProtocol ;
+                       rdfs:comment "Optional external identifier of protocol used when collecting the data."@en ;
+                       rdfs:label "protocol (DMType)"@en .
+
+
+###  sdc4:DMType/provider
+<sdc4:DMType/provider> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:DataProvider ;
+                       rdfs:comment "Optional identification of the source of the information."@en ;
+                       rdfs:label "provider (DMType)"@en .
+
+
+###  sdc4:DMType/subject
+<sdc4:DMType/subject> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:DataSubject ;
+                      rdfs:comment "Id of human subject of the data."@en ;
+                      rdfs:label "subject (DMType)"@en .
+
+
+###  sdc4:DMType/workflow
+<sdc4:DMType/workflow> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:WorkflowIdentifier ;
+                       rdfs:comment "Identifier of externally held workflow engine (state machine) data for this workflow execution."@en ;
+                       rdfs:label "workflow (DMType)"@en .
+
+
+###  sdc4:ExceptionalValueType/ev-name
+<sdc4:ExceptionalValueType/ev-name> rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ReferenceModelElement ;
+                                    sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                                    rdfs:comment "A short title or phase for the exceptional type value."@en ;
+                                    rdfs:label "ev-name"@en .
+
+
+###  sdc4:INVType/ev-name
+<sdc4:INVType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Invalid\" for INVType."@en ;
+                       rdfs:label "ev-name (INV)"@en .
+
+
+###  sdc4:InvlUnits/units-name
+<sdc4:InvlUnits/units-name> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:UnitsName ;
+                            rdfs:comment "The units name for an Interval."@en ;
+                            rdfs:label "units-name"@en .
+
+
+###  sdc4:InvlUnits/units-uri
+<sdc4:InvlUnits/units-uri> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:UnitsURI ;
+                           rdfs:comment "The units URI for an Interval."@en ;
+                           rdfs:label "units-uri"@en .
+
+
+###  sdc4:MSKType/ev-name
+<sdc4:MSKType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Masked\" for MSKType."@en ;
+                       rdfs:label "ev-name (MSK)"@en .
+
+
+###  sdc4:NASKType/ev-name
+<sdc4:NASKType/ev-name> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                        rdfs:comment "Fixed value \"Not Asked\" for NASKType."@en ;
+                        rdfs:label "ev-name (NASK)"@en .
+
+
+###  sdc4:NAType/ev-name
+<sdc4:NAType/ev-name> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                      rdfs:comment "Fixed value \"Not Applicable\" for NAType."@en ;
+                      rdfs:label "ev-name (NA)"@en .
+
+
+###  sdc4:NAVType/ev-name
+<sdc4:NAVType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Not Available\" for NAVType."@en ;
+                       rdfs:label "ev-name (NAV)"@en .
+
+
+###  sdc4:NINFType/ev-name
+<sdc4:NINFType/ev-name> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                        rdfs:comment "Fixed value \"Negative Infinity\" for NINFType."@en ;
+                        rdfs:label "ev-name (NINF)"@en .
+
+
+###  sdc4:NIType/ev-name
+<sdc4:NIType/ev-name> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                      rdfs:comment "Fixed value \"No Information\" for NIType."@en ;
+                      rdfs:label "ev-name (NI)"@en .
+
+
+###  sdc4:OTHType/ev-name
+<sdc4:OTHType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Other\" for OTHType."@en ;
+                       rdfs:label "ev-name (OTH)"@en .
+
+
+###  sdc4:PINFType/ev-name
+<sdc4:PINFType/ev-name> rdf:type owl:NamedIndividual ,
+                                 sdc4-meta:ReferenceModelElement ;
+                        sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                        rdfs:comment "Fixed value \"Positive Infinity\" for PINFType."@en ;
+                        rdfs:label "ev-name (PINF)"@en .
+
+
+###  sdc4:ParticipationType/end
+<sdc4:ParticipationType/end> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationEndTime ;
+                             rdfs:comment "The ending datetime when the participation took place."@en ;
+                             rdfs:label "end (ParticipationType)"@en .
+
+
+###  sdc4:ParticipationType/function
+<sdc4:ParticipationType/function> rdf:type owl:NamedIndividual ,
+                                           sdc4-meta:ReferenceModelElement ;
+                                  sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationFunction ;
+                                  rdfs:comment "The function of the performer in this participation."@en ;
+                                  rdfs:label "function (ParticipationType)"@en .
+
+
+###  sdc4:ParticipationType/label
+<sdc4:ParticipationType/label> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationLabel ;
+                               rdfs:comment "Descriptive name of this datatype model for ParticipationType."@en ;
+                               rdfs:label "label (ParticipationType)"@en .
+
+
+###  sdc4:ParticipationType/mode
+<sdc4:ParticipationType/mode> rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ReferenceModelElement ;
+                              sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationMode ;
+                              rdfs:comment "The mode of the performer / activity interaction."@en ;
+                              rdfs:label "mode (ParticipationType)"@en .
+
+
+###  sdc4:ParticipationType/performer
+<sdc4:ParticipationType/performer> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationPerformer ;
+                                   rdfs:comment "The id and possibly demographic system link of the party that represents the primary provider of services in the activity."@en ;
+                                   rdfs:label "performer"@en .
+
+
+###  sdc4:ParticipationType/start
+<sdc4:ParticipationType/start> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:ParticipationStartTime ;
+                               rdfs:comment "The beginning datetime when the participation took place."@en ;
+                               rdfs:label "start (ParticipationType)"@en .
+
+
+###  sdc4:PartyType/label
+<sdc4:PartyType/label> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:PartyLabel ;
+                       rdfs:comment "Descriptive name of this datatype model for PartyType."@en ;
+                       rdfs:label "label (PartyType)"@en .
+
+
+###  sdc4:PartyType/party-details
+<sdc4:PartyType/party-details> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:PartyDetails ;
+                               rdfs:comment "A structured element for details about the party."@en ;
+                               rdfs:label "party-details"@en .
+
+
+###  sdc4:PartyType/party-name
+<sdc4:PartyType/party-name> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:PartyName ;
+                            rdfs:comment "Optional human-readable name (in String form) of the party."@en ;
+                            rdfs:label "party-name"@en .
+
+
+###  sdc4:PartyType/party-ref
+<sdc4:PartyType/party-ref> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:PartyReference ;
+                           rdfs:comment "Optional reference to more detailed demographic or identification information for this party."@en ;
+                           rdfs:label "party-ref"@en .
+
+
+###  sdc4:QSType/ev-name
+<sdc4:QSType/ev-name> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                      rdfs:comment "Fixed value \"Sufficient Quantity\" for QSType."@en ;
+                      rdfs:label "ev-name (QS)"@en .
+
+
+###  sdc4:ReferenceRangeType/definition
+<sdc4:ReferenceRangeType/definition> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:ReferenceRangeDefinitionTerm ;
+                                     rdfs:comment "Term whose value indicates the meaning of this range, e.g. 'normal', 'critical', 'therapeutic'."@en ;
+                                     rdfs:label "definition"@en .
+
+
+###  sdc4:ReferenceRangeType/interval
+<sdc4:ReferenceRangeType/interval> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:ReferenceRangeInterval ;
+                                   rdfs:comment "The data range for this reference range."@en ;
+                                   rdfs:label "interval"@en .
+
+
+###  sdc4:ReferenceRangeType/is-normal
+<sdc4:ReferenceRangeType/is-normal> rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ReferenceModelElement ;
+                                    sdc4-meta:describesConceptualAspect sdc4-meta:ReferenceRangeIsNormal ;
+                                    rdfs:comment "True if this reference range defines values that are considered to be normal."@en ;
+                                    rdfs:label "is-normal"@en .
+
+
+###  sdc4:TRCType/ev-name
+<sdc4:TRCType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Trace\" for TRCType."@en ;
+                       rdfs:label "ev-name (TRC)"@en .
+
+
+###  sdc4:UNCType/ev-name
+<sdc4:UNCType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Unencoded\" for UNCType."@en ;
+                       rdfs:label "ev-name (UNC)"@en .
+
+
+###  sdc4:UNKType/ev-name
+<sdc4:UNKType/ev-name> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ExceptionalValueName ;
+                       rdfs:comment "Fixed value \"Unknown\" for UNKType."@en ;
+                       rdfs:label "ev-name (UNK)"@en .
+
+
+###  sdc4:XdAdapterType/XdAdapter-value
+<sdc4:XdAdapterType/XdAdapter-value> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:AdaptedValue ;
+                                     rdfs:comment "Data value type of this leaf. By rule, there must only be one XdAnyType subtype defined here."@en ;
+                                     rdfs:label "XdAdapter-value"@en .
+
+
+###  sdc4:XdAnyType/act
+<sdc4:XdAnyType/act> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelElement ;
+                     sdc4-meta:describesConceptualAspect sdc4-meta:AccessControlTag ;
+                     rdfs:comment "Access Control Tag. If this is used it must contain a valid term from the Access Control System."@en ;
+                     rdfs:label "act"@en .
+
+
+###  sdc4:XdAnyType/label
+<sdc4:XdAnyType/label> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:ConceptualEntityIdentity ;
+                       rdfs:comment "The 'label' element within XdAnyType and its subtypes, which defines the conceptual entity."@en ;
+                       rdfs:label "label"@en .
+
+
+###  sdc4:XdAnyType/latitude
+<sdc4:XdAnyType/latitude> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:GeospatialLatitude ;
+                          rdfs:comment "Latitude in decimal format."@en ;
+                          rdfs:label "latitude"@en .
+
+
+###  sdc4:XdAnyType/longitude
+<sdc4:XdAnyType/longitude> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:GeospatialLongitude ;
+                           rdfs:comment "Longitude in decimal format."@en ;
+                           rdfs:label "longitude"@en .
+
+
+###  sdc4:XdAnyType/modified
+<sdc4:XdAnyType/modified> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:TimeModified ;
+                          rdfs:comment "Time Modified. Indicates the actual date and time the data was last changed."@en ;
+                          rdfs:label "modified"@en .
+
+
+###  sdc4:XdAnyType/tr
+<sdc4:XdAnyType/tr> rdf:type owl:NamedIndividual ,
+                             sdc4-meta:ReferenceModelElement ;
+                    sdc4-meta:describesConceptualAspect sdc4-meta:TimeRecorded ;
+                    rdfs:comment "Time Recorded. Indicates the actual date and time the data was recorded."@en ;
+                    rdfs:label "tr"@en .
+
+
+###  sdc4:XdAnyType/vtb
+<sdc4:XdAnyType/vtb> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelElement ;
+                     sdc4-meta:describesConceptualAspect sdc4-meta:ValidTimeBeginning ;
+                     rdfs:comment "Valid Time Begin. Indicates the beginning time that information is considered valid."@en ;
+                     rdfs:label "vtb"@en .
+
+
+###  sdc4:XdAnyType/vte
+<sdc4:XdAnyType/vte> rdf:type owl:NamedIndividual ,
+                              sdc4-meta:ReferenceModelElement ;
+                     sdc4-meta:describesConceptualAspect sdc4-meta:ValidTimeEnd ;
+                     rdfs:comment "Valid Time End. Indicates the ending time that information is considered valid or expired."@en ;
+                     rdfs:label "vte"@en .
+
+
+###  sdc4:XdBooleanListType/xdbooleanlist-value
+<sdc4:XdBooleanListType/xdbooleanlist-value> rdf:type owl:NamedIndividual ,
+                                                      sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdBooleanType/false-value
+<sdc4:XdBooleanType/false-value> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:BooleanFalseValue ;
+                                 rdfs:comment "A string that represents a boolean False in the implementation."@en ;
+                                 rdfs:label "false-value"@en .
+
+
+###  sdc4:XdBooleanType/true-value
+<sdc4:XdBooleanType/true-value> rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ReferenceModelElement ;
+                                sdc4-meta:describesConceptualAspect sdc4-meta:BooleanTrueValue ;
+                                rdfs:comment "A string that represents a boolean True in the implementation."@en ;
+                                rdfs:label "true-value"@en .
+
+
+###  sdc4:XdCountType/xdcount-units
+<sdc4:XdCountType/xdcount-units> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:CountUnits ;
+                                 rdfs:comment "The name or type of the items counted."@en ;
+                                 rdfs:label "xdcount-units"@en .
+
+
+###  sdc4:XdCountType/xdcount-value
+<sdc4:XdCountType/xdcount-value> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:CountValue ;
+                                 rdfs:comment "Integer value of the counted items."@en ;
+                                 rdfs:label "xdcount-value"@en .
+
+
+###  sdc4:XdDecimalListType/xddecimallist-value
+<sdc4:XdDecimalListType/xddecimallist-value> rdf:type owl:NamedIndividual ,
+                                                      sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdDoubleListType/xddoublelist-value
+<sdc4:XdDoubleListType/xddoublelist-value> rdf:type owl:NamedIndividual ,
+                                                    sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdDoubleType/xddouble-units
+<sdc4:XdDoubleType/xddouble-units> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:DoubleUnits ;
+                                   rdfs:comment "The name or type of the double value."@en ;
+                                   rdfs:label "xddouble-units"@en .
+
+
+###  sdc4:XdDoubleType/xddouble-value
+<sdc4:XdDoubleType/xddouble-value> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:DoubleValue ;
+                                   rdfs:comment "Double value."@en ;
+                                   rdfs:label "xddouble-value"@en .
+
+
+###  sdc4:XdFileType/alt-txt
+<sdc4:XdFileType/alt-txt> rdf:type owl:NamedIndividual ,
+                                   sdc4-meta:ReferenceModelElement ;
+                          sdc4-meta:describesConceptualAspect sdc4-meta:FileAltText ;
+                          rdfs:comment "Text to display in lieu of multimedia display or execution."@en ;
+                          rdfs:label "alt-txt"@en .
+
+
+###  sdc4:XdFileType/compression-type
+<sdc4:XdFileType/compression-type> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:FileCompressionType ;
+                                   rdfs:comment "Compression/archiving mime-type."@en ;
+                                   rdfs:label "compression-type"@en .
+
+
+###  sdc4:XdFileType/encoding
+<sdc4:XdFileType/encoding> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:FileEncoding ;
+                           rdfs:comment "Name of character encoding scheme in which this value is encoded."@en ;
+                           rdfs:label "encoding"@en .
+
+
+###  sdc4:XdFileType/formalism
+<sdc4:XdFileType/formalism> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:FileFormalism ;
+                            rdfs:comment "Name of the formalism or syntax used to inform an application regarding a candidate parser to use on the content."@en ;
+                            rdfs:label "formalism"@en .
+
+
+###  sdc4:XdFileType/hash-function
+<sdc4:XdFileType/hash-function> rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ReferenceModelElement ;
+                                sdc4-meta:describesConceptualAspect sdc4-meta:FileHashFunction ;
+                                rdfs:comment "Hash function used to compute hash-result."@en ;
+                                rdfs:label "hash-function"@en .
+
+
+###  sdc4:XdFileType/hash-result
+<sdc4:XdFileType/hash-result> rdf:type owl:NamedIndividual ,
+                                       sdc4-meta:ReferenceModelElement ;
+                              sdc4-meta:describesConceptualAspect sdc4-meta:FileHashResult ;
+                              rdfs:comment "Hash function result of the 'media-content'."@en ;
+                              rdfs:label "hash-result"@en .
+
+
+###  sdc4:XdFileType/media-content
+<sdc4:XdFileType/media-content> rdf:type owl:NamedIndividual ,
+                                         sdc4-meta:ReferenceModelElement ;
+                                sdc4-meta:describesConceptualAspect sdc4-meta:FileMediaContent ;
+                                rdfs:comment "The content, if stored locally."@en ;
+                                rdfs:label "media-content"@en .
+
+
+###  sdc4:XdFileType/media-type
+<sdc4:XdFileType/media-type> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:FileMediaType ;
+                             rdfs:comment "Media (MIME) type of the original media-content w/o any compression."@en ;
+                             rdfs:label "media-type"@en .
+
+
+###  sdc4:XdFileType/size
+<sdc4:XdFileType/size> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:FileSize ;
+                       rdfs:comment "Original size in bytes of unencoded encapsulated data."@en ;
+                       rdfs:label "size"@en .
+
+
+###  sdc4:XdFileType/uri
+<sdc4:XdFileType/uri> rdf:type owl:NamedIndividual ,
+                               sdc4-meta:ReferenceModelElement ;
+                      sdc4-meta:describesConceptualAspect sdc4-meta:FileURI ;
+                      rdfs:comment "URI reference to electronic information stored outside the record as a file, database entry etc, if supplied as a reference."@en ;
+                      rdfs:label "uri"@en .
+
+
+###  sdc4:XdFileType/xdfile-language
+<sdc4:XdFileType/xdfile-language> rdf:type owl:NamedIndividual ,
+                                           sdc4-meta:ReferenceModelElement ;
+                                  sdc4-meta:describesConceptualAspect sdc4-meta:LanguageCode ;
+                                  rdfs:comment "Optional indicator of the localised language of the content."@en ;
+                                  rdfs:label "xdfile-language"@en .
+
+
+###  sdc4:XdFloatType/xdfloat-units
+<sdc4:XdFloatType/xdfloat-units> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:FloatUnits ;
+                                 rdfs:comment "The name or type of the float value."@en ;
+                                 rdfs:label "xdfloat-units"@en .
+
+
+###  sdc4:XdFloatType/xdfloat-value
+<sdc4:XdFloatType/xdfloat-value> rdf:type owl:NamedIndividual ,
+                                          sdc4-meta:ReferenceModelElement ;
+                                 sdc4-meta:describesConceptualAspect sdc4-meta:FloatValue ;
+                                 rdfs:comment "Float value."@en ;
+                                 rdfs:label "xdfloat-value"@en .
+
+
+###  sdc4:XdIntegerListType/xdintegerlist-value
+<sdc4:XdIntegerListType/xdintegerlist-value> rdf:type owl:NamedIndividual ,
+                                                      sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdIntervalType/interval-units
+<sdc4:XdIntervalType/interval-units> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:IntervalUnitsDefinition ;
+                                     rdfs:comment "The units designation for an Interval."@en ;
+                                     rdfs:label "interval-units"@en .
+
+
+###  sdc4:XdIntervalType/lower
+<sdc4:XdIntervalType/lower> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:IntervalLowerBound ;
+                            rdfs:comment "The lower boundary of the interval."@en ;
+                            rdfs:label "lower"@en .
+
+
+###  sdc4:XdIntervalType/lower_bounded
+<sdc4:XdIntervalType/lower_bounded> rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ReferenceModelElement ;
+                                    sdc4-meta:describesConceptualAspect sdc4-meta:IntervalLowerBounded ;
+                                    rdfs:comment "True if the interval has a lower bound."@en ;
+                                    rdfs:label "lower_bounded"@en .
+
+
+###  sdc4:XdIntervalType/lower_included
+<sdc4:XdIntervalType/lower_included> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:IntervalLowerIncluded ;
+                                     rdfs:comment "True if the lower boundary is included in the interval."@en ;
+                                     rdfs:label "lower_included"@en .
+
+
+###  sdc4:XdIntervalType/upper
+<sdc4:XdIntervalType/upper> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:IntervalUpperBound ;
+                            rdfs:comment "The upper boundary of the interval."@en ;
+                            rdfs:label "upper"@en .
+
+
+###  sdc4:XdIntervalType/upper_bounded
+<sdc4:XdIntervalType/upper_bounded> rdf:type owl:NamedIndividual ,
+                                             sdc4-meta:ReferenceModelElement ;
+                                    sdc4-meta:describesConceptualAspect sdc4-meta:IntervalUpperBounded ;
+                                    rdfs:comment "True if the interval has an upper bound."@en ;
+                                    rdfs:label "upper_bounded"@en .
+
+
+###  sdc4:XdIntervalType/upper_included
+<sdc4:XdIntervalType/upper_included> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:IntervalUpperIncluded ;
+                                     rdfs:comment "True if the upper boundary is included in the interval."@en ;
+                                     rdfs:label "upper_included"@en .
+
+
+###  sdc4:XdLinkType/link
+<sdc4:XdLinkType/link> rdf:type owl:NamedIndividual ,
+                                sdc4-meta:ReferenceModelElement ;
+                       sdc4-meta:describesConceptualAspect sdc4-meta:LinkTargetURI ;
+                       rdfs:comment "A dereferenceable (or not) URL to another CMC or other model like entity."@en ;
+                       rdfs:label "link"@en .
+
+
+###  sdc4:XdLinkType/relation
+<sdc4:XdLinkType/relation> rdf:type owl:NamedIndividual ,
+                                    sdc4-meta:ReferenceModelElement ;
+                           sdc4-meta:describesConceptualAspect sdc4-meta:LinkRelationTerm ;
+                           rdfs:comment "A required term, normally drawn from a vocabulary or ontology such as the OBO RO."@en ;
+                           rdfs:label "relation"@en .
+
+
+###  sdc4:XdLinkType/relation-uri
+<sdc4:XdLinkType/relation-uri> rdf:type owl:NamedIndividual ,
+                                        sdc4-meta:ReferenceModelElement ;
+                               sdc4-meta:describesConceptualAspect sdc4-meta:LinkRelationURI ;
+                               rdfs:comment "A URI where the definition of the relation element term can be found."@en ;
+                               rdfs:label "relation-uri"@en .
+
+
+###  sdc4:XdNonNegativeIntegerListType/xdnonnegativeintegerlist-value
+<sdc4:XdNonNegativeIntegerListType/xdnonnegativeintegerlist-value> rdf:type owl:NamedIndividual ,
+                                                                            sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdOrderedType/normal-status
+<sdc4:XdOrderedType/normal-status> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:NormalStatusIndicator ;
+                                   rdfs:comment "Optional normal status indicator of value with respect to normal range for this value."@en ;
+                                   rdfs:label "normal-status"@en .
+
+
+###  sdc4:XdOrdinalType/ordinal
+<sdc4:XdOrdinalType/ordinal> rdf:type owl:NamedIndividual ,
+                                      sdc4-meta:ReferenceModelElement ;
+                             sdc4-meta:describesConceptualAspect sdc4-meta:OrdinalValue ;
+                             rdfs:comment "Value in ordered enumeration of values."@en ;
+                             rdfs:label "ordinal"@en .
+
+
+###  sdc4:XdOrdinalType/symbol
+<sdc4:XdOrdinalType/symbol> rdf:type owl:NamedIndividual ,
+                                     sdc4-meta:ReferenceModelElement ;
+                            sdc4-meta:describesConceptualAspect sdc4-meta:OrdinalSymbol ;
+                            rdfs:comment "Coded textual representation of this value in the enumeration."@en ;
+                            rdfs:label "symbol"@en .
+
+
+###  sdc4:XdPositiveIntegerListType/xdpositiveintegerlist-value
+<sdc4:XdPositiveIntegerListType/xdpositiveintegerlist-value> rdf:type owl:NamedIndividual ,
+                                                                      sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdQuantifiedType/accuracy_margin
+<sdc4:XdQuantifiedType/accuracy_margin> rdf:type owl:NamedIndividual ,
+                                                 sdc4-meta:ReferenceModelElement ;
+                                        sdc4-meta:describesConceptualAspect sdc4-meta:AccuracyMargin ;
+                                        rdfs:comment "Models ACCURACY. Defines the margin of systematic error."@en ;
+                                        rdfs:label "accuracy_margin"@en .
+
+
+###  sdc4:XdQuantifiedType/magnitude-status
+<sdc4:XdQuantifiedType/magnitude-status> rdf:type owl:NamedIndividual ,
+                                                  sdc4-meta:ReferenceModelElement ;
+                                         sdc4-meta:describesConceptualAspect sdc4-meta:MagnitudeStatusIndicator ;
+                                         rdfs:comment "An optional status that describes the relationship of this quantity's value to a contextual target or expected value."@en ;
+                                         rdfs:label "magnitude-status"@en .
+
+
+###  sdc4:XdQuantifiedType/precision_digits
+<sdc4:XdQuantifiedType/precision_digits> rdf:type owl:NamedIndividual ,
+                                                  sdc4-meta:ReferenceModelElement ;
+                                         sdc4-meta:describesConceptualAspect sdc4-meta:PrecisionDigits ;
+                                         rdfs:comment "Models PRECISION. Defines the resolution of the measurement by specifying the number of significant digits after the decimal point."@en ;
+                                         rdfs:label "precision_digits"@en .
+
+
+###  sdc4:XdQuantityType/xdquantity-units
+<sdc4:XdQuantityType/xdquantity-units> rdf:type owl:NamedIndividual ,
+                                                sdc4-meta:ReferenceModelElement ;
+                                       sdc4-meta:describesConceptualAspect sdc4-meta:QuantityUnits ;
+                                       rdfs:comment "The name or type of the quantity."@en ;
+                                       rdfs:label "xdquantity-units"@en .
+
+
+###  sdc4:XdQuantityType/xdquantity-value
+<sdc4:XdQuantityType/xdquantity-value> rdf:type owl:NamedIndividual ,
+                                                sdc4-meta:ReferenceModelElement ;
+                                       sdc4-meta:describesConceptualAspect sdc4-meta:QuantityValue ;
+                                       rdfs:comment "Numeric decimal value of the quantity."@en ;
+                                       rdfs:label "xdquantity-value"@en .
+
+
+###  sdc4:XdStringListType/xdstringlist-value
+<sdc4:XdStringListType/xdstringlist-value> rdf:type owl:NamedIndividual ,
+                                                    sdc4-meta:ReferenceModelElement .
+
+
+###  sdc4:XdStringType/xdstring-language
+<sdc4:XdStringType/xdstring-language> rdf:type owl:NamedIndividual ,
+                                               sdc4-meta:ReferenceModelElement ;
+                                      sdc4-meta:describesConceptualAspect sdc4-meta:LanguageCode ;
+                                      rdfs:comment "Optional indicator of the localised language in which this data-type is written."@en ;
+                                      rdfs:label "xdstring-language"@en .
+
+
+###  sdc4:XdStringType/xdstring-value
+<sdc4:XdStringType/xdstring-value> rdf:type owl:NamedIndividual ,
+                                            sdc4-meta:ReferenceModelElement ;
+                                   sdc4-meta:describesConceptualAspect sdc4-meta:ConceptualValue ;
+                                   rdfs:comment "The string value of the item."@en ;
+                                   rdfs:label "xdstring-value"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-date
+<sdc4:XdTemporalType/xdtemporal-date> rdf:type owl:NamedIndividual ,
+                                               sdc4-meta:ReferenceModelElement ;
+                                      sdc4-meta:describesConceptualAspect sdc4-meta:TemporalDate ;
+                                      rdfs:comment "Represents a specific calendar date (YYYY-MM-DD), with an optional timezone."@en ;
+                                      rdfs:label "xdtemporal-date"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-datetime
+<sdc4:XdTemporalType/xdtemporal-datetime> rdf:type owl:NamedIndividual ,
+                                                   sdc4-meta:ReferenceModelElement ;
+                                          sdc4-meta:describesConceptualAspect sdc4-meta:TemporalDateTime ;
+                                          rdfs:comment "Represents a specific instant in time (YYYY-MM-DDThh:mm:ss.sss), with an optional timezone."@en ;
+                                          rdfs:label "xdtemporal-datetime"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-day
+<sdc4:XdTemporalType/xdtemporal-day> rdf:type owl:NamedIndividual ,
+                                              sdc4-meta:ReferenceModelElement ;
+                                     sdc4-meta:describesConceptualAspect sdc4-meta:TemporalDay ;
+                                     rdfs:comment "Represents a recurring Gregorian day (---DD)."@en ;
+                                     rdfs:label "xdtemporal-day"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-duration
+<sdc4:XdTemporalType/xdtemporal-duration> rdf:type owl:NamedIndividual ,
+                                                   sdc4-meta:ReferenceModelElement ;
+                                          sdc4-meta:describesConceptualAspect sdc4-meta:TemporalDuration ;
+                                          rdfs:comment "Represents a duration of time as defined by ISO 8601 (e.g., P1Y2M3D)."@en ;
+                                          rdfs:label "xdtemporal-duration"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-month
+<sdc4:XdTemporalType/xdtemporal-month> rdf:type owl:NamedIndividual ,
+                                                sdc4-meta:ReferenceModelElement ;
+                                       sdc4-meta:describesConceptualAspect sdc4-meta:TemporalMonth ;
+                                       rdfs:comment "Represents a recurring Gregorian month (--MM--)."@en ;
+                                       rdfs:label "xdtemporal-month"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-month-day
+<sdc4:XdTemporalType/xdtemporal-month-day> rdf:type owl:NamedIndividual ,
+                                                    sdc4-meta:ReferenceModelElement ;
+                                           sdc4-meta:describesConceptualAspect sdc4-meta:TemporalMonthDay ;
+                                           rdfs:comment "Represents a recurring Gregorian day in a recurring month (--MM-DD)."@en ;
+                                           rdfs:label "xdtemporal-month-day"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-time
+<sdc4:XdTemporalType/xdtemporal-time> rdf:type owl:NamedIndividual ,
+                                               sdc4-meta:ReferenceModelElement ;
+                                      sdc4-meta:describesConceptualAspect sdc4-meta:TemporalTime ;
+                                      rdfs:comment "Represents a recurring time of day (hh:mm:ss.sss), with an optional timezone."@en ;
+                                      rdfs:label "xdtemporal-time"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-year
+<sdc4:XdTemporalType/xdtemporal-year> rdf:type owl:NamedIndividual ,
+                                               sdc4-meta:ReferenceModelElement ;
+                                      sdc4-meta:describesConceptualAspect sdc4-meta:TemporalYear ;
+                                      rdfs:comment "Represents a specific Gregorian calendar year (YYYY)."@en ;
+                                      rdfs:label "xdtemporal-year"@en .
+
+
+###  sdc4:XdTemporalType/xdtemporal-year-month
+<sdc4:XdTemporalType/xdtemporal-year-month> rdf:type owl:NamedIndividual ,
+                                                     sdc4-meta:ReferenceModelElement ;
+                                            sdc4-meta:describesConceptualAspect sdc4-meta:TemporalYearMonth ;
+                                            rdfs:comment "Represents a specific Gregorian month in a specific year (YYYY-MM)."@en ;
+                                            rdfs:label "xdtemporal-year-month"@en .
+
+
+###  sdc4:XdTokenListType/xdtokenlist-value
+<sdc4:XdTokenListType/xdtokenlist-value> rdf:type owl:NamedIndividual ,
+                                                  sdc4-meta:ReferenceModelElement .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+sdc4-meta:hasConceptualLabelValue rdfs:comment "Holds the literal string value of the conceptual entity's label (e.g., \"City\")."@en ;
+                                  rdfs:label "has conceptual label value"@en .
+
+
+<sdc4:ASKRType> rdfs:comment "Asked and Refused : Information was sought but refused to be provided."@en ;
+                rdfs:label "ASKRType"@en .
+
+
+<sdc4:ASKUType> rdfs:comment "Asked but Unknown : Information was sought but not found."@en ;
+                rdfs:label "ASKUType"@en .
+
+
+<sdc4:ClusterType> rdfs:comment "The grouping component, which may contain further instances of itself or any eXtended datatype, in an ordered list."@en ;
+                   rdfs:label "ClusterType"@en .
+
+
+<sdc4:DERType> rdfs:comment "Derived : An actual value may exist, but it must be derived from the provided information."@en ;
+               rdfs:label "DERType"@en .
+
+
+<sdc4:ExceptionalValueType> rdfs:comment "Subtypes are used to indicate why a value is missing (Null) or is outside a measurable range."@en ;
+                            rdfs:label "ExceptionalValueType"@en .
+
+
+<sdc4:INVType> rdfs:comment "Invalid : The value as represented in the instance is not a member of the set of permitted data values in the constrained value domain of a variable."@en ;
+               rdfs:label "INVType"@en .
+
+
+<sdc4:ItemType> rdfs:comment "The abstract parent of ClusterType and XdAdapterType structural representation types."@en ;
+                rdfs:label "ItemType"@en .
+
+
+<sdc4:MSKType> rdfs:comment "Masked : There is information on this item available but it has not been provided by the sender due to security, privacy or other reasons."@en ;
+               rdfs:label "MSKType"@en .
+
+
+<sdc4:NASKType> rdfs:comment "Not Asked : This information has not been sought."@en ;
+                rdfs:label "NASKType"@en .
+
+
+<sdc4:NAType> rdfs:comment "Not Applicable : No proper value is applicable in this context."@en ;
+              rdfs:label "NAType"@en .
+
+
+<sdc4:NAVType> rdfs:comment "Not Available: This information is not available and the specific reason is not known."@en ;
+               rdfs:label "NAVType"@en .
+
+
+<sdc4:NINFType> rdfs:comment "Negative Infinity : Negative infinity of numbers"@en ;
+                rdfs:label "NINFType"@en .
+
+
+<sdc4:NIType> rdfs:comment "No Information : The value is exceptional (missing, omitted, incomplete, improper)."@en ;
+              rdfs:label "NIType"@en .
+
+
+<sdc4:OTHType> rdfs:comment "Other: The actual value is not a member of the permitted data values in the variable."@en ;
+               rdfs:label "OTHType"@en .
+
+
+<sdc4:PINFType> rdfs:comment "Positive Infinity : Positive infinity of numbers"@en ;
+                rdfs:label "PINFType"@en .
+
+
+<sdc4:QSType> rdfs:comment "Sufficient Quantity : The specific quantity is not known, but is known to non-zero and it makes up the bulk of the material."@en ;
+              rdfs:label "QSType"@en .
+
+
+<sdc4:ReferenceRangeType> rdfs:comment "Defines a named range to be associated with any ORDERED datatype."@en ;
+                          rdfs:label "ReferenceRangeType"@en .
+
+
+<sdc4:TRCType> rdfs:comment "Trace : The content is greater or less than zero but too small to be quantified."@en ;
+               rdfs:label "TRCType"@en .
+
+
+<sdc4:UNCType> rdfs:comment "Unencoded : No attempt has been made to encode the information correctly but the raw source information is represented."@en ;
+               rdfs:label "UNCType"@en .
+
+
+<sdc4:UNKType> rdfs:comment "Unknown : A proper value is applicable, but not known."@en ;
+               rdfs:label "UNKType"@en .
+
+
+<sdc4:XdAdapterType> rdfs:comment "The leaf variant of Item, to which any XdAnyType subtype instance is attached for use in a Cluster."@en ;
+                     rdfs:label "XdAdapterType"@en .
+
+
+<sdc4:XdAnyType> rdfs:comment "Serves as the common ancestor of all eXtended data-types (Xd*) in Semantic Data Charter."@en ;
+                 rdfs:label "XdAnyType"@en .
+
+
+<sdc4:XdBooleanType> rdfs:comment "An enumerated type which represents boolean decisions."@en ;
+                     rdfs:label "XdBooleanType"@en .
+
+
+<sdc4:XdCountType> rdfs:comment "Countable quantities. Used for countable types such as pregnancies and steps."@en ;
+                   rdfs:label "XdCountType"@en .
+
+
+<sdc4:XdDoubleType> rdfs:comment "Quantified type representing specific a value as a 64 bit number and optional units."@en ;
+                    rdfs:label "XdDoubleType"@en .
+
+
+<sdc4:XdFileType> rdfs:comment "A type to use for encapsulated content (aka. files) for image, audio and other media types with a defined MIME type."@en ;
+                  rdfs:label "XdFileType"@en .
+
+
+<sdc4:XdFloatType> rdfs:comment "Quantified type representing specific a value as a floating point (32 bit) number and optional units."@en ;
+                   rdfs:label "XdFloatType"@en .
+
+
+<sdc4:XdIntervalType> rdfs:comment "A generic type for defining an interval (i.e., range) of ordered values."@en ;
+                      rdfs:label "XdIntervalType"@en .
+
+
+<sdc4:XdLinkType> rdfs:comment "Used to specify a Universal Resource Identifier."@en ;
+                  rdfs:label "XdLinkType"@en .
+
+
+<sdc4:XdOrderedType> rdfs:comment "Abstract type defining the concept of ordered values, which includes ordinals as well as true quantities."@en ;
+                     rdfs:label "XdOrderedType"@en .
+
+
+<sdc4:XdOrdinalType> rdfs:comment "Models rankings and scores, e.g., pain, Apgar values, educational level, and the Likert Scale."@en ;
+                     rdfs:label "XdOrdinalType"@en .
+
+
+<sdc4:XdQuantifiedType> rdfs:comment "Abstract type defining the concept of true quantified values, i.e. values which are not only ordered, but which have a precise magnitude."@en ;
+                        rdfs:label "XdQuantifiedType"@en .
+
+
+<sdc4:XdQuantityType> rdfs:comment "Quantified type representing specific quantities, i.e. quantities expressed as a magnitude and units."@en ;
+                      rdfs:label "XdQuantityType"@en .
+
+
+<sdc4:XdStringType> rdfs:comment "The string data type can contain characters, line feeds, carriage returns, and tab characters."@en ;
+                    rdfs:label "XdStringType"@en .
+
+
+<sdc4:XdTemporalType> rdfs:comment "Type defining a temporal value. It allows for varying levels of precision."@en ;
+                      rdfs:label "XdTemporalType"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

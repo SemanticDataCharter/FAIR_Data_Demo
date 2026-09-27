@@ -1,298 +1,220 @@
 # FAIR Data Demo
 
-**Three federal health studies. One project. Shared semantic infrastructure.**
+[![CI](https://github.com/SemanticDataCharter/FAIR_Data_Demo/actions/workflows/ci.yml/badge.svg)](https://github.com/SemanticDataCharter/FAIR_Data_Demo/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/SemanticDataCharter/FAIR_Data_Demo)](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![SDC4](https://img.shields.io/badge/SDC4-Compliant-teal.svg)](https://semanticdatacharter.com)
 
-All source data is freely downloadable with no registration.
+**Three federal health studies, one component library, and a cross-study question that is a join on the component.**
 
-This repository demonstrates how [SDC](https://semanticdatacharter.com/) (Semantic Data Charter) delivers structural FAIR data compliance across real federal health studies, without mapping tables, without ETL pipelines, and without reconciliation layers.
+This is version 4.2.0 ([releases](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)), the second build of the FAIR Data Demo and the first in which the studies actually share their components. It takes three real federal releases, the CDC's NHANES 2017-2018 and BRFSS 2022 surveys and the CMS DE-SynPUF Medicare claims sample, and models each as [SDC4](https://semanticdatacharter.com) data models composed from the published component libraries: the person, gender and money from the Default library, race, age, education, marital status and insurance from the NIH CDE library, blood pressure, vital signs, laboratory results, encounters, coverage and medication orders from the FHIR library, provenance and audit from the ProvGov library, each named by its identifier slot. What the studies share and no library holds, smoking status, twenty-one chronic-condition indicators with their SNOMED CT subjects, general health, veteran status, is authored once in this project with LOINC and SNOMED CT links, and every study that measures the concept composes the same one. What one study alone needs stays that study's, coded as it was recorded: ICD-9-CM, HCPCS and NDC for the 2008-2010 claims, the survey identifiers, weights, strata and the agencies' own codes beside every harmonized value.
 
-## The FAIR Problem
+The seven models and the seven applications SDCStudio generated from them are in the repository exactly as downloaded, under `sdcstudio_downloads/`, so anyone who clones can read the raw models and apps before reading anything we wrote around them. The data is not invented: every record is generated from a row of the federal file by the template engine, validated on the way out against the model's XSD 1.1 schema, and states where it came from. Alongside its data each record carries its **Provenance** (the PROV-O activity that made it, whose used entity is the federal file by URL and release, and the pipeline as agent), an **Audit Event**, and a structural **Audit** naming the system and the source file, bound to the data at the source rather than bolted on afterward. The record's subject is the study's own participant identifier, so a reviewer can trace any value to its row.
 
-NIH mandates FAIR data sharing. Researchers dutifully publish CSV files. But "available" is not "interoperable."
+## Two guides, depending on why you are here
 
-Consider three federal health studies — NHANES, BRFSS, and CMS DE-SynPUF — all collecting demographics, vital signs, medical history, and medications. Each uses NIH Common Data Elements. Each publishes data. None of it is structurally compatible.
+- **[What to look at, and what to ask](app/sdc4/docs/FOR-DECISION-MAKERS.md)**: a fifteen minute walk-through for the person who signs. No technical background assumed.
+- **[For the people who run it](app/sdc4/docs/FOR-IT-STAFF.md)**: what is generated, how one record becomes three projections, how a refused answer is handled, and the operational notes we learned the hard way.
 
-The same concept — a diabetes indicator — appears as:
-- `DIQ010` in NHANES (SAS transport, coded 1/2/3)
-- `DIABETE4` in BRFSS (SAS transport, coded 1/2/3/4)
-- `SP_DIABETES` in CMS (CSV, coded 1/2)
+## Run it locally
 
-Three encodings. Three parsers. Three mapping efforts. Multiply by every CDE, every study, every institution. This is the state of FAIR data in 2026.
-
-## The SDC Solution
-
-The NIH CDE catalog publishes data element definitions: names, descriptions, data types, permissible values, and usage contexts. SDC takes all of that published information and maps each CDE to a **content-compliant SDC model component**, preserving every semantic detail from the original definition and then extending it with formal constraints that the CDE catalog does not provide: explicit numeric ranges, required units, ontology predicates, and XSD-enforced validation rules. The result is the best deterministic model possible for each concept, not a lossy approximation.
-
-Each component is identified by a permanent `ct_id` (CUID2) and carries its own compiled schema, units, constraints, and semantic links. Consider systolic blood pressure: many variables affect the measurement, including device type (manual cuff vs. automated oscillometric vs. invasive arterial line), patient position (seated, standing, supine), and anatomical location (upper arm, wrist, thigh). None of these contextual factors are captured in CDEs. At all. Ideally, each measurement context would be modeled as a distinct component with its own constraints, because a reading from an automated arm cuff and a reading from an invasive arterial line are not the same measurement. We understand that assumptions are often made in practice, but SDC4's goal is that domain experts create precisely scoped components and that those components are correctly reused across studies for the best accuracy possible.
-
-The mechanism is a shared identifier. When studies reference the *same* component, they inherit its `ct_id`, its XSD schema, and its validation rules, and a cross-study query becomes a join on that `ct_id` — no mapping, no ETL, no reconciliation. Realizing that across studies is not automatic: it requires the shared concepts to be *canonicalized* to a single component, which is a human-in-the-loop modeling decision, not something the agents can settle from sparse source metadata (see [Current Limitations and Future Work](#current-limitations-and-future-work)). In this demo, the federal source metadata was too thin for the agents to confidently match concepts across studies, so each study minted its own components. That reuse gap — not its absence — is what this demo actually documents (see [The Enrichment Story](#the-enrichment-story)).
-
-## Why This Matters for Autonomous AI
-
-Current AI and RAG pipelines attempt to solve this interoperability problem *probabilistically* — using LLMs to guess that `BPXSY1` and `BPHIGH6` mean the same thing. At scale, and at the edges of clinical complexity, this guessing produces hallucinations. The model is confident. The answer is wrong. The patient record is corrupted.
-
-SDC compiles semantic meaning and constraints deterministically into the graph layer via a shared `ct_id`. An AI agent querying this knowledge graph doesn't have to guess what the data means — the structural physics of the data dictate the agent's boundaries. Constraints are enforced by schema validation, not by prompt engineering. The result is a deterministic foundation for AI-driven clinical data operations: structure is validated by schema rather than guessed, so the structural layer cannot hallucinate, and each value's meaning is fixed by its component rather than inferred.
-
-## What This Demo Contains
-
-| Study | Type | Agency | Format | Access |
-|-------|------|--------|--------|--------|
-| **NHANES** | Population Survey | CDC / NCHS | 8 XPT files | Direct download |
-| **BRFSS** | Telephone Survey | CDC | 1 XPT file | Direct download |
-| **CMS DE-SynPUF** | Medicare Claims (Synthetic) | CMS | CSV (Sample 1) | Direct download |
-
-**8 CDE domains** covered. Shared across studies:
-- Demographics — all 3 studies
-- Medical History — all 3 studies
-- Medications — NHANES + CMS
-
-Three different study designs. Three different federal agencies. One shared semantic layer.
-
-### CDE Coverage Matrix
-
-| Domain | NHANES | BRFSS | CMS |
-|--------|--------|-------|-----|
-| Demographics | X | X | X |
-| Medical History | X | X | X |
-| Substance Use | X | X | |
-| Vital Signs (BP, BMI) | X | X | |
-| Medications | X | | X |
-| Physical Function | X | X | |
-| Lab Results | X | | |
-| SDOH | X | | |
-
-## What's Included vs. What You Download
-
-**Included in this repository:**
-- `models/` -- 8 SDC4 model packages (XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL) exported from SDCStudio
-- `apps/` -- 8 generated application packages (self-contained Django projects, lightweight FOSS stack, with full SDC4 integration)
-- `scripts/` -- Pipeline scripts, enrichment code, and conversion tools
-- `sparql/` -- Pre-built cross-study SPARQL queries
-
-**Not included (download separately):**
-- `source_data/` -- Raw federal health data files (NHANES XPT, BRFSS XPT, CMS CSV). These are freely available from CDC and CMS with no registration. See [source_data/README.md](source_data/README.md) for download instructions.
-
-The model and app packages let you inspect the complete SDC4 output without running the pipeline or downloading source data. If you want to reproduce the pipeline end-to-end, follow the Quick Start below.
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.11+
-- Access to an [SDCStudio](https://sdcstudio.axius-sdc.com/) instance with the NIH-CDE catalog
-- SDCStudio API key
-
-### 1. Clone and configure
+You need Docker (or Podman) with the compose plugin, about 10GB of free RAM (GraphDB and SirixDB take 4GB each), Python 3.12 on the host (for data generation only), and the three federal source files, which are free to download without registration. Then:
 
 ```bash
-git clone https://github.com/Axius-SDC/FAIR_Data_Demo.git
+git clone https://github.com/SemanticDataCharter/FAIR_Data_Demo.git
 cd FAIR_Data_Demo
-
-# Create and activate a Python virtual environment
-python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-# .venv\Scripts\activate    # Windows
-
-cp .env.example .env
-# Edit .env with your SDCStudio URL and API key
-pip install -r requirements-pipeline.txt
+git checkout v4.2.0
+# download the source files into source_data/ (see source_data/README.md), then
+python3 -m pip install pyreadstat pandas
+python3 scripts/convert_xpt_to_csv.py     # NHANES and BRFSS ship as SAS transport files
+make demo
 ```
 
-**Important**: In SDCStudio, go to **Settings > Preferences** and set your **Default Project** to the project where new components should be created. The assembly API creates all new components and data models in the Modeler's default project. If no default project is set, assembly will fail.
+`git checkout v4.2.0` pins the release this README describes; skip it to run the current `main`. Every release also publishes the web image as `ghcr.io/semanticdatacharter/fair-data-demo:<version>`, and `make pull` fetches it instead of building locally.
 
-### 2. Download source data
+`make demo` starts the stack, generates the sampled dataset from the source files, and loads it. There are no accounts to create and nothing to send anywhere. The first run needs the network to pull container images and the host-side Python packages; after that the stack runs disconnected. When it finishes there are two front doors:
 
-Follow the instructions in [source_data/README.md](source_data/README.md) to download the freely available federal health data. NHANES and BRFSS XPT files need conversion to CSV with metadata sidecars:
+| Open | What it is |
+|---|---|
+| **http://localhost:18100/console/** | The record console. Seven models, one record shown as table, document and graph, and the governance behind every field. Start here. |
+| **http://localhost:18100/demo/** | The dashboard, the "Three Studies, One Component" walk-through, and the SPARQL explorer. Every result has a **Graph** tab: the records behind the rows as nodes, every subject identifier two of them share drawn as a node between them, and every component two studies compose drawn as a node the records of both studies meet at, labelled with each record's value. Click a record to open it in the console. |
 
-```bash
-python scripts/convert_xpt_to_csv.py
-```
+### Check it worked
 
-This produces `.csv` data files and `.json` sidecar files containing column descriptions, value labels, and enumerations. The sidecar metadata is referenced via `metadata_path` in `sdc-agents.yaml` and merged into introspection results by SDC_Agents 4.2.0, enabling automatic component matching on SAS labels instead of coded column names.
+The generators are seeded, so every run on every machine produces the same records from the same rows. Only the record timestamps move. The console front page should show:
 
-CMS data is already CSV and needs no conversion.
+| | Expected |
+|---|---|
+| Records loaded | **84,352** |
+| Named graphs in GraphDB | **84,352** (one per record, no drift; the loader prints the count per model, and a `COUNT(DISTINCT ?g)` over `GRAPH ?g` in the explorer confirms it) |
+| Models | **7** |
+| Records stating an absence | **0** |
 
-### 3. Run the SDC Agents pipeline
+That last row is different from the CordovaOS demonstration, and deliberately so. Every leaf in these seven models is optional, because a survey row can lack any answer: NHANES codes a refusal as 7 and a don't-know as 9, BRFSS as 7 and 9 or 77 and 99, and CMS leaves the field blank. The generators leave those out of the record and count them, so no 7 is ever averaged as if it were an answer, and the counts are printed when the dataset is generated (`make generate`). Where a model requires a value and the row has none, the record would carry an ISO 21090 null flavor naming the reason and fail validation on purpose; no model here requires one, so no record does.
 
-```bash
-python scripts/run_pipeline.py --study all
-```
+### Choose your dataset
 
-The pipeline runs 7 steps with human approval gates:
+Generation takes about three minutes; **loading is the cost**: each instance is validated against its XSD 1.1 schema, then written to PostgreSQL and projected into GraphDB as its own named graph.
 
-| Step | Action | Human Review |
-|------|--------|--------------|
-| 1 | Introspect all datasources | No |
-| 2 | Verify catalog components exist | No |
-| 3 | Discover component matches + manual overrides | Yes |
-| 4 | Propose cluster hierarchy per study | Yes |
-| 5 | Check wallet balance and estimate cost | Yes |
-| 6 | Assemble data models (reuse + mint) | No |
-| 7 | Download schemas and artifacts | No |
+| Command | Dataset | Records | Load time |
+|---|---|---|---|
+| `make demo` (default) | every NHANES participant and medication row, a seeded sample of 5,000 BRFSS respondents, a seeded sample of 1,000 CMS beneficiaries with every one of their claims and prescription events | 84,352 | about 107 minutes on a laptop, on the batch path (measured: 106.6 minutes, 0 failed) |
+| `make demo-full` | every row of every file | about 7.0 million | days at the measured rate; it is there so a reader can see the generators handle every row, not as a target for a laptop |
 
-Each step caches results in `.sdc-cache/` so the pipeline can resume from any point:
+| Model | Source rows | Records in `make demo` |
+|---|---|---|
+| NHANES Participant | DEMO_J joined on SEQN with BPX_J, TCHOL_J, CBC_J, MCQ_J, SMQ_J, PFQ_J | 9,254 |
+| NHANES Medication | RXQ_RX_J rows naming a medicine (5,343 rows without one are skipped) | 14,300 |
+| BRFSS Respondent | LLCP2022, sampled | 5,000 |
+| CMS Beneficiary | 2008 beneficiary summary, sampled | 1,000 |
+| CMS Inpatient Claim | 2008-2010 inpatient claims of the sampled beneficiaries | 585 |
+| CMS Outpatient Claim | 2008-2010 outpatient claims of the sampled beneficiaries | 6,933 |
+| CMS Prescription Drug Event | 2008-2010 Part D events of the sampled beneficiaries | 47,280 |
 
-```bash
-python scripts/run_pipeline.py --study nhanes --step 6
-```
+The CMS sample is 1,000 beneficiaries rather than 5,000 because the claims and events come with them: 5,000 beneficiaries carry about 290,000 records, which loads for hours; 1,000 carry about 57,000. `SAMPLE` in `datagen/shared.py` sets both sample sizes.
 
-### 4. Review and approve in SDCStudio
+## The seven models
 
-The assembly pipeline uses an LLM to infer component types, constraints, descriptions, and semantic links from the introspected data. This is a **probabilistic process**: the LLM makes its best determination based on column names, sample values, and sidecar metadata, but it cannot guarantee correctness. A blood pressure column might be typed as XdString instead of XdQuantity. A unit might be omitted. An enumeration might include spurious values. A semantic link might point to the wrong ontology concept.
+All seven applications were generated by [SDCStudio](https://sdcstudio.axius-sdc.com/) from the published models. Nobody wrote seven Django apps. The models compose the libraries by identifier slot, and add only what the study alone defines.
 
-This is why the pipeline produces **draft components**, not published ones. A human domain expert must review each draft in [SDCStudio](https://sdcstudio.axius-sdc.com/) before it becomes part of the permanent catalog:
+| Model | Composes from the libraries | Shared FAIR components | Study-local |
+|---|---|---|---|
+| **NHANES Participant** | Default person demographics; NIH CDE race/ethnicity, age, education, marital status, income, pregnancy; FHIR blood pressure and vital signs (first reading, pulse), laboratory results (total cholesterol, WBC, RBC, hemoglobin, hematocrit, platelets) | smoking status, chronic conditions (told by a health professional), general health, physical function | SEQN, cycle, interview and exam weights, PSU, stratum, income-to-poverty ratio, the agency's own codes |
+| **NHANES Medication** | FHIR medication order (name), FHIR condition for up to three reasons (ICD-10-CM, as NHANES codes them) | | SEQN, the NHANES drug identifier, days taken, count |
+| **BRFSS Respondent** | NIH CDE race/ethnicity, sex, age, education, marital status, income, insurance, employment, pregnancy; FHIR vital signs (self-reported height, weight, BMI) | smoking status, alcohol use, chronic conditions (told by a health professional), general health, physical function and disability, exercise, veteran status | SEQNO, state, interview date, weight, PSU, stratum, the agency's calculated variables |
+| **CMS Beneficiary** | Default date of birth and gender; FHIR patient deceased date and insurance coverage; NIH CDE race; Default money for the annual amounts | chronic conditions (found in claims) | DESYNPUF_ID, state and county codes, ESRD indicator |
+| **CMS Inpatient Claim** | FHIR encounter and hospitalization; Default money for payment, deductible, coinsurance, per diem | | claim identifier, provider and physician identifiers, utilization days, DRG; ICD-9-CM diagnoses and procedures and HCPCS as coded values |
+| **CMS Outpatient Claim** | the same shape without hospitalization | | the same |
+| **CMS Prescription Drug Event** | FHIR medication order (quantity, days supply); Default money for patient pay and total cost | | event identifier, service date, NDC as a coded value |
 
-- **Verify component types** — confirm each component uses the correct SDC4 type (XdQuantity vs. XdCount vs. XdString, etc.)
-- **Check constraints** — validate numeric ranges, string patterns, enumeration values, and required units against the study codebook
-- **Assign semantic links** — connect components to the correct ontology concepts (LOINC, SNOMED CT, UMLS, etc.) where the LLM's suggestions are incomplete or incorrect
-- **Edit descriptions** — refine LLM-generated descriptions to accurately reflect the study variable's meaning
-- **Publish** — once a component is correct, publish it to make it available for reuse across studies
+Every model carries the same governance envelope: the ProvGov activity, agent and audit event beside the data, and the FAIR Pipeline Audit in the audit slot. No model binds a workflow: a survey response has no state machine, and the demonstration does not stage one.
 
-After all components are reviewed and published, generate all 8 output formats:
-- XSD schemas, XML instances, JSON, JSON-LD, HTML, RDF, SHACL, GQL
+### The join is the component
 
-SDCStudio generates the complete application from the approved data models.
+Where two studies mean the same thing, their models compose the *same published component*, not two local conventions that a mapping table later reconciles. Measured on the loaded store by the console's first question, which asks GraphDB directly which components records of more than one model carry:
 
-### 5. Generate XML instances from source data
+| Component | Studies carrying it | Records |
+|---|---|---|
+| Administrative Gender | BRFSS, CMS, NHANES | 15,254 |
+| Condition Indicator Basis | BRFSS, CMS, NHANES | 14,897 |
+| Race/Ethnicity Self-Identification | BRFSS, CMS, NHANES | 14,438 |
+| Condition: Stroke | BRFSS, CMS, NHANES | 11,544 |
+| Condition: Cancer | BRFSS, CMS, NHANES | 11,539 |
+| Condition: COPD | BRFSS, CMS, NHANES | 11,532 |
+| Condition: Arthritis | BRFSS, CMS, NHANES | 11,513 |
+| Condition: Coronary Heart Disease | BRFSS, CMS, NHANES | 11,492 |
+| Age | BRFSS, NHANES | 14,254 |
+| Condition: Asthma | BRFSS, NHANES | 13,863 |
+| Observation Status | BRFSS, NHANES | 11,420 |
+| Veteran Status | BRFSS, NHANES | 10,925 |
+| Condition: Heart Attack | BRFSS, NHANES | 10,516 |
+| Marital Status | BRFSS, NHANES | 10,495 |
+| Smoking Status | BRFSS, NHANES | 10,457 |
+| Condition: Congestive Heart Failure | CMS, NHANES | 6,552 |
+| Condition: Diabetes | BRFSS, CMS | 5,988 |
+| Condition: Depression | BRFSS, CMS | 5,969 |
+| Condition: Kidney Disease | BRFSS, CMS | 5,967 |
+| Are you pregnant now? | BRFSS, NHANES | 1,980 |
 
-After models are approved:
+20 components are carried by more than one study, 8 of them by all three. Another 18 are shared between one study's own models (the CMS claim fields both claim models carry, the beneficiary identifier every CMS record carries, the NHANES participant identifier), which is also true and also visible.
 
-```bash
-python scripts/generate_instances.py --study all --validate
-```
+Counted from the records in the triple store, not from a README. The console page prints the query beside the answer. The first visit after a load computes it, which takes about two minutes over 33 million triples; the answer is cached until the next load. The study-local components (the CMS claim codes, the survey weights, NHANES's drug identifier) are carried by one study each, which is also true and also visible.
 
-This generates validated XML instances in `output/instances/`.
+## Three Studies, One Component
 
-## Cross-Study SPARQL Queries
+The walk-through at `/demo/narrative/` runs six beats, each answered by one of the saved queries against the shared store:
 
-Six pre-built queries express the intended cross-study join pattern:
+1. **The audit: what the studies share.** The table above, computed.
+2. **Smoking status, two questionnaires, one component.** NHANES and BRFSS ask different questions; both records carry the same LOINC 72166-2 answer set in the same component.
+3. **Blood pressure: what was measured and what was asked.** NHANES measured it with a cuff, in FHIR's systolic and diastolic components; BRFSS 2022 did not ask, and the query says so instead of finding a substitute.
+4. **Chronic conditions, and the basis each study has for them.** Twenty-one indicators, one component each; the record says whether a health professional said so or a claim was paid for it.
+5. **Medications: where the join does not exist, and why.** NHANES names the drug and carries its own identifier; CMS carries an NDC. Neither is RxNorm, so the two do not join, and the page says that rather than staging it.
+6. **Demographics side by side.** Gender on the Default component, race and ethnicity on the NIH CDE component, by study.
 
-| # | Query | What It Shows |
-|---|-------|---------------|
-| 1 | Cross-Study Demographics | Same demographic components across all 3 studies |
-| 2 | Shared CDE Audit | Which components are reused vs. study-specific |
-| 3 | Vital Signs Comparison | Shared units and measurement constraints |
-| 4 | Chronic Conditions Interoperability | Shared medical history components across studies |
-| 5 | Medication Overlap | Overlapping medication coding across studies |
-| 6 | Cross-Study Medical History | Shared history components |
+## SPARQL queries
 
-All queries join on `ct_id`, the intended interoperability mechanism, with no mapping tables. See [sparql/README.md](sparql/README.md) for details.
+Six pre-built queries in `sparql/` run against the store the seven applications project, one named graph per record. Each anchors on a published component by its `ct_id` or its label, and the join across studies is the component itself.
 
-**Note**: These queries express the *target* pattern. The regenerated models now carry real RDF, but each study currently uses its own components (see [Current Limitations and Future Work](#current-limitations-and-future-work)), so the cross-study joins return results only once shared concepts are canonicalized to common `ct_id`s. The queries are kept as the specification of what that state enables.
+| # | Query | Studies |
+|---|---|---|
+| 1 | Shared component audit | NHANES, BRFSS, CMS |
+| 2 | Smoking status by study | NHANES, BRFSS |
+| 3 | Blood pressure by study | NHANES, BRFSS |
+| 4 | Chronic conditions by study and basis | NHANES, BRFSS, CMS |
+| 5 | Medication coding by study | NHANES, CMS |
+| 6 | Demographics side by side | NHANES, BRFSS, CMS |
 
-## Current Limitations and Future Work
+Every query was run against the loaded store before this release; [sparql/README.md](sparql/README.md) has what each returned. The console's cross-study page at `/console/question/` runs the audit and the chronic-condition question with the query printed beside the answer.
 
-**Cross-study component reuse is not yet realized in this demo.** The headline capability — shared concepts resolving to a single `ct_id` so a cross-study query becomes a join — requires the shared concepts to be *canonicalized*: one canonical component per concept, reused by every study that measures it. In this run the agents could not match concepts across studies confidently, because the federal source metadata was too sparse (BRFSS ships zero column labels; CMS ships none in machine-readable form; see [The Enrichment Story](#the-enrichment-story)). Each study therefore minted its own components, and the three studies currently share **no** components. The cross-study SPARQL queries above are correct as a specification but return empty against the current models.
+## How it was built
 
-Closing that gap is not an automation problem. It is exactly the human-in-the-loop (HITL) work this demo is built to make visible: **domain experts must review the draft components and decide which ones represent the same concept**, then converge them onto a single canonical component that every study references. An LLM can propose candidates; it cannot make the clinical judgment that a systolic blood pressure recorded in NHANES, in BRFSS, and in a CMS claim are the same measurement under the same constraints — or that they are not, because of a difference in device, position, or population that only a domain expert would catch. That determination, and the canonicalization it produces, is the next step, and it is what turns the cross-study queries from a specification into a working demonstration. It is deliberately expert-driven: the point of SDC is that meaning is decided by the people who own the domain, not guessed by a model.
+The curation is in this repository as code, the way the component libraries themselves are built:
 
-## The Challenge
+1. `build/author.py` writes the 266 component records (81 tokens, 70 clusters, 49 quantities, 23 strings, 22 counts, 14 units, 4 temporals, 3 links), each with its source, its definition, and its links: 101 `skos:exactMatch` and 41 `skos:closeMatch` to LOINC, SNOMED CT and the agencies' codebooks, 22 `dcterms:subject` SNOMED CT conditions, 152 `rdfs:seeAlso`. Members are composed by identifier slot (`https://axius-sdc.com/library/<library>/<key>`) or by `ct_id` for the NIH CDE library, which has no slot.
+2. `review/fair.csv` is the human review of every record; nothing loads without an accept.
+3. `load_component_records` on SDCStudio loads the bundles into the production project **FAIR Data Demo** and publishes them; the seven data models are assembled from the published components with the governance envelope; packages and applications are generated and downloaded verbatim into `sdcstudio_downloads/`.
+4. `datagen/` generates the records: one generator per model names the facts a row has by their label path in the published model, and `datagen/engine.py` fills the model's own instance template, drops what was not given, and refuses a value of a shape the schema does not allow. No generator carries an element identifier or an XML envelope.
+5. The stack is the CordovaOS 4.4.0 skeleton with the seven generated applications merged in and the loader on the batch path.
 
-Submit a payload that violates the NIH CDE constraints.
+The project's components from the first build, 976 of them and eight models, stay published and are retired with a reason naming the successor slot or the reason the column was not carried forward. Nothing anyone downloaded stops resolving; `models-4.2.0.json` records every new model's `wasRevisionOf`.
 
-- The CSV will accept it.
-- The SDC schema will reject it.
+## The first build, as history
 
-Try entering a systolic blood pressure of -50 mmHg, or a date of birth in the year 3000, or a medication dosage with no units. The CSV has no opinion. The SDC XSD does.
+The first build (March 2026) ran the SDC_Agents pipeline over the same three studies: introspect the files, discover catalog matches, enrich the sparse federal metadata (about 2,000 lines of codebook parsing in `scripts/enrichment/`, kept as the record of what that took), assemble models by API, and download them. It published 976 components across eight models, and found what this build is built on: the agencies' metadata was too thin for an agent to say that two columns measured the same concept, so each study minted its own components and the studies shared none. The cross-study queries were kept as a specification and the README said so.
 
-FAIR means more than findable and accessible. It means the data **means what it claims to mean** and can be **used without translation**.
+That is the finding: the join across studies is a modelling decision a person makes, not a match an agent guesses. This build makes it as reviewed records, once, and every study composes the result. The pipeline scripts and `sdc-agents.yaml` remain in the repository as what the first build did; they are not part of `make demo`.
 
-## How It's Built
+## What this demonstration does not show
 
-Every component in this demo was modeled in [SDCStudio](https://sdcstudio.axius-sdc.com/), the production platform for SDC-compliant data models. [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) create and reuse NIH-CDE catalog components via the SDCStudio API, and a human approves draft components before building the final data models. SDCStudio then generates the complete application from the approved models.
+- **Medications do not join across studies.** NHANES carries the drug name and its own identifier; CMS carries an NDC. An RxNorm mapping of both would make the join, and neither source ships one. Beat 5 shows the gap instead of hiding it.
+- **Education and income are not harmonized.** The NIH CDE lists (24 education levels by grade and degree; income bands) do not nest with the NHANES and BRFSS bands, so those models carry the agency's own codes only, beside the harmonized values where nesting was clean (gender, race and ethnicity, marital status, pregnancy, smoking, the conditions).
+- **BRFSS 2022 has no blood pressure or cholesterol history.** Those modules were not in the 2022 core questionnaire, so beat 3 compares NHANES's measurements with what BRFSS asked, which is nothing.
+- **The CMS claims are coded as recorded.** Diagnoses and procedures are ICD-9-CM, procedures on lines are HCPCS; nothing is mapped to ICD-10-CM or CPT. Codes that do not match the code system's pattern in the slot the file put them in are left out and counted (244 procedure slots in the inpatient sample carry diagnosis-shaped codes).
+- **There is no person-level join across studies.** The three populations are different people. The join is the component, and the graph draws it as one.
+- **The CMS data is synthetic.** DE-SynPUF is CMS's synthetic public use file, built to have the shape of Medicare claims without any beneficiary in it. NHANES and BRFSS are real, de-identified survey releases.
+- **BRFSS columns outside the curated set are not carried.** LLCP2022 has 326 columns; the model carries the demographics, health status, conditions, substance use, disability and survey design columns the design names, with the agency's calculated variables.
 
-The workflow:
-1. Use SDC_Agents API to create/reuse NIH-CDE catalog components (shared concepts resolve to the same `ct_id` where the agents match them; cross-study canonicalization is expert-reviewed, see Current Limitations)
-2. Agents assemble components into clusters within the FAIR Data Demo project
-3. In SDCStudio, approve draft components and build study-level data models
-4. Generate all output formats (XSD, XML, JSON, JSON-LD, HTML, RDF, SHACL, GQL)
-5. SDCStudio generates the application from the data models
-6. Query across studies using SPARQL — joins on shared `ct_id`
+## If something goes wrong
 
-No custom integration code. No study-specific adapters. The interoperability mechanism is structural — a join on shared identifiers rather than bespoke adapters — once shared concepts are canonicalized (see Current Limitations).
+| Symptom | Cause and fix |
+|---|---|
+| `make demo` hangs at "Waiting for the web app" | First run migrates the database and initialises the GraphDB repository, which takes 1-2 minutes. If it exceeds five, check `docker compose -f app/sdc4/docker-compose.yml logs web`. |
+| `make generate` fails on a missing file | The source files are not in the repository. `source_data/README.md` lists each one with its download page; NHANES and BRFSS need `scripts/convert_xpt_to_csv.py` run once after download. |
+| SirixDB exits with "Realm does not exist" | Keycloak did not import the realm SirixDB authenticates against, `app/sdc4/mediafiles/keycloak/import/sirixdb-realm.json`. It is in the repository; if the directory was created root-owned by an earlier container start, fix its ownership and recreate Keycloak. |
+| Ports already in use | The stack binds 18100 (web), 17300 (GraphDB), 18081 (Keycloak), 15433 (PostgreSQL), 16380 (Redis), 19444 (SirixDB). Each is overridable by environment variable (`WEB_PORT`, `GRAPHDB_PORT`, `KEYCLOAK_PORT`, `DB_PORT`, `REDIS_PORT`, `SIRIX_PORT`) rather than by editing the compose file. |
+| Containers die or the load stalls | GraphDB wants headroom. Give Docker about 10GB of RAM; GraphDB runs with a 4GB heap and is the first to fail without it. |
+| Record count is right, named graph count is higher | Orphaned graphs from a previous load. Each load mints new instance identifiers, so `--clear` must clear both stores. Re-run `make demo`, which passes `--clear`. |
+| Records show as invalid that should be valid | Schema resolution went to the network and failed. Every data model schema includes `sdc4.xsd` by URL; an OASIS catalog at `app/sdc4/mediafiles/dmlib/catalog.xml` resolves it locally instead. A warning in the load output names it if the catalog was missed. |
 
-## The Enrichment Story
+**Air-gapped evaluation.** Once the images are pulled and `make demo` has run, the stack needs no outbound network. Unplug and reload: validation falls back to the local schema and every page still renders.
 
-The 567 components in this demo did not arrive self-describing. Getting them there required significant one-time effort, and that effort is the whole point.
-
-### What we found
-
-Three federal datasets, three different metadata formats, none structurally compatible:
-
-| Study | Metadata Format | How You Access It |
-|-------|----------------|-------------------|
-| **NHANES** | SAS transport labels + HTML codebook | Parse `.xpt` variable labels, scrape CDC HTML pages with BeautifulSoup |
-| **BRFSS** | HTML codebook (400+ pages) | Parse HTML tables, cross-reference variable-specific coding |
-| **CMS DE-SynPUF** | PDF codebook + no machine-readable metadata | Hardcode 121 variable definitions by hand from the PDF |
-
-None of these formats share a schema. None publish constraints (numeric ranges, required units, valid enumerations) in a machine-readable form. The "FAIR" data is findable and accessible, but it is not interoperable and not reusable without significant manual effort.
-
-### What it took
-
-~1,974 lines of Python in `scripts/enrichment/`:
-
-- **`metadata_nhanes.py`**: Parses SAS transport labels and augments with descriptions, constraints, and units per NHANES codebook
-- **`metadata_brfss.py`**: Scrapes BRFSS HTML codebook, extracts variable descriptions, value labels, and coding schemes
-- **`metadata_cms.py`**: 121 hardcoded CMS variable definitions (descriptions, data types, enumerations) transcribed from the PDF codebook
-- **`semantic_mappings.py`**: 85 curated LOINC and SNOMED CT mappings linking components to standard ontology concepts
-- **`component_mapper.py`**: Maps enriched metadata to SDC4 component types with appropriate constraints
-- **`api_client.py`**: Batch updates components in SDCStudio via the API (800+ API calls)
-
-This is the work that "FAIR" compliance actually requires when your source data lacks self-describing metadata.
-
-### The punchline
-
-All of this was a **one-time effort**. Now that the 567 components exist in the SDC catalog, every subsequent user who needs NHANES demographics, BRFSS vital signs, or CMS claims data gets **100% catalog reuse at $0.00**. The metadata, constraints, semantic links, and validation rules travel inside each component permanently, identified by its `ct_id`.
-
-When you run this pipeline, the discovery step finds all 567 components already in the catalog. Zero new components to mint. Zero enrichment scripts to run. Zero codebooks to parse. The ~2,000 lines of enrichment code in this repository exist solely to document what it took the first time, so you understand what you are no longer paying for.
-
-### The contrast
-
-Without SDC, every new researcher working with these datasets repeats some version of this work from scratch: parsing codebooks, hardcoding definitions, mapping variables across studies, reconciling units and enumerations. The NIH CDE catalog publishes definitions but not constraints. The data files publish values but not semantics. The gap between "available" and "interoperable" is filled by graduate students, one study at a time, and their work is never reusable by the next team.
-
-## Repository Structure
+## Repository structure
 
 ```
 FAIR_Data_Demo/
-├── scripts/                     # Pipeline scripts
-│   ├── run_pipeline.py          # 7-step SDC Agents orchestration
-│   ├── generate_instances.py    # Post-assembly XML generation
-│   ├── convert_xpt_to_csv.py    # NHANES + BRFSS XPT preprocessing
-│   ├── fair_constants.py        # Shared ct_ids and study metadata
-│   └── enrichment/              # One-time metadata enrichment (~1,974 lines)
-│       ├── metadata_nhanes.py   # NHANES SAS labels + codebook parsing
-│       ├── metadata_brfss.py    # BRFSS HTML codebook scraping
-│       ├── metadata_cms.py      # CMS hardcoded definitions (121 variables)
-│       ├── semantic_mappings.py  # 85 LOINC/SNOMED CT mappings
-│       ├── component_mapper.py  # Metadata → SDC4 component type mapping
-│       └── api_client.py        # Batch SDCStudio API updates
-├── source_data/                 # Raw study data (NOT included -- user downloads separately)
-│   ├── nhanes/
-│   ├── brfss/
-│   └── cms/
-├── models/                      # SDC4 model packages (INCLUDED -- 8 zip files)
-│   ├── NHANES/                  #   Blood-Pressure, Cholesterol, Medications
-│   ├── BRFSS/                   #   Brfss
-│   └── CMS/                     #   Beneficiary, Inpatient, Outpatient, Prescriptions
-├── sparql/                      # Pre-built SPARQL queries
-├── apps/                        # Generated app packages, FOSS stack (INCLUDED -- 8 zip files)
-├── sdc-agents.yaml              # SDC Agents configuration (13 datasources)
-└── requirements-pipeline.txt    # Pipeline dependencies
+├── app/sdc4/                    # the stack: settings, compose, loader, console, demo, the seven generated apps
+│   ├── mediafiles/dmlib/        # the published model per app (XSD, instance template, RDF, JSON-LD, HTML)
+│   └── docs/                    # the two guides
+├── build/                       # the curation as code: author.py, convert, bundle, chunk, the one-offs
+├── datagen/                     # the template engine and one generator per model; tests
+├── records/                     # the 266 component records, as reviewed
+├── review/                      # the review sheets (every record accepted, every first-build record retired)
+├── sdcstudio_downloads/         # the seven model packages and generated apps, verbatim
+├── sparql/                      # the six cross-study queries and what they returned
+├── source_data/                 # the federal files (not committed; README says where)
+├── scripts/                     # convert_xpt_to_csv.py, and the first build's pipeline as history
+└── models-4.2.0.json            # every model's ct_id and what it revises
 ```
 
-## The Public Good Guarantee
+## Related projects
 
-The US taxpayers already paid for this data. Why is the industry charging researchers thousands of dollars to map it over and over again? Once a publicly published, standards-based, content-compliant component is built, it should be free for reuse. Axius SDC paid the initial $72.40 to compile the exact semantic boundaries of these federal datasets into permanent CUIDs, plus the engineering cost of ~2,000 lines of enrichment code to extract metadata that the source datasets should have included but did not. Now that the physics are built, they belong to the public. When you run this pipeline, your cost is $0.00. FOR REAL.
-
-## Related Projects
-
-- [SDCStudio](https://sdcstudio.axius-sdc.com/) — Production platform for SDC data models
-- [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents) — AI agents for automated SDC model generation
-- [CordovaOS](https://github.com/Axius-SDC/CordovaOS) — Sovereign operating system demo (civil registry use case)
-- [SDCRM](https://github.com/SemanticDataCharter/SDCRM) — SDC Reference Model specification
+- [SDCStudio](https://sdcstudio.axius-sdc.com/): the platform the models were built and published on
+- [CordovaOS](https://github.com/Axius-SDC/CordovaOS): the same stack for a fictional nation's ten government domains
+- [SDCRM](https://github.com/SemanticDataCharter/SDCRM): the SDC Reference Model specification
+- [SDC_Agents](https://github.com/Axius-SDC/SDC_Agents): the agents the first build ran
 
 ## License
 
-Apache 2.0 — see [LICENSE](LICENSE).
+Apache 2.0, see [LICENSE](LICENSE).
 
-Built by [Axius SDC](https://axius-sdc.com).
+Built by [Axius SDC, Inc.](https://axius-sdc.com)

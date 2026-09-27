@@ -1,0 +1,14 @@
+key: cms-part-d-coverage-months
+label: Part D Plan Coverage Months
+type: XdCount
+description: Total months of Part D plan coverage in the reference year (PLAN_CVRG_MOS_NUM).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  units: units-months
+  min_inclusive: 0
+  max_inclusive: 12

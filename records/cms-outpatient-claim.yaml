@@ -1,0 +1,59 @@
+key: cms-outpatient-claim
+label: CMS Outpatient Claim
+type: Cluster
+description: 'One DE-SynPUF outpatient claim (2008-2010): the beneficiary and claim identifiers, the visit as the FHIR encounter by identifier,
+  provider and physicians, the payment and blood deductible amounts, the Part B coinsurance and deductible, the admitting diagnosis, up to ten
+  diagnoses, six procedures and ten HCPCS codes. Members: Beneficiary Code (DESYNPUF_ID); Claim ID (CLM_ID); Claim Line Segment (SEGMENT); encounter
+  (FHIR); Provider Institution (PRVDR_NUM); Claim Payment Amount; Primary Payer Claim Paid Amount; Attending Physician NPI (AT_PHYSN_NPI); Operating
+  Physician NPI (OP_PHYSN_NPI); Other Physician NPI (OT_PHYSN_NPI); Blood Deductible Liability Amount; Part B Coinsurance Amount; Part B Deductible
+  Amount; Admitting Diagnosis; Claim Diagnosis 1; Claim Diagnosis 2; Claim Diagnosis 3; Claim Diagnosis 4; Claim Diagnosis 5; Claim Diagnosis
+  6; Claim Diagnosis 7; Claim Diagnosis 8; Claim Diagnosis 9; Claim Diagnosis 10; Claim Procedure 1; Claim Procedure 2; Claim Procedure 3; Claim
+  Procedure 4; Claim Procedure 5; Claim Procedure 6; Claim HCPCS 1; Claim HCPCS 2; Claim HCPCS 3; Claim HCPCS 4; Claim HCPCS 5; Claim HCPCS 6;
+  Claim HCPCS 7; Claim HCPCS 8; Claim HCPCS 9; Claim HCPCS 10.'
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/StructureDefinition/Claim
+  basis: standard
+members:
+- cms-beneficiary-code
+- cms-claim-id
+- cms-claim-line-segment
+- https://axius-sdc.com/library/fhir/encounter
+- cms-provider-institution
+- cms-claim-payment-amount
+- cms-primary-payer-claim-paid-amount
+- cms-attending-physician-npi
+- cms-operating-physician-npi
+- cms-other-physician-npi
+- cms-blood-deductible-liability-amount
+- cms-part-b-coinsurance-amount
+- cms-part-b-deductible-amount
+- cms-admitting-diagnosis
+- cms-claim-diagnosis-1
+- cms-claim-diagnosis-2
+- cms-claim-diagnosis-3
+- cms-claim-diagnosis-4
+- cms-claim-diagnosis-5
+- cms-claim-diagnosis-6
+- cms-claim-diagnosis-7
+- cms-claim-diagnosis-8
+- cms-claim-diagnosis-9
+- cms-claim-diagnosis-10
+- cms-claim-procedure-1
+- cms-claim-procedure-2
+- cms-claim-procedure-3
+- cms-claim-procedure-4
+- cms-claim-procedure-5
+- cms-claim-procedure-6
+- cms-claim-hcpcs-1
+- cms-claim-hcpcs-2
+- cms-claim-hcpcs-3
+- cms-claim-hcpcs-4
+- cms-claim-hcpcs-5
+- cms-claim-hcpcs-6
+- cms-claim-hcpcs-7
+- cms-claim-hcpcs-8
+- cms-claim-hcpcs-9
+- cms-claim-hcpcs-10

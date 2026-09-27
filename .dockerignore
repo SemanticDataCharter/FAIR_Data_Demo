@@ -1,0 +1,30 @@
+# Build context is the repo root (matches app/sdc4/Dockerfile COPY paths and CI).
+# Keep the context lean: only app/sdc4, sparql, and scripts are needed.
+.git
+.github
+sdcstudio_downloads
+datagen
+docs
+*.md
+# runtime volumes / generated (mounted at runtime, not needed in image)
+app/sdc4/mediafiles/postgres
+app/sdc4/mediafiles/graphdb
+app/sdc4/mediafiles/sirixdb
+app/sdc4/mediafiles/keycloak
+app/sdc4/mediafiles/fuseki
+app/sdc4/staticfiles
+app/sdc4/import_data/*
+!app/sdc4/import_data/.gitkeep
+# python cruft
+**/__pycache__
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache
+**/.mypy_cache
+source_data
+build
+records
+review
+models-4.2.0.json
+.venv
+.sdc-cache

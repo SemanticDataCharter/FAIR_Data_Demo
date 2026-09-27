@@ -1,0 +1,16 @@
+key: condition-indicator-basis
+label: Condition Indicator Basis
+type: XdToken
+description: 'How a study established its chronic condition indicators: the person''s report of what a health professional told them (NHANES,
+  BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:closeMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C25596
+  basis: concept
+enumeration:
+- value: Self-report of a professional diagnosis
+  definition: http://purl.obolibrary.org/obo/NCIT_C93409
+- value: Claims-based algorithm
+  definition: http://purl.obolibrary.org/obo/NCIT_C25404

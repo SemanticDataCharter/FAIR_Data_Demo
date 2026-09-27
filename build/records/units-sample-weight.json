@@ -1,0 +1,55 @@
+{
+  "tiny_id": "units-sample-weight",
+  "label": "Sample Weight",
+  "description": "A dimensionless survey sample weight.",
+  "sdc_type": "Units",
+  "excluded": false,
+  "constraints": {
+    "enums": [
+      "1"
+    ],
+    "enum_descr": [
+      "1"
+    ],
+    "definitions": [
+      "http://qudt.org/vocab/unit/NUM"
+    ]
+  },
+  "enumeration": [
+    {
+      "value": "1",
+      "definition": "http://qudt.org/vocab/unit/NUM"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/units-sample-weight",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://qudt.org/",
+      "basis": "mechanical",
+      "note": "QUDT"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:closeMatch",
+      "iri": "http://qudt.org/schema/qudt/Unit",
+      "basis": "concept",
+      "note": ""
+    }
+  ],
+  "identity_status": "close",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

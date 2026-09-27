@@ -1,0 +1,15 @@
+key: nhanes-taken-prescription-past-month
+label: Taken Prescription Medicine, Past Month (RXDUSE)
+type: XdToken
+description: Whether the participant took prescription medicine in the past 30 days (RXDUSE).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDUSE
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

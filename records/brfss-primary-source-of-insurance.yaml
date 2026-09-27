@@ -1,0 +1,34 @@
+key: brfss-primary-source-of-insurance
+label: Primary Source of Health Insurance (PRIMINSR)
+type: XdToken
+description: The current primary source of health insurance coverage (PRIMINSR). Kept beside the NIH CDE Category of Health Insurance it is mapped
+  to.
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+enumeration:
+- value: A plan purchased through an employer or union
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: A private nongovernmental plan that you or another family member buys on your own
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Medicare
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Medigap
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Medicaid
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: CHIP
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Military related health care
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Indian Health Service
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: State sponsored health plan
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: Other government program
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+- value: No coverage of any type
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf

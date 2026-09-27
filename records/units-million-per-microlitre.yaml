@@ -1,0 +1,13 @@
+key: units-million-per-microlitre
+label: Millions per Microlitre
+type: Units
+description: Cell count in millions of cells per microlitre (UCUM 10*6/uL).
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: 10*6/uL
+  definition: https://ucum.org/ucum

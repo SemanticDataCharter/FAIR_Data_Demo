@@ -1,0 +1,43 @@
+{
+  "tiny_id": "hcpcs-code",
+  "label": "HCPCS Code",
+  "description": "A HCPCS code as recorded on a Medicare claim line: five characters, CPT (Level I) or Level II.",
+  "sdc_type": "XdString",
+  "excluded": false,
+  "constraints": {
+    "max_length": 5,
+    "str_fmt": "[0-9A-Z][0-9]{3}[0-9A-Z]"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/hcpcs-code",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://www.ama-assn.org/go/cpt",
+      "basis": "mechanical",
+      "note": "HCPCS"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://www.ama-assn.org/go/cpt",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

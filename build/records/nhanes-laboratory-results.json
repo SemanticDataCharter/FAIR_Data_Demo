@@ -1,0 +1,64 @@
+{
+  "tiny_id": "nhanes-laboratory-results",
+  "label": "NHANES Laboratory Results",
+  "description": "The laboratory results carried: total cholesterol (TCHOL_J) and the complete blood count with differential (CBC_J), each analyte a quantity identified by its LOINC code. Members: Total Cholesterol; Total Cholesterol (SI); White Blood Cell Count; Lymphocyte Percent; Monocyte Percent; Segmented Neutrophils Percent; Eosinophils Percent; Basophils Percent; Lymphocyte Number; Monocyte Number; Segmented Neutrophils Number; Eosinophils Number; Basophils Number; Red Blood Cell Count; Hemoglobin; Hematocrit; Mean Cell Volume; Mean Cell Hemoglobin; Mean Cell Hemoglobin Concentration; Red Cell Distribution Width; Platelet Count; Mean Platelet Volume; Nucleated Red Blood Cells.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-laboratory-results",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/StructureDefinition/Observation",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-total-cholesterol",
+    "nhanes-total-cholesterol-si",
+    "nhanes-white-blood-cell-count",
+    "nhanes-lymphocyte-percent",
+    "nhanes-monocyte-percent",
+    "nhanes-neutrophil-percent",
+    "nhanes-eosinophil-percent",
+    "nhanes-basophil-percent",
+    "nhanes-lymphocyte-count",
+    "nhanes-monocyte-count",
+    "nhanes-neutrophil-count",
+    "nhanes-eosinophil-count",
+    "nhanes-basophil-count",
+    "nhanes-red-blood-cell-count",
+    "nhanes-hemoglobin",
+    "nhanes-hematocrit",
+    "nhanes-mean-cell-volume",
+    "nhanes-mean-cell-hemoglobin",
+    "nhanes-mean-cell-hemoglobin-concentration",
+    "nhanes-red-cell-distribution-width",
+    "nhanes-platelet-count",
+    "nhanes-mean-platelet-volume",
+    "nhanes-nucleated-red-blood-cells"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

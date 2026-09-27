@@ -1,0 +1,24 @@
+key: nhanes-race-hispanic-origin
+label: Race/Hispanic Origin with NH Asian (RIDRETH3)
+type: XdToken
+description: Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to;
+  the mapping is in the generator and Other Race including multi-racial has no CDE value.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDRETH3
+  basis: standard
+enumeration:
+- value: Mexican American
+  definition: http://purl.obolibrary.org/obo/NCIT_C67175
+- value: Other Hispanic
+  definition: http://purl.obolibrary.org/obo/NCIT_C17459
+- value: Non-Hispanic White
+  definition: http://purl.obolibrary.org/obo/NCIT_C41261
+- value: Non-Hispanic Black
+  definition: http://purl.obolibrary.org/obo/NCIT_C16352
+- value: Non-Hispanic Asian
+  definition: http://purl.obolibrary.org/obo/NCIT_C41260
+- value: Other Race - Including Multi-Racial
+  definition: http://purl.obolibrary.org/obo/NCIT_C17649

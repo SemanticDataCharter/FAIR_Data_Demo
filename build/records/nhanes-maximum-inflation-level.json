@@ -1,0 +1,45 @@
+{
+  "tiny_id": "nhanes-maximum-inflation-level",
+  "label": "Maximum Inflation Level (BPXML1)",
+  "description": "The maximum inflation level used, in mm Hg (BPXML1).",
+  "sdc_type": "XdQuantity",
+  "excluded": false,
+  "constraints": {
+    "total_digits": 3,
+    "fraction_digits": 0,
+    "min_inclusive": 0,
+    "units_slot": "https://axius-sdc.com/library/default/units-pressure"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-maximum-inflation-level",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPXML1",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

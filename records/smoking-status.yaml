@@ -1,0 +1,22 @@
+key: smoking-status
+label: Smoking Status
+type: XdToken
+description: 'Tobacco smoking status (LOINC 72166-2) as the survey establishes it: NHANES from SMQ020 and SMQ040, BRFSS from SMOKE100 and SMOKDAY2
+  (the agency''s _SMOKER3 is kept beside it). The LOINC answer list LL2201-3.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: skos:exactMatch
+  iri: https://loinc.org/72166-2/
+  basis: standard
+enumeration:
+- value: Current every day smoker
+  definition: https://loinc.org/LA18976-3/
+- value: Current some day smoker
+  definition: https://loinc.org/LA18977-1/
+- value: Former smoker
+  definition: https://loinc.org/LA15920-4/
+- value: Never smoker
+  definition: https://loinc.org/LA18978-9/
+- value: Smoker, current status unknown
+  definition: https://loinc.org/LA18979-7/

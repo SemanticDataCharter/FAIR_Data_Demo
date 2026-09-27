@@ -1,0 +1,45 @@
+{
+  "tiny_id": "brfss-body-measures",
+  "label": "BRFSS Body Measures",
+  "description": "Self-reported height and weight as the agency codes them, and as the FHIR vital signs panel by identifier (body height, body weight, BMI), with the agency's computed BMI category. Members: Reported Height in Feet and Inches (HEIGHT3); Reported Weight in Pounds (WEIGHT2); vital-signs-panel (FHIR); Computed Body Mass Index Category (_BMI5CAT).",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/brfss-body-measures",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://www.cdc.gov/brfss/annual_data/annual_2022.html",
+      "basis": "mechanical",
+      "note": "BRFSS 2022"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://loinc.org/39156-5/",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "brfss-reported-height",
+    "brfss-reported-weight-in-pounds",
+    "https://axius-sdc.com/library/fhir/vital-signs-panel",
+    "brfss-bmi-category"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,14 @@
+key: nhanes-age-started-smoking
+label: Age Started Smoking Cigarettes Regularly (SMD030)
+type: XdCount
+description: The age the participant started smoking cigarettes regularly (SMD030).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMD030
+  basis: standard
+constraints:
+  units: units-years
+  min_inclusive: 0
+  max_inclusive: 100

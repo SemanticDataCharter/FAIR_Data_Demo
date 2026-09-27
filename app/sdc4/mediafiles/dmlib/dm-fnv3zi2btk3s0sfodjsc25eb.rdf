@@ -1,0 +1,2072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xml:base="https://semanticdatacharter.com/ns/sdc4/dm-fnv3zi2btk3s0sfodjsc25eb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sdc4-meta="https://semanticdatacharter.com/ontology/sdc4-meta/"
+>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-a5scyosu6j84vz350mqyrzl2">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Ended At</rdfs:label>
+    <rdfs:comment>When the activity ended (prov:endedAtTime).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-h1vwqq8ulrb27qpl6zuzppnf">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Invalidated By Reference</rdfs:label>
+    <rdfs:comment>The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/MANDPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>MANDPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#MANDPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Diabetes</rdfs:label>
+    <rdfs:comment>Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/VET">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>VET</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#VET</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xxe21o9ojzmy9wxxky1tnmog">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Agent Name</rdfs:label>
+    <rdfs:comment>The name of the agent (foaf:name).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <dc:title>CMS Beneficiary</dc:title>
+    <dc:creator>Timothy Cook</dc:creator>
+    <dc:rights>CC-BY http://creativecommons.org/licenses/by/3.0/</dc:rights>
+    <dc:relation>None</dc:relation>
+    <dc:coverage>Universal</dc:coverage>
+    <dc:type>SDC Data Model (DM)</dc:type>
+    <dc:identifier>dm-fnv3zi2btk3s0sfodjsc25eb</dc:identifier>
+    <dc:description>SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo</dc:description>
+    <dc:date>2026-09-26 22:03:40.721481+00:00</dc:date>
+    <dc:format>text/xml</dc:format>
+    <dc:language>en-US</dc:language>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/EmptyCollection">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b"/>
+    <rdfs:label>EmptyCollection</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#EmptyCollection</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-z7hdfvo8n55ebh3hqs2devzz">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType"/>
+    <rdfs:label>Hospital Insurance (Part A) Coverage Months</rdfs:label>
+    <rdfs:comment>Total months of Part A coverage in the reference year (BENE_HI_CVRAGE_TOT_MONS).</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-of4crvmnrr3s5q5396kmt0jv">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Depression</rdfs:label>
+    <rdfs:comment>Whether the person has depression (Depression, SNOMED CT 35489007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS ADDEPEV3, CMS SP_DEPRESSN.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-afusetixnkfrt5zheumblskw">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Inpatient Annual Primary Payer Reimbursement</rdfs:label>
+    <rdfs:comment>Primary payer reimbursement for inpatient services in the year (PPPYMT_IP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/EWB">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>EWB</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#EWB</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Activity Status</rdfs:label>
+    <rdfs:comment>The state of an activity, from the Data Privacy Vocabulary activity status concepts.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wn77qo3b1xjwc4dudtyme2io">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Entity Location</rdfs:label>
+    <rdfs:comment>Where a PROV entity is (prov:atLocation), as text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u4lkrbqp88mvp1m81ipglaov/xdtoken-value/Female">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u4lkrbqp88mvp1m81ipglaov"/>
+    <rdfs:label>Female</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C16576</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/rxbin">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>rxbin</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#rxbin</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: COPD</rdfs:label>
+    <rdfs:comment>Whether the person has copd (COPD, SNOMED CT 13645005), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160O, BRFSS CHCCOPD3, CMS SP_COPD.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/EHCPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>EHCPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#EHCPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-qbla2qbmgnvijbzpvgsivygy">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Carrier Annual Primary Payer Reimbursement</rdfs:label>
+    <rdfs:comment>Primary payer reimbursement for carrier services in the year (PPPYMT_CAR), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-shug78mge6b16gz073rt23ih">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>CMS Medicare Coverage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Arthritis</rdfs:label>
+    <rdfs:comment>Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Subscriber Relationship</rdfs:label>
+    <rdfs:comment>The beneficiary's relationship to the subscriber. FHIR Coverage.relationship; SubscriberPolicyholder Relationship Codes, version 4.0.1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sw5rt0k2uap0e3xgl4rznfgu/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sw5rt0k2uap0e3xgl4rznfgu"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/class">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>class</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#class</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/MILITARY">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>MILITARY</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#MILITARY</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/RETIRE">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>RETIRE</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#RETIRE</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-atqkooccakulfhkt18c008fx/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-atqkooccakulfhkt18c008fx"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ir7e2d7vwws6yisjvxgfm7ou">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Inpatient Annual Medicare Reimbursement</rdfs:label>
+    <rdfs:comment>Medicare reimbursement for inpatient services in the year (MEDREIMB_IP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/gpvisit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>gpvisit</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#gpvisit</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/LTC">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>LTC</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#LTC</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/rxpcn">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>rxpcn</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#rxpcn</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-p6smy5wa25ug4yhgdswyuklx">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#PartyType"/>
+    <rdfs:label>FAIR Pipeline User</rdfs:label>
+    <rdfs:comment>The pipeline run that generated the record from a federal source file (PROV agent).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/ETREAT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>ETREAT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#ETREAT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: High Cholesterol</rdfs:label>
+    <rdfs:comment>Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fjhgr5fyqxt2crmg2cb5c513">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Audit Event Identifier</rdfs:label>
+    <rdfs:comment>The identifier of the audit event.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-atqkooccakulfhkt18c008fx">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Liver Condition</rdfs:label>
+    <rdfs:comment>Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-of5kk46yrln1ok8nuajeg2f8">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Member ID</rdfs:label>
+    <rdfs:comment>The member or subscriber identifier. FHIR Coverage.subscriberId.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-asmfpl0h2pw2xlldhiydibbn">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Coverage Period End</rdfs:label>
+    <rdfs:comment>When the coverage ends. FHIR Coverage.period.end.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/copay">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>copay</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#copay</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/plan">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>plan</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#plan</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xk3apd6exhme1to143takg17">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Inpatient Annual Beneficiary Responsibility</rdfs:label>
+    <rdfs:comment>The beneficiary's responsibility for inpatient services in the year (BENRES_IP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016/xdtoken-value/draft">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016"/>
+    <rdfs:label>draft</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/fm-status#draft</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gcjyjrnp0wsfoelcp4m05c67">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Audit Entity Reference</rdfs:label>
+    <rdfs:comment>The entity the event concerns (FHIR AuditEvent.entity.what). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/urgentcare">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>urgentcare</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#urgentcare</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-credrxhz4hg4c42sihm0wb6s">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Derived From Reference</rdfs:label>
+    <rdfs:comment>The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/UNINSMOT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>UNINSMOT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#UNINSMOT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-q0ckidtsg1x3iav6nrt8fo0l">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>PROV Entity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jjzmhdxvbt97pq81iwqubtxk">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Activity Type</rdfs:label>
+    <rdfs:comment>The kind of activity, in the vocabulary of the domain (prov:type).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Collection">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b"/>
+    <rdfs:label>Collection</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Collection</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/UMBRL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>UMBRL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#UMBRL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Provenance Agent Type</rdfs:label>
+    <rdfs:comment>The functional role of an agent in an activity (FHIR Provenance.agent.type).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DENTAL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DENTAL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DENTAL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HMARKT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>HMARKT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#HMARKT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nz4t9iecyq1ukvs4s3ymgd8t">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#AuditType"/>
+    <rdfs:label>FAIR Pipeline Audit</rdfs:label>
+    <rdfs:comment>The audit of a record generated from a federal source file: the pipeline that generated it, its run, and the source file it read (the ProvGov PROV entity).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/V">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>V</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#V</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityProposed">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityProposed</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityProposed</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vmikfu0irht9fmq7q02t3oqs">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>PROV Activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/subgroup">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>subgroup</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#subgroup</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/assembler">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>assembler</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#assembler</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/custodian">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>custodian</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#custodian</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/4">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp"/>
+    <rdfs:label>4</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-outcome#4</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Emphysema</rdfs:label>
+    <rdfs:comment>Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/ULIFE">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>ULIFE</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#ULIFE</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/POS">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>POS</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#POS</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-w2ruemcfy35rw60jl1t9dew2">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Agent Identifier</rdfs:label>
+    <rdfs:comment>The identifier of a PROV agent: a URI or another globally unique identifier.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-uzjspmfqya7qwbg2vhfdlgzv">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType"/>
+    <rdfs:label>Part D Plan Coverage Months</rdfs:label>
+    <rdfs:comment>Total months of Part D plan coverage in the reference year (PLAN_CVRG_MOS_NUM).</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Race (BENE_RACE_CD)</rdfs:label>
+    <rdfs:comment>The beneficiary's race as CMS codes it (BENE_RACE_CD). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; Others has no CDE value.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rcl099nhkwzl6lu24lz9i01r">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType"/>
+    <rdfs:label>Coverage Order</rdfs:label>
+    <rdfs:comment>The order of the coverage: 1 primary, 2 secondary. FHIR Coverage.order.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vhezo2cckpe92x4c3j2memeh">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Had Plan Reference</rdfs:label>
+    <rdfs:comment>The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/R">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>R</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-abub2eah26yd2uzni3p9l58i">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Entity Description</rdfs:label>
+    <rdfs:comment>A description of a PROV entity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/inpthosp">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>inpthosp</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#inpthosp</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hnvzazgaw60pz193376698lu">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Outpatient Annual Medicare Reimbursement</rdfs:label>
+    <rdfs:comment>Medicare reimbursement for outpatient services in the year (MEDREIMB_OP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/spouse">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>spouse</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#spouse</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn/xdtoken-value/Black">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn"/>
+    <rdfs:label>Black</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C16352</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-js564tazefb6udqlh12rj04l">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Date of Birth</rdfs:label>
+    <rdfs:comment>The date a person was born.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/0">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp"/>
+    <rdfs:label>0</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-outcome#0</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SUBSUPP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SUBSUPP</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SUBSUPP</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-kmcck093437mfdlnxnrzm0xw">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Entity Value</rdfs:label>
+    <rdfs:comment>The value of a PROV entity, or a reference to where its content can be found (prov:value).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Coverage Type</rdfs:label>
+    <rdfs:comment>The kind of coverage (HL7 v3 ActCoverageTypeCode). FHIR Coverage.type; ActCode, version 11.0.0.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/American%2520Indian%2520or%2520Alaska%2520Native">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>American Indian or Alaska Native</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA10608-0</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: High Blood Pressure</rdfs:label>
+    <rdfs:comment>Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Plan">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b"/>
+    <rdfs:label>Plan</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Plan</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/common">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>common</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#common</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/emergency">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>emergency</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#emergency</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m9minyaug6ypyzt52zfxlyyi">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Entity Label</rdfs:label>
+    <rdfs:comment>A human-readable label for a PROV entity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Osteoporosis</rdfs:label>
+    <rdfs:comment>Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-frvayvpr4jkzykc8ykchaev6">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>CMS Beneficiary Demographics</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl1enu6oomssv6fn1kvvdx9f">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Outpatient Annual Primary Payer Reimbursement</rdfs:label>
+    <rdfs:comment>Primary payer reimbursement for outpatient services in the year (PPPYMT_OP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wa0mknvfo83hej635n48s0ig">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>Chronic Condition Indicators</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/SoftwareAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p"/>
+    <rdfs:label>SoftwareAgent</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#SoftwareAgent</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fl5quyfd88rajs0egsgbq7ou">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>FAIR Source File</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xftatfclhnwcyy2k96v7k638">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType"/>
+    <rdfs:label>Supplementary Medical Insurance (Part B) Coverage Months</rdfs:label>
+    <rdfs:comment>Total months of Part B coverage in the reference year (BENE_SMI_CVRAGE_TOT_MONS).</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-h3kdbvdtyalpvik97saaf0an">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>System Identifier</rdfs:label>
+    <rdfs:comment>The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/LIFE">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>LIFE</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#LIFE</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Asthma</rdfs:label>
+    <rdfs:comment>Whether the person has asthma (Asthma, SNOMED CT 195967001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ010, BRFSS ASTHMA3.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/CRIME">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>CRIME</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#CRIME</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Bundle">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b"/>
+    <rdfs:label>Bundle</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Bundle</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh/xdtoken-value/other">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh"/>
+    <rdfs:label>other</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/administrative-gender#other</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vas0n7gpt46lxe3t2klb0ihw">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>CMS Annual Amounts</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-qh84jdzp1kxt85aq4ilo0svk">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Informed By Reference</rdfs:label>
+    <rdfs:comment>An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-x0lebwtobgaelj5pev3258sd">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Software Version</rdfs:label>
+    <rdfs:comment>The version of a software agent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-of4crvmnrr3s5q5396kmt0jv/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-of4crvmnrr3s5q5396kmt0jv"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Coronary Heart Disease</rdfs:label>
+    <rdfs:comment>Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Thyroid Problem</rdfs:label>
+    <rdfs:comment>Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-io2h28pi3yktedurk8ye3oq0">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>CMS Beneficiary Governed Record</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/D">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x"/>
+    <rdfs:label>D</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-action#D</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/group">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>group</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#group</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Audit Event Action</rdfs:label>
+    <rdfs:comment>The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/transformer">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>transformer</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#transformer</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Revision">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+    <rdfs:label>Revision</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Revision</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/AUTOPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>AUTOPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#AUTOPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Angina</rdfs:label>
+    <rdfs:comment>Whether the person has angina (Angina, SNOMED CT 194828000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160D.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DIS">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DIS</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DIS</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-t2tvd3wylxrstdeu5aw6gkw1">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>Audit Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SUBSIDMC">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SUBSIDMC</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SUBSIDMC</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Purpose of Use</rdfs:label>
+    <rdfs:comment>Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d9z9mcx6gs9zbz4k6f0v738s/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d9z9mcx6gs9zbz4k6f0v738s"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xlgjqdpwdbn2re3mdh5yy2rk">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Error Message</rdfs:label>
+    <rdfs:comment>The error the activity reported, if it failed.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zc3g4e4kjtzehn3kkffkeu29">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdBooleanType"/>
+    <rdfs:label>Subrogation Indicator</rdfs:label>
+    <rdfs:comment>Whether the insurer may recover costs from a third party. FHIR Coverage.subrogation.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/EAP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>EAP</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#EAP</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/other">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>other</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#other</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zshx6rx7ca1j00eda9kxyh6h">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Beneficiary Code (DESYNPUF_ID)</rdfs:label>
+    <rdfs:comment>The synthetic beneficiary identifier every DE-SynPUF file carries (DESYNPUF_ID); not traceable to a real Medicare beneficiary.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/maxoutofpocket">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>maxoutofpocket</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#maxoutofpocket</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/performer">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>performer</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#performer</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/COL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>COL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#COL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-og08xf6bu928uuz6t3y0e23f">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Acted On Behalf Of Reference</rdfs:label>
+    <rdfs:comment>The agent on whose behalf this agent acted (prov:actedOnBehalfOf). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/HIP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>HIP</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#HIP</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ngyypbb7lmlj2g3kibcjqjmn">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Dependent Sequence</rdfs:label>
+    <rdfs:comment>The dependent number on the policy. FHIR Coverage.dependent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/MENTPRG">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>MENTPRG</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#MENTPRG</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn/xdtoken-value/Others">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn"/>
+    <rdfs:label>Others</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C17649</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/HSAPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>HSAPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#HSAPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/informant">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>informant</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#informant</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-of4crvmnrr3s5q5396kmt0jv/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-of4crvmnrr3s5q5396kmt0jv"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/8">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp"/>
+    <rdfs:label>8</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-outcome#8</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-onaqlxn6vzh5r1ub5oxn65iv">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Coverage Period Start</rdfs:label>
+    <rdfs:comment>When the coverage takes effect. FHIR Coverage.period.start.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/HIVAIDS">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>HIVAIDS</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#HIVAIDS</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/U">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x"/>
+    <rdfs:label>U</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-action#U</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/M">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>M</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#M</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-mjl0vv39zsbigqiuyqm66fkv">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Quoted From Reference</rdfs:label>
+    <rdfs:comment>The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/C">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x"/>
+    <rdfs:label>C</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-action#C</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HLEGAL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>HLEGAL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#HLEGAL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/TREAT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>TREAT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#TREAT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DISEASE">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DISEASE</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DISEASE</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/TLIFE">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>TLIFE</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#TLIFE</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn/xdtoken-value/Hispanic">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn"/>
+    <rdfs:label>Hispanic</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C17459</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c179ilk2ns15cd5rzzdfd6f6">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>PROV Agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/Asian%2520or%2520Asian%2520American">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>Asian or Asian American</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA6156-9</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-uwiosm2q9ym3ewr4de910s70">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Audit Recorded At</rdfs:label>
+    <rdfs:comment>When the audit event was recorded (FHIR AuditEvent.recorded).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HOPERAT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>HOPERAT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#HOPERAT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition Indicator Basis</rdfs:label>
+    <rdfs:comment>How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/WCBPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>WCBPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#WCBPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Derivation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+    <rdfs:label>Derivation</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Derivation</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-kkdy1kjdruxvx8s1ra8eh231">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>CMS Beneficiary</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Copay Type</rdfs:label>
+    <rdfs:comment>The kind of cost sharing. FHIR Coverage.costToBeneficiary.type; Coverage Copay Type Codes, version 4.0.1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/rxid">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>rxid</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#rxid</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/12">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp"/>
+    <rdfs:label>12</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-outcome#12</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn/xdtoken-value/White">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5xln0mppl3qk6vhgxdu0wcn"/>
+    <rdfs:label>White</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C41261</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i1defiugxfdcwfb9rqv4p5tz">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Entity Identifier</rdfs:label>
+    <rdfs:comment>The identifier of a PROV entity: a URI or another globally unique identifier.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/MENTPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>MENTPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#MENTPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SURPL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SURPL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SURPL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Audit Event Outcome</rdfs:label>
+    <rdfs:comment>The result of an audited event (FHIR AuditEvent.outcome).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/Organization">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p"/>
+    <rdfs:label>Organization</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Organization</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/REI">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>REI</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#REI</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/copaypct">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>copaypct</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#copaypct</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sw5rt0k2uap0e3xgl4rznfgu/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sw5rt0k2uap0e3xgl4rznfgu"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/PUBHLTH">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>PUBHLTH</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#PUBHLTH</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pczjiz8bjdg20api47gmeq0e/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pczjiz8bjdg20api47gmeq0e"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pczjiz8bjdg20api47gmeq0e">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>End-Stage Renal Disease Indicator (BENE_ESRD_IND)</rdfs:label>
+    <rdfs:comment>Whether the beneficiary has end-stage renal disease (BENE_ESRD_IND).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh/xdtoken-value/unknown">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh"/>
+    <rdfs:label>unknown</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/administrative-gender#unknown</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d9z9mcx6gs9zbz4k6f0v738s/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d9z9mcx6gs9zbz4k6f0v738s"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh/xdtoken-value/male">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh"/>
+    <rdfs:label>male</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/administrative-gender#male</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u4lkrbqp88mvp1m81ipglaov/xdtoken-value/Male">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u4lkrbqp88mvp1m81ipglaov"/>
+    <rdfs:label>Male</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C20197</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hhusuzzig19rs46ngz23k5g7">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Activity Description</rdfs:label>
+    <rdfs:comment>A description of what the activity does and why.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/VISPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>VISPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#VISPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HRESCH">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>HRESCH</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#HRESCH</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-atqkooccakulfhkt18c008fx/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-atqkooccakulfhkt18c008fx"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh/xdtoken-value/female">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh"/>
+    <rdfs:label>female</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/administrative-gender#female</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-uzai5uey5p1fnn9ezj9u6vor">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Activity Location</rdfs:label>
+    <rdfs:comment>Where the activity took place (prov:atLocation), as text.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityOngoing">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityOngoing</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityOngoing</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/author">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>author</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#author</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/COC">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>COC</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#COC</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/spvisit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>spvisit</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#spvisit</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/E">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x"/>
+    <rdfs:label>E</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-action#E</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/child">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>child</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#child</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/ANNU">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>ANNU</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#ANNU</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/subclass">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>subclass</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#subclass</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/CHAR">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>CHAR</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#CHAR</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-n8s2hvs4vrt5bwdykfzna5a6">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>State Code (SP_STATE_CODE)</rdfs:label>
+    <rdfs:comment>The SSA state code of the beneficiary's mailing address (SP_STATE_CODE).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ginfqbk7q59ld2r4us8sjnv1">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Started By Reference</rdfs:label>
+    <rdfs:comment>The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Self-report%2520of%2520a%2520professional%2520diagnosis">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw"/>
+    <rdfs:label>Self-report of a professional diagnosis</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C93409</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ujir739mf1g8ajeczs9nzh9m">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>System Location Name</rdfs:label>
+    <rdfs:comment>The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/R">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x"/>
+    <rdfs:label>R</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/audit-event-action#R</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Congestive Heart Failure</rdfs:label>
+    <rdfs:comment>Whether the person has congestive heart failure (Congestive Heart Failure, SNOMED CT 42343007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160B, CMS SP_CHF.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/L">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>L</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#L</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/PNC">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>PNC</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#PNC</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Items</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-v3kyd703i6kwzmmnasehyiks">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType"/>
+    <rdfs:label>HMO Coverage Months</rdfs:label>
+    <rdfs:comment>Total months of HMO coverage in the reference year (BENE_HMO_CVRAGE_TOT_MONS).</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SUBPRG">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SUBPRG</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SUBPRG</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hb937iiq8di6mrtn10j8n1vk">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>County Code (BENE_COUNTY_CD)</rdfs:label>
+    <rdfs:comment>The SSA county code of the beneficiary's mailing address (BENE_COUNTY_CD).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>PROV Entity Type</rdfs:label>
+    <rdfs:comment>The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DENTPRG">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DENTPRG</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DENTPRG</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SUBPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SUBPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SUBPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-h4ngotmyyx8yflaxicrxaba8">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Copay Amount</rdfs:label>
+    <rdfs:comment>The amount of the cost sharing, in the Default currency units. FHIR Coverage.costToBeneficiary.valueMoney.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-aa663ivutjf2fs4757t0bbzy">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Software Name</rdfs:label>
+    <rdfs:comment>The name of a software agent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u4lkrbqp88mvp1m81ipglaov">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Sex (BENE_SEX_IDENT_CD)</rdfs:label>
+    <rdfs:comment>The beneficiary's sex as CMS codes it (BENE_SEX_IDENT_CD). Kept beside the Default administrative gender it is mapped to.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/deductible">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>deductible</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#deductible</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-dkc2ccj5te35z9gd4bu1blcq">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Audit Agent Reference</rdfs:label>
+    <rdfs:comment>The acting agent (FHIR AuditEvent.agent.who). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Cancer</rdfs:label>
+    <rdfs:comment>Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r6hkunjm2q0hlxiknlc9ljix">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Activity Label</rdfs:label>
+    <rdfs:comment>A human-readable label for a PROV activity.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Confidentiality</rdfs:label>
+    <rdfs:comment>The level of protection the information requires (HL7 v3 Confidentiality). At assembly the value populates a component's act tag.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nr2ylxsejuy6awcwqts30rpv">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Carrier Annual Beneficiary Responsibility</rdfs:label>
+    <rdfs:comment>The beneficiary's responsibility for carrier services in the year (BENRES_CAR), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/PPO">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>PPO</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#PPO</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/sequence">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>sequence</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#sequence</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fnv3zi2btk3s0sfodjsc25eb">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType"/>
+    <rdfs:label>CMS Beneficiary</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/rxgroup">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>rxgroup</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#rxgroup</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/composer">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>composer</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#composer</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Administrative Gender</rdfs:label>
+    <rdfs:comment>The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SUBSIDIZ">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SUBSIDIZ</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SUBSIDIZ</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Chronic Bronchitis</rdfs:label>
+    <rdfs:comment>Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/Native%2520Hawaiian%2520or%2520Other%2520Pacific%2520Islander">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>Native Hawaiian or Other Pacific Islander</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA10611-4</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>PROV Derivation Type</rdfs:label>
+    <rdfs:comment>How one entity was derived from another: a general derivation, a revision, a quotation or a primary source.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Claims-based%2520algorithm">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw"/>
+    <rdfs:label>Claims-based algorithm</rdfs:label>
+    <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/NCIT_C25404</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gb78cmuyo72hqs5apymdki7l">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Agent Description</rdfs:label>
+    <rdfs:comment>A description of the agent and its responsibilities.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d9z9mcx6gs9zbz4k6f0v738s">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Alzheimer's Disease or Related Disorder</rdfs:label>
+    <rdfs:comment>Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/ENDRENAL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>ENDRENAL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#ENDRENAL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016/xdtoken-value/entered-in-error">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016"/>
+    <rdfs:label>entered-in-error</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/fm-status#entered-in-error</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/MCPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>MCPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#MCPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hswapeutuik067dokidnbv88">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Invalidated At</rdfs:label>
+    <rdfs:comment>When the entity ceased to be usable (prov:invalidatedAtTime).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sa4nl1kbpdr842fkucvfjkpq">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Started At</rdfs:label>
+    <rdfs:comment>When the activity started (prov:startedAtTime).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-uqamp46mdscugwy7z99jaxsp">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Carrier Annual Medicare Reimbursement</rdfs:label>
+    <rdfs:comment>Medicare reimbursement for carrier (physician and supplier) services in the year (MEDREIMB_CAR), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/PUBLICPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>PUBLICPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#PUBLICPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yk5nrxndulhebpi3hiywk8u8">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Generated At</rdfs:label>
+    <rdfs:comment>When the entity was generated (prov:generatedAtTime).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r48alj7hc3797qfjnf2uj71n">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Associated With Reference</rdfs:label>
+    <rdfs:comment>The agent associated with the activity (prov:wasAssociatedWith). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Stroke</rdfs:label>
+    <rdfs:comment>Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Months</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/FLEXP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>FLEXP</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#FLEXP</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Race/Ethnicity Self-Identification</rdfs:label>
+    <rdfs:comment>A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-dro3p4hqu4ovk0uj7uu2upvq">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Coverage Class Name</rdfs:label>
+    <rdfs:comment>The name of the class. FHIR Coverage.class.name.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/self">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>self</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#self</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ueb5g1ojzlwwt0mnds5zb6wl">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Ended By Reference</rdfs:label>
+    <rdfs:comment>The entity that ended the activity (prov:wasEndedBy). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityPlanned">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityPlanned</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityPlanned</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/GOVEMP">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>GOVEMP</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#GOVEMP</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-k3rgauqfh9vs4bqq5q4nsbp4">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>FAIR Pipeline Identifier</rdfs:label>
+    <rdfs:comment>The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DISEASEPRG">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DISEASEPRG</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DISEASEPRG</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-lghqkvp7vapqk10l248kzqs8">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Revision Of Reference</rdfs:label>
+    <rdfs:comment>The entity this entity revises (prov:wasRevisionOf). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pczjiz8bjdg20api47gmeq0e/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pczjiz8bjdg20api47gmeq0e"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/CANPRG">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>CANPRG</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#CANPRG</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>PROV Agent Type</rdfs:label>
+    <rdfs:comment>The kind of PROV agent: person, organization or software agent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/HMO">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>HMO</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#HMO</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityHalted">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityHalted</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityHalted</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sw5rt0k2uap0e3xgl4rznfgu">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Kidney Disease</rdfs:label>
+    <rdfs:comment>Whether the person has kidney disease (Kidney Disease, SNOMED CT 709044004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCKDNY2, CMS SP_CHRNKIDN.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sndpbhm3xbd6qtbyxmvh3i0e">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Data Subject Reference</rdfs:label>
+    <rdfs:comment>The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/CLINTRCH">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>CLINTRCH</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-qb90a0sp9vvb6c5cbcf236ys">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Agent Email</rdfs:label>
+    <rdfs:comment>The agent's email address (foaf:mbox).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wr06h54xqqw2q9id8i9673jy">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Activity Identifier</rdfs:label>
+    <rdfs:comment>The identifier of a PROV activity: a URI or another globally unique identifier.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/verifier">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>verifier</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#verifier</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/N">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>N</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#N</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zwmu2x9s8tx628rvb1trh0ij">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Coverage Class Value</rdfs:label>
+    <rdfs:comment>The value of the class, such as a group or plan number. FHIR Coverage.class.value.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/Black%2520or%2520African%2520American">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>Black or African American</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA10610-6</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Skin Cancer</rdfs:label>
+    <rdfs:comment>Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vnlhr9c3ykayyegumhb09snf">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType"/>
+    <rdfs:label>Deceased Date</rdfs:label>
+    <rdfs:comment>The date and time of death. FHIR Patient.deceasedDateTime.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Coverage Class Type</rdfs:label>
+    <rdfs:comment>The kind of class. FHIR Coverage.class.type; Coverage Class Codes, version 4.0.1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityNotCompleted">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityNotCompleted</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityNotCompleted</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hbnmrivnia0qrqidvtdryusj">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>Insurance Coverage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/transmitter">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>transmitter</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#transmitter</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SAFNET">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SAFNET</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SAFNET</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/White">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>White</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA4457-3</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/legal">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>legal</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#legal</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016/xdtoken-value/cancelled">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016"/>
+    <rdfs:label>cancelled</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/fm-status#cancelled</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Coverage Status</rdfs:label>
+    <rdfs:comment>The state of the coverage. FHIR Coverage.status; Financial Resource Status Codes, version 4.0.1.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fnr5q1tfq42ez9jia9dqueho">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdBooleanType"/>
+    <rdfs:label>Deceased Indicator</rdfs:label>
+    <rdfs:comment>Whether the patient is deceased. FHIR Patient.deceasedBoolean.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityCompleted">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+    <rdfs:label>ActivityCompleted</rdfs:label>
+    <rdfs:isDefinedBy>https://w3id.org/dpv#ActivityCompleted</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/SOCIAL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>SOCIAL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#SOCIAL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/DRUGPOL">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>DRUGPOL</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#DRUGPOL</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/injured">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>injured</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#injured</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/IND">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>IND</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#IND</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/PrimarySource">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+    <rdfs:label>PrimarySource</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#PrimarySource</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/enterer">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>enterer</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#enterer</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7/xdtoken-value/Yes">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7"/>
+    <rdfs:label>Yes</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA33-6/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/Middle%2520Eastern%2520or%2520North%2520African">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>Middle Eastern or North African</rdfs:label>
+    <rdfs:isDefinedBy>https://uts.nlm.nih.gov/uts/umls/concept/C1553353</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jqrxnqz7o48ay00s8y4ft7ju">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>Coverage Class</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7/xdtoken-value/Hispanic%252C%2520Latino%252C%2520or%2520Spanish">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-u5tietya3u56hbz2kos06ai7"/>
+    <rdfs:label>Hispanic, Latino, or Spanish</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA6214-6</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg/xdtoken-value/subplan">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-m3m7ow1e7b27ejx6usxtgnbg"/>
+    <rdfs:label>subplan</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-class#subplan</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016/xdtoken-value/active">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016"/>
+    <rdfs:label>active</rdfs:label>
+    <rdfs:isDefinedBy>http://hl7.org/fhir/fm-status#active</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/U">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y"/>
+    <rdfs:label>U</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-Confidentiality#U</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3/xdtoken-value/Quotation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+    <rdfs:label>Quotation</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Quotation</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/PATRQT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>PATRQT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#PATRQT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ng1e2u43yhfura3vf0ahm609">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Plan Network</rdfs:label>
+    <rdfs:comment>The insurer network. FHIR Coverage.network.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy/xdtoken-value/parent">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-zxoxt5fc40bzigieoh044gsy"/>
+    <rdfs:label>parent</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/subscriber-relationship#parent</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/HPAYMT">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+    <rdfs:label>HPAYMT</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActReason#HPAYMT</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd/xdtoken-value/HIRISK">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wpnvu6f56drsy767ucx60scd"/>
+    <rdfs:label>HIRISK</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/v3-ActCode#HIRISK</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p/xdtoken-value/Person">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i16vqj89it3db7d3c5qjko9p"/>
+    <rdfs:label>Person</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Person</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-eftvwi5byq6cdtd931qyxzw0">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Agent Organization Name</rdfs:label>
+    <rdfs:comment>The organization the agent belongs to or is.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-oc8phvc3wtcfr5x5aauliaih">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType"/>
+    <rdfs:label>Cost Sharing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo/xdtoken-value/No">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo"/>
+    <rdfs:label>No</rdfs:label>
+    <rdfs:isDefinedBy>https://loinc.org/LA32-8/</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-kqlatg3rz00z58muv7j8toyl">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Attributed To Reference</rdfs:label>
+    <rdfs:comment>The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Currency</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-nf1air1zbj8v9w66jozdxmyl">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>On Behalf Of Reference</rdfs:label>
+    <rdfs:comment>The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v/xdtoken-value/televisit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-fdtpvqw0se658x5m3zormi5v"/>
+    <rdfs:label>televisit</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/coverage-copay-type#televisit</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-gxyr702hyrvi5bxp2rn9avd5">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType"/>
+    <rdfs:label>Outpatient Annual Beneficiary Responsibility</rdfs:label>
+    <rdfs:comment>The beneficiary's responsibility for outpatient services in the year (BENRES_OP), in US dollars.</rdfs:comment>
+    <sdc4-meta:hasUnit rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+    <rdfs:seeAlso rdf:resource="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType"/>
+    <rdfs:label>Condition: Heart Attack</rdfs:label>
+    <rdfs:comment>Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b"/>
+    <rdfs:label>Entity</rdfs:label>
+    <rdfs:isDefinedBy>http://www.w3.org/ns/prov#Entity</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/editor">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>editor</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#editor</rdfs:isDefinedBy>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-t0whhrqtnb54te4mk48i1ooj">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Used Entity Reference</rdfs:label>
+    <rdfs:comment>An entity the activity used (prov:used). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-bfn83x3fw1cyuqriuoquu9t1">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Was Generated By Reference</rdfs:label>
+    <rdfs:comment>The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-phus5105uw30xejqs7baamyx">
+    <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
+    <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
+    <rdfs:label>Had Primary Source Reference</rdfs:label>
+    <rdfs:comment>The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/attester">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco"/>
+    <rdfs:label>attester</rdfs:label>
+    <rdfs:isDefinedBy>http://terminology.hl7.org/CodeSystem/provenance-participant-type#attester</rdfs:isDefinedBy>
+  </rdf:Description>
+</rdf:RDF>

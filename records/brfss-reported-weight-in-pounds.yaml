@@ -1,0 +1,17 @@
+key: brfss-reported-weight-in-pounds
+label: Reported Weight in Pounds (WEIGHT2)
+type: XdQuantity
+description: Self-reported weight without shoes, in pounds as reported (WEIGHT2; the agency's kilogram reports are converted). The FHIR body weight
+  beside it carries the same value in kilograms.
+source:
+  name: BRFSS 2022
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
+  basis: standard
+constraints:
+  units: https://axius-sdc.com/library/default/units-mass-us
+  total_digits: 4
+  fraction_digits: 0
+  min_inclusive: 50
+  max_inclusive: 999

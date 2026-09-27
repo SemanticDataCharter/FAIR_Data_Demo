@@ -1,0 +1,13 @@
+key: units-picogram
+label: Picograms
+type: Units
+description: Mass in picograms.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: pg
+  definition: http://qudt.org/vocab/unit/PicoGM

@@ -1,0 +1,42 @@
+<div class="input-group ev-widget-group" id="group_{{ widget.name }}">
+    {# Render the data widget #}
+    {% include widget.subwidgets.0.template_name with widget=widget.subwidgets.0 %}
+
+    {# Render the EV selector #}
+    <span class="input-group-text bg-light" title="Exceptional Value">EV</span>
+    {% include widget.subwidgets.1.template_name with widget=widget.subwidgets.1 %}
+</div>
+
+<script>
+    (function () {
+        const group = document.getElementById('group_{{ widget.name }}');
+        if (!group) return;
+
+        const dataInput = group.querySelector('input, select, textarea');
+        const evSelect = group.querySelector('.ev-selector');
+
+        if (dataInput && evSelect) {
+            // Function to toggle data input based on EV selection
+            const toggleInput = () => {
+                if (evSelect.value) {
+                    dataInput.disabled = true;
+                    dataInput.dataset.originalValue = dataInput.value;
+                    dataInput.value = '';
+                    dataInput.classList.add('bg-light');
+                } else {
+                    dataInput.disabled = false;
+                    if (dataInput.dataset.originalValue) {
+                        dataInput.value = dataInput.dataset.originalValue;
+                    }
+                    dataInput.classList.remove('bg-light');
+                }
+            };
+
+            // Initial state
+            toggleInput();
+
+            // Event listener
+            evSelect.addEventListener('change', toggleInput);
+        }
+    })();
+</script>

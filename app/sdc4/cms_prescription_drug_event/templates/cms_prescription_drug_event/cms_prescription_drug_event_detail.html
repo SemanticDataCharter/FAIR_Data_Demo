@@ -1,0 +1,96 @@
+{% extends 'cms_prescription_drug_event/base.html' %}
+
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{% url 'cms_prescription_drug_event:cms_prescription_drug_event-list' %}" class="btn btn-secondary">Back to List</a>
+        <a href="{% url 'cms_prescription_drug_event:cms_prescription_drug_event-update' record.pk %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'cms_prescription_drug_event:cms_prescription_drug_event-delete' record.pk %}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <strong>Instance ID:</strong> {{ record.instance_id }}
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Status Badges -->
+            <dt class="col-sm-3">Validation Status</dt>
+            <dd class="col-sm-9">
+                <span class="badge {{ validation_badge_class }}">{{ record.validation_status }}</span>
+            </dd>
+
+            <dt class="col-sm-3">RDF Sync Status</dt>
+            <dd class="col-sm-9">
+                <span class="badge {{ rdf_badge_class }}">{{ record.rdf_sync_status }}</span>
+            </dd>
+
+            <dt class="col-sm-3">Created At</dt>
+            <dd class="col-sm-9">{{ record.created_at }}</dd>
+
+            <dt class="col-sm-3">Updated At</dt>
+            <dd class="col-sm-9">{{ record.updated_at }}</dd>
+
+            <hr>
+
+            <!-- Data Fields -->
+            {% for field in fields_data %}
+            <dt class="col-sm-3">{{ field.verbose_name }}</dt>
+            <dd class="col-sm-9">
+                {% if field.value is None %}
+                <span class="text-muted"><em>Empty</em></span>
+                {% elif field.value is True %}
+                <span class="badge bg-success">Yes</span>
+                {% elif field.value is False %}
+                <span class="badge bg-danger">No</span>
+                {% else %}
+                {{ field.value }}
+                {% endif %}
+            </dd>
+            {% endfor %}
+        </dl>
+    </div>
+</div>
+
+<!-- XML Content (collapsible) -->
+<div class="card mt-3">
+    <div class="card-header">
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#xmlContent">
+            View XML Content
+        </button>
+    </div>
+    <div class="collapse" id="xmlContent">
+        <div class="card-body">
+            <pre class="bg-light p-3" style="max-height: 400px; overflow-y: auto;"><code>{{ record.xml_content }}</code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- JSON Instance (collapsible) -->
+<div class="card mt-3">
+    <div class="card-header">
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#jsonInstance">
+            View JSON Instance
+        </button>
+    </div>
+    <div class="collapse" id="jsonInstance">
+        <div class="card-body">
+            {{ record.json_instance|json_script:"json-instance-data" }}
+            <pre class="bg-light p-3" style="max-height: 400px; overflow-y: auto;"><code id="json-instance-display"></code></pre>
+            <script>
+                // Pretty-print the JSON
+                (function() {
+                    var jsonData = JSON.parse(document.getElementById('json-instance-data').textContent);
+                    document.getElementById('json-instance-display').textContent = JSON.stringify(jsonData, null, 2);
+                })();
+            </script>
+        </div>
+    </div>
+</div>
+{% endblock %}

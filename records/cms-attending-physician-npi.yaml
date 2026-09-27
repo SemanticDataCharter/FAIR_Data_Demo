@@ -1,0 +1,13 @@
+key: cms-attending-physician-npi
+label: Attending Physician NPI (AT_PHYSN_NPI)
+type: XdString
+description: The attending physician's National Provider Identifier (AT_PHYSN_NPI).
+source:
+  name: CMS DE-SynPUF
+links:
+- predicate: rdfs:seeAlso
+  iri: https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf
+  basis: standard
+constraints:
+  max_length: 10
+  str_fmt: '[0-9]{10}'

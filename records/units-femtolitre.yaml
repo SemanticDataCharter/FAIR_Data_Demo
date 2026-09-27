@@ -1,0 +1,13 @@
+key: units-femtolitre
+label: Femtolitres
+type: Units
+description: Cell volume in femtolitres.
+source:
+  name: QUDT
+links:
+- predicate: skos:closeMatch
+  iri: http://qudt.org/schema/qudt/Unit
+  basis: concept
+enumeration:
+- value: fL
+  definition: http://qudt.org/vocab/unit/FemtoL

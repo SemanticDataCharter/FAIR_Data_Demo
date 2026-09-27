@@ -1,0 +1,21 @@
+key: nhanes-standing-up-from-chair
+label: Difficulty Standing Up from an Armless Chair (PFQ061I)
+type: XdToken
+description: Difficulty Standing Up from an Armless Chair (PFQ061I), on the four-point difficulty scale.
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061I
+  basis: standard
+enumeration:
+- value: No difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Some difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Much difficulty
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Unable to do
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+- value: Do not do this activity
+  definition: http://purl.obolibrary.org/obo/NCIT_C17998

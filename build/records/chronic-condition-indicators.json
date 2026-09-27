@@ -1,0 +1,63 @@
+{
+  "tiny_id": "chronic-condition-indicators",
+  "label": "Chronic Condition Indicators",
+  "description": "The chronic conditions a study records for a person, one indicator per condition, with the basis on which the study established them. NHANES and BRFSS carry the ones their questionnaires ask; CMS carries the eleven its chronic conditions flags define; every study that carries an indicator carries the same component. Members: Condition Indicator Basis; Condition: Asthma; Condition: Arthritis; Condition: Congestive Heart Failure; Condition: Coronary Heart Disease; Condition: Angina; Condition: Heart Attack; Condition: Stroke; Condition: Emphysema; Condition: Chronic Bronchitis; Condition: COPD; Condition: Liver Condition; Condition: Thyroid Problem; Condition: Cancer; Condition: Skin Cancer; Condition: Depression; Condition: Kidney Disease; Condition: Diabetes; Condition: Alzheimer's Disease or Related Disorder; Condition: Osteoporosis; Condition: High Blood Pressure; Condition: High Cholesterol.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/chronic-condition-indicators",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://github.com/SemanticDataCharter/FAIR_Data_Demo",
+      "basis": "mechanical",
+      "note": "FAIR Data Demo"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C2991",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "condition-indicator-basis",
+    "condition-asthma",
+    "condition-arthritis",
+    "condition-congestive-heart-failure",
+    "condition-coronary-heart-disease",
+    "condition-angina",
+    "condition-heart-attack",
+    "condition-stroke",
+    "condition-emphysema",
+    "condition-chronic-bronchitis",
+    "condition-copd",
+    "condition-liver-condition",
+    "condition-thyroid-problem",
+    "condition-cancer",
+    "condition-skin-cancer",
+    "condition-depression",
+    "condition-kidney-disease",
+    "condition-diabetes",
+    "condition-alzheimers-disease",
+    "condition-osteoporosis",
+    "condition-high-blood-pressure",
+    "condition-high-cholesterol"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

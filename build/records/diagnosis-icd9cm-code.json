@@ -1,0 +1,43 @@
+{
+  "tiny_id": "diagnosis-icd9cm-code",
+  "label": "Diagnosis Code (ICD-9-CM)",
+  "description": "An ICD-9-CM diagnosis code as recorded on a 2008-2010 Medicare claim, without the decimal point as CMS files carry it.",
+  "sdc_type": "XdString",
+  "excluded": false,
+  "constraints": {
+    "max_length": 5,
+    "str_fmt": "[0-9EV][0-9]{2,4}"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/diagnosis-icd9cm-code",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "http://hl7.org/fhir/sid/icd-9-cm",
+      "basis": "mechanical",
+      "note": "ICD-9-CM"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/sid/icd-9-cm",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

@@ -1,0 +1,212 @@
+{% extends 'cms_inpatient_claim/base.html' %}
+{% load cms_inpatient_claim_extras %}
+
+{% block title %}{{ dm_metadata.TITLE }} - Bulk Import{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-12">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4><i class="bi bi-upload"></i> Bulk Import - {{ dm_metadata.TITLE }}</h4>
+            <div>
+                <a href="{% url 'cms_inpatient_claim:download-template' %}" class="btn btn-outline-secondary me-2">
+                    <i class="bi bi-download"></i> Download XML Template
+                </a>
+                <a href="{% url 'cms_inpatient_claim:instance-list' %}" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </div>
+
+        {% if import_result %}
+        <!-- Import Results -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Import Results</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <strong>Total Files:</strong> {{ import_result.total_files }}
+                    </div>
+                    <div class="col-md-3">
+                        <span class="text-success"><strong>Valid:</strong> {{ import_result.successful }}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="text-danger"><strong>Invalid/Failed:</strong> {{ import_result.failed }}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="text-secondary"><strong>Skipped (duplicates):</strong> {{ import_result.skipped }}</span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <strong>Duration:</strong> {{ import_result.duration_seconds|floatformat:1 }}s
+                    </div>
+                </div>
+
+                {% if import_result.results %}
+                <table class="table table-sm table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Filename</th>
+                            <th>Status</th>
+                            <th>Instance ID</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for r in import_result.results %}
+                        <tr>
+                            <td><code>{{ r.filename }}</code></td>
+                            <td>
+                                {% if r.validation_status == 'skipped' %}
+                                <span class="badge bg-secondary">Skipped</span>
+                                {% elif r.success and r.validation_status == 'valid' %}
+                                <span class="badge bg-success">Valid</span>
+                                {% elif r.success and r.validation_status == 'invalid' %}
+                                <span class="badge bg-warning text-dark">Invalid</span>
+                                {% elif r.success %}
+                                <span class="badge bg-info">{{ r.validation_status }}</span>
+                                {% else %}
+                                <span class="badge bg-danger">Error</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if r.instance_id %}
+                                <a href="{% url 'cms_inpatient_claim:instance-detail' pk=r.instance_id %}">
+                                    <code>{{ r.instance_id }}</code>
+                                </a>
+                                {% else %}
+                                -
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if r.error_message %}
+                                <span class="text-danger">{{ r.error_message }}</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Import Form -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Import XML Instances</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                        <p class="mb-0">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Import Source</label>
+                        <div>
+                            {% for radio in form.import_source %}
+                            <div class="form-check form-check-inline">
+                                {{ radio }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% if form.import_source.help_text %}
+                        <div class="form-text">{{ form.import_source.help_text }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3" id="zip-field">
+                        <label for="{{ form.zip_file.id_for_label }}" class="form-label">ZIP File</label>
+                        <input type="file" class="form-control {% if form.zip_file.errors %}is-invalid{% endif %}"
+                               id="{{ form.zip_file.id_for_label }}" name="zip_file" accept=".zip">
+                        {% if form.zip_file.errors %}
+                        <div class="invalid-feedback">{{ form.zip_file.errors.0 }}</div>
+                        {% endif %}
+                        <div class="form-text">{{ form.zip_file.help_text }}</div>
+                    </div>
+
+                    <div class="mb-3" id="directory-field" style="display: none;">
+                        <label for="{{ form.directory_path.id_for_label }}" class="form-label">Directory Path</label>
+                        <input type="text" class="form-control {% if form.directory_path.errors %}is-invalid{% endif %}"
+                               id="{{ form.directory_path.id_for_label }}" name="directory_path"
+                               value="{{ form.directory_path.value|default_if_none:'' }}"
+                               placeholder="/path/to/xml/files/">
+                        {% if form.directory_path.errors %}
+                        <div class="invalid-feedback">{{ form.directory_path.errors.0 }}</div>
+                        {% endif %}
+                        <div class="form-text">{{ form.directory_path.help_text }}</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-upload"></i> Import
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Modal -->
+<div class="modal fade" id="importingModal" tabindex="-1"
+     data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center py-5">
+                <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h5>Importing files... Please wait.</h5>
+                <p class="text-muted mb-0">This may take a while for large imports.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle zip/directory fields based on import source selection
+    document.addEventListener('DOMContentLoaded', function() {
+        const radios = document.querySelectorAll('input[name="import_source"]');
+        const zipField = document.getElementById('zip-field');
+        const dirField = document.getElementById('directory-field');
+
+        function toggleFields() {
+            const selected = document.querySelector('input[name="import_source"]:checked');
+            if (selected && selected.value === 'directory') {
+                zipField.style.display = 'none';
+                dirField.style.display = 'block';
+            } else {
+                zipField.style.display = 'block';
+                dirField.style.display = 'none';
+            }
+        }
+
+        radios.forEach(function(radio) {
+            radio.addEventListener('change', toggleFields);
+        });
+
+        toggleFields();
+
+        // Show loading spinner on form submit
+        const form = document.querySelector('form[method="post"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        form.addEventListener('submit', function() {
+            const modal = new bootstrap.Modal(document.getElementById('importingModal'));
+            modal.show();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Importing...';
+        });
+    });
+</script>
+{% endblock %}

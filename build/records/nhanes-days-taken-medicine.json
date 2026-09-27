@@ -1,0 +1,54 @@
+{
+  "tiny_id": "nhanes-days-taken-medicine",
+  "label": "Number of Days Taken Medicine (RXDDAYS)",
+  "description": "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).",
+  "sdc_type": "XdCount",
+  "excluded": false,
+  "constraints": {
+    "units": "Days",
+    "min_inclusive": 0,
+    "max_inclusive": 99999,
+    "units_key": "units-days",
+    "units_spec": {
+      "label": "Days",
+      "enums": [
+        "days"
+      ],
+      "definitions": [
+        "http://qudt.org/vocab/unit/DAY"
+      ]
+    }
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-days-taken-medicine",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDDAYS",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "none",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

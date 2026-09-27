@@ -1,0 +1,15 @@
+key: nhanes-confusion-memory-problems
+label: Experience Confusion or Memory Problems (PFQ057)
+type: XdToken
+description: Whether the participant experiences confusion or memory problems (PFQ057).
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ057
+  basis: standard
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

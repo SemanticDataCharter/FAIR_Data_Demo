@@ -1,0 +1,16 @@
+key: condition-thyroid-problem
+label: 'Condition: Thyroid Problem'
+type: XdToken
+description: 'Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator
+  Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M.'
+source:
+  name: FAIR Data Demo
+links:
+- predicate: dcterms:subject
+  iri: http://snomed.info/id/14304000
+  basis: concept
+enumeration:
+- value: 'Yes'
+  definition: https://loinc.org/LA33-6/
+- value: 'No'
+  definition: https://loinc.org/LA32-8/

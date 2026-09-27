@@ -34,7 +34,7 @@
   <span class="where">
     {% if nav.position %}Record <b>{{ nav.position }}</b> of {{ nav.total }}{% else %}{{ nav.total }} records{% endif %}
     in {{ h.dm_label }}
-    <a class="all" href="{% url 'console:index' %}">all domains</a>
+    <a class="all" href="{% url 'console:index' %}">all models</a>
   </span>
 
   {% if nav.next %}

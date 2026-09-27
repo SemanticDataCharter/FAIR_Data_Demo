@@ -2,6 +2,10 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.2.1 (2026-09-27)
+
+- The compose project is named `fair`. Compose names a project after its directory, every generated stack lives in a directory called `sdc4`, and two stacks on one machine reconciled each other's containers away. `.env.example` carries the ports the README states (15433, 17300, 18081, 16380, 19444, 18100).
+
 ## 4.2.0 (2026-09-26)
 
 The second build. The three studies now share their components, and the cross-study queries return rows from a loaded store.

@@ -233,6 +233,10 @@ against.
   If SirixDB exits with "Realm does not exist", Keycloak started without it;
   check the directory's ownership (a container can create it root-owned) and
   recreate Keycloak.
+- **The compose project is named.** Every generated stack lives in a directory
+  called `sdc4`, and Compose names a project after its directory unless told
+  otherwise, so two stacks on one machine reconcile each other's containers
+  away. `docker-compose.yml` carries `name: fair`, and the ports are its own.
 - **`settings._discover_local_apps()` scans every directory with an
   `apps.py`.** A hand-registered app must also be added to that function's skip
   set, or Django refuses to start with "Application labels aren't unique".

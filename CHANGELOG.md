@@ -1,5 +1,7 @@
 # Changelog
 
+All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
+
 ## 2026-09-28: the models' schemas now enumerate their units
 
 - SDCStudio issue #707 (fixed in PR #708): Units components were published without their enumeration, so every quantity in the seven models validated any string as a unit. The 14 Units the seven active models compose were republished on production and the seven packages rebuilt; `app/sdc4/mediafiles/dmlib/` carries the rebuilt XSD and template of each. Model identifiers did not change.

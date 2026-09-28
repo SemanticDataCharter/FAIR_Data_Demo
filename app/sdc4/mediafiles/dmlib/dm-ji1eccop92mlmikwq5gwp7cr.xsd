@@ -1449,11 +1449,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Items</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Items</rdfs:label>
+        <rdfs:comment>A count of discrete things, with no dimension.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-items"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Dimensionless"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1469,10 +1470,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="items">
+                <xsd:annotation>
+                  <xsd:documentation>number of items</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn/xdstring-value/items">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
+                      <rdfs:label>items</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/NUM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1538,11 +1555,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Days</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Days</rdfs:label>
+        <rdfs:comment>A duration in days.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fair/units-days"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:closeMatch rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1558,10 +1576,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="days">
+                <xsd:annotation>
+                  <xsd:documentation>days</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo/xdstring-value/days">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo"/>
+                      <rdfs:label>days</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/DAY</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1625,12 +1659,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Currency</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Currency</rdfs:label>
+        <rdfs:comment>The ISO 4217 code of a currency: the complete list of 178 active codes. Each value is defined by its Wikidata entity.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:source rdf:resource="https://www.iso.org/iso-4217-currency-codes.html"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-currency"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Currency"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wab4687wp76ntxrz27nqybgp"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1646,10 +1681,2150 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="AED">
+                <xsd:annotation>
+                  <xsd:documentation>UAE Dirham</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AED">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AED</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200294</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AFN">
+                <xsd:annotation>
+                  <xsd:documentation>Afghani</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AFN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AFN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199471</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ALL">
+                <xsd:annotation>
+                  <xsd:documentation>Lek</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ALL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ALL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q125999</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AMD">
+                <xsd:annotation>
+                  <xsd:documentation>Armenian Dram</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AMD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AMD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q130498</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AOA">
+                <xsd:annotation>
+                  <xsd:documentation>Kwanza</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AOA">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AOA</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200337</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ARS">
+                <xsd:annotation>
+                  <xsd:documentation>Argentine Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ARS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ARS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199578</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AUD">
+                <xsd:annotation>
+                  <xsd:documentation>Australian Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AUD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AUD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q259502</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AWG">
+                <xsd:annotation>
+                  <xsd:documentation>Aruban Florin</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AWG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AWG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q232270</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="AZN">
+                <xsd:annotation>
+                  <xsd:documentation>Azerbaijan Manat</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AZN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>AZN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q483725</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BAM">
+                <xsd:annotation>
+                  <xsd:documentation>Convertible Mark</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BAM">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BAM</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q179620</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BBD">
+                <xsd:annotation>
+                  <xsd:documentation>Barbados Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BBD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BBD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q194351</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BDT">
+                <xsd:annotation>
+                  <xsd:documentation>Taka</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BDT">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BDT</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q194453</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BHD">
+                <xsd:annotation>
+                  <xsd:documentation>Bahraini Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BHD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BHD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q201871</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BIF">
+                <xsd:annotation>
+                  <xsd:documentation>Burundi Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BIF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BIF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q238007</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BMD">
+                <xsd:annotation>
+                  <xsd:documentation>Bermudian Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BMD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BMD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q210478</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BND">
+                <xsd:annotation>
+                  <xsd:documentation>Brunei Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BND">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BND</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q206319</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BOB">
+                <xsd:annotation>
+                  <xsd:documentation>Boliviano</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BOB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BOB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200737</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BOV">
+                <xsd:annotation>
+                  <xsd:documentation>Mvdol</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BOV">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BOV</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q5731551</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BRL">
+                <xsd:annotation>
+                  <xsd:documentation>Brazilian Real</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BRL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BRL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q173117</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BSD">
+                <xsd:annotation>
+                  <xsd:documentation>Bahamian Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BSD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BSD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q194339</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BTN">
+                <xsd:annotation>
+                  <xsd:documentation>Ngultrum</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BTN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BTN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q201799</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BWP">
+                <xsd:annotation>
+                  <xsd:documentation>Pula</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BWP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BWP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q186794</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BYN">
+                <xsd:annotation>
+                  <xsd:documentation>Belarusian Ruble</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BYN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BYN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q21531507</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="BZD">
+                <xsd:annotation>
+                  <xsd:documentation>Belize Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BZD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>BZD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q275112</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CAD">
+                <xsd:annotation>
+                  <xsd:documentation>Canadian Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CAD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CAD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1104069</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CDF">
+                <xsd:annotation>
+                  <xsd:documentation>Congolese Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CDF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CDF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4734</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CHE">
+                <xsd:annotation>
+                  <xsd:documentation>WIR Euro</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHE">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CHE</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115184017</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CHF">
+                <xsd:annotation>
+                  <xsd:documentation>Swiss Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CHF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q25344</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CHW">
+                <xsd:annotation>
+                  <xsd:documentation>WIR Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHW">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CHW</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q107543281</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CLF">
+                <xsd:annotation>
+                  <xsd:documentation>Unidad de Fomento</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CLF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CLF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1573250</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CLP">
+                <xsd:annotation>
+                  <xsd:documentation>Chilean Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CLP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CLP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200050</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CNY">
+                <xsd:annotation>
+                  <xsd:documentation>Yuan Renminbi</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CNY">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CNY</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q39099</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="COP">
+                <xsd:annotation>
+                  <xsd:documentation>Colombian Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/COP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>COP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q244819</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="COU">
+                <xsd:annotation>
+                  <xsd:documentation>Unidad de Valor Real</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/COU">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>COU</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q73016560</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CRC">
+                <xsd:annotation>
+                  <xsd:documentation>Costa Rican Colon</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CRC">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CRC</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q242915</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CUP">
+                <xsd:annotation>
+                  <xsd:documentation>Cuban Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CUP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CUP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q201505</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CVE">
+                <xsd:annotation>
+                  <xsd:documentation>Cabo Verde Escudo</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CVE">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CVE</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4591</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="CZK">
+                <xsd:annotation>
+                  <xsd:documentation>Czech Koruna</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CZK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>CZK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q131016</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="DJF">
+                <xsd:annotation>
+                  <xsd:documentation>Djibouti Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DJF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>DJF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4594</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="DKK">
+                <xsd:annotation>
+                  <xsd:documentation>Danish Krone</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DKK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>DKK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q25417</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="DOP">
+                <xsd:annotation>
+                  <xsd:documentation>Dominican Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DOP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>DOP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q242922</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="DZD">
+                <xsd:annotation>
+                  <xsd:documentation>Algerian Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DZD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>DZD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199674</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="EGP">
+                <xsd:annotation>
+                  <xsd:documentation>Egyptian Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/EGP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>EGP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199462</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ERN">
+                <xsd:annotation>
+                  <xsd:documentation>Nakfa</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ERN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ERN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q171503</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ETB">
+                <xsd:annotation>
+                  <xsd:documentation>Ethiopian Birr</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ETB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ETB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q206243</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="EUR">
+                <xsd:annotation>
+                  <xsd:documentation>Euro</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/EUR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>EUR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4916</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="FJD">
+                <xsd:annotation>
+                  <xsd:documentation>Fiji Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/FJD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>FJD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4592</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="FKP">
+                <xsd:annotation>
+                  <xsd:documentation>Falkland Islands Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/FKP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>FKP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q330044</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GBP">
+                <xsd:annotation>
+                  <xsd:documentation>Pound Sterling</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GBP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GBP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q323138</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GEL">
+                <xsd:annotation>
+                  <xsd:documentation>Lari</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GEL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GEL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4608</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GHS">
+                <xsd:annotation>
+                  <xsd:documentation>Ghana Cedi</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GHS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GHS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q183530</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GIP">
+                <xsd:annotation>
+                  <xsd:documentation>Gibraltar Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GIP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GIP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q41429</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GMD">
+                <xsd:annotation>
+                  <xsd:documentation>Dalasi</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GMD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GMD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202885</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GNF">
+                <xsd:annotation>
+                  <xsd:documentation>Guinean Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GNF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GNF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q213311</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GTQ">
+                <xsd:annotation>
+                  <xsd:documentation>Quetzal</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GTQ">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GTQ</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q207396</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="GYD">
+                <xsd:annotation>
+                  <xsd:documentation>Guyana Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GYD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>GYD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q213005</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="HKD">
+                <xsd:annotation>
+                  <xsd:documentation>Hong Kong Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HKD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>HKD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q31015</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="HNL">
+                <xsd:annotation>
+                  <xsd:documentation>Lempira</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HNL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>HNL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4719</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="HTG">
+                <xsd:annotation>
+                  <xsd:documentation>Gourde</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HTG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>HTG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q203955</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="HUF">
+                <xsd:annotation>
+                  <xsd:documentation>Forint</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HUF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>HUF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q47190</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IDR">
+                <xsd:annotation>
+                  <xsd:documentation>Rupiah</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IDR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>IDR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q41588</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ILS">
+                <xsd:annotation>
+                  <xsd:documentation>New Israeli Sheqel</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ILS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ILS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q131309</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="INR">
+                <xsd:annotation>
+                  <xsd:documentation>Indian Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/INR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>INR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q80524</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IQD">
+                <xsd:annotation>
+                  <xsd:documentation>Iraqi Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IQD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>IQD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q193094</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IRR">
+                <xsd:annotation>
+                  <xsd:documentation>Iranian Rial</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IRR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>IRR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q188608</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ISK">
+                <xsd:annotation>
+                  <xsd:documentation>Iceland Krona</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ISK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ISK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q131473</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="JMD">
+                <xsd:annotation>
+                  <xsd:documentation>Jamaican Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JMD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>JMD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q209792</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="JOD">
+                <xsd:annotation>
+                  <xsd:documentation>Jordanian Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JOD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>JOD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q203722</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="JPY">
+                <xsd:annotation>
+                  <xsd:documentation>Yen</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JPY">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>JPY</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q8146</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KES">
+                <xsd:annotation>
+                  <xsd:documentation>Kenyan Shilling</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KES">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KES</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202882</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KGS">
+                <xsd:annotation>
+                  <xsd:documentation>Som</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KGS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KGS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q35881</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KHR">
+                <xsd:annotation>
+                  <xsd:documentation>Riel</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KHR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KHR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q204737</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KMF">
+                <xsd:annotation>
+                  <xsd:documentation>Comorian Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KMF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KMF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q267264</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KPW">
+                <xsd:annotation>
+                  <xsd:documentation>North Korean Won</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KPW">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KPW</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q106720</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KRW">
+                <xsd:annotation>
+                  <xsd:documentation>Won</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KRW">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KRW</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202040</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KWD">
+                <xsd:annotation>
+                  <xsd:documentation>Kuwaiti Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KWD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KWD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q193098</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KYD">
+                <xsd:annotation>
+                  <xsd:documentation>Cayman Islands Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KYD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KYD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q319885</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="KZT">
+                <xsd:annotation>
+                  <xsd:documentation>Tenge</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KZT">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>KZT</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q173751</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LAK">
+                <xsd:annotation>
+                  <xsd:documentation>Lao Kip</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LAK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LAK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200055</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LBP">
+                <xsd:annotation>
+                  <xsd:documentation>Lebanese Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LBP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LBP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q201880</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LKR">
+                <xsd:annotation>
+                  <xsd:documentation>Sri Lanka Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LKR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LKR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4596</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LRD">
+                <xsd:annotation>
+                  <xsd:documentation>Liberian Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LRD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LRD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q242988</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LSL">
+                <xsd:annotation>
+                  <xsd:documentation>Loti</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LSL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LSL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q208039</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="LYD">
+                <xsd:annotation>
+                  <xsd:documentation>Libyan Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LYD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>LYD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q190699</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MAD">
+                <xsd:annotation>
+                  <xsd:documentation>Moroccan Dirham</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MAD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MAD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200192</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MDL">
+                <xsd:annotation>
+                  <xsd:documentation>Moldovan Leu</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MDL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MDL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q181129</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MGA">
+                <xsd:annotation>
+                  <xsd:documentation>Malagasy Ariary</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MGA">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MGA</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4584</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MKD">
+                <xsd:annotation>
+                  <xsd:documentation>Denar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MKD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MKD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q177875</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MMK">
+                <xsd:annotation>
+                  <xsd:documentation>Kyat</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MMK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MMK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q201875</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MNT">
+                <xsd:annotation>
+                  <xsd:documentation>Tugrik</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MNT">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MNT</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q183435</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MOP">
+                <xsd:annotation>
+                  <xsd:documentation>Pataca</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MOP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MOP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q241214</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MRU">
+                <xsd:annotation>
+                  <xsd:documentation>Ouguiya</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MRU">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MRU</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q207024</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MUR">
+                <xsd:annotation>
+                  <xsd:documentation>Mauritius Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MUR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MUR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q212967</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MVR">
+                <xsd:annotation>
+                  <xsd:documentation>Rufiyaa</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MVR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MVR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q206600</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MWK">
+                <xsd:annotation>
+                  <xsd:documentation>Malawi Kwacha</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MWK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MWK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q211694</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MXN">
+                <xsd:annotation>
+                  <xsd:documentation>Mexican Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MXN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MXN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4730</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MXV">
+                <xsd:annotation>
+                  <xsd:documentation>Mexican Unidad de Inversion (UDI)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MXV">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MXV</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q6156187</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MYR">
+                <xsd:annotation>
+                  <xsd:documentation>Malaysian Ringgit</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MYR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MYR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q163712</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="MZN">
+                <xsd:annotation>
+                  <xsd:documentation>Mozambique Metical</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MZN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>MZN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200753</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NAD">
+                <xsd:annotation>
+                  <xsd:documentation>Namibia Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NAD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NAD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202462</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NGN">
+                <xsd:annotation>
+                  <xsd:documentation>Naira</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NGN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NGN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q203567</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NIO">
+                <xsd:annotation>
+                  <xsd:documentation>Cordoba Oro</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NIO">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NIO</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q207312</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NOK">
+                <xsd:annotation>
+                  <xsd:documentation>Norwegian Krone</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NOK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NOK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q132643</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NPR">
+                <xsd:annotation>
+                  <xsd:documentation>Nepalese Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NPR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NPR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202895</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="NZD">
+                <xsd:annotation>
+                  <xsd:documentation>New Zealand Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NZD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>NZD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1472704</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="OMR">
+                <xsd:annotation>
+                  <xsd:documentation>Rial Omani</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/OMR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>OMR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q272290</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PAB">
+                <xsd:annotation>
+                  <xsd:documentation>Balboa</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PAB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PAB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q210472</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PEN">
+                <xsd:annotation>
+                  <xsd:documentation>Sol</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PEN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PEN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q204656</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PGK">
+                <xsd:annotation>
+                  <xsd:documentation>Kina</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PGK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PGK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q200759</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PHP">
+                <xsd:annotation>
+                  <xsd:documentation>Philippine Peso</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PHP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PHP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q17193</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PKR">
+                <xsd:annotation>
+                  <xsd:documentation>Pakistan Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PKR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PKR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q188289</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PLN">
+                <xsd:annotation>
+                  <xsd:documentation>Zloty</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PLN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PLN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q123213</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="PYG">
+                <xsd:annotation>
+                  <xsd:documentation>Guarani</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PYG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>PYG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q207514</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="QAR">
+                <xsd:annotation>
+                  <xsd:documentation>Qatari Rial</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/QAR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>QAR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q206386</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="RON">
+                <xsd:annotation>
+                  <xsd:documentation>Romanian Leu</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RON">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>RON</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q131645</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="RSD">
+                <xsd:annotation>
+                  <xsd:documentation>Serbian Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RSD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>RSD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q172524</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="RUB">
+                <xsd:annotation>
+                  <xsd:documentation>Russian Ruble</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RUB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>RUB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q41044</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="RWF">
+                <xsd:annotation>
+                  <xsd:documentation>Rwanda Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RWF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>RWF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4741</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SAR">
+                <xsd:annotation>
+                  <xsd:documentation>Saudi Riyal</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SAR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SAR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199857</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SBD">
+                <xsd:annotation>
+                  <xsd:documentation>Solomon Islands Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SBD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SBD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4597</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SCR">
+                <xsd:annotation>
+                  <xsd:documentation>Seychelles Rupee</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SCR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SCR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4595</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SDG">
+                <xsd:annotation>
+                  <xsd:documentation>Sudanese Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SDG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SDG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q271206</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SEK">
+                <xsd:annotation>
+                  <xsd:documentation>Swedish Krona</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SEK">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SEK</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q122922</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SGD">
+                <xsd:annotation>
+                  <xsd:documentation>Singapore Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SGD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SGD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q190951</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SHP">
+                <xsd:annotation>
+                  <xsd:documentation>Saint Helena Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SHP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SHP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q374453</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SLE">
+                <xsd:annotation>
+                  <xsd:documentation>Leone</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SLE">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SLE</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4587</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SOS">
+                <xsd:annotation>
+                  <xsd:documentation>Somali Shilling</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SOS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SOS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4603</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SRD">
+                <xsd:annotation>
+                  <xsd:documentation>Surinam Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SRD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SRD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q202036</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SSP">
+                <xsd:annotation>
+                  <xsd:documentation>South Sudanese Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SSP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SSP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q244366</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="STN">
+                <xsd:annotation>
+                  <xsd:documentation>Dobra</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/STN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>STN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q193712</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SVC">
+                <xsd:annotation>
+                  <xsd:documentation>El Salvador Colon</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SVC">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SVC</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q829043</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SYP">
+                <xsd:annotation>
+                  <xsd:documentation>Syrian Pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SYP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SYP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q240468</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="SZL">
+                <xsd:annotation>
+                  <xsd:documentation>Lilangeni</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SZL">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>SZL</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4823</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="THB">
+                <xsd:annotation>
+                  <xsd:documentation>Baht</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/THB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>THB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q177882</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TJS">
+                <xsd:annotation>
+                  <xsd:documentation>Somoni</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TJS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TJS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q199886</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TMT">
+                <xsd:annotation>
+                  <xsd:documentation>Turkmenistan New Manat</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TMT">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TMT</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q486637</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TND">
+                <xsd:annotation>
+                  <xsd:documentation>Tunisian Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TND">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TND</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4602</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TOP">
+                <xsd:annotation>
+                  <xsd:documentation>Pa’anga</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TOP">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TOP</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4613</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TRY">
+                <xsd:annotation>
+                  <xsd:documentation>Turkish Lira</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TRY">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TRY</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q172872</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TTD">
+                <xsd:annotation>
+                  <xsd:documentation>Trinidad and Tobago Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TTD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TTD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q242890</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TWD">
+                <xsd:annotation>
+                  <xsd:documentation>New Taiwan Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TWD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TWD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q208526</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="TZS">
+                <xsd:annotation>
+                  <xsd:documentation>Tanzanian Shilling</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TZS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>TZS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4589</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UAH">
+                <xsd:annotation>
+                  <xsd:documentation>Hryvnia</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UAH">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UAH</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q81893</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UGX">
+                <xsd:annotation>
+                  <xsd:documentation>Uganda Shilling</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UGX">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UGX</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4598</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="USD">
+                <xsd:annotation>
+                  <xsd:documentation>US Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/USD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>USD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4917</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="USN">
+                <xsd:annotation>
+                  <xsd:documentation>US Dollar (Next day)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/USN">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>USN</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q114778501</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UYI">
+                <xsd:annotation>
+                  <xsd:documentation>Uruguay Peso en Unidades Indexadas (UI)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYI">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UYI</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115124969</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UYU">
+                <xsd:annotation>
+                  <xsd:documentation>Peso Uruguayo</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYU">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UYU</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q209272</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UYW">
+                <xsd:annotation>
+                  <xsd:documentation>Unidad Previsional</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYW">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UYW</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q107631325</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="UZS">
+                <xsd:annotation>
+                  <xsd:documentation>Uzbekistan Sum</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UZS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>UZS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q487888</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="VED">
+                <xsd:annotation>
+                  <xsd:documentation>Bolívar Soberano</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VED">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>VED</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q123493742</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="VES">
+                <xsd:annotation>
+                  <xsd:documentation>Bolívar Soberano</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VES">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>VES</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q56349362</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="VND">
+                <xsd:annotation>
+                  <xsd:documentation>Dong</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VND">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>VND</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q192090</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="VUV">
+                <xsd:annotation>
+                  <xsd:documentation>Vatu</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VUV">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>VUV</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q207523</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="WST">
+                <xsd:annotation>
+                  <xsd:documentation>Tala</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/WST">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>WST</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q4588</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XAD">
+                <xsd:annotation>
+                  <xsd:documentation>Arab Accounting Dinar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XAD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q134441291</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XAF">
+                <xsd:annotation>
+                  <xsd:documentation>CFA Franc BEAC</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XAF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q847739</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XAG">
+                <xsd:annotation>
+                  <xsd:documentation>Silver</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XAG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1584286</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XAU">
+                <xsd:annotation>
+                  <xsd:documentation>Gold</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAU">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XAU</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q791975</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XBA">
+                <xsd:annotation>
+                  <xsd:documentation>Bond Markets Unit European Composite Unit (EURCO)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBA">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XBA</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115123957</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XBB">
+                <xsd:annotation>
+                  <xsd:documentation>Bond Markets Unit European Monetary Unit (E.M.U.-6)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBB">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XBB</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115124012</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XBC">
+                <xsd:annotation>
+                  <xsd:documentation>Bond Markets Unit European Unit of Account 9 (E.U.A.-9)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBC">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XBC</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115124154</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XBD">
+                <xsd:annotation>
+                  <xsd:documentation>Bond Markets Unit European Unit of Account 17 (E.U.A.-17)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XBD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115124340</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XCD">
+                <xsd:annotation>
+                  <xsd:documentation>East Caribbean Dollar</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XCD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XCD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q26365</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XCG">
+                <xsd:annotation>
+                  <xsd:documentation>Caribbean Guilder</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XCG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XCG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q737779</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XDR">
+                <xsd:annotation>
+                  <xsd:documentation>SDR (Special Drawing Right)</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XDR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XDR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q363958</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XOF">
+                <xsd:annotation>
+                  <xsd:documentation>CFA Franc BCEAO</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XOF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XOF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q861690</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XPD">
+                <xsd:annotation>
+                  <xsd:documentation>Palladium</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPD">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XPD</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1669450</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XPF">
+                <xsd:annotation>
+                  <xsd:documentation>CFP Franc</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPF">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XPF</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q214393</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XPT">
+                <xsd:annotation>
+                  <xsd:documentation>Platinum</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPT">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XPT</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q691671</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XSU">
+                <xsd:annotation>
+                  <xsd:documentation>Sucre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XSU">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XSU</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q1148329</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XTS">
+                <xsd:annotation>
+                  <xsd:documentation>Codes specifically reserved for testing purposes</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XTS">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XTS</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115189115</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XUA">
+                <xsd:annotation>
+                  <xsd:documentation>ADB Unit of Account</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XUA">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XUA</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q112107910</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="XXX">
+                <xsd:annotation>
+                  <xsd:documentation>The codes assigned for transactions where no currency is involved</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XXX">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>XXX</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q115153509</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="YER">
+                <xsd:annotation>
+                  <xsd:documentation>Yemeni Rial</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/YER">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>YER</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q240512</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ZAR">
+                <xsd:annotation>
+                  <xsd:documentation>Rand</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZAR">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ZAR</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q181907</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ZMW">
+                <xsd:annotation>
+                  <xsd:documentation>Zambian Kwacha</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZMW">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ZMW</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q73408</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ZWG">
+                <xsd:annotation>
+                  <xsd:documentation>Zimbabwe Gold</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZWG">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi"/>
+                      <rdfs:label>ZWG</rdfs:label>
+                      <rdfs:isDefinedBy>http://www.wikidata.org/entity/Q125352135</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -2827,12 +5002,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Time Units</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Time Units</rdfs:label>
+        <rdfs:comment>Units of elapsed time from seconds to years.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-time"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Time"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-vv5irjgqr4a7aqm6wt0tr7um"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -2848,10 +5024,98 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="years">
+                <xsd:annotation>
+                  <xsd:documentation>year</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/years">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>years</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/YR</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="months">
+                <xsd:annotation>
+                  <xsd:documentation>month</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/months">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>months</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MO</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="weeks">
+                <xsd:annotation>
+                  <xsd:documentation>week</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/weeks">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>weeks</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/WK</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="days">
+                <xsd:annotation>
+                  <xsd:documentation>day</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/days">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>days</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/DAY</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="hours">
+                <xsd:annotation>
+                  <xsd:documentation>hour</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/hours">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>hours</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/HR</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="minutes">
+                <xsd:annotation>
+                  <xsd:documentation>minute</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/minutes">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>minutes</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MIN</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="seconds">
+                <xsd:annotation>
+                  <xsd:documentation>second</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi/xdstring-value/seconds">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+                      <rdfs:label>seconds</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/SEC</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -7679,224 +9943,224 @@
 </xsd:complexType>
 
 <!-- Substitution Groups -->
-  <xsd:element name="ms-i4e2nod7ss9d4cumhn2pah8b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i4e2nod7ss9d4cumhn2pah8b"/>
-  <xsd:element name="ms-i1defiugxfdcwfb9rqv4p5tz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i1defiugxfdcwfb9rqv4p5tz"/>
-  <xsd:element name="ms-anbcg4rhacgmv8lkfofymmv0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-anbcg4rhacgmv8lkfofymmv0"/>
-  <xsd:element name="ms-ueb5g1ojzlwwt0mnds5zb6wl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl"/>
+  <xsd:element name="ms-q0ckidtsg1x3iav6nrt8fo0l" substitutionGroup="sdc4:Item" type="sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l"/>
+  <xsd:element name="ms-jpr4t7i8lrhxen4x63s6jp2c" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c"/>
+  <xsd:element name="ms-lg86shb5pwq1r3sann4tyxzq" substitutionGroup="sdc4:Item" type="sdc4:mc-lg86shb5pwq1r3sann4tyxzq"/>
+  <xsd:element name="ms-qb90a0sp9vvb6c5cbcf236ys" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qb90a0sp9vvb6c5cbcf236ys"/>
+  <xsd:element name="ms-x1942izf02stqs3kiu2yepf5" substitutionGroup="sdc4:Item" type="sdc4:mc-x1942izf02stqs3kiu2yepf5"/>
+  <xsd:element name="ms-bgis0a73v9ncnwhicmjmvhl1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bgis0a73v9ncnwhicmjmvhl1"/>
+  <xsd:element name="ms-c3ycqqk7ns1bvmsc0ricnsbn" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
+  <xsd:element name="ms-rghkif2x2xhe0e82mc85qwvm" substitutionGroup="sdc4:Item" type="sdc4:mc-rghkif2x2xhe0e82mc85qwvm"/>
+  <xsd:element name="ms-hjjou19np3pohe63fxmqtkoi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hjjou19np3pohe63fxmqtkoi"/>
+  <xsd:element name="ms-fnxiiamw1uk1hvsxmjgsu1xy" substitutionGroup="sdc4:Item" type="sdc4:mc-fnxiiamw1uk1hvsxmjgsu1xy"/>
+  <xsd:element name="ms-wr06h54xqqw2q9id8i9673jy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wr06h54xqqw2q9id8i9673jy"/>
+  <xsd:element name="ms-c7up53lff6ip0zyv8dkkt868" substitutionGroup="sdc4:Item" type="sdc4:mc-c7up53lff6ip0zyv8dkkt868"/>
+  <xsd:element name="ms-w2ruemcfy35rw60jl1t9dew2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-w2ruemcfy35rw60jl1t9dew2"/>
+  <xsd:element name="ms-lv5pcw6w5e15mo1t2oiofatl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lv5pcw6w5e15mo1t2oiofatl"/>
+  <xsd:element name="ms-xlgjqdpwdbn2re3mdh5yy2rk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk"/>
+  <xsd:element name="ms-q75pzzv36or6dxgjrrbvmun5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q75pzzv36or6dxgjrrbvmun5"/>
+  <xsd:element name="ms-zd43681w5jtanaml4wiaz1yo" substitutionGroup="sdc4:Item" type="sdc4:mc-zd43681w5jtanaml4wiaz1yo"/>
+  <xsd:element name="ms-jrlt189phj31y3vwgbpd79fw" substitutionGroup="sdc4:Item" type="sdc4:mc-jrlt189phj31y3vwgbpd79fw"/>
+  <xsd:element name="ms-d3c64u25m9yvux5qe9eu2ur9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d3c64u25m9yvux5qe9eu2ur9"/>
+  <xsd:element name="ms-f8vsfzqb1m8ecfosdzhc9out" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-f8vsfzqb1m8ecfosdzhc9out"/>
   <xsd:element name="ms-v6cz7f7o7q0e1ziekrn7oam5" substitutionGroup="sdc4:Item" type="sdc4:mc-v6cz7f7o7q0e1ziekrn7oam5"/>
-  <xsd:element name="ms-f9y0zpvphrny3gapgnjss0w1" substitutionGroup="sdc4:Item" type="sdc4:mc-f9y0zpvphrny3gapgnjss0w1"/>
+  <xsd:element name="ms-anbcg4rhacgmv8lkfofymmv0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-anbcg4rhacgmv8lkfofymmv0"/>
+  <xsd:element name="ms-aa663ivutjf2fs4757t0bbzy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-aa663ivutjf2fs4757t0bbzy"/>
+  <xsd:element name="ms-t2tvd3wylxrstdeu5aw6gkw1" substitutionGroup="sdc4:Item" type="sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"/>
+  <xsd:element name="ms-h1vwqq8ulrb27qpl6zuzppnf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf"/>
+  <xsd:element name="ms-e8mpixmhxaxlcrxmdfepx9za" substitutionGroup="sdc4:Item" type="sdc4:mc-e8mpixmhxaxlcrxmdfepx9za"/>
+  <xsd:element name="ms-a4kurktiltk4z2h5viravbvj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a4kurktiltk4z2h5viravbvj"/>
+  <xsd:element name="ms-lq0eu7o1fizlst28weyv3z2t" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lq0eu7o1fizlst28weyv3z2t"/>
+  <xsd:element name="ms-mzga0gpl0rsdppkx89slwi9z" substitutionGroup="sdc4:Item" type="sdc4:mc-mzga0gpl0rsdppkx89slwi9z"/>
+  <xsd:element name="ms-ujir739mf1g8ajeczs9nzh9m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ujir739mf1g8ajeczs9nzh9m"/>
+  <xsd:element name="ms-lyp1z2xr7we4g8tuooygoymb" substitutionGroup="sdc4:Item" type="sdc4:mc-lyp1z2xr7we4g8tuooygoymb"/>
+  <xsd:element name="ms-pelxyum1gkog2kgqhndrluo7" substitutionGroup="sdc4:Item" type="sdc4:mc-pelxyum1gkog2kgqhndrluo7"/>
+  <xsd:element name="ms-i16vqj89it3db7d3c5qjko9p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i16vqj89it3db7d3c5qjko9p"/>
+  <xsd:element name="ms-c179ilk2ns15cd5rzzdfd6f6" substitutionGroup="sdc4:Item" type="sdc4:mc-c179ilk2ns15cd5rzzdfd6f6"/>
+  <xsd:element name="ms-fl5quyfd88rajs0egsgbq7ou" substitutionGroup="sdc4:Item" type="sdc4:mc-fl5quyfd88rajs0egsgbq7ou"/>
+  <xsd:element name="ms-uso6k4nxb3m5ju33iqric9as" substitutionGroup="sdc4:Item" type="sdc4:mc-uso6k4nxb3m5ju33iqric9as"/>
+  <xsd:element name="ms-kmcck093437mfdlnxnrzm0xw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kmcck093437mfdlnxnrzm0xw"/>
+  <xsd:element name="ms-lpc82x2o46h4uixol7vdj05b" substitutionGroup="sdc4:Item" type="sdc4:mc-lpc82x2o46h4uixol7vdj05b"/>
+  <xsd:element name="ms-nwmv4c2ogjk8ohxzum1zuprf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nwmv4c2ogjk8ohxzum1zuprf"/>
+  <xsd:element name="ms-jjzmhdxvbt97pq81iwqubtxk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jjzmhdxvbt97pq81iwqubtxk"/>
+  <xsd:element name="ms-n5r1n5jkpnfzr0ie7jrrbpc3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n5r1n5jkpnfzr0ie7jrrbpc3"/>
+  <xsd:element name="ms-mjl0vv39zsbigqiuyqm66fkv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mjl0vv39zsbigqiuyqm66fkv"/>
+  <xsd:element name="ms-jcsoakfsmdndfvw6p0nh879m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jcsoakfsmdndfvw6p0nh879m"/>
+  <xsd:element name="ms-vmikfu0irht9fmq7q02t3oqs" substitutionGroup="sdc4:Item" type="sdc4:mc-vmikfu0irht9fmq7q02t3oqs"/>
+  <xsd:element name="ms-p2y70uqn5j1mrktvht2tf6u4" substitutionGroup="sdc4:Item" type="sdc4:mc-p2y70uqn5j1mrktvht2tf6u4"/>
+  <xsd:element name="ms-gdcfl9ghwkswdbmxww4senbt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gdcfl9ghwkswdbmxww4senbt"/>
+  <xsd:element name="ms-b5h4gc4jje1imwkzdt6xg5wb" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-b5h4gc4jje1imwkzdt6xg5wb"/>
+  <xsd:element name="ms-a5scyosu6j84vz350mqyrzl2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a5scyosu6j84vz350mqyrzl2"/>
+  <xsd:element name="ms-e9wisxqgslfvwzf8f9g2ns1a" substitutionGroup="sdc4:Item" type="sdc4:mc-e9wisxqgslfvwzf8f9g2ns1a"/>
+  <xsd:element name="ms-wn77qo3b1xjwc4dudtyme2io" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wn77qo3b1xjwc4dudtyme2io"/>
+  <xsd:element name="ms-r48alj7hc3797qfjnf2uj71n" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r48alj7hc3797qfjnf2uj71n"/>
+  <xsd:element name="ms-wl6j4ekcmu4hvt2m12zw4zp8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+  <xsd:element name="ms-mpkqsp6zn1gbc1zhqai9y40b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mpkqsp6zn1gbc1zhqai9y40b"/>
+  <xsd:element name="ms-s5duw4mmis3a4auw1fwvkctt" substitutionGroup="sdc4:Item" type="sdc4:mc-s5duw4mmis3a4auw1fwvkctt"/>
+  <xsd:element name="ms-d6fyaym5f5x8os7bvqbnoskt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d6fyaym5f5x8os7bvqbnoskt"/>
+  <xsd:element name="ms-skyz3ht3zv3j5qwsx8x0dyru" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-skyz3ht3zv3j5qwsx8x0dyru"/>
+  <xsd:element name="ms-nf1air1zbj8v9w66jozdxmyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nf1air1zbj8v9w66jozdxmyl"/>
+  <xsd:element name="ms-xxe21o9ojzmy9wxxky1tnmog" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xxe21o9ojzmy9wxxky1tnmog"/>
+  <xsd:element name="ms-n1asylnn94ejo14l8us3wxf6" substitutionGroup="sdc4:Item" type="sdc4:mc-n1asylnn94ejo14l8us3wxf6"/>
+  <xsd:element name="ms-vhezo2cckpe92x4c3j2memeh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vhezo2cckpe92x4c3j2memeh"/>
+  <xsd:element name="ms-pxa2yzf6codttkyfa7nyx2ei" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pxa2yzf6codttkyfa7nyx2ei"/>
+  <xsd:element name="ms-uwiosm2q9ym3ewr4de910s70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uwiosm2q9ym3ewr4de910s70"/>
+  <xsd:element name="ms-xvdtx5vxlu8pl9dyfz8x8m1r" substitutionGroup="sdc4:Item" type="sdc4:mc-xvdtx5vxlu8pl9dyfz8x8m1r"/>
+  <xsd:element name="ms-cmtzyf0esp2hbf8ze2q0d3bh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-cmtzyf0esp2hbf8ze2q0d3bh"/>
+  <xsd:element name="ms-hhusuzzig19rs46ngz23k5g7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hhusuzzig19rs46ngz23k5g7"/>
+  <xsd:element name="ms-zshx6rx7ca1j00eda9kxyh6h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zshx6rx7ca1j00eda9kxyh6h"/>
+  <xsd:element name="ms-nz4t9iecyq1ukvs4s3ymgd8t" substitutionGroup="sdc4:Audit" type="sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t"/>
+  <xsd:element name="ms-sqy06x5fv64a322dtl308lmw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sqy06x5fv64a322dtl308lmw"/>
+  <xsd:element name="ms-gcjyjrnp0wsfoelcp4m05c67" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gcjyjrnp0wsfoelcp4m05c67"/>
+  <xsd:element name="ms-vbctgmdcwps5b3r3l6sboa6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vbctgmdcwps5b3r3l6sboa6y"/>
+  <xsd:element name="ms-og08xf6bu928uuz6t3y0e23f" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-og08xf6bu928uuz6t3y0e23f"/>
+  <xsd:element name="ms-zv342hb79qgder7lfsaewzli" substitutionGroup="sdc4:Item" type="sdc4:mc-zv342hb79qgder7lfsaewzli"/>
+  <xsd:element name="ms-dkc2ccj5te35z9gd4bu1blcq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkc2ccj5te35z9gd4bu1blcq"/>
+  <xsd:element name="ms-x30sghfdhlvgw2gn7trxp9u6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x30sghfdhlvgw2gn7trxp9u6"/>
+  <xsd:element name="ms-u3euzufk7txuf1u20g0ca89l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-u3euzufk7txuf1u20g0ca89l"/>
+  <xsd:element name="ms-pkren9mdq1ve6mdcn5hdu4xq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pkren9mdq1ve6mdcn5hdu4xq"/>
+  <xsd:element name="ms-pcnnug0ctyr0nhjjj5cn49mi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi"/>
+  <xsd:element name="ms-ginfqbk7q59ld2r4us8sjnv1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ginfqbk7q59ld2r4us8sjnv1"/>
+  <xsd:element name="ms-yht0x4rmqyu32sd90jl0rzbo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yht0x4rmqyu32sd90jl0rzbo"/>
+  <xsd:element name="ms-xfvr55ap2rv2nokf9v12gggl" substitutionGroup="sdc4:Item" type="sdc4:mc-xfvr55ap2rv2nokf9v12gggl"/>
+  <xsd:element name="ms-sa4nl1kbpdr842fkucvfjkpq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sa4nl1kbpdr842fkucvfjkpq"/>
+  <xsd:element name="ms-qdl35df54hlauu2mhwac6goe" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qdl35df54hlauu2mhwac6goe"/>
+  <xsd:element name="ms-wph20dg6mu7bwrm4gbw6wao9" substitutionGroup="sdc4:Item" type="sdc4:mc-wph20dg6mu7bwrm4gbw6wao9"/>
+  <xsd:element name="ms-r6hkunjm2q0hlxiknlc9ljix" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r6hkunjm2q0hlxiknlc9ljix"/>
+  <xsd:element name="ms-uv5qgddm3wuigsszk0o80bk9" substitutionGroup="sdc4:Item" type="sdc4:mc-uv5qgddm3wuigsszk0o80bk9"/>
+  <xsd:element name="ms-hswapeutuik067dokidnbv88" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hswapeutuik067dokidnbv88"/>
+  <xsd:element name="ms-it3x0l7q5js77eubgxkv0eij" substitutionGroup="sdc4:Item" type="sdc4:mc-it3x0l7q5js77eubgxkv0eij"/>
+  <xsd:element name="ms-wd1txyosw8ha21sohphne92e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wd1txyosw8ha21sohphne92e"/>
+  <xsd:element name="ms-i1defiugxfdcwfb9rqv4p5tz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i1defiugxfdcwfb9rqv4p5tz"/>
+  <xsd:element name="ms-phus5105uw30xejqs7baamyx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-phus5105uw30xejqs7baamyx"/>
+  <xsd:element name="ms-t50t5aje4wj35czk6p4i2bse" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t50t5aje4wj35czk6p4i2bse"/>
   <xsd:element name="ms-gb78cmuyo72hqs5apymdki7l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gb78cmuyo72hqs5apymdki7l"/>
   <xsd:element name="ms-rnpfh6mpz8jfq28dfjp17rf9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-rnpfh6mpz8jfq28dfjp17rf9"/>
-  <xsd:element name="ms-wd1txyosw8ha21sohphne92e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wd1txyosw8ha21sohphne92e"/>
-  <xsd:element name="ms-w2ruemcfy35rw60jl1t9dew2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-w2ruemcfy35rw60jl1t9dew2"/>
-  <xsd:element name="ms-dkc2ccj5te35z9gd4bu1blcq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkc2ccj5te35z9gd4bu1blcq"/>
-  <xsd:element name="ms-cmtzyf0esp2hbf8ze2q0d3bh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-cmtzyf0esp2hbf8ze2q0d3bh"/>
-  <xsd:element name="ms-vmikfu0irht9fmq7q02t3oqs" substitutionGroup="sdc4:Item" type="sdc4:mc-vmikfu0irht9fmq7q02t3oqs"/>
-  <xsd:element name="ms-rghkif2x2xhe0e82mc85qwvm" substitutionGroup="sdc4:Item" type="sdc4:mc-rghkif2x2xhe0e82mc85qwvm"/>
-  <xsd:element name="ms-e9wisxqgslfvwzf8f9g2ns1a" substitutionGroup="sdc4:Item" type="sdc4:mc-e9wisxqgslfvwzf8f9g2ns1a"/>
-  <xsd:element name="ms-eftvwi5byq6cdtd931qyxzw0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eftvwi5byq6cdtd931qyxzw0"/>
-  <xsd:element name="ms-hswapeutuik067dokidnbv88" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hswapeutuik067dokidnbv88"/>
-  <xsd:element name="ms-lg86shb5pwq1r3sann4tyxzq" substitutionGroup="sdc4:Item" type="sdc4:mc-lg86shb5pwq1r3sann4tyxzq"/>
-  <xsd:element name="ms-sndpbhm3xbd6qtbyxmvh3i0e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e"/>
-  <xsd:element name="ms-skyz3ht3zv3j5qwsx8x0dyru" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-skyz3ht3zv3j5qwsx8x0dyru"/>
-  <xsd:element name="ms-f9j6mhy2vd2tjjms2r2w5hls" substitutionGroup="sdc4:Item" type="sdc4:mc-f9j6mhy2vd2tjjms2r2w5hls"/>
-  <xsd:element name="ms-s7najsv11bd33calnyktjcon" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-s7najsv11bd33calnyktjcon"/>
-  <xsd:element name="ms-lyp1z2xr7we4g8tuooygoymb" substitutionGroup="sdc4:Item" type="sdc4:mc-lyp1z2xr7we4g8tuooygoymb"/>
-  <xsd:element name="ms-vbctgmdcwps5b3r3l6sboa6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vbctgmdcwps5b3r3l6sboa6y"/>
-  <xsd:element name="ms-x1942izf02stqs3kiu2yepf5" substitutionGroup="sdc4:Item" type="sdc4:mc-x1942izf02stqs3kiu2yepf5"/>
-  <xsd:element name="ms-sa4nl1kbpdr842fkucvfjkpq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sa4nl1kbpdr842fkucvfjkpq"/>
-  <xsd:element name="ms-sqy06x5fv64a322dtl308lmw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sqy06x5fv64a322dtl308lmw"/>
-  <xsd:element name="ms-xvdtx5vxlu8pl9dyfz8x8m1r" substitutionGroup="sdc4:Item" type="sdc4:mc-xvdtx5vxlu8pl9dyfz8x8m1r"/>
-  <xsd:element name="ms-bfn83x3fw1cyuqriuoquu9t1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bfn83x3fw1cyuqriuoquu9t1"/>
-  <xsd:element name="ms-x30sghfdhlvgw2gn7trxp9u6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x30sghfdhlvgw2gn7trxp9u6"/>
-  <xsd:element name="ms-embtq0y4cmyk5em87e3jbdjx" substitutionGroup="sdc4:Item" type="sdc4:mc-embtq0y4cmyk5em87e3jbdjx"/>
-  <xsd:element name="ms-mfk506g2b5l0gvz9m2stpljy" substitutionGroup="sdc4:Item" type="sdc4:mc-mfk506g2b5l0gvz9m2stpljy"/>
-  <xsd:element name="ms-n5r1n5jkpnfzr0ie7jrrbpc3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n5r1n5jkpnfzr0ie7jrrbpc3"/>
-  <xsd:element name="ms-r6hkunjm2q0hlxiknlc9ljix" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r6hkunjm2q0hlxiknlc9ljix"/>
-  <xsd:element name="ms-u3euzufk7txuf1u20g0ca89l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-u3euzufk7txuf1u20g0ca89l"/>
-  <xsd:element name="ms-g2xnh3uhnlrnqlo7ki2s0fs3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
-  <xsd:element name="ms-fjhgr5fyqxt2crmg2cb5c513" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fjhgr5fyqxt2crmg2cb5c513"/>
-  <xsd:element name="ms-zv342hb79qgder7lfsaewzli" substitutionGroup="sdc4:Item" type="sdc4:mc-zv342hb79qgder7lfsaewzli"/>
-  <xsd:element name="ms-zshx6rx7ca1j00eda9kxyh6h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zshx6rx7ca1j00eda9kxyh6h"/>
-  <xsd:element name="ms-fnxiiamw1uk1hvsxmjgsu1xy" substitutionGroup="sdc4:Item" type="sdc4:mc-fnxiiamw1uk1hvsxmjgsu1xy"/>
-  <xsd:element name="ms-abub2eah26yd2uzni3p9l58i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abub2eah26yd2uzni3p9l58i"/>
-  <xsd:element name="ms-x0lebwtobgaelj5pev3258sd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x0lebwtobgaelj5pev3258sd"/>
-  <xsd:element name="ms-t0whhrqtnb54te4mk48i1ooj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t0whhrqtnb54te4mk48i1ooj"/>
-  <xsd:element name="ms-it3x0l7q5js77eubgxkv0eij" substitutionGroup="sdc4:Item" type="sdc4:mc-it3x0l7q5js77eubgxkv0eij"/>
-  <xsd:element name="ms-phus5105uw30xejqs7baamyx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-phus5105uw30xejqs7baamyx"/>
-  <xsd:element name="ms-h1vwqq8ulrb27qpl6zuzppnf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf"/>
-  <xsd:element name="ms-g9uatlpz9l8bg2d168yileej" substitutionGroup="sdc4:Item" type="sdc4:mc-g9uatlpz9l8bg2d168yileej"/>
-  <xsd:element name="ms-jjzmhdxvbt97pq81iwqubtxk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jjzmhdxvbt97pq81iwqubtxk"/>
-  <xsd:element name="ms-wr06h54xqqw2q9id8i9673jy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wr06h54xqqw2q9id8i9673jy"/>
-  <xsd:element name="ms-nf1air1zbj8v9w66jozdxmyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nf1air1zbj8v9w66jozdxmyl"/>
-  <xsd:element name="ms-lv5pcw6w5e15mo1t2oiofatl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lv5pcw6w5e15mo1t2oiofatl"/>
-  <xsd:element name="ms-uwiosm2q9ym3ewr4de910s70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uwiosm2q9ym3ewr4de910s70"/>
-  <xsd:element name="ms-jrlt189phj31y3vwgbpd79fw" substitutionGroup="sdc4:Item" type="sdc4:mc-jrlt189phj31y3vwgbpd79fw"/>
-  <xsd:element name="ms-jujsdur1igws8orw6tvvlqco" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jujsdur1igws8orw6tvvlqco"/>
-  <xsd:element name="ms-r48alj7hc3797qfjnf2uj71n" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r48alj7hc3797qfjnf2uj71n"/>
-  <xsd:element name="ms-zd43681w5jtanaml4wiaz1yo" substitutionGroup="sdc4:Item" type="sdc4:mc-zd43681w5jtanaml4wiaz1yo"/>
-  <xsd:element name="ms-d3c64u25m9yvux5qe9eu2ur9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d3c64u25m9yvux5qe9eu2ur9"/>
-  <xsd:element name="ms-eo5tlfr0576ypknys5alvcn0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eo5tlfr0576ypknys5alvcn0"/>
-  <xsd:element name="ms-n1asylnn94ejo14l8us3wxf6" substitutionGroup="sdc4:Item" type="sdc4:mc-n1asylnn94ejo14l8us3wxf6"/>
-  <xsd:element name="ms-lpc82x2o46h4uixol7vdj05b" substitutionGroup="sdc4:Item" type="sdc4:mc-lpc82x2o46h4uixol7vdj05b"/>
-  <xsd:element name="ms-mpkqsp6zn1gbc1zhqai9y40b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mpkqsp6zn1gbc1zhqai9y40b"/>
-  <xsd:element name="ms-yht0x4rmqyu32sd90jl0rzbo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yht0x4rmqyu32sd90jl0rzbo"/>
-  <xsd:element name="ms-aa663ivutjf2fs4757t0bbzy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-aa663ivutjf2fs4757t0bbzy"/>
-  <xsd:element name="ms-pcnnug0ctyr0nhjjj5cn49mi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pcnnug0ctyr0nhjjj5cn49mi"/>
-  <xsd:element name="ms-d1evlz8yvdlwt6ia9fjq4pgj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
-  <xsd:element name="ms-k3rgauqfh9vs4bqq5q4nsbp4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4"/>
-  <xsd:element name="ms-bgis0a73v9ncnwhicmjmvhl1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bgis0a73v9ncnwhicmjmvhl1"/>
-  <xsd:element name="ms-dnt6k247fxuu4f11iscbmatc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dnt6k247fxuu4f11iscbmatc"/>
-  <xsd:element name="ms-l9jnt4o3wpofp22dvqjrez9t" substitutionGroup="sdc4:Item" type="sdc4:mc-l9jnt4o3wpofp22dvqjrez9t"/>
-  <xsd:element name="ms-vhezo2cckpe92x4c3j2memeh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vhezo2cckpe92x4c3j2memeh"/>
-  <xsd:element name="ms-f8vsfzqb1m8ecfosdzhc9out" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-f8vsfzqb1m8ecfosdzhc9out"/>
-  <xsd:element name="ms-i16vqj89it3db7d3c5qjko9p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i16vqj89it3db7d3c5qjko9p"/>
-  <xsd:element name="ms-t2tvd3wylxrstdeu5aw6gkw1" substitutionGroup="sdc4:Item" type="sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"/>
-  <xsd:element name="ms-wn77qo3b1xjwc4dudtyme2io" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wn77qo3b1xjwc4dudtyme2io"/>
-  <xsd:element name="ms-ujir739mf1g8ajeczs9nzh9m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ujir739mf1g8ajeczs9nzh9m"/>
-  <xsd:element name="ms-mrjuxhrc2jvbxslo2rlzndyv" substitutionGroup="sdc4:Item" type="sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv"/>
-  <xsd:element name="ms-fl5quyfd88rajs0egsgbq7ou" substitutionGroup="sdc4:Item" type="sdc4:mc-fl5quyfd88rajs0egsgbq7ou"/>
-  <xsd:element name="ms-b5h4gc4jje1imwkzdt6xg5wb" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-b5h4gc4jje1imwkzdt6xg5wb"/>
-  <xsd:element name="ms-c3ycqqk7ns1bvmsc0ricnsbn" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
-  <xsd:element name="ms-a4kurktiltk4z2h5viravbvj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a4kurktiltk4z2h5viravbvj"/>
-  <xsd:element name="ms-h3kdbvdtyalpvik97saaf0an" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h3kdbvdtyalpvik97saaf0an"/>
-  <xsd:element name="ms-uso6k4nxb3m5ju33iqric9as" substitutionGroup="sdc4:Item" type="sdc4:mc-uso6k4nxb3m5ju33iqric9as"/>
-  <xsd:element name="ms-hhusuzzig19rs46ngz23k5g7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hhusuzzig19rs46ngz23k5g7"/>
-  <xsd:element name="ms-wl6j4ekcmu4hvt2m12zw4zp8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
-  <xsd:element name="ms-zkshfzesnopszu12m8yt656o" substitutionGroup="sdc4:Item" type="sdc4:mc-zkshfzesnopszu12m8yt656o"/>
-  <xsd:element name="ms-qb90a0sp9vvb6c5cbcf236ys" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qb90a0sp9vvb6c5cbcf236ys"/>
   <xsd:element name="ms-rpz1czz06jhpahmfz30rblvp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-rpz1czz06jhpahmfz30rblvp"/>
-  <xsd:element name="ms-og08xf6bu928uuz6t3y0e23f" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-og08xf6bu928uuz6t3y0e23f"/>
-  <xsd:element name="ms-gcjyjrnp0wsfoelcp4m05c67" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gcjyjrnp0wsfoelcp4m05c67"/>
-  <xsd:element name="ms-xfvr55ap2rv2nokf9v12gggl" substitutionGroup="sdc4:Item" type="sdc4:mc-xfvr55ap2rv2nokf9v12gggl"/>
-  <xsd:element name="ms-c179ilk2ns15cd5rzzdfd6f6" substitutionGroup="sdc4:Item" type="sdc4:mc-c179ilk2ns15cd5rzzdfd6f6"/>
-  <xsd:element name="ms-lq0eu7o1fizlst28weyv3z2t" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lq0eu7o1fizlst28weyv3z2t"/>
-  <xsd:element name="ms-pelxyum1gkog2kgqhndrluo7" substitutionGroup="sdc4:Item" type="sdc4:mc-pelxyum1gkog2kgqhndrluo7"/>
-  <xsd:element name="ms-uv5qgddm3wuigsszk0o80bk9" substitutionGroup="sdc4:Item" type="sdc4:mc-uv5qgddm3wuigsszk0o80bk9"/>
-  <xsd:element name="ms-kqlatg3rz00z58muv7j8toyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kqlatg3rz00z58muv7j8toyl"/>
-  <xsd:element name="ms-wph20dg6mu7bwrm4gbw6wao9" substitutionGroup="sdc4:Item" type="sdc4:mc-wph20dg6mu7bwrm4gbw6wao9"/>
-  <xsd:element name="ms-q0ckidtsg1x3iav6nrt8fo0l" substitutionGroup="sdc4:Item" type="sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l"/>
-  <xsd:element name="ms-q75pzzv36or6dxgjrrbvmun5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q75pzzv36or6dxgjrrbvmun5"/>
-  <xsd:element name="ms-p2y70uqn5j1mrktvht2tf6u4" substitutionGroup="sdc4:Item" type="sdc4:mc-p2y70uqn5j1mrktvht2tf6u4"/>
-  <xsd:element name="ms-mjl0vv39zsbigqiuyqm66fkv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mjl0vv39zsbigqiuyqm66fkv"/>
-  <xsd:element name="ms-nwmv4c2ogjk8ohxzum1zuprf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nwmv4c2ogjk8ohxzum1zuprf"/>
-  <xsd:element name="ms-qh84jdzp1kxt85aq4ilo0svk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qh84jdzp1kxt85aq4ilo0svk"/>
-  <xsd:element name="ms-a5scyosu6j84vz350mqyrzl2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a5scyosu6j84vz350mqyrzl2"/>
-  <xsd:element name="ms-u6u23oip0dinxve95ub0kwma" substitutionGroup="sdc4:Item" type="sdc4:mc-u6u23oip0dinxve95ub0kwma"/>
+  <xsd:element name="ms-dnt6k247fxuu4f11iscbmatc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dnt6k247fxuu4f11iscbmatc"/>
   <xsd:element name="ms-awvbv44gmq5co6prxcnhdz09" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-awvbv44gmq5co6prxcnhdz09"/>
-  <xsd:element name="ms-jpr4t7i8lrhxen4x63s6jp2c" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jpr4t7i8lrhxen4x63s6jp2c"/>
-  <xsd:element name="ms-jcsoakfsmdndfvw6p0nh879m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jcsoakfsmdndfvw6p0nh879m"/>
-  <xsd:element name="ms-kmcck093437mfdlnxnrzm0xw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kmcck093437mfdlnxnrzm0xw"/>
-  <xsd:element name="ms-pkren9mdq1ve6mdcn5hdu4xq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pkren9mdq1ve6mdcn5hdu4xq"/>
-  <xsd:element name="ms-a50e7whycfue1qianqp65rq9" substitutionGroup="sdc4:Item" type="sdc4:mc-a50e7whycfue1qianqp65rq9"/>
-  <xsd:element name="ms-mzga0gpl0rsdppkx89slwi9z" substitutionGroup="sdc4:Item" type="sdc4:mc-mzga0gpl0rsdppkx89slwi9z"/>
-  <xsd:element name="ms-s5duw4mmis3a4auw1fwvkctt" substitutionGroup="sdc4:Item" type="sdc4:mc-s5duw4mmis3a4auw1fwvkctt"/>
-  <xsd:element name="ms-hjjou19np3pohe63fxmqtkoi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hjjou19np3pohe63fxmqtkoi"/>
-  <xsd:element name="ms-av5ztq8he6ot9ubpc4mhtp3s" substitutionGroup="sdc4:Item" type="sdc4:mc-av5ztq8he6ot9ubpc4mhtp3s"/>
-  <xsd:element name="ms-qdl35df54hlauu2mhwac6goe" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qdl35df54hlauu2mhwac6goe"/>
-  <xsd:element name="ms-ginfqbk7q59ld2r4us8sjnv1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ginfqbk7q59ld2r4us8sjnv1"/>
-  <xsd:element name="ms-yk5nrxndulhebpi3hiywk8u8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yk5nrxndulhebpi3hiywk8u8"/>
-  <xsd:element name="ms-xlgjqdpwdbn2re3mdh5yy2rk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk"/>
-  <xsd:element name="ms-m9minyaug6ypyzt52zfxlyyi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m9minyaug6ypyzt52zfxlyyi"/>
-  <xsd:element name="ms-credrxhz4hg4c42sihm0wb6s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-credrxhz4hg4c42sihm0wb6s"/>
-  <xsd:element name="ms-pxa2yzf6codttkyfa7nyx2ei" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pxa2yzf6codttkyfa7nyx2ei"/>
-  <xsd:element name="ms-p6smy5wa25ug4yhgdswyuklx" substitutionGroup="sdc4:Party" type="sdc4:mc-p6smy5wa25ug4yhgdswyuklx"/>
-  <xsd:element name="ms-lghqkvp7vapqk10l248kzqs8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lghqkvp7vapqk10l248kzqs8"/>
-  <xsd:element name="ms-uzai5uey5p1fnn9ezj9u6vor" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uzai5uey5p1fnn9ezj9u6vor"/>
-  <xsd:element name="ms-t50t5aje4wj35czk6p4i2bse" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t50t5aje4wj35czk6p4i2bse"/>
-  <xsd:element name="ms-xxe21o9ojzmy9wxxky1tnmog" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xxe21o9ojzmy9wxxky1tnmog"/>
-  <xsd:element name="ms-nz4t9iecyq1ukvs4s3ymgd8t" substitutionGroup="sdc4:Audit" type="sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t"/>
-  <xsd:element name="ms-d6fyaym5f5x8os7bvqbnoskt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d6fyaym5f5x8os7bvqbnoskt"/>
-  <xsd:element name="ms-c7up53lff6ip0zyv8dkkt868" substitutionGroup="sdc4:Item" type="sdc4:mc-c7up53lff6ip0zyv8dkkt868"/>
+  <xsd:element name="ms-g9uatlpz9l8bg2d168yileej" substitutionGroup="sdc4:Item" type="sdc4:mc-g9uatlpz9l8bg2d168yileej"/>
   <xsd:element name="ms-ce1c8sydkov8bkv4dgdmwe5x" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x"/>
-  <xsd:element name="ms-gdcfl9ghwkswdbmxww4senbt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gdcfl9ghwkswdbmxww4senbt"/>
-  <xsd:element name="ms-e8mpixmhxaxlcrxmdfepx9za" substitutionGroup="sdc4:Item" type="sdc4:mc-e8mpixmhxaxlcrxmdfepx9za"/>
+  <xsd:element name="ms-k3rgauqfh9vs4bqq5q4nsbp4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4"/>
+  <xsd:element name="ms-abub2eah26yd2uzni3p9l58i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abub2eah26yd2uzni3p9l58i"/>
+  <xsd:element name="ms-credrxhz4hg4c42sihm0wb6s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-credrxhz4hg4c42sihm0wb6s"/>
+  <xsd:element name="ms-m9minyaug6ypyzt52zfxlyyi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m9minyaug6ypyzt52zfxlyyi"/>
+  <xsd:element name="ms-eftvwi5byq6cdtd931qyxzw0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eftvwi5byq6cdtd931qyxzw0"/>
+  <xsd:element name="ms-jujsdur1igws8orw6tvvlqco" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jujsdur1igws8orw6tvvlqco"/>
+  <xsd:element name="ms-av5ztq8he6ot9ubpc4mhtp3s" substitutionGroup="sdc4:Item" type="sdc4:mc-av5ztq8he6ot9ubpc4mhtp3s"/>
+  <xsd:element name="ms-sndpbhm3xbd6qtbyxmvh3i0e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e"/>
+  <xsd:element name="ms-x0lebwtobgaelj5pev3258sd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x0lebwtobgaelj5pev3258sd"/>
+  <xsd:element name="ms-kqlatg3rz00z58muv7j8toyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kqlatg3rz00z58muv7j8toyl"/>
+  <xsd:element name="ms-g2xnh3uhnlrnqlo7ki2s0fs3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+  <xsd:element name="ms-f9y0zpvphrny3gapgnjss0w1" substitutionGroup="sdc4:Item" type="sdc4:mc-f9y0zpvphrny3gapgnjss0w1"/>
+  <xsd:element name="ms-mfk506g2b5l0gvz9m2stpljy" substitutionGroup="sdc4:Item" type="sdc4:mc-mfk506g2b5l0gvz9m2stpljy"/>
+  <xsd:element name="ms-zkshfzesnopszu12m8yt656o" substitutionGroup="sdc4:Item" type="sdc4:mc-zkshfzesnopszu12m8yt656o"/>
+  <xsd:element name="ms-p6smy5wa25ug4yhgdswyuklx" substitutionGroup="sdc4:Party" type="sdc4:mc-p6smy5wa25ug4yhgdswyuklx"/>
   <xsd:element name="ms-e0cmaixbn1ip7wt1lqvuas0d" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-e0cmaixbn1ip7wt1lqvuas0d"/>
-  <xsd:element name="ms-dlu1btnja2h37jfx3vj694rv" substitutionGroup="sdc4:Item" type="sdc4:mc-dlu1btnja2h37jfx3vj694rv"/>
-  <xsd:element name="ms-gujvcggdotm3z1hmygdrey09" substitutionGroup="sdc4:Item" type="sdc4:mc-gujvcggdotm3z1hmygdrey09"/>
-  <xsd:element name="ms-tqidgku8z1urlxrunr807i80" substitutionGroup="sdc4:Item" type="sdc4:mc-tqidgku8z1urlxrunr807i80"/>
-  <xsd:element name="ms-k87dda72y8upko7dnrcs425s" substitutionGroup="sdc4:Item" type="sdc4:mc-k87dda72y8upko7dnrcs425s"/>
-  <xsd:element name="ms-px1s852i5pfng3v0ikk6fw4m" substitutionGroup="sdc4:Item" type="sdc4:mc-px1s852i5pfng3v0ikk6fw4m"/>
-  <xsd:element name="ms-xkyqavyqrcqypnr99sinyuzw" substitutionGroup="sdc4:Item" type="sdc4:mc-xkyqavyqrcqypnr99sinyuzw"/>
-  <xsd:element name="ms-cuvz6f4g1cdtdid8uv9r3de4" substitutionGroup="sdc4:Item" type="sdc4:mc-cuvz6f4g1cdtdid8uv9r3de4"/>
-  <xsd:element name="ms-qfmes86biux1nl7gbaowsgc4" substitutionGroup="sdc4:Item" type="sdc4:mc-qfmes86biux1nl7gbaowsgc4"/>
-  <xsd:element name="ms-hpkc8xrccpwc3shm4ubm5o47" substitutionGroup="sdc4:Item" type="sdc4:mc-hpkc8xrccpwc3shm4ubm5o47"/>
-  <xsd:element name="ms-lfjymfyzuvudb2p4zmk0xh27" substitutionGroup="sdc4:Item" type="sdc4:mc-lfjymfyzuvudb2p4zmk0xh27"/>
-  <xsd:element name="ms-f6z431hl60ra8eqbrcyrsvji" substitutionGroup="sdc4:Item" type="sdc4:mc-f6z431hl60ra8eqbrcyrsvji"/>
-  <xsd:element name="ms-uc64yt3ys0s0xrj51rue2ofb" substitutionGroup="sdc4:Item" type="sdc4:mc-uc64yt3ys0s0xrj51rue2ofb"/>
-  <xsd:element name="ms-jwpkqjchavj885uwt5v1jgid" substitutionGroup="sdc4:Item" type="sdc4:mc-jwpkqjchavj885uwt5v1jgid"/>
-  <xsd:element name="ms-qfu6jw6oc1788xo5bqp6gf4f" substitutionGroup="sdc4:Item" type="sdc4:mc-qfu6jw6oc1788xo5bqp6gf4f"/>
-  <xsd:element name="ms-yz9cfjns50s6lelah9omrkwr" substitutionGroup="sdc4:Item" type="sdc4:mc-yz9cfjns50s6lelah9omrkwr"/>
-  <xsd:element name="ms-kce8557jd9vg6ei59m7o1kc2" substitutionGroup="sdc4:Item" type="sdc4:mc-kce8557jd9vg6ei59m7o1kc2"/>
-  <xsd:element name="ms-vzyuqpkegby4er3pw12gxw2c" substitutionGroup="sdc4:Item" type="sdc4:mc-vzyuqpkegby4er3pw12gxw2c"/>
-  <xsd:element name="ms-yq8081214dxxn8i5lcop56ol" substitutionGroup="sdc4:Item" type="sdc4:mc-yq8081214dxxn8i5lcop56ol"/>
-  <xsd:element name="ms-vsnnmsojiqwcx33jeavt4bkf" substitutionGroup="sdc4:Item" type="sdc4:mc-vsnnmsojiqwcx33jeavt4bkf"/>
-  <xsd:element name="ms-bmc7ykbucsqiv9le0avkt7oq" substitutionGroup="sdc4:Item" type="sdc4:mc-bmc7ykbucsqiv9le0avkt7oq"/>
-  <xsd:element name="ms-u78q1nozkovzpknk8fjeex72" substitutionGroup="sdc4:Item" type="sdc4:mc-u78q1nozkovzpknk8fjeex72"/>
-  <xsd:element name="ms-o0qu77y6w4lwvu2qhms3ilbw" substitutionGroup="sdc4:Item" type="sdc4:mc-o0qu77y6w4lwvu2qhms3ilbw"/>
-  <xsd:element name="ms-p3ibv9ghyuiq4fdo7pzafi1b" substitutionGroup="sdc4:Item" type="sdc4:mc-p3ibv9ghyuiq4fdo7pzafi1b"/>
-  <xsd:element name="ms-p5zjm3c1d2x9jxc2n3wyzbth" substitutionGroup="sdc4:Item" type="sdc4:mc-p5zjm3c1d2x9jxc2n3wyzbth"/>
-  <xsd:element name="ms-uf11uwd9s5x5t9bw98z9dr5l" substitutionGroup="sdc4:Item" type="sdc4:mc-uf11uwd9s5x5t9bw98z9dr5l"/>
-  <xsd:element name="ms-wy38zv02dmcp5gjul57yejmk" substitutionGroup="sdc4:Item" type="sdc4:mc-wy38zv02dmcp5gjul57yejmk"/>
-  <xsd:element name="ms-eityhljg7w30a835qcc9h4c1" substitutionGroup="sdc4:Item" type="sdc4:mc-eityhljg7w30a835qcc9h4c1"/>
-  <xsd:element name="ms-ebn1a6s1d1dy724l4y692qsl" substitutionGroup="sdc4:Item" type="sdc4:mc-ebn1a6s1d1dy724l4y692qsl"/>
-  <xsd:element name="ms-mjj6mlhqgzcprfwuwnhu5npz" substitutionGroup="sdc4:Item" type="sdc4:mc-mjj6mlhqgzcprfwuwnhu5npz"/>
-  <xsd:element name="ms-fti6dssqpaatbprjx0mqu2mj" substitutionGroup="sdc4:Item" type="sdc4:mc-fti6dssqpaatbprjx0mqu2mj"/>
-  <xsd:element name="ms-o31fztf2l2gj0nuljugpl1s9" substitutionGroup="sdc4:Item" type="sdc4:mc-o31fztf2l2gj0nuljugpl1s9"/>
-  <xsd:element name="ms-qeu9jq1owxxh2woqo1f7m8jk" substitutionGroup="sdc4:Item" type="sdc4:mc-qeu9jq1owxxh2woqo1f7m8jk"/>
-  <xsd:element name="ms-o9p6k7c9ie20j5du0jmd3749" substitutionGroup="sdc4:Item" type="sdc4:mc-o9p6k7c9ie20j5du0jmd3749"/>
-  <xsd:element name="ms-lbor36zlwkf6u7yx9lgqfx0d" substitutionGroup="sdc4:Item" type="sdc4:mc-lbor36zlwkf6u7yx9lgqfx0d"/>
-  <xsd:element name="ms-lv2vjlsfb92qrcpj49qwyu3b" substitutionGroup="sdc4:Item" type="sdc4:mc-lv2vjlsfb92qrcpj49qwyu3b"/>
-  <xsd:element name="ms-r5fply6fvzhg90zybxgdx5cb" substitutionGroup="sdc4:Item" type="sdc4:mc-r5fply6fvzhg90zybxgdx5cb"/>
-  <xsd:element name="ms-vgvl7vcmbiz2z7zn9v7ayc04" substitutionGroup="sdc4:Item" type="sdc4:mc-vgvl7vcmbiz2z7zn9v7ayc04"/>
-  <xsd:element name="ms-in4ct2aoguzdvzg4mlsmsxfd" substitutionGroup="sdc4:Item" type="sdc4:mc-in4ct2aoguzdvzg4mlsmsxfd"/>
-  <xsd:element name="ms-q9fexg56xm10h5rz4pikhfsg" substitutionGroup="sdc4:Item" type="sdc4:mc-q9fexg56xm10h5rz4pikhfsg"/>
-  <xsd:element name="ms-deau6rxprq0zivzdddupk7cj" substitutionGroup="sdc4:Item" type="sdc4:mc-deau6rxprq0zivzdddupk7cj"/>
-  <xsd:element name="ms-f80jar38kwzkv9fy3yw34ocn" substitutionGroup="sdc4:Item" type="sdc4:mc-f80jar38kwzkv9fy3yw34ocn"/>
-  <xsd:element name="ms-cpaj0unbnudntl1brmdnuqhu" substitutionGroup="sdc4:Item" type="sdc4:mc-cpaj0unbnudntl1brmdnuqhu"/>
-  <xsd:element name="ms-xcmayroyt4krhroimfb3e859" substitutionGroup="sdc4:Item" type="sdc4:mc-xcmayroyt4krhroimfb3e859"/>
-  <xsd:element name="ms-udo62rz9q0dd11g4jh5r17ts" substitutionGroup="sdc4:Item" type="sdc4:mc-udo62rz9q0dd11g4jh5r17ts"/>
-  <xsd:element name="ms-g3232pf686yjripfxd1z9rj9" substitutionGroup="sdc4:Item" type="sdc4:mc-g3232pf686yjripfxd1z9rj9"/>
-  <xsd:element name="ms-r48fyfvuhl62i5yihku0hws1" substitutionGroup="sdc4:Item" type="sdc4:mc-r48fyfvuhl62i5yihku0hws1"/>
-  <xsd:element name="ms-pu93arecbavoy4l7r7l09iym" substitutionGroup="sdc4:Item" type="sdc4:mc-pu93arecbavoy4l7r7l09iym"/>
-  <xsd:element name="ms-y1u3ladafqtryhgyetpn5ild" substitutionGroup="sdc4:Item" type="sdc4:mc-y1u3ladafqtryhgyetpn5ild"/>
-  <xsd:element name="ms-jdugzq309qlimui7675txmyi" substitutionGroup="sdc4:Item" type="sdc4:mc-jdugzq309qlimui7675txmyi"/>
-  <xsd:element name="ms-r6x55vvha5ci3rl1o29adk03" substitutionGroup="sdc4:Item" type="sdc4:mc-r6x55vvha5ci3rl1o29adk03"/>
-  <xsd:element name="ms-yjrycyitjsxuk1v36kag9kif" substitutionGroup="sdc4:Item" type="sdc4:mc-yjrycyitjsxuk1v36kag9kif"/>
-  <xsd:element name="ms-f26flhqv2ckkxfjfv2a4mks3" substitutionGroup="sdc4:Item" type="sdc4:mc-f26flhqv2ckkxfjfv2a4mks3"/>
-  <xsd:element name="ms-yec6svv50u9d1tz9rp6kmv3v" substitutionGroup="sdc4:Item" type="sdc4:mc-yec6svv50u9d1tz9rp6kmv3v"/>
-  <xsd:element name="ms-q4rwxzoldz452g7rbii2an1h" substitutionGroup="sdc4:Item" type="sdc4:mc-q4rwxzoldz452g7rbii2an1h"/>
-  <xsd:element name="ms-vycps7awt38y25jhnrr4okxt" substitutionGroup="sdc4:Item" type="sdc4:mc-vycps7awt38y25jhnrr4okxt"/>
-  <xsd:element name="ms-wi324lr48j1pzugpnw17p87m" substitutionGroup="sdc4:Item" type="sdc4:mc-wi324lr48j1pzugpnw17p87m"/>
-  <xsd:element name="ms-wu8f1x11e6ihbltdd6w20rg5" substitutionGroup="sdc4:Item" type="sdc4:mc-wu8f1x11e6ihbltdd6w20rg5"/>
-  <xsd:element name="ms-j9gccgohqlb59l1t37doseiq" substitutionGroup="sdc4:Item" type="sdc4:mc-j9gccgohqlb59l1t37doseiq"/>
-  <xsd:element name="ms-ynnnvgi8748h2d01z2gf4z8x" substitutionGroup="sdc4:Item" type="sdc4:mc-ynnnvgi8748h2d01z2gf4z8x"/>
-  <xsd:element name="ms-wzcw32kxx2jf4z4oaldq4n3v" substitutionGroup="sdc4:Item" type="sdc4:mc-wzcw32kxx2jf4z4oaldq4n3v"/>
-  <xsd:element name="ms-hj4gt95jsr6xvywruyi9ip51" substitutionGroup="sdc4:Item" type="sdc4:mc-hj4gt95jsr6xvywruyi9ip51"/>
-  <xsd:element name="ms-n3n7ow0d22saquarrg9ajpod" substitutionGroup="sdc4:Item" type="sdc4:mc-n3n7ow0d22saquarrg9ajpod"/>
-  <xsd:element name="ms-bh5kiii8wc47sp8hibxv9qtk" substitutionGroup="sdc4:Item" type="sdc4:mc-bh5kiii8wc47sp8hibxv9qtk"/>
-  <xsd:element name="ms-t22t4zqcji83jc42pxdfg7w6" substitutionGroup="sdc4:Item" type="sdc4:mc-t22t4zqcji83jc42pxdfg7w6"/>
-  <xsd:element name="ms-eeyxfka9q0b81swhc0cpvd1l" substitutionGroup="sdc4:Item" type="sdc4:mc-eeyxfka9q0b81swhc0cpvd1l"/>
-  <xsd:element name="ms-xiy4gn6vievei3614sso5vmk" substitutionGroup="sdc4:Item" type="sdc4:mc-xiy4gn6vievei3614sso5vmk"/>
-  <xsd:element name="ms-novdnteegq5wu0apemjhu4gp" substitutionGroup="sdc4:Item" type="sdc4:mc-novdnteegq5wu0apemjhu4gp"/>
+  <xsd:element name="ms-qh84jdzp1kxt85aq4ilo0svk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qh84jdzp1kxt85aq4ilo0svk"/>
+  <xsd:element name="ms-i4e2nod7ss9d4cumhn2pah8b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i4e2nod7ss9d4cumhn2pah8b"/>
+  <xsd:element name="ms-l9jnt4o3wpofp22dvqjrez9t" substitutionGroup="sdc4:Item" type="sdc4:mc-l9jnt4o3wpofp22dvqjrez9t"/>
+  <xsd:element name="ms-d1evlz8yvdlwt6ia9fjq4pgj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+  <xsd:element name="ms-s7najsv11bd33calnyktjcon" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-s7najsv11bd33calnyktjcon"/>
+  <xsd:element name="ms-eo5tlfr0576ypknys5alvcn0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eo5tlfr0576ypknys5alvcn0"/>
+  <xsd:element name="ms-mrjuxhrc2jvbxslo2rlzndyv" substitutionGroup="sdc4:Item" type="sdc4:mc-mrjuxhrc2jvbxslo2rlzndyv"/>
+  <xsd:element name="ms-u6u23oip0dinxve95ub0kwma" substitutionGroup="sdc4:Item" type="sdc4:mc-u6u23oip0dinxve95ub0kwma"/>
+  <xsd:element name="ms-f9j6mhy2vd2tjjms2r2w5hls" substitutionGroup="sdc4:Item" type="sdc4:mc-f9j6mhy2vd2tjjms2r2w5hls"/>
+  <xsd:element name="ms-a50e7whycfue1qianqp65rq9" substitutionGroup="sdc4:Item" type="sdc4:mc-a50e7whycfue1qianqp65rq9"/>
+  <xsd:element name="ms-t0whhrqtnb54te4mk48i1ooj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t0whhrqtnb54te4mk48i1ooj"/>
+  <xsd:element name="ms-h3kdbvdtyalpvik97saaf0an" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h3kdbvdtyalpvik97saaf0an"/>
+  <xsd:element name="ms-fjhgr5fyqxt2crmg2cb5c513" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fjhgr5fyqxt2crmg2cb5c513"/>
+  <xsd:element name="ms-ueb5g1ojzlwwt0mnds5zb6wl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl"/>
+  <xsd:element name="ms-lghqkvp7vapqk10l248kzqs8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lghqkvp7vapqk10l248kzqs8"/>
+  <xsd:element name="ms-embtq0y4cmyk5em87e3jbdjx" substitutionGroup="sdc4:Item" type="sdc4:mc-embtq0y4cmyk5em87e3jbdjx"/>
+  <xsd:element name="ms-uzai5uey5p1fnn9ezj9u6vor" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uzai5uey5p1fnn9ezj9u6vor"/>
+  <xsd:element name="ms-yk5nrxndulhebpi3hiywk8u8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yk5nrxndulhebpi3hiywk8u8"/>
+  <xsd:element name="ms-bfn83x3fw1cyuqriuoquu9t1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bfn83x3fw1cyuqriuoquu9t1"/>
   <xsd:element name="ms-skh5si3dihf58memlh1or4ov" substitutionGroup="sdc4:Item" type="sdc4:mc-skh5si3dihf58memlh1or4ov"/>
-  <xsd:element name="ms-ijg30re1kxzgbmg7qsna43fq" substitutionGroup="sdc4:Item" type="sdc4:mc-ijg30re1kxzgbmg7qsna43fq"/>
+  <xsd:element name="ms-wi324lr48j1pzugpnw17p87m" substitutionGroup="sdc4:Item" type="sdc4:mc-wi324lr48j1pzugpnw17p87m"/>
+  <xsd:element name="ms-udo62rz9q0dd11g4jh5r17ts" substitutionGroup="sdc4:Item" type="sdc4:mc-udo62rz9q0dd11g4jh5r17ts"/>
+  <xsd:element name="ms-o9p6k7c9ie20j5du0jmd3749" substitutionGroup="sdc4:Item" type="sdc4:mc-o9p6k7c9ie20j5du0jmd3749"/>
+  <xsd:element name="ms-qfmes86biux1nl7gbaowsgc4" substitutionGroup="sdc4:Item" type="sdc4:mc-qfmes86biux1nl7gbaowsgc4"/>
+  <xsd:element name="ms-lv2vjlsfb92qrcpj49qwyu3b" substitutionGroup="sdc4:Item" type="sdc4:mc-lv2vjlsfb92qrcpj49qwyu3b"/>
+  <xsd:element name="ms-jwvcklvakotmdztpikyodwkx" substitutionGroup="sdc4:Item" type="sdc4:mc-jwvcklvakotmdztpikyodwkx"/>
+  <xsd:element name="ms-n3n7ow0d22saquarrg9ajpod" substitutionGroup="sdc4:Item" type="sdc4:mc-n3n7ow0d22saquarrg9ajpod"/>
+  <xsd:element name="ms-q9fexg56xm10h5rz4pikhfsg" substitutionGroup="sdc4:Item" type="sdc4:mc-q9fexg56xm10h5rz4pikhfsg"/>
+  <xsd:element name="ms-pu93arecbavoy4l7r7l09iym" substitutionGroup="sdc4:Item" type="sdc4:mc-pu93arecbavoy4l7r7l09iym"/>
+  <xsd:element name="ms-tqidgku8z1urlxrunr807i80" substitutionGroup="sdc4:Item" type="sdc4:mc-tqidgku8z1urlxrunr807i80"/>
+  <xsd:element name="ms-cpaj0unbnudntl1brmdnuqhu" substitutionGroup="sdc4:Item" type="sdc4:mc-cpaj0unbnudntl1brmdnuqhu"/>
+  <xsd:element name="ms-o31fztf2l2gj0nuljugpl1s9" substitutionGroup="sdc4:Item" type="sdc4:mc-o31fztf2l2gj0nuljugpl1s9"/>
+  <xsd:element name="ms-f26flhqv2ckkxfjfv2a4mks3" substitutionGroup="sdc4:Item" type="sdc4:mc-f26flhqv2ckkxfjfv2a4mks3"/>
+  <xsd:element name="ms-wzcw32kxx2jf4z4oaldq4n3v" substitutionGroup="sdc4:Item" type="sdc4:mc-wzcw32kxx2jf4z4oaldq4n3v"/>
+  <xsd:element name="ms-r6x55vvha5ci3rl1o29adk03" substitutionGroup="sdc4:Item" type="sdc4:mc-r6x55vvha5ci3rl1o29adk03"/>
+  <xsd:element name="ms-y1u3ladafqtryhgyetpn5ild" substitutionGroup="sdc4:Item" type="sdc4:mc-y1u3ladafqtryhgyetpn5ild"/>
   <xsd:element name="ms-bk8actrinati1b6smyypwj6m" substitutionGroup="sdc4:Item" type="sdc4:mc-bk8actrinati1b6smyypwj6m"/>
+  <xsd:element name="ms-t22t4zqcji83jc42pxdfg7w6" substitutionGroup="sdc4:Item" type="sdc4:mc-t22t4zqcji83jc42pxdfg7w6"/>
+  <xsd:element name="ms-qeu9jq1owxxh2woqo1f7m8jk" substitutionGroup="sdc4:Item" type="sdc4:mc-qeu9jq1owxxh2woqo1f7m8jk"/>
+  <xsd:element name="ms-u78q1nozkovzpknk8fjeex72" substitutionGroup="sdc4:Item" type="sdc4:mc-u78q1nozkovzpknk8fjeex72"/>
+  <xsd:element name="ms-bh5kiii8wc47sp8hibxv9qtk" substitutionGroup="sdc4:Item" type="sdc4:mc-bh5kiii8wc47sp8hibxv9qtk"/>
+  <xsd:element name="ms-ijg30re1kxzgbmg7qsna43fq" substitutionGroup="sdc4:Item" type="sdc4:mc-ijg30re1kxzgbmg7qsna43fq"/>
+  <xsd:element name="ms-bgmsi0bk92htaphh214o3c9a" substitutionGroup="sdc4:Item" type="sdc4:mc-bgmsi0bk92htaphh214o3c9a"/>
+  <xsd:element name="ms-yjrycyitjsxuk1v36kag9kif" substitutionGroup="sdc4:Item" type="sdc4:mc-yjrycyitjsxuk1v36kag9kif"/>
+  <xsd:element name="ms-xiy4gn6vievei3614sso5vmk" substitutionGroup="sdc4:Item" type="sdc4:mc-xiy4gn6vievei3614sso5vmk"/>
+  <xsd:element name="ms-jdugzq309qlimui7675txmyi" substitutionGroup="sdc4:Item" type="sdc4:mc-jdugzq309qlimui7675txmyi"/>
+  <xsd:element name="ms-in4ct2aoguzdvzg4mlsmsxfd" substitutionGroup="sdc4:Item" type="sdc4:mc-in4ct2aoguzdvzg4mlsmsxfd"/>
+  <xsd:element name="ms-q4rwxzoldz452g7rbii2an1h" substitutionGroup="sdc4:Item" type="sdc4:mc-q4rwxzoldz452g7rbii2an1h"/>
+  <xsd:element name="ms-f80jar38kwzkv9fy3yw34ocn" substitutionGroup="sdc4:Item" type="sdc4:mc-f80jar38kwzkv9fy3yw34ocn"/>
+  <xsd:element name="ms-ryakj7izqljqx6wywjhxovl0" substitutionGroup="sdc4:Item" type="sdc4:mc-ryakj7izqljqx6wywjhxovl0"/>
+  <xsd:element name="ms-qfu6jw6oc1788xo5bqp6gf4f" substitutionGroup="sdc4:Item" type="sdc4:mc-qfu6jw6oc1788xo5bqp6gf4f"/>
+  <xsd:element name="ms-lbor36zlwkf6u7yx9lgqfx0d" substitutionGroup="sdc4:Item" type="sdc4:mc-lbor36zlwkf6u7yx9lgqfx0d"/>
+  <xsd:element name="ms-ljldab8e1bjizncv01akb0n5" substitutionGroup="sdc4:Item" type="sdc4:mc-ljldab8e1bjizncv01akb0n5"/>
+  <xsd:element name="ms-r48fyfvuhl62i5yihku0hws1" substitutionGroup="sdc4:Item" type="sdc4:mc-r48fyfvuhl62i5yihku0hws1"/>
+  <xsd:element name="ms-cbtmwdqdy1khaqy6g2f95nbf" substitutionGroup="sdc4:Item" type="sdc4:mc-cbtmwdqdy1khaqy6g2f95nbf"/>
+  <xsd:element name="ms-r5fply6fvzhg90zybxgdx5cb" substitutionGroup="sdc4:Item" type="sdc4:mc-r5fply6fvzhg90zybxgdx5cb"/>
+  <xsd:element name="ms-lfjymfyzuvudb2p4zmk0xh27" substitutionGroup="sdc4:Item" type="sdc4:mc-lfjymfyzuvudb2p4zmk0xh27"/>
+  <xsd:element name="ms-vycps7awt38y25jhnrr4okxt" substitutionGroup="sdc4:Item" type="sdc4:mc-vycps7awt38y25jhnrr4okxt"/>
+  <xsd:element name="ms-eityhljg7w30a835qcc9h4c1" substitutionGroup="sdc4:Item" type="sdc4:mc-eityhljg7w30a835qcc9h4c1"/>
+  <xsd:element name="ms-ynnnvgi8748h2d01z2gf4z8x" substitutionGroup="sdc4:Item" type="sdc4:mc-ynnnvgi8748h2d01z2gf4z8x"/>
+  <xsd:element name="ms-j9gccgohqlb59l1t37doseiq" substitutionGroup="sdc4:Item" type="sdc4:mc-j9gccgohqlb59l1t37doseiq"/>
+  <xsd:element name="ms-kce8557jd9vg6ei59m7o1kc2" substitutionGroup="sdc4:Item" type="sdc4:mc-kce8557jd9vg6ei59m7o1kc2"/>
+  <xsd:element name="ms-yq8081214dxxn8i5lcop56ol" substitutionGroup="sdc4:Item" type="sdc4:mc-yq8081214dxxn8i5lcop56ol"/>
+  <xsd:element name="ms-hpkc8xrccpwc3shm4ubm5o47" substitutionGroup="sdc4:Item" type="sdc4:mc-hpkc8xrccpwc3shm4ubm5o47"/>
+  <xsd:element name="ms-bmc7ykbucsqiv9le0avkt7oq" substitutionGroup="sdc4:Item" type="sdc4:mc-bmc7ykbucsqiv9le0avkt7oq"/>
+  <xsd:element name="ms-p3ibv9ghyuiq4fdo7pzafi1b" substitutionGroup="sdc4:Item" type="sdc4:mc-p3ibv9ghyuiq4fdo7pzafi1b"/>
   <xsd:element name="ms-jooc2ref3taxn5ww7yvxj6vj" substitutionGroup="sdc4:Item" type="sdc4:mc-jooc2ref3taxn5ww7yvxj6vj"/>
   <xsd:element name="ms-vmiyaznvvl2jw19cyv414jj3" substitutionGroup="sdc4:Item" type="sdc4:mc-vmiyaznvvl2jw19cyv414jj3"/>
+  <xsd:element name="ms-vzyuqpkegby4er3pw12gxw2c" substitutionGroup="sdc4:Item" type="sdc4:mc-vzyuqpkegby4er3pw12gxw2c"/>
   <xsd:element name="ms-isfdjjnpue8yz1b0vyipqh22" substitutionGroup="sdc4:Item" type="sdc4:mc-isfdjjnpue8yz1b0vyipqh22"/>
-  <xsd:element name="ms-n6j7bwq9qmuzzf8w89gwxeml" substitutionGroup="sdc4:Item" type="sdc4:mc-n6j7bwq9qmuzzf8w89gwxeml"/>
-  <xsd:element name="ms-jwvcklvakotmdztpikyodwkx" substitutionGroup="sdc4:Item" type="sdc4:mc-jwvcklvakotmdztpikyodwkx"/>
-  <xsd:element name="ms-s0xrd3gbobtgtexdxkxcor3l" substitutionGroup="sdc4:Item" type="sdc4:mc-s0xrd3gbobtgtexdxkxcor3l"/>
+  <xsd:element name="ms-o0qu77y6w4lwvu2qhms3ilbw" substitutionGroup="sdc4:Item" type="sdc4:mc-o0qu77y6w4lwvu2qhms3ilbw"/>
+  <xsd:element name="ms-uc64yt3ys0s0xrj51rue2ofb" substitutionGroup="sdc4:Item" type="sdc4:mc-uc64yt3ys0s0xrj51rue2ofb"/>
+  <xsd:element name="ms-cuvz6f4g1cdtdid8uv9r3de4" substitutionGroup="sdc4:Item" type="sdc4:mc-cuvz6f4g1cdtdid8uv9r3de4"/>
+  <xsd:element name="ms-gujvcggdotm3z1hmygdrey09" substitutionGroup="sdc4:Item" type="sdc4:mc-gujvcggdotm3z1hmygdrey09"/>
+  <xsd:element name="ms-fti6dssqpaatbprjx0mqu2mj" substitutionGroup="sdc4:Item" type="sdc4:mc-fti6dssqpaatbprjx0mqu2mj"/>
+  <xsd:element name="ms-pkkmjljkvvvnsr0nnagzj96c" substitutionGroup="sdc4:Item" type="sdc4:mc-pkkmjljkvvvnsr0nnagzj96c"/>
+  <xsd:element name="ms-px1s852i5pfng3v0ikk6fw4m" substitutionGroup="sdc4:Item" type="sdc4:mc-px1s852i5pfng3v0ikk6fw4m"/>
+  <xsd:element name="ms-xkyqavyqrcqypnr99sinyuzw" substitutionGroup="sdc4:Item" type="sdc4:mc-xkyqavyqrcqypnr99sinyuzw"/>
+  <xsd:element name="ms-wu8f1x11e6ihbltdd6w20rg5" substitutionGroup="sdc4:Item" type="sdc4:mc-wu8f1x11e6ihbltdd6w20rg5"/>
+  <xsd:element name="ms-g3232pf686yjripfxd1z9rj9" substitutionGroup="sdc4:Item" type="sdc4:mc-g3232pf686yjripfxd1z9rj9"/>
+  <xsd:element name="ms-novdnteegq5wu0apemjhu4gp" substitutionGroup="sdc4:Item" type="sdc4:mc-novdnteegq5wu0apemjhu4gp"/>
+  <xsd:element name="ms-lcsns9hrrzcg74jlit8srxgp" substitutionGroup="sdc4:Item" type="sdc4:mc-lcsns9hrrzcg74jlit8srxgp"/>
+  <xsd:element name="ms-wy38zv02dmcp5gjul57yejmk" substitutionGroup="sdc4:Item" type="sdc4:mc-wy38zv02dmcp5gjul57yejmk"/>
   <xsd:element name="ms-e793unvukokgt3c5y0kilui1" substitutionGroup="sdc4:Item" type="sdc4:mc-e793unvukokgt3c5y0kilui1"/>
-  <xsd:element name="ms-cbtmwdqdy1khaqy6g2f95nbf" substitutionGroup="sdc4:Item" type="sdc4:mc-cbtmwdqdy1khaqy6g2f95nbf"/>
+  <xsd:element name="ms-s0xrd3gbobtgtexdxkxcor3l" substitutionGroup="sdc4:Item" type="sdc4:mc-s0xrd3gbobtgtexdxkxcor3l"/>
+  <xsd:element name="ms-f6z431hl60ra8eqbrcyrsvji" substitutionGroup="sdc4:Item" type="sdc4:mc-f6z431hl60ra8eqbrcyrsvji"/>
+  <xsd:element name="ms-vgvl7vcmbiz2z7zn9v7ayc04" substitutionGroup="sdc4:Item" type="sdc4:mc-vgvl7vcmbiz2z7zn9v7ayc04"/>
+  <xsd:element name="ms-jwpkqjchavj885uwt5v1jgid" substitutionGroup="sdc4:Item" type="sdc4:mc-jwpkqjchavj885uwt5v1jgid"/>
+  <xsd:element name="ms-ebn1a6s1d1dy724l4y692qsl" substitutionGroup="sdc4:Item" type="sdc4:mc-ebn1a6s1d1dy724l4y692qsl"/>
+  <xsd:element name="ms-hj4gt95jsr6xvywruyi9ip51" substitutionGroup="sdc4:Item" type="sdc4:mc-hj4gt95jsr6xvywruyi9ip51"/>
+  <xsd:element name="ms-p5zjm3c1d2x9jxc2n3wyzbth" substitutionGroup="sdc4:Item" type="sdc4:mc-p5zjm3c1d2x9jxc2n3wyzbth"/>
+  <xsd:element name="ms-pimf22azzdoj3ibylyvd8zuc" substitutionGroup="sdc4:Item" type="sdc4:mc-pimf22azzdoj3ibylyvd8zuc"/>
+  <xsd:element name="ms-eeyxfka9q0b81swhc0cpvd1l" substitutionGroup="sdc4:Item" type="sdc4:mc-eeyxfka9q0b81swhc0cpvd1l"/>
+  <xsd:element name="ms-dlu1btnja2h37jfx3vj694rv" substitutionGroup="sdc4:Item" type="sdc4:mc-dlu1btnja2h37jfx3vj694rv"/>
+  <xsd:element name="ms-xcmayroyt4krhroimfb3e859" substitutionGroup="sdc4:Item" type="sdc4:mc-xcmayroyt4krhroimfb3e859"/>
+  <xsd:element name="ms-yz9cfjns50s6lelah9omrkwr" substitutionGroup="sdc4:Item" type="sdc4:mc-yz9cfjns50s6lelah9omrkwr"/>
+  <xsd:element name="ms-deau6rxprq0zivzdddupk7cj" substitutionGroup="sdc4:Item" type="sdc4:mc-deau6rxprq0zivzdddupk7cj"/>
+  <xsd:element name="ms-mjj6mlhqgzcprfwuwnhu5npz" substitutionGroup="sdc4:Item" type="sdc4:mc-mjj6mlhqgzcprfwuwnhu5npz"/>
+  <xsd:element name="ms-yec6svv50u9d1tz9rp6kmv3v" substitutionGroup="sdc4:Item" type="sdc4:mc-yec6svv50u9d1tz9rp6kmv3v"/>
+  <xsd:element name="ms-uf11uwd9s5x5t9bw98z9dr5l" substitutionGroup="sdc4:Item" type="sdc4:mc-uf11uwd9s5x5t9bw98z9dr5l"/>
+  <xsd:element name="ms-k87dda72y8upko7dnrcs425s" substitutionGroup="sdc4:Item" type="sdc4:mc-k87dda72y8upko7dnrcs425s"/>
   <xsd:element name="ms-an1yte2y7kubvf64ao70apuu" substitutionGroup="sdc4:Item" type="sdc4:mc-an1yte2y7kubvf64ao70apuu"/>
   <xsd:element name="ms-rat798vb1tfxjuf56sqrvtty" substitutionGroup="sdc4:Item" type="sdc4:mc-rat798vb1tfxjuf56sqrvtty"/>
-  <xsd:element name="ms-pkkmjljkvvvnsr0nnagzj96c" substitutionGroup="sdc4:Item" type="sdc4:mc-pkkmjljkvvvnsr0nnagzj96c"/>
-  <xsd:element name="ms-ljldab8e1bjizncv01akb0n5" substitutionGroup="sdc4:Item" type="sdc4:mc-ljldab8e1bjizncv01akb0n5"/>
-  <xsd:element name="ms-ryakj7izqljqx6wywjhxovl0" substitutionGroup="sdc4:Item" type="sdc4:mc-ryakj7izqljqx6wywjhxovl0"/>
-  <xsd:element name="ms-lcsns9hrrzcg74jlit8srxgp" substitutionGroup="sdc4:Item" type="sdc4:mc-lcsns9hrrzcg74jlit8srxgp"/>
-  <xsd:element name="ms-bgmsi0bk92htaphh214o3c9a" substitutionGroup="sdc4:Item" type="sdc4:mc-bgmsi0bk92htaphh214o3c9a"/>
-  <xsd:element name="ms-pimf22azzdoj3ibylyvd8zuc" substitutionGroup="sdc4:Item" type="sdc4:mc-pimf22azzdoj3ibylyvd8zuc"/>
+  <xsd:element name="ms-n6j7bwq9qmuzzf8w89gwxeml" substitutionGroup="sdc4:Item" type="sdc4:mc-n6j7bwq9qmuzzf8w89gwxeml"/>
+  <xsd:element name="ms-vsnnmsojiqwcx33jeavt4bkf" substitutionGroup="sdc4:Item" type="sdc4:mc-vsnnmsojiqwcx33jeavt4bkf"/>
 
 </xsd:schema>

@@ -78,7 +78,8 @@ def _every_leaf(t: Template):
                 v = float(lo.group(1)) if lo else 1.0
                 if hi and v > float(hi.group(1)):
                     v = float(hi.group(1))
-                vals[path] = Quantity(str(int(v)) if base == "XdCountType" else f"{v:.1f}", "unit")
+                units = t.schema.units_enums(path)   # the schema enumerates the units since SDCStudio #707; the first is as good as any
+                vals[path] = Quantity(str(int(v)) if base == "XdCountType" else f"{v:.1f}", units[0] if units else "unit")
         elif base == "XdBooleanType":
             vals[path] = True
         elif base == "XdFileType":
@@ -112,7 +113,8 @@ def test_every_model_fills_every_leaf_and_validates_except_the_one_stated_absenc
         body = t.schema.types[t.schema._find(ev_path)[0]]
         lo = re.search(r'<xsd:minInclusive value="([^"]*)"', body)
         v = float(lo.group(1)) if lo else 1.0
-        vals[ev_path] = Quantity(str(int(v)) if t.schema.base_of(ev_path) == "XdCountType" else f"{v:.1f}", "unit")
+        units = t.schema.units_enums(ev_path)
+        vals[ev_path] = Quantity(str(int(v)) if t.schema.base_of(ev_path) == "XdCountType" else f"{v:.1f}", units[0] if units else "unit")
     else:
         vals[ev_path] = "text"
     xml = t.instance(vals, instance_id="i-test000000000000000002", subject=("Subject", "Name"), provider=("Provider", "Agency"),

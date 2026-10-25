@@ -10,6 +10,7 @@ Provides:
 - Download options (XML, JSON)
 """
 from django.views.generic import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 import json
@@ -18,7 +19,7 @@ from ..models import BrfssRespondentInstance
 from ..utils.wizard_config import DMMetadata
 
 
-class InstanceDetailView(DetailView):
+class InstanceDetailView(LoginRequiredMixin, DetailView):
     """
     Detail view for a single BrfssRespondent instance.
     """
@@ -58,7 +59,7 @@ class InstanceDetailView(DetailView):
         return context
 
 
-class InstanceDownloadXMLView(View):
+class InstanceDownloadXMLView(LoginRequiredMixin, View):
     """
     Download instance XML content.
     """
@@ -78,7 +79,7 @@ class InstanceDownloadXMLView(View):
         return response
 
 
-class InstanceDownloadJSONView(View):
+class InstanceDownloadJSONView(LoginRequiredMixin, View):
     """
     Download instance JSON content.
     """
@@ -98,7 +99,7 @@ class InstanceDownloadJSONView(View):
         return response
 
 
-class InstanceDeleteView(View):
+class InstanceDeleteView(LoginRequiredMixin, View):
     """
     Delete an instance (with RDF cleanup).
     """

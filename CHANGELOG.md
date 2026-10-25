@@ -2,6 +2,25 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.2.3 (2026-10-25)
+
+**The pregnancy answers carry the right codes.** The NIH CDE "Are you pregnant now?" (`LiUWCWluP`) that the NHANES
+Participant and BRFSS Respondent models compose bound each answer to the next value's LOINC code (Yes to LA26683-5,
+Not pregnant), as NIH's own record does. The NIH CDE library published the correction (`zmpqfc6tb0o2hgu8qs6lj8tp`,
+E-2026-10-01), and this release moves the two models onto it: see [SOURCE-ERRATA.md](SOURCE-ERRATA.md).
+
+- Six clusters are revisions of their published versions (NHANES Demographics, NHANES Participant, NHANES Participant
+  Governed Record and the three BRFSS clusters), and the two models are revisions of theirs, published as **NHANES
+  Participant 4.2.3** (`eehpfapwgvxtzdrofgstdcfs`, revising `xy8upneajsb8vdcmnve01g6g`) and **BRFSS Respondent 4.2.3**
+  (`w9ozx00idgs5k8tw4359skvn`, revising `iymux9kjv8ndbkoi36xzx17i`). A model's title is unique in its project, retired
+  models included, so a revision carries the release that first ships it. `models-4.2.3.json` records every model.
+- The two models' packages, applications and generated records are rebuilt (9,254 and 5,000 records; 1,110 and 870
+  answer the question). Nothing else changes: the other five models and their records are as in 4.2.2.
+- The 4.2.0 models stay published and resolvable, retired with the reason naming their revision.
+- `build/author.py` and `build/make_review.py` keep the review decisions already marked when they regenerate (they had
+  blanked them); a record whose content changed is reviewed again.
+- [SOURCE-ERRATA.md](SOURCE-ERRATA.md) documents the NIH error and NHANES's reason-code conventions.
+
 ## 4.2.2 (2026-10-25)
 
 Rebuilt with pip 26.2.2 pinned by hash in CI and the release job (the eMudhra/emSign CA compromise: pip before 26.2.2 trusts the compromised root through its vendored certifi). This release also carries the models' schemas with their units enumerated (the 2026-09-28 entry below), which had not been released.

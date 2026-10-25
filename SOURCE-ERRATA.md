@@ -30,7 +30,9 @@ dataset, and every projection that writes the model's binding (FHIR, OMOP CDM, H
    (`REVISIONS` in `build/author.py`).
 3. `build/oneoff_models_errata.py` revises the NHANES Participant and BRFSS Respondent models onto them.
 
-**Status.** Steps 2 and 3 are prepared; the production load and the release that carries them follow.
+**Status.** Done on 25 October 2026 and released in 4.2.3: the six cluster revisions and the two models, NHANES
+Participant 4.2.3 (`eehpfapwgvxtzdrofgstdcfs`) and BRFSS Respondent 4.2.3 (`w9ozx00idgs5k8tw4359skvn`), are published,
+and the records are regenerated on them. Reported to NIH: not yet.
 
 ## From the federal files: conventions to read correctly
 

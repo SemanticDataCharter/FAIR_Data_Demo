@@ -16,10 +16,20 @@ from ..models import BrfssRespondentInstance
 from ..utils.bulk_import import BulkImportProcessor
 from ..utils.wizard_config import DMMetadata, FIELD_METADATA
 
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
+
+class StaffRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+    """Bulk import is for staff users (is_staff)."""
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+
 logger = logging.getLogger(__name__)
 
 
-class BulkImportView(FormView):
+class BulkImportView(StaffRequiredMixin, FormView):
     """Import XML instances from a ZIP archive or server directory."""
 
     template_name = 'brfss_respondent/bulk_import.html'
@@ -81,7 +91,7 @@ class BulkImportView(FormView):
         return None
 
 
-class TemplateDownloadView(View):
+class TemplateDownloadView(StaffRequiredMixin, View):
     """Download the dm-*.xml template from dmlib."""
 
     def get(self, request, *args, **kwargs):

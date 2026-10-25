@@ -1,0 +1,49 @@
+{
+ "audit": "nz4t9iecyq1ukvs4s3ymgd8t",
+ "models": {
+  "BRFSS Respondent 4.2.3": {
+   "ct_id": "w9ozx00idgs5k8tw4359skvn",
+   "was_revision_of": "iymux9kjv8ndbkoi36xzx17i",
+   "app": "brfss_respondent",
+   "study": "BRFSS",
+   "revised_for": "E-2026-10-01 (SOURCE-ERRATA.md): the NIH CDE pregnancy answers bound to the wrong LOINC codes"
+  },
+  "CMS Beneficiary": {
+   "ct_id": "fnv3zi2btk3s0sfodjsc25eb",
+   "was_revision_of": "q9xk7y13y2115tr4sn2c7m39",
+   "app": "cms_beneficiary",
+   "study": "CMS"
+  },
+  "CMS Inpatient Claim": {
+   "ct_id": "ji1eccop92mlmikwq5gwp7cr",
+   "was_revision_of": "ra4tn4wzsu2rlbk5dineab5g",
+   "app": "cms_inpatient_claim",
+   "study": "CMS"
+  },
+  "CMS Outpatient Claim": {
+   "ct_id": "mllwhe842wtnim4ms48qonio",
+   "was_revision_of": "k6f8kugg359vc6ew75ulojg9",
+   "app": "cms_outpatient_claim",
+   "study": "CMS"
+  },
+  "CMS Prescription Drug Event": {
+   "ct_id": "nvemvhvdkctdlm9alwwgcay7",
+   "was_revision_of": "dg6lyhgvz9wd9cuqxqdc5g4p",
+   "app": "cms_prescription_drug_event",
+   "study": "CMS"
+  },
+  "NHANES Medication": {
+   "ct_id": "epbdfmvxc3gbh5f66hhb3o2m",
+   "was_revision_of": "g72xhdxvd7q53qnxx6dsczg5",
+   "app": "nhanes_medication",
+   "study": "NHANES"
+  },
+  "NHANES Participant 4.2.3": {
+   "ct_id": "eehpfapwgvxtzdrofgstdcfs",
+   "was_revision_of": "xy8upneajsb8vdcmnve01g6g",
+   "app": "nhanes_participant",
+   "study": "NHANES",
+   "revised_for": "E-2026-10-01 (SOURCE-ERRATA.md): the NIH CDE pregnancy answers bound to the wrong LOINC codes"
+  }
+ }
+}

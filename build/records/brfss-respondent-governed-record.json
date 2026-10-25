@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "hnf5st6e6ulzvbiafx4310g7",
   "members": [
     "brfss-respondent",
     "https://axius-sdc.com/library/provgov/prov-activity",

@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "l6t9agg233vswxyv60quiu6w",
   "members": [
     "nhanes-participant",
     "https://axius-sdc.com/library/provgov/prov-activity",

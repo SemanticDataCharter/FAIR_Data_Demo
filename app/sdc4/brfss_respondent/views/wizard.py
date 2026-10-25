@@ -8,6 +8,7 @@ Multi-step wizard for SDC4 data entry with:
 - Step 3: Review & Attestation (conditional)
 """
 from django.views import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, FormView
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -31,7 +32,7 @@ from pathlib import Path
 logger = logging.getLogger(__name__)
 
 
-class WizardStartView(View):
+class WizardStartView(LoginRequiredMixin, View):
     """
     Entry point for the wizard - initializes state and redirects to first step.
     """
@@ -50,7 +51,7 @@ class WizardStartView(View):
         return redirect('brfss_respondent:wizard-step', step=first_step)
 
 
-class WizardStepView(View):
+class WizardStepView(LoginRequiredMixin, View):
     """
     Handles individual wizard steps.
 
@@ -278,7 +279,7 @@ class WizardStepView(View):
         return metadata
 
 
-class WizardCompleteView(View):
+class WizardCompleteView(LoginRequiredMixin, View):
     """
     Completes the wizard - builds XML, validates, saves, and extracts RDF.
     """

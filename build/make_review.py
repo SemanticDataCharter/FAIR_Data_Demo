@@ -18,6 +18,15 @@ for p in sorted((ROOT / "build" / "records").glob("*.json")):
         "members": " | ".join(r["members"]), "supersedes_ct_id": r["supersedes_ct_id"] or "", "flags": "; ".join(r["flags"]), "decision": "", "note": "",
     })
 (ROOT / "review").mkdir(exist_ok=True)
-with open(ROOT / "review" / "fair.csv", "w", newline="", encoding="utf-8") as f:
+REVIEW = ROOT / "review" / "fair.csv"
+if REVIEW.exists():
+    # A decision stands only for the record it was made on: a row whose content is unchanged keeps it; a changed
+    # record is reviewed again.
+    marked = {r["tiny_id"]: r for r in csv.DictReader(open(REVIEW, encoding="utf-8"))}
+    for row in rows:
+        old = marked.get(row["tiny_id"])
+        if old and all(old.get(k, "") == row[k] for k in FIELDS if k not in ("decision", "note")):
+            row["decision"], row["note"] = old.get("decision", ""), old.get("note", "")
+with open(REVIEW, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)
 print(f"{len(rows)} rows -> review/fair.csv")

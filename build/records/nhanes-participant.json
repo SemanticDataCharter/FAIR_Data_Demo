@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "e3gwv95m8jjx7578urmx8ppz",
   "members": [
     "nhanes-respondent-sequence-number",
     "nhanes-survey-design",

@@ -158,6 +158,8 @@ The curation is in this repository as code, the way the component libraries them
 4. `datagen/` generates the records: one generator per model names the facts a row has by their label path in the published model, and `datagen/engine.py` fills the model's own instance template, drops what was not given, and refuses a value of a shape the schema does not allow. No generator carries an element identifier or an XML envelope.
 5. The stack is the CordovaOS 4.4.0 skeleton with the seven generated applications merged in and the loader on the batch path.
 
+What the demo found wrong in its source libraries and federal files, and what it does about each, is in [SOURCE-ERRATA.md](SOURCE-ERRATA.md).
+
 The project's components from the first build, 976 of them and eight models, stay published and are retired with a reason naming the successor slot or the reason the column was not carried forward. Nothing anyone downloaded stops resolving; `models-4.2.0.json` records every new model's `wasRevisionOf`.
 
 ## The first build, as history

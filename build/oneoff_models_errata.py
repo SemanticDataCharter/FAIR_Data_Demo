@@ -17,16 +17,17 @@ modeler = Modeler.objects.filter(user=user).first(); assert modeler
 request = RequestFactory().get('/'); request.user = user
 loader = Loader()
 MODELS = [
-    # title, governed record slot, the published 4.2.0 model it revises
-    ('NHANES Participant', 'nhanes-participant-governed-record', 'xy8upneajsb8vdcmnve01g6g'),
-    ('BRFSS Respondent', 'brfss-respondent-governed-record', 'iymux9kjv8ndbkoi36xzx17i'),
+    # title, governed record slot, the published 4.2.0 model it revises. A model's title is unique in its project, retired
+    # models included, so a revision carries the release that first ships it (Tim 2026-10-25).
+    ('NHANES Participant 4.2.3', 'nhanes-participant-governed-record', 'xy8upneajsb8vdcmnve01g6g'),
+    ('BRFSS Respondent 4.2.3', 'brfss-respondent-governed-record', 'iymux9kjv8ndbkoi36xzx17i'),
 ]
 out = {}
 for title, data_slot, old_ct in MODELS:
     old = DM.objects.get(ct_id=old_ct)
     data = loader._member_by_slot(SLOT + data_slot)
     assert data is not None and data.pk != old.data.pk, (title, 'the governed record slot still resolves to the old root')
-    existing = DM.objects.filter(project=project, title=title, retired=False).exclude(ct_id=old_ct).first()
+    existing = DM.objects.filter(project=project, title=title).first()
     if existing:
         print('EXISTS', title, existing.ct_id); out[title] = existing.ct_id; continue
     dm = DM.objects.create(project=project, title=title, creator=modeler, edited_by=modeler, author=modeler,

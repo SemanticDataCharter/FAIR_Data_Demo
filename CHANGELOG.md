@@ -2,6 +2,18 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.2.2 (2026-10-25)
+
+Rebuilt with pip 26.2.2 pinned by hash in CI and the release job (the eMudhra/emSign CA compromise: pip before 26.2.2 trusts the compromised root through its vendored certifi). This release also carries the models' schemas with their units enumerated (the 2026-09-28 entry below), which had not been released.
+
+## 2026-09-28: the models' schemas now enumerate their units
+
+- SDCStudio issue #707 (fixed in PR #708): Units components were published without their enumeration, so every quantity in the seven models validated any string as a unit. The 14 Units the seven active models compose were republished on production and the seven packages rebuilt; `app/sdc4/mediafiles/dmlib/` carries the rebuilt XSD and template of each. Model identifiers did not change.
+- The 84,352 generated records are unaffected: the survey weights and the income ratio carry the unit `1`, which is exactly what the FAIR `units-sample-weight` record enumerates; a 2,100-record sample across the seven apps found no unit outside its enumeration. The engine test now takes its unit from the schema's enumeration instead of a placeholder.
+- Every receipt issued for these models before 2026-09-28 names a schema hash the served schema no longer reproduces.
+
+All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
+
 ## 4.2.1 (2026-09-27)
 
 - The compose project is named `fair`. Compose names a project after its directory, every generated stack lives in a directory called `sdc4`, and two stacks on one machine reconciled each other's containers away. `.env.example` carries the ports the README states (15433, 17300, 18081, 16380, 19444, 18100).

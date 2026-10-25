@@ -1328,12 +1328,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Mass/Weight (US Customary)</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Mass/Weight (US Customary)</rdfs:label>
+        <rdfs:comment>US customary units of mass: ounce, pound, short ton.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-mass-us"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Mass"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-wsc8r2e9xca0flw6g622qsqp"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1349,10 +1350,50 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="oz">
+                <xsd:annotation>
+                  <xsd:documentation>ounce</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/oz">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh"/>
+                      <rdfs:label>oz</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/OZ</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="lb">
+                <xsd:annotation>
+                  <xsd:documentation>pound</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/lb">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh"/>
+                      <rdfs:label>lb</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/LB</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="ton">
+                <xsd:annotation>
+                  <xsd:documentation>short ton</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/ton">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh"/>
+                      <rdfs:label>ton</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/TON_SHORT</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1556,12 +1597,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Length/Distance (SI - Metric)</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Length/Distance (SI - Metric)</rdfs:label>
+        <rdfs:comment>SI units of length: millimetre, centimetre, metre, kilometre.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-length-si"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Length"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-y28mhe3jdzi9b8ztn3fxodtf"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1577,10 +1619,62 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="mm">
+                <xsd:annotation>
+                  <xsd:documentation>millimetre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/mm">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m"/>
+                      <rdfs:label>mm</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MilliM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="cm">
+                <xsd:annotation>
+                  <xsd:documentation>centimetre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/cm">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m"/>
+                      <rdfs:label>cm</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/CentiM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="m">
+                <xsd:annotation>
+                  <xsd:documentation>metre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/m">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m"/>
+                      <rdfs:label>m</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/M</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="km">
+                <xsd:annotation>
+                  <xsd:documentation>kilometre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/km">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m"/>
+                      <rdfs:label>km</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/KiloM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1645,11 +1739,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ux7molkiumql3ml1pyc0kf2s">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Body Mass Index Units</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Body Mass Index Units</rdfs:label>
+        <rdfs:comment>Kilograms per square metre (UCUM kg/m2).</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fhir/units-bmi"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/MassPerArea"/>
         <dcterms:source rdf:resource="https://ucum.org/"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1665,10 +1760,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="kg/m2">
+                <xsd:annotation>
+                  <xsd:documentation>kilogram per square metre</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-ux7molkiumql3ml1pyc0kf2s/xdstring-value/kg%2Fm2">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ux7molkiumql3ml1pyc0kf2s"/>
+                      <rdfs:label>kg/m2</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/KiloGM-PER-M2</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1733,12 +1844,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Temperature (SI - Metric)</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Temperature (SI - Metric)</rdfs:label>
+        <rdfs:comment>Temperature in degrees Celsius or kelvin.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-temperature-si"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Temperature"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ihugcgyqyfjp3u9y5qva1fwz"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1754,10 +1866,38 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="°C">
+                <xsd:annotation>
+                  <xsd:documentation>degree Celsius</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v/xdstring-value/%C2%B0C">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v"/>
+                      <rdfs:label>°C</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/DEG_C</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="K">
+                <xsd:annotation>
+                  <xsd:documentation>kelvin</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v/xdstring-value/K">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v"/>
+                      <rdfs:label>K</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/K</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1822,12 +1962,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Mass/Weight (SI - Metric)</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Mass/Weight (SI - Metric)</rdfs:label>
+        <rdfs:comment>SI units of mass: milligram, gram, kilogram.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-mass-si"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Mass"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-tjxxdsd6idyzqygrncojauxn"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1843,10 +1984,50 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="mg">
+                <xsd:annotation>
+                  <xsd:documentation>milligram</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/mg">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp"/>
+                      <rdfs:label>mg</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MilliGM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="g">
+                <xsd:annotation>
+                  <xsd:documentation>gram</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/g">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp"/>
+                      <rdfs:label>g</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/GM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="kg">
+                <xsd:annotation>
+                  <xsd:documentation>kilogram</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/kg">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp"/>
+                      <rdfs:label>kg</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/KiloGM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -1911,12 +2092,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Rate</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Rate</rdfs:label>
+        <rdfs:comment>Occurrences per unit of time: per minute, per hour, per day.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-rate"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Frequency"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ef0ybrr43fld95ehpbd2x9dc"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -1932,10 +2114,50 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="/min">
+                <xsd:annotation>
+                  <xsd:documentation>per minute</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg/xdstring-value/%2Fmin">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg"/>
+                      <rdfs:label>/min</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/PER-MIN</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="/hr">
+                <xsd:annotation>
+                  <xsd:documentation>per hour</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg/xdstring-value/%2Fhr">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg"/>
+                      <rdfs:label>/hr</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/PER-HR</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="/day">
+                <xsd:annotation>
+                  <xsd:documentation>per day</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg/xdstring-value/%2Fday">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg"/>
+                      <rdfs:label>/day</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/PER-DAY</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -2003,12 +2225,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-bvz91uwa2c28sr0k5u85zx04">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Percentage</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Percentage</rdfs:label>
+        <rdfs:comment>Parts per hundred.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-percentage"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/DimensionlessRatio"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ilfau3iljz8esc037oud0mzh"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -2024,10 +2247,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="%">
+                <xsd:annotation>
+                  <xsd:documentation>percent</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-bvz91uwa2c28sr0k5u85zx04/xdstring-value/%25">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-bvz91uwa2c28sr0k5u85zx04"/>
+                      <rdfs:label>%</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/PERCENT</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -2182,12 +2421,13 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Pressure</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Pressure</rdfs:label>
+        <rdfs:comment>Units of pressure: millimetre of mercury, kilopascal, standard atmosphere, pound per square inch.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-pressure"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Pressure"/>
         <prov:wasRevisionOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-ylyt91vrvzgmx1yc7d06dfyv"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -2203,10 +2443,62 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="mmHg">
+                <xsd:annotation>
+                  <xsd:documentation>millimetre of mercury</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses/xdstring-value/mmHg">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses"/>
+                      <rdfs:label>mmHg</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MilliM_HG</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="kPa">
+                <xsd:annotation>
+                  <xsd:documentation>kilopascal</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses/xdstring-value/kPa">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses"/>
+                      <rdfs:label>kPa</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/KiloPA</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="atm">
+                <xsd:annotation>
+                  <xsd:documentation>standard atmosphere</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses/xdstring-value/atm">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses"/>
+                      <rdfs:label>atm</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/ATM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="psi">
+                <xsd:annotation>
+                  <xsd:documentation>pound per square inch</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses/xdstring-value/psi">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-an4r6ds6zhk334liqf3uhses"/>
+                      <rdfs:label>psi</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/PSI</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -5974,11 +6266,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-skxvr3cdab7dmc5y66zr3mr0">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Years</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Years</rdfs:label>
+        <rdfs:comment>A duration in years.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fair/units-years"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:closeMatch rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -5994,10 +6287,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="years">
+                <xsd:annotation>
+                  <xsd:documentation>years</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-skxvr3cdab7dmc5y66zr3mr0/xdstring-value/years">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-skxvr3cdab7dmc5y66zr3mr0"/>
+                      <rdfs:label>years</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/YR</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -6063,11 +6372,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Items</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Items</rdfs:label>
+        <rdfs:comment>A count of discrete things, with no dimension.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/default/units-items"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:exactMatch rdf:resource="http://qudt.org/vocab/quantitykind/Dimensionless"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -6083,10 +6393,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="items">
+                <xsd:annotation>
+                  <xsd:documentation>number of items</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn/xdstring-value/items">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
+                      <rdfs:label>items</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/NUM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -6151,6 +6477,7 @@
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
         <rdfs:label>years or months</rdfs:label>
+        <rdfs:comment>Units: years, months. The instance records the number and which of these units it is in.</rdfs:comment>
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -6166,10 +6493,36 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="years">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-t6znwhu1i6tg52lv4v3upb10/xdstring-value/years">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-t6znwhu1i6tg52lv4v3upb10"/>
+                      <rdfs:label>years</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/YR</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="months">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-t6znwhu1i6tg52lv4v3upb10/xdstring-value/months">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-t6znwhu1i6tg52lv4v3upb10"/>
+                      <rdfs:label>months</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/MO</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -6894,11 +7247,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Days</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Days</rdfs:label>
+        <rdfs:comment>A duration in days.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fair/units-days"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:closeMatch rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -6914,10 +7268,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="days">
+                <xsd:annotation>
+                  <xsd:documentation>days</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo/xdstring-value/days">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo"/>
+                      <rdfs:label>days</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/DAY</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -7158,11 +7528,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-warylvhshpbc5eqkt0n9mz30">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Sample Weight</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Sample Weight</rdfs:label>
+        <rdfs:comment>A dimensionless survey sample weight.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fair/units-sample-weight"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:closeMatch rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -7178,10 +7549,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="1">
+                <xsd:annotation>
+                  <xsd:documentation>1</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-warylvhshpbc5eqkt0n9mz30/xdstring-value/1">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-warylvhshpbc5eqkt0n9mz30"/>
+                      <rdfs:label>1</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/NUM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -7709,11 +8096,12 @@
       <rdf:Description rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-cr5izog5xjzki3zmnwofubuc">
         <rdf:type rdf:resource="https://semanticdatacharter.com/ontology/sdc4-meta/ModelComponent"/>
         <sdc4-meta:isConstrainedByRmComponent rdf:resource="https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType"/>
-        <rdfs:label>Drinks</rdfs:label>        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
+        <rdfs:label>Drinks</rdfs:label>
+        <rdfs:comment>A count of alcoholic drinks.</rdfs:comment>
+        <dcterms:publisher rdf:resource="https://axius-sdc.com"/>
         <dcterms:identifier rdf:resource="https://axius-sdc.com/library/fair/units-drinks"/>
         <dcterms:source rdf:resource="http://qudt.org/"/>
         <skos:closeMatch rdf:resource="http://qudt.org/schema/qudt/Unit"/>
-
       </rdf:Description>
     </xsd:appinfo>
   </xsd:annotation>
@@ -7729,10 +8117,26 @@
         <xsd:element maxOccurs="1" minOccurs="0" name="modified" type="xsd:dateTime"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="latitude" type="sdc4:lattype" nillable="true"/>
         <xsd:element maxOccurs="1" minOccurs="0" name="longitude" type="sdc4:lontype" nillable="true"/>
-        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value" type="xsd:string">
+        <xsd:element maxOccurs="1" minOccurs="1" name="xdstring-value">
           <xsd:annotation>
             <xsd:documentation xml:lang="en-us">The units value for this component</xsd:documentation>
           </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="drinks">
+                <xsd:annotation>
+                  <xsd:documentation>drinks</xsd:documentation>
+                  <xsd:appinfo>
+                    <rdfs:Class rdf:about="https://semanticdatacharter.com/ns/sdc4/mc-cr5izog5xjzki3zmnwofubuc/xdstring-value/drinks">
+                      <rdfs:subPropertyOf rdf:resource="https://semanticdatacharter.com/ns/sdc4/mc-cr5izog5xjzki3zmnwofubuc"/>
+                      <rdfs:label>drinks</rdfs:label>
+                      <rdfs:isDefinedBy>http://qudt.org/vocab/unit/NUM</rdfs:isDefinedBy>
+                    </rdfs:Class>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
         </xsd:element>
       </xsd:sequence>
     </xsd:restriction>
@@ -12257,314 +12661,314 @@
 </xsd:complexType>
 
 <!-- Substitution Groups -->
-  <xsd:element name="ms-i4e2nod7ss9d4cumhn2pah8b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i4e2nod7ss9d4cumhn2pah8b"/>
-  <xsd:element name="ms-i1defiugxfdcwfb9rqv4p5tz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i1defiugxfdcwfb9rqv4p5tz"/>
-  <xsd:element name="ms-o4d67oubyyunugx3la44f53u" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-o4d67oubyyunugx3la44f53u"/>
-  <xsd:element name="ms-u19jrjjc6aznug6hs2twjiy5" substitutionGroup="sdc4:Item" type="sdc4:mc-u19jrjjc6aznug6hs2twjiy5"/>
-  <xsd:element name="ms-a08lkh4xjvqqjtz7sxy129pa" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a08lkh4xjvqqjtz7sxy129pa"/>
-  <xsd:element name="ms-sdlc6bf161fyyueaca8vvshh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sdlc6bf161fyyueaca8vvshh"/>
-  <xsd:element name="ms-luq973ggnjoo9ixkt0dym8v6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-luq973ggnjoo9ixkt0dym8v6"/>
-  <xsd:element name="ms-lth27h6towue4i9iq1cudogc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lth27h6towue4i9iq1cudogc"/>
-  <xsd:element name="ms-ueb5g1ojzlwwt0mnds5zb6wl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl"/>
-  <xsd:element name="ms-gb78cmuyo72hqs5apymdki7l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gb78cmuyo72hqs5apymdki7l"/>
-  <xsd:element name="ms-atqkooccakulfhkt18c008fx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-atqkooccakulfhkt18c008fx"/>
-  <xsd:element name="ms-czh5vzmdeijkwrtyla1w7su8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-czh5vzmdeijkwrtyla1w7su8"/>
-  <xsd:element name="ms-et536sfok7glz7fartfs4m65" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-et536sfok7glz7fartfs4m65"/>
-  <xsd:element name="ms-fljkn7b19qtnj6rr3t8qcfg1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fljkn7b19qtnj6rr3t8qcfg1"/>
-  <xsd:element name="ms-l9s5avvkix0og66m0lewwqgg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l9s5avvkix0og66m0lewwqgg"/>
-  <xsd:element name="ms-ux7molkiumql3ml1pyc0kf2s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ux7molkiumql3ml1pyc0kf2s"/>
-  <xsd:element name="ms-frb0byilu8prpn7veyj6luwl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-frb0byilu8prpn7veyj6luwl"/>
-  <xsd:element name="ms-zbwodv9m60b33blptlellmu0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zbwodv9m60b33blptlellmu0"/>
-  <xsd:element name="ms-w2ruemcfy35rw60jl1t9dew2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-w2ruemcfy35rw60jl1t9dew2"/>
-  <xsd:element name="ms-dkc2ccj5te35z9gd4bu1blcq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkc2ccj5te35z9gd4bu1blcq"/>
-  <xsd:element name="ms-nh9s5b7gb713asjatbg5guyc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nh9s5b7gb713asjatbg5guyc"/>
-  <xsd:element name="ms-vmikfu0irht9fmq7q02t3oqs" substitutionGroup="sdc4:Item" type="sdc4:mc-vmikfu0irht9fmq7q02t3oqs"/>
-  <xsd:element name="ms-wyk9e1d74y5xrgv97o9y75ib" substitutionGroup="sdc4:Item" type="sdc4:mc-wyk9e1d74y5xrgv97o9y75ib"/>
-  <xsd:element name="ms-abjbfcel6qppumg0rlf78wcp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abjbfcel6qppumg0rlf78wcp"/>
-  <xsd:element name="ms-eftvwi5byq6cdtd931qyxzw0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eftvwi5byq6cdtd931qyxzw0"/>
-  <xsd:element name="ms-fci5gajaodxc2ihq6nuz9l6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fci5gajaodxc2ihq6nuz9l6y"/>
-  <xsd:element name="ms-owjt9bcgisxfbco8qnddo2fq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-owjt9bcgisxfbco8qnddo2fq"/>
-  <xsd:element name="ms-hswapeutuik067dokidnbv88" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hswapeutuik067dokidnbv88"/>
-  <xsd:element name="ms-sndpbhm3xbd6qtbyxmvh3i0e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e"/>
-  <xsd:element name="ms-n7pn5ctqo81v0v418hez5zv5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n7pn5ctqo81v0v418hez5zv5"/>
-  <xsd:element name="ms-atvd5lzut4pjzc7dpv1ykb92" substitutionGroup="sdc4:Item" type="sdc4:mc-atvd5lzut4pjzc7dpv1ykb92"/>
-  <xsd:element name="ms-hs066djavlc5r494vqu61thl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hs066djavlc5r494vqu61thl"/>
-  <xsd:element name="ms-bvz91uwa2c28sr0k5u85zx04" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bvz91uwa2c28sr0k5u85zx04"/>
-  <xsd:element name="ms-vbctgmdcwps5b3r3l6sboa6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vbctgmdcwps5b3r3l6sboa6y"/>
-  <xsd:element name="ms-k32effn0kp5a42ikkpvcva9j" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k32effn0kp5a42ikkpvcva9j"/>
-  <xsd:element name="ms-vi7yvq0b8nler3g6alaamrzm" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vi7yvq0b8nler3g6alaamrzm"/>
-  <xsd:element name="ms-g0dq4n7oml1mmi21t50biiwt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g0dq4n7oml1mmi21t50biiwt"/>
-  <xsd:element name="ms-sa4nl1kbpdr842fkucvfjkpq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sa4nl1kbpdr842fkucvfjkpq"/>
-  <xsd:element name="ms-gp3jxw3xzs761ll6u5rvc6jr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"/>
-  <xsd:element name="ms-rdoj4o216s33ymezyefwb8ia" substitutionGroup="sdc4:Item" type="sdc4:mc-rdoj4o216s33ymezyefwb8ia"/>
-  <xsd:element name="ms-bfn83x3fw1cyuqriuoquu9t1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bfn83x3fw1cyuqriuoquu9t1"/>
-  <xsd:element name="ms-d9z9mcx6gs9zbz4k6f0v738s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s"/>
-  <xsd:element name="ms-kzni1q04rghj23ca0zbhauu5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kzni1q04rghj23ca0zbhauu5"/>
-  <xsd:element name="ms-r6hkunjm2q0hlxiknlc9ljix" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r6hkunjm2q0hlxiknlc9ljix"/>
-  <xsd:element name="ms-urjk1vvcot1s319mxygpdsf5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-urjk1vvcot1s319mxygpdsf5"/>
-  <xsd:element name="ms-dchiej5tv7tyhfwr6h3ync1i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dchiej5tv7tyhfwr6h3ync1i"/>
-  <xsd:element name="ms-sw5rt0k2uap0e3xgl4rznfgu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"/>
-  <xsd:element name="ms-wa0mknvfo83hej635n48s0ig" substitutionGroup="sdc4:Item" type="sdc4:mc-wa0mknvfo83hej635n48s0ig"/>
-  <xsd:element name="ms-u5tietya3u56hbz2kos06ai7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-u5tietya3u56hbz2kos06ai7"/>
-  <xsd:element name="ms-g2xnh3uhnlrnqlo7ki2s0fs3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
-  <xsd:element name="ms-fjhgr5fyqxt2crmg2cb5c513" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fjhgr5fyqxt2crmg2cb5c513"/>
-  <xsd:element name="ms-abub2eah26yd2uzni3p9l58i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abub2eah26yd2uzni3p9l58i"/>
-  <xsd:element name="ms-xsohkckyof7y1xj8h1ab4pxu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xsohkckyof7y1xj8h1ab4pxu"/>
-  <xsd:element name="ms-x0lebwtobgaelj5pev3258sd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x0lebwtobgaelj5pev3258sd"/>
-  <xsd:element name="ms-c23wij2i4jkwu016ekro40bv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c23wij2i4jkwu016ekro40bv"/>
-  <xsd:element name="ms-t0whhrqtnb54te4mk48i1ooj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t0whhrqtnb54te4mk48i1ooj"/>
   <xsd:element name="ms-eimlsgbawhm8aa4i6gbdrja0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eimlsgbawhm8aa4i6gbdrja0"/>
-  <xsd:element name="ms-qsetd453kk9own8co1wmc5cz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qsetd453kk9own8co1wmc5cz"/>
-  <xsd:element name="ms-acr1xvqppf1b3rjsrst6tt4p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-acr1xvqppf1b3rjsrst6tt4p"/>
-  <xsd:element name="ms-ezewpvppvx8zjikutr53ppgz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ezewpvppvx8zjikutr53ppgz"/>
-  <xsd:element name="ms-phus5105uw30xejqs7baamyx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-phus5105uw30xejqs7baamyx"/>
-  <xsd:element name="ms-h1vwqq8ulrb27qpl6zuzppnf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf"/>
-  <xsd:element name="ms-n7s7hcgef4pxius8a0l6r5qp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n7s7hcgef4pxius8a0l6r5qp"/>
-  <xsd:element name="ms-z1ezf3vzksp7qpgd9l3uxvqo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-z1ezf3vzksp7qpgd9l3uxvqo"/>
-  <xsd:element name="ms-s3qzwxxz9b42lcd2wryok8jd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-s3qzwxxz9b42lcd2wryok8jd"/>
-  <xsd:element name="ms-jjzmhdxvbt97pq81iwqubtxk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jjzmhdxvbt97pq81iwqubtxk"/>
-  <xsd:element name="ms-cr5izog5xjzki3zmnwofubuc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-cr5izog5xjzki3zmnwofubuc"/>
-  <xsd:element name="ms-wr06h54xqqw2q9id8i9673jy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wr06h54xqqw2q9id8i9673jy"/>
-  <xsd:element name="ms-zc6p008h5naqev8zngtzvyx9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zc6p008h5naqev8zngtzvyx9"/>
-  <xsd:element name="ms-oy0jwif5pi86xtimzxzhapvu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-oy0jwif5pi86xtimzxzhapvu"/>
-  <xsd:element name="ms-nd1v8jk7wtm1tthzw1f4987t" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nd1v8jk7wtm1tthzw1f4987t"/>
-  <xsd:element name="ms-nf1air1zbj8v9w66jozdxmyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nf1air1zbj8v9w66jozdxmyl"/>
-  <xsd:element name="ms-l784ggegqcvrpnmw2yvo4il7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l784ggegqcvrpnmw2yvo4il7"/>
-  <xsd:element name="ms-gighl3atjkq88ttivdezt4p7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gighl3atjkq88ttivdezt4p7"/>
-  <xsd:element name="ms-warylvhshpbc5eqkt0n9mz30" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-warylvhshpbc5eqkt0n9mz30"/>
-  <xsd:element name="ms-mijr18ynaqde2l8jps70l2g6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mijr18ynaqde2l8jps70l2g6"/>
-  <xsd:element name="ms-uwiosm2q9ym3ewr4de910s70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uwiosm2q9ym3ewr4de910s70"/>
-  <xsd:element name="ms-dh2ghpj9z1brefxf0pb4yi14" substitutionGroup="sdc4:Item" type="sdc4:mc-dh2ghpj9z1brefxf0pb4yi14"/>
-  <xsd:element name="ms-ppqdmkbjmd3gn0p2i74ue3ox" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ppqdmkbjmd3gn0p2i74ue3ox"/>
-  <xsd:element name="ms-hnf5st6e6ulzvbiafx4310g7" substitutionGroup="sdc4:Item" type="sdc4:mc-hnf5st6e6ulzvbiafx4310g7"/>
-  <xsd:element name="ms-jujsdur1igws8orw6tvvlqco" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jujsdur1igws8orw6tvvlqco"/>
-  <xsd:element name="ms-udbydjqj76l8kl6mi2s3v7vd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-udbydjqj76l8kl6mi2s3v7vd"/>
-  <xsd:element name="ms-r48alj7hc3797qfjnf2uj71n" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r48alj7hc3797qfjnf2uj71n"/>
-  <xsd:element name="ms-pflduyrah1tnmmsjrwfvi121" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pflduyrah1tnmmsjrwfvi121"/>
-  <xsd:element name="ms-lvockfc8lce5p15wuwxc1kwa" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lvockfc8lce5p15wuwxc1kwa"/>
-  <xsd:element name="ms-oqw3pnwhf8knpgsfo8k3xojn" substitutionGroup="sdc4:Item" type="sdc4:mc-oqw3pnwhf8knpgsfo8k3xojn"/>
-  <xsd:element name="ms-eo5tlfr0576ypknys5alvcn0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eo5tlfr0576ypknys5alvcn0"/>
-  <xsd:element name="ms-r1ve12xphsb5hu2yjmhksw5h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r1ve12xphsb5hu2yjmhksw5h"/>
-  <xsd:element name="ms-yht0x4rmqyu32sd90jl0rzbo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yht0x4rmqyu32sd90jl0rzbo"/>
-  <xsd:element name="ms-aa663ivutjf2fs4757t0bbzy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-aa663ivutjf2fs4757t0bbzy"/>
-  <xsd:element name="ms-ecwiva31y2fky3eu1mdnvurt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ecwiva31y2fky3eu1mdnvurt"/>
-  <xsd:element name="ms-d1evlz8yvdlwt6ia9fjq4pgj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
-  <xsd:element name="ms-dkyyj01tksb7h7akq2w7moum" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkyyj01tksb7h7akq2w7moum"/>
-  <xsd:element name="ms-kmgw3rv02bipvaoxpvnh7fzk" substitutionGroup="sdc4:Item" type="sdc4:mc-kmgw3rv02bipvaoxpvnh7fzk"/>
-  <xsd:element name="ms-zauadmfc05ep5nf2kd9j8cwh" substitutionGroup="sdc4:Item" type="sdc4:mc-zauadmfc05ep5nf2kd9j8cwh"/>
-  <xsd:element name="ms-k3rgauqfh9vs4bqq5q4nsbp4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4"/>
-  <xsd:element name="ms-lahhb7fhnu75l1fxrv9f8fdv" substitutionGroup="sdc4:Item" type="sdc4:mc-lahhb7fhnu75l1fxrv9f8fdv"/>
-  <xsd:element name="ms-hyqlz591lhj54sdt1a1mup70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hyqlz591lhj54sdt1a1mup70"/>
-  <xsd:element name="ms-vhezo2cckpe92x4c3j2memeh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vhezo2cckpe92x4c3j2memeh"/>
-  <xsd:element name="ms-i16vqj89it3db7d3c5qjko9p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i16vqj89it3db7d3c5qjko9p"/>
-  <xsd:element name="ms-evbpc370eyfc3q3lldwifu78" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-evbpc370eyfc3q3lldwifu78"/>
-  <xsd:element name="ms-t2tvd3wylxrstdeu5aw6gkw1" substitutionGroup="sdc4:Item" type="sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"/>
-  <xsd:element name="ms-wn77qo3b1xjwc4dudtyme2io" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wn77qo3b1xjwc4dudtyme2io"/>
-  <xsd:element name="ms-ujir739mf1g8ajeczs9nzh9m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ujir739mf1g8ajeczs9nzh9m"/>
-  <xsd:element name="ms-nzq70mbegncgc6hdfp7vtu46" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nzq70mbegncgc6hdfp7vtu46"/>
-  <xsd:element name="ms-fl5quyfd88rajs0egsgbq7ou" substitutionGroup="sdc4:Item" type="sdc4:mc-fl5quyfd88rajs0egsgbq7ou"/>
-  <xsd:element name="ms-fzpb9xr5jg2m3e3dzmvi1v3h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h"/>
-  <xsd:element name="ms-iwlb0rcomw3q8rlff3ajukme" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-iwlb0rcomw3q8rlff3ajukme"/>
-  <xsd:element name="ms-oy35qocyvn0zxq8ni4azvz39" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-oy35qocyvn0zxq8ni4azvz39"/>
-  <xsd:element name="ms-c3ycqqk7ns1bvmsc0ricnsbn" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
-  <xsd:element name="ms-h3kdbvdtyalpvik97saaf0an" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h3kdbvdtyalpvik97saaf0an"/>
-  <xsd:element name="ms-wl6j4ekcmu4hvt2m12zw4zp8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
-  <xsd:element name="ms-hhusuzzig19rs46ngz23k5g7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hhusuzzig19rs46ngz23k5g7"/>
-  <xsd:element name="ms-gxzbm758mhdz51xd4bawlfhh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gxzbm758mhdz51xd4bawlfhh"/>
+  <xsd:element name="ms-q0ckidtsg1x3iav6nrt8fo0l" substitutionGroup="sdc4:Item" type="sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l"/>
+  <xsd:element name="ms-p8u71b4lhct4ra0szgkex7xo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-p8u71b4lhct4ra0szgkex7xo"/>
+  <xsd:element name="ms-ix0my2v2z79s002g0r8orosf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ix0my2v2z79s002g0r8orosf"/>
+  <xsd:element name="ms-sbulkq80j4fkbiql4zgje4qr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sbulkq80j4fkbiql4zgje4qr"/>
+  <xsd:element name="ms-bvz91uwa2c28sr0k5u85zx04" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bvz91uwa2c28sr0k5u85zx04"/>
+  <xsd:element name="ms-atvd5lzut4pjzc7dpv1ykb92" substitutionGroup="sdc4:Item" type="sdc4:mc-atvd5lzut4pjzc7dpv1ykb92"/>
+  <xsd:element name="ms-g7gz7adgd2fh6egkt84jnx7m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g7gz7adgd2fh6egkt84jnx7m"/>
+  <xsd:element name="ms-u19jrjjc6aznug6hs2twjiy5" substitutionGroup="sdc4:Item" type="sdc4:mc-u19jrjjc6aznug6hs2twjiy5"/>
   <xsd:element name="ms-qb90a0sp9vvb6c5cbcf236ys" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qb90a0sp9vvb6c5cbcf236ys"/>
+  <xsd:element name="ms-dh2ghpj9z1brefxf0pb4yi14" substitutionGroup="sdc4:Item" type="sdc4:mc-dh2ghpj9z1brefxf0pb4yi14"/>
+  <xsd:element name="ms-gxzbm758mhdz51xd4bawlfhh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gxzbm758mhdz51xd4bawlfhh"/>
+  <xsd:element name="ms-c3ycqqk7ns1bvmsc0ricnsbn" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn"/>
+  <xsd:element name="ms-bfn83x3fw1cyuqriuoquu9t1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-bfn83x3fw1cyuqriuoquu9t1"/>
+  <xsd:element name="ms-hyqlz591lhj54sdt1a1mup70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hyqlz591lhj54sdt1a1mup70"/>
+  <xsd:element name="ms-wr06h54xqqw2q9id8i9673jy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wr06h54xqqw2q9id8i9673jy"/>
+  <xsd:element name="ms-w2ruemcfy35rw60jl1t9dew2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-w2ruemcfy35rw60jl1t9dew2"/>
+  <xsd:element name="ms-mijr18ynaqde2l8jps70l2g6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mijr18ynaqde2l8jps70l2g6"/>
+  <xsd:element name="ms-l4jr7yi9926sctme3vjuti72" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l4jr7yi9926sctme3vjuti72"/>
+  <xsd:element name="ms-xlgjqdpwdbn2re3mdh5yy2rk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk"/>
+  <xsd:element name="ms-q75pzzv36or6dxgjrrbvmun5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q75pzzv36or6dxgjrrbvmun5"/>
+  <xsd:element name="ms-iwlb0rcomw3q8rlff3ajukme" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-iwlb0rcomw3q8rlff3ajukme"/>
+  <xsd:element name="ms-r5koa840csi3zcewts0uo0r5" substitutionGroup="sdc4:Item" type="sdc4:mc-r5koa840csi3zcewts0uo0r5"/>
+  <xsd:element name="ms-xsohkckyof7y1xj8h1ab4pxu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xsohkckyof7y1xj8h1ab4pxu"/>
+  <xsd:element name="ms-gighl3atjkq88ttivdezt4p7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gighl3atjkq88ttivdezt4p7"/>
+  <xsd:element name="ms-pflduyrah1tnmmsjrwfvi121" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-pflduyrah1tnmmsjrwfvi121"/>
+  <xsd:element name="ms-ezewpvppvx8zjikutr53ppgz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ezewpvppvx8zjikutr53ppgz"/>
+  <xsd:element name="ms-d9z9mcx6gs9zbz4k6f0v738s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s"/>
+  <xsd:element name="ms-l9s5avvkix0og66m0lewwqgg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l9s5avvkix0og66m0lewwqgg"/>
+  <xsd:element name="ms-wuvdeiwoe5bna7nlhcl1c4h9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wuvdeiwoe5bna7nlhcl1c4h9"/>
+  <xsd:element name="ms-cr5izog5xjzki3zmnwofubuc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-cr5izog5xjzki3zmnwofubuc"/>
+  <xsd:element name="ms-ecwiva31y2fky3eu1mdnvurt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ecwiva31y2fky3eu1mdnvurt"/>
+  <xsd:element name="ms-qamg60snb8cl9auv4y03kdc4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qamg60snb8cl9auv4y03kdc4"/>
+  <xsd:element name="ms-n7pn5ctqo81v0v418hez5zv5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n7pn5ctqo81v0v418hez5zv5"/>
+  <xsd:element name="ms-oy35qocyvn0zxq8ni4azvz39" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-oy35qocyvn0zxq8ni4azvz39"/>
+  <xsd:element name="ms-fzpb9xr5jg2m3e3dzmvi1v3h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h"/>
+  <xsd:element name="ms-oy0jwif5pi86xtimzxzhapvu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-oy0jwif5pi86xtimzxzhapvu"/>
+  <xsd:element name="ms-evbpc370eyfc3q3lldwifu78" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-evbpc370eyfc3q3lldwifu78"/>
+  <xsd:element name="ms-gr95a9bk6mfr0220fmxc3o4e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gr95a9bk6mfr0220fmxc3o4e"/>
+  <xsd:element name="ms-abjbfcel6qppumg0rlf78wcp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abjbfcel6qppumg0rlf78wcp"/>
+  <xsd:element name="ms-aa663ivutjf2fs4757t0bbzy" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-aa663ivutjf2fs4757t0bbzy"/>
+  <xsd:element name="ms-t2tvd3wylxrstdeu5aw6gkw1" substitutionGroup="sdc4:Item" type="sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"/>
+  <xsd:element name="ms-urjk1vvcot1s319mxygpdsf5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-urjk1vvcot1s319mxygpdsf5"/>
+  <xsd:element name="ms-fljkn7b19qtnj6rr3t8qcfg1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fljkn7b19qtnj6rr3t8qcfg1"/>
+  <xsd:element name="ms-h1vwqq8ulrb27qpl6zuzppnf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf"/>
   <xsd:element name="ms-yshoeps2dm0j1ueusqs825v6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yshoeps2dm0j1ueusqs825v6"/>
-  <xsd:element name="ms-t6znwhu1i6tg52lv4v3upb10" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t6znwhu1i6tg52lv4v3upb10"/>
-  <xsd:element name="ms-rpz1czz06jhpahmfz30rblvp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-rpz1czz06jhpahmfz30rblvp"/>
-  <xsd:element name="ms-og08xf6bu928uuz6t3y0e23f" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-og08xf6bu928uuz6t3y0e23f"/>
-  <xsd:element name="ms-xtbtk7ro6s9247bcwt4ak4h1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1"/>
+  <xsd:element name="ms-ujir739mf1g8ajeczs9nzh9m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ujir739mf1g8ajeczs9nzh9m"/>
+  <xsd:element name="ms-z1ezf3vzksp7qpgd9l3uxvqo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-z1ezf3vzksp7qpgd9l3uxvqo"/>
+  <xsd:element name="ms-i16vqj89it3db7d3c5qjko9p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i16vqj89it3db7d3c5qjko9p"/>
+  <xsd:element name="ms-c179ilk2ns15cd5rzzdfd6f6" substitutionGroup="sdc4:Item" type="sdc4:mc-c179ilk2ns15cd5rzzdfd6f6"/>
+  <xsd:element name="ms-ppqdmkbjmd3gn0p2i74ue3ox" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ppqdmkbjmd3gn0p2i74ue3ox"/>
+  <xsd:element name="ms-fl5quyfd88rajs0egsgbq7ou" substitutionGroup="sdc4:Item" type="sdc4:mc-fl5quyfd88rajs0egsgbq7ou"/>
+  <xsd:element name="ms-m3970or5qg49k78l0lq1ptjc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m3970or5qg49k78l0lq1ptjc"/>
+  <xsd:element name="ms-kmcck093437mfdlnxnrzm0xw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kmcck093437mfdlnxnrzm0xw"/>
+  <xsd:element name="ms-l784ggegqcvrpnmw2yvo4il7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l784ggegqcvrpnmw2yvo4il7"/>
+  <xsd:element name="ms-jjzmhdxvbt97pq81iwqubtxk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jjzmhdxvbt97pq81iwqubtxk"/>
+  <xsd:element name="ms-sdlc6bf161fyyueaca8vvshh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sdlc6bf161fyyueaca8vvshh"/>
+  <xsd:element name="ms-czh5vzmdeijkwrtyla1w7su8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-czh5vzmdeijkwrtyla1w7su8"/>
+  <xsd:element name="ms-mjl0vv39zsbigqiuyqm66fkv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mjl0vv39zsbigqiuyqm66fkv"/>
+  <xsd:element name="ms-n7s7hcgef4pxius8a0l6r5qp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-n7s7hcgef4pxius8a0l6r5qp"/>
+  <xsd:element name="ms-hnf5st6e6ulzvbiafx4310g7" substitutionGroup="sdc4:Item" type="sdc4:mc-hnf5st6e6ulzvbiafx4310g7"/>
+  <xsd:element name="ms-vmikfu0irht9fmq7q02t3oqs" substitutionGroup="sdc4:Item" type="sdc4:mc-vmikfu0irht9fmq7q02t3oqs"/>
+  <xsd:element name="ms-crdh278iwq7azbtcgsuxteve" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-crdh278iwq7azbtcgsuxteve"/>
+  <xsd:element name="ms-a5scyosu6j84vz350mqyrzl2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a5scyosu6j84vz350mqyrzl2"/>
+  <xsd:element name="ms-wn77qo3b1xjwc4dudtyme2io" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wn77qo3b1xjwc4dudtyme2io"/>
+  <xsd:element name="ms-r48alj7hc3797qfjnf2uj71n" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r48alj7hc3797qfjnf2uj71n"/>
+  <xsd:element name="ms-wl6j4ekcmu4hvt2m12zw4zp8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8"/>
+  <xsd:element name="ms-et536sfok7glz7fartfs4m65" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-et536sfok7glz7fartfs4m65"/>
+  <xsd:element name="ms-nf1air1zbj8v9w66jozdxmyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nf1air1zbj8v9w66jozdxmyl"/>
+  <xsd:element name="ms-xxe21o9ojzmy9wxxky1tnmog" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xxe21o9ojzmy9wxxky1tnmog"/>
+  <xsd:element name="ms-vhezo2cckpe92x4c3j2memeh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vhezo2cckpe92x4c3j2memeh"/>
+  <xsd:element name="ms-zauadmfc05ep5nf2kd9j8cwh" substitutionGroup="sdc4:Item" type="sdc4:mc-zauadmfc05ep5nf2kd9j8cwh"/>
+  <xsd:element name="ms-uwiosm2q9ym3ewr4de910s70" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uwiosm2q9ym3ewr4de910s70"/>
+  <xsd:element name="ms-hhusuzzig19rs46ngz23k5g7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hhusuzzig19rs46ngz23k5g7"/>
+  <xsd:element name="ms-j67yf27qljb83m2fwvown1lk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-j67yf27qljb83m2fwvown1lk"/>
+  <xsd:element name="ms-nd1v8jk7wtm1tthzw1f4987t" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nd1v8jk7wtm1tthzw1f4987t"/>
+  <xsd:element name="ms-nz4t9iecyq1ukvs4s3ymgd8t" substitutionGroup="sdc4:Audit" type="sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t"/>
+  <xsd:element name="ms-zc6p008h5naqev8zngtzvyx9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zc6p008h5naqev8zngtzvyx9"/>
   <xsd:element name="ms-gcjyjrnp0wsfoelcp4m05c67" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gcjyjrnp0wsfoelcp4m05c67"/>
-  <xsd:element name="ms-gket571isxo2uckturhvxadk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gket571isxo2uckturhvxadk"/>
-  <xsd:element name="ms-ba0vveg1d3bmjb9nx8e2x4d3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ba0vveg1d3bmjb9nx8e2x4d3"/>
-  <xsd:element name="ms-skxvr3cdab7dmc5y66zr3mr0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-skxvr3cdab7dmc5y66zr3mr0"/>
+  <xsd:element name="ms-vbctgmdcwps5b3r3l6sboa6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vbctgmdcwps5b3r3l6sboa6y"/>
+  <xsd:element name="ms-og08xf6bu928uuz6t3y0e23f" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-og08xf6bu928uuz6t3y0e23f"/>
+  <xsd:element name="ms-q9vmn1cvdclgr757aer5v1rg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q9vmn1cvdclgr757aer5v1rg"/>
+  <xsd:element name="ms-frb0byilu8prpn7veyj6luwl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-frb0byilu8prpn7veyj6luwl"/>
+  <xsd:element name="ms-t6znwhu1i6tg52lv4v3upb10" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t6znwhu1i6tg52lv4v3upb10"/>
+  <xsd:element name="ms-hc79skkfionpgw87dsg5yrgw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hc79skkfionpgw87dsg5yrgw"/>
+  <xsd:element name="ms-dkc2ccj5te35z9gd4bu1blcq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkc2ccj5te35z9gd4bu1blcq"/>
   <xsd:element name="ms-an4r6ds6zhk334liqf3uhses" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-an4r6ds6zhk334liqf3uhses"/>
+  <xsd:element name="ms-dkmozm7gxxss45gf5yhthpjg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkmozm7gxxss45gf5yhthpjg"/>
+  <xsd:element name="ms-dchiej5tv7tyhfwr6h3ync1i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dchiej5tv7tyhfwr6h3ync1i"/>
+  <xsd:element name="ms-doxdajuj6j1mk480zd1k7ssz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-doxdajuj6j1mk480zd1k7ssz"/>
+  <xsd:element name="ms-c23wij2i4jkwu016ekro40bv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-c23wij2i4jkwu016ekro40bv"/>
+  <xsd:element name="ms-yht0x4rmqyu32sd90jl0rzbo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yht0x4rmqyu32sd90jl0rzbo"/>
+  <xsd:element name="ms-ginfqbk7q59ld2r4us8sjnv1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ginfqbk7q59ld2r4us8sjnv1"/>
+  <xsd:element name="ms-sa4nl1kbpdr842fkucvfjkpq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sa4nl1kbpdr842fkucvfjkpq"/>
+  <xsd:element name="ms-gc3nb6hzobkzifswmzgt7w6t" substitutionGroup="sdc4:Item" type="sdc4:mc-gc3nb6hzobkzifswmzgt7w6t"/>
+  <xsd:element name="ms-wa0mknvfo83hej635n48s0ig" substitutionGroup="sdc4:Item" type="sdc4:mc-wa0mknvfo83hej635n48s0ig"/>
+  <xsd:element name="ms-qsetd453kk9own8co1wmc5cz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qsetd453kk9own8co1wmc5cz"/>
+  <xsd:element name="ms-wyk9e1d74y5xrgv97o9y75ib" substitutionGroup="sdc4:Item" type="sdc4:mc-wyk9e1d74y5xrgv97o9y75ib"/>
   <xsd:element name="ms-r493514xykrtgyz8dyyqjcxg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r493514xykrtgyz8dyyqjcxg"/>
   <xsd:element name="ms-htr0gulg01caowd76j6v4ukh" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-htr0gulg01caowd76j6v4ukh"/>
-  <xsd:element name="ms-l4jr7yi9926sctme3vjuti72" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-l4jr7yi9926sctme3vjuti72"/>
-  <xsd:element name="ms-c179ilk2ns15cd5rzzdfd6f6" substitutionGroup="sdc4:Item" type="sdc4:mc-c179ilk2ns15cd5rzzdfd6f6"/>
-  <xsd:element name="ms-crdh278iwq7azbtcgsuxteve" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-crdh278iwq7azbtcgsuxteve"/>
-  <xsd:element name="ms-j67yf27qljb83m2fwvown1lk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-j67yf27qljb83m2fwvown1lk"/>
-  <xsd:element name="ms-hc79skkfionpgw87dsg5yrgw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hc79skkfionpgw87dsg5yrgw"/>
-  <xsd:element name="ms-hukufq8g2u2k0cpcal7uxsa8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hukufq8g2u2k0cpcal7uxsa8"/>
-  <xsd:element name="ms-kqlatg3rz00z58muv7j8toyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kqlatg3rz00z58muv7j8toyl"/>
-  <xsd:element name="ms-jyx7rxfktazhgxgq84fxf6wr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jyx7rxfktazhgxgq84fxf6wr"/>
-  <xsd:element name="ms-m3970or5qg49k78l0lq1ptjc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m3970or5qg49k78l0lq1ptjc"/>
-  <xsd:element name="ms-q0ckidtsg1x3iav6nrt8fo0l" substitutionGroup="sdc4:Item" type="sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l"/>
-  <xsd:element name="ms-q75pzzv36or6dxgjrrbvmun5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q75pzzv36or6dxgjrrbvmun5"/>
-  <xsd:element name="ms-wuvdeiwoe5bna7nlhcl1c4h9" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wuvdeiwoe5bna7nlhcl1c4h9"/>
-  <xsd:element name="ms-of4crvmnrr3s5q5396kmt0jv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-of4crvmnrr3s5q5396kmt0jv"/>
-  <xsd:element name="ms-mjl0vv39zsbigqiuyqm66fkv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-mjl0vv39zsbigqiuyqm66fkv"/>
-  <xsd:element name="ms-gr95a9bk6mfr0220fmxc3o4e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gr95a9bk6mfr0220fmxc3o4e"/>
-  <xsd:element name="ms-evijzyx8i3a268zqdsgmhzo0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-evijzyx8i3a268zqdsgmhzo0"/>
-  <xsd:element name="ms-qh84jdzp1kxt85aq4ilo0svk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qh84jdzp1kxt85aq4ilo0svk"/>
-  <xsd:element name="ms-a5scyosu6j84vz350mqyrzl2" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a5scyosu6j84vz350mqyrzl2"/>
-  <xsd:element name="ms-g7gz7adgd2fh6egkt84jnx7m" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g7gz7adgd2fh6egkt84jnx7m"/>
+  <xsd:element name="ms-nh9s5b7gb713asjatbg5guyc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nh9s5b7gb713asjatbg5guyc"/>
+  <xsd:element name="ms-rdoj4o216s33ymezyefwb8ia" substitutionGroup="sdc4:Item" type="sdc4:mc-rdoj4o216s33ymezyefwb8ia"/>
   <xsd:element name="ms-rw8s64t4v80421biq8eo9p2x" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-rw8s64t4v80421biq8eo9p2x"/>
-  <xsd:element name="ms-kmcck093437mfdlnxnrzm0xw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kmcck093437mfdlnxnrzm0xw"/>
-  <xsd:element name="ms-gc3nb6hzobkzifswmzgt7w6t" substitutionGroup="sdc4:Item" type="sdc4:mc-gc3nb6hzobkzifswmzgt7w6t"/>
-  <xsd:element name="ms-doxdajuj6j1mk480zd1k7ssz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-doxdajuj6j1mk480zd1k7ssz"/>
-  <xsd:element name="ms-r5koa840csi3zcewts0uo0r5" substitutionGroup="sdc4:Item" type="sdc4:mc-r5koa840csi3zcewts0uo0r5"/>
-  <xsd:element name="ms-sbulkq80j4fkbiql4zgje4qr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sbulkq80j4fkbiql4zgje4qr"/>
-  <xsd:element name="ms-wesa1iwagjckq500ixmosu2l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wesa1iwagjckq500ixmosu2l"/>
-  <xsd:element name="ms-ginfqbk7q59ld2r4us8sjnv1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ginfqbk7q59ld2r4us8sjnv1"/>
-  <xsd:element name="ms-fa0aian3co6if5igu488whhr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fa0aian3co6if5igu488whhr"/>
-  <xsd:element name="ms-dkmozm7gxxss45gf5yhthpjg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkmozm7gxxss45gf5yhthpjg"/>
-  <xsd:element name="ms-yk5nrxndulhebpi3hiywk8u8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yk5nrxndulhebpi3hiywk8u8"/>
-  <xsd:element name="ms-xlgjqdpwdbn2re3mdh5yy2rk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk"/>
+  <xsd:element name="ms-ba0vveg1d3bmjb9nx8e2x4d3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ba0vveg1d3bmjb9nx8e2x4d3"/>
   <xsd:element name="ms-e104gkr3e96ekydrpe8qogjw" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-e104gkr3e96ekydrpe8qogjw"/>
-  <xsd:element name="ms-m9minyaug6ypyzt52zfxlyyi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m9minyaug6ypyzt52zfxlyyi"/>
-  <xsd:element name="ms-q9vmn1cvdclgr757aer5v1rg" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-q9vmn1cvdclgr757aer5v1rg"/>
-  <xsd:element name="ms-credrxhz4hg4c42sihm0wb6s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-credrxhz4hg4c42sihm0wb6s"/>
-  <xsd:element name="ms-p6smy5wa25ug4yhgdswyuklx" substitutionGroup="sdc4:Party" type="sdc4:mc-p6smy5wa25ug4yhgdswyuklx"/>
-  <xsd:element name="ms-p8u71b4lhct4ra0szgkex7xo" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-p8u71b4lhct4ra0szgkex7xo"/>
-  <xsd:element name="ms-lghqkvp7vapqk10l248kzqs8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lghqkvp7vapqk10l248kzqs8"/>
-  <xsd:element name="ms-qamg60snb8cl9auv4y03kdc4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qamg60snb8cl9auv4y03kdc4"/>
-  <xsd:element name="ms-r34ta6hknc3dpeb4sawox80v" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r34ta6hknc3dpeb4sawox80v"/>
-  <xsd:element name="ms-uzai5uey5p1fnn9ezj9u6vor" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uzai5uey5p1fnn9ezj9u6vor"/>
-  <xsd:element name="ms-xxe21o9ojzmy9wxxky1tnmog" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xxe21o9ojzmy9wxxky1tnmog"/>
-  <xsd:element name="ms-nz4t9iecyq1ukvs4s3ymgd8t" substitutionGroup="sdc4:Audit" type="sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t"/>
-  <xsd:element name="ms-ix0my2v2z79s002g0r8orosf" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ix0my2v2z79s002g0r8orosf"/>
+  <xsd:element name="ms-wesa1iwagjckq500ixmosu2l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-wesa1iwagjckq500ixmosu2l"/>
+  <xsd:element name="ms-lth27h6towue4i9iq1cudogc" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lth27h6towue4i9iq1cudogc"/>
+  <xsd:element name="ms-warylvhshpbc5eqkt0n9mz30" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-warylvhshpbc5eqkt0n9mz30"/>
+  <xsd:element name="ms-hukufq8g2u2k0cpcal7uxsa8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hukufq8g2u2k0cpcal7uxsa8"/>
+  <xsd:element name="ms-r6hkunjm2q0hlxiknlc9ljix" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r6hkunjm2q0hlxiknlc9ljix"/>
+  <xsd:element name="ms-hswapeutuik067dokidnbv88" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hswapeutuik067dokidnbv88"/>
+  <xsd:element name="ms-kmgw3rv02bipvaoxpvnh7fzk" substitutionGroup="sdc4:Item" type="sdc4:mc-kmgw3rv02bipvaoxpvnh7fzk"/>
+  <xsd:element name="ms-o4d67oubyyunugx3la44f53u" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-o4d67oubyyunugx3la44f53u"/>
+  <xsd:element name="ms-i1defiugxfdcwfb9rqv4p5tz" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i1defiugxfdcwfb9rqv4p5tz"/>
+  <xsd:element name="ms-phus5105uw30xejqs7baamyx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-phus5105uw30xejqs7baamyx"/>
+  <xsd:element name="ms-vi7yvq0b8nler3g6alaamrzm" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-vi7yvq0b8nler3g6alaamrzm"/>
+  <xsd:element name="ms-s3qzwxxz9b42lcd2wryok8jd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-s3qzwxxz9b42lcd2wryok8jd"/>
+  <xsd:element name="ms-udbydjqj76l8kl6mi2s3v7vd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-udbydjqj76l8kl6mi2s3v7vd"/>
+  <xsd:element name="ms-a08lkh4xjvqqjtz7sxy129pa" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-a08lkh4xjvqqjtz7sxy129pa"/>
+  <xsd:element name="ms-gb78cmuyo72hqs5apymdki7l" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gb78cmuyo72hqs5apymdki7l"/>
+  <xsd:element name="ms-rpz1czz06jhpahmfz30rblvp" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-rpz1czz06jhpahmfz30rblvp"/>
   <xsd:element name="ms-ce1c8sydkov8bkv4dgdmwe5x" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x"/>
-  <xsd:element name="ms-dlu1btnja2h37jfx3vj694rv" substitutionGroup="sdc4:Item" type="sdc4:mc-dlu1btnja2h37jfx3vj694rv"/>
-  <xsd:element name="ms-gujvcggdotm3z1hmygdrey09" substitutionGroup="sdc4:Item" type="sdc4:mc-gujvcggdotm3z1hmygdrey09"/>
-  <xsd:element name="ms-qwr8oppceuigsrirvnpcjyed" substitutionGroup="sdc4:Item" type="sdc4:mc-qwr8oppceuigsrirvnpcjyed"/>
-  <xsd:element name="ms-myh7mf4v2aq3ryf4a3ewmapc" substitutionGroup="sdc4:Item" type="sdc4:mc-myh7mf4v2aq3ryf4a3ewmapc"/>
-  <xsd:element name="ms-ltxpluusa56f3t0cytjabsip" substitutionGroup="sdc4:Item" type="sdc4:mc-ltxpluusa56f3t0cytjabsip"/>
-  <xsd:element name="ms-k87dda72y8upko7dnrcs425s" substitutionGroup="sdc4:Item" type="sdc4:mc-k87dda72y8upko7dnrcs425s"/>
-  <xsd:element name="ms-r7t7cvtkprjf4k0thmkzzbz7" substitutionGroup="sdc4:Item" type="sdc4:mc-r7t7cvtkprjf4k0thmkzzbz7"/>
-  <xsd:element name="ms-px1s852i5pfng3v0ikk6fw4m" substitutionGroup="sdc4:Item" type="sdc4:mc-px1s852i5pfng3v0ikk6fw4m"/>
-  <xsd:element name="ms-rhb4ksmdy1b0rx39kbpt9l2f" substitutionGroup="sdc4:Item" type="sdc4:mc-rhb4ksmdy1b0rx39kbpt9l2f"/>
-  <xsd:element name="ms-yfhu36gacryjw93df3jbuc5t" substitutionGroup="sdc4:Item" type="sdc4:mc-yfhu36gacryjw93df3jbuc5t"/>
-  <xsd:element name="ms-pmtnenazj7s6dvcklsqx1zpp" substitutionGroup="sdc4:Item" type="sdc4:mc-pmtnenazj7s6dvcklsqx1zpp"/>
-  <xsd:element name="ms-x7qyr4vcga3wkpp42p91vjg0" substitutionGroup="sdc4:Item" type="sdc4:mc-x7qyr4vcga3wkpp42p91vjg0"/>
-  <xsd:element name="ms-mghaxfjyhejq0djyg0p7a1th" substitutionGroup="sdc4:Item" type="sdc4:mc-mghaxfjyhejq0djyg0p7a1th"/>
-  <xsd:element name="ms-fn1qy5cft8qhhigzjrfnbmn5" substitutionGroup="sdc4:Item" type="sdc4:mc-fn1qy5cft8qhhigzjrfnbmn5"/>
-  <xsd:element name="ms-pr9t93hr1blrb5r5o3o6h03p" substitutionGroup="sdc4:Item" type="sdc4:mc-pr9t93hr1blrb5r5o3o6h03p"/>
-  <xsd:element name="ms-qfmes86biux1nl7gbaowsgc4" substitutionGroup="sdc4:Item" type="sdc4:mc-qfmes86biux1nl7gbaowsgc4"/>
-  <xsd:element name="ms-hpkc8xrccpwc3shm4ubm5o47" substitutionGroup="sdc4:Item" type="sdc4:mc-hpkc8xrccpwc3shm4ubm5o47"/>
-  <xsd:element name="ms-yczwu98f29i5a7ov89cay8q9" substitutionGroup="sdc4:Item" type="sdc4:mc-yczwu98f29i5a7ov89cay8q9"/>
-  <xsd:element name="ms-nufn1nz347zhnyx962xu8nly" substitutionGroup="sdc4:Item" type="sdc4:mc-nufn1nz347zhnyx962xu8nly"/>
-  <xsd:element name="ms-f6z431hl60ra8eqbrcyrsvji" substitutionGroup="sdc4:Item" type="sdc4:mc-f6z431hl60ra8eqbrcyrsvji"/>
-  <xsd:element name="ms-af2xn38mf2fvok86g09e4ka3" substitutionGroup="sdc4:Item" type="sdc4:mc-af2xn38mf2fvok86g09e4ka3"/>
-  <xsd:element name="ms-oqehyqreytbvds2qyaq8rof3" substitutionGroup="sdc4:Item" type="sdc4:mc-oqehyqreytbvds2qyaq8rof3"/>
-  <xsd:element name="ms-uc64yt3ys0s0xrj51rue2ofb" substitutionGroup="sdc4:Item" type="sdc4:mc-uc64yt3ys0s0xrj51rue2ofb"/>
-  <xsd:element name="ms-jwpkqjchavj885uwt5v1jgid" substitutionGroup="sdc4:Item" type="sdc4:mc-jwpkqjchavj885uwt5v1jgid"/>
-  <xsd:element name="ms-gltl14s59crclwwf1pp1j5l5" substitutionGroup="sdc4:Item" type="sdc4:mc-gltl14s59crclwwf1pp1j5l5"/>
-  <xsd:element name="ms-vaejfpw94f682dg8981lpwos" substitutionGroup="sdc4:Item" type="sdc4:mc-vaejfpw94f682dg8981lpwos"/>
-  <xsd:element name="ms-kce8557jd9vg6ei59m7o1kc2" substitutionGroup="sdc4:Item" type="sdc4:mc-kce8557jd9vg6ei59m7o1kc2"/>
-  <xsd:element name="ms-ajzpbis9j5kyemael9m15wm7" substitutionGroup="sdc4:Item" type="sdc4:mc-ajzpbis9j5kyemael9m15wm7"/>
-  <xsd:element name="ms-h5skbx08jplwn6e46n6disg1" substitutionGroup="sdc4:Item" type="sdc4:mc-h5skbx08jplwn6e46n6disg1"/>
-  <xsd:element name="ms-c1vlbryimxwvm55s9vj2w7tl" substitutionGroup="sdc4:Item" type="sdc4:mc-c1vlbryimxwvm55s9vj2w7tl"/>
-  <xsd:element name="ms-vzyuqpkegby4er3pw12gxw2c" substitutionGroup="sdc4:Item" type="sdc4:mc-vzyuqpkegby4er3pw12gxw2c"/>
-  <xsd:element name="ms-zmk00yz0hbtqwnhag2uzczil" substitutionGroup="sdc4:Item" type="sdc4:mc-zmk00yz0hbtqwnhag2uzczil"/>
-  <xsd:element name="ms-vsnnmsojiqwcx33jeavt4bkf" substitutionGroup="sdc4:Item" type="sdc4:mc-vsnnmsojiqwcx33jeavt4bkf"/>
-  <xsd:element name="ms-ijbp8d16nkpgd3rlw8mc6b00" substitutionGroup="sdc4:Item" type="sdc4:mc-ijbp8d16nkpgd3rlw8mc6b00"/>
-  <xsd:element name="ms-mb6mwfeajun0wn1agj109jeo" substitutionGroup="sdc4:Item" type="sdc4:mc-mb6mwfeajun0wn1agj109jeo"/>
-  <xsd:element name="ms-o0qu77y6w4lwvu2qhms3ilbw" substitutionGroup="sdc4:Item" type="sdc4:mc-o0qu77y6w4lwvu2qhms3ilbw"/>
-  <xsd:element name="ms-iiaw8zak25y4d6uhe2v57kii" substitutionGroup="sdc4:Item" type="sdc4:mc-iiaw8zak25y4d6uhe2v57kii"/>
-  <xsd:element name="ms-tp294zkkzduxww36h84li7sz" substitutionGroup="sdc4:Item" type="sdc4:mc-tp294zkkzduxww36h84li7sz"/>
-  <xsd:element name="ms-f3h2velkrit4w56qlfceatjl" substitutionGroup="sdc4:Item" type="sdc4:mc-f3h2velkrit4w56qlfceatjl"/>
-  <xsd:element name="ms-wzy3g7mcg3shr1ah8fhzxgkb" substitutionGroup="sdc4:Item" type="sdc4:mc-wzy3g7mcg3shr1ah8fhzxgkb"/>
-  <xsd:element name="ms-p5zjm3c1d2x9jxc2n3wyzbth" substitutionGroup="sdc4:Item" type="sdc4:mc-p5zjm3c1d2x9jxc2n3wyzbth"/>
-  <xsd:element name="ms-uf11uwd9s5x5t9bw98z9dr5l" substitutionGroup="sdc4:Item" type="sdc4:mc-uf11uwd9s5x5t9bw98z9dr5l"/>
-  <xsd:element name="ms-wy38zv02dmcp5gjul57yejmk" substitutionGroup="sdc4:Item" type="sdc4:mc-wy38zv02dmcp5gjul57yejmk"/>
-  <xsd:element name="ms-ibjm0hmb9xywzwptvh4wsuzh" substitutionGroup="sdc4:Item" type="sdc4:mc-ibjm0hmb9xywzwptvh4wsuzh"/>
-  <xsd:element name="ms-ebn1a6s1d1dy724l4y692qsl" substitutionGroup="sdc4:Item" type="sdc4:mc-ebn1a6s1d1dy724l4y692qsl"/>
-  <xsd:element name="ms-y2gopuhgy9wckbeurh33it90" substitutionGroup="sdc4:Item" type="sdc4:mc-y2gopuhgy9wckbeurh33it90"/>
-  <xsd:element name="ms-mjj6mlhqgzcprfwuwnhu5npz" substitutionGroup="sdc4:Item" type="sdc4:mc-mjj6mlhqgzcprfwuwnhu5npz"/>
+  <xsd:element name="ms-k3rgauqfh9vs4bqq5q4nsbp4" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4"/>
+  <xsd:element name="ms-abub2eah26yd2uzni3p9l58i" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-abub2eah26yd2uzni3p9l58i"/>
+  <xsd:element name="ms-luq973ggnjoo9ixkt0dym8v6" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-luq973ggnjoo9ixkt0dym8v6"/>
+  <xsd:element name="ms-credrxhz4hg4c42sihm0wb6s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-credrxhz4hg4c42sihm0wb6s"/>
+  <xsd:element name="ms-m9minyaug6ypyzt52zfxlyyi" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-m9minyaug6ypyzt52zfxlyyi"/>
+  <xsd:element name="ms-lvockfc8lce5p15wuwxc1kwa" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lvockfc8lce5p15wuwxc1kwa"/>
+  <xsd:element name="ms-acr1xvqppf1b3rjsrst6tt4p" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-acr1xvqppf1b3rjsrst6tt4p"/>
+  <xsd:element name="ms-u5tietya3u56hbz2kos06ai7" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-u5tietya3u56hbz2kos06ai7"/>
+  <xsd:element name="ms-owjt9bcgisxfbco8qnddo2fq" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-owjt9bcgisxfbco8qnddo2fq"/>
+  <xsd:element name="ms-eftvwi5byq6cdtd931qyxzw0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eftvwi5byq6cdtd931qyxzw0"/>
+  <xsd:element name="ms-jujsdur1igws8orw6tvvlqco" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jujsdur1igws8orw6tvvlqco"/>
+  <xsd:element name="ms-g0dq4n7oml1mmi21t50biiwt" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g0dq4n7oml1mmi21t50biiwt"/>
+  <xsd:element name="ms-oqw3pnwhf8knpgsfo8k3xojn" substitutionGroup="sdc4:Item" type="sdc4:mc-oqw3pnwhf8knpgsfo8k3xojn"/>
+  <xsd:element name="ms-sndpbhm3xbd6qtbyxmvh3i0e" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e"/>
+  <xsd:element name="ms-zbwodv9m60b33blptlellmu0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-zbwodv9m60b33blptlellmu0"/>
+  <xsd:element name="ms-x0lebwtobgaelj5pev3258sd" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-x0lebwtobgaelj5pev3258sd"/>
+  <xsd:element name="ms-kqlatg3rz00z58muv7j8toyl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kqlatg3rz00z58muv7j8toyl"/>
+  <xsd:element name="ms-ux7molkiumql3ml1pyc0kf2s" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ux7molkiumql3ml1pyc0kf2s"/>
+  <xsd:element name="ms-of4crvmnrr3s5q5396kmt0jv" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-of4crvmnrr3s5q5396kmt0jv"/>
+  <xsd:element name="ms-skxvr3cdab7dmc5y66zr3mr0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-skxvr3cdab7dmc5y66zr3mr0"/>
+  <xsd:element name="ms-g2xnh3uhnlrnqlo7ki2s0fs3" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3"/>
+  <xsd:element name="ms-xtbtk7ro6s9247bcwt4ak4h1" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1"/>
+  <xsd:element name="ms-fci5gajaodxc2ihq6nuz9l6y" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fci5gajaodxc2ihq6nuz9l6y"/>
+  <xsd:element name="ms-p6smy5wa25ug4yhgdswyuklx" substitutionGroup="sdc4:Party" type="sdc4:mc-p6smy5wa25ug4yhgdswyuklx"/>
+  <xsd:element name="ms-qh84jdzp1kxt85aq4ilo0svk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-qh84jdzp1kxt85aq4ilo0svk"/>
+  <xsd:element name="ms-i4e2nod7ss9d4cumhn2pah8b" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-i4e2nod7ss9d4cumhn2pah8b"/>
+  <xsd:element name="ms-lahhb7fhnu75l1fxrv9f8fdv" substitutionGroup="sdc4:Item" type="sdc4:mc-lahhb7fhnu75l1fxrv9f8fdv"/>
+  <xsd:element name="ms-d1evlz8yvdlwt6ia9fjq4pgj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj"/>
+  <xsd:element name="ms-nzq70mbegncgc6hdfp7vtu46" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-nzq70mbegncgc6hdfp7vtu46"/>
+  <xsd:element name="ms-gket571isxo2uckturhvxadk" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gket571isxo2uckturhvxadk"/>
+  <xsd:element name="ms-evijzyx8i3a268zqdsgmhzo0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-evijzyx8i3a268zqdsgmhzo0"/>
+  <xsd:element name="ms-eo5tlfr0576ypknys5alvcn0" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-eo5tlfr0576ypknys5alvcn0"/>
+  <xsd:element name="ms-jyx7rxfktazhgxgq84fxf6wr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-jyx7rxfktazhgxgq84fxf6wr"/>
+  <xsd:element name="ms-r1ve12xphsb5hu2yjmhksw5h" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r1ve12xphsb5hu2yjmhksw5h"/>
+  <xsd:element name="ms-gp3jxw3xzs761ll6u5rvc6jr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"/>
+  <xsd:element name="ms-dkyyj01tksb7h7akq2w7moum" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-dkyyj01tksb7h7akq2w7moum"/>
+  <xsd:element name="ms-r34ta6hknc3dpeb4sawox80v" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-r34ta6hknc3dpeb4sawox80v"/>
+  <xsd:element name="ms-k32effn0kp5a42ikkpvcva9j" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-k32effn0kp5a42ikkpvcva9j"/>
+  <xsd:element name="ms-t0whhrqtnb54te4mk48i1ooj" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-t0whhrqtnb54te4mk48i1ooj"/>
+  <xsd:element name="ms-h3kdbvdtyalpvik97saaf0an" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-h3kdbvdtyalpvik97saaf0an"/>
+  <xsd:element name="ms-kzni1q04rghj23ca0zbhauu5" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-kzni1q04rghj23ca0zbhauu5"/>
+  <xsd:element name="ms-fjhgr5fyqxt2crmg2cb5c513" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fjhgr5fyqxt2crmg2cb5c513"/>
+  <xsd:element name="ms-ueb5g1ojzlwwt0mnds5zb6wl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl"/>
+  <xsd:element name="ms-lghqkvp7vapqk10l248kzqs8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-lghqkvp7vapqk10l248kzqs8"/>
+  <xsd:element name="ms-fa0aian3co6if5igu488whhr" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-fa0aian3co6if5igu488whhr"/>
+  <xsd:element name="ms-uzai5uey5p1fnn9ezj9u6vor" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-uzai5uey5p1fnn9ezj9u6vor"/>
+  <xsd:element name="ms-yk5nrxndulhebpi3hiywk8u8" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-yk5nrxndulhebpi3hiywk8u8"/>
+  <xsd:element name="ms-atqkooccakulfhkt18c008fx" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-atqkooccakulfhkt18c008fx"/>
+  <xsd:element name="ms-hs066djavlc5r494vqu61thl" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-hs066djavlc5r494vqu61thl"/>
+  <xsd:element name="ms-sw5rt0k2uap0e3xgl4rznfgu" substitutionGroup="sdc4:XdAdapter-value" type="sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"/>
   <xsd:element name="ms-elfq9fc70w7vrblzcx9gr7iz" substitutionGroup="sdc4:Item" type="sdc4:mc-elfq9fc70w7vrblzcx9gr7iz"/>
-  <xsd:element name="ms-lt5ldcz6erg3hhsij4pv7c43" substitutionGroup="sdc4:Item" type="sdc4:mc-lt5ldcz6erg3hhsij4pv7c43"/>
-  <xsd:element name="ms-lm8riadasawyvighwhidnfmr" substitutionGroup="sdc4:Item" type="sdc4:mc-lm8riadasawyvighwhidnfmr"/>
-  <xsd:element name="ms-jd68ja7mkrln0wktxorwhw89" substitutionGroup="sdc4:Item" type="sdc4:mc-jd68ja7mkrln0wktxorwhw89"/>
-  <xsd:element name="ms-fti6dssqpaatbprjx0mqu2mj" substitutionGroup="sdc4:Item" type="sdc4:mc-fti6dssqpaatbprjx0mqu2mj"/>
-  <xsd:element name="ms-o31fztf2l2gj0nuljugpl1s9" substitutionGroup="sdc4:Item" type="sdc4:mc-o31fztf2l2gj0nuljugpl1s9"/>
-  <xsd:element name="ms-s31dh070dcub0d3rnhn0r3yg" substitutionGroup="sdc4:Item" type="sdc4:mc-s31dh070dcub0d3rnhn0r3yg"/>
-  <xsd:element name="ms-fjcyy99nhq87163iarzemyin" substitutionGroup="sdc4:Item" type="sdc4:mc-fjcyy99nhq87163iarzemyin"/>
-  <xsd:element name="ms-qeu9jq1owxxh2woqo1f7m8jk" substitutionGroup="sdc4:Item" type="sdc4:mc-qeu9jq1owxxh2woqo1f7m8jk"/>
-  <xsd:element name="ms-o9p6k7c9ie20j5du0jmd3749" substitutionGroup="sdc4:Item" type="sdc4:mc-o9p6k7c9ie20j5du0jmd3749"/>
-  <xsd:element name="ms-fblg9innykrg6wveclrn2gz7" substitutionGroup="sdc4:Item" type="sdc4:mc-fblg9innykrg6wveclrn2gz7"/>
-  <xsd:element name="ms-d38u61t1jg8gp54srfyue7yo" substitutionGroup="sdc4:Item" type="sdc4:mc-d38u61t1jg8gp54srfyue7yo"/>
-  <xsd:element name="ms-cpjtssbqqnsi8kosc7cta973" substitutionGroup="sdc4:Item" type="sdc4:mc-cpjtssbqqnsi8kosc7cta973"/>
-  <xsd:element name="ms-lbor36zlwkf6u7yx9lgqfx0d" substitutionGroup="sdc4:Item" type="sdc4:mc-lbor36zlwkf6u7yx9lgqfx0d"/>
-  <xsd:element name="ms-xepqnpyehgct9s378tinmz0t" substitutionGroup="sdc4:Item" type="sdc4:mc-xepqnpyehgct9s378tinmz0t"/>
-  <xsd:element name="ms-q024v5d61vo8bjlt8u8aoh0d" substitutionGroup="sdc4:Item" type="sdc4:mc-q024v5d61vo8bjlt8u8aoh0d"/>
-  <xsd:element name="ms-byxxuau9d2hajbla9wwc442t" substitutionGroup="sdc4:Item" type="sdc4:mc-byxxuau9d2hajbla9wwc442t"/>
-  <xsd:element name="ms-r5fply6fvzhg90zybxgdx5cb" substitutionGroup="sdc4:Item" type="sdc4:mc-r5fply6fvzhg90zybxgdx5cb"/>
-  <xsd:element name="ms-nud25a7xyg7bt4cw83c7fw3w" substitutionGroup="sdc4:Item" type="sdc4:mc-nud25a7xyg7bt4cw83c7fw3w"/>
-  <xsd:element name="ms-livh99p75uo3mssipi40v044" substitutionGroup="sdc4:Item" type="sdc4:mc-livh99p75uo3mssipi40v044"/>
-  <xsd:element name="ms-vgvl7vcmbiz2z7zn9v7ayc04" substitutionGroup="sdc4:Item" type="sdc4:mc-vgvl7vcmbiz2z7zn9v7ayc04"/>
-  <xsd:element name="ms-in4ct2aoguzdvzg4mlsmsxfd" substitutionGroup="sdc4:Item" type="sdc4:mc-in4ct2aoguzdvzg4mlsmsxfd"/>
-  <xsd:element name="ms-f6tess6gw6nf2hk56v5ow7rh" substitutionGroup="sdc4:Item" type="sdc4:mc-f6tess6gw6nf2hk56v5ow7rh"/>
-  <xsd:element name="ms-vt4f46t22mnqwcqhpriuotu4" substitutionGroup="sdc4:Item" type="sdc4:mc-vt4f46t22mnqwcqhpriuotu4"/>
-  <xsd:element name="ms-deau6rxprq0zivzdddupk7cj" substitutionGroup="sdc4:Item" type="sdc4:mc-deau6rxprq0zivzdddupk7cj"/>
-  <xsd:element name="ms-do05huhfa5l1ttu2ngbptzy0" substitutionGroup="sdc4:Item" type="sdc4:mc-do05huhfa5l1ttu2ngbptzy0"/>
-  <xsd:element name="ms-cpaj0unbnudntl1brmdnuqhu" substitutionGroup="sdc4:Item" type="sdc4:mc-cpaj0unbnudntl1brmdnuqhu"/>
-  <xsd:element name="ms-jtlejg2rigitywxgabu1jkg9" substitutionGroup="sdc4:Item" type="sdc4:mc-jtlejg2rigitywxgabu1jkg9"/>
-  <xsd:element name="ms-xcmayroyt4krhroimfb3e859" substitutionGroup="sdc4:Item" type="sdc4:mc-xcmayroyt4krhroimfb3e859"/>
-  <xsd:element name="ms-napfyd7sikk7d4k8ksjd8buv" substitutionGroup="sdc4:Item" type="sdc4:mc-napfyd7sikk7d4k8ksjd8buv"/>
-  <xsd:element name="ms-x6hucojdpiqdr60u3zxse3dl" substitutionGroup="sdc4:Item" type="sdc4:mc-x6hucojdpiqdr60u3zxse3dl"/>
-  <xsd:element name="ms-r48fyfvuhl62i5yihku0hws1" substitutionGroup="sdc4:Item" type="sdc4:mc-r48fyfvuhl62i5yihku0hws1"/>
-  <xsd:element name="ms-y1u3ladafqtryhgyetpn5ild" substitutionGroup="sdc4:Item" type="sdc4:mc-y1u3ladafqtryhgyetpn5ild"/>
-  <xsd:element name="ms-wvcuj86059g45cb7afy0phwm" substitutionGroup="sdc4:Item" type="sdc4:mc-wvcuj86059g45cb7afy0phwm"/>
-  <xsd:element name="ms-jdugzq309qlimui7675txmyi" substitutionGroup="sdc4:Item" type="sdc4:mc-jdugzq309qlimui7675txmyi"/>
-  <xsd:element name="ms-r6x55vvha5ci3rl1o29adk03" substitutionGroup="sdc4:Item" type="sdc4:mc-r6x55vvha5ci3rl1o29adk03"/>
-  <xsd:element name="ms-kdmdbs6gv9y361zy07ifvwj6" substitutionGroup="sdc4:Item" type="sdc4:mc-kdmdbs6gv9y361zy07ifvwj6"/>
-  <xsd:element name="ms-f5o4ld7fm5kqhzf102q4y2r9" substitutionGroup="sdc4:Item" type="sdc4:mc-f5o4ld7fm5kqhzf102q4y2r9"/>
-  <xsd:element name="ms-rt5pq55fi6th8ul14nrpj5bp" substitutionGroup="sdc4:Item" type="sdc4:mc-rt5pq55fi6th8ul14nrpj5bp"/>
-  <xsd:element name="ms-ghyghsy37eqekdq91e4rk55v" substitutionGroup="sdc4:Item" type="sdc4:mc-ghyghsy37eqekdq91e4rk55v"/>
-  <xsd:element name="ms-yec6svv50u9d1tz9rp6kmv3v" substitutionGroup="sdc4:Item" type="sdc4:mc-yec6svv50u9d1tz9rp6kmv3v"/>
-  <xsd:element name="ms-q4rwxzoldz452g7rbii2an1h" substitutionGroup="sdc4:Item" type="sdc4:mc-q4rwxzoldz452g7rbii2an1h"/>
-  <xsd:element name="ms-vycps7awt38y25jhnrr4okxt" substitutionGroup="sdc4:Item" type="sdc4:mc-vycps7awt38y25jhnrr4okxt"/>
-  <xsd:element name="ms-cpcvbb0xq072zk086ukfl41m" substitutionGroup="sdc4:Item" type="sdc4:mc-cpcvbb0xq072zk086ukfl41m"/>
-  <xsd:element name="ms-wi324lr48j1pzugpnw17p87m" substitutionGroup="sdc4:Item" type="sdc4:mc-wi324lr48j1pzugpnw17p87m"/>
-  <xsd:element name="ms-p4c4kczn0x3qkvzk6vty9vrs" substitutionGroup="sdc4:Item" type="sdc4:mc-p4c4kczn0x3qkvzk6vty9vrs"/>
-  <xsd:element name="ms-wu8f1x11e6ihbltdd6w20rg5" substitutionGroup="sdc4:Item" type="sdc4:mc-wu8f1x11e6ihbltdd6w20rg5"/>
-  <xsd:element name="ms-j9gccgohqlb59l1t37doseiq" substitutionGroup="sdc4:Item" type="sdc4:mc-j9gccgohqlb59l1t37doseiq"/>
-  <xsd:element name="ms-whbmbdx6w88jtct1o3xofw6u" substitutionGroup="sdc4:Item" type="sdc4:mc-whbmbdx6w88jtct1o3xofw6u"/>
-  <xsd:element name="ms-ynnnvgi8748h2d01z2gf4z8x" substitutionGroup="sdc4:Item" type="sdc4:mc-ynnnvgi8748h2d01z2gf4z8x"/>
-  <xsd:element name="ms-lj4ueok9tcwol2d5zwl7chtd" substitutionGroup="sdc4:Item" type="sdc4:mc-lj4ueok9tcwol2d5zwl7chtd"/>
-  <xsd:element name="ms-j6stj0q6hcoap91h39rllmo8" substitutionGroup="sdc4:Item" type="sdc4:mc-j6stj0q6hcoap91h39rllmo8"/>
-  <xsd:element name="ms-lzpyu8stevl1xo54vqxawlaq" substitutionGroup="sdc4:Item" type="sdc4:mc-lzpyu8stevl1xo54vqxawlaq"/>
-  <xsd:element name="ms-ljzdguksr3ebcmuxnpf02dbi" substitutionGroup="sdc4:Item" type="sdc4:mc-ljzdguksr3ebcmuxnpf02dbi"/>
-  <xsd:element name="ms-gr29r0bd1qh6bg27jk3gfag9" substitutionGroup="sdc4:Item" type="sdc4:mc-gr29r0bd1qh6bg27jk3gfag9"/>
-  <xsd:element name="ms-er846fdase95qfn51295h02p" substitutionGroup="sdc4:Item" type="sdc4:mc-er846fdase95qfn51295h02p"/>
-  <xsd:element name="ms-sqz385aell855p97kpkdwuop" substitutionGroup="sdc4:Item" type="sdc4:mc-sqz385aell855p97kpkdwuop"/>
-  <xsd:element name="ms-j08jnwhphzsz339c1bd1bwnp" substitutionGroup="sdc4:Item" type="sdc4:mc-j08jnwhphzsz339c1bd1bwnp"/>
-  <xsd:element name="ms-hj4gt95jsr6xvywruyi9ip51" substitutionGroup="sdc4:Item" type="sdc4:mc-hj4gt95jsr6xvywruyi9ip51"/>
-  <xsd:element name="ms-c2ley3g1nu17i3djd4cotr88" substitutionGroup="sdc4:Item" type="sdc4:mc-c2ley3g1nu17i3djd4cotr88"/>
-  <xsd:element name="ms-s38nznee1x9kak4nf75pkc3r" substitutionGroup="sdc4:Item" type="sdc4:mc-s38nznee1x9kak4nf75pkc3r"/>
-  <xsd:element name="ms-n3n7ow0d22saquarrg9ajpod" substitutionGroup="sdc4:Item" type="sdc4:mc-n3n7ow0d22saquarrg9ajpod"/>
-  <xsd:element name="ms-zm46otmwkxgersw3y93icjp4" substitutionGroup="sdc4:Item" type="sdc4:mc-zm46otmwkxgersw3y93icjp4"/>
-  <xsd:element name="ms-jy09m0fa7skhj3w2h4vfak7b" substitutionGroup="sdc4:Item" type="sdc4:mc-jy09m0fa7skhj3w2h4vfak7b"/>
-  <xsd:element name="ms-bh5kiii8wc47sp8hibxv9qtk" substitutionGroup="sdc4:Item" type="sdc4:mc-bh5kiii8wc47sp8hibxv9qtk"/>
-  <xsd:element name="ms-rycouibueybaqp4hzjjs9jte" substitutionGroup="sdc4:Item" type="sdc4:mc-rycouibueybaqp4hzjjs9jte"/>
-  <xsd:element name="ms-sb64o3rmfrocsgd92tm8fdc1" substitutionGroup="sdc4:Item" type="sdc4:mc-sb64o3rmfrocsgd92tm8fdc1"/>
-  <xsd:element name="ms-eeyxfka9q0b81swhc0cpvd1l" substitutionGroup="sdc4:Item" type="sdc4:mc-eeyxfka9q0b81swhc0cpvd1l"/>
-  <xsd:element name="ms-xiy4gn6vievei3614sso5vmk" substitutionGroup="sdc4:Item" type="sdc4:mc-xiy4gn6vievei3614sso5vmk"/>
-  <xsd:element name="ms-pk3hw4wzjnd5e1oa2yxc69dk" substitutionGroup="sdc4:Item" type="sdc4:mc-pk3hw4wzjnd5e1oa2yxc69dk"/>
-  <xsd:element name="ms-bk8actrinati1b6smyypwj6m" substitutionGroup="sdc4:Item" type="sdc4:mc-bk8actrinati1b6smyypwj6m"/>
-  <xsd:element name="ms-ebpeg221rjf78h1d75fbl4ys" substitutionGroup="sdc4:Item" type="sdc4:mc-ebpeg221rjf78h1d75fbl4ys"/>
-  <xsd:element name="ms-zosryxykww1exsfjtb0s3fzv" substitutionGroup="sdc4:Item" type="sdc4:mc-zosryxykww1exsfjtb0s3fzv"/>
-  <xsd:element name="ms-qe3jdkz68bwrejhh59rlmhzp" substitutionGroup="sdc4:Item" type="sdc4:mc-qe3jdkz68bwrejhh59rlmhzp"/>
-  <xsd:element name="ms-vmiyaznvvl2jw19cyv414jj3" substitutionGroup="sdc4:Item" type="sdc4:mc-vmiyaznvvl2jw19cyv414jj3"/>
-  <xsd:element name="ms-pojjp13k3i95ttw23sm24gz2" substitutionGroup="sdc4:Item" type="sdc4:mc-pojjp13k3i95ttw23sm24gz2"/>
-  <xsd:element name="ms-mqewexs2h1klidtnokjzhul6" substitutionGroup="sdc4:Item" type="sdc4:mc-mqewexs2h1klidtnokjzhul6"/>
-  <xsd:element name="ms-n6j7bwq9qmuzzf8w89gwxeml" substitutionGroup="sdc4:Item" type="sdc4:mc-n6j7bwq9qmuzzf8w89gwxeml"/>
-  <xsd:element name="ms-jwvcklvakotmdztpikyodwkx" substitutionGroup="sdc4:Item" type="sdc4:mc-jwvcklvakotmdztpikyodwkx"/>
-  <xsd:element name="ms-dzkw7ngcz4zzsr68e6b50rvx" substitutionGroup="sdc4:Item" type="sdc4:mc-dzkw7ngcz4zzsr68e6b50rvx"/>
-  <xsd:element name="ms-s0xrd3gbobtgtexdxkxcor3l" substitutionGroup="sdc4:Item" type="sdc4:mc-s0xrd3gbobtgtexdxkxcor3l"/>
-  <xsd:element name="ms-ff7i1of52y9suz5zbqm82nlq" substitutionGroup="sdc4:Item" type="sdc4:mc-ff7i1of52y9suz5zbqm82nlq"/>
-  <xsd:element name="ms-e793unvukokgt3c5y0kilui1" substitutionGroup="sdc4:Item" type="sdc4:mc-e793unvukokgt3c5y0kilui1"/>
   <xsd:element name="ms-y429feu1qzr7lnagv9ua2cc6" substitutionGroup="sdc4:Item" type="sdc4:mc-y429feu1qzr7lnagv9ua2cc6"/>
-  <xsd:element name="ms-an1yte2y7kubvf64ao70apuu" substitutionGroup="sdc4:Item" type="sdc4:mc-an1yte2y7kubvf64ao70apuu"/>
-  <xsd:element name="ms-grrb23cyvzafqvyzj1s4eg82" substitutionGroup="sdc4:Item" type="sdc4:mc-grrb23cyvzafqvyzj1s4eg82"/>
-  <xsd:element name="ms-rat798vb1tfxjuf56sqrvtty" substitutionGroup="sdc4:Item" type="sdc4:mc-rat798vb1tfxjuf56sqrvtty"/>
-  <xsd:element name="ms-ljldab8e1bjizncv01akb0n5" substitutionGroup="sdc4:Item" type="sdc4:mc-ljldab8e1bjizncv01akb0n5"/>
   <xsd:element name="ms-e0tdiylevix76r3l64fh8j4x" substitutionGroup="sdc4:Item" type="sdc4:mc-e0tdiylevix76r3l64fh8j4x"/>
+  <xsd:element name="ms-zosryxykww1exsfjtb0s3fzv" substitutionGroup="sdc4:Item" type="sdc4:mc-zosryxykww1exsfjtb0s3fzv"/>
+  <xsd:element name="ms-wi324lr48j1pzugpnw17p87m" substitutionGroup="sdc4:Item" type="sdc4:mc-wi324lr48j1pzugpnw17p87m"/>
+  <xsd:element name="ms-cpcvbb0xq072zk086ukfl41m" substitutionGroup="sdc4:Item" type="sdc4:mc-cpcvbb0xq072zk086ukfl41m"/>
+  <xsd:element name="ms-vsnnmsojiqwcx33jeavt4bkf" substitutionGroup="sdc4:Item" type="sdc4:mc-vsnnmsojiqwcx33jeavt4bkf"/>
+  <xsd:element name="ms-x6hucojdpiqdr60u3zxse3dl" substitutionGroup="sdc4:Item" type="sdc4:mc-x6hucojdpiqdr60u3zxse3dl"/>
+  <xsd:element name="ms-o9p6k7c9ie20j5du0jmd3749" substitutionGroup="sdc4:Item" type="sdc4:mc-o9p6k7c9ie20j5du0jmd3749"/>
+  <xsd:element name="ms-qfmes86biux1nl7gbaowsgc4" substitutionGroup="sdc4:Item" type="sdc4:mc-qfmes86biux1nl7gbaowsgc4"/>
+  <xsd:element name="ms-byxxuau9d2hajbla9wwc442t" substitutionGroup="sdc4:Item" type="sdc4:mc-byxxuau9d2hajbla9wwc442t"/>
+  <xsd:element name="ms-ljzdguksr3ebcmuxnpf02dbi" substitutionGroup="sdc4:Item" type="sdc4:mc-ljzdguksr3ebcmuxnpf02dbi"/>
+  <xsd:element name="ms-jwvcklvakotmdztpikyodwkx" substitutionGroup="sdc4:Item" type="sdc4:mc-jwvcklvakotmdztpikyodwkx"/>
+  <xsd:element name="ms-n3n7ow0d22saquarrg9ajpod" substitutionGroup="sdc4:Item" type="sdc4:mc-n3n7ow0d22saquarrg9ajpod"/>
+  <xsd:element name="ms-rt5pq55fi6th8ul14nrpj5bp" substitutionGroup="sdc4:Item" type="sdc4:mc-rt5pq55fi6th8ul14nrpj5bp"/>
+  <xsd:element name="ms-ibjm0hmb9xywzwptvh4wsuzh" substitutionGroup="sdc4:Item" type="sdc4:mc-ibjm0hmb9xywzwptvh4wsuzh"/>
+  <xsd:element name="ms-q024v5d61vo8bjlt8u8aoh0d" substitutionGroup="sdc4:Item" type="sdc4:mc-q024v5d61vo8bjlt8u8aoh0d"/>
+  <xsd:element name="ms-f6tess6gw6nf2hk56v5ow7rh" substitutionGroup="sdc4:Item" type="sdc4:mc-f6tess6gw6nf2hk56v5ow7rh"/>
+  <xsd:element name="ms-jd68ja7mkrln0wktxorwhw89" substitutionGroup="sdc4:Item" type="sdc4:mc-jd68ja7mkrln0wktxorwhw89"/>
+  <xsd:element name="ms-ijbp8d16nkpgd3rlw8mc6b00" substitutionGroup="sdc4:Item" type="sdc4:mc-ijbp8d16nkpgd3rlw8mc6b00"/>
+  <xsd:element name="ms-mghaxfjyhejq0djyg0p7a1th" substitutionGroup="sdc4:Item" type="sdc4:mc-mghaxfjyhejq0djyg0p7a1th"/>
+  <xsd:element name="ms-zm46otmwkxgersw3y93icjp4" substitutionGroup="sdc4:Item" type="sdc4:mc-zm46otmwkxgersw3y93icjp4"/>
+  <xsd:element name="ms-jtlejg2rigitywxgabu1jkg9" substitutionGroup="sdc4:Item" type="sdc4:mc-jtlejg2rigitywxgabu1jkg9"/>
+  <xsd:element name="ms-grrb23cyvzafqvyzj1s4eg82" substitutionGroup="sdc4:Item" type="sdc4:mc-grrb23cyvzafqvyzj1s4eg82"/>
+  <xsd:element name="ms-gltl14s59crclwwf1pp1j5l5" substitutionGroup="sdc4:Item" type="sdc4:mc-gltl14s59crclwwf1pp1j5l5"/>
+  <xsd:element name="ms-ghyghsy37eqekdq91e4rk55v" substitutionGroup="sdc4:Item" type="sdc4:mc-ghyghsy37eqekdq91e4rk55v"/>
+  <xsd:element name="ms-f5o4ld7fm5kqhzf102q4y2r9" substitutionGroup="sdc4:Item" type="sdc4:mc-f5o4ld7fm5kqhzf102q4y2r9"/>
+  <xsd:element name="ms-d38u61t1jg8gp54srfyue7yo" substitutionGroup="sdc4:Item" type="sdc4:mc-d38u61t1jg8gp54srfyue7yo"/>
+  <xsd:element name="ms-wvcuj86059g45cb7afy0phwm" substitutionGroup="sdc4:Item" type="sdc4:mc-wvcuj86059g45cb7afy0phwm"/>
+  <xsd:element name="ms-rycouibueybaqp4hzjjs9jte" substitutionGroup="sdc4:Item" type="sdc4:mc-rycouibueybaqp4hzjjs9jte"/>
+  <xsd:element name="ms-nufn1nz347zhnyx962xu8nly" substitutionGroup="sdc4:Item" type="sdc4:mc-nufn1nz347zhnyx962xu8nly"/>
+  <xsd:element name="ms-cpaj0unbnudntl1brmdnuqhu" substitutionGroup="sdc4:Item" type="sdc4:mc-cpaj0unbnudntl1brmdnuqhu"/>
+  <xsd:element name="ms-iiaw8zak25y4d6uhe2v57kii" substitutionGroup="sdc4:Item" type="sdc4:mc-iiaw8zak25y4d6uhe2v57kii"/>
+  <xsd:element name="ms-x7qyr4vcga3wkpp42p91vjg0" substitutionGroup="sdc4:Item" type="sdc4:mc-x7qyr4vcga3wkpp42p91vjg0"/>
+  <xsd:element name="ms-o31fztf2l2gj0nuljugpl1s9" substitutionGroup="sdc4:Item" type="sdc4:mc-o31fztf2l2gj0nuljugpl1s9"/>
+  <xsd:element name="ms-p4c4kczn0x3qkvzk6vty9vrs" substitutionGroup="sdc4:Item" type="sdc4:mc-p4c4kczn0x3qkvzk6vty9vrs"/>
+  <xsd:element name="ms-r6x55vvha5ci3rl1o29adk03" substitutionGroup="sdc4:Item" type="sdc4:mc-r6x55vvha5ci3rl1o29adk03"/>
+  <xsd:element name="ms-s31dh070dcub0d3rnhn0r3yg" substitutionGroup="sdc4:Item" type="sdc4:mc-s31dh070dcub0d3rnhn0r3yg"/>
+  <xsd:element name="ms-y1u3ladafqtryhgyetpn5ild" substitutionGroup="sdc4:Item" type="sdc4:mc-y1u3ladafqtryhgyetpn5ild"/>
+  <xsd:element name="ms-nud25a7xyg7bt4cw83c7fw3w" substitutionGroup="sdc4:Item" type="sdc4:mc-nud25a7xyg7bt4cw83c7fw3w"/>
+  <xsd:element name="ms-s38nznee1x9kak4nf75pkc3r" substitutionGroup="sdc4:Item" type="sdc4:mc-s38nznee1x9kak4nf75pkc3r"/>
+  <xsd:element name="ms-bk8actrinati1b6smyypwj6m" substitutionGroup="sdc4:Item" type="sdc4:mc-bk8actrinati1b6smyypwj6m"/>
+  <xsd:element name="ms-xepqnpyehgct9s378tinmz0t" substitutionGroup="sdc4:Item" type="sdc4:mc-xepqnpyehgct9s378tinmz0t"/>
+  <xsd:element name="ms-qeu9jq1owxxh2woqo1f7m8jk" substitutionGroup="sdc4:Item" type="sdc4:mc-qeu9jq1owxxh2woqo1f7m8jk"/>
+  <xsd:element name="ms-yfhu36gacryjw93df3jbuc5t" substitutionGroup="sdc4:Item" type="sdc4:mc-yfhu36gacryjw93df3jbuc5t"/>
+  <xsd:element name="ms-bh5kiii8wc47sp8hibxv9qtk" substitutionGroup="sdc4:Item" type="sdc4:mc-bh5kiii8wc47sp8hibxv9qtk"/>
+  <xsd:element name="ms-gr29r0bd1qh6bg27jk3gfag9" substitutionGroup="sdc4:Item" type="sdc4:mc-gr29r0bd1qh6bg27jk3gfag9"/>
+  <xsd:element name="ms-xiy4gn6vievei3614sso5vmk" substitutionGroup="sdc4:Item" type="sdc4:mc-xiy4gn6vievei3614sso5vmk"/>
+  <xsd:element name="ms-jdugzq309qlimui7675txmyi" substitutionGroup="sdc4:Item" type="sdc4:mc-jdugzq309qlimui7675txmyi"/>
+  <xsd:element name="ms-in4ct2aoguzdvzg4mlsmsxfd" substitutionGroup="sdc4:Item" type="sdc4:mc-in4ct2aoguzdvzg4mlsmsxfd"/>
+  <xsd:element name="ms-q4rwxzoldz452g7rbii2an1h" substitutionGroup="sdc4:Item" type="sdc4:mc-q4rwxzoldz452g7rbii2an1h"/>
+  <xsd:element name="ms-pmtnenazj7s6dvcklsqx1zpp" substitutionGroup="sdc4:Item" type="sdc4:mc-pmtnenazj7s6dvcklsqx1zpp"/>
+  <xsd:element name="ms-lbor36zlwkf6u7yx9lgqfx0d" substitutionGroup="sdc4:Item" type="sdc4:mc-lbor36zlwkf6u7yx9lgqfx0d"/>
+  <xsd:element name="ms-ljldab8e1bjizncv01akb0n5" substitutionGroup="sdc4:Item" type="sdc4:mc-ljldab8e1bjizncv01akb0n5"/>
+  <xsd:element name="ms-r48fyfvuhl62i5yihku0hws1" substitutionGroup="sdc4:Item" type="sdc4:mc-r48fyfvuhl62i5yihku0hws1"/>
+  <xsd:element name="ms-r5fply6fvzhg90zybxgdx5cb" substitutionGroup="sdc4:Item" type="sdc4:mc-r5fply6fvzhg90zybxgdx5cb"/>
+  <xsd:element name="ms-vycps7awt38y25jhnrr4okxt" substitutionGroup="sdc4:Item" type="sdc4:mc-vycps7awt38y25jhnrr4okxt"/>
+  <xsd:element name="ms-er846fdase95qfn51295h02p" substitutionGroup="sdc4:Item" type="sdc4:mc-er846fdase95qfn51295h02p"/>
+  <xsd:element name="ms-cpjtssbqqnsi8kosc7cta973" substitutionGroup="sdc4:Item" type="sdc4:mc-cpjtssbqqnsi8kosc7cta973"/>
+  <xsd:element name="ms-fblg9innykrg6wveclrn2gz7" substitutionGroup="sdc4:Item" type="sdc4:mc-fblg9innykrg6wveclrn2gz7"/>
+  <xsd:element name="ms-ynnnvgi8748h2d01z2gf4z8x" substitutionGroup="sdc4:Item" type="sdc4:mc-ynnnvgi8748h2d01z2gf4z8x"/>
+  <xsd:element name="ms-kce8557jd9vg6ei59m7o1kc2" substitutionGroup="sdc4:Item" type="sdc4:mc-kce8557jd9vg6ei59m7o1kc2"/>
+  <xsd:element name="ms-j9gccgohqlb59l1t37doseiq" substitutionGroup="sdc4:Item" type="sdc4:mc-j9gccgohqlb59l1t37doseiq"/>
+  <xsd:element name="ms-ff7i1of52y9suz5zbqm82nlq" substitutionGroup="sdc4:Item" type="sdc4:mc-ff7i1of52y9suz5zbqm82nlq"/>
+  <xsd:element name="ms-fn1qy5cft8qhhigzjrfnbmn5" substitutionGroup="sdc4:Item" type="sdc4:mc-fn1qy5cft8qhhigzjrfnbmn5"/>
+  <xsd:element name="ms-sqz385aell855p97kpkdwuop" substitutionGroup="sdc4:Item" type="sdc4:mc-sqz385aell855p97kpkdwuop"/>
+  <xsd:element name="ms-hpkc8xrccpwc3shm4ubm5o47" substitutionGroup="sdc4:Item" type="sdc4:mc-hpkc8xrccpwc3shm4ubm5o47"/>
+  <xsd:element name="ms-mqewexs2h1klidtnokjzhul6" substitutionGroup="sdc4:Item" type="sdc4:mc-mqewexs2h1klidtnokjzhul6"/>
+  <xsd:element name="ms-tp294zkkzduxww36h84li7sz" substitutionGroup="sdc4:Item" type="sdc4:mc-tp294zkkzduxww36h84li7sz"/>
+  <xsd:element name="ms-ebpeg221rjf78h1d75fbl4ys" substitutionGroup="sdc4:Item" type="sdc4:mc-ebpeg221rjf78h1d75fbl4ys"/>
+  <xsd:element name="ms-y2gopuhgy9wckbeurh33it90" substitutionGroup="sdc4:Item" type="sdc4:mc-y2gopuhgy9wckbeurh33it90"/>
+  <xsd:element name="ms-vmiyaznvvl2jw19cyv414jj3" substitutionGroup="sdc4:Item" type="sdc4:mc-vmiyaznvvl2jw19cyv414jj3"/>
+  <xsd:element name="ms-vzyuqpkegby4er3pw12gxw2c" substitutionGroup="sdc4:Item" type="sdc4:mc-vzyuqpkegby4er3pw12gxw2c"/>
+  <xsd:element name="ms-lt5ldcz6erg3hhsij4pv7c43" substitutionGroup="sdc4:Item" type="sdc4:mc-lt5ldcz6erg3hhsij4pv7c43"/>
+  <xsd:element name="ms-lzpyu8stevl1xo54vqxawlaq" substitutionGroup="sdc4:Item" type="sdc4:mc-lzpyu8stevl1xo54vqxawlaq"/>
+  <xsd:element name="ms-yczwu98f29i5a7ov89cay8q9" substitutionGroup="sdc4:Item" type="sdc4:mc-yczwu98f29i5a7ov89cay8q9"/>
+  <xsd:element name="ms-pk3hw4wzjnd5e1oa2yxc69dk" substitutionGroup="sdc4:Item" type="sdc4:mc-pk3hw4wzjnd5e1oa2yxc69dk"/>
+  <xsd:element name="ms-j6stj0q6hcoap91h39rllmo8" substitutionGroup="sdc4:Item" type="sdc4:mc-j6stj0q6hcoap91h39rllmo8"/>
+  <xsd:element name="ms-dzkw7ngcz4zzsr68e6b50rvx" substitutionGroup="sdc4:Item" type="sdc4:mc-dzkw7ngcz4zzsr68e6b50rvx"/>
+  <xsd:element name="ms-qe3jdkz68bwrejhh59rlmhzp" substitutionGroup="sdc4:Item" type="sdc4:mc-qe3jdkz68bwrejhh59rlmhzp"/>
+  <xsd:element name="ms-ltxpluusa56f3t0cytjabsip" substitutionGroup="sdc4:Item" type="sdc4:mc-ltxpluusa56f3t0cytjabsip"/>
+  <xsd:element name="ms-j08jnwhphzsz339c1bd1bwnp" substitutionGroup="sdc4:Item" type="sdc4:mc-j08jnwhphzsz339c1bd1bwnp"/>
+  <xsd:element name="ms-o0qu77y6w4lwvu2qhms3ilbw" substitutionGroup="sdc4:Item" type="sdc4:mc-o0qu77y6w4lwvu2qhms3ilbw"/>
+  <xsd:element name="ms-uc64yt3ys0s0xrj51rue2ofb" substitutionGroup="sdc4:Item" type="sdc4:mc-uc64yt3ys0s0xrj51rue2ofb"/>
+  <xsd:element name="ms-qwr8oppceuigsrirvnpcjyed" substitutionGroup="sdc4:Item" type="sdc4:mc-qwr8oppceuigsrirvnpcjyed"/>
+  <xsd:element name="ms-gujvcggdotm3z1hmygdrey09" substitutionGroup="sdc4:Item" type="sdc4:mc-gujvcggdotm3z1hmygdrey09"/>
+  <xsd:element name="ms-fti6dssqpaatbprjx0mqu2mj" substitutionGroup="sdc4:Item" type="sdc4:mc-fti6dssqpaatbprjx0mqu2mj"/>
+  <xsd:element name="ms-h5skbx08jplwn6e46n6disg1" substitutionGroup="sdc4:Item" type="sdc4:mc-h5skbx08jplwn6e46n6disg1"/>
+  <xsd:element name="ms-fjcyy99nhq87163iarzemyin" substitutionGroup="sdc4:Item" type="sdc4:mc-fjcyy99nhq87163iarzemyin"/>
+  <xsd:element name="ms-livh99p75uo3mssipi40v044" substitutionGroup="sdc4:Item" type="sdc4:mc-livh99p75uo3mssipi40v044"/>
+  <xsd:element name="ms-myh7mf4v2aq3ryf4a3ewmapc" substitutionGroup="sdc4:Item" type="sdc4:mc-myh7mf4v2aq3ryf4a3ewmapc"/>
+  <xsd:element name="ms-px1s852i5pfng3v0ikk6fw4m" substitutionGroup="sdc4:Item" type="sdc4:mc-px1s852i5pfng3v0ikk6fw4m"/>
+  <xsd:element name="ms-wu8f1x11e6ihbltdd6w20rg5" substitutionGroup="sdc4:Item" type="sdc4:mc-wu8f1x11e6ihbltdd6w20rg5"/>
   <xsd:element name="ms-lcsns9hrrzcg74jlit8srxgp" substitutionGroup="sdc4:Item" type="sdc4:mc-lcsns9hrrzcg74jlit8srxgp"/>
+  <xsd:element name="ms-wy38zv02dmcp5gjul57yejmk" substitutionGroup="sdc4:Item" type="sdc4:mc-wy38zv02dmcp5gjul57yejmk"/>
+  <xsd:element name="ms-r7t7cvtkprjf4k0thmkzzbz7" substitutionGroup="sdc4:Item" type="sdc4:mc-r7t7cvtkprjf4k0thmkzzbz7"/>
+  <xsd:element name="ms-e793unvukokgt3c5y0kilui1" substitutionGroup="sdc4:Item" type="sdc4:mc-e793unvukokgt3c5y0kilui1"/>
+  <xsd:element name="ms-s0xrd3gbobtgtexdxkxcor3l" substitutionGroup="sdc4:Item" type="sdc4:mc-s0xrd3gbobtgtexdxkxcor3l"/>
+  <xsd:element name="ms-vt4f46t22mnqwcqhpriuotu4" substitutionGroup="sdc4:Item" type="sdc4:mc-vt4f46t22mnqwcqhpriuotu4"/>
+  <xsd:element name="ms-lm8riadasawyvighwhidnfmr" substitutionGroup="sdc4:Item" type="sdc4:mc-lm8riadasawyvighwhidnfmr"/>
+  <xsd:element name="ms-wzy3g7mcg3shr1ah8fhzxgkb" substitutionGroup="sdc4:Item" type="sdc4:mc-wzy3g7mcg3shr1ah8fhzxgkb"/>
+  <xsd:element name="ms-oqehyqreytbvds2qyaq8rof3" substitutionGroup="sdc4:Item" type="sdc4:mc-oqehyqreytbvds2qyaq8rof3"/>
+  <xsd:element name="ms-f6z431hl60ra8eqbrcyrsvji" substitutionGroup="sdc4:Item" type="sdc4:mc-f6z431hl60ra8eqbrcyrsvji"/>
+  <xsd:element name="ms-vgvl7vcmbiz2z7zn9v7ayc04" substitutionGroup="sdc4:Item" type="sdc4:mc-vgvl7vcmbiz2z7zn9v7ayc04"/>
+  <xsd:element name="ms-c1vlbryimxwvm55s9vj2w7tl" substitutionGroup="sdc4:Item" type="sdc4:mc-c1vlbryimxwvm55s9vj2w7tl"/>
+  <xsd:element name="ms-jwpkqjchavj885uwt5v1jgid" substitutionGroup="sdc4:Item" type="sdc4:mc-jwpkqjchavj885uwt5v1jgid"/>
+  <xsd:element name="ms-pr9t93hr1blrb5r5o3o6h03p" substitutionGroup="sdc4:Item" type="sdc4:mc-pr9t93hr1blrb5r5o3o6h03p"/>
+  <xsd:element name="ms-ebn1a6s1d1dy724l4y692qsl" substitutionGroup="sdc4:Item" type="sdc4:mc-ebn1a6s1d1dy724l4y692qsl"/>
+  <xsd:element name="ms-hj4gt95jsr6xvywruyi9ip51" substitutionGroup="sdc4:Item" type="sdc4:mc-hj4gt95jsr6xvywruyi9ip51"/>
+  <xsd:element name="ms-jy09m0fa7skhj3w2h4vfak7b" substitutionGroup="sdc4:Item" type="sdc4:mc-jy09m0fa7skhj3w2h4vfak7b"/>
+  <xsd:element name="ms-p5zjm3c1d2x9jxc2n3wyzbth" substitutionGroup="sdc4:Item" type="sdc4:mc-p5zjm3c1d2x9jxc2n3wyzbth"/>
+  <xsd:element name="ms-whbmbdx6w88jtct1o3xofw6u" substitutionGroup="sdc4:Item" type="sdc4:mc-whbmbdx6w88jtct1o3xofw6u"/>
+  <xsd:element name="ms-af2xn38mf2fvok86g09e4ka3" substitutionGroup="sdc4:Item" type="sdc4:mc-af2xn38mf2fvok86g09e4ka3"/>
+  <xsd:element name="ms-eeyxfka9q0b81swhc0cpvd1l" substitutionGroup="sdc4:Item" type="sdc4:mc-eeyxfka9q0b81swhc0cpvd1l"/>
+  <xsd:element name="ms-dlu1btnja2h37jfx3vj694rv" substitutionGroup="sdc4:Item" type="sdc4:mc-dlu1btnja2h37jfx3vj694rv"/>
+  <xsd:element name="ms-xcmayroyt4krhroimfb3e859" substitutionGroup="sdc4:Item" type="sdc4:mc-xcmayroyt4krhroimfb3e859"/>
+  <xsd:element name="ms-kdmdbs6gv9y361zy07ifvwj6" substitutionGroup="sdc4:Item" type="sdc4:mc-kdmdbs6gv9y361zy07ifvwj6"/>
+  <xsd:element name="ms-lj4ueok9tcwol2d5zwl7chtd" substitutionGroup="sdc4:Item" type="sdc4:mc-lj4ueok9tcwol2d5zwl7chtd"/>
+  <xsd:element name="ms-sb64o3rmfrocsgd92tm8fdc1" substitutionGroup="sdc4:Item" type="sdc4:mc-sb64o3rmfrocsgd92tm8fdc1"/>
+  <xsd:element name="ms-deau6rxprq0zivzdddupk7cj" substitutionGroup="sdc4:Item" type="sdc4:mc-deau6rxprq0zivzdddupk7cj"/>
+  <xsd:element name="ms-c2ley3g1nu17i3djd4cotr88" substitutionGroup="sdc4:Item" type="sdc4:mc-c2ley3g1nu17i3djd4cotr88"/>
+  <xsd:element name="ms-zmk00yz0hbtqwnhag2uzczil" substitutionGroup="sdc4:Item" type="sdc4:mc-zmk00yz0hbtqwnhag2uzczil"/>
+  <xsd:element name="ms-do05huhfa5l1ttu2ngbptzy0" substitutionGroup="sdc4:Item" type="sdc4:mc-do05huhfa5l1ttu2ngbptzy0"/>
+  <xsd:element name="ms-napfyd7sikk7d4k8ksjd8buv" substitutionGroup="sdc4:Item" type="sdc4:mc-napfyd7sikk7d4k8ksjd8buv"/>
+  <xsd:element name="ms-ajzpbis9j5kyemael9m15wm7" substitutionGroup="sdc4:Item" type="sdc4:mc-ajzpbis9j5kyemael9m15wm7"/>
+  <xsd:element name="ms-mjj6mlhqgzcprfwuwnhu5npz" substitutionGroup="sdc4:Item" type="sdc4:mc-mjj6mlhqgzcprfwuwnhu5npz"/>
+  <xsd:element name="ms-yec6svv50u9d1tz9rp6kmv3v" substitutionGroup="sdc4:Item" type="sdc4:mc-yec6svv50u9d1tz9rp6kmv3v"/>
+  <xsd:element name="ms-mb6mwfeajun0wn1agj109jeo" substitutionGroup="sdc4:Item" type="sdc4:mc-mb6mwfeajun0wn1agj109jeo"/>
+  <xsd:element name="ms-uf11uwd9s5x5t9bw98z9dr5l" substitutionGroup="sdc4:Item" type="sdc4:mc-uf11uwd9s5x5t9bw98z9dr5l"/>
+  <xsd:element name="ms-k87dda72y8upko7dnrcs425s" substitutionGroup="sdc4:Item" type="sdc4:mc-k87dda72y8upko7dnrcs425s"/>
+  <xsd:element name="ms-an1yte2y7kubvf64ao70apuu" substitutionGroup="sdc4:Item" type="sdc4:mc-an1yte2y7kubvf64ao70apuu"/>
+  <xsd:element name="ms-pojjp13k3i95ttw23sm24gz2" substitutionGroup="sdc4:Item" type="sdc4:mc-pojjp13k3i95ttw23sm24gz2"/>
+  <xsd:element name="ms-rat798vb1tfxjuf56sqrvtty" substitutionGroup="sdc4:Item" type="sdc4:mc-rat798vb1tfxjuf56sqrvtty"/>
+  <xsd:element name="ms-n6j7bwq9qmuzzf8w89gwxeml" substitutionGroup="sdc4:Item" type="sdc4:mc-n6j7bwq9qmuzzf8w89gwxeml"/>
+  <xsd:element name="ms-rhb4ksmdy1b0rx39kbpt9l2f" substitutionGroup="sdc4:Item" type="sdc4:mc-rhb4ksmdy1b0rx39kbpt9l2f"/>
+  <xsd:element name="ms-vaejfpw94f682dg8981lpwos" substitutionGroup="sdc4:Item" type="sdc4:mc-vaejfpw94f682dg8981lpwos"/>
+  <xsd:element name="ms-f3h2velkrit4w56qlfceatjl" substitutionGroup="sdc4:Item" type="sdc4:mc-f3h2velkrit4w56qlfceatjl"/>
 
 </xsd:schema>

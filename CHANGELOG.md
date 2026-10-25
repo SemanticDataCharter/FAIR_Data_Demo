@@ -2,6 +2,10 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.2.2 (2026-10-25)
+
+Rebuilt with pip 26.2.2 pinned by hash in CI and the release job (the eMudhra/emSign CA compromise: pip before 26.2.2 trusts the compromised root through its vendored certifi). This release also carries the models' schemas with their units enumerated (the 2026-09-28 entry below), which had not been released.
+
 ## 2026-09-28: the models' schemas now enumerate their units
 
 - SDCStudio issue #707 (fixed in PR #708): Units components were published without their enumeration, so every quantity in the seven models validated any string as a unit. The 14 Units the seven active models compose were republished on production and the seven packages rebuilt; `app/sdc4/mediafiles/dmlib/` carries the rebuilt XSD and template of each. Model identifiers did not change.

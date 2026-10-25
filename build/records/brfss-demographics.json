@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "oqw3pnwhf8knpgsfo8k3xojn",
   "members": [
     "https://axius-sdc.com/library/default/administrative-gender",
     "brfss-sex-of-respondent",
@@ -50,7 +50,7 @@
     "ct:luq973ggnjoo9ixkt0dym8v6",
     "brfss-primary-source-of-insurance",
     "veteran-status",
-    "ct:owjt9bcgisxfbco8qnddo2fq",
+    "ct:zmpqfc6tb0o2hgu8qs6lj8tp",
     "brfss-pregnancy-status",
     "brfss-number-of-children-in-household",
     "brfss-income-level"

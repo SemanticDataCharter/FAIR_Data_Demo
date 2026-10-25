@@ -543,7 +543,23 @@ def retire_rows():
     return rows
 
 
+#: Clusters revised after their first publication: key -> the published component the revision supersedes
+#: (prov:wasRevisionOf). E-2026-10-01 (NIH CDE library SOURCE-ERRATA.md): the NIH CDE "Are you pregnant now?"
+#: (LiUWCWluP) bound its answers to the wrong LOINC codes; its correction zmpqfc6tb0o2hgu8qs6lj8tp replaces
+#: owjt9bcgisxfbco8qnddo2fq, so each cluster above it, up to each model's root, is revised.
+REVISIONS = {
+    "nhanes-demographics": "b6bz6qun3frba85kw1a539h2",
+    "nhanes-participant": "e3gwv95m8jjx7578urmx8ppz",
+    "nhanes-participant-governed-record": "l6t9agg233vswxyv60quiu6w",
+    "brfss-demographics": "oqw3pnwhf8knpgsfo8k3xojn",
+    "brfss-respondent": "rdoj4o216s33ymezyefwb8ia",
+    "brfss-respondent-governed-record": "hnf5st6e6ulzvbiafx4310g7",
+}
+
+
 def main():
+    for key, ct in REVISIONS.items():
+        RECORDS[key]["supersedes"] = ct
     out = ROOT / "records"
     out.mkdir(exist_ok=True)
     for f in out.glob("*.yaml"):
@@ -552,7 +568,14 @@ def main():
         (out / f"{key}.yaml").write_text(yaml.safe_dump(rec, sort_keys=False, allow_unicode=True, width=140))
     rows = retire_rows()
     (ROOT / "review").mkdir(exist_ok=True)
-    with open(ROOT / "review" / "fair-retire.csv", "w", newline="", encoding="utf-8") as f:
+    review = ROOT / "review" / "fair-retire.csv"
+    if review.exists():   # a regeneration keeps the decisions already marked
+        marked = {r["ct_id"]: r for r in csv.DictReader(open(review, encoding="utf-8"))}
+        for row in rows:
+            old = marked.get(row["ct_id"])
+            if old:
+                row["decision"], row["note"] = old.get("decision", ""), old.get("note", "")
+    with open(review, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["ct_id", "type", "label", "reason", "successor_key", "decision", "note"]); w.writeheader(); w.writerows(rows)
     (ROOT / "review" / "kept.json").write_text(json.dumps(KEPT, indent=1, ensure_ascii=False) + "\n")
     slots = sorted({m for r in RECORDS.values() for m in r.get("members", []) if m.startswith("http")})

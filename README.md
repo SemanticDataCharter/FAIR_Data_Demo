@@ -39,7 +39,7 @@ make demo
 | Open | What it is |
 |---|---|
 | **http://localhost:18100/console/** | The record console. Seven models, one record shown as table, document and graph, and the governance behind every field. Start here. |
-| **http://localhost:18100/demo/** | The dashboard, the "Three Studies, One Component" walk-through, and the SPARQL explorer. Every result has a **Graph** tab: the records behind the rows as nodes, every subject identifier two of them share drawn as a node between them, and every component two studies compose drawn as a node the records of both studies meet at, labelled with each record's value. Click a record to open it in the console. |
+| **http://localhost:18100/demo/** | The dashboard, the "Three Studies, One Component" walk-through, and the SPARQL explorer. Every result has a **Graph** tab: the records behind the rows as nodes, every subject identifier two of them share drawn as a node between them, and every component two studies compose drawn as a node the records of both studies meet at, labeled with each record's value. Click a record to open it in the console. |
 
 ### Check it worked
 
@@ -133,6 +133,28 @@ The walk-through at `/demo/narrative/` runs six beats, each answered by one of t
 5. **Medications: where the join does not exist, and why.** NHANES names the drug and carries its own identifier; CMS carries an NDC. Neither is RxNorm, so the two do not join, and the page says that rather than staging it.
 6. **Demographics side by side.** Gender on the Default component, race and ethnicity on the NIH CDE component, by study.
 
+## When the metadata moves
+
+The three sources this demo is built from changed their documentation while it was being built, each outside the
+control of anyone using their data. All three were checked on 26 October 2026:
+
+- **NHANES.** CDC moved the 2017-2018 documentation. The pages every NHANES variable points to
+  (`https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm` and the rest) now answer with a "Page Not Found" page, and
+  answer it with HTTP 200, so a link checker reports them as working. The documentation is at
+  `https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/`, with the same variable anchors.
+- **BRFSS.** The 2022 codebook PDF that defines BRFSS's coded answers answers 404. CDC now publishes it only inside a
+  zip on the 2022 annual data page.
+- **The NIH CDE Repository.** The public record for "Are you pregnant now?" no longer shows the LOINC code of each
+  answer without a login, so a reader cannot check the codes without an account (the codes were wrong; see
+  [SOURCE-ERRATA.md](SOURCE-ERRATA.md)).
+
+A dataset that carries a code and a link to its meaning loses the meaning when the link stops answering, and the
+people downstream are the last to find out. Here the meaning is in the published model: each component's label and
+description, every permissible value with its label, the units, ranges and data types, and where the source has a
+convention of its own, the convention itself (NHANES's prevention codes are described in the component, not only on
+CDC's page). The links to the agencies' pages are kept as provenance, and they are the part that rots. A published
+model never changes, so the links in it stay as they were published, and the records still say what they say.
+
 ## SPARQL queries
 
 Six pre-built queries in `sparql/` run against the store the seven applications project, one named graph per record. Each anchors on a published component by its `ct_id` or its label, and the join across studies is the component itself.
@@ -166,7 +188,7 @@ The project's components from the first build, 976 of them and eight models, sta
 
 The first build (March 2026) ran the SDC_Agents pipeline over the same three studies: introspect the files, discover catalog matches, enrich the sparse federal metadata (about 2,000 lines of codebook parsing in `scripts/enrichment/`, kept as the record of what that took), assemble models by API, and download them. It published 976 components across eight models, and found what this build is built on: the agencies' metadata was too thin for an agent to say that two columns measured the same concept, so each study minted its own components and the studies shared none. The cross-study queries were kept as a specification and the README said so.
 
-That is the finding: the join across studies is a modelling decision a person makes, not a match an agent guesses. This build makes it as reviewed records, once, and every study composes the result. The pipeline scripts and `sdc-agents.yaml` remain in the repository as what the first build did; they are not part of `make demo`.
+That is the finding: the join across studies is a modeling decision a person makes, not a match an agent guesses. This build makes it as reviewed records, once, and every study composes the result. The pipeline scripts and `sdc-agents.yaml` remain in the repository as what the first build did; they are not part of `make demo`.
 
 ## What this demonstration does not show
 

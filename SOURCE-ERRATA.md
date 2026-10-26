@@ -114,7 +114,9 @@ answer HTTP 200 with a "Page Not Found" page, and each file's documentation is a
 variable anchors). The BRFSS 2022 codebook PDF (`.../annual_data/2022/pdf/codebook22_llcp-v2-508.pdf`) answers 404;
 CDC publishes it inside `.../annual_data/2022/zip/codebook22_llcp-v2-508.zip`. The demo's records name the old
 addresses about 230 times as links and 39 times as the definition of a value. 4.2.5's new records use the new NHANES
-address. **Status.** Open: whether to revise the rest (most NHANES and BRFSS components, and every model).
+address. **Status.** Decided 26 October 2026 (Tim): the published components are not revised to chase the moves. A link
+in a published model is provenance, as published; the meaning it pointed to is bound in the model (README, "When the
+metadata moves").
 
 ## From the federal files: conventions to read correctly
 

@@ -22,7 +22,7 @@
       "Other Race - Including Multi-Racial"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C67175",
+      "http://purl.obolibrary.org/obo/NCIT_C67114",
       "http://purl.obolibrary.org/obo/NCIT_C17459",
       "http://purl.obolibrary.org/obo/NCIT_C41261",
       "http://purl.obolibrary.org/obo/NCIT_C16352",
@@ -33,7 +33,7 @@
   "enumeration": [
     {
       "value": "Mexican American",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C67175"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C67114"
     },
     {
       "value": "Other Hispanic",
@@ -83,7 +83,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "hs44ipuqgvc3azbt3mirxtsz",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

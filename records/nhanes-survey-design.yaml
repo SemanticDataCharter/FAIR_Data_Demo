@@ -7,9 +7,9 @@ description: 'The survey design fields a weighted estimate needs: the release cy
 source:
   name: NHANES 2017-2018
 links:
-- predicate: skos:exactMatch
-  iri: http://purl.obolibrary.org/obo/NCIT_C142700
-  basis: standard
+- predicate: skos:closeMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C71492
+  basis: concept
 members:
 - nhanes-data-release-cycle
 - nhanes-interview-examination-status
@@ -17,3 +17,4 @@ members:
 - nhanes-mec-exam-weight
 - nhanes-masked-variance-psu
 - nhanes-masked-variance-stratum
+supersedes: mgqswj92qaeasqjjvfcyxon5

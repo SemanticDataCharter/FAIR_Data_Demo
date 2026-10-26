@@ -26,14 +26,14 @@
       "note": "Axius SDC, Inc."
     },
     {
-      "predicate": "skos:exactMatch",
-      "iri": "http://purl.obolibrary.org/obo/NCIT_C142700",
-      "basis": "mechanical",
+      "predicate": "skos:closeMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C71492",
+      "basis": "concept",
       "note": ""
     }
   ],
-  "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "identity_status": "close",
+  "supersedes_ct_id": "zauadmfc05ep5nf2kd9j8cwh",
   "members": [
     "brfss-state-fips-code",
     "brfss-interview-date",

@@ -26,14 +26,14 @@
       "note": "Axius SDC, Inc."
     },
     {
-      "predicate": "skos:exactMatch",
-      "iri": "http://purl.obolibrary.org/obo/NCIT_C20000",
-      "basis": "mechanical",
+      "predicate": "skos:closeMatch",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C150046",
+      "basis": "concept",
       "note": ""
     }
   ],
-  "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "identity_status": "close",
+  "supersedes_ct_id": "ky7lvmote5jfn5gt6n89q79s",
   "members": [
     "nhanes-limitations-keeping-from-working",
     "nhanes-need-special-equipment-to-walk",

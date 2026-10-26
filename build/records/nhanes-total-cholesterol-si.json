@@ -1,7 +1,7 @@
 {
   "tiny_id": "nhanes-total-cholesterol-si",
   "label": "Total Cholesterol (SI)",
-  "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3).",
+  "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 14647-2).",
   "sdc_type": "XdQuantity",
   "excluded": false,
   "constraints": {
@@ -42,7 +42,7 @@
     },
     {
       "predicate": "skos:exactMatch",
-      "iri": "https://loinc.org/2093-3/",
+      "iri": "https://loinc.org/14647-2/",
       "basis": "mechanical",
       "note": ""
     },
@@ -54,7 +54,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "qp5mdgab3s37zwqzyfzq8rvi",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

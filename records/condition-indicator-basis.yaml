@@ -7,10 +7,11 @@ source:
   name: FAIR Data Demo
 links:
 - predicate: skos:closeMatch
-  iri: http://purl.obolibrary.org/obo/NCIT_C25596
+  iri: http://purl.obolibrary.org/obo/NCIT_C16493
   basis: concept
 enumeration:
 - value: Self-report of a professional diagnosis
-  definition: http://purl.obolibrary.org/obo/NCIT_C93409
+  definition: http://purl.obolibrary.org/obo/NCIT_C188309
 - value: Claims-based algorithm
-  definition: http://purl.obolibrary.org/obo/NCIT_C25404
+  definition: http://purl.obolibrary.org/obo/NCIT_C221359
+supersedes: hc79skkfionpgw87dsg5yrgw

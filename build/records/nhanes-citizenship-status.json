@@ -14,18 +14,18 @@
       "Not a citizen of the US"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C41130",
-      "http://purl.obolibrary.org/obo/NCIT_C41130"
+      "http://purl.obolibrary.org/obo/NCIT_C90516",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN"
     ]
   },
   "enumeration": [
     {
       "value": "Citizen by birth or naturalization",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C41130"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C90516"
     },
     {
       "value": "Not a citizen of the US",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C41130"
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN"
     }
   ],
   "links": [
@@ -55,7 +55,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "m67ncwhc9s1j36f9w9qsrxfx",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

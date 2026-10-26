@@ -10,14 +10,15 @@ links:
   basis: standard
 enumeration:
 - value: Never attended school or only kindergarten
-  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
 - value: Grades 1 through 8 (Elementary)
-  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+  definition: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
 - value: Grades 9 through 11 (Some high school)
-  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+  definition: http://purl.obolibrary.org/obo/NCIT_C198650
 - value: Grade 12 or GED (High school graduate)
   definition: http://purl.obolibrary.org/obo/NCIT_C67136
 - value: College 1 year to 3 years (Some college or technical school)
   definition: http://purl.obolibrary.org/obo/NCIT_C67137
 - value: College 4 years or more (College graduate)
-  definition: http://purl.obolibrary.org/obo/NCIT_C39303
+  definition: http://purl.obolibrary.org/obo/NCIT_C159746
+supersedes: fci5gajaodxc2ihq6nuz9l6y

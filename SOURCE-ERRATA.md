@@ -96,6 +96,26 @@ Body Measures to BMI, BRFSS Tobacco and Alcohol Use and NHANES Smoking to Tobacc
 models are NHANES Participant 4.2.4 (`tp5pg0u4dasqarie0b3ujn2u`), BRFSS Respondent 4.2.4 (`j6wmvhr46irxht2ls90nry8k`) and
 CMS Beneficiary 4.2.4 (`vj0hr75146j0pbedvc0iaqrz`), with the records regenerated on them.
 
+### E-2026-10-04: NHANES days taken, the wrong range
+
+**The error.** Number of Days Taken Medicine (RXDDAYS) said "99999 means more than that" and allowed up to 99,999.
+The codebook says otherwise: values run from 1 to 21,900, 77777 is Refused and 99999 is Don't know. Ours, found 26
+October 2026 while reading the codebook for the Exceptional Values above. The generator had treated both codes as
+missing, so no record carried 99999 as a number; the schema allowed it.
+
+**What we did.** The range is 1 to 21,900 and the description says what the two codes are; a revision of the published
+component, in NHANES Medication 4.2.5.
+
+### Link rot: the agencies moved their documentation
+
+CDC moved the NHANES documentation: the 2017-2018 pages under `https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/` now
+answer HTTP 200 with a "Page Not Found" page, and each file's documentation is at
+`https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/<file>.htm` (checked 26 October 2026, with the same
+variable anchors). The BRFSS 2022 codebook PDF (`.../annual_data/2022/pdf/codebook22_llcp-v2-508.pdf`) answers 404;
+CDC publishes it inside `.../annual_data/2022/zip/codebook22_llcp-v2-508.zip`. The demo's records name the old
+addresses about 230 times as links and 39 times as the definition of a value. 4.2.5's new records use the new NHANES
+address. **Status.** Open: whether to revise the rest (most NHANES and BRFSS components, and every model).
+
 ## From the federal files: conventions to read correctly
 
 ### NHANES 2017-2018 prescription medications (`RXQ_RX_J`): prevention codes do not conform to ICD-10-CM
@@ -115,8 +135,8 @@ file's 15,565 reason codes, the most used `I21.P` "Prevent heart attack/myocardi
 **The evidence.** On 26 October 2026 every one of the file's 241 distinct reason codes was looked up in ICD-10-CM on
 HL7's terminology server (with D75.9, I21 and I21.9 as controls, which it found). All 209 codes without the suffix
 are ICD-10-CM codes; none of the 29 codes with it is. Every one of the 29 is described by NHANES as "Prevent ...". The
-other three values, 55555 (a reason that could not be coded, 84), 77777 (refused, 5) and 99999 (don't know, 451), are
-not codes of any system.
+other three values are the file's own missing-value codes, which its codebook defines as 55555 Unknown (84), 77777
+Refused (5) and 99999 Don't know (451); they are not codes of any system.
 
 **Why it matters.** A prevention code read as ICD-10-CM is refused by any system that checks the code set (HL7's
 FHIR validator reports `I21.P` as an unknown ICD-10-CM code), and the obvious repair, dropping the "P", is worse: `I21`
@@ -128,14 +148,16 @@ one: each Medication Reason holds either the ICD-10-CM diagnosis (the FHIR libra
 Reason (NHANES)** coded value, with the NHANES code as written, NHANES's description, and the code system fixed to the
 RXQ_RX_J documentation (`https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm`), never ICD-10-CM. The generator
 puts a code in the NHANES coded value only when it both has the NHANES shape and is described as prevention, and stops
-if the two disagree (a real ICD-10-CM code can end in P, as a seventh character). 55555, 77777 and 99999 are left out
-and counted.
+if the two disagree (a real ICD-10-CM code can end in P, as a seventh character). 55555, 77777 and 99999 are carried
+as the Exceptional Values they name, UNK (Unknown), ASKR (Asked and Refused) and ASKU (Asked but Unknown), in place of
+the reason's code, and the same for the drug name (13, 30 and 91) and the days taken (77777 and 99999: 4 and 278). The
+134 medicines whose name was unknown, refused or not known were left out before 4.2.5; they are records now.
 
 **What a target receives** (once the mappers carry the 4.2.5 model; checked against their output then). The code under NHANES's code system with its description: in FHIR a reason Coding whose
 system is the NHANES documentation, not `http://hl7.org/fhir/sid/icd-10-cm`; in OMOP CDM no standard concept (the code
 and description as source values); in HL7 v2 a coded element whose coding system is local to NHANES. Each target
 states that the code is not ICD-10-CM; none receives a code it would read as a diagnosis.
 
-**Status.** Open: whether 55555, 77777 and 99999 are carried as Exceptional Values (could not be coded, refused,
-don't know) rather than left out.
+**Status.** Decided 26 October 2026 (Tim): NHANES's own code system, with this statement of the non-conformance; the
+missing-value codes as Exceptional Values. Released in 4.2.5.
 

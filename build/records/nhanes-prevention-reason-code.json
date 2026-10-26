@@ -30,7 +30,7 @@
     },
     {
       "predicate": "skos:exactMatch",
-      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm",
+      "iri": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm",
       "basis": "mechanical",
       "note": ""
     },

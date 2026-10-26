@@ -7,7 +7,7 @@ source:
   name: NHANES 2017-2018
 links:
 - predicate: skos:exactMatch
-  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm
+  iri: https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm
   basis: standard
 - predicate: rdfs:seeAlso
   iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDRSC1

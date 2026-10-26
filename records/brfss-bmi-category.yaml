@@ -10,10 +10,11 @@ links:
   basis: standard
 enumeration:
 - value: Underweight
-  definition: http://purl.obolibrary.org/obo/NCIT_C17962
+  definition: http://snomed.info/id/248342006
 - value: Normal Weight
-  definition: http://purl.obolibrary.org/obo/NCIT_C17958
+  definition: http://snomed.info/id/43664005
 - value: Overweight
   definition: http://purl.obolibrary.org/obo/NCIT_C94250
 - value: Obese
   definition: http://purl.obolibrary.org/obo/NCIT_C3283
+supersedes: ezewpvppvx8zjikutr53ppgz

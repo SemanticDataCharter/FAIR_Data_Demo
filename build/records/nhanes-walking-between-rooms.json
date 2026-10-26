@@ -20,33 +20,33 @@
       "Do not do this activity"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C17998",
-      "http://purl.obolibrary.org/obo/NCIT_C17998",
-      "http://purl.obolibrary.org/obo/NCIT_C17998",
-      "http://purl.obolibrary.org/obo/NCIT_C17998",
-      "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "http://purl.obolibrary.org/obo/NCIT_C121736",
+      "http://purl.obolibrary.org/obo/NCIT_C121739",
+      "http://purl.obolibrary.org/obo/NCIT_C121740",
+      "http://purl.obolibrary.org/obo/NCIT_C121742",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm"
     ]
   },
   "enumeration": [
     {
       "value": "No difficulty",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C121736"
     },
     {
       "value": "Some difficulty",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C121739"
     },
     {
       "value": "Much difficulty",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C121740"
     },
     {
       "value": "Unable to do",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C121742"
     },
     {
       "value": "Do not do this activity",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17998"
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm"
     }
   ],
   "links": [
@@ -76,7 +76,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "crr2z3b2l7hlq1kvevppt8kt",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

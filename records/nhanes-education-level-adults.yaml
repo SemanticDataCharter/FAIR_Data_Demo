@@ -11,12 +11,13 @@ links:
   basis: standard
 enumeration:
 - value: Less than 9th grade
-  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2
 - value: 9-11th grade (includes 12th grade with no diploma)
-  definition: http://purl.obolibrary.org/obo/NCIT_C17953
+  definition: http://purl.obolibrary.org/obo/NCIT_C198650
 - value: High school graduate/GED or equivalent
   definition: http://purl.obolibrary.org/obo/NCIT_C67136
 - value: Some college or AA degree
   definition: http://purl.obolibrary.org/obo/NCIT_C67137
 - value: College graduate or above
-  definition: http://purl.obolibrary.org/obo/NCIT_C39303
+  definition: http://purl.obolibrary.org/obo/NCIT_C159746
+supersedes: fqjd2lvp9jamdpf0f3kpkwnp

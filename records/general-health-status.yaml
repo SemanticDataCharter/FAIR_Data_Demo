@@ -13,12 +13,13 @@ links:
   basis: standard
 enumeration:
 - value: Excellent
-  definition: http://purl.obolibrary.org/obo/NCIT_C25184
+  definition: https://loinc.org/LA9206-9/
 - value: Very good
-  definition: http://purl.obolibrary.org/obo/NCIT_C42642
+  definition: https://loinc.org/LA13913-1/
 - value: Good
-  definition: http://purl.obolibrary.org/obo/NCIT_C25185
+  definition: https://loinc.org/LA8967-7/
 - value: Fair
-  definition: http://purl.obolibrary.org/obo/NCIT_C42633
+  definition: https://loinc.org/LA8968-5/
 - value: Poor
-  definition: http://purl.obolibrary.org/obo/NCIT_C25187
+  definition: https://loinc.org/LA8969-3/
+supersedes: lth27h6towue4i9iq1cudogc

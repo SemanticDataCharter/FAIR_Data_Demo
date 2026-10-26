@@ -20,21 +20,21 @@
       "College graduate or above"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C17953",
-      "http://purl.obolibrary.org/obo/NCIT_C17953",
+      "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2",
+      "http://purl.obolibrary.org/obo/NCIT_C198650",
       "http://purl.obolibrary.org/obo/NCIT_C67136",
       "http://purl.obolibrary.org/obo/NCIT_C67137",
-      "http://purl.obolibrary.org/obo/NCIT_C39303"
+      "http://purl.obolibrary.org/obo/NCIT_C159746"
     ]
   },
   "enumeration": [
     {
       "value": "Less than 9th grade",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+      "definition": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2"
     },
     {
       "value": "9-11th grade (includes 12th grade with no diploma)",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17953"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C198650"
     },
     {
       "value": "High school graduate/GED or equivalent",
@@ -46,7 +46,7 @@
     },
     {
       "value": "College graduate or above",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C39303"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C159746"
     }
   ],
   "links": [
@@ -76,7 +76,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "fqjd2lvp9jamdpf0f3kpkwnp",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

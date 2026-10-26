@@ -9,9 +9,10 @@ links:
   iri: https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf
   basis: standard
 - predicate: skos:closeMatch
-  iri: https://loinc.org/63580-5/
+  iri: https://loinc.org/66577-8/
   basis: concept
 constraints:
   units: units-days
   min_inclusive: 0
   max_inclusive: 30
+supersedes: fljkn7b19qtnj6rr3t8qcfg1

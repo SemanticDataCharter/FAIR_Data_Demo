@@ -172,7 +172,7 @@ nhanes-coded-cuff-size,Coded Cuff Size (BPACSZ),XdToken,,NHANES 2017-2018,,,,,ac
 nhanes-confusion-memory-problems,Experience Confusion or Memory Problems (PFQ057),XdToken,,NHANES 2017-2018,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 nhanes-country-of-birth,Country of Birth (DMDBORN4),XdToken,,NHANES 2017-2018,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 nhanes-data-release-cycle,Data Release Cycle (SDDSRVYR),XdToken,,NHANES 2017-2018,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
-nhanes-days-taken-medicine,Number of Days Taken Medicine (RXDDAYS),XdCount,,NHANES 2017-2018,,,jwgah039kcz574bbjvpxvfdj,,,
+nhanes-days-taken-medicine,Number of Days Taken Medicine (RXDDAYS),XdCount,,NHANES 2017-2018,,,jwgah039kcz574bbjvpxvfdj,,accept,"4.2.5 accepted, Tim 2026-10-26"
 nhanes-demographics,NHANES Demographics,Cluster,,NHANES 2017-2018,http://purl.obolibrary.org/obo/NCIT_C16495,https://axius-sdc.com/library/default/administrative-gender | nhanes-gender-code | ct:wuvdeiwoe5bna7nlhcl1c4h9 | nhanes-age-in-months-at-screening | ct:u5tietya3u56hbz2kos06ai7 | nhanes-race-hispanic-origin | nhanes-country-of-birth | nhanes-citizenship-status | ct:yqqm7og0x00fbmazzm00s86e | nhanes-education-level-adults | ct:qsetd453kk9own8co1wmc5cz | nhanes-marital-status | ct:zmpqfc6tb0o2hgu8qs6lj8tp | nhanes-pregnancy-status-at-exam | veteran-status | nhanes-household-size | nhanes-annual-household-income | nhanes-family-income-poverty-ratio,,,accept,"E-2026-10-03 accepted, Tim 2026-10-26; member is the E-2026-10-02 corrected Current Educational Attainment (yqqm7og0x00fbmazzm00s86e)"
 nhanes-doctor-said-overweight,Doctor Ever Said You Were Overweight (MCQ080),XdToken,,NHANES 2017-2018,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 nhanes-dressing,Difficulty Dressing Yourself (PFQ061L),XdToken,,NHANES 2017-2018,,,,,accept,"E-2026-10-03 accepted, Tim 2026-10-26"
@@ -223,7 +223,7 @@ nhanes-participant,NHANES Participant,Cluster,,NHANES 2017-2018,http://purl.obol
 nhanes-physical-functioning,NHANES Physical Functioning,Cluster,,NHANES 2017-2018,,nhanes-limitations-keeping-from-working | nhanes-need-special-equipment-to-walk | nhanes-confusion-memory-problems | nhanes-walking-quarter-mile | nhanes-walking-up-ten-stairs | nhanes-stooping-crouching-kneeling | nhanes-lifting-or-carrying | nhanes-walking-between-rooms | nhanes-standing-up-from-chair | nhanes-getting-in-and-out-of-bed | nhanes-dressing | nhanes-standing-for-long-periods,,,accept,"E-2026-10-03 accepted, Tim 2026-10-26"
 nhanes-platelet-count,Platelet Count,XdQuantity,,NHANES 2017-2018,https://loinc.org/777-3/,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 nhanes-pregnancy-status-at-exam,Pregnancy Status at Exam (RIDEXPRG),XdToken,,NHANES 2017-2018,,,,,accept,"E-2026-10-03 accepted, Tim 2026-10-26"
-nhanes-prevention-reason-code,Prevention Reason Code (NHANES),XdString,,NHANES 2017-2018,https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm,,,,,
+nhanes-prevention-reason-code,Prevention Reason Code (NHANES),XdString,,NHANES 2017-2018,https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm,,,,accept,"4.2.5 accepted, Tim 2026-10-26"
 nhanes-prevention-reason,Prevention Reason (NHANES),Cluster,,NHANES 2017-2018,http://hl7.org/fhir/R4/datatypes.html#Coding,nhanes-prevention-reason-code | https://axius-sdc.com/library/fhir/code-display-text | system-nhanes-rx-reason,,,accept,"4.2.5 prevention reason codes accepted, Tim 2026-10-26"
 nhanes-pulse-regularity,Pulse Regular or Irregular (BPXPULS),XdToken,,NHANES 2017-2018,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 nhanes-race-hispanic-origin,Race/Hispanic Origin with NH Asian (RIDRETH3),XdToken,,NHANES 2017-2018,,,,,accept,"E-2026-10-03 accepted, Tim 2026-10-26"
@@ -252,7 +252,7 @@ smoking-status,Smoking Status,XdToken,,FAIR Data Demo,https://loinc.org/72166-2/
 system-hcpcs,Code System: HCPCS,XdLink,,HCPCS,http://www.ama-assn.org/go/cpt,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 system-icd9cm,Code System: ICD-9-CM,XdLink,,ICD-9-CM,http://hl7.org/fhir/sid/icd-9-cm,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 system-ndc,Code System: NDC,XdLink,,NDC,http://hl7.org/fhir/sid/ndc,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
-system-nhanes-rx-reason,Code System: NHANES Prevention Reason,XdLink,,NHANES 2017-2018,https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm,,,,,
+system-nhanes-rx-reason,Code System: NHANES Prevention Reason,XdLink,,NHANES 2017-2018,https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm,,,,accept,"4.2.5 accepted, Tim 2026-10-26"
 units-cigarettes,Cigarettes,Units,,QUDT,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 units-days,Days,Units,,QUDT,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 units-drinks,Drinks,Units,,QUDT,,,,,accept,"Tim 2026-09-26: PRD approved, all seven models"

@@ -104,7 +104,7 @@ October 2026 while reading the codebook for the Exceptional Values above. The ge
 missing, so no record carried 99999 as a number; the schema allowed it.
 
 **What we did.** The range is 1 to 21,900 and the description says what the two codes are; a revision of the published
-component, in NHANES Medication 4.2.5.
+component, in NHANES Medication 4.3.0.
 
 ### Link rot: the agencies moved their documentation
 
@@ -119,6 +119,25 @@ in a published model is provenance, as published; the meaning it pointed to is b
 metadata moves").
 
 ## From the federal files: conventions to read correctly
+
+### NHANES and BRFSS: refused and don't know are coded the opposite way round
+
+**The convention.** Both surveys code a refusal and a don't-know with 7s and 9s, and they disagree on which is which.
+NHANES: 7, 77, 777 are Refused and 9, 99, 999 are Don't know (all 35 NHANES variables the demo carries). BRFSS: 7, 77,
+777, 7777 are "Don't know/Not sure" and 9, 99, 999, 9999 are Refused (all 39 BRFSS variables the demo carries). Checked
+against each variable's codebook on 26 October 2026: NHANES at `https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/`,
+BRFSS in the LLCP 2022 codebook (`USCODE22_LLCP_102523.HTML`, inside CDC's codebook zip).
+
+**What the demo does (4.3.0).** Each is carried as the Exceptional Value it names, ASKR (Asked and Refused) or ASKU
+(Asked but Unknown), in place of the answer, by each survey's own convention; a code that is a real value (BRFSS
+WEIGHT2 77 is 77 pounds) is never read as missing. Before 4.3.0 both were left out and counted. Values the demo
+computes (height in centimeters, weight in kilograms, the derived smoking status) carry nothing when their input was
+refused: there is no answer of their own to qualify.
+
+**Why it needed SDCStudio 4.24.** The reference model allows an Exceptional Value in place of a value, but SDCStudio
+published every value as required before 4.24, so a refused answer had no valid form. 4.3.0 republishes each answer
+that can be refused or not known as a revision published under 4.24 (92 FAIR revisions, 4 in the NIH CDE library and 3
+in the FHIR library).
 
 ### NHANES 2017-2018 prescription medications (`RXQ_RX_J`): prevention codes do not conform to ICD-10-CM
 
@@ -161,5 +180,5 @@ and description as source values); in HL7 v2 a coded element whose coding system
 states that the code is not ICD-10-CM; none receives a code it would read as a diagnosis.
 
 **Status.** Decided 26 October 2026 (Tim): NHANES's own code system, with this statement of the non-conformance; the
-missing-value codes as Exceptional Values. Released in 4.2.5.
+missing-value codes as Exceptional Values. Released in 4.3.0 (4.2.5 was folded into it).
 

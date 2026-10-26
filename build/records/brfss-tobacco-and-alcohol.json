@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "dh2ghpj9z1brefxf0pb4yi14",
   "members": [
     "brfss-smoked-100-cigarettes",
     "brfss-frequency-of-days-now-smoking",

@@ -21,3 +21,4 @@ enumeration:
   definition: http://purl.obolibrary.org/obo/NCIT_C51774
 - value: Living with partner
   definition: http://purl.obolibrary.org/obo/NCIT_C53262
+supersedes: i3uys2dmi257jkdzavsst5az

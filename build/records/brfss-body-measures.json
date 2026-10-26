@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "dgd703p5t3yzmnw7np9g1u5p",
   "members": [
     "brfss-reported-height",
     "brfss-reported-weight-in-pounds",

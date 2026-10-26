@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "c6lumieatnqpb33vp80sblyd",
   "members": [
     "https://axius-sdc.com/library/default/administrative-gender",
     "brfss-sex-of-respondent",

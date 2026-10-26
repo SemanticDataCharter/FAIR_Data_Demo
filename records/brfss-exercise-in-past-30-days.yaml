@@ -13,3 +13,4 @@ enumeration:
   definition: https://loinc.org/LA33-6/
 - value: 'No'
   definition: https://loinc.org/LA32-8/
+supersedes: a08lkh4xjvqqjtz7sxy129pa

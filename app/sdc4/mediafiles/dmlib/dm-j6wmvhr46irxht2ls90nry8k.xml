@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sdc4:dm-fnv3zi2btk3s0sfodjsc25eb
+<sdc4:dm-j6wmvhr46irxht2ls90nry8k
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:sdc4="https://semanticdatacharter.com/ns/sdc4/"
-  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-fnv3zi2btk3s0sfodjsc25eb.xsd">
+  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-j6wmvhr46irxht2ls90nry8k.xsd">
 
-  <dm-label>CMS Beneficiary</dm-label>
+  <dm-label>BRFSS Respondent 4.2.4</dm-label>
   <dm-language>en-US</dm-language>
   <dm-encoding>utf-8</dm-encoding>
   <creation_timestamp>_PH_</creation_timestamp>
-  <instance_id>ibnzvbkrxxihtsxqi0uolbh8</instance_id>
+  <instance_id>mfyvh763xygojbmqt6x89439</instance_id>
   <instance_version>_PH_</instance_version>
   <source_instance_id>_OPT_PH_</source_instance_id>
   <source_version_id>_OPT_PH_</source_version_id>
   <current-state>_OPT_PH_</current-state>
-  <sdc4:ms-io2h28pi3yktedurk8ye3oq0>
-    <label>CMS Beneficiary Governed Record</label>
+  <sdc4:ms-cd2j0wzlcvfsfk7ikiaujmzx>
+    <label>BRFSS Respondent Governed Record</label>
   <sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
     <label>Audit Event</label>
   <sdc4:ms-hpkc8xrccpwc3shm4ubm5o47>
@@ -200,13 +200,364 @@
     </sdc4:ms-uwiosm2q9ym3ewr4de910s70>
   </sdc4:ms-r5fply6fvzhg90zybxgdx5cb>
   </sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
-  <sdc4:ms-kkdy1kjdruxvx8s1ra8eh231>
-    <label>CMS Beneficiary</label>
-  <sdc4:ms-wa0mknvfo83hej635n48s0ig>
+  <sdc4:ms-job3i8sfv3zikxymqe625fm2>
+    <label>BRFSS Respondent</label>
+  <sdc4:ms-dgd703p5t3yzmnw7np9g1u5p>
+    <label>BRFSS Body Measures</label>
+  <sdc4:ms-atvd5lzut4pjzc7dpv1ykb92>
+    <label>Vital Signs Panel</label>
+  <sdc4:ms-wyk9e1d74y5xrgv97o9y75ib>
+    <label>Blood Pressure</label>
+  <sdc4:ms-r5koa840csi3zcewts0uo0r5>
+    <label>Body Site (SNOMED CT)</label>
+  <sdc4:ms-n3n7ow0d22saquarrg9ajpod>
+    <sdc4:ms-q75pzzv36or6dxgjrrbvmun5>
+      <label>Code System: SNOMED CT</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <link>http://snomed.info/sct</link>
+      <relation>codeSystem</relation>
+      <relation-uri>http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system</relation-uri>
+    </sdc4:ms-q75pzzv36or6dxgjrrbvmun5>
+  </sdc4:ms-n3n7ow0d22saquarrg9ajpod>
+  <sdc4:ms-h5skbx08jplwn6e46n6disg1>
+    <sdc4:ms-vi7yvq0b8nler3g6alaamrzm>
+      <label>Body Site Code (SNOMED CT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-vi7yvq0b8nler3g6alaamrzm>
+  </sdc4:ms-h5skbx08jplwn6e46n6disg1>
+  <sdc4:ms-deau6rxprq0zivzdddupk7cj>
+    <sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+      <label>Code Display Text</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+  </sdc4:ms-deau6rxprq0zivzdddupk7cj>
+  </sdc4:ms-r5koa840csi3zcewts0uo0r5>
+  <sdc4:ms-ff7i1of52y9suz5zbqm82nlq>
+    <sdc4:ms-q9vmn1cvdclgr757aer5v1rg>
+      <label>Observation Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-q9vmn1cvdclgr757aer5v1rg>
+  </sdc4:ms-ff7i1of52y9suz5zbqm82nlq>
+  <sdc4:ms-fjcyy99nhq87163iarzemyin>
+    <sdc4:ms-s3qzwxxz9b42lcd2wryok8jd>
+      <label>Diastolic Blood Pressure</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Pressure</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-s3qzwxxz9b42lcd2wryok8jd>
+  </sdc4:ms-fjcyy99nhq87163iarzemyin>
+  <sdc4:ms-do05huhfa5l1ttu2ngbptzy0>
+    <sdc4:ms-r1ve12xphsb5hu2yjmhksw5h>
+      <label>Systolic Blood Pressure</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Pressure</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-r1ve12xphsb5hu2yjmhksw5h>
+  </sdc4:ms-do05huhfa5l1ttu2ngbptzy0>
+  <sdc4:ms-napfyd7sikk7d4k8ksjd8buv>
+    <sdc4:ms-dkyyj01tksb7h7akq2w7moum>
+      <label>Observation Date Time</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-dkyyj01tksb7h7akq2w7moum>
+  </sdc4:ms-napfyd7sikk7d4k8ksjd8buv>
+  </sdc4:ms-wyk9e1d74y5xrgv97o9y75ib>
+  <sdc4:ms-ff7i1of52y9suz5zbqm82nlq>
+    <sdc4:ms-q9vmn1cvdclgr757aer5v1rg>
+      <label>Observation Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-q9vmn1cvdclgr757aer5v1rg>
+  </sdc4:ms-ff7i1of52y9suz5zbqm82nlq>
+  <sdc4:ms-s31dh070dcub0d3rnhn0r3yg>
+    <sdc4:ms-z1ezf3vzksp7qpgd9l3uxvqo>
+      <label>Body Height</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Length/Distance (SI - Metric)</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-z1ezf3vzksp7qpgd9l3uxvqo>
+  </sdc4:ms-s31dh070dcub0d3rnhn0r3yg>
+  <sdc4:ms-tp294zkkzduxww36h84li7sz>
+    <sdc4:ms-dchiej5tv7tyhfwr6h3ync1i>
+      <label>Body Mass Index</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Body Mass Index Units</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-dchiej5tv7tyhfwr6h3ync1i>
+  </sdc4:ms-tp294zkkzduxww36h84li7sz>
+  <sdc4:ms-nud25a7xyg7bt4cw83c7fw3w>
+    <sdc4:ms-ppqdmkbjmd3gn0p2i74ue3ox>
+      <label>Body Temperature</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Temperature (SI - Metric)</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-ppqdmkbjmd3gn0p2i74ue3ox>
+  </sdc4:ms-nud25a7xyg7bt4cw83c7fw3w>
+  <sdc4:ms-ebpeg221rjf78h1d75fbl4ys>
+    <sdc4:ms-doxdajuj6j1mk480zd1k7ssz>
+      <label>Body Weight</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Mass/Weight (SI - Metric)</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-doxdajuj6j1mk480zd1k7ssz>
+  </sdc4:ms-ebpeg221rjf78h1d75fbl4ys>
+  <sdc4:ms-d38u61t1jg8gp54srfyue7yo>
+    <sdc4:ms-oy0jwif5pi86xtimzxzhapvu>
+      <label>Heart Rate</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Rate</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-oy0jwif5pi86xtimzxzhapvu>
+  </sdc4:ms-d38u61t1jg8gp54srfyue7yo>
+  <sdc4:ms-lzpyu8stevl1xo54vqxawlaq>
+    <sdc4:ms-htr0gulg01caowd76j6v4ukh>
+      <label>Oxygen Saturation</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Percentage</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-htr0gulg01caowd76j6v4ukh>
+  </sdc4:ms-lzpyu8stevl1xo54vqxawlaq>
+  <sdc4:ms-kdmdbs6gv9y361zy07ifvwj6>
+    <sdc4:ms-nzq70mbegncgc6hdfp7vtu46>
+      <label>Respiratory Rate</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Rate</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-nzq70mbegncgc6hdfp7vtu46>
+  </sdc4:ms-kdmdbs6gv9y361zy07ifvwj6>
+  <sdc4:ms-napfyd7sikk7d4k8ksjd8buv>
+    <sdc4:ms-dkyyj01tksb7h7akq2w7moum>
+      <label>Observation Date Time</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
+    </sdc4:ms-dkyyj01tksb7h7akq2w7moum>
+  </sdc4:ms-napfyd7sikk7d4k8ksjd8buv>
+  </sdc4:ms-atvd5lzut4pjzc7dpv1ykb92>
+  <sdc4:ms-iiaw8zak25y4d6uhe2v57kii>
+    <sdc4:ms-urjk1vvcot1s319mxygpdsf5>
+      <label>Reported Height in Feet and Inches (HEIGHT3)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-urjk1vvcot1s319mxygpdsf5>
+  </sdc4:ms-iiaw8zak25y4d6uhe2v57kii>
+  <sdc4:ms-plhjlzkc6cjnwb5qrhtgfkiq>
+    <sdc4:ms-vfrowc5oxysvj71vfrmc7o4t>
+      <label>Computed Body Mass Index Category (_BMI5CAT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-vfrowc5oxysvj71vfrmc7o4t>
+  </sdc4:ms-plhjlzkc6cjnwb5qrhtgfkiq>
+  <sdc4:ms-lj4ueok9tcwol2d5zwl7chtd>
+    <sdc4:ms-gket571isxo2uckturhvxadk>
+      <label>Reported Weight in Pounds (WEIGHT2)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Mass/Weight (US Customary)</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-gket571isxo2uckturhvxadk>
+  </sdc4:ms-lj4ueok9tcwol2d5zwl7chtd>
+  </sdc4:ms-dgd703p5t3yzmnw7np9g1u5p>
+  <sdc4:ms-yumwsic8qvlly00pluhl9415>
+    <label>BRFSS Chronic Conditions</label>
+  <sdc4:ms-bq0dx31j0dzk5dsof8aoxfqk>
     <label>Chronic Condition Indicators</label>
   <sdc4:ms-ijbp8d16nkpgd3rlw8mc6b00>
     <sdc4:ms-d9z9mcx6gs9zbz4k6f0v738s>
-      <label>Condition: Alzheimer</label>
+      <label>Condition: Alzheimer's Disease or Related Disorder</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -414,8 +765,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-gp3jxw3xzs761ll6u5rvc6jr>
   </sdc4:ms-zmk00yz0hbtqwnhag2uzczil>
-  <sdc4:ms-sqz385aell855p97kpkdwuop>
-    <sdc4:ms-hc79skkfionpgw87dsg5yrgw>
+  <sdc4:ms-ks4buqh74w0bdcwdk6ky6ntr>
+    <sdc4:ms-y3m4tg7u1io8bimkhiuxz8zb>
       <label>Condition Indicator Basis</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -426,8 +777,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-hc79skkfionpgw87dsg5yrgw>
-  </sdc4:ms-sqz385aell855p97kpkdwuop>
+    </sdc4:ms-y3m4tg7u1io8bimkhiuxz8zb>
+  </sdc4:ms-ks4buqh74w0bdcwdk6ky6ntr>
   <sdc4:ms-f3h2velkrit4w56qlfceatjl>
     <sdc4:ms-sw5rt0k2uap0e3xgl4rznfgu>
       <label>Condition: Kidney Disease</label>
@@ -512,245 +863,10 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-p8u71b4lhct4ra0szgkex7xo>
   </sdc4:ms-y429feu1qzr7lnagv9ua2cc6>
-  </sdc4:ms-wa0mknvfo83hej635n48s0ig>
-  <sdc4:ms-vas0n7gpt46lxe3t2klb0ihw>
-    <label>CMS Annual Amounts</label>
-  <sdc4:ms-skhb88tusr02c8sfvp5d5qgc>
-    <sdc4:ms-nr2ylxsejuy6awcwqts30rpv>
-      <label>Carrier Annual Beneficiary Responsibility</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-nr2ylxsejuy6awcwqts30rpv>
-  </sdc4:ms-skhb88tusr02c8sfvp5d5qgc>
-  <sdc4:ms-xu0pgw41z8yodz2zxi3c62bz>
-    <sdc4:ms-uqamp46mdscugwy7z99jaxsp>
-      <label>Carrier Annual Medicare Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-uqamp46mdscugwy7z99jaxsp>
-  </sdc4:ms-xu0pgw41z8yodz2zxi3c62bz>
-  <sdc4:ms-x5h2ku3slcscu220j4ne8q60>
-    <sdc4:ms-qbla2qbmgnvijbzpvgsivygy>
-      <label>Carrier Annual Primary Payer Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-qbla2qbmgnvijbzpvgsivygy>
-  </sdc4:ms-x5h2ku3slcscu220j4ne8q60>
-  <sdc4:ms-ypbayo6huahdoyqe6nr4comu>
-    <sdc4:ms-xk3apd6exhme1to143takg17>
-      <label>Inpatient Annual Beneficiary Responsibility</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-xk3apd6exhme1to143takg17>
-  </sdc4:ms-ypbayo6huahdoyqe6nr4comu>
-  <sdc4:ms-tnbu5x7ew3jm2ofs0r3n2pn7>
-    <sdc4:ms-ir7e2d7vwws6yisjvxgfm7ou>
-      <label>Inpatient Annual Medicare Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-ir7e2d7vwws6yisjvxgfm7ou>
-  </sdc4:ms-tnbu5x7ew3jm2ofs0r3n2pn7>
-  <sdc4:ms-xeuueeea6p6jegymcsctdk0u>
-    <sdc4:ms-afusetixnkfrt5zheumblskw>
-      <label>Inpatient Annual Primary Payer Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-afusetixnkfrt5zheumblskw>
-  </sdc4:ms-xeuueeea6p6jegymcsctdk0u>
-  <sdc4:ms-xabh6slilto8vofj3coj74i2>
-    <sdc4:ms-gxyr702hyrvi5bxp2rn9avd5>
-      <label>Outpatient Annual Beneficiary Responsibility</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-gxyr702hyrvi5bxp2rn9avd5>
-  </sdc4:ms-xabh6slilto8vofj3coj74i2>
-  <sdc4:ms-vq9v04d9ijuhekjqfy0w3a7w>
-    <sdc4:ms-hnvzazgaw60pz193376698lu>
-      <label>Outpatient Annual Medicare Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-hnvzazgaw60pz193376698lu>
-  </sdc4:ms-vq9v04d9ijuhekjqfy0w3a7w>
-  <sdc4:ms-rphocsatcaunwmnezjobvcdq>
-    <sdc4:ms-wl1enu6oomssv6fn1kvvdx9f>
-      <label>Outpatient Annual Primary Payer Reimbursement</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-wl1enu6oomssv6fn1kvvdx9f>
-  </sdc4:ms-rphocsatcaunwmnezjobvcdq>
-  </sdc4:ms-vas0n7gpt46lxe3t2klb0ihw>
-  <sdc4:ms-frvayvpr4jkzykc8ykchaev6>
-    <label>CMS Beneficiary Demographics</label>
-  <sdc4:ms-g8ey2hda0e5q85xkqud9a3av>
-    <sdc4:ms-fnr5q1tfq42ez9jia9dqueho>
-      <label>Deceased Indicator</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <true-value>true</true-value>
-    </sdc4:ms-fnr5q1tfq42ez9jia9dqueho>
-  </sdc4:ms-g8ey2hda0e5q85xkqud9a3av>
-  <sdc4:ms-n7kgcyhe8i86232ckb7j799r>
-    <sdc4:ms-hb937iiq8di6mrtn10j8n1vk>
-      <label>County Code (BENE_COUNTY_CD)</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-hb937iiq8di6mrtn10j8n1vk>
-  </sdc4:ms-n7kgcyhe8i86232ckb7j799r>
-  <sdc4:ms-fkv21ty5qls2bv79nbwqzf4z>
-    <sdc4:ms-n8s2hvs4vrt5bwdykfzna5a6>
-      <label>State Code (SP_STATE_CODE)</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-n8s2hvs4vrt5bwdykfzna5a6>
-  </sdc4:ms-fkv21ty5qls2bv79nbwqzf4z>
-  <sdc4:ms-jrzprkjpc8upag2c1spi5w2d>
-    <sdc4:ms-u5xln0mppl3qk6vhgxdu0wcn>
-      <label>Race (BENE_RACE_CD)</label>
+  </sdc4:ms-bq0dx31j0dzk5dsof8aoxfqk>
+  <sdc4:ms-mqewexs2h1klidtnokjzhul6>
+    <sdc4:ms-dkmozm7gxxss45gf5yhthpjg>
+      <label>Still Have Asthma (ASTHNOW)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -760,11 +876,14 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-u5xln0mppl3qk6vhgxdu0wcn>
-  </sdc4:ms-jrzprkjpc8upag2c1spi5w2d>
-  <sdc4:ms-on3qrhgx8fa9kx0oigx5rw5n>
-    <sdc4:ms-u4lkrbqp88mvp1m81ipglaov>
-      <label>Sex (BENE_SEX_IDENT_CD)</label>
+    </sdc4:ms-dkmozm7gxxss45gf5yhthpjg>
+  </sdc4:ms-mqewexs2h1klidtnokjzhul6>
+  </sdc4:ms-yumwsic8qvlly00pluhl9415>
+  <sdc4:ms-c6lumieatnqpb33vp80sblyd>
+    <label>BRFSS Demographics</label>
+  <sdc4:ms-iguaqbdzjqk634r04nl5tmt0>
+    <sdc4:ms-bhi8aatu3lxo3erx3mo5y08v>
+      <label>Education Level (EDUCA)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -774,8 +893,190 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-u4lkrbqp88mvp1m81ipglaov>
-  </sdc4:ms-on3qrhgx8fa9kx0oigx5rw5n>
+    </sdc4:ms-bhi8aatu3lxo3erx3mo5y08v>
+  </sdc4:ms-iguaqbdzjqk634r04nl5tmt0>
+  <sdc4:ms-er846fdase95qfn51295h02p>
+    <sdc4:ms-j67yf27qljb83m2fwvown1lk>
+      <label>Employment Status (EMPLOY1)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-j67yf27qljb83m2fwvown1lk>
+  </sdc4:ms-er846fdase95qfn51295h02p>
+  <sdc4:ms-grrb23cyvzafqvyzj1s4eg82>
+    <sdc4:ms-qamg60snb8cl9auv4y03kdc4>
+      <label>Imputed Race/Ethnicity Value (_IMPRACE)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-qamg60snb8cl9auv4y03kdc4>
+  </sdc4:ms-grrb23cyvzafqvyzj1s4eg82>
+  <sdc4:ms-gr29r0bd1qh6bg27jk3gfag9>
+    <sdc4:ms-crdh278iwq7azbtcgsuxteve>
+      <label>Income Level (INCOME3)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-crdh278iwq7azbtcgsuxteve>
+  </sdc4:ms-gr29r0bd1qh6bg27jk3gfag9>
+  <sdc4:ms-yfhu36gacryjw93df3jbuc5t>
+    <sdc4:ms-czh5vzmdeijkwrtyla1w7su8>
+      <label>Marital Status (MARITAL)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-czh5vzmdeijkwrtyla1w7su8>
+  </sdc4:ms-yfhu36gacryjw93df3jbuc5t>
+  <sdc4:ms-q024v5d61vo8bjlt8u8aoh0d>
+    <sdc4:ms-gighl3atjkq88ttivdezt4p7>
+      <label>Pregnancy Status (PREGNANT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-gighl3atjkq88ttivdezt4p7>
+  </sdc4:ms-q024v5d61vo8bjlt8u8aoh0d>
+  <sdc4:ms-wvcuj86059g45cb7afy0phwm>
+    <sdc4:ms-evbpc370eyfc3q3lldwifu78>
+      <label>Primary Source of Health Insurance (PRIMINSR)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-evbpc370eyfc3q3lldwifu78>
+  </sdc4:ms-wvcuj86059g45cb7afy0phwm>
+  <sdc4:ms-pmtnenazj7s6dvcklsqx1zpp>
+    <sdc4:ms-et536sfok7glz7fartfs4m65>
+      <label>Sex of Respondent (SEXVAR)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-et536sfok7glz7fartfs4m65>
+  </sdc4:ms-pmtnenazj7s6dvcklsqx1zpp>
+  <sdc4:ms-aerwuld48p0deu31rijadbv5>
+    <sdc4:ms-vyc62ndwazzqyn5ee5oeno1o>
+      <label>Veteran Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-vyc62ndwazzqyn5ee5oeno1o>
+  </sdc4:ms-aerwuld48p0deu31rijadbv5>
+  <sdc4:ms-kv6rttqb1ftfogc8s42xrqf9>
+    <sdc4:ms-zmpqfc6tb0o2hgu8qs6lj8tp>
+      <label>Are you pregnant now?</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-zmpqfc6tb0o2hgu8qs6lj8tp>
+  </sdc4:ms-kv6rttqb1ftfogc8s42xrqf9>
+  <sdc4:ms-r7t7cvtkprjf4k0thmkzzbz7>
+    <sdc4:ms-luq973ggnjoo9ixkt0dym8v6>
+      <label>Category of Health Insurance</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-luq973ggnjoo9ixkt0dym8v6>
+  </sdc4:ms-r7t7cvtkprjf4k0thmkzzbz7>
+  <sdc4:ms-rlczhe82112k0iygals68dya>
+    <sdc4:ms-yqqm7og0x00fbmazzm00s86e>
+      <label>Current Educational Attainment</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-yqqm7og0x00fbmazzm00s86e>
+  </sdc4:ms-rlczhe82112k0iygals68dya>
+  <sdc4:ms-ghyghsy37eqekdq91e4rk55v>
+    <sdc4:ms-oy35qocyvn0zxq8ni4azvz39>
+      <label>Employment Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-oy35qocyvn0zxq8ni4azvz39>
+  </sdc4:ms-ghyghsy37eqekdq91e4rk55v>
+  <sdc4:ms-lt5ldcz6erg3hhsij4pv7c43>
+    <sdc4:ms-qsetd453kk9own8co1wmc5cz>
+      <label>Marital Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-qsetd453kk9own8co1wmc5cz>
+  </sdc4:ms-lt5ldcz6erg3hhsij4pv7c43>
   <sdc4:ms-wzy3g7mcg3shr1ah8fhzxgkb>
     <sdc4:ms-u5tietya3u56hbz2kos06ai7>
       <label>Race/Ethnicity Self-Identification</label>
@@ -804,58 +1105,9 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-gxzbm758mhdz51xd4bawlfhh>
   </sdc4:ms-cpcvbb0xq072zk086ukfl41m>
-  <sdc4:ms-lhcm54c8f2x7thawwvxsfe2s>
-    <sdc4:ms-vnlhr9c3ykayyegumhb09snf>
-      <label>Deceased Date</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <xdtemporal-datetime>_PH_</xdtemporal-datetime>
-    </sdc4:ms-vnlhr9c3ykayyegumhb09snf>
-  </sdc4:ms-lhcm54c8f2x7thawwvxsfe2s>
-  <sdc4:ms-c5ueyww5kg8b7h3h3ipno6sk>
-    <sdc4:ms-js564tazefb6udqlh12rj04l>
-      <label>Date of Birth</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <xdtemporal-date>_PH_</xdtemporal-date>
-    </sdc4:ms-js564tazefb6udqlh12rj04l>
-  </sdc4:ms-c5ueyww5kg8b7h3h3ipno6sk>
-  </sdc4:ms-frvayvpr4jkzykc8ykchaev6>
-  <sdc4:ms-shug78mge6b16gz073rt23ih>
-    <label>CMS Medicare Coverage</label>
-  <sdc4:ms-hbnmrivnia0qrqidvtdryusj>
-    <label>Insurance Coverage</label>
-  <sdc4:ms-oc8phvc3wtcfr5x5aauliaih>
-    <label>Cost Sharing</label>
-  <sdc4:ms-murtcvniy0f3aelkfyh0p1c0>
-    <sdc4:ms-fdtpvqw0se658x5m3zormi5v>
-      <label>Copay Type</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdtoken-value>_PH_</xdtoken-value>
-      <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-fdtpvqw0se658x5m3zormi5v>
-  </sdc4:ms-murtcvniy0f3aelkfyh0p1c0>
-  <sdc4:ms-umxqiiqzgpix9xlwtumv6e26>
-    <sdc4:ms-h4ngotmyyx8yflaxicrxaba8>
-      <label>Copay Amount</label>
+  <sdc4:ms-sb64o3rmfrocsgd92tm8fdc1>
+    <sdc4:ms-evijzyx8i3a268zqdsgmhzo0>
+      <label>Imputed Age Value Collapsed Above 80 (_AGE80)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -867,159 +1119,16 @@
       <magnitude-status>_OPT_PH_</magnitude-status>
       <accuracy_margin>_OPT_PH_</accuracy_margin>
       <precision_digits>_OPT_PH_</precision_digits>
-      <xdquantity-value>_PH_</xdquantity-value>
-      <xdquantity-units>
-        <label>Currency</label>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Years</label>
         <xdstring-value>_PH_</xdstring-value>
-      </xdquantity-units>
-    </sdc4:ms-h4ngotmyyx8yflaxicrxaba8>
-  </sdc4:ms-umxqiiqzgpix9xlwtumv6e26>
-  </sdc4:ms-oc8phvc3wtcfr5x5aauliaih>
-  <sdc4:ms-jqrxnqz7o48ay00s8y4ft7ju>
-    <label>Coverage Class</label>
-  <sdc4:ms-yr8f2jy29qvyvi4jh8q7xmv1>
-    <sdc4:ms-dro3p4hqu4ovk0uj7uu2upvq>
-      <label>Coverage Class Name</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-dro3p4hqu4ovk0uj7uu2upvq>
-  </sdc4:ms-yr8f2jy29qvyvi4jh8q7xmv1>
-  <sdc4:ms-ivie7h1ngq4yqm5v3obno9m5>
-    <sdc4:ms-zwmu2x9s8tx628rvb1trh0ij>
-      <label>Coverage Class Value</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-zwmu2x9s8tx628rvb1trh0ij>
-  </sdc4:ms-ivie7h1ngq4yqm5v3obno9m5>
-  <sdc4:ms-g7t8daykwejn04ea3fqib0i3>
-    <sdc4:ms-m3m7ow1e7b27ejx6usxtgnbg>
-      <label>Coverage Class Type</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdtoken-value>_PH_</xdtoken-value>
-      <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-m3m7ow1e7b27ejx6usxtgnbg>
-  </sdc4:ms-g7t8daykwejn04ea3fqib0i3>
-  </sdc4:ms-jqrxnqz7o48ay00s8y4ft7ju>
-  <sdc4:ms-w99h7tvb9xvn1kshdf8yc53k>
-    <sdc4:ms-zc3g4e4kjtzehn3kkffkeu29>
-      <label>Subrogation Indicator</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <true-value>true</true-value>
-    </sdc4:ms-zc3g4e4kjtzehn3kkffkeu29>
-  </sdc4:ms-w99h7tvb9xvn1kshdf8yc53k>
-  <sdc4:ms-c5a1fbrj2rac1vcrn7gb11ti>
-    <sdc4:ms-ngyypbb7lmlj2g3kibcjqjmn>
-      <label>Dependent Sequence</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-ngyypbb7lmlj2g3kibcjqjmn>
-  </sdc4:ms-c5a1fbrj2rac1vcrn7gb11ti>
-  <sdc4:ms-xe8uqnx4cudmxvi8zc0u2zxz>
-    <sdc4:ms-of5kk46yrln1ok8nuajeg2f8>
-      <label>Member ID</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-of5kk46yrln1ok8nuajeg2f8>
-  </sdc4:ms-xe8uqnx4cudmxvi8zc0u2zxz>
-  <sdc4:ms-ejx5l07a5hmcmzvrpouxnqyn>
-    <sdc4:ms-ng1e2u43yhfura3vf0ahm609>
-      <label>Plan Network</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-ng1e2u43yhfura3vf0ahm609>
-  </sdc4:ms-ejx5l07a5hmcmzvrpouxnqyn>
-  <sdc4:ms-deo1nvaw6bus46srqtbrfa3b>
-    <sdc4:ms-hicvzztm4xzxnzp9f6tyu016>
-      <label>Coverage Status</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdtoken-value>_PH_</xdtoken-value>
-      <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-hicvzztm4xzxnzp9f6tyu016>
-  </sdc4:ms-deo1nvaw6bus46srqtbrfa3b>
-  <sdc4:ms-hhy8z5jsr0b7phav818g3qp8>
-    <sdc4:ms-wpnvu6f56drsy767ucx60scd>
-      <label>Coverage Type</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdtoken-value>_PH_</xdtoken-value>
-      <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-wpnvu6f56drsy767ucx60scd>
-  </sdc4:ms-hhy8z5jsr0b7phav818g3qp8>
-  <sdc4:ms-fto7opgwnniuwc00x9y5wlqs>
-    <sdc4:ms-zxoxt5fc40bzigieoh044gsy>
-      <label>Subscriber Relationship</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdtoken-value>_PH_</xdtoken-value>
-      <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-zxoxt5fc40bzigieoh044gsy>
-  </sdc4:ms-fto7opgwnniuwc00x9y5wlqs>
-  <sdc4:ms-bk7pmvl95t2t5pnl9hf5mvwx>
-    <sdc4:ms-rcl099nhkwzl6lu24lz9i01r>
-      <label>Coverage Order</label>
+      </xdcount-units>
+    </sdc4:ms-evijzyx8i3a268zqdsgmhzo0>
+  </sdc4:ms-sb64o3rmfrocsgd92tm8fdc1>
+  <sdc4:ms-nufn1nz347zhnyx962xu8nly>
+    <sdc4:ms-abjbfcel6qppumg0rlf78wcp>
+      <label>Number of Children in Household (CHILDREN)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -1036,40 +1145,11 @@
         <label>Items</label>
         <xdstring-value>_PH_</xdstring-value>
       </xdcount-units>
-    </sdc4:ms-rcl099nhkwzl6lu24lz9i01r>
-  </sdc4:ms-bk7pmvl95t2t5pnl9hf5mvwx>
-  <sdc4:ms-trzzk3ts65pltlac9ewdqsn8>
-    <sdc4:ms-asmfpl0h2pw2xlldhiydibbn>
-      <label>Coverage Period End</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <xdtemporal-date>_PH_</xdtemporal-date>
-    </sdc4:ms-asmfpl0h2pw2xlldhiydibbn>
-  </sdc4:ms-trzzk3ts65pltlac9ewdqsn8>
-  <sdc4:ms-ab7y6100mca09i4jkaoveucr>
-    <sdc4:ms-onaqlxn6vzh5r1ub5oxn65iv>
-      <label>Coverage Period Start</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <xdtemporal-date>_PH_</xdtemporal-date>
-    </sdc4:ms-onaqlxn6vzh5r1ub5oxn65iv>
-  </sdc4:ms-ab7y6100mca09i4jkaoveucr>
-  </sdc4:ms-hbnmrivnia0qrqidvtdryusj>
-  <sdc4:ms-tjozh7o87xueqa6gak1vmzxh>
-    <sdc4:ms-v3kyd703i6kwzmmnasehyiks>
-      <label>HMO Coverage Months</label>
+    </sdc4:ms-abjbfcel6qppumg0rlf78wcp>
+  </sdc4:ms-nufn1nz347zhnyx962xu8nly>
+  <sdc4:ms-zm46otmwkxgersw3y93icjp4>
+    <sdc4:ms-wuvdeiwoe5bna7nlhcl1c4h9>
+      <label>Age</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -1083,92 +1163,17 @@
       <precision_digits>_OPT_PH_</precision_digits>
       <xdcount-value>_PH_</xdcount-value>
       <xdcount-units>
-        <label>Months</label>
+        <label>years or months</label>
         <xdstring-value>_PH_</xdstring-value>
       </xdcount-units>
-    </sdc4:ms-v3kyd703i6kwzmmnasehyiks>
-  </sdc4:ms-tjozh7o87xueqa6gak1vmzxh>
-  <sdc4:ms-r5xjjjbbvq0pe5oa5icvlrmd>
-    <sdc4:ms-z7hdfvo8n55ebh3hqs2devzz>
-      <label>Hospital Insurance (Part A) Coverage Months</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdcount-value>_PH_</xdcount-value>
-      <xdcount-units>
-        <label>Months</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdcount-units>
-    </sdc4:ms-z7hdfvo8n55ebh3hqs2devzz>
-  </sdc4:ms-r5xjjjbbvq0pe5oa5icvlrmd>
-  <sdc4:ms-w679cti53e3qjc0xhfzz818h>
-    <sdc4:ms-uzjspmfqya7qwbg2vhfdlgzv>
-      <label>Part D Plan Coverage Months</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdcount-value>_PH_</xdcount-value>
-      <xdcount-units>
-        <label>Months</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdcount-units>
-    </sdc4:ms-uzjspmfqya7qwbg2vhfdlgzv>
-  </sdc4:ms-w679cti53e3qjc0xhfzz818h>
-  <sdc4:ms-sflsthmt0ex1ffh307j9rw58>
-    <sdc4:ms-xftatfclhnwcyy2k96v7k638>
-      <label>Supplementary Medical Insurance (Part B) Coverage Months</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <normal-status>_OPT_PH_</normal-status>
-      <magnitude-status>_OPT_PH_</magnitude-status>
-      <accuracy_margin>_OPT_PH_</accuracy_margin>
-      <precision_digits>_OPT_PH_</precision_digits>
-      <xdcount-value>_PH_</xdcount-value>
-      <xdcount-units>
-        <label>Months</label>
-        <xdstring-value>_PH_</xdstring-value>
-      </xdcount-units>
-    </sdc4:ms-xftatfclhnwcyy2k96v7k638>
-  </sdc4:ms-sflsthmt0ex1ffh307j9rw58>
-  </sdc4:ms-shug78mge6b16gz073rt23ih>
-  <sdc4:ms-eityhljg7w30a835qcc9h4c1>
-    <sdc4:ms-zshx6rx7ca1j00eda9kxyh6h>
-      <label>Beneficiary Code (DESYNPUF_ID)</label>
-      <act>_OPT_PH_</act>
-      <vtb>_OPT_PH_</vtb>
-      <vte>_OPT_PH_</vte>
-      <tr>_OPT_PH_</tr>
-      <modified>_OPT_PH_</modified>
-      <latitude>_OPT_PH_</latitude>
-      <longitude>_OPT_PH_</longitude>
-      <xdstring-value>_PH_</xdstring-value>
-      <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-zshx6rx7ca1j00eda9kxyh6h>
-  </sdc4:ms-eityhljg7w30a835qcc9h4c1>
-  <sdc4:ms-od3d3rytt78yvy3uvmnpnikz>
-    <sdc4:ms-pczjiz8bjdg20api47gmeq0e>
-      <label>End-Stage Renal Disease Indicator (BENE_ESRD_IND)</label>
+    </sdc4:ms-wuvdeiwoe5bna7nlhcl1c4h9>
+  </sdc4:ms-zm46otmwkxgersw3y93icjp4>
+  </sdc4:ms-c6lumieatnqpb33vp80sblyd>
+  <sdc4:ms-u19jrjjc6aznug6hs2twjiy5>
+    <label>BRFSS Disability</label>
+  <sdc4:ms-pk3hw4wzjnd5e1oa2yxc69dk>
+    <sdc4:ms-rw8s64t4v80421biq8eo9p2x>
+      <label>Blind or Serious Difficulty Seeing (BLIND)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
       <vte>_OPT_PH_</vte>
@@ -1178,9 +1183,397 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-pczjiz8bjdg20api47gmeq0e>
-  </sdc4:ms-od3d3rytt78yvy3uvmnpnikz>
-  </sdc4:ms-kkdy1kjdruxvx8s1ra8eh231>
+    </sdc4:ms-rw8s64t4v80421biq8eo9p2x>
+  </sdc4:ms-pk3hw4wzjnd5e1oa2yxc69dk>
+  <sdc4:ms-vaejfpw94f682dg8981lpwos>
+    <sdc4:ms-hs066djavlc5r494vqu61thl>
+      <label>Deaf or Serious Difficulty Hearing (DEAF)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-hs066djavlc5r494vqu61thl>
+  </sdc4:ms-vaejfpw94f682dg8981lpwos>
+  <sdc4:ms-mghaxfjyhejq0djyg0p7a1th>
+    <sdc4:ms-l9s5avvkix0og66m0lewwqgg>
+      <label>Difficulty Doing Errands Alone (DIFFALON)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-l9s5avvkix0og66m0lewwqgg>
+  </sdc4:ms-mghaxfjyhejq0djyg0p7a1th>
+  <sdc4:ms-pr9t93hr1blrb5r5o3o6h03p>
+    <sdc4:ms-zbwodv9m60b33blptlellmu0>
+      <label>Difficulty Dressing or Bathing (DIFFDRES)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-zbwodv9m60b33blptlellmu0>
+  </sdc4:ms-pr9t93hr1blrb5r5o3o6h03p>
+  <sdc4:ms-dzkw7ngcz4zzsr68e6b50rvx>
+    <sdc4:ms-e104gkr3e96ekydrpe8qogjw>
+      <label>Serious Difficulty Concentrating, Remembering or Deciding (DECIDE)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-e104gkr3e96ekydrpe8qogjw>
+  </sdc4:ms-dzkw7ngcz4zzsr68e6b50rvx>
+  <sdc4:ms-s38nznee1x9kak4nf75pkc3r>
+    <sdc4:ms-m3970or5qg49k78l0lq1ptjc>
+      <label>Serious Difficulty Walking or Climbing Stairs (DIFFWALK)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-m3970or5qg49k78l0lq1ptjc>
+  </sdc4:ms-s38nznee1x9kak4nf75pkc3r>
+  </sdc4:ms-u19jrjjc6aznug6hs2twjiy5>
+  <sdc4:ms-t1sv9gth4is2bswuhyid22co>
+    <label>BRFSS Health Status and Access</label>
+  <sdc4:ms-myh7mf4v2aq3ryf4a3ewmapc>
+    <sdc4:ms-a08lkh4xjvqqjtz7sxy129pa>
+      <label>Exercise in Past 30 Days (EXERANY2)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-a08lkh4xjvqqjtz7sxy129pa>
+  </sdc4:ms-myh7mf4v2aq3ryf4a3ewmapc>
+  <sdc4:ms-v9ghbsx8x43n7irclyc8a6wi>
+    <sdc4:ms-j6jj7wf0olxh3db6td9wey6g>
+      <label>General Health Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-j6jj7wf0olxh3db6td9wey6g>
+  </sdc4:ms-v9ghbsx8x43n7irclyc8a6wi>
+  <sdc4:ms-pojjp13k3i95ttw23sm24gz2>
+    <sdc4:ms-fa0aian3co6if5igu488whhr>
+      <label>Length of Time Since Last Routine Checkup (CHECKUP1)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-fa0aian3co6if5igu488whhr>
+  </sdc4:ms-pojjp13k3i95ttw23sm24gz2>
+  <sdc4:ms-jmna260wybd2zd4ou66fqoie>
+    <sdc4:ms-cjh0775qjyyaqb9spk1k3rty>
+      <label>Days Mental Health Not Good, Past 30 (MENTHLTH)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Days</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-cjh0775qjyyaqb9spk1k3rty>
+  </sdc4:ms-jmna260wybd2zd4ou66fqoie>
+  <sdc4:ms-quq1mhgciebpg3oacr6cxsdo>
+    <sdc4:ms-kmr0bcq4vaae10cw4hhgjbtx>
+      <label>Days Physical Health Not Good, Past 30 (PHYSHLTH)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Days</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-kmr0bcq4vaae10cw4hhgjbtx>
+  </sdc4:ms-quq1mhgciebpg3oacr6cxsdo>
+  </sdc4:ms-t1sv9gth4is2bswuhyid22co>
+  <sdc4:ms-gc10s94rs18ida0cy88lzscl>
+    <label>BRFSS Survey Design</label>
+  <sdc4:ms-y2gopuhgy9wckbeurh33it90>
+    <sdc4:ms-c23wij2i4jkwu016ekro40bv>
+      <label>Primary Sampling Unit (_PSU)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-c23wij2i4jkwu016ekro40bv>
+  </sdc4:ms-y2gopuhgy9wckbeurh33it90>
+  <sdc4:ms-fn1qy5cft8qhhigzjrfnbmn5>
+    <sdc4:ms-frb0byilu8prpn7veyj6luwl>
+      <label>Sample Design Stratification Variable (_STSTR)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-frb0byilu8prpn7veyj6luwl>
+  </sdc4:ms-fn1qy5cft8qhhigzjrfnbmn5>
+  <sdc4:ms-qe3jdkz68bwrejhh59rlmhzp>
+    <sdc4:ms-wesa1iwagjckq500ixmosu2l>
+      <label>State FIPS Code (_STATE)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-wesa1iwagjckq500ixmosu2l>
+  </sdc4:ms-qe3jdkz68bwrejhh59rlmhzp>
+  <sdc4:ms-j6stj0q6hcoap91h39rllmo8>
+    <sdc4:ms-ba0vveg1d3bmjb9nx8e2x4d3>
+      <label>Final Weight: Land-line and Cell-phone Data (_LLCPWT)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdquantity-value>_PH_</xdquantity-value>
+      <xdquantity-units>
+        <label>Sample Weight</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdquantity-units>
+    </sdc4:ms-ba0vveg1d3bmjb9nx8e2x4d3>
+  </sdc4:ms-j6stj0q6hcoap91h39rllmo8>
+  <sdc4:ms-ljzdguksr3ebcmuxnpf02dbi>
+    <sdc4:ms-l4jr7yi9926sctme3vjuti72>
+      <label>Interview Date (IDATE)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <xdtemporal-date>_PH_</xdtemporal-date>
+    </sdc4:ms-l4jr7yi9926sctme3vjuti72>
+  </sdc4:ms-ljzdguksr3ebcmuxnpf02dbi>
+  </sdc4:ms-gc10s94rs18ida0cy88lzscl>
+  <sdc4:ms-dh2ghpj9z1brefxf0pb4yi14>
+    <label>BRFSS Tobacco and Alcohol Use</label>
+  <sdc4:ms-rt5pq55fi6th8ul14nrpj5bp>
+    <sdc4:ms-iwlb0rcomw3q8rlff3ajukme>
+      <label>Computed Smoking Status (_SMOKER3)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-iwlb0rcomw3q8rlff3ajukme>
+  </sdc4:ms-rt5pq55fi6th8ul14nrpj5bp>
+  <sdc4:ms-jtlejg2rigitywxgabu1jkg9>
+    <sdc4:ms-ecwiva31y2fky3eu1mdnvurt>
+      <label>Current E-cigarette Use (ECIGNOW2)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-ecwiva31y2fky3eu1mdnvurt>
+  </sdc4:ms-jtlejg2rigitywxgabu1jkg9>
+  <sdc4:ms-mb6mwfeajun0wn1agj109jeo>
+    <sdc4:ms-kzni1q04rghj23ca0zbhauu5>
+      <label>Frequency of Days Now Smoking (SMOKDAY2)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-kzni1q04rghj23ca0zbhauu5>
+  </sdc4:ms-mb6mwfeajun0wn1agj109jeo>
+  <sdc4:ms-j08jnwhphzsz339c1bd1bwnp>
+    <sdc4:ms-hukufq8g2u2k0cpcal7uxsa8>
+      <label>Smoked at Least 100 Cigarettes (SMOKE100)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-hukufq8g2u2k0cpcal7uxsa8>
+  </sdc4:ms-j08jnwhphzsz339c1bd1bwnp>
+  <sdc4:ms-gltl14s59crclwwf1pp1j5l5>
+    <sdc4:ms-n7pn5ctqo81v0v418hez5zv5>
+      <label>Smoking Status</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdtoken-value>_PH_</xdtoken-value>
+      <xdtoken-language>_OPT_PH_</xdtoken-language>
+    </sdc4:ms-n7pn5ctqo81v0v418hez5zv5>
+  </sdc4:ms-gltl14s59crclwwf1pp1j5l5>
+  <sdc4:ms-rycouibueybaqp4hzjjs9jte>
+    <sdc4:ms-gr95a9bk6mfr0220fmxc3o4e>
+      <label>Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Drinks</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-gr95a9bk6mfr0220fmxc3o4e>
+  </sdc4:ms-rycouibueybaqp4hzjjs9jte>
+  <sdc4:ms-c1vlbryimxwvm55s9vj2w7tl>
+    <sdc4:ms-g0dq4n7oml1mmi21t50biiwt>
+      <label>Binge Drinking Occasions in Past 30 (DRNK3GE5)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Items</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-g0dq4n7oml1mmi21t50biiwt>
+  </sdc4:ms-c1vlbryimxwvm55s9vj2w7tl>
+  <sdc4:ms-yczwu98f29i5a7ov89cay8q9>
+    <sdc4:ms-nh9s5b7gb713asjatbg5guyc>
+      <label>Days in Past 30 Had Alcoholic Beverage (ALCDAY4)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <normal-status>_OPT_PH_</normal-status>
+      <magnitude-status>_OPT_PH_</magnitude-status>
+      <accuracy_margin>_OPT_PH_</accuracy_margin>
+      <precision_digits>_OPT_PH_</precision_digits>
+      <xdcount-value>_PH_</xdcount-value>
+      <xdcount-units>
+        <label>Days</label>
+        <xdstring-value>_PH_</xdstring-value>
+      </xdcount-units>
+    </sdc4:ms-nh9s5b7gb713asjatbg5guyc>
+  </sdc4:ms-yczwu98f29i5a7ov89cay8q9>
+  </sdc4:ms-dh2ghpj9z1brefxf0pb4yi14>
+  <sdc4:ms-f6tess6gw6nf2hk56v5ow7rh>
+    <sdc4:ms-pflduyrah1tnmmsjrwfvi121>
+      <label>Annual Sequence Number (SEQNO)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-pflduyrah1tnmmsjrwfvi121>
+  </sdc4:ms-f6tess6gw6nf2hk56v5ow7rh>
+  </sdc4:ms-job3i8sfv3zikxymqe625fm2>
   <sdc4:ms-vmikfu0irht9fmq7q02t3oqs>
     <label>PROV Activity</label>
   <sdc4:ms-vycps7awt38y25jhnrr4okxt>
@@ -1523,7 +1916,7 @@
     </sdc4:ms-i16vqj89it3db7d3c5qjko9p>
   </sdc4:ms-y1u3ladafqtryhgyetpn5ild>
   </sdc4:ms-c179ilk2ns15cd5rzzdfd6f6>
-  </sdc4:ms-io2h28pi3yktedurk8ye3oq0>
+  </sdc4:ms-cd2j0wzlcvfsfk7ikiaujmzx>
   <sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
     <label>FAIR Pipeline Audit</label>
     <system-id>
@@ -1538,4 +1931,4 @@
     </location>
     <timestamp>2024-01-01T00:00:00</timestamp>
   </sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
-</sdc4:dm-fnv3zi2btk3s0sfodjsc25eb>
+</sdc4:dm-j6wmvhr46irxht2ls90nry8k>

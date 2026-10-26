@@ -14,12 +14,12 @@
     "id": "@id"
   },
   "@type": "DataModel",
-  "@id": "sdc4:dm-eehpfapwgvxtzdrofgstdcfs",
-  "identifier": "eehpfapwgvxtzdrofgstdcfs",
-  "label": "NHANES Participant 4.2.3",
+  "@id": "sdc4:dm-tp5pg0u4dasqarie0b3ujn2u",
+  "identifier": "tp5pg0u4dasqarie0b3ujn2u",
+  "label": "NHANES Participant 4.2.4",
   "description": "SDC4 data model for National Health and Nutrition Examination Survey (nhanes_blood_pressure) — FAIR Data Demo",
   "metadata": {
-    "dc:title": "NHANES Participant 4.2.3",
+    "dc:title": "NHANES Participant 4.2.4",
     "dc:creator": "Timothy Cook",
     "dc:contributor": [],
     "dc:subject": "",
@@ -28,10 +28,10 @@
     "dc:relation": "None",
     "dc:coverage": "Universal",
     "dc:type": "SDC Data Model (DM)",
-    "dc:identifier": "dm-eehpfapwgvxtzdrofgstdcfs",
+    "dc:identifier": "dm-tp5pg0u4dasqarie0b3ujn2u",
     "dc:description": "SDC4 data model for National Health and Nutrition Examination Survey (nhanes_blood_pressure) — FAIR Data Demo",
     "dc:publisher": "",
-    "dc:date": "2026-10-25T22:31:15.358925+00:00",
+    "dc:date": "2026-10-26T13:53:00.614154+00:00",
     "dc:format": "text/xml",
     "dc:language": "en-US"
   },
@@ -1174,7 +1174,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-m67ncwhc9s1j36f9w9qsrxfx",
+      "@id": "sdc4:mc-ftyi95rho04uurpzxued878l",
       "label": "Citizenship Status (DMDCITZN)",
       "description": "Citizenship status (DMDCITZN).",
       "cardinality": {
@@ -1204,6 +1204,10 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-m67ncwhc9s1j36f9w9qsrxfx"
         }
       ]
     },
@@ -1244,7 +1248,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp",
+      "@id": "sdc4:mc-ock06zt2jnlwwicpkqpzbgmh",
       "label": "Education Level - Adults 20+ (DMDEDUC2)",
       "description": "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
       "cardinality": {
@@ -1277,6 +1281,10 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp"
         }
       ]
     },
@@ -1356,7 +1364,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz",
+      "@id": "sdc4:mc-t1ahhck0k0mqctro2gk1velt",
       "label": "Pregnancy Status at Exam (RIDEXPRG)",
       "description": "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to.",
       "cardinality": {
@@ -1387,12 +1395,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDEXPRG"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-r0j6yo8zvo4q8x0ovdr6j9yz"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-hs44ipuqgvc3azbt3mirxtsz",
+      "@id": "sdc4:mc-d00bqkut44f2nxqcij9di549",
       "label": "Race/Hispanic Origin with NH Asian (RIDRETH3)",
       "description": "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value.",
       "cardinality": {
@@ -1426,12 +1438,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDRETH3"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-eimlsgbawhm8aa4i6gbdrja0",
+      "@id": "sdc4:mc-vyc62ndwazzqyn5ee5oeno1o",
       "label": "Veteran Status",
       "description": "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).",
       "cardinality": {
@@ -1464,7 +1480,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C17742"
+          "object": "http://purl.obolibrary.org/obo/NCIT_C171085"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-eimlsgbawhm8aa4i6gbdrja0"
         }
       ]
     },
@@ -1518,9 +1538,9 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1",
+      "@id": "sdc4:mc-yqqm7og0x00fbmazzm00s86e",
       "label": "Current Educational Attainment",
-      "description": "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed.",
+      "description": "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed. Corrected from the NIH CDE Repository record, whose text carries the Windows-1252 apostrophe as the control character U+0092; it is the right single quotation mark (U+2019), as Windows-1252 defines byte 0x92.",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
@@ -1545,12 +1565,12 @@
           "Some College, No Degree",
           "Occupational, Technical, or Vocational Program",
           "Associates Degree - Academic Program",
-          "Bachelors Degree (Example: BA, AB, BS, BBA)",
-          "Masters Degree (Example:  MA, MS, MEng, MEd, MBA)",
+          "Bachelor’s Degree (Example: BA, AB, BS, BBA)",
+          "Master’s Degree (Example:  MA, MS, MEng, MEd, MBA)",
           "Professional Degree (Example: MD, DDS, JD)",
           "Doctoral Degree (Example: PhD, EdD)",
           "Refused to Answer",
-          "Dont Know"
+          "Don’t Know"
         ]
       },
       "dataType": "xsd:token",
@@ -1573,7 +1593,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-u0t7nkb38c0sk5baielllqld"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1"
         }
       ]
     },
@@ -3190,9 +3210,9 @@
     },
     {
       "@type": "XdQuantityType",
-      "@id": "sdc4:mc-qp5mdgab3s37zwqzyfzq8rvi",
+      "@id": "sdc4:mc-g2g6lk6fzdcxtpybr509h8o5",
       "label": "Total Cholesterol (SI)",
-      "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3).",
+      "description": "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 14647-2).",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
@@ -3228,7 +3248,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
-          "object": "https://loinc.org/2093-3/"
+          "object": "https://loinc.org/14647-2/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-qp5mdgab3s37zwqzyfzq8rvi"
         }
       ]
     },
@@ -3907,7 +3931,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw",
+      "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb",
       "label": "Condition Indicator Basis",
       "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
       "cardinality": {
@@ -3936,7 +3960,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C25596"
+          "object": "http://purl.obolibrary.org/obo/NCIT_C16493"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw"
         }
       ]
     },
@@ -4152,7 +4180,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k",
+      "@id": "sdc4:mc-l6heok2fyjbbm657g6iwd9ao",
       "label": "Difficulty Dressing Yourself (PFQ061L)",
       "description": "Difficulty Dressing Yourself (PFQ061L), on the four-point difficulty scale.",
       "cardinality": {
@@ -4185,12 +4213,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061L"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx",
+      "@id": "sdc4:mc-an0ysk4wra3yf18zqh8xqz1u",
       "label": "Difficulty Getting In and Out of Bed (PFQ061J)",
       "description": "Difficulty Getting In and Out of Bed (PFQ061J), on the four-point difficulty scale.",
       "cardinality": {
@@ -4223,12 +4255,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061J"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-b1mxr233mgqvzr39c90ly8cv",
+      "@id": "sdc4:mc-s81mdwkizvrrih408g05j02z",
       "label": "Difficulty Lifting or Carrying (PFQ061E)",
       "description": "Difficulty Lifting or Carrying (PFQ061E), on the four-point difficulty scale.",
       "cardinality": {
@@ -4261,12 +4297,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061E"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u",
+      "@id": "sdc4:mc-imcbb8w19x2veya8fp1y2zqz",
       "label": "Difficulty Standing for Long Periods (PFQ061M)",
       "description": "Difficulty Standing for Long Periods (PFQ061M), on the four-point difficulty scale.",
       "cardinality": {
@@ -4299,12 +4339,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061M"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-y52y4mpq95zcknal0be1uc7v",
+      "@id": "sdc4:mc-s1vje5rv2ubv17cqwlnglhyi",
       "label": "Difficulty Standing Up from an Armless Chair (PFQ061I)",
       "description": "Difficulty Standing Up from an Armless Chair (PFQ061I), on the four-point difficulty scale.",
       "cardinality": {
@@ -4337,12 +4381,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061I"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-knrs4clih4pi26tm2zra1ai0",
+      "@id": "sdc4:mc-kexlzsor1x6i40xggqmdctwp",
       "label": "Difficulty Stooping, Crouching or Kneeling (PFQ061D)",
       "description": "Difficulty Stooping, Crouching or Kneeling (PFQ061D), on the four-point difficulty scale.",
       "cardinality": {
@@ -4375,12 +4423,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061D"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-mktq5xr8slz67q85idl8bsky",
+      "@id": "sdc4:mc-xm59ukw41e98q86oanzreehg",
       "label": "Difficulty Walking a Quarter Mile (PFQ061B)",
       "description": "Difficulty Walking a Quarter Mile (PFQ061B), on the four-point difficulty scale.",
       "cardinality": {
@@ -4413,12 +4465,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061B"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-crr2z3b2l7hlq1kvevppt8kt",
+      "@id": "sdc4:mc-oto1vaautwazh218zmzj5wxc",
       "label": "Difficulty Walking Between Rooms (PFQ061H)",
       "description": "Difficulty Walking Between Rooms (PFQ061H), on the four-point difficulty scale.",
       "cardinality": {
@@ -4451,12 +4507,16 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061H"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt"
         }
       ]
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-rot4z5ny8gdkfmimedcjl1te",
+      "@id": "sdc4:mc-mrzg9shhypi53vy0nfw1xk05",
       "label": "Difficulty Walking Up Ten Stairs (PFQ061C)",
       "description": "Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale.",
       "cardinality": {
@@ -4489,6 +4549,10 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061C"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te"
         }
       ]
     },
@@ -6616,7 +6680,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-u9elnmjjpxdtxcxnqugqaowk",
+      "@id": "sdc4:mc-qsegrqlbnrpyedsuyh602l7p",
       "label": "NHANES Participant Governed Record",
       "cardinality": {
         "minOccurs": 0,
@@ -6627,7 +6691,7 @@
           "@id": "sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"
         },
         {
-          "@id": "sdc4:mc-dawjwho8viq3hr0esb39dhb7"
+          "@id": "sdc4:mc-vianv75qjtm1agy1mhyctpvo"
         },
         {
           "@id": "sdc4:mc-vmikfu0irht9fmq7q02t3oqs"
@@ -6655,7 +6719,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-l6t9agg233vswxyv60quiu6w"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-u9elnmjjpxdtxcxnqugqaowk"
         }
       ]
     },
@@ -6729,7 +6793,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-dawjwho8viq3hr0esb39dhb7",
+      "@id": "sdc4:mc-vianv75qjtm1agy1mhyctpvo",
       "label": "NHANES Participant",
       "cardinality": {
         "minOccurs": 0,
@@ -6740,22 +6804,22 @@
           "@id": "sdc4:mc-k8t5396w5kh1zzf6vhp4ola2"
         },
         {
-          "@id": "sdc4:mc-nzhi9t6qd9rhb5ojsaxtn8md"
+          "@id": "sdc4:mc-mcwxopvl79am1nwidvdhh6k1"
         },
         {
-          "@id": "sdc4:mc-c73687ou0pkc7qy6n2kksfc7"
+          "@id": "sdc4:mc-g2voalw3ybm3pmu8uwkk4xzn"
         },
         {
-          "@id": "sdc4:mc-mc8by65nv7wa59lw4oj54e2w"
+          "@id": "sdc4:mc-hmaeg366kmkc99g6gdsejufy"
         },
         {
-          "@id": "sdc4:mc-ky7lvmote5jfn5gt6n89q79s"
+          "@id": "sdc4:mc-wm4o1tvmo89r0wn7ailb51v2"
         },
         {
           "@id": "sdc4:mc-u3nopo5pxqb1dwwk3u0fyp6e"
         },
         {
-          "@id": "sdc4:mc-mgqswj92qaeasqjjvfcyxon5"
+          "@id": "sdc4:mc-odbroobvrx8dsx7ay24toth7"
         },
         {
           "@id": "sdc4:mc-uto4zszvpicva38wx77knz5y"
@@ -6780,7 +6844,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-e3gwv95m8jjx7578urmx8ppz"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-dawjwho8viq3hr0esb39dhb7"
         }
       ]
     },
@@ -7025,7 +7089,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-nzhi9t6qd9rhb5ojsaxtn8md",
+      "@id": "sdc4:mc-mcwxopvl79am1nwidvdhh6k1",
       "label": "NHANES Demographics",
       "cardinality": {
         "minOccurs": 0,
@@ -7036,13 +7100,13 @@
           "@id": "sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u"
         },
         {
-          "@id": "sdc4:mc-m67ncwhc9s1j36f9w9qsrxfx"
+          "@id": "sdc4:mc-ftyi95rho04uurpzxued878l"
         },
         {
           "@id": "sdc4:mc-nwsj84veb6u9g1v0h2a3a793"
         },
         {
-          "@id": "sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp"
+          "@id": "sdc4:mc-ock06zt2jnlwwicpkqpzbgmh"
         },
         {
           "@id": "sdc4:mc-sigmhjzuw16w0k8op92lk9sd"
@@ -7051,19 +7115,19 @@
           "@id": "sdc4:mc-i3uys2dmi257jkdzavsst5az"
         },
         {
-          "@id": "sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz"
+          "@id": "sdc4:mc-t1ahhck0k0mqctro2gk1velt"
         },
         {
-          "@id": "sdc4:mc-hs44ipuqgvc3azbt3mirxtsz"
+          "@id": "sdc4:mc-d00bqkut44f2nxqcij9di549"
         },
         {
-          "@id": "sdc4:mc-eimlsgbawhm8aa4i6gbdrja0"
+          "@id": "sdc4:mc-vyc62ndwazzqyn5ee5oeno1o"
         },
         {
           "@id": "sdc4:mc-zmpqfc6tb0o2hgu8qs6lj8tp"
         },
         {
-          "@id": "sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1"
+          "@id": "sdc4:mc-yqqm7og0x00fbmazzm00s86e"
         },
         {
           "@id": "sdc4:mc-qsetd453kk9own8co1wmc5cz"
@@ -7106,13 +7170,13 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-b6bz6qun3frba85kw1a539h2"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-nzhi9t6qd9rhb5ojsaxtn8md"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-c73687ou0pkc7qy6n2kksfc7",
+      "@id": "sdc4:mc-g2voalw3ybm3pmu8uwkk4xzn",
       "label": "NHANES Laboratory Results",
       "cardinality": {
         "minOccurs": 0,
@@ -7183,7 +7247,7 @@
           "@id": "sdc4:mc-rl42ns60wqjt2jr4kgmfomsd"
         },
         {
-          "@id": "sdc4:mc-qp5mdgab3s37zwqzyfzq8rvi"
+          "@id": "sdc4:mc-g2g6lk6fzdcxtpybr509h8o5"
         },
         {
           "@id": "sdc4:mc-cujdlrpxv7byme6c5z3ai1ui"
@@ -7205,12 +7269,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://hl7.org/fhir/StructureDefinition/Observation"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-c73687ou0pkc7qy6n2kksfc7"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-mc8by65nv7wa59lw4oj54e2w",
+      "@id": "sdc4:mc-hmaeg366kmkc99g6gdsejufy",
       "label": "NHANES Medical Conditions",
       "cardinality": {
         "minOccurs": 0,
@@ -7218,7 +7286,7 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig"
+          "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk"
         },
         {
           "@id": "sdc4:mc-fwyb9ukfypotqkvahtygrjo5"
@@ -7243,12 +7311,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-mc8by65nv7wa59lw4oj54e2w"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig",
+      "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk",
       "label": "Chronic Condition Indicators",
       "cardinality": {
         "minOccurs": 0,
@@ -7301,7 +7373,7 @@
           "@id": "sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"
         },
         {
-          "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw"
+          "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb"
         },
         {
           "@id": "sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"
@@ -7338,12 +7410,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-wa0mknvfo83hej635n48s0ig"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-ky7lvmote5jfn5gt6n89q79s",
+      "@id": "sdc4:mc-wm4o1tvmo89r0wn7ailb51v2",
       "label": "NHANES Physical Functioning",
       "cardinality": {
         "minOccurs": 0,
@@ -7351,31 +7427,31 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k"
+          "@id": "sdc4:mc-l6heok2fyjbbm657g6iwd9ao"
         },
         {
-          "@id": "sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx"
+          "@id": "sdc4:mc-an0ysk4wra3yf18zqh8xqz1u"
         },
         {
-          "@id": "sdc4:mc-b1mxr233mgqvzr39c90ly8cv"
+          "@id": "sdc4:mc-s81mdwkizvrrih408g05j02z"
         },
         {
-          "@id": "sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u"
+          "@id": "sdc4:mc-imcbb8w19x2veya8fp1y2zqz"
         },
         {
-          "@id": "sdc4:mc-y52y4mpq95zcknal0be1uc7v"
+          "@id": "sdc4:mc-s1vje5rv2ubv17cqwlnglhyi"
         },
         {
-          "@id": "sdc4:mc-knrs4clih4pi26tm2zra1ai0"
+          "@id": "sdc4:mc-kexlzsor1x6i40xggqmdctwp"
         },
         {
-          "@id": "sdc4:mc-mktq5xr8slz67q85idl8bsky"
+          "@id": "sdc4:mc-xm59ukw41e98q86oanzreehg"
         },
         {
-          "@id": "sdc4:mc-crr2z3b2l7hlq1kvevppt8kt"
+          "@id": "sdc4:mc-oto1vaautwazh218zmzj5wxc"
         },
         {
-          "@id": "sdc4:mc-rot4z5ny8gdkfmimedcjl1te"
+          "@id": "sdc4:mc-mrzg9shhypi53vy0nfw1xk05"
         },
         {
           "@id": "sdc4:mc-jxdk8rs1m133yzb52rfs08hy"
@@ -7401,8 +7477,12 @@
           "object": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017"
         },
         {
-          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C20000"
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C150046"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ky7lvmote5jfn5gt6n89q79s"
         }
       ]
     },
@@ -7455,7 +7535,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-mgqswj92qaeasqjjvfcyxon5",
+      "@id": "sdc4:mc-odbroobvrx8dsx7ay24toth7",
       "label": "NHANES Survey Design",
       "cardinality": {
         "minOccurs": 0,
@@ -7495,8 +7575,12 @@
           "object": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017"
         },
         {
-          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C142700"
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C71492"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-mgqswj92qaeasqjjvfcyxon5"
         }
       ]
     },

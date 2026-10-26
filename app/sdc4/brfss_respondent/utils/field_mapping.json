@@ -119,10 +119,10 @@
     "type": "XdString",
     "label": "Reported Height in Feet and Inches (HEIGHT3)"
   },
-  "ezewpvppvx8zjikutr53ppgz": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_ezewpvppvx8zjikutr53ppgz",
-    "ct_id": "ezewpvppvx8zjikutr53ppgz",
-    "adapter_ctid": "jd68ja7mkrln0wktxorwhw89",
+  "vfrowc5oxysvj71vfrmc7o4t": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vfrowc5oxysvj71vfrmc7o4t",
+    "ct_id": "vfrowc5oxysvj71vfrmc7o4t",
+    "adapter_ctid": "plhjlzkc6cjnwb5qrhtgfkiq",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Computed Body Mass Index Category (_BMI5CAT)"
@@ -439,10 +439,10 @@
     "type": "XdToken",
     "label": "Condition: High Cholesterol"
   },
-  "hc79skkfionpgw87dsg5yrgw": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hc79skkfionpgw87dsg5yrgw",
-    "ct_id": "hc79skkfionpgw87dsg5yrgw",
-    "adapter_ctid": "sqz385aell855p97kpkdwuop",
+  "y3m4tg7u1io8bimkhiuxz8zb": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_y3m4tg7u1io8bimkhiuxz8zb",
+    "ct_id": "y3m4tg7u1io8bimkhiuxz8zb",
+    "adapter_ctid": "ks4buqh74w0bdcwdk6ky6ntr",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition Indicator Basis"
@@ -495,10 +495,10 @@
     "type": "XdToken",
     "label": "Condition: Thyroid Problem"
   },
-  "fci5gajaodxc2ihq6nuz9l6y": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_fci5gajaodxc2ihq6nuz9l6y",
-    "ct_id": "fci5gajaodxc2ihq6nuz9l6y",
-    "adapter_ctid": "af2xn38mf2fvok86g09e4ka3",
+  "bhi8aatu3lxo3erx3mo5y08v": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_bhi8aatu3lxo3erx3mo5y08v",
+    "ct_id": "bhi8aatu3lxo3erx3mo5y08v",
+    "adapter_ctid": "iguaqbdzjqk634r04nl5tmt0",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Education Level (EDUCA)"
@@ -559,10 +559,10 @@
     "type": "XdToken",
     "label": "Sex of Respondent (SEXVAR)"
   },
-  "eimlsgbawhm8aa4i6gbdrja0": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_eimlsgbawhm8aa4i6gbdrja0",
-    "ct_id": "eimlsgbawhm8aa4i6gbdrja0",
-    "adapter_ctid": "elfq9fc70w7vrblzcx9gr7iz",
+  "vyc62ndwazzqyn5ee5oeno1o": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vyc62ndwazzqyn5ee5oeno1o",
+    "ct_id": "vyc62ndwazzqyn5ee5oeno1o",
+    "adapter_ctid": "aerwuld48p0deu31rijadbv5",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Veteran Status"
@@ -583,10 +583,10 @@
     "type": "XdToken",
     "label": "Category of Health Insurance"
   },
-  "xtbtk7ro6s9247bcwt4ak4h1": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_xtbtk7ro6s9247bcwt4ak4h1",
-    "ct_id": "xtbtk7ro6s9247bcwt4ak4h1",
-    "adapter_ctid": "whbmbdx6w88jtct1o3xofw6u",
+  "yqqm7og0x00fbmazzm00s86e": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_yqqm7og0x00fbmazzm00s86e",
+    "ct_id": "yqqm7og0x00fbmazzm00s86e",
+    "adapter_ctid": "rlczhe82112k0iygals68dya",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Current Educational Attainment"
@@ -727,10 +727,10 @@
     "type": "XdToken",
     "label": "Exercise in Past 30 Days (EXERANY2)"
   },
-  "lth27h6towue4i9iq1cudogc": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_lth27h6towue4i9iq1cudogc",
-    "ct_id": "lth27h6towue4i9iq1cudogc",
-    "adapter_ctid": "ltxpluusa56f3t0cytjabsip",
+  "j6jj7wf0olxh3db6td9wey6g": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_j6jj7wf0olxh3db6td9wey6g",
+    "ct_id": "j6jj7wf0olxh3db6td9wey6g",
+    "adapter_ctid": "v9ghbsx8x43n7irclyc8a6wi",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "General Health Status"
@@ -743,10 +743,10 @@
     "type": "XdToken",
     "label": "Length of Time Since Last Routine Checkup (CHECKUP1)"
   },
-  "k32effn0kp5a42ikkpvcva9j": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_k32effn0kp5a42ikkpvcva9j",
-    "ct_id": "k32effn0kp5a42ikkpvcva9j",
-    "adapter_ctid": "ajzpbis9j5kyemael9m15wm7",
+  "cjh0775qjyyaqb9spk1k3rty": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_cjh0775qjyyaqb9spk1k3rty",
+    "ct_id": "cjh0775qjyyaqb9spk1k3rty",
+    "adapter_ctid": "jmna260wybd2zd4ou66fqoie",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Days Mental Health Not Good, Past 30 (MENTHLTH)"
@@ -759,10 +759,10 @@
     "type": "XdString",
     "label": "Days"
   },
-  "fljkn7b19qtnj6rr3t8qcfg1": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_fljkn7b19qtnj6rr3t8qcfg1",
-    "ct_id": "fljkn7b19qtnj6rr3t8qcfg1",
-    "adapter_ctid": "x7qyr4vcga3wkpp42p91vjg0",
+  "kmr0bcq4vaae10cw4hhgjbtx": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_kmr0bcq4vaae10cw4hhgjbtx",
+    "ct_id": "kmr0bcq4vaae10cw4hhgjbtx",
+    "adapter_ctid": "quq1mhgciebpg3oacr6cxsdo",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Days Physical Health Not Good, Past 30 (PHYSHLTH)"

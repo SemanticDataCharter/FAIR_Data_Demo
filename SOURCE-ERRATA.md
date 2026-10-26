@@ -92,7 +92,9 @@ LA15920-4 Former smoker (true of who is asked, an inference rather than the answ
 NCIt C51777 Legally Separated; and four clusters claim an exact match to a concept they contain rather than are (BRFSS
 Body Measures to BMI, BRFSS Tobacco and Alcohol Use and NHANES Smoking to Tobacco smoking status).
 
-**Status.** Prepared on 26 October 2026; not yet loaded.
+**Status.** Done on 26 October 2026 and released in 4.2.4: the 38 revisions are published and public, and the three
+models are NHANES Participant 4.2.4 (`tp5pg0u4dasqarie0b3ujn2u`), BRFSS Respondent 4.2.4 (`j6wmvhr46irxht2ls90nry8k`) and
+CMS Beneficiary 4.2.4 (`vj0hr75146j0pbedvc0iaqrz`), with the records regenerated on them.
 
 ## From the federal files: conventions to read correctly
 

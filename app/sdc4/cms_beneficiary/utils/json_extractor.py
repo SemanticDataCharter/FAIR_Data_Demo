@@ -175,7 +175,8 @@ class JSONExtractor:
     # All possible value element names in SDC4 XML
     VALUE_ELEMENT_NAMES = [
         'xdstring-value',
-        'xdboolean-value',
+        'true-value',
+        'false-value',
         'xdcount-value',
         'xdquantity-value',
         'xdfloat-value',

@@ -14,12 +14,12 @@
     "id": "@id"
   },
   "@type": "DataModel",
-  "@id": "sdc4:dm-w9ozx00idgs5k8tw4359skvn",
-  "identifier": "w9ozx00idgs5k8tw4359skvn",
-  "label": "BRFSS Respondent 4.2.3",
+  "@id": "sdc4:dm-j6wmvhr46irxht2ls90nry8k",
+  "identifier": "j6wmvhr46irxht2ls90nry8k",
+  "label": "BRFSS Respondent 4.2.4",
   "description": "SDC4 data model for Behavioral Risk Factor Surveillance System (brfss) — FAIR Data Demo",
   "metadata": {
-    "dc:title": "BRFSS Respondent 4.2.3",
+    "dc:title": "BRFSS Respondent 4.2.4",
     "dc:creator": "Timothy Cook",
     "dc:contributor": [],
     "dc:subject": "",
@@ -28,10 +28,10 @@
     "dc:relation": "None",
     "dc:coverage": "Universal",
     "dc:type": "SDC Data Model (DM)",
-    "dc:identifier": "dm-w9ozx00idgs5k8tw4359skvn",
+    "dc:identifier": "dm-j6wmvhr46irxht2ls90nry8k",
     "dc:description": "SDC4 data model for Behavioral Risk Factor Surveillance System (brfss) — FAIR Data Demo",
     "dc:publisher": "",
-    "dc:date": "2026-10-25T22:31:16.217921+00:00",
+    "dc:date": "2026-10-26T13:53:01.703822+00:00",
     "dc:format": "text/xml",
     "dc:language": "en-US"
   },
@@ -603,7 +603,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-ezewpvppvx8zjikutr53ppgz",
+      "@id": "sdc4:mc-vfrowc5oxysvj71vfrmc7o4t",
       "label": "Computed Body Mass Index Category (_BMI5CAT)",
       "description": "The agency's computed BMI category (_BMI5CAT).",
       "cardinality": {
@@ -635,6 +635,10 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-ezewpvppvx8zjikutr53ppgz"
         }
       ]
     },
@@ -2172,7 +2176,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw",
+      "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb",
       "label": "Condition Indicator Basis",
       "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
       "cardinality": {
@@ -2201,7 +2205,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C25596"
+          "object": "http://purl.obolibrary.org/obo/NCIT_C16493"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw"
         }
       ]
     },
@@ -2417,7 +2425,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-fci5gajaodxc2ihq6nuz9l6y",
+      "@id": "sdc4:mc-bhi8aatu3lxo3erx3mo5y08v",
       "label": "Education Level (EDUCA)",
       "description": "The highest grade or year of school completed (EDUCA). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
       "cardinality": {
@@ -2451,6 +2459,10 @@
         {
           "predicate": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "object": "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-fci5gajaodxc2ihq6nuz9l6y"
         }
       ]
     },
@@ -2733,7 +2745,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-eimlsgbawhm8aa4i6gbdrja0",
+      "@id": "sdc4:mc-vyc62ndwazzqyn5ee5oeno1o",
       "label": "Veteran Status",
       "description": "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).",
       "cardinality": {
@@ -2766,7 +2778,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C17742"
+          "object": "http://purl.obolibrary.org/obo/NCIT_C171085"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-eimlsgbawhm8aa4i6gbdrja0"
         }
       ]
     },
@@ -2866,9 +2882,9 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1",
+      "@id": "sdc4:mc-yqqm7og0x00fbmazzm00s86e",
       "label": "Current Educational Attainment",
-      "description": "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed.",
+      "description": "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed. Corrected from the NIH CDE Repository record, whose text carries the Windows-1252 apostrophe as the control character U+0092; it is the right single quotation mark (U+2019), as Windows-1252 defines byte 0x92.",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
@@ -2893,12 +2909,12 @@
           "Some College, No Degree",
           "Occupational, Technical, or Vocational Program",
           "Associates Degree - Academic Program",
-          "Bachelors Degree (Example: BA, AB, BS, BBA)",
-          "Masters Degree (Example:  MA, MS, MEng, MEd, MBA)",
+          "Bachelor’s Degree (Example: BA, AB, BS, BBA)",
+          "Master’s Degree (Example:  MA, MS, MEng, MEd, MBA)",
           "Professional Degree (Example: MD, DDS, JD)",
           "Doctoral Degree (Example: PhD, EdD)",
           "Refused to Answer",
-          "Dont Know"
+          "Don’t Know"
         ]
       },
       "dataType": "xsd:token",
@@ -2921,7 +2937,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-u0t7nkb38c0sk5baielllqld"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1"
         }
       ]
     },
@@ -3553,7 +3569,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-lth27h6towue4i9iq1cudogc",
+      "@id": "sdc4:mc-j6jj7wf0olxh3db6td9wey6g",
       "label": "General Health Status",
       "description": "The person's rating of their general health (BRFSS GENHLTH; the NHANES HSQ question is the same scale when that file is carried).",
       "cardinality": {
@@ -3590,6 +3606,10 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C16669"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-lth27h6towue4i9iq1cudogc"
         }
       ]
     },
@@ -3633,7 +3653,7 @@
     },
     {
       "@type": "XdCountType",
-      "@id": "sdc4:mc-k32effn0kp5a42ikkpvcva9j",
+      "@id": "sdc4:mc-cjh0775qjyyaqb9spk1k3rty",
       "label": "Days Mental Health Not Good, Past 30 (MENTHLTH)",
       "description": "The number of days in the past 30 the respondent's mental health was not good (MENTHLTH).",
       "cardinality": {
@@ -3673,7 +3693,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "https://loinc.org/63579-7/"
+          "object": "https://loinc.org/66578-6/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-k32effn0kp5a42ikkpvcva9j"
         }
       ]
     },
@@ -3713,7 +3737,7 @@
     },
     {
       "@type": "XdCountType",
-      "@id": "sdc4:mc-fljkn7b19qtnj6rr3t8qcfg1",
+      "@id": "sdc4:mc-kmr0bcq4vaae10cw4hhgjbtx",
       "label": "Days Physical Health Not Good, Past 30 (PHYSHLTH)",
       "description": "The number of days in the past 30 the respondent's physical health was not good (PHYSHLTH).",
       "cardinality": {
@@ -3753,7 +3777,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "https://loinc.org/63580-5/"
+          "object": "https://loinc.org/66577-8/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-fljkn7b19qtnj6rr3t8qcfg1"
         }
       ]
     },
@@ -5793,7 +5821,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-kb26is7epmdlc0lm1k9pdz9f",
+      "@id": "sdc4:mc-cd2j0wzlcvfsfk7ikiaujmzx",
       "label": "BRFSS Respondent Governed Record",
       "cardinality": {
         "minOccurs": 0,
@@ -5804,7 +5832,7 @@
           "@id": "sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"
         },
         {
-          "@id": "sdc4:mc-jxif4jju7k2rg3vokabzzj22"
+          "@id": "sdc4:mc-job3i8sfv3zikxymqe625fm2"
         },
         {
           "@id": "sdc4:mc-vmikfu0irht9fmq7q02t3oqs"
@@ -5832,7 +5860,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hnf5st6e6ulzvbiafx4310g7"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-kb26is7epmdlc0lm1k9pdz9f"
         }
       ]
     },
@@ -5906,7 +5934,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-jxif4jju7k2rg3vokabzzj22",
+      "@id": "sdc4:mc-job3i8sfv3zikxymqe625fm2",
       "label": "BRFSS Respondent",
       "cardinality": {
         "minOccurs": 0,
@@ -5914,22 +5942,22 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-gc3nb6hzobkzifswmzgt7w6t"
+          "@id": "sdc4:mc-dgd703p5t3yzmnw7np9g1u5p"
         },
         {
-          "@id": "sdc4:mc-lahhb7fhnu75l1fxrv9f8fdv"
+          "@id": "sdc4:mc-yumwsic8qvlly00pluhl9415"
         },
         {
-          "@id": "sdc4:mc-tto2m72tul0hj0z7zyoco4yx"
+          "@id": "sdc4:mc-c6lumieatnqpb33vp80sblyd"
         },
         {
           "@id": "sdc4:mc-u19jrjjc6aznug6hs2twjiy5"
         },
         {
-          "@id": "sdc4:mc-kmgw3rv02bipvaoxpvnh7fzk"
+          "@id": "sdc4:mc-t1sv9gth4is2bswuhyid22co"
         },
         {
-          "@id": "sdc4:mc-zauadmfc05ep5nf2kd9j8cwh"
+          "@id": "sdc4:mc-gc10s94rs18ida0cy88lzscl"
         },
         {
           "@id": "sdc4:mc-dh2ghpj9z1brefxf0pb4yi14"
@@ -5957,13 +5985,13 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-rdoj4o216s33ymezyefwb8ia"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-jxif4jju7k2rg3vokabzzj22"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-gc3nb6hzobkzifswmzgt7w6t",
+      "@id": "sdc4:mc-dgd703p5t3yzmnw7np9g1u5p",
       "label": "BRFSS Body Measures",
       "cardinality": {
         "minOccurs": 0,
@@ -5977,7 +6005,7 @@
           "@id": "sdc4:mc-urjk1vvcot1s319mxygpdsf5"
         },
         {
-          "@id": "sdc4:mc-ezewpvppvx8zjikutr53ppgz"
+          "@id": "sdc4:mc-vfrowc5oxysvj71vfrmc7o4t"
         },
         {
           "@id": "sdc4:mc-gket571isxo2uckturhvxadk"
@@ -5999,6 +6027,10 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "https://loinc.org/39156-5/"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-gc3nb6hzobkzifswmzgt7w6t"
         }
       ]
     },
@@ -6157,7 +6189,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-lahhb7fhnu75l1fxrv9f8fdv",
+      "@id": "sdc4:mc-yumwsic8qvlly00pluhl9415",
       "label": "BRFSS Chronic Conditions",
       "cardinality": {
         "minOccurs": 0,
@@ -6165,7 +6197,7 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig"
+          "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk"
         },
         {
           "@id": "sdc4:mc-dkmozm7gxxss45gf5yhthpjg"
@@ -6187,12 +6219,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-lahhb7fhnu75l1fxrv9f8fdv"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig",
+      "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk",
       "label": "Chronic Condition Indicators",
       "cardinality": {
         "minOccurs": 0,
@@ -6245,7 +6281,7 @@
           "@id": "sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"
         },
         {
-          "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw"
+          "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb"
         },
         {
           "@id": "sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"
@@ -6282,12 +6318,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-wa0mknvfo83hej635n48s0ig"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-tto2m72tul0hj0z7zyoco4yx",
+      "@id": "sdc4:mc-c6lumieatnqpb33vp80sblyd",
       "label": "BRFSS Demographics",
       "cardinality": {
         "minOccurs": 0,
@@ -6295,7 +6335,7 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-fci5gajaodxc2ihq6nuz9l6y"
+          "@id": "sdc4:mc-bhi8aatu3lxo3erx3mo5y08v"
         },
         {
           "@id": "sdc4:mc-j67yf27qljb83m2fwvown1lk"
@@ -6319,7 +6359,7 @@
           "@id": "sdc4:mc-et536sfok7glz7fartfs4m65"
         },
         {
-          "@id": "sdc4:mc-eimlsgbawhm8aa4i6gbdrja0"
+          "@id": "sdc4:mc-vyc62ndwazzqyn5ee5oeno1o"
         },
         {
           "@id": "sdc4:mc-zmpqfc6tb0o2hgu8qs6lj8tp"
@@ -6328,7 +6368,7 @@
           "@id": "sdc4:mc-luq973ggnjoo9ixkt0dym8v6"
         },
         {
-          "@id": "sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1"
+          "@id": "sdc4:mc-yqqm7og0x00fbmazzm00s86e"
         },
         {
           "@id": "sdc4:mc-oy35qocyvn0zxq8ni4azvz39"
@@ -6371,7 +6411,7 @@
         },
         {
           "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
-          "object": "https://semanticdatacharter.com/ns/sdc4/mc-oqw3pnwhf8knpgsfo8k3xojn"
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-tto2m72tul0hj0z7zyoco4yx"
         }
       ]
     },
@@ -6424,7 +6464,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-kmgw3rv02bipvaoxpvnh7fzk",
+      "@id": "sdc4:mc-t1sv9gth4is2bswuhyid22co",
       "label": "BRFSS Health Status and Access",
       "cardinality": {
         "minOccurs": 0,
@@ -6435,16 +6475,16 @@
           "@id": "sdc4:mc-a08lkh4xjvqqjtz7sxy129pa"
         },
         {
-          "@id": "sdc4:mc-lth27h6towue4i9iq1cudogc"
+          "@id": "sdc4:mc-j6jj7wf0olxh3db6td9wey6g"
         },
         {
           "@id": "sdc4:mc-fa0aian3co6if5igu488whhr"
         },
         {
-          "@id": "sdc4:mc-k32effn0kp5a42ikkpvcva9j"
+          "@id": "sdc4:mc-cjh0775qjyyaqb9spk1k3rty"
         },
         {
-          "@id": "sdc4:mc-fljkn7b19qtnj6rr3t8qcfg1"
+          "@id": "sdc4:mc-kmr0bcq4vaae10cw4hhgjbtx"
         }
       ],
       "semanticLinks": [
@@ -6463,12 +6503,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C16669"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-kmgw3rv02bipvaoxpvnh7fzk"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-zauadmfc05ep5nf2kd9j8cwh",
+      "@id": "sdc4:mc-gc10s94rs18ida0cy88lzscl",
       "label": "BRFSS Survey Design",
       "cardinality": {
         "minOccurs": 0,
@@ -6505,8 +6549,12 @@
           "object": "https://axius-sdc.com/library/fair/brfss-survey-design"
         },
         {
-          "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C142700"
+          "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
+          "object": "http://purl.obolibrary.org/obo/NCIT_C71492"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-zauadmfc05ep5nf2kd9j8cwh"
         }
       ]
     },

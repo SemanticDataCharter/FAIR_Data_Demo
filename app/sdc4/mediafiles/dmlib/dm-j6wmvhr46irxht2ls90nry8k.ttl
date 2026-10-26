@@ -1,8 +1,18 @@
-@base <https://semanticdatacharter.com/ns/sdc4/dm-eehpfapwgvxtzdrofgstdcfs> .
+@base <https://semanticdatacharter.com/ns/sdc4/dm-j6wmvhr46irxht2ls90nry8k> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdc4: <https://semanticdatacharter.com/ns/sdc4/> .
 @prefix sdc4-meta: <https://semanticdatacharter.com/ontology/sdc4-meta/> .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-a08lkh4xjvqqjtz7sxy129pa/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-a08lkh4xjvqqjtz7sxy129pa .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-a08lkh4xjvqqjtz7sxy129pa/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-a08lkh4xjvqqjtz7sxy129pa .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-acr1xvqppf1b3rjsrst6tt4p/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -44,30 +54,35 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-atqkooccakulfhkt18c008fx .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-b1mxr233mgqvzr39c90ly8cv .
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/College%25201%2520year%2520to%25203%2520years%2520%2528Some%2520college%2520or%2520technical%2520school%2529> a rdfs:Class ;
+    rdfs:label "College 1 year to 3 years (Some college or technical school)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67137" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-b1mxr233mgqvzr39c90ly8cv .
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/College%25204%2520years%2520or%2520more%2520%2528College%2520graduate%2529> a rdfs:Class ;
+    rdfs:label "College 4 years or more (College graduate)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C159746" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-b1mxr233mgqvzr39c90ly8cv .
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/Grade%252012%2520or%2520GED%2520%2528High%2520school%2520graduate%2529> a rdfs:Class ;
+    rdfs:label "Grade 12 or GED (High school graduate)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67136" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-b1mxr233mgqvzr39c90ly8cv .
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/Grades%25201%2520through%25208%2520%2528Elementary%2529> a rdfs:Class ;
+    rdfs:label "Grades 1 through 8 (Elementary)" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-b1mxr233mgqvzr39c90ly8cv/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-b1mxr233mgqvzr39c90ly8cv .
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/Grades%25209%2520through%252011%2520%2528Some%2520high%2520school%2529> a rdfs:Class ;
+    rdfs:label "Grades 9 through 11 (Some high school)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C198650" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-bhi8aatu3lxo3erx3mo5y08v/xdtoken-value/Never%2520attended%2520school%2520or%2520only%2520kindergarten> a rdfs:Class ;
+    rdfs:label "Never attended school or only kindergarten" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-bhi8aatu3lxo3erx3mo5y08v .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-bvz91uwa2c28sr0k5u85zx04/xdstring-value/%2525> a rdfs:Class ;
     rdfs:label "%" ;
@@ -104,55 +119,95 @@
     rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-action#U" ;
     rdfs:subPropertyOf sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-crr2z3b2l7hlq1kvevppt8kt .
+<https://semanticdatacharter.com/ns/sdc4/mc-cr5izog5xjzki3zmnwofubuc/xdstring-value/drinks> a rdfs:Class ;
+    rdfs:label "drinks" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/NUM" ;
+    rdfs:subPropertyOf sdc4:mc-cr5izog5xjzki3zmnwofubuc .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-crr2z3b2l7hlq1kvevppt8kt .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252410%252C000%2520to%2520less%2520than%2520%252415%252C000> a rdfs:Class ;
+    rdfs:label "$10,000 to less than $15,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-crr2z3b2l7hlq1kvevppt8kt .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%2524100%252C000%2520to%2520less%2520than%2520%2524150%252C000> a rdfs:Class ;
+    rdfs:label "$100,000 to less than $150,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-crr2z3b2l7hlq1kvevppt8kt .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252415%252C000%2520to%2520less%2520than%2520%252420%252C000> a rdfs:Class ;
+    rdfs:label "$15,000 to less than $20,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-crr2z3b2l7hlq1kvevppt8kt/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-crr2z3b2l7hlq1kvevppt8kt .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%2524150%252C000%2520to%2520less%2520than%2520%2524200%252C000> a rdfs:Class ;
+    rdfs:label "$150,000 to less than $200,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252420%252C000%2520to%2520less%2520than%2520%252425%252C000> a rdfs:Class ;
+    rdfs:label "$20,000 to less than $25,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%2524200%252C000%2520or%2520more> a rdfs:Class ;
+    rdfs:label "$200,000 or more" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252425%252C000%2520to%2520less%2520than%2520%252435%252C000> a rdfs:Class ;
+    rdfs:label "$25,000 to less than $35,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252435%252C000%2520to%2520less%2520than%2520%252450%252C000> a rdfs:Class ;
+    rdfs:label "$35,000 to less than $50,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-cy6k5rxvhvg2v27cfp7pjwyx/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx .
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252450%252C000%2520to%2520less%2520than%2520%252475%252C000> a rdfs:Class ;
+    rdfs:label "$50,000 to less than $75,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/%252475%252C000%2520to%2520less%2520than%2520%2524100%252C000> a rdfs:Class ;
+    rdfs:label "$75,000 to less than $100,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-crdh278iwq7azbtcgsuxteve/xdtoken-value/Less%2520than%2520%252410%252C000> a rdfs:Class ;
+    rdfs:label "Less than $10,000" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-crdh278iwq7azbtcgsuxteve .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/A%2520member%2520of%2520an%2520unmarried%2520couple> a rdfs:Class ;
+    rdfs:label "A member of an unmarried couple" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C53262" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/Divorced> a rdfs:Class ;
+    rdfs:label "Divorced" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51776" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/Married> a rdfs:Class ;
+    rdfs:label "Married" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51773" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/Never%2520married> a rdfs:Class ;
+    rdfs:label "Never married" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51774" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/Separated> a rdfs:Class ;
+    rdfs:label "Separated" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51777" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-czh5vzmdeijkwrtyla1w7su8/xdtoken-value/Widowed> a rdfs:Class ;
+    rdfs:label "Widowed" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51775" ;
+    rdfs:subPropertyOf sdc4:mc-czh5vzmdeijkwrtyla1w7su8 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-d1evlz8yvdlwt6ia9fjq4pgj/xdtoken-value/CLINTRCH> a rdfs:Class ;
     rdfs:label "CLINTRCH" ;
@@ -219,150 +274,135 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ebtwma3vz90nci5or2gtxx0d/xdstring-value/10%252A3%252FuL> a rdfs:Class ;
-    rdfs:label "10*3/uL" ;
-    rdfs:isDefinedBy "https://ucum.org/ucum" ;
-    rdfs:subPropertyOf sdc4:mc-ebtwma3vz90nci5or2gtxx0d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-eimlsgbawhm8aa4i6gbdrja0/xdtoken-value/No> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-dkmozm7gxxss45gf5yhthpjg/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-eimlsgbawhm8aa4i6gbdrja0 .
+    rdfs:subPropertyOf sdc4:mc-dkmozm7gxxss45gf5yhthpjg .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-eimlsgbawhm8aa4i6gbdrja0/xdtoken-value/Yes> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-dkmozm7gxxss45gf5yhthpjg/xdtoken-value/Yes> a rdfs:Class ;
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-eimlsgbawhm8aa4i6gbdrja0 .
+    rdfs:subPropertyOf sdc4:mc-dkmozm7gxxss45gf5yhthpjg .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ejjthi5lftrx9a7rv3fedq6m/xdtoken-value/No> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-e104gkr3e96ekydrpe8qogjw/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-ejjthi5lftrx9a7rv3fedq6m .
+    rdfs:subPropertyOf sdc4:mc-e104gkr3e96ekydrpe8qogjw .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ejjthi5lftrx9a7rv3fedq6m/xdtoken-value/Yes> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-e104gkr3e96ekydrpe8qogjw/xdtoken-value/Yes> a rdfs:Class ;
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-ejjthi5lftrx9a7rv3fedq6m .
+    rdfs:subPropertyOf sdc4:mc-e104gkr3e96ekydrpe8qogjw .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%25240%2520to%2520%25244%252C999> a rdfs:Class ;
-    rdfs:label "$0 to $4,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-ecwiva31y2fky3eu1mdnvurt/xdtoken-value/Never%2520used%2520e-cigarettes%2520in%2520your%2520entire%2520life> a rdfs:Class ;
+    rdfs:label "Never used e-cigarettes in your entire life" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-ecwiva31y2fky3eu1mdnvurt .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252410%252C000%2520to%2520%252414%252C999> a rdfs:Class ;
-    rdfs:label "$10,000 to $14,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-ecwiva31y2fky3eu1mdnvurt/xdtoken-value/Not%2520at%2520all%2520%2528right%2520now%2529> a rdfs:Class ;
+    rdfs:label "Not at all (right now)" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-ecwiva31y2fky3eu1mdnvurt .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%2524100%252C000%2520and%2520Over> a rdfs:Class ;
-    rdfs:label "$100,000 and Over" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-ecwiva31y2fky3eu1mdnvurt/xdtoken-value/Use%2520them%2520every%2520day> a rdfs:Class ;
+    rdfs:label "Use them every day" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-ecwiva31y2fky3eu1mdnvurt .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252415%252C000%2520to%2520%252419%252C999> a rdfs:Class ;
-    rdfs:label "$15,000 to $19,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-ecwiva31y2fky3eu1mdnvurt/xdtoken-value/Use%2520them%2520some%2520days> a rdfs:Class ;
+    rdfs:label "Use them some days" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-ecwiva31y2fky3eu1mdnvurt .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252420%252C000%2520and%2520Over> a rdfs:Class ;
-    rdfs:label "$20,000 and Over" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-et536sfok7glz7fartfs4m65/xdtoken-value/Female> a rdfs:Class ;
+    rdfs:label "Female" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C16576" ;
+    rdfs:subPropertyOf sdc4:mc-et536sfok7glz7fartfs4m65 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252420%252C000%2520to%2520%252424%252C999> a rdfs:Class ;
-    rdfs:label "$20,000 to $24,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-et536sfok7glz7fartfs4m65/xdtoken-value/Male> a rdfs:Class ;
+    rdfs:label "Male" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C20197" ;
+    rdfs:subPropertyOf sdc4:mc-et536sfok7glz7fartfs4m65 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252425%252C000%2520to%2520%252434%252C999> a rdfs:Class ;
-    rdfs:label "$25,000 to $34,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/A%2520plan%2520purchased%2520through%2520an%2520employer%2520or%2520union> a rdfs:Class ;
+    rdfs:label "A plan purchased through an employer or union" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252435%252C000%2520to%2520%252444%252C999> a rdfs:Class ;
-    rdfs:label "$35,000 to $44,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/A%2520private%2520nongovernmental%2520plan%2520that%2520you%2520or%2520another%2520family%2520member%2520buys%2520on%2520your%2520own> a rdfs:Class ;
+    rdfs:label "A private nongovernmental plan that you or another family member buys on your own" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252445%252C000%2520to%2520%252454%252C999> a rdfs:Class ;
-    rdfs:label "$45,000 to $54,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/CHIP> a rdfs:Class ;
+    rdfs:label "CHIP" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%25245%252C000%2520to%2520%25249%252C999> a rdfs:Class ;
-    rdfs:label "$5,000 to $9,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Indian%2520Health%2520Service> a rdfs:Class ;
+    rdfs:label "Indian Health Service" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252455%252C000%2520to%2520%252464%252C999> a rdfs:Class ;
-    rdfs:label "$55,000 to $64,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Medicaid> a rdfs:Class ;
+    rdfs:label "Medicaid" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252465%252C000%2520to%2520%252474%252C999> a rdfs:Class ;
-    rdfs:label "$65,000 to $74,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Medicare> a rdfs:Class ;
+    rdfs:label "Medicare" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/%252475%252C000%2520to%2520%252499%252C999> a rdfs:Class ;
-    rdfs:label "$75,000 to $99,999" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Medigap> a rdfs:Class ;
+    rdfs:label "Medigap" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ex88a2s3ys6hm5pvv77j0q2u/xdtoken-value/Under%2520%252420%252C000> a rdfs:Class ;
-    rdfs:label "Under $20,000" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2" ;
-    rdfs:subPropertyOf sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Military%2520related%2520health%2520care> a rdfs:Class ;
+    rdfs:label "Military related health care" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-ezm3xazl3vdpmykpasxccal0/xdstring-value/%252F100%257BWBCs%257D> a rdfs:Class ;
-    rdfs:label "/100{WBCs}" ;
-    rdfs:isDefinedBy "https://ucum.org/ucum" ;
-    rdfs:subPropertyOf sdc4:mc-ezm3xazl3vdpmykpasxccal0 .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/No%2520coverage%2520of%2520any%2520type> a rdfs:Class ;
+    rdfs:label "No coverage of any type" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-f98c865cpjza5wwh3odh9nv3/xdtoken-value/Left> a rdfs:Class ;
-    rdfs:label "Left" ;
-    rdfs:isDefinedBy "http://snomed.info/id/368208006" ;
-    rdfs:subPropertyOf sdc4:mc-f98c865cpjza5wwh3odh9nv3 .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/Other%2520government%2520program> a rdfs:Class ;
+    rdfs:label "Other government program" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-f98c865cpjza5wwh3odh9nv3/xdtoken-value/Right> a rdfs:Class ;
-    rdfs:label "Right" ;
-    rdfs:isDefinedBy "http://snomed.info/id/368209003" ;
-    rdfs:subPropertyOf sdc4:mc-f98c865cpjza5wwh3odh9nv3 .
+<https://semanticdatacharter.com/ns/sdc4/mc-evbpc370eyfc3q3lldwifu78/xdtoken-value/State%2520sponsored%2520health%2520plan> a rdfs:Class ;
+    rdfs:label "State sponsored health plan" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-evbpc370eyfc3q3lldwifu78 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp/xdtoken-value/9-11th%2520grade%2520%2528includes%252012th%2520grade%2520with%2520no%2520diploma%2529> a rdfs:Class ;
-    rdfs:label "9-11th grade (includes 12th grade with no diploma)" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17953" ;
-    rdfs:subPropertyOf sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp .
+<https://semanticdatacharter.com/ns/sdc4/mc-fa0aian3co6if5igu488whhr/xdtoken-value/5%2520or%2520more%2520years%2520ago> a rdfs:Class ;
+    rdfs:label "5 or more years ago" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-fa0aian3co6if5igu488whhr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp/xdtoken-value/College%2520graduate%2520or%2520above> a rdfs:Class ;
-    rdfs:label "College graduate or above" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C39303" ;
-    rdfs:subPropertyOf sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp .
+<https://semanticdatacharter.com/ns/sdc4/mc-fa0aian3co6if5igu488whhr/xdtoken-value/Never> a rdfs:Class ;
+    rdfs:label "Never" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-fa0aian3co6if5igu488whhr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp/xdtoken-value/High%2520school%2520graduate%252FGED%2520or%2520equivalent> a rdfs:Class ;
-    rdfs:label "High school graduate/GED or equivalent" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67136" ;
-    rdfs:subPropertyOf sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp .
+<https://semanticdatacharter.com/ns/sdc4/mc-fa0aian3co6if5igu488whhr/xdtoken-value/Within%2520past%25202%2520years> a rdfs:Class ;
+    rdfs:label "Within past 2 years" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-fa0aian3co6if5igu488whhr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp/xdtoken-value/Less%2520than%25209th%2520grade> a rdfs:Class ;
-    rdfs:label "Less than 9th grade" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17953" ;
-    rdfs:subPropertyOf sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp .
+<https://semanticdatacharter.com/ns/sdc4/mc-fa0aian3co6if5igu488whhr/xdtoken-value/Within%2520past%25205%2520years> a rdfs:Class ;
+    rdfs:label "Within past 5 years" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-fa0aian3co6if5igu488whhr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-fqjd2lvp9jamdpf0f3kpkwnp/xdtoken-value/Some%2520college%2520or%2520AA%2520degree> a rdfs:Class ;
-    rdfs:label "Some college or AA degree" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67137" ;
-    rdfs:subPropertyOf sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-fwyb9ukfypotqkvahtygrjo5/xdtoken-value/No> a rdfs:Class ;
-    rdfs:label "No" ;
-    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-fwyb9ukfypotqkvahtygrjo5 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-fwyb9ukfypotqkvahtygrjo5/xdtoken-value/Yes> a rdfs:Class ;
-    rdfs:label "Yes" ;
-    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-fwyb9ukfypotqkvahtygrjo5 .
+<https://semanticdatacharter.com/ns/sdc4/mc-fa0aian3co6if5igu488whhr/xdtoken-value/Within%2520past%2520year> a rdfs:Class ;
+    rdfs:label "Within past year" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-fa0aian3co6if5igu488whhr .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-fzpb9xr5jg2m3e3dzmvi1v3h/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -394,10 +434,35 @@
     rdfs:isDefinedBy "http://www.w3.org/ns/prov#Revision" ;
     rdfs:subPropertyOf sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-gj5enh9y0km64ww0oa5vk7v3/xdstring-value/g%252FdL> a rdfs:Class ;
-    rdfs:label "g/dL" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/GM-PER-DeciL" ;
-    rdfs:subPropertyOf sdc4:mc-gj5enh9y0km64ww0oa5vk7v3 .
+<https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/cm> a rdfs:Class ;
+    rdfs:label "cm" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/CentiM" ;
+    rdfs:subPropertyOf sdc4:mc-g7gz7adgd2fh6egkt84jnx7m .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/km> a rdfs:Class ;
+    rdfs:label "km" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/KiloM" ;
+    rdfs:subPropertyOf sdc4:mc-g7gz7adgd2fh6egkt84jnx7m .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/m> a rdfs:Class ;
+    rdfs:label "m" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/M" ;
+    rdfs:subPropertyOf sdc4:mc-g7gz7adgd2fh6egkt84jnx7m .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-g7gz7adgd2fh6egkt84jnx7m/xdstring-value/mm> a rdfs:Class ;
+    rdfs:label "mm" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MilliM" ;
+    rdfs:subPropertyOf sdc4:mc-g7gz7adgd2fh6egkt84jnx7m .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-gighl3atjkq88ttivdezt4p7/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-gighl3atjkq88ttivdezt4p7 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-gighl3atjkq88ttivdezt4p7/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-gighl3atjkq88ttivdezt4p7 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-gp3jxw3xzs761ll6u5rvc6jr/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -408,16 +473,6 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-gxy0s65v35djnq875rzhcmby/xdtoken-value/No> a rdfs:Class ;
-    rdfs:label "No" ;
-    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-gxy0s65v35djnq875rzhcmby .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-gxy0s65v35djnq875rzhcmby/xdtoken-value/Yes> a rdfs:Class ;
-    rdfs:label "Yes" ;
-    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-gxy0s65v35djnq875rzhcmby .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-gxzbm758mhdz51xd4bawlfhh/xdtoken-value/female> a rdfs:Class ;
     rdfs:label "female" ;
@@ -439,55 +494,25 @@
     rdfs:isDefinedBy "http://hl7.org/fhir/administrative-gender#unknown" ;
     rdfs:subPropertyOf sdc4:mc-gxzbm758mhdz51xd4bawlfhh .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-gy1045dipmx8udv1bndk7hrv/xdtoken-value/No> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-hs066djavlc5r494vqu61thl/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-gy1045dipmx8udv1bndk7hrv .
+    rdfs:subPropertyOf sdc4:mc-hs066djavlc5r494vqu61thl .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-gy1045dipmx8udv1bndk7hrv/xdtoken-value/Yes> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-hs066djavlc5r494vqu61thl/xdtoken-value/Yes> a rdfs:Class ;
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-gy1045dipmx8udv1bndk7hrv .
+    rdfs:subPropertyOf sdc4:mc-hs066djavlc5r494vqu61thl .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Claims-based%2520algorithm> a rdfs:Class ;
-    rdfs:label "Claims-based algorithm" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C25404" ;
-    rdfs:subPropertyOf sdc4:mc-hc79skkfionpgw87dsg5yrgw .
+<https://semanticdatacharter.com/ns/sdc4/mc-hukufq8g2u2k0cpcal7uxsa8/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-hukufq8g2u2k0cpcal7uxsa8 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Self-report%2520of%2520a%2520professional%2520diagnosis> a rdfs:Class ;
-    rdfs:label "Self-report of a professional diagnosis" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C93409" ;
-    rdfs:subPropertyOf sdc4:mc-hc79skkfionpgw87dsg5yrgw .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Mexican%2520American> a rdfs:Class ;
-    rdfs:label "Mexican American" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67175" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Non-Hispanic%2520Asian> a rdfs:Class ;
-    rdfs:label "Non-Hispanic Asian" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41260" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Non-Hispanic%2520Black> a rdfs:Class ;
-    rdfs:label "Non-Hispanic Black" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C16352" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Non-Hispanic%2520White> a rdfs:Class ;
-    rdfs:label "Non-Hispanic White" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41261" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Other%2520Hispanic> a rdfs:Class ;
-    rdfs:label "Other Hispanic" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17459" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hs44ipuqgvc3azbt3mirxtsz/xdtoken-value/Other%2520Race%2520-%2520Including%2520Multi-Racial> a rdfs:Class ;
-    rdfs:label "Other Race - Including Multi-Racial" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17649" ;
-    rdfs:subPropertyOf sdc4:mc-hs44ipuqgvc3azbt3mirxtsz .
+<https://semanticdatacharter.com/ns/sdc4/mc-hukufq8g2u2k0cpcal7uxsa8/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-hukufq8g2u2k0cpcal7uxsa8 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -514,36 +539,6 @@
     rdfs:isDefinedBy "http://www.w3.org/ns/prov#SoftwareAgent" ;
     rdfs:subPropertyOf sdc4:mc-i16vqj89it3db7d3c5qjko9p .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Divorced> a rdfs:Class ;
-    rdfs:label "Divorced" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51776" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Living%2520with%2520partner> a rdfs:Class ;
-    rdfs:label "Living with partner" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C53262" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Married> a rdfs:Class ;
-    rdfs:label "Married" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51773" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Never%2520married> a rdfs:Class ;
-    rdfs:label "Never married" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51774" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Separated> a rdfs:Class ;
-    rdfs:label "Separated" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51777" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-i3uys2dmi257jkdzavsst5az/xdtoken-value/Widowed> a rdfs:Class ;
-    rdfs:label "Widowed" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51775" ;
-    rdfs:subPropertyOf sdc4:mc-i3uys2dmi257jkdzavsst5az .
-
 <https://semanticdatacharter.com/ns/sdc4/mc-i4e2nod7ss9d4cumhn2pah8b/xdtoken-value/Bundle> a rdfs:Class ;
     rdfs:label "Bundle" ;
     rdfs:isDefinedBy "http://www.w3.org/ns/prov#Bundle" ;
@@ -569,6 +564,26 @@
     rdfs:isDefinedBy "http://www.w3.org/ns/prov#Plan" ;
     rdfs:subPropertyOf sdc4:mc-i4e2nod7ss9d4cumhn2pah8b .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-iwlb0rcomw3q8rlff3ajukme/xdtoken-value/Current%2520smoker%2520-%2520now%2520smokes%2520every%2520day> a rdfs:Class ;
+    rdfs:label "Current smoker - now smokes every day" ;
+    rdfs:isDefinedBy "https://loinc.org/LA18976-3/" ;
+    rdfs:subPropertyOf sdc4:mc-iwlb0rcomw3q8rlff3ajukme .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-iwlb0rcomw3q8rlff3ajukme/xdtoken-value/Current%2520smoker%2520-%2520now%2520smokes%2520some%2520days> a rdfs:Class ;
+    rdfs:label "Current smoker - now smokes some days" ;
+    rdfs:isDefinedBy "https://loinc.org/LA18977-1/" ;
+    rdfs:subPropertyOf sdc4:mc-iwlb0rcomw3q8rlff3ajukme .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-iwlb0rcomw3q8rlff3ajukme/xdtoken-value/Former%2520smoker> a rdfs:Class ;
+    rdfs:label "Former smoker" ;
+    rdfs:isDefinedBy "https://loinc.org/LA15920-4/" ;
+    rdfs:subPropertyOf sdc4:mc-iwlb0rcomw3q8rlff3ajukme .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-iwlb0rcomw3q8rlff3ajukme/xdtoken-value/Never%2520smoked> a rdfs:Class ;
+    rdfs:label "Never smoked" ;
+    rdfs:isDefinedBy "https://loinc.org/LA18978-9/" ;
+    rdfs:subPropertyOf sdc4:mc-iwlb0rcomw3q8rlff3ajukme .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-ix0my2v2z79s002g0r8orosf/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -579,15 +594,70 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-ix0my2v2z79s002g0r8orosf .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-j9l0spojx47xnjqipfl9mzte/xdtoken-value/Both%2520interviewed%2520and%2520MEC%2520examined> a rdfs:Class ;
-    rdfs:label "Both interviewed and MEC examined" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR" ;
-    rdfs:subPropertyOf sdc4:mc-j9l0spojx47xnjqipfl9mzte .
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/A%2520homemaker> a rdfs:Class ;
+    rdfs:label "A homemaker" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-j9l0spojx47xnjqipfl9mzte/xdtoken-value/Interviewed%2520only> a rdfs:Class ;
-    rdfs:label "Interviewed only" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR" ;
-    rdfs:subPropertyOf sdc4:mc-j9l0spojx47xnjqipfl9mzte .
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/A%2520student> a rdfs:Class ;
+    rdfs:label "A student" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Employed%2520for%2520wages> a rdfs:Class ;
+    rdfs:label "Employed for wages" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Out%2520of%2520work%2520for%25201%2520year%2520or%2520more> a rdfs:Class ;
+    rdfs:label "Out of work for 1 year or more" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Out%2520of%2520work%2520for%2520less%2520than%25201%2520year> a rdfs:Class ;
+    rdfs:label "Out of work for less than 1 year" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Retired> a rdfs:Class ;
+    rdfs:label "Retired" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Self-employed> a rdfs:Class ;
+    rdfs:label "Self-employed" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j67yf27qljb83m2fwvown1lk/xdtoken-value/Unable%2520to%2520work> a rdfs:Class ;
+    rdfs:label "Unable to work" ;
+    rdfs:isDefinedBy "https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf" ;
+    rdfs:subPropertyOf sdc4:mc-j67yf27qljb83m2fwvown1lk .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j6jj7wf0olxh3db6td9wey6g/xdtoken-value/Excellent> a rdfs:Class ;
+    rdfs:label "Excellent" ;
+    rdfs:isDefinedBy "https://loinc.org/LA9206-9/" ;
+    rdfs:subPropertyOf sdc4:mc-j6jj7wf0olxh3db6td9wey6g .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j6jj7wf0olxh3db6td9wey6g/xdtoken-value/Fair> a rdfs:Class ;
+    rdfs:label "Fair" ;
+    rdfs:isDefinedBy "https://loinc.org/LA8968-5/" ;
+    rdfs:subPropertyOf sdc4:mc-j6jj7wf0olxh3db6td9wey6g .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j6jj7wf0olxh3db6td9wey6g/xdtoken-value/Good> a rdfs:Class ;
+    rdfs:label "Good" ;
+    rdfs:isDefinedBy "https://loinc.org/LA8967-7/" ;
+    rdfs:subPropertyOf sdc4:mc-j6jj7wf0olxh3db6td9wey6g .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j6jj7wf0olxh3db6td9wey6g/xdtoken-value/Poor> a rdfs:Class ;
+    rdfs:label "Poor" ;
+    rdfs:isDefinedBy "https://loinc.org/LA8969-3/" ;
+    rdfs:subPropertyOf sdc4:mc-j6jj7wf0olxh3db6td9wey6g .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-j6jj7wf0olxh3db6td9wey6g/xdtoken-value/Very%2520good> a rdfs:Class ;
+    rdfs:label "Very good" ;
+    rdfs:isDefinedBy "https://loinc.org/LA13913-1/" ;
+    rdfs:subPropertyOf sdc4:mc-j6jj7wf0olxh3db6td9wey6g .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-jujsdur1igws8orw6tvvlqco/xdtoken-value/assembler> a rdfs:Class ;
     rdfs:label "assembler" ;
@@ -654,16 +724,6 @@
     rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/provenance-participant-type#verifier" ;
     rdfs:subPropertyOf sdc4:mc-jujsdur1igws8orw6tvvlqco .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-jxdk8rs1m133yzb52rfs08hy/xdtoken-value/No> a rdfs:Class ;
-    rdfs:label "No" ;
-    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-jxdk8rs1m133yzb52rfs08hy .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-jxdk8rs1m133yzb52rfs08hy/xdtoken-value/Yes> a rdfs:Class ;
-    rdfs:label "Yes" ;
-    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-jxdk8rs1m133yzb52rfs08hy .
-
 <https://semanticdatacharter.com/ns/sdc4/mc-jyx7rxfktazhgxgq84fxf6wr/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -674,35 +734,20 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-jyx7rxfktazhgxgq84fxf6wr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-k52nvzllwurg016nvsulpm32/xdtoken-value/NHANES%25202017-2018%2520public%2520release> a rdfs:Class ;
-    rdfs:label "NHANES 2017-2018 public release" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDDSRVYR" ;
-    rdfs:subPropertyOf sdc4:mc-k52nvzllwurg016nvsulpm32 .
+<https://semanticdatacharter.com/ns/sdc4/mc-kzni1q04rghj23ca0zbhauu5/xdtoken-value/Every%2520day> a rdfs:Class ;
+    rdfs:label "Every day" ;
+    rdfs:isDefinedBy "https://loinc.org/LA18976-3/" ;
+    rdfs:subPropertyOf sdc4:mc-kzni1q04rghj23ca0zbhauu5 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-knrs4clih4pi26tm2zra1ai0 .
+<https://semanticdatacharter.com/ns/sdc4/mc-kzni1q04rghj23ca0zbhauu5/xdtoken-value/Not%2520at%2520all> a rdfs:Class ;
+    rdfs:label "Not at all" ;
+    rdfs:isDefinedBy "https://loinc.org/LA15920-4/" ;
+    rdfs:subPropertyOf sdc4:mc-kzni1q04rghj23ca0zbhauu5 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-knrs4clih4pi26tm2zra1ai0 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-knrs4clih4pi26tm2zra1ai0 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-knrs4clih4pi26tm2zra1ai0 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-knrs4clih4pi26tm2zra1ai0/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-knrs4clih4pi26tm2zra1ai0 .
+<https://semanticdatacharter.com/ns/sdc4/mc-kzni1q04rghj23ca0zbhauu5/xdtoken-value/Some%2520days> a rdfs:Class ;
+    rdfs:label "Some days" ;
+    rdfs:isDefinedBy "https://loinc.org/LA18977-1/" ;
+    rdfs:subPropertyOf sdc4:mc-kzni1q04rghj23ca0zbhauu5 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-l784ggegqcvrpnmw2yvo4il7/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -714,15 +759,40 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-l784ggegqcvrpnmw2yvo4il7 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-lnbzdjsluc4ebnri7k4dvn2i/xdtoken-value/No> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-l9s5avvkix0og66m0lewwqgg/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-lnbzdjsluc4ebnri7k4dvn2i .
+    rdfs:subPropertyOf sdc4:mc-l9s5avvkix0og66m0lewwqgg .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-lnbzdjsluc4ebnri7k4dvn2i/xdtoken-value/Yes> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-l9s5avvkix0og66m0lewwqgg/xdtoken-value/Yes> a rdfs:Class ;
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-lnbzdjsluc4ebnri7k4dvn2i .
+    rdfs:subPropertyOf sdc4:mc-l9s5avvkix0og66m0lewwqgg .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-luq973ggnjoo9ixkt0dym8v6/xdtoken-value/Preferred%2520Not%2520to%2520Answer> a rdfs:Class ;
+    rdfs:label "Preferred Not to Answer" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C132222" ;
+    rdfs:subPropertyOf sdc4:mc-luq973ggnjoo9ixkt0dym8v6 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-luq973ggnjoo9ixkt0dym8v6/xdtoken-value/Private%2520%2528purchased%2520directly%2520or%2520through%2520Employment%2529> a rdfs:Class ;
+    rdfs:label "Private (purchased directly or through Employment)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C70696" ;
+    rdfs:subPropertyOf sdc4:mc-luq973ggnjoo9ixkt0dym8v6 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-luq973ggnjoo9ixkt0dym8v6/xdtoken-value/Public%2520%2528Medicare%252C%2520Medicaid%252C%2520Tricare%2529> a rdfs:Class ;
+    rdfs:label "Public (Medicare, Medicaid, Tricare)" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C49060" ;
+    rdfs:subPropertyOf sdc4:mc-luq973ggnjoo9ixkt0dym8v6 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-luq973ggnjoo9ixkt0dym8v6/xdtoken-value/Uninsured> a rdfs:Class ;
+    rdfs:label "Uninsured" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C25594" ;
+    rdfs:subPropertyOf sdc4:mc-luq973ggnjoo9ixkt0dym8v6 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-luq973ggnjoo9ixkt0dym8v6/xdtoken-value/Unknown> a rdfs:Class ;
+    rdfs:label "Unknown" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
+    rdfs:subPropertyOf sdc4:mc-luq973ggnjoo9ixkt0dym8v6 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-lvockfc8lce5p15wuwxc1kwa/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -734,15 +804,15 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-lvockfc8lce5p15wuwxc1kwa .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-m67ncwhc9s1j36f9w9qsrxfx/xdtoken-value/Citizen%2520by%2520birth%2520or%2520naturalization> a rdfs:Class ;
-    rdfs:label "Citizen by birth or naturalization" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41130" ;
-    rdfs:subPropertyOf sdc4:mc-m67ncwhc9s1j36f9w9qsrxfx .
+<https://semanticdatacharter.com/ns/sdc4/mc-m3970or5qg49k78l0lq1ptjc/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-m3970or5qg49k78l0lq1ptjc .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-m67ncwhc9s1j36f9w9qsrxfx/xdtoken-value/Not%2520a%2520citizen%2520of%2520the%2520US> a rdfs:Class ;
-    rdfs:label "Not a citizen of the US" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41130" ;
-    rdfs:subPropertyOf sdc4:mc-m67ncwhc9s1j36f9w9qsrxfx .
+<https://semanticdatacharter.com/ns/sdc4/mc-m3970or5qg49k78l0lq1ptjc/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-m3970or5qg49k78l0lq1ptjc .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-mijr18ynaqde2l8jps70l2g6/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -753,46 +823,6 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-mijr18ynaqde2l8jps70l2g6 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-mktq5xr8slz67q85idl8bsky .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-mktq5xr8slz67q85idl8bsky .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-mktq5xr8slz67q85idl8bsky .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-mktq5xr8slz67q85idl8bsky .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mktq5xr8slz67q85idl8bsky/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-mktq5xr8slz67q85idl8bsky .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mq5xicyh1n3d8ofhyroazip2/xdtoken-value/Every%2520day> a rdfs:Class ;
-    rdfs:label "Every day" ;
-    rdfs:isDefinedBy "https://loinc.org/LA18976-3/" ;
-    rdfs:subPropertyOf sdc4:mc-mq5xicyh1n3d8ofhyroazip2 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mq5xicyh1n3d8ofhyroazip2/xdtoken-value/Not%2520at%2520all> a rdfs:Class ;
-    rdfs:label "Not at all" ;
-    rdfs:isDefinedBy "https://loinc.org/LA15920-4/" ;
-    rdfs:subPropertyOf sdc4:mc-mq5xicyh1n3d8ofhyroazip2 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-mq5xicyh1n3d8ofhyroazip2/xdtoken-value/Some%2520days> a rdfs:Class ;
-    rdfs:label "Some days" ;
-    rdfs:isDefinedBy "https://loinc.org/LA18977-1/" ;
-    rdfs:subPropertyOf sdc4:mc-mq5xicyh1n3d8ofhyroazip2 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-n7pn5ctqo81v0v418hez5zv5/xdtoken-value/Current%2520every%2520day%2520smoker> a rdfs:Class ;
     rdfs:label "Current every day smoker" ;
@@ -819,6 +849,21 @@
     rdfs:isDefinedBy "https://loinc.org/LA18979-7/" ;
     rdfs:subPropertyOf sdc4:mc-n7pn5ctqo81v0v418hez5zv5 .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/g> a rdfs:Class ;
+    rdfs:label "g" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/GM" ;
+    rdfs:subPropertyOf sdc4:mc-n7s7hcgef4pxius8a0l6r5qp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/kg> a rdfs:Class ;
+    rdfs:label "kg" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/KiloGM" ;
+    rdfs:subPropertyOf sdc4:mc-n7s7hcgef4pxius8a0l6r5qp .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-n7s7hcgef4pxius8a0l6r5qp/xdstring-value/mg> a rdfs:Class ;
+    rdfs:label "mg" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MilliGM" ;
+    rdfs:subPropertyOf sdc4:mc-n7s7hcgef4pxius8a0l6r5qp .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-nd1v8jk7wtm1tthzw1f4987t/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -828,21 +873,6 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-nd1v8jk7wtm1tthzw1f4987t .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-nqxrp9pb7b9rdzn0fh3y2gs4/xdstring-value/10%252A6%252FuL> a rdfs:Class ;
-    rdfs:label "10*6/uL" ;
-    rdfs:isDefinedBy "https://ucum.org/ucum" ;
-    rdfs:subPropertyOf sdc4:mc-nqxrp9pb7b9rdzn0fh3y2gs4 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-nwsj84veb6u9g1v0h2a3a793/xdtoken-value/Born%2520in%252050%2520US%2520states%2520or%2520Washington%252C%2520DC> a rdfs:Class ;
-    rdfs:label "Born in 50 US states or Washington, DC" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17234" ;
-    rdfs:subPropertyOf sdc4:mc-nwsj84veb6u9g1v0h2a3a793 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-nwsj84veb6u9g1v0h2a3a793/xdtoken-value/Others> a rdfs:Class ;
-    rdfs:label "Others" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17649" ;
-    rdfs:subPropertyOf sdc4:mc-nwsj84veb6u9g1v0h2a3a793 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-o4d67oubyyunugx3la44f53u/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -864,30 +894,50 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-of4crvmnrr3s5q5396kmt0jv .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k .
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Disabled%252C%2520permanently%2520or%2520temporarily> a rdfs:Class ;
+    rdfs:label "Disabled, permanently or temporarily" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C148252" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k .
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Full-time%2520working%2520now%2520or%2520paid%2520sick%2520leave%252Fparental%2520leave%252Ffamily%2520leave%252Fadministrative%2520leave> a rdfs:Class ;
+    rdfs:label "Full-time working now or paid sick leave/parental leave/family leave/administrative leave" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C52658" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k .
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Looking%2520for%2520work%252C%2520unemployed> a rdfs:Class ;
+    rdfs:label "Looking for work, unemployed" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C165487" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k .
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Only%2520temporarily%2520laid%2520off%252C%2520or%2520unpaid%2520sick%2520leave%252Fparental%2520leave%252Ffamily%2520leave%252Fadministrative%2520leave> a rdfs:Class ;
+    rdfs:label "Only temporarily laid off, or unpaid sick leave/parental leave/family leave/administrative leave" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C177653" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-p4jxl2rur1agjhdpvj2g9u4k/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k .
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Other%252Fspecify%253A> a rdfs:Class ;
+    rdfs:label "Other/specify:" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17649" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Part-time%2520work%2520or%2520hourly%2520less%2520than%2520full%2520time> a rdfs:Class ;
+    rdfs:label "Part-time work or hourly less than full time" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C75562" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Raising%2520children%2520full-time%252C%2520full-time%2520caregiver%252C%2520or%2520keeping%2520house> a rdfs:Class ;
+    rdfs:label "Raising children full-time, full-time caregiver, or keeping house" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C165488" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Retired> a rdfs:Class ;
+    rdfs:label "Retired" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C78237" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-oy35qocyvn0zxq8ni4azvz39/xdtoken-value/Student> a rdfs:Class ;
+    rdfs:label "Student" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C75561" ;
+    rdfs:subPropertyOf sdc4:mc-oy35qocyvn0zxq8ni4azvz39 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-p8u71b4lhct4ra0szgkex7xo/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -898,11 +948,6 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-p8u71b4lhct4ra0szgkex7xo .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-pwew1ssov8df0h199h7r1d0v/xdstring-value/pg> a rdfs:Class ;
-    rdfs:label "pg" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/PicoGM" ;
-    rdfs:subPropertyOf sdc4:mc-pwew1ssov8df0h199h7r1d0v .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-q9vmn1cvdclgr757aer5v1rg/xdtoken-value/amended> a rdfs:Class ;
     rdfs:label "amended" ;
@@ -944,6 +989,36 @@
     rdfs:isDefinedBy "http://hl7.org/fhir/observation-status#unknown" ;
     rdfs:subPropertyOf sdc4:mc-q9vmn1cvdclgr757aer5v1rg .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/American%2520Indian%252FAlaskan%2520Native%252C%2520Non-Hispanic> a rdfs:Class ;
+    rdfs:label "American Indian/Alaskan Native, Non-Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41259" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/Asian%252C%2520Non-Hispanic> a rdfs:Class ;
+    rdfs:label "Asian, Non-Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41260" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/Black%252C%2520Non-Hispanic> a rdfs:Class ;
+    rdfs:label "Black, Non-Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C16352" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/Hispanic> a rdfs:Class ;
+    rdfs:label "Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17459" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/Other%2520race%252C%2520Non-Hispanic> a rdfs:Class ;
+    rdfs:label "Other race, Non-Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17649" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-qamg60snb8cl9auv4y03kdc4/xdtoken-value/White%252C%2520Non-Hispanic> a rdfs:Class ;
+    rdfs:label "White, Non-Hispanic" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C41261" ;
+    rdfs:subPropertyOf sdc4:mc-qamg60snb8cl9auv4y03kdc4 .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-qsetd453kk9own8co1wmc5cz/xdtoken-value/Divorced> a rdfs:Class ;
     rdfs:label "Divorced" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51776" ;
@@ -984,45 +1059,15 @@
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C51775" ;
     rdfs:subPropertyOf sdc4:mc-qsetd453kk9own8co1wmc5cz .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-qv6ytjstrquvfr20cyfjqq2d/xdtoken-value/Adult%2520%252815%2520x%252032%2520cm%2529> a rdfs:Class ;
-    rdfs:label "Adult (15 x 32 cm)" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ" ;
-    rdfs:subPropertyOf sdc4:mc-qv6ytjstrquvfr20cyfjqq2d .
+<https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v/xdstring-value/%25C2%25B0C> a rdfs:Class ;
+    rdfs:label "°C" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/DEG_C" ;
+    rdfs:subPropertyOf sdc4:mc-r34ta6hknc3dpeb4sawox80v .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-qv6ytjstrquvfr20cyfjqq2d/xdtoken-value/Child%2520%252812%2520x%252022%2520cm%2529> a rdfs:Class ;
-    rdfs:label "Child (12 x 22 cm)" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ" ;
-    rdfs:subPropertyOf sdc4:mc-qv6ytjstrquvfr20cyfjqq2d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-qv6ytjstrquvfr20cyfjqq2d/xdtoken-value/Infant%2520%25289%2520x%252018%2520cm%2529> a rdfs:Class ;
-    rdfs:label "Infant (9 x 18 cm)" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ" ;
-    rdfs:subPropertyOf sdc4:mc-qv6ytjstrquvfr20cyfjqq2d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-qv6ytjstrquvfr20cyfjqq2d/xdtoken-value/Large%2520%252817%2520x%252036%2520cm%2529> a rdfs:Class ;
-    rdfs:label "Large (17 x 36 cm)" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ" ;
-    rdfs:subPropertyOf sdc4:mc-qv6ytjstrquvfr20cyfjqq2d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-qv6ytjstrquvfr20cyfjqq2d/xdtoken-value/Thigh%2520%252823%2520x%252038%2520cm%2529> a rdfs:Class ;
-    rdfs:label "Thigh (23 x 38 cm)" ;
-    rdfs:isDefinedBy "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ" ;
-    rdfs:subPropertyOf sdc4:mc-qv6ytjstrquvfr20cyfjqq2d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-r0j6yo8zvo4q8x0ovdr6j9yz/xdtoken-value/Cannot%2520ascertain%2520if%2520pregnant%2520at%2520exam> a rdfs:Class ;
-    rdfs:label "Cannot ascertain if pregnant at exam" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-r0j6yo8zvo4q8x0ovdr6j9yz/xdtoken-value/Not%2520pregnant%2520at%2520exam> a rdfs:Class ;
-    rdfs:label "Not pregnant at exam" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C25191" ;
-    rdfs:subPropertyOf sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-r0j6yo8zvo4q8x0ovdr6j9yz/xdtoken-value/Yes%252C%2520positive%2520lab%2520pregnancy%2520test%2520or%2520self-reported%2520pregnant%2520at%2520exam> a rdfs:Class ;
-    rdfs:label "Yes, positive lab pregnancy test or self-reported pregnant at exam" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C25191" ;
-    rdfs:subPropertyOf sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz .
+<https://semanticdatacharter.com/ns/sdc4/mc-r34ta6hknc3dpeb4sawox80v/xdstring-value/K> a rdfs:Class ;
+    rdfs:label "K" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/K" ;
+    rdfs:subPropertyOf sdc4:mc-r34ta6hknc3dpeb4sawox80v .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-r493514xykrtgyz8dyyqjcxg/xdstring-value/%252Fday> a rdfs:Class ;
     rdfs:label "/day" ;
@@ -1038,36 +1083,6 @@
     rdfs:label "/min" ;
     rdfs:isDefinedBy "http://qudt.org/vocab/unit/PER-MIN" ;
     rdfs:subPropertyOf sdc4:mc-r493514xykrtgyz8dyyqjcxg .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-rot4z5ny8gdkfmimedcjl1te .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-rot4z5ny8gdkfmimedcjl1te .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-rot4z5ny8gdkfmimedcjl1te .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-rot4z5ny8gdkfmimedcjl1te .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rot4z5ny8gdkfmimedcjl1te/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-rot4z5ny8gdkfmimedcjl1te .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-rpu89r6jz2mhu8yoiuv2j6k5/xdstring-value/mg%252FdL> a rdfs:Class ;
-    rdfs:label "mg/dL" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MilliGM-PER-DeciL" ;
-    rdfs:subPropertyOf sdc4:mc-rpu89r6jz2mhu8yoiuv2j6k5 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-rpz1czz06jhpahmfz30rblvp/xdtoken-value/0> a rdfs:Class ;
     rdfs:label "0" ;
@@ -1089,6 +1104,16 @@
     rdfs:isDefinedBy "http://hl7.org/fhir/audit-event-outcome#8" ;
     rdfs:subPropertyOf sdc4:mc-rpz1czz06jhpahmfz30rblvp .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-rw8s64t4v80421biq8eo9p2x/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-rw8s64t4v80421biq8eo9p2x .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-rw8s64t4v80421biq8eo9p2x/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-rw8s64t4v80421biq8eo9p2x .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-sbulkq80j4fkbiql4zgje4qr/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -1099,15 +1124,20 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-sbulkq80j4fkbiql4zgje4qr .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-sigmhjzuw16w0k8op92lk9sd/xdtoken-value/Female> a rdfs:Class ;
-    rdfs:label "Female" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C16576" ;
-    rdfs:subPropertyOf sdc4:mc-sigmhjzuw16w0k8op92lk9sd .
+<https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/lb> a rdfs:Class ;
+    rdfs:label "lb" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/LB" ;
+    rdfs:subPropertyOf sdc4:mc-sdlc6bf161fyyueaca8vvshh .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-sigmhjzuw16w0k8op92lk9sd/xdtoken-value/Male> a rdfs:Class ;
-    rdfs:label "Male" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C20197" ;
-    rdfs:subPropertyOf sdc4:mc-sigmhjzuw16w0k8op92lk9sd .
+<https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/oz> a rdfs:Class ;
+    rdfs:label "oz" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/OZ" ;
+    rdfs:subPropertyOf sdc4:mc-sdlc6bf161fyyueaca8vvshh .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-sdlc6bf161fyyueaca8vvshh/xdstring-value/ton> a rdfs:Class ;
+    rdfs:label "ton" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/TON_SHORT" ;
+    rdfs:subPropertyOf sdc4:mc-sdlc6bf161fyyueaca8vvshh .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-skxvr3cdab7dmc5y66zr3mr0/xdstring-value/years> a rdfs:Class ;
     rdfs:label "years" ;
@@ -1169,11 +1199,6 @@
     rdfs:isDefinedBy "https://loinc.org/LA4457-3" ;
     rdfs:subPropertyOf sdc4:mc-u5tietya3u56hbz2kos06ai7 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-u9ijfragaqhnsuqzaajjrz2m/xdstring-value/fL> a rdfs:Class ;
-    rdfs:label "fL" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/FemtoL" ;
-    rdfs:subPropertyOf sdc4:mc-u9ijfragaqhnsuqzaajjrz2m .
-
 <https://semanticdatacharter.com/ns/sdc4/mc-udbydjqj76l8kl6mi2s3v7vd/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -1184,20 +1209,10 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-udbydjqj76l8kl6mi2s3v7vd .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj/xdstring-value/months> a rdfs:Class ;
-    rdfs:label "months" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MO" ;
-    rdfs:subPropertyOf sdc4:mc-uixgck0xt60055m4bdcxkhyj .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-uy2fly38y0ghl10xgo4e7svh/xdtoken-value/Irregular> a rdfs:Class ;
-    rdfs:label "Irregular" ;
-    rdfs:isDefinedBy "http://snomed.info/id/61086009" ;
-    rdfs:subPropertyOf sdc4:mc-uy2fly38y0ghl10xgo4e7svh .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-uy2fly38y0ghl10xgo4e7svh/xdtoken-value/Regular> a rdfs:Class ;
-    rdfs:label "Regular" ;
-    rdfs:isDefinedBy "http://snomed.info/id/271636001" ;
-    rdfs:subPropertyOf sdc4:mc-uy2fly38y0ghl10xgo4e7svh .
+<https://semanticdatacharter.com/ns/sdc4/mc-ux7molkiumql3ml1pyc0kf2s/xdstring-value/kg%252Fm2> a rdfs:Class ;
+    rdfs:label "kg/m2" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/KiloGM-PER-M2" ;
+    rdfs:subPropertyOf sdc4:mc-ux7molkiumql3ml1pyc0kf2s .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/L> a rdfs:Class ;
     rdfs:label "L" ;
@@ -1229,45 +1244,40 @@
     rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#V" ;
     rdfs:subPropertyOf sdc4:mc-vbctgmdcwps5b3r3l6sboa6y .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u .
+<https://semanticdatacharter.com/ns/sdc4/mc-vfrowc5oxysvj71vfrmc7o4t/xdtoken-value/Normal%2520Weight> a rdfs:Class ;
+    rdfs:label "Normal Weight" ;
+    rdfs:isDefinedBy "http://snomed.info/id/43664005" ;
+    rdfs:subPropertyOf sdc4:mc-vfrowc5oxysvj71vfrmc7o4t .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u .
+<https://semanticdatacharter.com/ns/sdc4/mc-vfrowc5oxysvj71vfrmc7o4t/xdtoken-value/Obese> a rdfs:Class ;
+    rdfs:label "Obese" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C3283" ;
+    rdfs:subPropertyOf sdc4:mc-vfrowc5oxysvj71vfrmc7o4t .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u .
+<https://semanticdatacharter.com/ns/sdc4/mc-vfrowc5oxysvj71vfrmc7o4t/xdtoken-value/Overweight> a rdfs:Class ;
+    rdfs:label "Overweight" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C94250" ;
+    rdfs:subPropertyOf sdc4:mc-vfrowc5oxysvj71vfrmc7o4t .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u .
+<https://semanticdatacharter.com/ns/sdc4/mc-vfrowc5oxysvj71vfrmc7o4t/xdtoken-value/Underweight> a rdfs:Class ;
+    rdfs:label "Underweight" ;
+    rdfs:isDefinedBy "http://snomed.info/id/248342006" ;
+    rdfs:subPropertyOf sdc4:mc-vfrowc5oxysvj71vfrmc7o4t .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-vp4ow7t3q8w2phcft0qvyj4u/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u .
+<https://semanticdatacharter.com/ns/sdc4/mc-vyc62ndwazzqyn5ee5oeno1o/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-vyc62ndwazzqyn5ee5oeno1o .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-vyc62ndwazzqyn5ee5oeno1o/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-vyc62ndwazzqyn5ee5oeno1o .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-warylvhshpbc5eqkt0n9mz30/xdstring-value/1> a rdfs:Class ;
     rdfs:label "1" ;
     rdfs:isDefinedBy "http://qudt.org/vocab/unit/NUM" ;
     rdfs:subPropertyOf sdc4:mc-warylvhshpbc5eqkt0n9mz30 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-wh4zkqhos44fbb5p0b5c7w1d/xdtoken-value/No> a rdfs:Class ;
-    rdfs:label "No" ;
-    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
-    rdfs:subPropertyOf sdc4:mc-wh4zkqhos44fbb5p0b5c7w1d .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-wh4zkqhos44fbb5p0b5c7w1d/xdtoken-value/Yes> a rdfs:Class ;
-    rdfs:label "Yes" ;
-    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
-    rdfs:subPropertyOf sdc4:mc-wh4zkqhos44fbb5p0b5c7w1d .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-wl6j4ekcmu4hvt2m12zw4zp8/xdtoken-value/ActivityCompleted> a rdfs:Class ;
     rdfs:label "ActivityCompleted" ;
@@ -1299,16 +1309,6 @@
     rdfs:isDefinedBy "https://w3id.org/dpv#ActivityProposed" ;
     rdfs:subPropertyOf sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-x5usbr8d1n8gd0ojbzbgp6m2/xdstring-value/cigarettes> a rdfs:Class ;
-    rdfs:label "cigarettes" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/NUM" ;
-    rdfs:subPropertyOf sdc4:mc-x5usbr8d1n8gd0ojbzbgp6m2 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-xpa0i073e6fml5g0sz794dfs/xdstring-value/mmol%252FL> a rdfs:Class ;
-    rdfs:label "mmol/L" ;
-    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MilliMOL-PER-L" ;
-    rdfs:subPropertyOf sdc4:mc-xpa0i073e6fml5g0sz794dfs .
-
 <https://semanticdatacharter.com/ns/sdc4/mc-xsohkckyof7y1xj8h1ab4pxu/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -1319,150 +1319,140 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-xsohkckyof7y1xj8h1ab4pxu .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/10th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-y3m4tg7u1io8bimkhiuxz8zb/xdtoken-value/Claims-based%2520algorithm> a rdfs:Class ;
+    rdfs:label "Claims-based algorithm" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C221359" ;
+    rdfs:subPropertyOf sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-y3m4tg7u1io8bimkhiuxz8zb/xdtoken-value/Self-report%2520of%2520a%2520professional%2520diagnosis> a rdfs:Class ;
+    rdfs:label "Self-report of a professional diagnosis" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C188309" ;
+    rdfs:subPropertyOf sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-yht0x4rmqyu32sd90jl0rzbo/xdstring-value/days> a rdfs:Class ;
+    rdfs:label "days" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/DAY" ;
+    rdfs:subPropertyOf sdc4:mc-yht0x4rmqyu32sd90jl0rzbo .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/10th%2520Grade> a rdfs:Class ;
     rdfs:label "10th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15616-8" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/11th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/11th%2520Grade> a rdfs:Class ;
     rdfs:label "11th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15617-6" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/12th%2520Grade%252FNo%2520HS%2520diploma> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/12th%2520Grade%252FNo%2520HS%2520diploma> a rdfs:Class ;
     rdfs:label "12th Grade/No HS diploma" ;
     rdfs:isDefinedBy "https://loinc.org/LA15618-4" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/1st%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/1st%2520Grade> a rdfs:Class ;
     rdfs:label "1st Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15607-7" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/2nd%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/2nd%2520Grade> a rdfs:Class ;
     rdfs:label "2nd Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15608-5" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/3rd%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/3rd%2520Grade> a rdfs:Class ;
     rdfs:label "3rd Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15609-3" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/4th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/4th%2520Grade> a rdfs:Class ;
     rdfs:label "4th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15610-1" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/5th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/5th%2520Grade> a rdfs:Class ;
     rdfs:label "5th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15611-9" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/6th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/6th%2520Grade> a rdfs:Class ;
     rdfs:label "6th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15612-7" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/7th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/7th%2520Grade> a rdfs:Class ;
     rdfs:label "7th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15613-5" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/8th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/8th%2520Grade> a rdfs:Class ;
     rdfs:label "8th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15614-3" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/9th%2520Grade> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/9th%2520Grade> a rdfs:Class ;
     rdfs:label "9th Grade" ;
     rdfs:isDefinedBy "https://loinc.org/LA15615-0" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Associates%2520Degree%2520-%2520Academic%2520Program> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Associates%2520Degree%2520-%2520Academic%2520Program> a rdfs:Class ;
     rdfs:label "Associates Degree - Academic Program" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C71340" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Bachelor%25C2%2592s%2520Degree%2520%2528Example%253A%2520BA%252C%2520AB%252C%2520BS%252C%2520BBA%2529> a rdfs:Class ;
-    rdfs:label "Bachelors Degree (Example: BA, AB, BS, BBA)" ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Bachelor%25E2%2580%2599s%2520Degree%2520%2528Example%253A%2520BA%252C%2520AB%252C%2520BS%252C%2520BBA%2529> a rdfs:Class ;
+    rdfs:label "Bachelor’s Degree (Example: BA, AB, BS, BBA)" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C70555" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Doctoral%2520Degree%2520%2528Example%253A%2520PhD%252C%2520EdD%2529> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Doctoral%2520Degree%2520%2528Example%253A%2520PhD%252C%2520EdD%2529> a rdfs:Class ;
     rdfs:label "Doctoral Degree (Example: PhD, EdD)" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C70557" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Don%25C2%2592t%2520Know> a rdfs:Class ;
-    rdfs:label "Dont Know" ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Don%25E2%2580%2599t%2520Know> a rdfs:Class ;
+    rdfs:label "Don’t Know" ;
     rdfs:isDefinedBy "https://loinc.org/LA12688-0" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/GED%2520or%2520Equivalent> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/GED%2520or%2520Equivalent> a rdfs:Class ;
     rdfs:label "GED or Equivalent" ;
     rdfs:isDefinedBy "https://loinc.org/LA15619-2" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/HS%2520Graduate> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/HS%2520Graduate> a rdfs:Class ;
     rdfs:label "HS Graduate" ;
     rdfs:isDefinedBy "https://loinc.org/LA15564-0" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Master%25C2%2592s%2520Degree%2520%2528Example%253A%2520%2520MA%252C%2520MS%252C%2520MEng%252C%2520MEd%252C%2520MBA%2529> a rdfs:Class ;
-    rdfs:label "Masters Degree (Example:  MA, MS, MEng, MEd, MBA)" ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Master%25E2%2580%2599s%2520Degree%2520%2528Example%253A%2520%2520MA%252C%2520MS%252C%2520MEng%252C%2520MEd%252C%2520MBA%2529> a rdfs:Class ;
+    rdfs:label "Master’s Degree (Example:  MA, MS, MEng, MEd, MBA)" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C70556" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Never%2520Attended%252F%2520Kindergarten%2520Only> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Never%2520Attended%252F%2520Kindergarten%2520Only> a rdfs:Class ;
     rdfs:label "Never Attended/ Kindergarten Only" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67122" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Occupational%252C%2520Technical%252C%2520or%2520Vocational%2520Program> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Occupational%252C%2520Technical%252C%2520or%2520Vocational%2520Program> a rdfs:Class ;
     rdfs:label "Occupational, Technical, or Vocational Program" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C67141" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Professional%2520Degree%2520%2528Example%253A%2520MD%252C%2520DDS%252C%2520JD%2529> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Professional%2520Degree%2520%2528Example%253A%2520MD%252C%2520DDS%252C%2520JD%2529> a rdfs:Class ;
     rdfs:label "Professional Degree (Example: MD, DDS, JD)" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C70558" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Refused%2520to%2520Answer> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Refused%2520to%2520Answer> a rdfs:Class ;
     rdfs:label "Refused to Answer" ;
     rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C132222" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-xtbtk7ro6s9247bcwt4ak4h1/xdtoken-value/Some%2520College%252C%2520No%2520Degree> a rdfs:Class ;
+<https://semanticdatacharter.com/ns/sdc4/mc-yqqm7og0x00fbmazzm00s86e/xdtoken-value/Some%2520College%252C%2520No%2520Degree> a rdfs:Class ;
     rdfs:label "Some College, No Degree" ;
     rdfs:isDefinedBy "https://loinc.org/LA15620-0" ;
-    rdfs:subPropertyOf sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v/xdtoken-value/Do%2520not%2520do%2520this%2520activity> a rdfs:Class ;
-    rdfs:label "Do not do this activity" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-y52y4mpq95zcknal0be1uc7v .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v/xdtoken-value/Much%2520difficulty> a rdfs:Class ;
-    rdfs:label "Much difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-y52y4mpq95zcknal0be1uc7v .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v/xdtoken-value/No%2520difficulty> a rdfs:Class ;
-    rdfs:label "No difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-y52y4mpq95zcknal0be1uc7v .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v/xdtoken-value/Some%2520difficulty> a rdfs:Class ;
-    rdfs:label "Some difficulty" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-y52y4mpq95zcknal0be1uc7v .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-y52y4mpq95zcknal0be1uc7v/xdtoken-value/Unable%2520to%2520do> a rdfs:Class ;
-    rdfs:label "Unable to do" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C17998" ;
-    rdfs:subPropertyOf sdc4:mc-y52y4mpq95zcknal0be1uc7v .
+    rdfs:subPropertyOf sdc4:mc-yqqm7og0x00fbmazzm00s86e .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -1473,6 +1463,16 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-yshoeps2dm0j1ueusqs825v6 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-zbwodv9m60b33blptlellmu0/xdtoken-value/No> a rdfs:Class ;
+    rdfs:label "No" ;
+    rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
+    rdfs:subPropertyOf sdc4:mc-zbwodv9m60b33blptlellmu0 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-zbwodv9m60b33blptlellmu0/xdtoken-value/Yes> a rdfs:Class ;
+    rdfs:label "Yes" ;
+    rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
+    rdfs:subPropertyOf sdc4:mc-zbwodv9m60b33blptlellmu0 .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-zc6p008h5naqev8zngtzvyx9/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -1501,22 +1501,15 @@
 
 <> dc:coverage "Universal" ;
     dc:creator "Timothy Cook" ;
-    dc:date "2026-10-25 22:31:15.358925+00:00" ;
-    dc:description "SDC4 data model for National Health and Nutrition Examination Survey (nhanes_blood_pressure) — FAIR Data Demo" ;
+    dc:date "2026-10-26 13:53:01.703822+00:00" ;
+    dc:description "SDC4 data model for Behavioral Risk Factor Surveillance System (brfss) — FAIR Data Demo" ;
     dc:format "text/xml" ;
-    dc:identifier "dm-eehpfapwgvxtzdrofgstdcfs" ;
+    dc:identifier "dm-j6wmvhr46irxht2ls90nry8k" ;
     dc:language "en-US" ;
     dc:relation "None" ;
     dc:rights "CC-BY http://creativecommons.org/licenses/by/3.0/" ;
-    dc:title "NHANES Participant 4.2.3" ;
+    dc:title "BRFSS Respondent 4.2.4" ;
     dc:type "SDC Data Model (DM)" .
-
-sdc4:mc-a3bccid1kdgem2m5rix68o1y a sdc4-meta:ModelComponent ;
-    rdfs:label "Segmented Neutrophils Number" ;
-    rdfs:comment "Segmented Neutrophils Number (LBDNENO, LOINC 751-8)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDNENO> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-a5scyosu6j84vz350mqyrzl2 a sdc4-meta:ModelComponent ;
     rdfs:label "Ended At" ;
@@ -1528,52 +1521,80 @@ sdc4:mc-aa663ivutjf2fs4757t0bbzy a sdc4-meta:ModelComponent ;
     rdfs:comment "The name of a software agent." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-abjbfcel6qppumg0rlf78wcp a sdc4-meta:ModelComponent ;
+    rdfs:label "Number of Children in Household (CHILDREN)" ;
+    rdfs:comment "The number of children less than 18 years of age in the household (CHILDREN)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
 sdc4:mc-abub2eah26yd2uzni3p9l58i a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Description" ;
     rdfs:comment "A description of a PROV entity." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-atvd5lzut4pjzc7dpv1ykb92 a sdc4-meta:ModelComponent ;
+    rdfs:label "Vital Signs Panel" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-ba0vveg1d3bmjb9nx8e2x4d3 a sdc4-meta:ModelComponent ;
+    rdfs:label "Final Weight: Land-line and Cell-phone Data (_LLCPWT)" ;
+    rdfs:comment "The final raked weight for the combined landline and cellphone sample (_LLCPWT)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-warylvhshpbc5eqkt0n9mz30 ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-bfn83x3fw1cyuqriuoquu9t1 a sdc4-meta:ModelComponent ;
     rdfs:label "Was Generated By Reference" ;
     rdfs:comment "The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk a sdc4-meta:ModelComponent ;
+    rdfs:label "Chronic Condition Indicators" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
 sdc4:mc-c179ilk2ns15cd5rzzdfd6f6 a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Agent" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-c73687ou0pkc7qy6n2kksfc7 a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Laboratory Results" ;
+sdc4:mc-c23wij2i4jkwu016ekro40bv a sdc4-meta:ModelComponent ;
+    rdfs:label "Primary Sampling Unit (_PSU)" ;
+    rdfs:comment "The primary sampling unit (_PSU), equal to the sequence number." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-c6lumieatnqpb33vp80sblyd a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Demographics" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-cdzb3xhl10wivkk305sm09wf a sdc4-meta:ModelComponent ;
-    rdfs:label "Lymphocyte Number" ;
-    rdfs:comment "Lymphocyte Number (LBDLYMNO, LOINC 731-0)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDLYMNO> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+sdc4:mc-cd2j0wzlcvfsfk7ikiaujmzx a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Respondent Governed Record" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
+sdc4:mc-cjh0775qjyyaqb9spk1k3rty a sdc4-meta:ModelComponent ;
+    rdfs:label "Days Mental Health Not Good, Past 30 (MENTHLTH)" ;
+    rdfs:comment "The number of days in the past 30 the respondent's mental health was not good (MENTHLTH)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
 
 sdc4:mc-credrxhz4hg4c42sihm0wb6s a sdc4-meta:ModelComponent ;
     rdfs:label "Was Derived From Reference" ;
     rdfs:comment "The entity this entity was derived from (prov:wasDerivedFrom). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-cujdlrpxv7byme6c5z3ai1ui a sdc4-meta:ModelComponent ;
-    rdfs:label "White Blood Cell Count" ;
-    rdfs:comment "White Blood Cell Count (LBXWBCSI, LOINC 6690-2)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXWBCSI> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
+sdc4:mc-dchiej5tv7tyhfwr6h3ync1i a sdc4-meta:ModelComponent ;
+    rdfs:label "Body Mass Index" ;
+    rdfs:comment "Body mass index (LOINC 39156-5) in kg/m2. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-ux7molkiumql3ml1pyc0kf2s ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
-sdc4:mc-cyu9eutfs28y6tl8bsxwr3qe a sdc4-meta:ModelComponent ;
-    rdfs:label "Monocyte Percent" ;
-    rdfs:comment "Monocyte Percent (LBXMOPCT, LOINC 5905-5)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMOPCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+sdc4:mc-dgd703p5t3yzmnw7np9g1u5p a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Body Measures" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-dawjwho8viq3hr0esb39dhb7 a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Participant" ;
+sdc4:mc-dh2ghpj9z1brefxf0pb4yi14 a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Tobacco and Alcohol Use" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-dkc2ccj5te35z9gd4bu1blcq a sdc4-meta:ModelComponent ;
@@ -1586,16 +1607,11 @@ sdc4:mc-dkyyj01tksb7h7akq2w7moum a sdc4-meta:ModelComponent ;
     rdfs:comment "The clinically relevant time of the observation. FHIR Observation.effectiveDateTime." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
 
-sdc4:mc-dwd4pk56w0pjchsyzl81fzya a sdc4-meta:ModelComponent ;
-    rdfs:label "Ratio of Family Income to Poverty (INDFMPIR)" ;
-    rdfs:comment "The ratio of family income to the poverty guideline (INDFMPIR; 5 means 5 or more)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDFMPIR> ;
-    sdc4-meta:hasUnit sdc4:mc-warylvhshpbc5eqkt0n9mz30 ;
+sdc4:mc-doxdajuj6j1mk480zd1k7ssz a sdc4-meta:ModelComponent ;
+    rdfs:label "Body Weight" ;
+    rdfs:comment "Body Weight (LOINC 29463-7), in the Default units by slot. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-n7s7hcgef4pxius8a0l6r5qp ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-eehpfapwgvxtzdrofgstdcfs a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Participant 4.2.3" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType> .
 
 sdc4:mc-eftvwi5byq6cdtd931qyxzw0 a sdc4-meta:ModelComponent ;
     rdfs:label "Agent Organization Name" ;
@@ -1607,12 +1623,12 @@ sdc4:mc-eo5tlfr0576ypknys5alvcn0 a sdc4-meta:ModelComponent ;
     rdfs:comment "The human-readable display of a coded value, as recorded with the code (FHIR Coding.display)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-f49ynlsmh5zex122r4i2jeqg a sdc4-meta:ModelComponent ;
-    rdfs:label "Eosinophils Number" ;
-    rdfs:comment "Eosinophils Number (LBDEONO, LOINC 711-2)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDEONO> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+sdc4:mc-evijzyx8i3a268zqdsgmhzo0 a sdc4-meta:ModelComponent ;
+    rdfs:label "Imputed Age Value Collapsed Above 80 (_AGE80)" ;
+    rdfs:comment "Imputed age in years, collapsed at 80 (_AGE80). The NIH CDE Age beside it carries the same value." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-skxvr3cdab7dmc5y66zr3mr0 ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
 
 sdc4:mc-fjhgr5fyqxt2crmg2cb5c513 a sdc4-meta:ModelComponent ;
     rdfs:label "Audit Event Identifier" ;
@@ -1623,10 +1639,27 @@ sdc4:mc-fl5quyfd88rajs0egsgbq7ou a sdc4-meta:ModelComponent ;
     rdfs:label "FAIR Source File" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
+sdc4:mc-frb0byilu8prpn7veyj6luwl a sdc4-meta:ModelComponent ;
+    rdfs:label "Sample Design Stratification Variable (_STSTR)" ;
+    rdfs:comment "The sample design stratum (_STSTR)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-g0dq4n7oml1mmi21t50biiwt a sdc4-meta:ModelComponent ;
+    rdfs:label "Binge Drinking Occasions in Past 30 (DRNK3GE5)" ;
+    rdfs:comment "The number of occasions in the past 30 days the respondent had five (men) or four (women) or more drinks (DRNK3GE5)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
 sdc4:mc-gb78cmuyo72hqs5apymdki7l a sdc4-meta:ModelComponent ;
     rdfs:label "Agent Description" ;
     rdfs:comment "A description of the agent and its responsibilities." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-gc10s94rs18ida0cy88lzscl a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Survey Design" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-gcjyjrnp0wsfoelcp4m05c67 a sdc4-meta:ModelComponent ;
     rdfs:label "Audit Entity Reference" ;
@@ -1638,6 +1671,20 @@ sdc4:mc-ginfqbk7q59ld2r4us8sjnv1 a sdc4-meta:ModelComponent ;
     rdfs:comment "The entity that started the activity (prov:wasStartedBy). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-gket571isxo2uckturhvxadk a sdc4-meta:ModelComponent ;
+    rdfs:label "Reported Weight in Pounds (WEIGHT2)" ;
+    rdfs:comment "Self-reported weight without shoes, in pounds as reported (WEIGHT2; the agency's kilogram reports are converted). The FHIR body weight beside it carries the same value in kilograms." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-sdlc6bf161fyyueaca8vvshh ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+
+sdc4:mc-gr95a9bk6mfr0220fmxc3o4e a sdc4-meta:ModelComponent ;
+    rdfs:label "Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3)" ;
+    rdfs:comment "The average number of drinks on the days the respondent drank (AVEDRNK3)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-cr5izog5xjzki3zmnwofubuc ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
 sdc4:mc-h1vwqq8ulrb27qpl6zuzppnf a sdc4-meta:ModelComponent ;
     rdfs:label "Was Invalidated By Reference" ;
     rdfs:comment "The activity that invalidated this entity (prov:wasInvalidatedBy). Holds the IRI of the referenced thing." ;
@@ -1647,13 +1694,6 @@ sdc4:mc-h3kdbvdtyalpvik97saaf0an a sdc4-meta:ModelComponent ;
     rdfs:label "System Identifier" ;
     rdfs:comment "The system that handled the item (FHIR AuditEvent.source.observer; SDC AuditType.system-id)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-hesbothq9s8ihc33ihsbv3bi a sdc4-meta:ModelComponent ;
-    rdfs:label "Monocyte Number" ;
-    rdfs:comment "Monocyte Number (LBDMONO, LOINC 742-7)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDMONO> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-hhusuzzig19rs46ngz23k5g7 a sdc4-meta:ModelComponent ;
     rdfs:label "Activity Description" ;
@@ -1665,56 +1705,57 @@ sdc4:mc-hswapeutuik067dokidnbv88 a sdc4-meta:ModelComponent ;
     rdfs:comment "When the entity ceased to be usable (prov:invalidatedAtTime)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
 
+sdc4:mc-htr0gulg01caowd76j6v4ukh a sdc4-meta:ModelComponent ;
+    rdfs:label "Oxygen Saturation" ;
+    rdfs:comment "Oxygen Saturation (LOINC 2708-6), in the Default units by slot. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+
 sdc4:mc-i1defiugxfdcwfb9rqv4p5tz a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Identifier" ;
     rdfs:comment "The identifier of a PROV entity: a URI or another globally unique identifier." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-ia77g23fvigr9b9dkx6a1rcl a sdc4-meta:ModelComponent ;
-    rdfs:label "Lymphocyte Percent" ;
-    rdfs:comment "Lymphocyte Percent (LBXLYPCT, LOINC 736-9)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXLYPCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-izygcyh1wupij0st4iy0ir1k a sdc4-meta:ModelComponent ;
-    rdfs:label "Blood Pressure Reading 3" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+sdc4:mc-j6wmvhr46irxht2ls90nry8k a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Respondent 4.2.4" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType> .
 
 sdc4:mc-jjzmhdxvbt97pq81iwqubtxk a sdc4-meta:ModelComponent ;
     rdfs:label "Activity Type" ;
     rdfs:comment "The kind of activity, in the vocabulary of the domain (prov:type)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-job3i8sfv3zikxymqe625fm2 a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Respondent" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
 sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4 a sdc4-meta:ModelComponent ;
     rdfs:label "FAIR Pipeline Identifier" ;
     rdfs:comment "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-k8t5396w5kh1zzf6vhp4ola2 a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Blood Pressure" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-kmcck093437mfdlnxnrzm0xw a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Value" ;
     rdfs:comment "The value of a PROV entity, or a reference to where its content can be found (prov:value)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-kn0gsgklvqcbbz2f20dg1koy a sdc4-meta:ModelComponent ;
-    rdfs:label "Hematocrit" ;
-    rdfs:comment "Hematocrit (LBXHCT, LOINC 4544-3)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXHCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+sdc4:mc-kmr0bcq4vaae10cw4hhgjbtx a sdc4-meta:ModelComponent ;
+    rdfs:label "Days Physical Health Not Good, Past 30 (PHYSHLTH)" ;
+    rdfs:comment "The number of days in the past 30 the respondent's physical health was not good (PHYSHLTH)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
 
 sdc4:mc-kqlatg3rz00z58muv7j8toyl a sdc4-meta:ModelComponent ;
     rdfs:label "Was Attributed To Reference" ;
     rdfs:comment "The agent this entity is attributed to (prov:wasAttributedTo). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-ky7lvmote5jfn5gt6n89q79s a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Physical Functioning" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+sdc4:mc-l4jr7yi9926sctme3vjuti72 a sdc4-meta:ModelComponent ;
+    rdfs:label "Interview Date (IDATE)" ;
+    rdfs:comment "The interview date (IDATE)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
 
 sdc4:mc-lghqkvp7vapqk10l248kzqs8 a sdc4-meta:ModelComponent ;
     rdfs:label "Was Revision Of Reference" ;
@@ -1726,59 +1767,32 @@ sdc4:mc-m9minyaug6ypyzt52zfxlyyi a sdc4-meta:ModelComponent ;
     rdfs:comment "A human-readable label for a PROV entity." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-mc8by65nv7wa59lw4oj54e2w a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Medical Conditions" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
-sdc4:mc-mgqswj92qaeasqjjvfcyxon5 a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Survey Design" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
 sdc4:mc-mjl0vv39zsbigqiuyqm66fkv a sdc4-meta:ModelComponent ;
     rdfs:label "Was Quoted From Reference" ;
     rdfs:comment "The entity this entity quotes (prov:wasQuotedFrom). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-n13vv8g72h826o4o1jxm1o91 a sdc4-meta:ModelComponent ;
-    rdfs:label "Segmented Neutrophils Percent" ;
-    rdfs:comment "Segmented Neutrophils Percent (LBXNEPCT, LOINC 770-8)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXNEPCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-n6mstjwsss62iruurp7utrn4 a sdc4-meta:ModelComponent ;
-    rdfs:label "Mean Platelet Volume" ;
-    rdfs:comment "Mean Platelet Volume (LBXMPSI, LOINC 32623-1)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMPSI> ;
-    sdc4-meta:hasUnit sdc4:mc-u9ijfragaqhnsuqzaajjrz2m ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-ncskx5im3if41mqo9pm8ydx0 a sdc4-meta:ModelComponent ;
-    rdfs:label "Basophils Number" ;
-    rdfs:comment "Basophils Number (LBDBANO, LOINC 704-7)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBDBANO> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-nf1air1zbj8v9w66jozdxmyl a sdc4-meta:ModelComponent ;
     rdfs:label "On Behalf Of Reference" ;
     rdfs:comment "The party on whose behalf the agent acted (FHIR agent.onBehalfOf; prov:actedOnBehalfOf). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-nh9s5b7gb713asjatbg5guyc a sdc4-meta:ModelComponent ;
+    rdfs:label "Days in Past 30 Had Alcoholic Beverage (ALCDAY4)" ;
+    rdfs:comment "The number of days in the past 30 the respondent had at least one alcoholic drink (ALCDAY4; the agency's per-week code is converted to days)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:hasUnit sdc4:mc-yht0x4rmqyu32sd90jl0rzbo ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+
 sdc4:mc-nz4t9iecyq1ukvs4s3ymgd8t a sdc4-meta:ModelComponent ;
     rdfs:label "FAIR Pipeline Audit" ;
     rdfs:comment "The audit of a record generated from a federal source file: the pipeline that generated it, its run, and the source file it read (the ProvGov PROV entity)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#AuditType> .
 
-sdc4:mc-nzhi9t6qd9rhb5ojsaxtn8md a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Demographics" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
-sdc4:mc-o3jk44vqom9ne0v4tiay1ys7 a sdc4-meta:ModelComponent ;
-    rdfs:label "Platelet Count" ;
-    rdfs:comment "Platelet Count (LBXPLTSI, LOINC 777-3)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXPLTSI> ;
-    sdc4-meta:hasUnit sdc4:mc-ebtwma3vz90nci5or2gtxx0d ;
+sdc4:mc-nzq70mbegncgc6hdfp7vtu46 a sdc4-meta:ModelComponent ;
+    rdfs:label "Respiratory Rate" ;
+    rdfs:comment "Respiratory Rate (LOINC 9279-1), in the Default units by slot. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-r493514xykrtgyz8dyyqjcxg ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-og08xf6bu928uuz6t3y0e23f a sdc4-meta:ModelComponent ;
@@ -1797,24 +1811,22 @@ sdc4:mc-p6smy5wa25ug4yhgdswyuklx a sdc4-meta:ModelComponent ;
     rdfs:comment "The pipeline run that generated the record from a federal source file (PROV agent)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#PartyType> .
 
-sdc4:mc-pf1abnd8c9cfwb4hw9lc65b0 a sdc4-meta:ModelComponent ;
-    rdfs:label "Mean Cell Hemoglobin Concentration" ;
-    rdfs:comment "Mean Cell Hemoglobin Concentration (LBXMC, LOINC 786-4)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMC> ;
-    sdc4-meta:hasUnit sdc4:mc-gj5enh9y0km64ww0oa5vk7v3 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-pf6ne2nf0ef5xeba7q73a2s8 a sdc4-meta:ModelComponent ;
-    rdfs:label "Red Cell Distribution Width" ;
-    rdfs:comment "Red Cell Distribution Width (LBXRDW, LOINC 788-0)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXRDW> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
+sdc4:mc-pflduyrah1tnmmsjrwfvi121 a sdc4-meta:ModelComponent ;
+    rdfs:label "Annual Sequence Number (SEQNO)" ;
+    rdfs:comment "The BRFSS annual sequence number identifying the respondent within the year (SEQNO)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-phus5105uw30xejqs7baamyx a sdc4-meta:ModelComponent ;
     rdfs:label "Had Primary Source Reference" ;
     rdfs:comment "The primary source of this entity (prov:hadPrimarySource). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-ppqdmkbjmd3gn0p2i74ue3ox a sdc4-meta:ModelComponent ;
+    rdfs:label "Body Temperature" ;
+    rdfs:comment "Body Temperature (LOINC 8310-5), in the Default units by slot. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-r34ta6hknc3dpeb4sawox80v ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-q0ckidtsg1x3iav6nrt8fo0l a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Entity" ;
@@ -1830,31 +1842,10 @@ sdc4:mc-qb90a0sp9vvb6c5cbcf236ys a sdc4-meta:ModelComponent ;
     rdfs:comment "The agent's email address (foaf:mbox)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-qbp08a1gscple2aiuiwyfz2s a sdc4-meta:ModelComponent ;
-    rdfs:label "Total Number of People in the Household (DMDHHSIZ)" ;
-    rdfs:comment "Total number of people in the household (DMDHHSIZ; 7 means 7 or more)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDHHSIZ> ;
-    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
-
-sdc4:mc-qg7or0c34grde4gprzwifukh a sdc4-meta:ModelComponent ;
-    rdfs:label "Age in Months at Screening (RIDAGEMN)" ;
-    rdfs:comment "Age in months at screening, reported for participants aged 0 to 24 months (RIDAGEMN)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDAGEMN> ;
-    sdc4-meta:hasUnit sdc4:mc-uixgck0xt60055m4bdcxkhyj ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
-
 sdc4:mc-qh84jdzp1kxt85aq4ilo0svk a sdc4-meta:ModelComponent ;
     rdfs:label "Was Informed By Reference" ;
     rdfs:comment "An activity that informed this one (prov:wasInformedBy). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-qp5mdgab3s37zwqzyfzq8rvi a sdc4-meta:ModelComponent ;
-    rdfs:label "Total Cholesterol (SI)" ;
-    rdfs:comment "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/TCHOL_J.htm#LBDTCSI> ;
-    sdc4-meta:hasUnit sdc4:mc-xpa0i073e6fml5g0sz794dfs ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-r1ve12xphsb5hu2yjmhksw5h a sdc4-meta:ModelComponent ;
     rdfs:label "Systolic Blood Pressure" ;
@@ -1876,13 +1867,6 @@ sdc4:mc-r6hkunjm2q0hlxiknlc9ljix a sdc4-meta:ModelComponent ;
     rdfs:comment "A human-readable label for a PROV activity." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-rl42ns60wqjt2jr4kgmfomsd a sdc4-meta:ModelComponent ;
-    rdfs:label "Total Cholesterol" ;
-    rdfs:comment "Total cholesterol in serum, mg/dL (LBXTC, LOINC 2093-3)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/TCHOL_J.htm#LBXTC> ;
-    sdc4-meta:hasUnit sdc4:mc-rpu89r6jz2mhu8yoiuv2j6k5 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
 sdc4:mc-s3qzwxxz9b42lcd2wryok8jd a sdc4-meta:ModelComponent ;
     rdfs:label "Diastolic Blood Pressure" ;
     rdfs:comment "Diastolic Blood Pressure (LOINC 8462-4), in the Default units by slot. FHIR Observation.valueQuantity." ;
@@ -1894,51 +1878,26 @@ sdc4:mc-sa4nl1kbpdr842fkucvfjkpq a sdc4-meta:ModelComponent ;
     rdfs:comment "When the activity started (prov:startedAtTime)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
 
-sdc4:mc-scmpca8vlisbmmfa3njyx2o2 a sdc4-meta:ModelComponent ;
-    rdfs:label "Mean Cell Hemoglobin" ;
-    rdfs:comment "Mean Cell Hemoglobin (LBXMCHSI, LOINC 785-6)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMCHSI> ;
-    sdc4-meta:hasUnit sdc4:mc-pwew1ssov8df0h199h7r1d0v ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
 sdc4:mc-sndpbhm3xbd6qtbyxmvh3i0e a sdc4-meta:ModelComponent ;
     rdfs:label "Data Subject Reference" ;
     rdfs:comment "The data subject or patient the event concerns (FHIR AuditEvent.patient; SDC DM.subject). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-so1r0ndetw0artjnbfirxd5y a sdc4-meta:ModelComponent ;
-    rdfs:label "Blood Pressure Reading 2" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
-sdc4:mc-sqjdwrx3kpuuxkwa69bodut2 a sdc4-meta:ModelComponent ;
-    rdfs:label "Mean Cell Volume" ;
-    rdfs:comment "Mean Cell Volume (LBXMCVSI, LOINC 787-2)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXMCVSI> ;
-    sdc4-meta:hasUnit sdc4:mc-u9ijfragaqhnsuqzaajjrz2m ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-swvr4xwxui5idfg7r6tfa1mr a sdc4-meta:ModelComponent ;
-    rdfs:label "Nucleated Red Blood Cells" ;
-    rdfs:comment "Nucleated red blood cells per 100 white blood cells (LBXNRBC)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXNRBC> ;
-    sdc4-meta:hasUnit sdc4:mc-ezm3xazl3vdpmykpasxccal0 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
 sdc4:mc-t0whhrqtnb54te4mk48i1ooj a sdc4-meta:ModelComponent ;
     rdfs:label "Used Entity Reference" ;
     rdfs:comment "An entity the activity used (prov:used). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-t1sv9gth4is2bswuhyid22co a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Health Status and Access" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
 sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1 a sdc4-meta:ModelComponent ;
     rdfs:label "Audit Event" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-u3nopo5pxqb1dwwk3u0fyp6e a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Smoking" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
-sdc4:mc-u9elnmjjpxdtxcxnqugqaowk a sdc4-meta:ModelComponent ;
-    rdfs:label "NHANES Participant Governed Record" ;
+sdc4:mc-u19jrjjc6aznug6hs2twjiy5 a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Disability" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-ueb5g1ojzlwwt0mnds5zb6wl a sdc4-meta:ModelComponent ;
@@ -1951,24 +1910,10 @@ sdc4:mc-ujir739mf1g8ajeczs9nzh9m a sdc4-meta:ModelComponent ;
     rdfs:comment "The site or facility that handled the item (FHIR AuditEvent.agent.location; prov:atLocation)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-ujpg1m8po18ynniqpwhltxld a sdc4-meta:ModelComponent ;
-    rdfs:label "Maximum Inflation Level (BPXML1)" ;
-    rdfs:comment "The maximum inflation level used, in mm Hg (BPXML1)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPXML1> ;
-    sdc4-meta:hasUnit sdc4:mc-an4r6ds6zhk334liqf3uhses ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-uraf13ojset6tivrdptohfbr a sdc4-meta:ModelComponent ;
-    rdfs:label "Red Blood Cell Count" ;
-    rdfs:comment "Red Blood Cell Count (LBXRBCSI, LOINC 789-8)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXRBCSI> ;
-    sdc4-meta:hasUnit sdc4:mc-nqxrp9pb7b9rdzn0fh3y2gs4 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-uto4zszvpicva38wx77knz5y a sdc4-meta:ModelComponent ;
-    rdfs:label "Respondent Sequence Number (SEQN)" ;
-    rdfs:comment "The NHANES respondent sequence number, the identifier every NHANES file carries for a participant (SEQN)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SEQN> ;
+sdc4:mc-urjk1vvcot1s319mxygpdsf5 a sdc4-meta:ModelComponent ;
+    rdfs:label "Reported Height in Feet and Inches (HEIGHT3)" ;
+    rdfs:comment "Self-reported height as coded (HEIGHT3: feet and inches as FII, or 9xxx for metres and centimetres). The FHIR body height beside it carries the value in centimetres." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-uwiosm2q9ym3ewr4de910s70 a sdc4-meta:ModelComponent ;
@@ -1980,13 +1925,6 @@ sdc4:mc-uzai5uey5p1fnn9ezj9u6vor a sdc4-meta:ModelComponent ;
     rdfs:label "Activity Location" ;
     rdfs:comment "Where the activity took place (prov:atLocation), as text." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-v9wj86qu70lda3tt2dh299wz a sdc4-meta:ModelComponent ;
-    rdfs:label "Average Cigarettes per Day, Past 30 Days (SMD650)" ;
-    rdfs:comment "The average number of cigarettes smoked per day during the past 30 days (SMD650)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMD650> ;
-    sdc4-meta:hasUnit sdc4:mc-x5usbr8d1n8gd0ojbzbgp6m2 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
 
 sdc4:mc-vhezo2cckpe92x4c3j2memeh a sdc4-meta:ModelComponent ;
     rdfs:label "Had Plan Reference" ;
@@ -2002,42 +1940,16 @@ sdc4:mc-vmikfu0irht9fmq7q02t3oqs a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Activity" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-vxldr9jodr9eu5uol3g4c189 a sdc4-meta:ModelComponent ;
-    rdfs:label "Masked Variance Pseudo-PSU (SDMVPSU)" ;
-    rdfs:comment "The masked variance pseudo primary sampling unit (SDMVPSU)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDMVPSU> ;
-    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
-
 sdc4:mc-w2ruemcfy35rw60jl1t9dew2 a sdc4-meta:ModelComponent ;
     rdfs:label "Agent Identifier" ;
     rdfs:comment "The identifier of a PROV agent: a URI or another globally unique identifier." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-w7xdjmfmoev4of0gd76mtnto a sdc4-meta:ModelComponent ;
-    rdfs:label "Full Sample 2 Year MEC Exam Weight (WTMEC2YR)" ;
-    rdfs:comment "The full-sample two-year MEC examination weight (WTMEC2YR); zero for participants not examined." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#WTMEC2YR> ;
-    sdc4-meta:hasUnit sdc4:mc-warylvhshpbc5eqkt0n9mz30 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-wa0mknvfo83hej635n48s0ig a sdc4-meta:ModelComponent ;
-    rdfs:label "Chronic Condition Indicators" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
-sdc4:mc-wcasfq02d9hukvn2bar4r67d a sdc4-meta:ModelComponent ;
-    rdfs:label "Basophils Percent" ;
-    rdfs:comment "Basophils Percent (LBXBAPCT, LOINC 706-2)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXBAPCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-wlfal1j4vnwy76szun72madm a sdc4-meta:ModelComponent ;
-    rdfs:label "Age Started Smoking Cigarettes Regularly (SMD030)" ;
-    rdfs:comment "The age the participant started smoking cigarettes regularly (SMD030)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMD030> ;
-    sdc4-meta:hasUnit sdc4:mc-skxvr3cdab7dmc5y66zr3mr0 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+sdc4:mc-wesa1iwagjckq500ixmosu2l a sdc4-meta:ModelComponent ;
+    rdfs:label "State FIPS Code (_STATE)" ;
+    rdfs:comment "The FIPS code of the state or territory of residence (_STATE)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-wn77qo3b1xjwc4dudtyme2io a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Location" ;
@@ -2064,10 +1976,6 @@ sdc4:mc-x0lebwtobgaelj5pev3258sd a sdc4-meta:ModelComponent ;
     rdfs:comment "The version of a software agent." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-x69rhb0rc8sn1e6qkirhcnum a sdc4-meta:ModelComponent ;
-    rdfs:label "Blood Pressure Reading 1" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
 sdc4:mc-xlgjqdpwdbn2re3mdh5yy2rk a sdc4-meta:ModelComponent ;
     rdfs:label "Error Message" ;
     rdfs:comment "The error the activity reported, if it failed." ;
@@ -2083,38 +1991,20 @@ sdc4:mc-yk5nrxndulhebpi3hiywk8u8 a sdc4-meta:ModelComponent ;
     rdfs:comment "When the entity was generated (prov:generatedAtTime)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTemporalType> .
 
-sdc4:mc-yksuiithtrif7jdrjpi4o7eg a sdc4-meta:ModelComponent ;
-    rdfs:label "Masked Variance Pseudo-Stratum (SDMVSTRA)" ;
-    rdfs:comment "The masked variance pseudo stratum (SDMVSTRA)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDMVSTRA> ;
-    sdc4-meta:hasUnit sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdCountType> .
+sdc4:mc-yumwsic8qvlly00pluhl9415 a sdc4-meta:ModelComponent ;
+    rdfs:label "BRFSS Chronic Conditions" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
-sdc4:mc-z9jeqoghnlvlyy8sgxk5lwne a sdc4-meta:ModelComponent ;
-    rdfs:label "Hemoglobin" ;
-    rdfs:comment "Hemoglobin (LBXHGB, LOINC 718-7)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXHGB> ;
-    sdc4-meta:hasUnit sdc4:mc-gj5enh9y0km64ww0oa5vk7v3 ;
+sdc4:mc-z1ezf3vzksp7qpgd9l3uxvqo a sdc4-meta:ModelComponent ;
+    rdfs:label "Body Height" ;
+    rdfs:comment "Body Height (LOINC 8302-2), in the Default units by slot. FHIR Observation.valueQuantity." ;
+    sdc4-meta:hasUnit sdc4:mc-g7gz7adgd2fh6egkt84jnx7m ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
 
-sdc4:mc-zmw9684hejwjsfcg6t71jkgl a sdc4-meta:ModelComponent ;
-    rdfs:label "Full Sample 2 Year Interview Weight (WTINT2YR)" ;
-    rdfs:comment "The full-sample two-year interview weight (WTINT2YR), for weighted estimates of the interviewed sample." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#WTINT2YR> ;
-    sdc4-meta:hasUnit sdc4:mc-warylvhshpbc5eqkt0n9mz30 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-zsikpg1vrhzoydvk26gpg6nb a sdc4-meta:ModelComponent ;
-    rdfs:label "Eosinophils Percent" ;
-    rdfs:comment "Eosinophils Percent (LBXEOPCT, LOINC 713-8)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/CBC_J.htm#LBXEOPCT> ;
-    sdc4-meta:hasUnit sdc4:mc-bvz91uwa2c28sr0k5u85zx04 ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdQuantityType> .
-
-sdc4:mc-k52nvzllwurg016nvsulpm32 a sdc4-meta:ModelComponent ;
-    rdfs:label "Data Release Cycle (SDDSRVYR)" ;
-    rdfs:comment "The NHANES data release cycle (SDDSRVYR)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#SDDSRVYR> ;
+sdc4:mc-a08lkh4xjvqqjtz7sxy129pa a sdc4-meta:ModelComponent ;
+    rdfs:label "Exercise in Past 30 Days (EXERANY2)" ;
+    rdfs:comment "Whether the respondent took part in any physical activity or exercise in the past month other than their regular job (EXERANY2)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-acr1xvqppf1b3rjsrst6tt4p a sdc4-meta:ModelComponent ;
@@ -2127,38 +2017,37 @@ sdc4:mc-atqkooccakulfhkt18c008fx a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
+sdc4:mc-bvz91uwa2c28sr0k5u85zx04 a sdc4-meta:ModelComponent ;
+    rdfs:label "Percentage" ;
+    rdfs:comment "Parts per hundred." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-cr5izog5xjzki3zmnwofubuc a sdc4-meta:ModelComponent ;
+    rdfs:label "Drinks" ;
+    rdfs:comment "A count of alcoholic drinks." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
 sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Alzheimer's Disease or Related Disorder" ;
     rdfs:comment "Whether the person has alzheimer's disease or related disorder (Alzheimer's Disease or Related Disorder, SNOMED CT 26929004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_ALZHDMTA." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-eimlsgbawhm8aa4i6gbdrja0 a sdc4-meta:ModelComponent ;
-    rdfs:label "Veteran Status" ;
-    rdfs:comment "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMQMILIZ> ;
+sdc4:mc-dkmozm7gxxss45gf5yhthpjg a sdc4-meta:ModelComponent ;
+    rdfs:label "Still Have Asthma (ASTHNOW)" ;
+    rdfs:comment "Whether the respondent still has asthma (ASTHNOW)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-ejjthi5lftrx9a7rv3fedq6m a sdc4-meta:ModelComponent ;
-    rdfs:label "Still Have Asthma (MCQ035)" ;
-    rdfs:comment "Whether the participant still has asthma (MCQ035)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/MCQ_J.htm#MCQ035> ;
+sdc4:mc-e104gkr3e96ekydrpe8qogjw a sdc4-meta:ModelComponent ;
+    rdfs:label "Serious Difficulty Concentrating, Remembering or Deciding (DECIDE)" ;
+    rdfs:comment "Serious Difficulty Concentrating, Remembering or Deciding (DECIDE), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-ezm3xazl3vdpmykpasxccal0 a sdc4-meta:ModelComponent ;
-    rdfs:label "Per 100 Cells" ;
-    rdfs:comment "A count per 100 white blood cells (UCUM /100{WBCs})." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-f98c865cpjza5wwh3odh9nv3 a sdc4-meta:ModelComponent ;
-    rdfs:label "Arm Selected (BPAARM)" ;
-    rdfs:comment "The arm the blood pressure was measured on (BPAARM)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPAARM> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-fwyb9ukfypotqkvahtygrjo5 a sdc4-meta:ModelComponent ;
-    rdfs:label "Doctor Ever Said You Were Overweight (MCQ080)" ;
-    rdfs:comment "Whether a doctor or health professional ever said the participant was overweight (MCQ080)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/MCQ_J.htm#MCQ080> ;
+sdc4:mc-et536sfok7glz7fartfs4m65 a sdc4-meta:ModelComponent ;
+    rdfs:label "Sex of Respondent (SEXVAR)" ;
+    rdfs:comment "The sex of the respondent as BRFSS codes it (SEXVAR). Kept beside the Default administrative gender it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h a sdc4-meta:ModelComponent ;
@@ -2166,26 +2055,27 @@ sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has diabetes (Diabetes, SNOMED CT 73211009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS DIABETE4, CMS SP_DIABETES." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
+sdc4:mc-gighl3atjkq88ttivdezt4p7 a sdc4-meta:ModelComponent ;
+    rdfs:label "Pregnancy Status (PREGNANT)" ;
+    rdfs:comment "Whether the respondent is pregnant (PREGNANT). Kept beside the NIH CDE pregnancy question it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
 sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: High Cholesterol" ;
     rdfs:comment "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-gxy0s65v35djnq875rzhcmby a sdc4-meta:ModelComponent ;
-    rdfs:label "Limitations Keeping You from Working (PFQ049)" ;
-    rdfs:comment "Whether a physical, mental or emotional problem keeps the participant from working (PFQ049)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ049> ;
+sdc4:mc-hs066djavlc5r494vqu61thl a sdc4-meta:ModelComponent ;
+    rdfs:label "Deaf or Serious Difficulty Hearing (DEAF)" ;
+    rdfs:comment "Deaf or Serious Difficulty Hearing (DEAF), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-gy1045dipmx8udv1bndk7hrv a sdc4-meta:ModelComponent ;
-    rdfs:label "Ever Used an E-cigarette (SMQ900)" ;
-    rdfs:comment "Whether the participant has ever used an e-cigarette (SMQ900)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ900> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-hc79skkfionpgw87dsg5yrgw a sdc4-meta:ModelComponent ;
-    rdfs:label "Condition Indicator Basis" ;
-    rdfs:comment "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms." ;
+sdc4:mc-hukufq8g2u2k0cpcal7uxsa8 a sdc4-meta:ModelComponent ;
+    rdfs:label "Smoked at Least 100 Cigarettes (SMOKE100)" ;
+    rdfs:comment "Whether the respondent has smoked at least 100 cigarettes in their entire life (SMOKE100)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-hyqlz591lhj54sdt1a1mup70 a sdc4-meta:ModelComponent ;
@@ -2198,18 +2088,6 @@ sdc4:mc-ix0my2v2z79s002g0r8orosf a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has cancer (Cancer, SNOMED CT 363346000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ220, BRFSS CHCOCNC1, CMS SP_CNCR." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-j9l0spojx47xnjqipfl9mzte a sdc4-meta:ModelComponent ;
-    rdfs:label "Interview/Examination Status (RIDSTATR)" ;
-    rdfs:comment "Whether the participant was interviewed only, or interviewed and examined at the mobile examination center (RIDSTATR)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDSTATR> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-jxdk8rs1m133yzb52rfs08hy a sdc4-meta:ModelComponent ;
-    rdfs:label "Experience Confusion or Memory Problems (PFQ057)" ;
-    rdfs:comment "Whether the participant experiences confusion or memory problems (PFQ057)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ057> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
 sdc4:mc-jyx7rxfktazhgxgq84fxf6wr a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Chronic Bronchitis" ;
     rdfs:comment "Whether the person has chronic bronchitis (Chronic Bronchitis, SNOMED CT 63480004), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160K." ;
@@ -2220,10 +2098,10 @@ sdc4:mc-l784ggegqcvrpnmw2yvo4il7 a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has osteoporosis (Osteoporosis, SNOMED CT 64859006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by CMS SP_OSTEOPRS." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-lnbzdjsluc4ebnri7k4dvn2i a sdc4-meta:ModelComponent ;
-    rdfs:label "Smoked at Least 100 Cigarettes in Life (SMQ020)" ;
-    rdfs:comment "Whether the participant has smoked at least 100 cigarettes in their life (SMQ020)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ020> ;
+sdc4:mc-l9s5avvkix0og66m0lewwqgg a sdc4-meta:ModelComponent ;
+    rdfs:label "Difficulty Doing Errands Alone (DIFFALON)" ;
+    rdfs:comment "Difficulty Doing Errands Alone (DIFFALON), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-lvockfc8lce5p15wuwxc1kwa a sdc4-meta:ModelComponent ;
@@ -2231,10 +2109,10 @@ sdc4:mc-lvockfc8lce5p15wuwxc1kwa a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has high blood pressure (High Blood Pressure, SNOMED CT 38341003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS BPHIGH6." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-m67ncwhc9s1j36f9w9qsrxfx a sdc4-meta:ModelComponent ;
-    rdfs:label "Citizenship Status (DMDCITZN)" ;
-    rdfs:comment "Citizenship status (DMDCITZN)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN> ;
+sdc4:mc-m3970or5qg49k78l0lq1ptjc a sdc4-meta:ModelComponent ;
+    rdfs:label "Serious Difficulty Walking or Climbing Stairs (DIFFWALK)" ;
+    rdfs:comment "Serious Difficulty Walking or Climbing Stairs (DIFFWALK), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-mijr18ynaqde2l8jps70l2g6 a sdc4-meta:ModelComponent ;
@@ -2245,17 +2123,6 @@ sdc4:mc-mijr18ynaqde2l8jps70l2g6 a sdc4-meta:ModelComponent ;
 sdc4:mc-nd1v8jk7wtm1tthzw1f4987t a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Arthritis" ;
     rdfs:comment "Whether the person has arthritis (Arthritis, SNOMED CT 3723001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160A, BRFSS HAVARTH4, CMS SP_RA_OA." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-nqxrp9pb7b9rdzn0fh3y2gs4 a sdc4-meta:ModelComponent ;
-    rdfs:label "Millions per Microlitre" ;
-    rdfs:comment "Cell count in millions of cells per microlitre (UCUM 10*6/uL)." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-nwsj84veb6u9g1v0h2a3a793 a sdc4-meta:ModelComponent ;
-    rdfs:label "Country of Birth (DMDBORN4)" ;
-    rdfs:comment "Whether the participant was born in the 50 US states or Washington, DC, or elsewhere (DMDBORN4)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDBORN4> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-o4d67oubyyunugx3la44f53u a sdc4-meta:ModelComponent ;
@@ -2273,25 +2140,15 @@ sdc4:mc-p8u71b4lhct4ra0szgkex7xo a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has thyroid problem (Thyroid Problem, SNOMED CT 14304000), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160M." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-pwew1ssov8df0h199h7r1d0v a sdc4-meta:ModelComponent ;
-    rdfs:label "Picograms" ;
-    rdfs:comment "Mass in picograms." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-rpu89r6jz2mhu8yoiuv2j6k5 a sdc4-meta:ModelComponent ;
-    rdfs:label "Milligrams per Decilitre" ;
-    rdfs:comment "Mass concentration in milligrams per decilitre." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+sdc4:mc-rw8s64t4v80421biq8eo9p2x a sdc4-meta:ModelComponent ;
+    rdfs:label "Blind or Serious Difficulty Seeing (BLIND)" ;
+    rdfs:comment "Blind or Serious Difficulty Seeing (BLIND), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-sbulkq80j4fkbiql4zgje4qr a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Emphysema" ;
     rdfs:comment "Whether the person has emphysema (Emphysema, SNOMED CT 87433001), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160G." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-sigmhjzuw16w0k8op92lk9sd a sdc4-meta:ModelComponent ;
-    rdfs:label "Gender (RIAGENDR)" ;
-    rdfs:comment "The participant's gender as NHANES codes it (RIAGENDR). Kept beside the Default administrative gender it is mapped to." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIAGENDR> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-skxvr3cdab7dmc5y66zr3mr0 a sdc4-meta:ModelComponent ;
@@ -2309,31 +2166,20 @@ sdc4:mc-udbydjqj76l8kl6mi2s3v7vd a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has coronary heart disease (Coronary Heart Disease, SNOMED CT 53741008), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160C, BRFSS CVDCRHD4, CMS SP_ISCHMCHT." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-uixgck0xt60055m4bdcxkhyj a sdc4-meta:ModelComponent ;
-    rdfs:label "Months" ;
-    rdfs:comment "A duration in months." ;
+sdc4:mc-ux7molkiumql3ml1pyc0kf2s a sdc4-meta:ModelComponent ;
+    rdfs:label "Body Mass Index Units" ;
+    rdfs:comment "Kilograms per square metre (UCUM kg/m2)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-uy2fly38y0ghl10xgo4e7svh a sdc4-meta:ModelComponent ;
-    rdfs:label "Pulse Regular or Irregular (BPXPULS)" ;
-    rdfs:comment "Whether the pulse was regular or irregular (BPXPULS)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPXPULS> ;
+sdc4:mc-vyc62ndwazzqyn5ee5oeno1o a sdc4-meta:ModelComponent ;
+    rdfs:label "Veteran Status" ;
+    rdfs:comment "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3)." ;
+    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMQMILIZ> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-wh4zkqhos44fbb5p0b5c7w1d a sdc4-meta:ModelComponent ;
-    rdfs:label "Need Special Equipment to Walk (PFQ054)" ;
-    rdfs:comment "Whether the participant needs special equipment to walk (PFQ054)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ054> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-x5usbr8d1n8gd0ojbzbgp6m2 a sdc4-meta:ModelComponent ;
-    rdfs:label "Cigarettes" ;
-    rdfs:comment "A count of cigarettes." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-xpa0i073e6fml5g0sz794dfs a sdc4-meta:ModelComponent ;
-    rdfs:label "Millimoles per Litre" ;
-    rdfs:comment "Substance concentration in millimoles per litre." ;
+sdc4:mc-warylvhshpbc5eqkt0n9mz30 a sdc4-meta:ModelComponent ;
+    rdfs:label "Sample Weight" ;
+    rdfs:comment "A dimensionless survey sample weight." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-xsohkckyof7y1xj8h1ab4pxu a sdc4-meta:ModelComponent ;
@@ -2341,9 +2187,20 @@ sdc4:mc-xsohkckyof7y1xj8h1ab4pxu a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
+sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb a sdc4-meta:ModelComponent ;
+    rdfs:label "Condition Indicator Basis" ;
+    rdfs:comment "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
 sdc4:mc-yshoeps2dm0j1ueusqs825v6 a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Heart Attack" ;
     rdfs:comment "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-zbwodv9m60b33blptlellmu0 a sdc4-meta:ModelComponent ;
+    rdfs:label "Difficulty Dressing or Bathing (DIFFDRES)" ;
+    rdfs:comment "Difficulty Dressing or Bathing (DIFFDRES), the American Community Survey disability question as BRFSS asks it." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-zc6p008h5naqev8zngtzvyx9 a sdc4-meta:ModelComponent ;
@@ -2351,9 +2208,9 @@ sdc4:mc-zc6p008h5naqev8zngtzvyx9 a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has stroke (Stroke, SNOMED CT 230690007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160F, BRFSS CVDSTRK3, CMS SP_STRKETIA." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-gj5enh9y0km64ww0oa5vk7v3 a sdc4-meta:ModelComponent ;
-    rdfs:label "Grams per Decilitre" ;
-    rdfs:comment "Mass concentration in grams per decilitre." ;
+sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn a sdc4-meta:ModelComponent ;
+    rdfs:label "Items" ;
+    rdfs:comment "A count of discrete things, with no dimension." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-i16vqj89it3db7d3c5qjko9p a sdc4-meta:ModelComponent ;
@@ -2361,26 +2218,20 @@ sdc4:mc-i16vqj89it3db7d3c5qjko9p a sdc4-meta:ModelComponent ;
     rdfs:comment "The kind of PROV agent: person, organization or software agent." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-mq5xicyh1n3d8ofhyroazip2 a sdc4-meta:ModelComponent ;
-    rdfs:label "Do You Now Smoke Cigarettes (SMQ040)" ;
-    rdfs:comment "Whether the participant now smokes cigarettes every day, some days or not at all (SMQ040)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/SMQ_J.htm#SMQ040> ;
+sdc4:mc-kzni1q04rghj23ca0zbhauu5 a sdc4-meta:ModelComponent ;
+    rdfs:label "Frequency of Days Now Smoking (SMOKDAY2)" ;
+    rdfs:comment "Whether the respondent now smokes cigarettes every day, some days or not at all (SMOKDAY2)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-r0j6yo8zvo4q8x0ovdr6j9yz a sdc4-meta:ModelComponent ;
-    rdfs:label "Pregnancy Status at Exam (RIDEXPRG)" ;
-    rdfs:comment "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDEXPRG> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+sdc4:mc-r34ta6hknc3dpeb4sawox80v a sdc4-meta:ModelComponent ;
+    rdfs:label "Temperature (SI - Metric)" ;
+    rdfs:comment "Temperature in degrees Celsius or kelvin." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-t6znwhu1i6tg52lv4v3upb10 a sdc4-meta:ModelComponent ;
     rdfs:label "years or months" ;
     rdfs:comment "Units: years, months. The instance records the number and which of these units it is in." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-u9ijfragaqhnsuqzaajjrz2m a sdc4-meta:ModelComponent ;
-    rdfs:label "Femtolitres" ;
-    rdfs:comment "Cell volume in femtolitres." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-zmpqfc6tb0o2hgu8qs6lj8tp a sdc4-meta:ModelComponent ;
@@ -2388,10 +2239,11 @@ sdc4:mc-zmpqfc6tb0o2hgu8qs6lj8tp a sdc4-meta:ModelComponent ;
     rdfs:comment "A textual description of the person's current pregnancy status. Also known as: Current Pregnancy Indicator. NIH CDE Repository, steward Project 5, tinyId LiUWCWluP, NIH endorsed. Corrected from the NIH CDE Repository record, whose LOINC answer codes are each one off (Yes was bound to LA26683-5 Not pregnant, No to LA4489-6 Unknown, Unknown to LA15173-0 Pregnant); the record's own NCI Thesaurus meanings (C49488 Yes, C49487 No, C17998 Unknown) agree with the codes used here." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn a sdc4-meta:ModelComponent ;
-    rdfs:label "Items" ;
-    rdfs:comment "A count of discrete things, with no dimension." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+sdc4:mc-ecwiva31y2fky3eu1mdnvurt a sdc4-meta:ModelComponent ;
+    rdfs:label "Current E-cigarette Use (ECIGNOW2)" ;
+    rdfs:comment "Whether the respondent now uses e-cigarettes every day, some days, or not at all, or never used them (ECIGNOW2)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-g2xnh3uhnlrnqlo7ki2s0fs3 a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Derivation Type" ;
@@ -2403,9 +2255,15 @@ sdc4:mc-gxzbm758mhdz51xd4bawlfhh a sdc4-meta:ModelComponent ;
     rdfs:comment "The gender a person is recorded as for administrative purposes. Not clinical or biological sex; see Sex (Recorded)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-r493514xykrtgyz8dyyqjcxg a sdc4-meta:ModelComponent ;
-    rdfs:label "Rate" ;
-    rdfs:comment "Occurrences per unit of time: per minute, per hour, per day." ;
+sdc4:mc-iwlb0rcomw3q8rlff3ajukme a sdc4-meta:ModelComponent ;
+    rdfs:label "Computed Smoking Status (_SMOKER3)" ;
+    rdfs:comment "The agency's four-level computed smoking status (_SMOKER3). The shared Smoking Status beside it is derived from the same answers." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-n7s7hcgef4pxius8a0l6r5qp a sdc4-meta:ModelComponent ;
+    rdfs:label "Mass/Weight (SI - Metric)" ;
+    rdfs:comment "SI units of mass: milligram, gram, kilogram." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-rpz1czz06jhpahmfz30rblvp a sdc4-meta:ModelComponent ;
@@ -2413,55 +2271,52 @@ sdc4:mc-rpz1czz06jhpahmfz30rblvp a sdc4-meta:ModelComponent ;
     rdfs:comment "The result of an audited event (FHIR AuditEvent.outcome)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-warylvhshpbc5eqkt0n9mz30 a sdc4-meta:ModelComponent ;
-    rdfs:label "Sample Weight" ;
-    rdfs:comment "A dimensionless survey sample weight." ;
+sdc4:mc-sdlc6bf161fyyueaca8vvshh a sdc4-meta:ModelComponent ;
+    rdfs:label "Mass/Weight (US Customary)" ;
+    rdfs:comment "US customary units of mass: ounce, pound, short ton." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-b1mxr233mgqvzr39c90ly8cv a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Lifting or Carrying (PFQ061E)" ;
-    rdfs:comment "Difficulty Lifting or Carrying (PFQ061E), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061E> ;
+sdc4:mc-vfrowc5oxysvj71vfrmc7o4t a sdc4-meta:ModelComponent ;
+    rdfs:label "Computed Body Mass Index Category (_BMI5CAT)" ;
+    rdfs:comment "The agency's computed BMI category (_BMI5CAT)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-yht0x4rmqyu32sd90jl0rzbo a sdc4-meta:ModelComponent ;
+    rdfs:label "Days" ;
+    rdfs:comment "A duration in days." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x a sdc4-meta:ModelComponent ;
     rdfs:label "Audit Event Action" ;
     rdfs:comment "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-crr2z3b2l7hlq1kvevppt8kt a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Walking Between Rooms (PFQ061H)" ;
-    rdfs:comment "Difficulty Walking Between Rooms (PFQ061H), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061H> ;
+sdc4:mc-fa0aian3co6if5igu488whhr a sdc4-meta:ModelComponent ;
+    rdfs:label "Length of Time Since Last Routine Checkup (CHECKUP1)" ;
+    rdfs:comment "How long since the respondent last visited a doctor for a routine checkup (CHECKUP1)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-cy6k5rxvhvg2v27cfp7pjwyx a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Getting In and Out of Bed (PFQ061J)" ;
-    rdfs:comment "Difficulty Getting In and Out of Bed (PFQ061J), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061J> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-fqjd2lvp9jamdpf0f3kpkwnp a sdc4-meta:ModelComponent ;
-    rdfs:label "Education Level - Adults 20+ (DMDEDUC2)" ;
-    rdfs:comment "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDEDUC2> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+sdc4:mc-g7gz7adgd2fh6egkt84jnx7m a sdc4-meta:ModelComponent ;
+    rdfs:label "Length/Distance (SI - Metric)" ;
+    rdfs:comment "SI units of length: millimetre, centimetre, metre, kilometre." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-i4e2nod7ss9d4cumhn2pah8b a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Entity Type" ;
     rdfs:comment "The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-knrs4clih4pi26tm2zra1ai0 a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Stooping, Crouching or Kneeling (PFQ061D)" ;
-    rdfs:comment "Difficulty Stooping, Crouching or Kneeling (PFQ061D), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061D> ;
+sdc4:mc-j6jj7wf0olxh3db6td9wey6g a sdc4-meta:ModelComponent ;
+    rdfs:label "General Health Status" ;
+    rdfs:comment "The person's rating of their general health (BRFSS GENHLTH; the NHANES HSQ question is the same scale when that file is carried)." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-mktq5xr8slz67q85idl8bsky a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Walking a Quarter Mile (PFQ061B)" ;
-    rdfs:comment "Difficulty Walking a Quarter Mile (PFQ061B), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061B> ;
+sdc4:mc-luq973ggnjoo9ixkt0dym8v6 a sdc4-meta:ModelComponent ;
+    rdfs:label "Category of Health Insurance" ;
+    rdfs:comment "A textual description of a person's insurance coverage for medical expenses. Question text: Category of Health Insurance? NIH CDE Repository, steward Project 5, tinyId cPiK4Amjn5, NIH endorsed." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-n7pn5ctqo81v0v418hez5zv5 a sdc4-meta:ModelComponent ;
@@ -2469,46 +2324,32 @@ sdc4:mc-n7pn5ctqo81v0v418hez5zv5 a sdc4-meta:ModelComponent ;
     rdfs:comment "Tobacco smoking status (LOINC 72166-2) as the survey establishes it: NHANES from SMQ020 and SMQ040, BRFSS from SMOKE100 and SMOKDAY2 (the agency's _SMOKER3 is kept beside it). The LOINC answer list LL2201-3." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-p4jxl2rur1agjhdpvj2g9u4k a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Dressing Yourself (PFQ061L)" ;
-    rdfs:comment "Difficulty Dressing Yourself (PFQ061L), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061L> ;
+sdc4:mc-r493514xykrtgyz8dyyqjcxg a sdc4-meta:ModelComponent ;
+    rdfs:label "Rate" ;
+    rdfs:comment "Occurrences per unit of time: per minute, per hour, per day." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-an4r6ds6zhk334liqf3uhses a sdc4-meta:ModelComponent ;
+    rdfs:label "Pressure" ;
+    rdfs:comment "Units of pressure: millimetre of mercury, kilopascal, standard atmosphere, pound per square inch." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-bhi8aatu3lxo3erx3mo5y08v a sdc4-meta:ModelComponent ;
+    rdfs:label "Education Level (EDUCA)" ;
+    rdfs:comment "The highest grade or year of school completed (EDUCA). Kept beside the NIH CDE Current Educational Attainment it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-qv6ytjstrquvfr20cyfjqq2d a sdc4-meta:ModelComponent ;
-    rdfs:label "Coded Cuff Size (BPACSZ)" ;
-    rdfs:comment "The blood pressure cuff size used (BPACSZ)." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/BPX_J.htm#BPACSZ> ;
+sdc4:mc-czh5vzmdeijkwrtyla1w7su8 a sdc4-meta:ModelComponent ;
+    rdfs:label "Marital Status (MARITAL)" ;
+    rdfs:comment "Marital status as BRFSS codes it (MARITAL). Kept beside the NIH CDE Marital Status it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-rot4z5ny8gdkfmimedcjl1te a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Walking Up Ten Stairs (PFQ061C)" ;
-    rdfs:comment "Difficulty Walking Up Ten Stairs (PFQ061C), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061C> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-vp4ow7t3q8w2phcft0qvyj4u a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Standing for Long Periods (PFQ061M)" ;
-    rdfs:comment "Difficulty Standing for Long Periods (PFQ061M), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061M> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-y52y4mpq95zcknal0be1uc7v a sdc4-meta:ModelComponent ;
-    rdfs:label "Difficulty Standing Up from an Armless Chair (PFQ061I)" ;
-    rdfs:comment "Difficulty Standing Up from an Armless Chair (PFQ061I), on the four-point difficulty scale." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm#PFQ061I> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-hs44ipuqgvc3azbt3mirxtsz a sdc4-meta:ModelComponent ;
-    rdfs:label "Race/Hispanic Origin with NH Asian (RIDRETH3)" ;
-    rdfs:comment "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#RIDRETH3> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-i3uys2dmi257jkdzavsst5az a sdc4-meta:ModelComponent ;
-    rdfs:label "Marital Status (DMDMARTL)" ;
-    rdfs:comment "Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDMARTL> ;
+sdc4:mc-qamg60snb8cl9auv4y03kdc4 a sdc4-meta:ModelComponent ;
+    rdfs:label "Imputed Race/Ethnicity Value (_IMPRACE)" ;
+    rdfs:comment "Race and ethnicity as BRFSS imputes and codes it (_IMPRACE). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-vbctgmdcwps5b3r3l6sboa6y a sdc4-meta:ModelComponent ;
@@ -2521,25 +2362,16 @@ sdc4:mc-wl6j4ekcmu4hvt2m12zw4zp8 a sdc4-meta:ModelComponent ;
     rdfs:comment "The state of an activity, from the Data Privacy Vocabulary activity status concepts." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-an4r6ds6zhk334liqf3uhses a sdc4-meta:ModelComponent ;
-    rdfs:label "Pressure" ;
-    rdfs:comment "Units of pressure: millimetre of mercury, kilopascal, standard atmosphere, pound per square inch." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
 sdc4:mc-u5tietya3u56hbz2kos06ai7 a sdc4-meta:ModelComponent ;
     rdfs:label "Race/Ethnicity Self-Identification" ;
     rdfs:comment "A textual description of a person's race. C17049 |The ethnicity of a person. C16564 | An individual's perspective or subjective interpretation of an event or information. C74528 Question text: Please select the racial/ethnic category or categories with which you most closely identify. Select all that apply. NIH CDE Repository, steward NIMHD, tinyId LakF0YkywC, NIH endorsed." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-bvz91uwa2c28sr0k5u85zx04 a sdc4-meta:ModelComponent ;
-    rdfs:label "Percentage" ;
-    rdfs:comment "Parts per hundred." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-ebtwma3vz90nci5or2gtxx0d a sdc4-meta:ModelComponent ;
-    rdfs:label "Thousands per Microlitre" ;
-    rdfs:comment "Cell count in thousands of cells per microlitre (UCUM 10*3/uL)." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+sdc4:mc-j67yf27qljb83m2fwvown1lk a sdc4-meta:ModelComponent ;
+    rdfs:label "Employment Status (EMPLOY1)" ;
+    rdfs:comment "Employment status as BRFSS codes it (EMPLOY1). Kept beside the NIH CDE Employment Status it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-q9vmn1cvdclgr757aer5v1rg a sdc4-meta:ModelComponent ;
     rdfs:label "Observation Status" ;
@@ -2551,9 +2383,26 @@ sdc4:mc-qsetd453kk9own8co1wmc5cz a sdc4-meta:ModelComponent ;
     rdfs:comment "A demographic parameter indicating a person's current conjugal status. Question text: What is your current marital status? NIH CDE Repository, steward NIMHD, tinyId C6SezX_mKG, NIH endorsed." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
+sdc4:mc-oy35qocyvn0zxq8ni4azvz39 a sdc4-meta:ModelComponent ;
+    rdfs:label "Employment Status" ;
+    rdfs:comment "The state of a person with regard to earning wages or salary. Question text: We would like to know about what you do: are you working now, looking for work, retired, keeping house, a student, or what? NIH CDE Repository, steward NIMHD, tinyId RME88_Wg_hV, NIH endorsed." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-crdh278iwq7azbtcgsuxteve a sdc4-meta:ModelComponent ;
+    rdfs:label "Income Level (INCOME3)" ;
+    rdfs:comment "Annual household income from all sources in the agency's ranges (INCOME3). Not harmonized: the ranges do not nest with NHANES's or the NIH CDE's." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
 sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj a sdc4-meta:ModelComponent ;
     rdfs:label "Purpose of Use" ;
     rdfs:comment "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-evbpc370eyfc3q3lldwifu78 a sdc4-meta:ModelComponent ;
+    rdfs:label "Primary Source of Health Insurance (PRIMINSR)" ;
+    rdfs:comment "The current primary source of health insurance coverage (PRIMINSR). Kept beside the NIH CDE Category of Health Insurance it is mapped to." ;
+    rdfs:seeAlso <https://www.cdc.gov/brfss/annual_data/2022/pdf/codebook22_llcp-v2-508.pdf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-jujsdur1igws8orw6tvvlqco a sdc4-meta:ModelComponent ;
@@ -2561,14 +2410,8 @@ sdc4:mc-jujsdur1igws8orw6tvvlqco a sdc4-meta:ModelComponent ;
     rdfs:comment "The functional role of an agent in an activity (FHIR Provenance.agent.type)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-ex88a2s3ys6hm5pvv77j0q2u a sdc4-meta:ModelComponent ;
-    rdfs:label "Annual Household Income (INDHHIN2)" ;
-    rdfs:comment "Annual household income in the agency's ranges (INDHHIN2). Not harmonized: the NHANES, BRFSS and NIH CDE income ranges do not nest, so each study keeps its own." ;
-    rdfs:seeAlso <https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#INDHHIN2> ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-xtbtk7ro6s9247bcwt4ak4h1 a sdc4-meta:ModelComponent ;
+sdc4:mc-yqqm7og0x00fbmazzm00s86e a sdc4-meta:ModelComponent ;
     rdfs:label "Current Educational Attainment" ;
-    rdfs:comment "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed." ;
+    rdfs:comment "A textual description of the grade or highest level of education attained by a human being. Question text: What is the highest grade or level of school you have completed or the highest degree you have received? NIH CDE Repository, steward Project 5, tinyId Co2d1RyYS3, NIH endorsed. Corrected from the NIH CDE Repository record, whose text carries the Windows-1252 apostrophe as the control character U+0092; it is the right single quotation mark (U+2019), as Windows-1252 defines byte 0x92." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 

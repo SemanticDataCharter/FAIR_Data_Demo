@@ -15,3 +15,4 @@ members:
 - brfss-reported-weight-in-pounds
 - https://axius-sdc.com/library/fhir/vital-signs-panel
 - brfss-bmi-category
+supersedes: gc3nb6hzobkzifswmzgt7w6t

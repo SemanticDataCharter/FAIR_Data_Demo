@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "oqw3pnwhf8knpgsfo8k3xojn",
+  "supersedes_ct_id": "tto2m72tul0hj0z7zyoco4yx",
   "members": [
     "https://axius-sdc.com/library/default/administrative-gender",
     "brfss-sex-of-respondent",
@@ -41,7 +41,7 @@
     "brfss-imputed-age-80",
     "ct:u5tietya3u56hbz2kos06ai7",
     "brfss-imputed-race-ethnicity",
-    "ct:xtbtk7ro6s9247bcwt4ak4h1",
+    "ct:yqqm7og0x00fbmazzm00s86e",
     "brfss-education-level",
     "ct:qsetd453kk9own8co1wmc5cz",
     "brfss-marital-status",

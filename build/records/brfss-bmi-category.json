@@ -18,8 +18,8 @@
       "Obese"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C17962",
-      "http://purl.obolibrary.org/obo/NCIT_C17958",
+      "http://snomed.info/id/248342006",
+      "http://snomed.info/id/43664005",
       "http://purl.obolibrary.org/obo/NCIT_C94250",
       "http://purl.obolibrary.org/obo/NCIT_C3283"
     ]
@@ -27,11 +27,11 @@
   "enumeration": [
     {
       "value": "Underweight",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17962"
+      "definition": "http://snomed.info/id/248342006"
     },
     {
       "value": "Normal Weight",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C17958"
+      "definition": "http://snomed.info/id/43664005"
     },
     {
       "value": "Overweight",
@@ -69,7 +69,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "ezewpvppvx8zjikutr53ppgz",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

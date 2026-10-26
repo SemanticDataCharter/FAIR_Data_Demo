@@ -7,12 +7,13 @@ description: 'The survey design fields a weighted estimate needs: the state, int
 source:
   name: BRFSS 2022
 links:
-- predicate: skos:exactMatch
-  iri: http://purl.obolibrary.org/obo/NCIT_C142700
-  basis: standard
+- predicate: skos:closeMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C71492
+  basis: concept
 members:
 - brfss-state-fips-code
 - brfss-interview-date
 - brfss-primary-sampling-unit
 - brfss-sample-design-stratum
 - brfss-final-weight
+supersedes: zauadmfc05ep5nf2kd9j8cwh

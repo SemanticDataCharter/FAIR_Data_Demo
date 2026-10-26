@@ -1,12 +1,12 @@
 key: nhanes-total-cholesterol-si
 label: Total Cholesterol (SI)
 type: XdQuantity
-description: Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 2093-3).
+description: Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC) (LBDTCSI, LOINC 14647-2).
 source:
   name: NHANES 2017-2018
 links:
 - predicate: skos:exactMatch
-  iri: https://loinc.org/2093-3/
+  iri: https://loinc.org/14647-2/
   basis: standard
 - predicate: rdfs:seeAlso
   iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/TCHOL_J.htm#LBDTCSI
@@ -16,3 +16,4 @@ constraints:
   total_digits: 5
   fraction_digits: 2
   min_inclusive: 0
+supersedes: qp5mdgab3s37zwqzyfzq8rvi

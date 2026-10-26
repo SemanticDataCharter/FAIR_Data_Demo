@@ -42,10 +42,10 @@ PART = f'{SDC4}i-nhanesp0000000000000001'
 MED = f'{SDC4}i-nhanesm0000000000000001'
 RESP = f'{SDC4}i-brfss000000000000000001'
 BENE = f'{SDC4}i-cmsbene00000000000000001'
-DM_PART = f'{SDC4}dm-eehpfapwgvxtzdrofgstdcfs'
+DM_PART = f'{SDC4}dm-tp5pg0u4dasqarie0b3ujn2u'
 DM_MED = f'{SDC4}dm-epbdfmvxc3gbh5f66hhb3o2m'
-DM_RESP = f'{SDC4}dm-w9ozx00idgs5k8tw4359skvn'
-DM_BENE = f'{SDC4}dm-fnv3zi2btk3s0sfodjsc25eb'
+DM_RESP = f'{SDC4}dm-j6wmvhr46irxht2ls90nry8k'
+DM_BENE = f'{SDC4}dm-vj0hr75146j0pbedvc0iaqrz'
 SEQN = f'{SDC4}mc-uto4zszvpicva38wx77knz5y'
 SMOKING = f'{SDC4}mc-n7pn5ctqo81v0v418hez5zv5'
 DIABETES = f'{SDC4}mc-fzpb9xr5jg2m3e3dzmvi1v3h'
@@ -82,7 +82,7 @@ class EntityGraphTests(SimpleTestCase):
         self.assertEqual(set(by), {PART, MED, RESP, BENE})
         self.assertEqual(by[PART]['title'], '93705')
         self.assertEqual(by[MED]['title'], 'ATORVASTATIN')   # the drug name names the record, the SEQN is the fallback
-        self.assertEqual(by[PART]['console_url'], '/console/instance/eehpfapwgvxtzdrofgstdcfs/i-nhanesp0000000000000001/')
+        self.assertEqual(by[PART]['console_url'], '/console/instance/tp5pg0u4dasqarie0b3ujn2u/i-nhanesp0000000000000001/')
         self.assertEqual(by[MED]['status'], 'invalid')
         self.assertEqual(by[BENE]['workbench_url'],
                          'http://wb.example:7200/graphs-visualizations?uri=' + BENE.replace(':', '%3A').replace('/', '%2F'))

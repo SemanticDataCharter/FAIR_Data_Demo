@@ -10,6 +10,7 @@ links:
   basis: standard
 enumeration:
 - value: Citizen by birth or naturalization
-  definition: http://purl.obolibrary.org/obo/NCIT_C41130
+  definition: http://purl.obolibrary.org/obo/NCIT_C90516
 - value: Not a citizen of the US
-  definition: http://purl.obolibrary.org/obo/NCIT_C41130
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm#DMDCITZN
+supersedes: m67ncwhc9s1j36f9w9qsrxfx

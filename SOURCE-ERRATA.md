@@ -34,6 +34,68 @@ dataset, and every projection that writes the model's binding (FHIR, OMOP CDM, H
 Participant 4.2.3 (`eehpfapwgvxtzdrofgstdcfs`) and BRFSS Respondent 4.2.3 (`w9ozx00idgs5k8tw4359skvn`), are published,
 and the records are regenerated on them. Reported to NIH: not yet.
 
+## In the demo's own bindings
+
+### E-2026-10-03: value bindings and concept links that name the wrong concept
+
+**The error.** `build/author.py` binds each enumerated value to a code (`rdfs:isDefinedBy`) and links components to
+the concept they measure. Twenty-four records named codes their terminologies do not confirm: some codes name an
+unrelated concept, some are shared by values that mean different things, and one scale bound every level to Unknown.
+Ours, not a source's: the agencies' files and the NIH CDE library were right.
+
+| Record | Value or link | Was | Which is | Now |
+|---|---|---|---|---|
+| BRFSS BMI category | Underweight | NCIt C17962 | Multimedia | SNOMED CT 248342006 Underweight |
+| | Normal Weight | NCIt C17958 | Functional Magnetic Resonance Imaging | SNOMED CT 43664005 Normal weight |
+| BRFSS education | Never attended school or only kindergarten; Grades 1 through 8 | NCIt C17953 (both) | Education Level | the BRFSS codebook |
+| | Grades 9 through 11 | NCIt C17953 | Education Level | NCIt C198650 Some High School, No Diploma |
+| | College 4 years or more | NCIt C39303 | Active Funded Research Project | NCIt C159746 College Completion |
+| NHANES education | Less than 9th grade | NCIt C17953 | Education Level | the NHANES codebook (DMDEDUC2) |
+| | 9-11th grade | NCIt C17953 | Education Level | NCIt C198650 |
+| | College graduate or above | NCIt C39303 | Active Funded Research Project | NCIt C159746 |
+| General health status | Excellent, Very good, Good, Fair, Poor | NCIt C25184, C42642, C25185, C42633, C25187 | Lactate Dehydrogenase, Administered Component Concept, Laterality, Classification Scheme Relationship, Low Density Lipoprotein | LOINC LA9206-9, LA13913-1, LA8967-7, LA8968-5, LA8969-3 (LOINC's answer list LL1012-5) |
+| Condition indicator basis | Self-report of a professional diagnosis | NCIt C93409 | Healthcare Provider Group Member | NCIt C188309 Self-Reported Information |
+| | Claims-based algorithm | NCIt C25404 | Action | NCIt C221359 Healthcare Administrative Claims Data |
+| | its concept link | NCIt C25596 | Breast Feeding | NCIt C16493 Data Source |
+| NHANES citizenship | Citizen; Not a citizen (both) | NCIt C41130 | Significant | NCIt C90516 Citizen; the NHANES codebook (DMDCITZN) |
+| NHANES pregnancy at exam | Yes; Not pregnant (both) | NCIt C25191 | Person Name | NCIt C124295 Pregnant; NCIt C82475 Not Pregnant |
+| NHANES race/Hispanic origin | Mexican American | NCIt C67175 | DBVE-PC Regimen | NCIt C67114 Mexican American |
+| NHANES difficulty scale (nine items) | No, Some, Much difficulty; Unable to do; Do not do this activity | NCIt C17998 (all five) | Unknown | NCIt C121736, C121739, C121740, C121742; the NHANES codebook (PFQ_J) |
+| NHANES Physical Functioning | its concept link | NCIt C20000 (exact) | Zubrod Performance Status 5 | NCIt C150046 Physical Function (close) |
+| NHANES and BRFSS Survey Design | its concept link | NCIt C142700 (exact) | Structured Product Labeling | NCIt C71492 Sampling Method (close) |
+| Total Cholesterol (SI) | its concept link | LOINC 2093-3 | Cholesterol [Mass/volume] | LOINC 14647-2 Cholesterol [Moles/volume] |
+| BRFSS days physical health not good | its concept link | LOINC 63580-5 | Have you ever smoked part or all of a cigarette | LOINC 66577-8 (the HRQOL question) |
+| BRFSS days mental health not good | its concept link | LOINC 63579-7 | Have you ever taken a drink to keep from having any of the shakes | LOINC 66578-6 (the HRQOL question) |
+| Veteran status | its concept link | NCIt C17742 | Gene Targeting | NCIt C171085 Military Status |
+
+Where no concept says exactly what a value says, the value is defined by the agency's codebook, as the demo's other
+survey-specific values are, rather than bound to a concept that is close.
+
+**How it was found.** 25 and 26 October 2026: while checking the E-2026-10-01 codes in the HL7 v2 output, two values of one
+list were seen sharing a code; then every code the bundle names was looked up, NCI Thesaurus in NCI's EVS API and
+LOINC and SNOMED CT in HL7's terminology server, and its name compared with the value. Every replacement was looked up
+the same way before it was written.
+
+**Effect.** A target that writes the model's binding (FHIR, OMOP CDM, HL7 v2) writes these codes: "Underweight" as
+Multimedia, every difficulty level as Unknown, both pregnancy answers as one code. The three models whose records
+compose them are NHANES Participant, BRFSS Respondent and CMS Beneficiary.
+
+**What we did.** The 24 records and the 14 clusters above them are revisions of their published versions (38;
+`REVISIONS` in `build/author.py`), and the three models are revised onto them as NHANES Participant 4.2.4, BRFSS
+Respondent 4.2.4 and CMS Beneficiary 4.2.4 (`build/*_e03*.py`). So a code nobody looked up does not ship again:
+`build/verify_codes.py` asks each terminology what every code in the bundle is and records the name it gives in
+`build/verified-codes.json`, and `build/tests/test_bindings.py` refuses a bundle that names a code not in that file,
+binds two values of one list to one concept, or binds a value that is not an unknown to Unknown.
+
+**To review.** Kept, and worth a second look: "Not at all" to *Do you now smoke cigarettes* is bound to LOINC
+LA15920-4 Former smoker (true of who is asked, an inference rather than the answer); BRFSS and NHANES "Separated" to
+NCIt C51777 Legally Separated; and four clusters claim an exact match to a concept they contain rather than are (BRFSS
+Body Measures to BMI, BRFSS Tobacco and Alcohol Use and NHANES Smoking to Tobacco smoking status).
+
+**Status.** Done on 26 October 2026 and released in 4.2.4: the 38 revisions are published and public, and the three
+models are NHANES Participant 4.2.4 (`tp5pg0u4dasqarie0b3ujn2u`), BRFSS Respondent 4.2.4 (`j6wmvhr46irxht2ls90nry8k`) and
+CMS Beneficiary 4.2.4 (`vj0hr75146j0pbedvc0iaqrz`), with the records regenerated on them.
+
 ## From the federal files: conventions to read correctly
 
 ### NHANES 2017-2018 prescription medications (`RXQ_RX_J`): reason-for-use codes

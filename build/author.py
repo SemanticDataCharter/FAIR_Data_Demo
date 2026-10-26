@@ -69,12 +69,12 @@ def member_label(m: str) -> str:
     return RECORDS[m]["label"]
 
 
-def C(key, label, description, members, exact=None, source="FAIR Data Demo", flags=None):
+def C(key, label, description, members, exact=None, source="FAIR Data Demo", flags=None, close=None):
     assert len(members) == len(set(members)), f"{key}: duplicate members"
     rec = {"key": key, "label": label, "type": "Cluster",
            "description": " ".join(description.split()) + " Members: " + "; ".join(member_label(m) for m in members) + ".",
            "source": {"name": source},
-           "links": [{"predicate": "skos:exactMatch" if exact else "skos:closeMatch", "iri": exact or "https://schema.org/ItemList", "basis": "standard" if exact else "concept"}],
+           "links": [{"predicate": "skos:exactMatch" if exact else "skos:closeMatch", "iri": exact or close or "https://schema.org/ItemList", "basis": "standard" if exact else "concept"}],
            "members": members}
     if flags:
         rec["flags"] = flags
@@ -135,8 +135,8 @@ smoking = leaf("smoking-status", "Smoking Status", "XdToken",
                                 ("Never smoker", LOINC + "LA18978-9/"), ("Smoker, current status unknown", LOINC + "LA18979-7/")))
 basis = leaf("condition-indicator-basis", "Condition Indicator Basis", "XdToken",
              "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
-             links=[("skos:closeMatch", NCIT + "C25596", "concept")],
-             enumeration=enum(("Self-report of a professional diagnosis", NCIT + "C93409"), ("Claims-based algorithm", NCIT + "C25404")))
+             links=[("skos:closeMatch", NCIT + "C16493", "concept")],
+             enumeration=enum(("Self-report of a professional diagnosis", NCIT + "C188309"), ("Claims-based algorithm", NCIT + "C221359")))
 
 CONDITIONS = {   # key: (label, SNOMED CT disorder, NHANES variable, BRFSS variable, CMS variable)
     "asthma": ("Asthma", "195967001", "MCQ010", "ASTHMA3", None),
@@ -174,10 +174,10 @@ conditions = C("chronic-condition-indicators", "Chronic Condition Indicators",
 
 pregnancy = CDE("LiUWCWluP", "Are you pregnant now?")
 veteran = leaf("veteran-status", "Veteran Status", "XdToken", "Whether the person has ever served on active duty in the United States Armed Forces (NHANES DMQMILIZ; BRFSS VETERAN3).",
-               links=[("skos:closeMatch", NCIT + "C17742", "concept"), see(NHANES + "DEMO_J.htm#DMQMILIZ")], enumeration=yesno())
+               links=[("skos:closeMatch", NCIT + "C171085", "concept"), see(NHANES + "DEMO_J.htm#DMQMILIZ")], enumeration=yesno())
 general_health = leaf("general-health-status", "General Health Status", "XdToken", "The person's rating of their general health (BRFSS GENHLTH; the NHANES HSQ question is the same scale when that file is carried).",
                       links=[("skos:closeMatch", NCIT + "C16669", "concept"), see(BRFSS)],
-                      enumeration=enum(("Excellent", NCIT + "C25184"), ("Very good", NCIT + "C42642"), ("Good", NCIT + "C25185"), ("Fair", NCIT + "C42633"), ("Poor", NCIT + "C25187")))
+                      enumeration=enum(("Excellent", LOINC + "LA9206-9/"), ("Very good", LOINC + "LA13913-1/"), ("Good", LOINC + "LA8967-7/"), ("Fair", LOINC + "LA8968-5/"), ("Poor", LOINC + "LA8969-3/")))
 # harmonized demographics: the NIH CDE beside the agency's own coding (the agency coding is study-local, below)
 RACE_ETH = CDE("LakF0YkywC", "Race/Ethnicity Self-Identification")
 SEX = D + "administrative-gender"
@@ -205,20 +205,20 @@ nh_age_months = leaf("nhanes-age-in-months-at-screening", "Age in Months at Scre
                      links=[nh("RIDAGEMN", "DEMO_J")], constraints={"units": U_MONTHS, "min_inclusive": 0, "max_inclusive": 24}, source=NH)
 nh_race = leaf("nhanes-race-hispanic-origin", "Race/Hispanic Origin with NH Asian (RIDRETH3)", "XdToken", "Race and Hispanic origin as NHANES codes it (RIDRETH3). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to; the mapping is in the generator and Other Race including multi-racial has no CDE value.",
                links=[nh("RIDRETH3", "DEMO_J")],
-               enumeration=enum(("Mexican American", NCIT + "C67175"), ("Other Hispanic", NCIT + "C17459"), ("Non-Hispanic White", NCIT + "C41261"), ("Non-Hispanic Black", NCIT + "C16352"), ("Non-Hispanic Asian", NCIT + "C41260"), ("Other Race - Including Multi-Racial", NCIT + "C17649")), source=NH)
+               enumeration=enum(("Mexican American", NCIT + "C67114"), ("Other Hispanic", NCIT + "C17459"), ("Non-Hispanic White", NCIT + "C41261"), ("Non-Hispanic Black", NCIT + "C16352"), ("Non-Hispanic Asian", NCIT + "C41260"), ("Other Race - Including Multi-Racial", NCIT + "C17649")), source=NH)
 nh_born = leaf("nhanes-country-of-birth", "Country of Birth (DMDBORN4)", "XdToken", "Whether the participant was born in the 50 US states or Washington, DC, or elsewhere (DMDBORN4).",
                links=[nh("DMDBORN4", "DEMO_J")], enumeration=enum(("Born in 50 US states or Washington, DC", NCIT + "C17234"), ("Others", NCIT + "C17649")), source=NH)
 nh_citizen = leaf("nhanes-citizenship-status", "Citizenship Status (DMDCITZN)", "XdToken", "Citizenship status (DMDCITZN).", links=[nh("DMDCITZN", "DEMO_J")],
-                  enumeration=enum(("Citizen by birth or naturalization", NCIT + "C41130"), ("Not a citizen of the US", NCIT + "C41130")), source=NH)
+                  enumeration=enum(("Citizen by birth or naturalization", NCIT + "C90516"), ("Not a citizen of the US", NHANES + "DEMO_J.htm#DMDCITZN")), source=NH)
 nh_educ = leaf("nhanes-education-level-adults", "Education Level - Adults 20+ (DMDEDUC2)", "XdToken", "The highest grade or level of school completed, adults 20 and over (DMDEDUC2). Kept beside the NIH CDE Current Educational Attainment it is mapped to.",
                links=[nh("DMDEDUC2", "DEMO_J")],
-               enumeration=enum(("Less than 9th grade", NCIT + "C17953"), ("9-11th grade (includes 12th grade with no diploma)", NCIT + "C17953"), ("High school graduate/GED or equivalent", NCIT + "C67136"),
-                                ("Some college or AA degree", NCIT + "C67137"), ("College graduate or above", NCIT + "C39303")), source=NH)
+               enumeration=enum(("Less than 9th grade", NHANES + "DEMO_J.htm#DMDEDUC2"), ("9-11th grade (includes 12th grade with no diploma)", NCIT + "C198650"), ("High school graduate/GED or equivalent", NCIT + "C67136"),
+                                ("Some college or AA degree", NCIT + "C67137"), ("College graduate or above", NCIT + "C159746")), source=NH)
 nh_marital = leaf("nhanes-marital-status", "Marital Status (DMDMARTL)", "XdToken", "Marital status as NHANES codes it (DMDMARTL). Kept beside the NIH CDE Marital Status it is mapped to.",
                   links=[nh("DMDMARTL", "DEMO_J")],
                   enumeration=enum(("Married", NCIT + "C51773"), ("Widowed", NCIT + "C51775"), ("Divorced", NCIT + "C51776"), ("Separated", NCIT + "C51777"), ("Never married", NCIT + "C51774"), ("Living with partner", NCIT + "C53262")), source=NH)
 nh_pregnancy = leaf("nhanes-pregnancy-status-at-exam", "Pregnancy Status at Exam (RIDEXPRG)", "XdToken", "Pregnancy status at the examination, females 20-44 (RIDEXPRG). Kept beside the NIH CDE pregnancy question it is mapped to.",
-                    links=[nh("RIDEXPRG", "DEMO_J")], enumeration=enum(("Yes, positive lab pregnancy test or self-reported pregnant at exam", NCIT + "C25191"), ("Not pregnant at exam", NCIT + "C25191"), ("Cannot ascertain if pregnant at exam", NCIT + "C17998")), source=NH)
+                    links=[nh("RIDEXPRG", "DEMO_J")], enumeration=enum(("Yes, positive lab pregnancy test or self-reported pregnant at exam", NCIT + "C124295"), ("Not pregnant at exam", NCIT + "C82475"), ("Cannot ascertain if pregnant at exam", NCIT + "C17998")), source=NH)
 nh_hh_size = leaf("nhanes-household-size", "Total Number of People in the Household (DMDHHSIZ)", "XdCount", "Total number of people in the household (DMDHHSIZ; 7 means 7 or more).", links=[nh("DMDHHSIZ", "DEMO_J")], constraints={"units": D + "units-items", "min_inclusive": 1, "max_inclusive": 7}, source=NH)
 nh_income = leaf("nhanes-annual-household-income", "Annual Household Income (INDHHIN2)", "XdToken", "Annual household income in the agency's ranges (INDHHIN2). Not harmonized: the NHANES, BRFSS and NIH CDE income ranges do not nest, so each study keeps its own.",
                  links=[nh("INDHHIN2", "DEMO_J")],
@@ -230,7 +230,7 @@ nh_wtmec = leaf("nhanes-mec-exam-weight", "Full Sample 2 Year MEC Exam Weight (W
 nh_psu = leaf("nhanes-masked-variance-psu", "Masked Variance Pseudo-PSU (SDMVPSU)", "XdCount", "The masked variance pseudo primary sampling unit (SDMVPSU).", links=[nh("SDMVPSU", "DEMO_J")], constraints={"units": D + "units-items", "min_inclusive": 1, "max_inclusive": 2}, source=NH)
 nh_stra = leaf("nhanes-masked-variance-stratum", "Masked Variance Pseudo-Stratum (SDMVSTRA)", "XdCount", "The masked variance pseudo stratum (SDMVSTRA).", links=[nh("SDMVSTRA", "DEMO_J")], constraints={"units": D + "units-items", "min_inclusive": 100, "max_inclusive": 200}, source=NH)
 nh_design = C("nhanes-survey-design", "NHANES Survey Design", "The survey design fields a weighted estimate needs: the release cycle, interview and examination status, the interview and MEC weights, the pseudo-PSU and pseudo-stratum.",
-              [nh_cycle, nh_status, nh_wtint, nh_wtmec, nh_psu, nh_stra], exact=NCIT + "C142700", source=NH)
+              [nh_cycle, nh_status, nh_wtint, nh_wtmec, nh_psu, nh_stra], close=NCIT + "C71492", source=NH)
 nh_demo = C("nhanes-demographics", "NHANES Demographics", "The participant's demographics: the Default administrative gender and the NHANES gender code, the NIH CDE age with age in months for infants, race/ethnicity as the NIH CDE and as NHANES codes it, country of birth, citizenship, education and marital status as the NIH CDE and as NHANES codes them, pregnancy status, household size, the agency's income range and the income-to-poverty ratio.",
              [SEX, nh_gender, AGE, nh_age_months, RACE_ETH, nh_race, nh_born, nh_citizen, EDUCATION, nh_educ, MARITAL, nh_marital, pregnancy, nh_pregnancy, veteran, nh_hh_size, nh_income, nh_pir], exact=NCIT + "C16495", source=NH)
 
@@ -250,7 +250,7 @@ def lab(key, label, var, file, loinc, u, digits, frac, desc=""):
                 constraints={"units": u, "total_digits": digits, "fraction_digits": frac, "min_inclusive": 0}, source=NH)
 labs = [
     lab("nhanes-total-cholesterol", "Total Cholesterol", "LBXTC", "TCHOL_J", "2093-3", U_MG_DL, 4, 0, "Total cholesterol in serum, mg/dL"),
-    lab("nhanes-total-cholesterol-si", "Total Cholesterol (SI)", "LBDTCSI", "TCHOL_J", "2093-3", U_MMOL_L, 5, 2, "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC)"),
+    lab("nhanes-total-cholesterol-si", "Total Cholesterol (SI)", "LBDTCSI", "TCHOL_J", "14647-2", U_MMOL_L, 5, 2, "Total cholesterol in serum, mmol/L (the agency's conversion of LBXTC)"),
     lab("nhanes-white-blood-cell-count", "White Blood Cell Count", "LBXWBCSI", "CBC_J", "6690-2", U_K_UL, 5, 1),
     lab("nhanes-lymphocyte-percent", "Lymphocyte Percent", "LBXLYPCT", "CBC_J", "736-9", D + "units-percentage", 4, 1),
     lab("nhanes-monocyte-percent", "Monocyte Percent", "LBXMOPCT", "CBC_J", "5905-5", D + "units-percentage", 4, 1),
@@ -294,7 +294,7 @@ nh_conditions = C("nhanes-medical-conditions", "NHANES Medical Conditions", "The
                   [conditions, nh_asthma_still, nh_overweight], exact=NCIT + "C2991", source=NH)
 
 # physical functioning (PFQ_J)
-DIFFICULTY = enum(("No difficulty", NCIT + "C17998"), ("Some difficulty", NCIT + "C17998"), ("Much difficulty", NCIT + "C17998"), ("Unable to do", NCIT + "C17998"), ("Do not do this activity", NCIT + "C17998"))
+DIFFICULTY = enum(("No difficulty", NCIT + "C121736"), ("Some difficulty", NCIT + "C121739"), ("Much difficulty", NCIT + "C121740"), ("Unable to do", NCIT + "C121742"), ("Do not do this activity", NHANES + "PFQ_J.htm"))
 PF_ITEMS = {"PFQ061B": ("walking-quarter-mile", "Difficulty Walking a Quarter Mile"), "PFQ061C": ("walking-up-ten-stairs", "Difficulty Walking Up Ten Stairs"), "PFQ061D": ("stooping-crouching-kneeling", "Difficulty Stooping, Crouching or Kneeling"),
             "PFQ061E": ("lifting-or-carrying", "Difficulty Lifting or Carrying"), "PFQ061H": ("walking-between-rooms", "Difficulty Walking Between Rooms"), "PFQ061I": ("standing-up-from-chair", "Difficulty Standing Up from an Armless Chair"),
             "PFQ061J": ("getting-in-and-out-of-bed", "Difficulty Getting In and Out of Bed"), "PFQ061L": ("dressing", "Difficulty Dressing Yourself"), "PFQ061M": ("standing-for-long-periods", "Difficulty Standing for Long Periods")}
@@ -303,7 +303,7 @@ nh_pfq049 = leaf("nhanes-limitations-keeping-from-working", "Limitations Keeping
 nh_pfq054 = leaf("nhanes-need-special-equipment-to-walk", "Need Special Equipment to Walk (PFQ054)", "XdToken", "Whether the participant needs special equipment to walk (PFQ054).", links=[nh("PFQ054", "PFQ_J")], enumeration=yesno(), source=NH)
 nh_pfq057 = leaf("nhanes-confusion-memory-problems", "Experience Confusion or Memory Problems (PFQ057)", "XdToken", "Whether the participant experiences confusion or memory problems (PFQ057).", links=[nh("PFQ057", "PFQ_J")], enumeration=yesno(), source=NH)
 nh_pf = C("nhanes-physical-functioning", "NHANES Physical Functioning", "Physical functioning (PFQ_J): work limitation, equipment to walk, confusion or memory problems, and nine activity items on the four-point difficulty scale.",
-          [nh_pfq049, nh_pfq054, nh_pfq057] + pf, exact=NCIT + "C20000", source=NH)
+          [nh_pfq049, nh_pfq054, nh_pfq057] + pf, close=NCIT + "C150046", source=NH)
 
 nh_participant = C("nhanes-participant", "NHANES Participant", "One NHANES 2017-2018 participant: the sequence number, the survey design, demographics, the blood pressure examination, laboratory results, smoking, medical conditions and physical functioning, joined on SEQN across the eight source files.",
                    [seqn, nh_design, nh_demo, nh_bp, nh_labs, nh_smoking, nh_conditions, nh_pf], exact=NCIT + "C41189", source=NH)
@@ -329,14 +329,14 @@ br_idate = leaf("brfss-interview-date", "Interview Date (IDATE)", "XdTemporal", 
 br_psu = leaf("brfss-primary-sampling-unit", "Primary Sampling Unit (_PSU)", "XdString", "The primary sampling unit (_PSU), equal to the sequence number.", links=[br("_PSU")], constraints={"max_length": 12}, source=BR)
 br_ststr = leaf("brfss-sample-design-stratum", "Sample Design Stratification Variable (_STSTR)", "XdString", "The sample design stratum (_STSTR).", links=[br("_STSTR")], constraints={"max_length": 8}, source=BR)
 br_wt = leaf("brfss-final-weight", "Final Weight: Land-line and Cell-phone Data (_LLCPWT)", "XdQuantity", "The final raked weight for the combined landline and cellphone sample (_LLCPWT).", links=[br("_LLCPWT")], constraints={"units": U_WEIGHT, "total_digits": 12, "fraction_digits": 4, "min_inclusive": 0}, source=BR)
-br_design = C("brfss-survey-design", "BRFSS Survey Design", "The survey design fields a weighted estimate needs: the state, interview date, PSU, stratum and final weight.", [br_state, br_idate, br_psu, br_ststr, br_wt], exact=NCIT + "C142700", source=BR)
+br_design = C("brfss-survey-design", "BRFSS Survey Design", "The survey design fields a weighted estimate needs: the state, interview date, PSU, stratum and final weight.", [br_state, br_idate, br_psu, br_ststr, br_wt], close=NCIT + "C71492", source=BR)
 
 br_sex = leaf("brfss-sex-of-respondent", "Sex of Respondent (SEXVAR)", "XdToken", "The sex of the respondent as BRFSS codes it (SEXVAR). Kept beside the Default administrative gender it is mapped to.", links=[br("SEXVAR")], enumeration=enum(("Male", NCIT + "C20197"), ("Female", NCIT + "C16576")), source=BR)
 br_age = leaf("brfss-imputed-age-80", "Imputed Age Value Collapsed Above 80 (_AGE80)", "XdCount", "Imputed age in years, collapsed at 80 (_AGE80). The NIH CDE Age beside it carries the same value.", links=[br("_AGE80")], constraints={"units": U_YEARS, "min_inclusive": 18, "max_inclusive": 80}, source=BR)
 br_race = leaf("brfss-imputed-race-ethnicity", "Imputed Race/Ethnicity Value (_IMPRACE)", "XdToken", "Race and ethnicity as BRFSS imputes and codes it (_IMPRACE). Kept beside the NIH CDE Race/Ethnicity Self-Identification it is mapped to.", links=[br("_IMPRACE")],
                enumeration=enum(("White, Non-Hispanic", NCIT + "C41261"), ("Black, Non-Hispanic", NCIT + "C16352"), ("Asian, Non-Hispanic", NCIT + "C41260"), ("American Indian/Alaskan Native, Non-Hispanic", NCIT + "C41259"), ("Hispanic", NCIT + "C17459"), ("Other race, Non-Hispanic", NCIT + "C17649")), source=BR)
 br_educa = leaf("brfss-education-level", "Education Level (EDUCA)", "XdToken", "The highest grade or year of school completed (EDUCA). Kept beside the NIH CDE Current Educational Attainment it is mapped to.", links=[br("EDUCA")],
-                enumeration=enum(("Never attended school or only kindergarten", NCIT + "C17953"), ("Grades 1 through 8 (Elementary)", NCIT + "C17953"), ("Grades 9 through 11 (Some high school)", NCIT + "C17953"), ("Grade 12 or GED (High school graduate)", NCIT + "C67136"), ("College 1 year to 3 years (Some college or technical school)", NCIT + "C67137"), ("College 4 years or more (College graduate)", NCIT + "C39303")), source=BR)
+                enumeration=enum(("Never attended school or only kindergarten", BRFSS), ("Grades 1 through 8 (Elementary)", BRFSS), ("Grades 9 through 11 (Some high school)", NCIT + "C198650"), ("Grade 12 or GED (High school graduate)", NCIT + "C67136"), ("College 1 year to 3 years (Some college or technical school)", NCIT + "C67137"), ("College 4 years or more (College graduate)", NCIT + "C159746")), source=BR)
 br_marital = leaf("brfss-marital-status", "Marital Status (MARITAL)", "XdToken", "Marital status as BRFSS codes it (MARITAL). Kept beside the NIH CDE Marital Status it is mapped to.", links=[br("MARITAL")],
                   enumeration=enum(("Married", NCIT + "C51773"), ("Divorced", NCIT + "C51776"), ("Widowed", NCIT + "C51775"), ("Separated", NCIT + "C51777"), ("Never married", NCIT + "C51774"), ("A member of an unmarried couple", NCIT + "C53262")), source=BR)
 br_employ = leaf("brfss-employment-status", "Employment Status (EMPLOY1)", "XdToken", "Employment status as BRFSS codes it (EMPLOY1). Kept beside the NIH CDE Employment Status it is mapped to.", links=[br("EMPLOY1")],
@@ -351,8 +351,8 @@ br_demo = C("brfss-demographics", "BRFSS Demographics", "The respondent's demogr
             [SEX, br_sex, AGE, br_age, RACE_ETH, br_race, EDUCATION, br_educa, MARITAL, br_marital, EMPLOYMENT, br_employ, INSURANCE, br_insurance, veteran, pregnancy, br_pregnant, br_children, br_income], exact=NCIT + "C16495", source=BR)
 
 DAYS30 = {"units": U_DAYS, "min_inclusive": 0, "max_inclusive": 30}
-br_physhlth = leaf("brfss-days-physical-health-not-good", "Days Physical Health Not Good, Past 30 (PHYSHLTH)", "XdCount", "The number of days in the past 30 the respondent's physical health was not good (PHYSHLTH).", links=[br("PHYSHLTH"), ("skos:closeMatch", LOINC + "63580-5/", "concept")], constraints=DAYS30, source=BR)
-br_menthlth = leaf("brfss-days-mental-health-not-good", "Days Mental Health Not Good, Past 30 (MENTHLTH)", "XdCount", "The number of days in the past 30 the respondent's mental health was not good (MENTHLTH).", links=[br("MENTHLTH"), ("skos:closeMatch", LOINC + "63579-7/", "concept")], constraints=DAYS30, source=BR)
+br_physhlth = leaf("brfss-days-physical-health-not-good", "Days Physical Health Not Good, Past 30 (PHYSHLTH)", "XdCount", "The number of days in the past 30 the respondent's physical health was not good (PHYSHLTH).", links=[br("PHYSHLTH"), ("skos:closeMatch", LOINC + "66577-8/", "concept")], constraints=DAYS30, source=BR)
+br_menthlth = leaf("brfss-days-mental-health-not-good", "Days Mental Health Not Good, Past 30 (MENTHLTH)", "XdCount", "The number of days in the past 30 the respondent's mental health was not good (MENTHLTH).", links=[br("MENTHLTH"), ("skos:closeMatch", LOINC + "66578-6/", "concept")], constraints=DAYS30, source=BR)
 br_checkup = leaf("brfss-length-since-last-checkup", "Length of Time Since Last Routine Checkup (CHECKUP1)", "XdToken", "How long since the respondent last visited a doctor for a routine checkup (CHECKUP1).", links=[br("CHECKUP1")],
                   enumeration=enum(*[(v, BRFSS) for v in ("Within past year", "Within past 2 years", "Within past 5 years", "5 or more years ago", "Never")]), source=BR)
 br_exerany = leaf("brfss-exercise-in-past-30-days", "Exercise in Past 30 Days (EXERANY2)", "XdToken", "Whether the respondent took part in any physical activity or exercise in the past month other than their regular job (EXERANY2).", links=[br("EXERANY2")], enumeration=yesno(), source=BR)
@@ -364,7 +364,7 @@ br_conditions = C("brfss-chronic-conditions", "BRFSS Chronic Conditions", "The c
 
 br_weight = leaf("brfss-reported-weight-in-pounds", "Reported Weight in Pounds (WEIGHT2)", "XdQuantity", "Self-reported weight without shoes, in pounds as reported (WEIGHT2; the agency's kilogram reports are converted). The FHIR body weight beside it carries the same value in kilograms.", links=[br("WEIGHT2")], constraints={"units": D + "units-mass-us", "total_digits": 4, "fraction_digits": 0, "min_inclusive": 50, "max_inclusive": 999}, source=BR)
 br_height = leaf("brfss-reported-height", "Reported Height in Feet and Inches (HEIGHT3)", "XdString", "Self-reported height as coded (HEIGHT3: feet and inches as FII, or 9xxx for metres and centimetres). The FHIR body height beside it carries the value in centimetres.", links=[br("HEIGHT3")], constraints={"max_length": 4, "str_fmt": "[0-9]{3,4}"}, source=BR)
-br_bmi5cat = leaf("brfss-bmi-category", "Computed Body Mass Index Category (_BMI5CAT)", "XdToken", "The agency's computed BMI category (_BMI5CAT).", links=[br("_BMI5CAT")], enumeration=enum(("Underweight", NCIT + "C17962"), ("Normal Weight", NCIT + "C17958"), ("Overweight", NCIT + "C94250"), ("Obese", NCIT + "C3283")), source=BR)
+br_bmi5cat = leaf("brfss-bmi-category", "Computed Body Mass Index Category (_BMI5CAT)", "XdToken", "The agency's computed BMI category (_BMI5CAT).", links=[br("_BMI5CAT")], enumeration=enum(("Underweight", SCT + "248342006"), ("Normal Weight", SCT + "43664005"), ("Overweight", NCIT + "C94250"), ("Obese", NCIT + "C3283")), source=BR)
 br_body = C("brfss-body-measures", "BRFSS Body Measures", "Self-reported height and weight as the agency codes them, and as the FHIR vital signs panel by identifier (body height, body weight, BMI), with the agency's computed BMI category.",
             [br_height, br_weight, F + "vital-signs-panel", br_bmi5cat], exact=LOINC + "39156-5/", source=BR)
 
@@ -543,17 +543,48 @@ def retire_rows():
     return rows
 
 
-#: Clusters revised after their first publication: key -> the published component the revision supersedes
-#: (prov:wasRevisionOf). E-2026-10-01 (NIH CDE library SOURCE-ERRATA.md): the NIH CDE "Are you pregnant now?"
-#: (LiUWCWluP) bound its answers to the wrong LOINC codes; its correction zmpqfc6tb0o2hgu8qs6lj8tp replaces
-#: owjt9bcgisxfbco8qnddo2fq, so each cluster above it, up to each model's root, is revised.
+# The records revised for the current release, each to the published holder of its slot (E-2026-10-03 in
+# SOURCE-ERRATA.md: the value bindings the terminologies do not confirm, and every cluster above them, so the models
+# compose the corrections; the six of E-2026-10-01 are among them, now revising their 4.2.3 revisions).
 REVISIONS = {
-    "nhanes-demographics": "b6bz6qun3frba85kw1a539h2",
-    "nhanes-participant": "e3gwv95m8jjx7578urmx8ppz",
-    "nhanes-participant-governed-record": "l6t9agg233vswxyv60quiu6w",
-    "brfss-demographics": "oqw3pnwhf8knpgsfo8k3xojn",
-    "brfss-respondent": "rdoj4o216s33ymezyefwb8ia",
-    "brfss-respondent-governed-record": "hnf5st6e6ulzvbiafx4310g7",
+    "brfss-bmi-category": "ezewpvppvx8zjikutr53ppgz",
+    "brfss-body-measures": "gc3nb6hzobkzifswmzgt7w6t",
+    "brfss-chronic-conditions": "lahhb7fhnu75l1fxrv9f8fdv",
+    "brfss-days-mental-health-not-good": "k32effn0kp5a42ikkpvcva9j",
+    "brfss-days-physical-health-not-good": "fljkn7b19qtnj6rr3t8qcfg1",
+    "brfss-demographics": "tto2m72tul0hj0z7zyoco4yx",
+    "brfss-education-level": "fci5gajaodxc2ihq6nuz9l6y",
+    "brfss-health-status": "kmgw3rv02bipvaoxpvnh7fzk",
+    "brfss-respondent": "jxif4jju7k2rg3vokabzzj22",
+    "brfss-respondent-governed-record": "kb26is7epmdlc0lm1k9pdz9f",
+    "brfss-survey-design": "zauadmfc05ep5nf2kd9j8cwh",
+    "chronic-condition-indicators": "wa0mknvfo83hej635n48s0ig",
+    "cms-beneficiary": "kkdy1kjdruxvx8s1ra8eh231",
+    "cms-beneficiary-governed-record": "io2h28pi3yktedurk8ye3oq0",
+    "condition-indicator-basis": "hc79skkfionpgw87dsg5yrgw",
+    "general-health-status": "lth27h6towue4i9iq1cudogc",
+    "nhanes-citizenship-status": "m67ncwhc9s1j36f9w9qsrxfx",
+    "nhanes-demographics": "nzhi9t6qd9rhb5ojsaxtn8md",
+    "nhanes-dressing": "p4jxl2rur1agjhdpvj2g9u4k",
+    "nhanes-education-level-adults": "fqjd2lvp9jamdpf0f3kpkwnp",
+    "nhanes-getting-in-and-out-of-bed": "cy6k5rxvhvg2v27cfp7pjwyx",
+    "nhanes-laboratory-results": "c73687ou0pkc7qy6n2kksfc7",
+    "nhanes-lifting-or-carrying": "b1mxr233mgqvzr39c90ly8cv",
+    "nhanes-medical-conditions": "mc8by65nv7wa59lw4oj54e2w",
+    "nhanes-participant": "dawjwho8viq3hr0esb39dhb7",
+    "nhanes-participant-governed-record": "u9elnmjjpxdtxcxnqugqaowk",
+    "nhanes-physical-functioning": "ky7lvmote5jfn5gt6n89q79s",
+    "nhanes-pregnancy-status-at-exam": "r0j6yo8zvo4q8x0ovdr6j9yz",
+    "nhanes-race-hispanic-origin": "hs44ipuqgvc3azbt3mirxtsz",
+    "nhanes-standing-for-long-periods": "vp4ow7t3q8w2phcft0qvyj4u",
+    "nhanes-standing-up-from-chair": "y52y4mpq95zcknal0be1uc7v",
+    "nhanes-stooping-crouching-kneeling": "knrs4clih4pi26tm2zra1ai0",
+    "nhanes-survey-design": "mgqswj92qaeasqjjvfcyxon5",
+    "nhanes-total-cholesterol-si": "qp5mdgab3s37zwqzyfzq8rvi",
+    "nhanes-walking-between-rooms": "crr2z3b2l7hlq1kvevppt8kt",
+    "nhanes-walking-quarter-mile": "mktq5xr8slz67q85idl8bsky",
+    "nhanes-walking-up-ten-stairs": "rot4z5ny8gdkfmimedcjl1te",
+    "veteran-status": "eimlsgbawhm8aa4i6gbdrja0",
 }
 
 

@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "c73687ou0pkc7qy6n2kksfc7",
   "members": [
     "nhanes-total-cholesterol",
     "nhanes-total-cholesterol-si",

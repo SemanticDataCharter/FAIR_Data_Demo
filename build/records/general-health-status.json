@@ -20,33 +20,33 @@
       "Poor"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C25184",
-      "http://purl.obolibrary.org/obo/NCIT_C42642",
-      "http://purl.obolibrary.org/obo/NCIT_C25185",
-      "http://purl.obolibrary.org/obo/NCIT_C42633",
-      "http://purl.obolibrary.org/obo/NCIT_C25187"
+      "https://loinc.org/LA9206-9/",
+      "https://loinc.org/LA13913-1/",
+      "https://loinc.org/LA8967-7/",
+      "https://loinc.org/LA8968-5/",
+      "https://loinc.org/LA8969-3/"
     ]
   },
   "enumeration": [
     {
       "value": "Excellent",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25184"
+      "definition": "https://loinc.org/LA9206-9/"
     },
     {
       "value": "Very good",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C42642"
+      "definition": "https://loinc.org/LA13913-1/"
     },
     {
       "value": "Good",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25185"
+      "definition": "https://loinc.org/LA8967-7/"
     },
     {
       "value": "Fair",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C42633"
+      "definition": "https://loinc.org/LA8968-5/"
     },
     {
       "value": "Poor",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25187"
+      "definition": "https://loinc.org/LA8969-3/"
     }
   ],
   "links": [
@@ -82,7 +82,7 @@
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "lth27h6towue4i9iq1cudogc",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

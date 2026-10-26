@@ -11,7 +11,7 @@ links:
   basis: standard
 enumeration:
 - value: Mexican American
-  definition: http://purl.obolibrary.org/obo/NCIT_C67175
+  definition: http://purl.obolibrary.org/obo/NCIT_C67114
 - value: Other Hispanic
   definition: http://purl.obolibrary.org/obo/NCIT_C17459
 - value: Non-Hispanic White
@@ -22,3 +22,4 @@ enumeration:
   definition: http://purl.obolibrary.org/obo/NCIT_C41260
 - value: Other Race - Including Multi-Racial
   definition: http://purl.obolibrary.org/obo/NCIT_C17649
+supersedes: hs44ipuqgvc3azbt3mirxtsz

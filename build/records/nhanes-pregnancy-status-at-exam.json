@@ -16,19 +16,19 @@
       "Cannot ascertain if pregnant at exam"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C25191",
-      "http://purl.obolibrary.org/obo/NCIT_C25191",
+      "http://purl.obolibrary.org/obo/NCIT_C124295",
+      "http://purl.obolibrary.org/obo/NCIT_C82475",
       "http://purl.obolibrary.org/obo/NCIT_C17998"
     ]
   },
   "enumeration": [
     {
       "value": "Yes, positive lab pregnancy test or self-reported pregnant at exam",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25191"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C124295"
     },
     {
       "value": "Not pregnant at exam",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25191"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C82475"
     },
     {
       "value": "Cannot ascertain if pregnant at exam",
@@ -62,7 +62,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "r0j6yo8zvo4q8x0ovdr6j9yz",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

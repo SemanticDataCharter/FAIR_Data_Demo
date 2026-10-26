@@ -47,13 +47,13 @@
     },
     {
       "predicate": "skos:closeMatch",
-      "iri": "https://loinc.org/63579-7/",
+      "iri": "https://loinc.org/66578-6/",
       "basis": "concept",
       "note": ""
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "k32effn0kp5a42ikkpvcva9j",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

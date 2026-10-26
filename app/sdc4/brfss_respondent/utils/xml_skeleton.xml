@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sdc4:dm-w9ozx00idgs5k8tw4359skvn
+<sdc4:dm-j6wmvhr46irxht2ls90nry8k
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:sdc4="https://semanticdatacharter.com/ns/sdc4/"
-  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-w9ozx00idgs5k8tw4359skvn.xsd">
+  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-j6wmvhr46irxht2ls90nry8k.xsd">
 
-  <dm-label>BRFSS Respondent 4.2.3</dm-label>
+  <dm-label>BRFSS Respondent 4.2.4</dm-label>
   <dm-language>en-US</dm-language>
   <dm-encoding>utf-8</dm-encoding>
   <creation_timestamp>_PH_</creation_timestamp>
-  <instance_id>kngs95sx5ug3tr04s3kjzygs</instance_id>
+  <instance_id>mfyvh763xygojbmqt6x89439</instance_id>
   <instance_version>_PH_</instance_version>
   <source_instance_id>_OPT_PH_</source_instance_id>
   <source_version_id>_OPT_PH_</source_version_id>
   <current-state>_OPT_PH_</current-state>
-  <sdc4:ms-kb26is7epmdlc0lm1k9pdz9f>
+  <sdc4:ms-cd2j0wzlcvfsfk7ikiaujmzx>
     <label>BRFSS Respondent Governed Record</label>
   <sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
     <label>Audit Event</label>
@@ -200,9 +200,9 @@
     </sdc4:ms-uwiosm2q9ym3ewr4de910s70>
   </sdc4:ms-r5fply6fvzhg90zybxgdx5cb>
   </sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
-  <sdc4:ms-jxif4jju7k2rg3vokabzzj22>
+  <sdc4:ms-job3i8sfv3zikxymqe625fm2>
     <label>BRFSS Respondent</label>
-  <sdc4:ms-gc3nb6hzobkzifswmzgt7w6t>
+  <sdc4:ms-dgd703p5t3yzmnw7np9g1u5p>
     <label>BRFSS Body Measures</label>
   <sdc4:ms-atvd5lzut4pjzc7dpv1ykb92>
     <label>Vital Signs Panel</label>
@@ -515,8 +515,8 @@
       <xdstring-language>_OPT_PH_</xdstring-language>
     </sdc4:ms-urjk1vvcot1s319mxygpdsf5>
   </sdc4:ms-iiaw8zak25y4d6uhe2v57kii>
-  <sdc4:ms-jd68ja7mkrln0wktxorwhw89>
-    <sdc4:ms-ezewpvppvx8zjikutr53ppgz>
+  <sdc4:ms-plhjlzkc6cjnwb5qrhtgfkiq>
+    <sdc4:ms-vfrowc5oxysvj71vfrmc7o4t>
       <label>Computed Body Mass Index Category (_BMI5CAT)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -527,8 +527,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-ezewpvppvx8zjikutr53ppgz>
-  </sdc4:ms-jd68ja7mkrln0wktxorwhw89>
+    </sdc4:ms-vfrowc5oxysvj71vfrmc7o4t>
+  </sdc4:ms-plhjlzkc6cjnwb5qrhtgfkiq>
   <sdc4:ms-lj4ueok9tcwol2d5zwl7chtd>
     <sdc4:ms-gket571isxo2uckturhvxadk>
       <label>Reported Weight in Pounds (WEIGHT2)</label>
@@ -550,10 +550,10 @@
       </xdquantity-units>
     </sdc4:ms-gket571isxo2uckturhvxadk>
   </sdc4:ms-lj4ueok9tcwol2d5zwl7chtd>
-  </sdc4:ms-gc3nb6hzobkzifswmzgt7w6t>
-  <sdc4:ms-lahhb7fhnu75l1fxrv9f8fdv>
+  </sdc4:ms-dgd703p5t3yzmnw7np9g1u5p>
+  <sdc4:ms-yumwsic8qvlly00pluhl9415>
     <label>BRFSS Chronic Conditions</label>
-  <sdc4:ms-wa0mknvfo83hej635n48s0ig>
+  <sdc4:ms-bq0dx31j0dzk5dsof8aoxfqk>
     <label>Chronic Condition Indicators</label>
   <sdc4:ms-ijbp8d16nkpgd3rlw8mc6b00>
     <sdc4:ms-d9z9mcx6gs9zbz4k6f0v738s>
@@ -765,8 +765,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-gp3jxw3xzs761ll6u5rvc6jr>
   </sdc4:ms-zmk00yz0hbtqwnhag2uzczil>
-  <sdc4:ms-sqz385aell855p97kpkdwuop>
-    <sdc4:ms-hc79skkfionpgw87dsg5yrgw>
+  <sdc4:ms-ks4buqh74w0bdcwdk6ky6ntr>
+    <sdc4:ms-y3m4tg7u1io8bimkhiuxz8zb>
       <label>Condition Indicator Basis</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -777,8 +777,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-hc79skkfionpgw87dsg5yrgw>
-  </sdc4:ms-sqz385aell855p97kpkdwuop>
+    </sdc4:ms-y3m4tg7u1io8bimkhiuxz8zb>
+  </sdc4:ms-ks4buqh74w0bdcwdk6ky6ntr>
   <sdc4:ms-f3h2velkrit4w56qlfceatjl>
     <sdc4:ms-sw5rt0k2uap0e3xgl4rznfgu>
       <label>Condition: Kidney Disease</label>
@@ -863,7 +863,7 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-p8u71b4lhct4ra0szgkex7xo>
   </sdc4:ms-y429feu1qzr7lnagv9ua2cc6>
-  </sdc4:ms-wa0mknvfo83hej635n48s0ig>
+  </sdc4:ms-bq0dx31j0dzk5dsof8aoxfqk>
   <sdc4:ms-mqewexs2h1klidtnokjzhul6>
     <sdc4:ms-dkmozm7gxxss45gf5yhthpjg>
       <label>Still Have Asthma (ASTHNOW)</label>
@@ -878,11 +878,11 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-dkmozm7gxxss45gf5yhthpjg>
   </sdc4:ms-mqewexs2h1klidtnokjzhul6>
-  </sdc4:ms-lahhb7fhnu75l1fxrv9f8fdv>
-  <sdc4:ms-tto2m72tul0hj0z7zyoco4yx>
+  </sdc4:ms-yumwsic8qvlly00pluhl9415>
+  <sdc4:ms-c6lumieatnqpb33vp80sblyd>
     <label>BRFSS Demographics</label>
-  <sdc4:ms-af2xn38mf2fvok86g09e4ka3>
-    <sdc4:ms-fci5gajaodxc2ihq6nuz9l6y>
+  <sdc4:ms-iguaqbdzjqk634r04nl5tmt0>
+    <sdc4:ms-bhi8aatu3lxo3erx3mo5y08v>
       <label>Education Level (EDUCA)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -893,8 +893,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-fci5gajaodxc2ihq6nuz9l6y>
-  </sdc4:ms-af2xn38mf2fvok86g09e4ka3>
+    </sdc4:ms-bhi8aatu3lxo3erx3mo5y08v>
+  </sdc4:ms-iguaqbdzjqk634r04nl5tmt0>
   <sdc4:ms-er846fdase95qfn51295h02p>
     <sdc4:ms-j67yf27qljb83m2fwvown1lk>
       <label>Employment Status (EMPLOY1)</label>
@@ -993,8 +993,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-et536sfok7glz7fartfs4m65>
   </sdc4:ms-pmtnenazj7s6dvcklsqx1zpp>
-  <sdc4:ms-elfq9fc70w7vrblzcx9gr7iz>
-    <sdc4:ms-eimlsgbawhm8aa4i6gbdrja0>
+  <sdc4:ms-aerwuld48p0deu31rijadbv5>
+    <sdc4:ms-vyc62ndwazzqyn5ee5oeno1o>
       <label>Veteran Status</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -1005,8 +1005,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-eimlsgbawhm8aa4i6gbdrja0>
-  </sdc4:ms-elfq9fc70w7vrblzcx9gr7iz>
+    </sdc4:ms-vyc62ndwazzqyn5ee5oeno1o>
+  </sdc4:ms-aerwuld48p0deu31rijadbv5>
   <sdc4:ms-kv6rttqb1ftfogc8s42xrqf9>
     <sdc4:ms-zmpqfc6tb0o2hgu8qs6lj8tp>
       <label>Are you pregnant now?</label>
@@ -1035,8 +1035,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-luq973ggnjoo9ixkt0dym8v6>
   </sdc4:ms-r7t7cvtkprjf4k0thmkzzbz7>
-  <sdc4:ms-whbmbdx6w88jtct1o3xofw6u>
-    <sdc4:ms-xtbtk7ro6s9247bcwt4ak4h1>
+  <sdc4:ms-rlczhe82112k0iygals68dya>
+    <sdc4:ms-yqqm7og0x00fbmazzm00s86e>
       <label>Current Educational Attainment</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -1047,8 +1047,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-xtbtk7ro6s9247bcwt4ak4h1>
-  </sdc4:ms-whbmbdx6w88jtct1o3xofw6u>
+    </sdc4:ms-yqqm7og0x00fbmazzm00s86e>
+  </sdc4:ms-rlczhe82112k0iygals68dya>
   <sdc4:ms-ghyghsy37eqekdq91e4rk55v>
     <sdc4:ms-oy35qocyvn0zxq8ni4azvz39>
       <label>Employment Status</label>
@@ -1168,7 +1168,7 @@
       </xdcount-units>
     </sdc4:ms-wuvdeiwoe5bna7nlhcl1c4h9>
   </sdc4:ms-zm46otmwkxgersw3y93icjp4>
-  </sdc4:ms-tto2m72tul0hj0z7zyoco4yx>
+  </sdc4:ms-c6lumieatnqpb33vp80sblyd>
   <sdc4:ms-u19jrjjc6aznug6hs2twjiy5>
     <label>BRFSS Disability</label>
   <sdc4:ms-pk3hw4wzjnd5e1oa2yxc69dk>
@@ -1256,7 +1256,7 @@
     </sdc4:ms-m3970or5qg49k78l0lq1ptjc>
   </sdc4:ms-s38nznee1x9kak4nf75pkc3r>
   </sdc4:ms-u19jrjjc6aznug6hs2twjiy5>
-  <sdc4:ms-kmgw3rv02bipvaoxpvnh7fzk>
+  <sdc4:ms-t1sv9gth4is2bswuhyid22co>
     <label>BRFSS Health Status and Access</label>
   <sdc4:ms-myh7mf4v2aq3ryf4a3ewmapc>
     <sdc4:ms-a08lkh4xjvqqjtz7sxy129pa>
@@ -1272,8 +1272,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-a08lkh4xjvqqjtz7sxy129pa>
   </sdc4:ms-myh7mf4v2aq3ryf4a3ewmapc>
-  <sdc4:ms-ltxpluusa56f3t0cytjabsip>
-    <sdc4:ms-lth27h6towue4i9iq1cudogc>
+  <sdc4:ms-v9ghbsx8x43n7irclyc8a6wi>
+    <sdc4:ms-j6jj7wf0olxh3db6td9wey6g>
       <label>General Health Status</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -1284,8 +1284,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdtoken-value>_PH_</xdtoken-value>
       <xdtoken-language>_OPT_PH_</xdtoken-language>
-    </sdc4:ms-lth27h6towue4i9iq1cudogc>
-  </sdc4:ms-ltxpluusa56f3t0cytjabsip>
+    </sdc4:ms-j6jj7wf0olxh3db6td9wey6g>
+  </sdc4:ms-v9ghbsx8x43n7irclyc8a6wi>
   <sdc4:ms-pojjp13k3i95ttw23sm24gz2>
     <sdc4:ms-fa0aian3co6if5igu488whhr>
       <label>Length of Time Since Last Routine Checkup (CHECKUP1)</label>
@@ -1300,8 +1300,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-fa0aian3co6if5igu488whhr>
   </sdc4:ms-pojjp13k3i95ttw23sm24gz2>
-  <sdc4:ms-ajzpbis9j5kyemael9m15wm7>
-    <sdc4:ms-k32effn0kp5a42ikkpvcva9j>
+  <sdc4:ms-jmna260wybd2zd4ou66fqoie>
+    <sdc4:ms-cjh0775qjyyaqb9spk1k3rty>
       <label>Days Mental Health Not Good, Past 30 (MENTHLTH)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -1319,10 +1319,10 @@
         <label>Days</label>
         <xdstring-value>_PH_</xdstring-value>
       </xdcount-units>
-    </sdc4:ms-k32effn0kp5a42ikkpvcva9j>
-  </sdc4:ms-ajzpbis9j5kyemael9m15wm7>
-  <sdc4:ms-x7qyr4vcga3wkpp42p91vjg0>
-    <sdc4:ms-fljkn7b19qtnj6rr3t8qcfg1>
+    </sdc4:ms-cjh0775qjyyaqb9spk1k3rty>
+  </sdc4:ms-jmna260wybd2zd4ou66fqoie>
+  <sdc4:ms-quq1mhgciebpg3oacr6cxsdo>
+    <sdc4:ms-kmr0bcq4vaae10cw4hhgjbtx>
       <label>Days Physical Health Not Good, Past 30 (PHYSHLTH)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -1340,10 +1340,10 @@
         <label>Days</label>
         <xdstring-value>_PH_</xdstring-value>
       </xdcount-units>
-    </sdc4:ms-fljkn7b19qtnj6rr3t8qcfg1>
-  </sdc4:ms-x7qyr4vcga3wkpp42p91vjg0>
-  </sdc4:ms-kmgw3rv02bipvaoxpvnh7fzk>
-  <sdc4:ms-zauadmfc05ep5nf2kd9j8cwh>
+    </sdc4:ms-kmr0bcq4vaae10cw4hhgjbtx>
+  </sdc4:ms-quq1mhgciebpg3oacr6cxsdo>
+  </sdc4:ms-t1sv9gth4is2bswuhyid22co>
+  <sdc4:ms-gc10s94rs18ida0cy88lzscl>
     <label>BRFSS Survey Design</label>
   <sdc4:ms-y2gopuhgy9wckbeurh33it90>
     <sdc4:ms-c23wij2i4jkwu016ekro40bv>
@@ -1422,7 +1422,7 @@
       <xdtemporal-date>_PH_</xdtemporal-date>
     </sdc4:ms-l4jr7yi9926sctme3vjuti72>
   </sdc4:ms-ljzdguksr3ebcmuxnpf02dbi>
-  </sdc4:ms-zauadmfc05ep5nf2kd9j8cwh>
+  </sdc4:ms-gc10s94rs18ida0cy88lzscl>
   <sdc4:ms-dh2ghpj9z1brefxf0pb4yi14>
     <label>BRFSS Tobacco and Alcohol Use</label>
   <sdc4:ms-rt5pq55fi6th8ul14nrpj5bp>
@@ -1573,7 +1573,7 @@
       <xdstring-language>_OPT_PH_</xdstring-language>
     </sdc4:ms-pflduyrah1tnmmsjrwfvi121>
   </sdc4:ms-f6tess6gw6nf2hk56v5ow7rh>
-  </sdc4:ms-jxif4jju7k2rg3vokabzzj22>
+  </sdc4:ms-job3i8sfv3zikxymqe625fm2>
   <sdc4:ms-vmikfu0irht9fmq7q02t3oqs>
     <label>PROV Activity</label>
   <sdc4:ms-vycps7awt38y25jhnrr4okxt>
@@ -1916,7 +1916,7 @@
     </sdc4:ms-i16vqj89it3db7d3c5qjko9p>
   </sdc4:ms-y1u3ladafqtryhgyetpn5ild>
   </sdc4:ms-c179ilk2ns15cd5rzzdfd6f6>
-  </sdc4:ms-kb26is7epmdlc0lm1k9pdz9f>
+  </sdc4:ms-cd2j0wzlcvfsfk7ikiaujmzx>
   <sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
     <label>FAIR Pipeline Audit</label>
     <system-id>
@@ -1931,4 +1931,4 @@
     </location>
     <timestamp>2024-01-01T00:00:00</timestamp>
   </sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
-</sdc4:dm-w9ozx00idgs5k8tw4359skvn>
+</sdc4:dm-j6wmvhr46irxht2ls90nry8k>

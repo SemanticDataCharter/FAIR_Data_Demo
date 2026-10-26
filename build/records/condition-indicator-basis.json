@@ -14,18 +14,18 @@
       "Claims-based algorithm"
     ],
     "definitions": [
-      "http://purl.obolibrary.org/obo/NCIT_C93409",
-      "http://purl.obolibrary.org/obo/NCIT_C25404"
+      "http://purl.obolibrary.org/obo/NCIT_C188309",
+      "http://purl.obolibrary.org/obo/NCIT_C221359"
     ]
   },
   "enumeration": [
     {
       "value": "Self-report of a professional diagnosis",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C93409"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C188309"
     },
     {
       "value": "Claims-based algorithm",
-      "definition": "http://purl.obolibrary.org/obo/NCIT_C25404"
+      "definition": "http://purl.obolibrary.org/obo/NCIT_C221359"
     }
   ],
   "links": [
@@ -49,13 +49,13 @@
     },
     {
       "predicate": "skos:closeMatch",
-      "iri": "http://purl.obolibrary.org/obo/NCIT_C25596",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C16493",
       "basis": "concept",
       "note": ""
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "hc79skkfionpgw87dsg5yrgw",
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

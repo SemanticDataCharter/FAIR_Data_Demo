@@ -10,12 +10,13 @@ links:
   basis: standard
 enumeration:
 - value: No difficulty
-  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+  definition: http://purl.obolibrary.org/obo/NCIT_C121736
 - value: Some difficulty
-  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+  definition: http://purl.obolibrary.org/obo/NCIT_C121739
 - value: Much difficulty
-  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+  definition: http://purl.obolibrary.org/obo/NCIT_C121740
 - value: Unable to do
-  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+  definition: http://purl.obolibrary.org/obo/NCIT_C121742
 - value: Do not do this activity
-  definition: http://purl.obolibrary.org/obo/NCIT_C17998
+  definition: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/PFQ_J.htm
+supersedes: p4jxl2rur1agjhdpvj2g9u4k

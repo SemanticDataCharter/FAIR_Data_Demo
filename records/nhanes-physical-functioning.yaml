@@ -10,9 +10,9 @@ description: 'Physical functioning (PFQ_J): work limitation, equipment to walk, 
 source:
   name: NHANES 2017-2018
 links:
-- predicate: skos:exactMatch
-  iri: http://purl.obolibrary.org/obo/NCIT_C20000
-  basis: standard
+- predicate: skos:closeMatch
+  iri: http://purl.obolibrary.org/obo/NCIT_C150046
+  basis: concept
 members:
 - nhanes-limitations-keeping-from-working
 - nhanes-need-special-equipment-to-walk
@@ -26,3 +26,4 @@ members:
 - nhanes-getting-in-and-out-of-bed
 - nhanes-dressing
 - nhanes-standing-for-long-periods
+supersedes: ky7lvmote5jfn5gt6n89q79s

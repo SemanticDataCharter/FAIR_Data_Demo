@@ -1,4 +1,4 @@
-# One-off for production, after the 4.2.5 load: makes public the five revisions and three new records it published
+# One-off for production, after the 4.2.5 load: makes public the six revisions and three new records it published
 # (the loader publishes but does not make public). Each is found by its slot (the newest unretired holder).
 #   gcloud run jobs execute sdcstudio-migrate --region us-central1 --project sdcstudio-prod --wait \
 #     --args="^~^-c~cd /app/src && python manage.py shell -c \"$(grep -v '^#' build/publicize_p05_oneoff.py)\""
@@ -6,6 +6,7 @@
 from dmgen.management.commands.load_component_records import Command as Loader
 SLOT = 'https://axius-sdc.com/library/fair/'
 ORIGINALS = {  # slot -> its original (None: new in 4.2.5)
+    'nhanes-days-taken-medicine': 'jwgah039kcz574bbjvpxvfdj',
     'nhanes-medication': 'ncudsi2t2ij3rd2pmnnfr2j9',
     'nhanes-medication-governed-record': 'jo2kw48cijwgg64s6cud2el1',
     'nhanes-medication-reason-1': 'i213d6dp9r4c0nmzxkgc0tja',

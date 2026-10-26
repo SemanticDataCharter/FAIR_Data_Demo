@@ -312,12 +312,13 @@ nh_participant = C("nhanes-participant", "NHANES Participant", "One NHANES 2017-
 nh_rxduse = leaf("nhanes-taken-prescription-past-month", "Taken Prescription Medicine, Past Month (RXDUSE)", "XdToken", "Whether the participant took prescription medicine in the past 30 days (RXDUSE).", links=[nh("RXDUSE", "RXQ_RX_J")], enumeration=yesno(), source=NH)
 nh_drug = leaf("nhanes-generic-drug-name", "Generic Drug Name (RXDDRUG)", "XdString", "The generic drug name as NHANES records it (RXDDRUG).", links=[nh("RXDDRUG", "RXQ_RX_J")], constraints={"max_length": 200}, source=NH)
 nh_drugid = leaf("nhanes-generic-drug-code", "Generic Drug Code (RXDDRGID)", "XdString", "The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one.", links=[nh("RXDDRGID", "RXQ_RX_J")], constraints={"max_length": 12}, source=NH)
-nh_days = leaf("nhanes-days-taken-medicine", "Number of Days Taken Medicine (RXDDAYS)", "XdCount", "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).", links=[nh("RXDDAYS", "RXQ_RX_J")], constraints={"units": U_DAYS, "min_inclusive": 0, "max_inclusive": 99999}, source=NH)
+nh_days = leaf("nhanes-days-taken-medicine", "Number of Days Taken Medicine (RXDDAYS)", "XdCount", "The number of days the participant has taken the medicine (RXDDAYS; 1 to 21,900 in the file). A refusal (77777) or don't know (99999) is carried as an Exceptional Value, not a number.", links=[nh("RXDDAYS", "RXQ_RX_J")], constraints={"units": U_DAYS, "min_inclusive": 1, "max_inclusive": 21900}, source=NH)
 nh_rxcount = leaf("nhanes-number-of-prescription-medicines", "Number of Prescription Medicines Taken (RXDCOUNT)", "XdCount", "The number of prescription medicines the participant is taking (RXDCOUNT).", links=[nh("RXDCOUNT", "RXQ_RX_J")], constraints={"units": D + "units-items", "min_inclusive": 0, "max_inclusive": 50}, source=NH)
 # NHANES's prevention codes: an ICD-10-CM code followed by "P" means the medicine is taken to prevent the condition (RXQ_RX_J
 # Data Processing and Editing). None is an ICD-10-CM code (all 29 in the file were looked up: SOURCE-ERRATA.md), so they are
 # a code system of NHANES's own and carried as one, never as ICD-10-CM.
-NH_RX = NHANES + "RXQ_RX_J.htm"
+# CDC moved the NHANES documentation; the 2017-2018 pages under NHANES now answer "Page Not Found" (SOURCE-ERRATA.md).
+NH_RX = "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm"
 sys_nhanes_rx = leaf("system-nhanes-rx-reason", "Code System: NHANES Prevention Reason", "XdLink", "The code system of a coded value, fixed: NHANES's prevention reason codes, defined in the RXQ_RX_J documentation (" + NH_RX + "). Not ICD-10-CM. FHIR Coding.system.",
                      links=[("skos:exactMatch", NH_RX, "standard")], constraints={"link": NH_RX, "relation": "codeSystem", "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"}, source=NH)
 nhanes_prev_code = leaf("nhanes-prevention-reason-code", "Prevention Reason Code (NHANES)", "XdString", "An NHANES prevention reason code (RXDRSC1 to RXDRSC3): an ICD-10-CM code with the letter P appended, meaning the medicine is taken to prevent the condition (I21.P, prevent heart attack). NHANES's own code, not an ICD-10-CM code: ICD-10-CM has no I21.P.",
@@ -554,13 +555,15 @@ def retire_rows():
 
 
 # The records revised for the current release, each to the published holder of its slot. 4.2.5: the medication reason
-# clusters gain NHANES's prevention reason codes as their own coded value (SOURCE-ERRATA.md), and the clusters above them.
+# clusters gain NHANES's prevention reason codes as their own coded value (SOURCE-ERRATA.md), and the clusters above them;
+# the days taken gets the range NHANES documents (1 to 21,900; 99999 is don't know, not a larger number).
 REVISIONS = {
     "nhanes-medication": "ncudsi2t2ij3rd2pmnnfr2j9",
     "nhanes-medication-governed-record": "jo2kw48cijwgg64s6cud2el1",
     "nhanes-medication-reason-1": "i213d6dp9r4c0nmzxkgc0tja",
     "nhanes-medication-reason-2": "u3qz0js9emqn2i7s5nyynmgt",
     "nhanes-medication-reason-3": "rozfpmwczk4yuw4c2vom4gyx",
+    "nhanes-days-taken-medicine": "jwgah039kcz574bbjvpxvfdj",
 }
 
 

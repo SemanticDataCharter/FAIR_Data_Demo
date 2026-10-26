@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": "zauadmfc05ep5nf2kd9j8cwh",
+  "supersedes_ct_id": null,
   "members": [
     "brfss-state-fips-code",
     "brfss-interview-date",

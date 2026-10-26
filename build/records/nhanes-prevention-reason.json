@@ -1,0 +1,44 @@
+{
+  "tiny_id": "nhanes-prevention-reason",
+  "label": "Prevention Reason (NHANES)",
+  "description": "A reason for a medicine coded in NHANES's prevention reason codes: the code, NHANES's description of it and the fixed code system (FHIR Coding). Kept apart from the ICD-10-CM diagnosis because the code is not ICD-10-CM and the condition is one the participant is preventing, not one diagnosed. Members: Prevention Reason Code (NHANES); code-display-text (FHIR); Code System: NHANES Prevention Reason.",
+  "sdc_type": "Cluster",
+  "excluded": false,
+  "constraints": {},
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-prevention-reason",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "http://hl7.org/fhir/R4/datatypes.html#Coding",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [
+    "nhanes-prevention-reason-code",
+    "https://axius-sdc.com/library/fhir/code-display-text",
+    "system-nhanes-rx-reason"
+  ],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

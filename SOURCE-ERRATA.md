@@ -98,25 +98,44 @@ CMS Beneficiary 4.2.4 (`vj0hr75146j0pbedvc0iaqrz`), with the records regenerated
 
 ## From the federal files: conventions to read correctly
 
-### NHANES 2017-2018 prescription medications (`RXQ_RX_J`): reason-for-use codes
+### NHANES 2017-2018 prescription medications (`RXQ_RX_J`): prevention codes do not conform to ICD-10-CM
 
-The reasons for use (`RXDRSC1` to `RXDRSC3`) are ICD-10-CM codes with three conventions of NHANES's own, documented in
-the file's Data Processing and Editing notes:
+**The standard.** ICD-10-CM, the US clinical modification of the WHO's ICD-10, maintained by CDC's National Center for
+Health Statistics. A code is valid only if it is in the code set; the code set has no way to say that a condition is
+being prevented rather than diagnosed.
 
-- **A trailing `P` means prevention.** "When reported reason was for disease prevention, an appropriate ICD-10-CM code
-  followed by a letter 'P' was used (e.g., A49.9P Prevent bacterial infection; D75.9P Prevent blood clots)." 29 such
-  codes, 691 of the file's 15,565 reason codes (`I21.P` Prevent heart attack, `D75.9P` Prevent blood clots, ...).
-  These are not ICD-10-CM codes: ICD-10-CM has no `I21.P`.
-- **55555** is a reason that could not be coded (84 in the file), **77777** refused (5), **99999** don't know (451).
+**The departure.** The reasons for use (`RXDRSC1` to `RXDRSC3`) are ICD-10-CM codes, except where the reason was to
+prevent a condition. Then NHANES writes the condition's ICD-10-CM code with the letter "P" appended: "When reported
+reason was for disease prevention, an appropriate ICD-10-CM code followed by a letter 'P' was used (e.g., A49.9P
+Prevent bacterial infection; D75.9P Prevent blood clots)" (the file's Data Processing and Editing notes). The result is
+a code ICD-10-CM does not contain, carried in a variable whose other values are ICD-10-CM: 29 such codes, 691 of the
+file's 15,565 reason codes, the most used `I21.P` "Prevent heart attack/myocardial infarction" (170) and `D75.9P`
+"Prevent blood clots" (148).
 
-**What the demo does.** The generator carries a reason whose code has the shape of an ICD-10-CM code, the `P` codes
-included, in the Diagnosis (ICD-10-CM) component, with NHANES's own description beside it; it leaves out 55555, 77777
-and 99999 and counts them (`make generate` prints the count).
+**The evidence.** On 26 October 2026 every one of the file's 241 distinct reason codes was looked up in ICD-10-CM on
+HL7's terminology server (with D75.9, I21 and I21.9 as controls, which it found). All 209 codes without the suffix
+are ICD-10-CM codes; none of the 29 codes with it is. Every one of the 29 is described by NHANES as "Prevent ...". The
+other three values, 55555 (a reason that could not be coded, 84), 77777 (refused, 5) and 99999 (don't know, 451), are
+not codes of any system.
 
-**What that means downstream.** A `P` code sits under the ICD-10-CM system, so a target that checks ICD-10-CM refuses
-it: HL7's FHIR validator reports `I21.P` and the like as unknown ICD-10-CM codes (9 of the 400 sample Bundles of
-`sdc-gdr2fhir`). The record says it as NHANES does; that the code means "prevent" is in NHANES's description, not in
-the code system.
+**Why it matters.** A prevention code read as ICD-10-CM is refused by any system that checks the code set (HL7's
+FHIR validator reports `I21.P` as an unknown ICD-10-CM code), and the obvious repair, dropping the "P", is worse: `I21`
+is Acute myocardial infarction, so a participant taking aspirin to prevent a heart attack would be recorded as having
+had one.
 
-**Status.** Open: whether the model should carry a prevention code as the ICD-10-CM code without its `P` and the
-prevention as its own value, rather than as NHANES writes it.
+**What the demo does (4.2.5).** The prevention codes are a code system of NHANES's own, and the model carries them as
+one: each Medication Reason holds either the ICD-10-CM diagnosis (the FHIR library's coded value) or a **Prevention
+Reason (NHANES)** coded value, with the NHANES code as written, NHANES's description, and the code system fixed to the
+RXQ_RX_J documentation (`https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm`), never ICD-10-CM. The generator
+puts a code in the NHANES coded value only when it both has the NHANES shape and is described as prevention, and stops
+if the two disagree (a real ICD-10-CM code can end in P, as a seventh character). 55555, 77777 and 99999 are left out
+and counted.
+
+**What a target receives** (once the mappers carry the 4.2.5 model; checked against their output then). The code under NHANES's code system with its description: in FHIR a reason Coding whose
+system is the NHANES documentation, not `http://hl7.org/fhir/sid/icd-10-cm`; in OMOP CDM no standard concept (the code
+and description as source values); in HL7 v2 a coded element whose coding system is local to NHANES. Each target
+states that the code is not ICD-10-CM; none receives a code it would read as a diagnosis.
+
+**Status.** Open: whether 55555, 77777 and 99999 are carried as Exceptional Values (could not be coded, refused,
+don't know) rather than left out.
+

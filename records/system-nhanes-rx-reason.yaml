@@ -1,0 +1,15 @@
+key: system-nhanes-rx-reason
+label: 'Code System: NHANES Prevention Reason'
+type: XdLink
+description: 'The code system of a coded value, fixed: NHANES''s prevention reason codes, defined in the RXQ_RX_J documentation (https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm).
+  Not ICD-10-CM. FHIR Coding.system.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm
+  basis: standard
+constraints:
+  link: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm
+  relation: codeSystem
+  relation_uri: http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system

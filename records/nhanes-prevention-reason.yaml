@@ -1,0 +1,16 @@
+key: nhanes-prevention-reason
+label: Prevention Reason (NHANES)
+type: Cluster
+description: 'A reason for a medicine coded in NHANES''s prevention reason codes: the code, NHANES''s description of it and the fixed code system
+  (FHIR Coding). Kept apart from the ICD-10-CM diagnosis because the code is not ICD-10-CM and the condition is one the participant is preventing,
+  not one diagnosed. Members: Prevention Reason Code (NHANES); code-display-text (FHIR); Code System: NHANES Prevention Reason.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: http://hl7.org/fhir/R4/datatypes.html#Coding
+  basis: standard
+members:
+- nhanes-prevention-reason-code
+- https://axius-sdc.com/library/fhir/code-display-text
+- system-nhanes-rx-reason

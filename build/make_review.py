@@ -25,7 +25,9 @@ if REVIEW.exists():
     marked = {r["tiny_id"]: r for r in csv.DictReader(open(REVIEW, encoding="utf-8"))}
     for row in rows:
         old = marked.get(row["tiny_id"])
-        if old and all(old.get(k, "") == row[k] for k in FIELDS if k not in ("decision", "note")):
+        # A revision that has been loaded holds its slot, so its supersedes_ct_id clears: that alone is not a change.
+        same = old and all(old.get(k, "") == row[k] for k in FIELDS if k not in ("decision", "note", "supersedes_ct_id"))
+        if same and (old.get("supersedes_ct_id", "") == row["supersedes_ct_id"] or not row["supersedes_ct_id"]):
             row["decision"], row["note"] = old.get("decision", ""), old.get("note", "")
 with open(REVIEW, "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader(); w.writerows(rows)

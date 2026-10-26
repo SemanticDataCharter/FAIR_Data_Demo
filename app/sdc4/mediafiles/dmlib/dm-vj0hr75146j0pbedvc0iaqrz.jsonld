@@ -14,18 +14,26 @@
     "id": "@id"
   },
   "@type": "DataModel",
-  "@id": "sdc4:dm-fnv3zi2btk3s0sfodjsc25eb",
-  "identifier": "fnv3zi2btk3s0sfodjsc25eb",
-  "label": "CMS Beneficiary",
+  "@id": "sdc4:dm-vj0hr75146j0pbedvc0iaqrz",
+  "identifier": "vj0hr75146j0pbedvc0iaqrz",
+  "label": "CMS Beneficiary 4.2.4",
   "description": "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo",
   "metadata": {
-    "dc:title": "CMS Beneficiary",
+    "dc:title": "CMS Beneficiary 4.2.4",
     "dc:creator": "Timothy Cook",
-    "dc:description": "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo",
+    "dc:contributor": [],
+    "dc:subject": "",
+    "dc:source": "",
     "dc:rights": "CC-BY http://creativecommons.org/licenses/by/3.0/",
-    "dc:language": "en-US",
+    "dc:relation": "None",
+    "dc:coverage": "Universal",
+    "dc:type": "SDC Data Model (DM)",
+    "dc:identifier": "dm-vj0hr75146j0pbedvc0iaqrz",
+    "dc:description": "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo",
+    "dc:publisher": "",
+    "dc:date": "2026-10-26T13:53:02.628532+00:00",
     "dc:format": "text/xml",
-    "dc:date": "2026-09-26T22:03:40.721481+00:00"
+    "dc:language": "en-US"
   },
   "components": [
     {
@@ -1127,7 +1135,7 @@
     },
     {
       "@type": "XdTokenType",
-      "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw",
+      "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb",
       "label": "Condition Indicator Basis",
       "description": "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms.",
       "cardinality": {
@@ -1156,7 +1164,11 @@
         },
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#closeMatch",
-          "object": "http://purl.obolibrary.org/obo/NCIT_C25596"
+          "object": "http://purl.obolibrary.org/obo/NCIT_C16493"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw"
         }
       ]
     },
@@ -1418,9 +1430,192 @@
       "@type": "XdStringType",
       "@id": "sdc4:mc-hjjou19np3pohe63fxmqtkoi",
       "label": "Currency",
+      "description": "The ISO 4217 code of a currency: the complete list of 178 active codes. Each value is defined by its Wikidata entity.",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "AED",
+          "AFN",
+          "ALL",
+          "AMD",
+          "AOA",
+          "ARS",
+          "AUD",
+          "AWG",
+          "AZN",
+          "BAM",
+          "BBD",
+          "BDT",
+          "BHD",
+          "BIF",
+          "BMD",
+          "BND",
+          "BOB",
+          "BOV",
+          "BRL",
+          "BSD",
+          "BTN",
+          "BWP",
+          "BYN",
+          "BZD",
+          "CAD",
+          "CDF",
+          "CHE",
+          "CHF",
+          "CHW",
+          "CLF",
+          "CLP",
+          "CNY",
+          "COP",
+          "COU",
+          "CRC",
+          "CUP",
+          "CVE",
+          "CZK",
+          "DJF",
+          "DKK",
+          "DOP",
+          "DZD",
+          "EGP",
+          "ERN",
+          "ETB",
+          "EUR",
+          "FJD",
+          "FKP",
+          "GBP",
+          "GEL",
+          "GHS",
+          "GIP",
+          "GMD",
+          "GNF",
+          "GTQ",
+          "GYD",
+          "HKD",
+          "HNL",
+          "HTG",
+          "HUF",
+          "IDR",
+          "ILS",
+          "INR",
+          "IQD",
+          "IRR",
+          "ISK",
+          "JMD",
+          "JOD",
+          "JPY",
+          "KES",
+          "KGS",
+          "KHR",
+          "KMF",
+          "KPW",
+          "KRW",
+          "KWD",
+          "KYD",
+          "KZT",
+          "LAK",
+          "LBP",
+          "LKR",
+          "LRD",
+          "LSL",
+          "LYD",
+          "MAD",
+          "MDL",
+          "MGA",
+          "MKD",
+          "MMK",
+          "MNT",
+          "MOP",
+          "MRU",
+          "MUR",
+          "MVR",
+          "MWK",
+          "MXN",
+          "MXV",
+          "MYR",
+          "MZN",
+          "NAD",
+          "NGN",
+          "NIO",
+          "NOK",
+          "NPR",
+          "NZD",
+          "OMR",
+          "PAB",
+          "PEN",
+          "PGK",
+          "PHP",
+          "PKR",
+          "PLN",
+          "PYG",
+          "QAR",
+          "RON",
+          "RSD",
+          "RUB",
+          "RWF",
+          "SAR",
+          "SBD",
+          "SCR",
+          "SDG",
+          "SEK",
+          "SGD",
+          "SHP",
+          "SLE",
+          "SOS",
+          "SRD",
+          "SSP",
+          "STN",
+          "SVC",
+          "SYP",
+          "SZL",
+          "THB",
+          "TJS",
+          "TMT",
+          "TND",
+          "TOP",
+          "TRY",
+          "TTD",
+          "TWD",
+          "TZS",
+          "UAH",
+          "UGX",
+          "USD",
+          "USN",
+          "UYI",
+          "UYU",
+          "UYW",
+          "UZS",
+          "VED",
+          "VES",
+          "VND",
+          "VUV",
+          "WST",
+          "XAD",
+          "XAF",
+          "XAG",
+          "XAU",
+          "XBA",
+          "XBB",
+          "XBC",
+          "XBD",
+          "XCD",
+          "XCG",
+          "XDR",
+          "XOF",
+          "XPD",
+          "XPF",
+          "XPT",
+          "XSU",
+          "XTS",
+          "XUA",
+          "XXX",
+          "YER",
+          "ZAR",
+          "ZMW",
+          "ZWG"
+        ]
       },
       "dataType": "xsd:string",
       "semanticLinks": [
@@ -2173,9 +2368,15 @@
       "@type": "XdStringType",
       "@id": "sdc4:mc-uixgck0xt60055m4bdcxkhyj",
       "label": "Months",
+      "description": "A duration in months.",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "months"
+        ]
       },
       "dataType": "xsd:string",
       "semanticLinks": [
@@ -2704,9 +2905,15 @@
       "@type": "XdStringType",
       "@id": "sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn",
       "label": "Items",
+      "description": "A count of discrete things, with no dimension.",
       "cardinality": {
         "minOccurs": 0,
         "maxOccurs": 1
+      },
+      "constraints": {
+        "enumeration": [
+          "items"
+        ]
       },
       "dataType": "xsd:string",
       "semanticLinks": [
@@ -4499,7 +4706,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-io2h28pi3yktedurk8ye3oq0",
+      "@id": "sdc4:mc-meavxo1k8nbndmepkmdaagin",
       "label": "CMS Beneficiary Governed Record",
       "cardinality": {
         "minOccurs": 0,
@@ -4510,7 +4717,7 @@
           "@id": "sdc4:mc-t2tvd3wylxrstdeu5aw6gkw1"
         },
         {
-          "@id": "sdc4:mc-kkdy1kjdruxvx8s1ra8eh231"
+          "@id": "sdc4:mc-zvdxyiicvyhfaywtw7xikjbj"
         },
         {
           "@id": "sdc4:mc-vmikfu0irht9fmq7q02t3oqs"
@@ -4535,6 +4742,10 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://www.w3.org/ns/prov#Entity"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-io2h28pi3yktedurk8ye3oq0"
         }
       ]
     },
@@ -4608,7 +4819,7 @@
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-kkdy1kjdruxvx8s1ra8eh231",
+      "@id": "sdc4:mc-zvdxyiicvyhfaywtw7xikjbj",
       "label": "CMS Beneficiary",
       "cardinality": {
         "minOccurs": 0,
@@ -4616,7 +4827,7 @@
       },
       "contains": [
         {
-          "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig"
+          "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk"
         },
         {
           "@id": "sdc4:mc-vas0n7gpt46lxe3t2klb0ihw"
@@ -4650,12 +4861,16 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C41189"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-kkdy1kjdruxvx8s1ra8eh231"
         }
       ]
     },
     {
       "@type": "ClusterType",
-      "@id": "sdc4:mc-wa0mknvfo83hej635n48s0ig",
+      "@id": "sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk",
       "label": "Chronic Condition Indicators",
       "cardinality": {
         "minOccurs": 0,
@@ -4708,7 +4923,7 @@
           "@id": "sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr"
         },
         {
-          "@id": "sdc4:mc-hc79skkfionpgw87dsg5yrgw"
+          "@id": "sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb"
         },
         {
           "@id": "sdc4:mc-sw5rt0k2uap0e3xgl4rznfgu"
@@ -4745,6 +4960,10 @@
         {
           "predicate": "http://www.w3.org/2004/02/skos/core#exactMatch",
           "object": "http://purl.obolibrary.org/obo/NCIT_C2991"
+        },
+        {
+          "predicate": "http://www.w3.org/ns/prov#wasRevisionOf",
+          "object": "https://semanticdatacharter.com/ns/sdc4/mc-wa0mknvfo83hej635n48s0ig"
         }
       ]
     },

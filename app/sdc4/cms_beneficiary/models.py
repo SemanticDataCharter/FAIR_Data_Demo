@@ -26,7 +26,7 @@ class CmsBeneficiaryInstance(models.Model):
     XML is the authoritative data format. All data is stored as validated XML,
     with JSON extracted for efficient JSONB queries in PostgreSQL.
 
-    DM CT_ID: fnv3zi2btk3s0sfodjsc25eb
+    DM CT_ID: vj0hr75146j0pbedvc0iaqrz
     """
 
     # ==========================================================================
@@ -128,7 +128,7 @@ class CmsBeneficiaryInstance(models.Model):
     # ==========================================================================
 
     # DM metadata - set at generation time, read-only at runtime
-    DM_CT_ID = 'fnv3zi2btk3s0sfodjsc25eb'
+    DM_CT_ID = 'vj0hr75146j0pbedvc0iaqrz'
     DM_LABEL = 'CmsBeneficiary'
 
     class Meta:

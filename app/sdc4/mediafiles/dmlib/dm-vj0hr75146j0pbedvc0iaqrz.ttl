@@ -1,4 +1,4 @@
-@base <https://semanticdatacharter.com/ns/sdc4/dm-fnv3zi2btk3s0sfodjsc25eb> .
+@base <https://semanticdatacharter.com/ns/sdc4/dm-vj0hr75146j0pbedvc0iaqrz> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdc4: <https://semanticdatacharter.com/ns/sdc4/> .
@@ -23,6 +23,11 @@
     rdfs:label "Yes" ;
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-atqkooccakulfhkt18c008fx .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-c3ycqqk7ns1bvmsc0ricnsbn/xdstring-value/items> a rdfs:Class ;
+    rdfs:label "items" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/NUM" ;
+    rdfs:subPropertyOf sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-ce1c8sydkov8bkv4dgdmwe5x/xdtoken-value/C> a rdfs:Class ;
     rdfs:label "C" ;
@@ -224,16 +229,6 @@
     rdfs:isDefinedBy "http://hl7.org/fhir/administrative-gender#unknown" ;
     rdfs:subPropertyOf sdc4:mc-gxzbm758mhdz51xd4bawlfhh .
 
-<https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Claims-based%2520algorithm> a rdfs:Class ;
-    rdfs:label "Claims-based algorithm" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C25404" ;
-    rdfs:subPropertyOf sdc4:mc-hc79skkfionpgw87dsg5yrgw .
-
-<https://semanticdatacharter.com/ns/sdc4/mc-hc79skkfionpgw87dsg5yrgw/xdtoken-value/Self-report%2520of%2520a%2520professional%2520diagnosis> a rdfs:Class ;
-    rdfs:label "Self-report of a professional diagnosis" ;
-    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C93409" ;
-    rdfs:subPropertyOf sdc4:mc-hc79skkfionpgw87dsg5yrgw .
-
 <https://semanticdatacharter.com/ns/sdc4/mc-hicvzztm4xzxnzp9f6tyu016/xdtoken-value/active> a rdfs:Class ;
     rdfs:label "active" ;
     rdfs:isDefinedBy "http://hl7.org/fhir/fm-status#active" ;
@@ -253,6 +248,896 @@
     rdfs:label "entered-in-error" ;
     rdfs:isDefinedBy "http://hl7.org/fhir/fm-status#entered-in-error" ;
     rdfs:subPropertyOf sdc4:mc-hicvzztm4xzxnzp9f6tyu016 .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AED> a rdfs:Class ;
+    rdfs:label "AED" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200294" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AFN> a rdfs:Class ;
+    rdfs:label "AFN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199471" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ALL> a rdfs:Class ;
+    rdfs:label "ALL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q125999" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AMD> a rdfs:Class ;
+    rdfs:label "AMD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q130498" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AOA> a rdfs:Class ;
+    rdfs:label "AOA" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200337" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ARS> a rdfs:Class ;
+    rdfs:label "ARS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199578" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AUD> a rdfs:Class ;
+    rdfs:label "AUD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q259502" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AWG> a rdfs:Class ;
+    rdfs:label "AWG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q232270" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/AZN> a rdfs:Class ;
+    rdfs:label "AZN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q483725" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BAM> a rdfs:Class ;
+    rdfs:label "BAM" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q179620" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BBD> a rdfs:Class ;
+    rdfs:label "BBD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q194351" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BDT> a rdfs:Class ;
+    rdfs:label "BDT" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q194453" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BHD> a rdfs:Class ;
+    rdfs:label "BHD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q201871" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BIF> a rdfs:Class ;
+    rdfs:label "BIF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q238007" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BMD> a rdfs:Class ;
+    rdfs:label "BMD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q210478" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BND> a rdfs:Class ;
+    rdfs:label "BND" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q206319" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BOB> a rdfs:Class ;
+    rdfs:label "BOB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200737" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BOV> a rdfs:Class ;
+    rdfs:label "BOV" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q5731551" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BRL> a rdfs:Class ;
+    rdfs:label "BRL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q173117" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BSD> a rdfs:Class ;
+    rdfs:label "BSD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q194339" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BTN> a rdfs:Class ;
+    rdfs:label "BTN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q201799" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BWP> a rdfs:Class ;
+    rdfs:label "BWP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q186794" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BYN> a rdfs:Class ;
+    rdfs:label "BYN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q21531507" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/BZD> a rdfs:Class ;
+    rdfs:label "BZD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q275112" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CAD> a rdfs:Class ;
+    rdfs:label "CAD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1104069" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CDF> a rdfs:Class ;
+    rdfs:label "CDF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4734" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHE> a rdfs:Class ;
+    rdfs:label "CHE" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115184017" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHF> a rdfs:Class ;
+    rdfs:label "CHF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q25344" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CHW> a rdfs:Class ;
+    rdfs:label "CHW" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q107543281" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CLF> a rdfs:Class ;
+    rdfs:label "CLF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1573250" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CLP> a rdfs:Class ;
+    rdfs:label "CLP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200050" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CNY> a rdfs:Class ;
+    rdfs:label "CNY" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q39099" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/COP> a rdfs:Class ;
+    rdfs:label "COP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q244819" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/COU> a rdfs:Class ;
+    rdfs:label "COU" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q73016560" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CRC> a rdfs:Class ;
+    rdfs:label "CRC" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q242915" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CUP> a rdfs:Class ;
+    rdfs:label "CUP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q201505" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CVE> a rdfs:Class ;
+    rdfs:label "CVE" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4591" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/CZK> a rdfs:Class ;
+    rdfs:label "CZK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q131016" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DJF> a rdfs:Class ;
+    rdfs:label "DJF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4594" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DKK> a rdfs:Class ;
+    rdfs:label "DKK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q25417" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DOP> a rdfs:Class ;
+    rdfs:label "DOP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q242922" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/DZD> a rdfs:Class ;
+    rdfs:label "DZD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199674" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/EGP> a rdfs:Class ;
+    rdfs:label "EGP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199462" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ERN> a rdfs:Class ;
+    rdfs:label "ERN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q171503" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ETB> a rdfs:Class ;
+    rdfs:label "ETB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q206243" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/EUR> a rdfs:Class ;
+    rdfs:label "EUR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4916" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/FJD> a rdfs:Class ;
+    rdfs:label "FJD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4592" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/FKP> a rdfs:Class ;
+    rdfs:label "FKP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q330044" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GBP> a rdfs:Class ;
+    rdfs:label "GBP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q323138" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GEL> a rdfs:Class ;
+    rdfs:label "GEL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4608" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GHS> a rdfs:Class ;
+    rdfs:label "GHS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q183530" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GIP> a rdfs:Class ;
+    rdfs:label "GIP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q41429" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GMD> a rdfs:Class ;
+    rdfs:label "GMD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202885" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GNF> a rdfs:Class ;
+    rdfs:label "GNF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q213311" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GTQ> a rdfs:Class ;
+    rdfs:label "GTQ" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q207396" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/GYD> a rdfs:Class ;
+    rdfs:label "GYD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q213005" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HKD> a rdfs:Class ;
+    rdfs:label "HKD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q31015" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HNL> a rdfs:Class ;
+    rdfs:label "HNL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4719" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HTG> a rdfs:Class ;
+    rdfs:label "HTG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q203955" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/HUF> a rdfs:Class ;
+    rdfs:label "HUF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q47190" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IDR> a rdfs:Class ;
+    rdfs:label "IDR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q41588" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ILS> a rdfs:Class ;
+    rdfs:label "ILS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q131309" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/INR> a rdfs:Class ;
+    rdfs:label "INR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q80524" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IQD> a rdfs:Class ;
+    rdfs:label "IQD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q193094" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/IRR> a rdfs:Class ;
+    rdfs:label "IRR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q188608" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ISK> a rdfs:Class ;
+    rdfs:label "ISK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q131473" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JMD> a rdfs:Class ;
+    rdfs:label "JMD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q209792" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JOD> a rdfs:Class ;
+    rdfs:label "JOD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q203722" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/JPY> a rdfs:Class ;
+    rdfs:label "JPY" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q8146" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KES> a rdfs:Class ;
+    rdfs:label "KES" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202882" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KGS> a rdfs:Class ;
+    rdfs:label "KGS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q35881" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KHR> a rdfs:Class ;
+    rdfs:label "KHR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q204737" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KMF> a rdfs:Class ;
+    rdfs:label "KMF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q267264" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KPW> a rdfs:Class ;
+    rdfs:label "KPW" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q106720" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KRW> a rdfs:Class ;
+    rdfs:label "KRW" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202040" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KWD> a rdfs:Class ;
+    rdfs:label "KWD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q193098" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KYD> a rdfs:Class ;
+    rdfs:label "KYD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q319885" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/KZT> a rdfs:Class ;
+    rdfs:label "KZT" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q173751" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LAK> a rdfs:Class ;
+    rdfs:label "LAK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200055" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LBP> a rdfs:Class ;
+    rdfs:label "LBP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q201880" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LKR> a rdfs:Class ;
+    rdfs:label "LKR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4596" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LRD> a rdfs:Class ;
+    rdfs:label "LRD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q242988" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LSL> a rdfs:Class ;
+    rdfs:label "LSL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q208039" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/LYD> a rdfs:Class ;
+    rdfs:label "LYD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q190699" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MAD> a rdfs:Class ;
+    rdfs:label "MAD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200192" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MDL> a rdfs:Class ;
+    rdfs:label "MDL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q181129" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MGA> a rdfs:Class ;
+    rdfs:label "MGA" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4584" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MKD> a rdfs:Class ;
+    rdfs:label "MKD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q177875" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MMK> a rdfs:Class ;
+    rdfs:label "MMK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q201875" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MNT> a rdfs:Class ;
+    rdfs:label "MNT" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q183435" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MOP> a rdfs:Class ;
+    rdfs:label "MOP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q241214" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MRU> a rdfs:Class ;
+    rdfs:label "MRU" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q207024" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MUR> a rdfs:Class ;
+    rdfs:label "MUR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q212967" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MVR> a rdfs:Class ;
+    rdfs:label "MVR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q206600" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MWK> a rdfs:Class ;
+    rdfs:label "MWK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q211694" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MXN> a rdfs:Class ;
+    rdfs:label "MXN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4730" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MXV> a rdfs:Class ;
+    rdfs:label "MXV" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q6156187" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MYR> a rdfs:Class ;
+    rdfs:label "MYR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q163712" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/MZN> a rdfs:Class ;
+    rdfs:label "MZN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200753" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NAD> a rdfs:Class ;
+    rdfs:label "NAD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202462" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NGN> a rdfs:Class ;
+    rdfs:label "NGN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q203567" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NIO> a rdfs:Class ;
+    rdfs:label "NIO" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q207312" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NOK> a rdfs:Class ;
+    rdfs:label "NOK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q132643" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NPR> a rdfs:Class ;
+    rdfs:label "NPR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202895" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/NZD> a rdfs:Class ;
+    rdfs:label "NZD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1472704" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/OMR> a rdfs:Class ;
+    rdfs:label "OMR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q272290" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PAB> a rdfs:Class ;
+    rdfs:label "PAB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q210472" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PEN> a rdfs:Class ;
+    rdfs:label "PEN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q204656" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PGK> a rdfs:Class ;
+    rdfs:label "PGK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q200759" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PHP> a rdfs:Class ;
+    rdfs:label "PHP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q17193" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PKR> a rdfs:Class ;
+    rdfs:label "PKR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q188289" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PLN> a rdfs:Class ;
+    rdfs:label "PLN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q123213" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/PYG> a rdfs:Class ;
+    rdfs:label "PYG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q207514" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/QAR> a rdfs:Class ;
+    rdfs:label "QAR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q206386" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RON> a rdfs:Class ;
+    rdfs:label "RON" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q131645" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RSD> a rdfs:Class ;
+    rdfs:label "RSD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q172524" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RUB> a rdfs:Class ;
+    rdfs:label "RUB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q41044" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/RWF> a rdfs:Class ;
+    rdfs:label "RWF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4741" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SAR> a rdfs:Class ;
+    rdfs:label "SAR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199857" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SBD> a rdfs:Class ;
+    rdfs:label "SBD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4597" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SCR> a rdfs:Class ;
+    rdfs:label "SCR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4595" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SDG> a rdfs:Class ;
+    rdfs:label "SDG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q271206" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SEK> a rdfs:Class ;
+    rdfs:label "SEK" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q122922" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SGD> a rdfs:Class ;
+    rdfs:label "SGD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q190951" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SHP> a rdfs:Class ;
+    rdfs:label "SHP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q374453" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SLE> a rdfs:Class ;
+    rdfs:label "SLE" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4587" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SOS> a rdfs:Class ;
+    rdfs:label "SOS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4603" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SRD> a rdfs:Class ;
+    rdfs:label "SRD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q202036" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SSP> a rdfs:Class ;
+    rdfs:label "SSP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q244366" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/STN> a rdfs:Class ;
+    rdfs:label "STN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q193712" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SVC> a rdfs:Class ;
+    rdfs:label "SVC" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q829043" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SYP> a rdfs:Class ;
+    rdfs:label "SYP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q240468" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/SZL> a rdfs:Class ;
+    rdfs:label "SZL" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4823" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/THB> a rdfs:Class ;
+    rdfs:label "THB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q177882" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TJS> a rdfs:Class ;
+    rdfs:label "TJS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q199886" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TMT> a rdfs:Class ;
+    rdfs:label "TMT" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q486637" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TND> a rdfs:Class ;
+    rdfs:label "TND" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4602" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TOP> a rdfs:Class ;
+    rdfs:label "TOP" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4613" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TRY> a rdfs:Class ;
+    rdfs:label "TRY" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q172872" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TTD> a rdfs:Class ;
+    rdfs:label "TTD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q242890" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TWD> a rdfs:Class ;
+    rdfs:label "TWD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q208526" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/TZS> a rdfs:Class ;
+    rdfs:label "TZS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4589" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UAH> a rdfs:Class ;
+    rdfs:label "UAH" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q81893" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UGX> a rdfs:Class ;
+    rdfs:label "UGX" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4598" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/USD> a rdfs:Class ;
+    rdfs:label "USD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4917" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/USN> a rdfs:Class ;
+    rdfs:label "USN" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q114778501" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYI> a rdfs:Class ;
+    rdfs:label "UYI" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115124969" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYU> a rdfs:Class ;
+    rdfs:label "UYU" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q209272" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UYW> a rdfs:Class ;
+    rdfs:label "UYW" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q107631325" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/UZS> a rdfs:Class ;
+    rdfs:label "UZS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q487888" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VED> a rdfs:Class ;
+    rdfs:label "VED" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q123493742" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VES> a rdfs:Class ;
+    rdfs:label "VES" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q56349362" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VND> a rdfs:Class ;
+    rdfs:label "VND" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q192090" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/VUV> a rdfs:Class ;
+    rdfs:label "VUV" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q207523" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/WST> a rdfs:Class ;
+    rdfs:label "WST" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q4588" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAD> a rdfs:Class ;
+    rdfs:label "XAD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q134441291" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAF> a rdfs:Class ;
+    rdfs:label "XAF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q847739" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAG> a rdfs:Class ;
+    rdfs:label "XAG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1584286" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XAU> a rdfs:Class ;
+    rdfs:label "XAU" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q791975" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBA> a rdfs:Class ;
+    rdfs:label "XBA" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115123957" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBB> a rdfs:Class ;
+    rdfs:label "XBB" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115124012" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBC> a rdfs:Class ;
+    rdfs:label "XBC" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115124154" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XBD> a rdfs:Class ;
+    rdfs:label "XBD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115124340" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XCD> a rdfs:Class ;
+    rdfs:label "XCD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q26365" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XCG> a rdfs:Class ;
+    rdfs:label "XCG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q737779" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XDR> a rdfs:Class ;
+    rdfs:label "XDR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q363958" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XOF> a rdfs:Class ;
+    rdfs:label "XOF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q861690" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPD> a rdfs:Class ;
+    rdfs:label "XPD" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1669450" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPF> a rdfs:Class ;
+    rdfs:label "XPF" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q214393" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XPT> a rdfs:Class ;
+    rdfs:label "XPT" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q691671" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XSU> a rdfs:Class ;
+    rdfs:label "XSU" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q1148329" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XTS> a rdfs:Class ;
+    rdfs:label "XTS" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115189115" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XUA> a rdfs:Class ;
+    rdfs:label "XUA" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q112107910" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/XXX> a rdfs:Class ;
+    rdfs:label "XXX" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q115153509" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/YER> a rdfs:Class ;
+    rdfs:label "YER" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q240512" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZAR> a rdfs:Class ;
+    rdfs:label "ZAR" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q181907" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZMW> a rdfs:Class ;
+    rdfs:label "ZMW" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q73408" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-hjjou19np3pohe63fxmqtkoi/xdstring-value/ZWG> a rdfs:Class ;
+    rdfs:label "ZWG" ;
+    rdfs:isDefinedBy "http://www.wikidata.org/entity/Q125352135" ;
+    rdfs:subPropertyOf sdc4:mc-hjjou19np3pohe63fxmqtkoi .
 
 <https://semanticdatacharter.com/ns/sdc4/mc-hyqlz591lhj54sdt1a1mup70/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
@@ -639,6 +1524,11 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-udbydjqj76l8kl6mi2s3v7vd .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-uixgck0xt60055m4bdcxkhyj/xdstring-value/months> a rdfs:Class ;
+    rdfs:label "months" ;
+    rdfs:isDefinedBy "http://qudt.org/vocab/unit/MO" ;
+    rdfs:subPropertyOf sdc4:mc-uixgck0xt60055m4bdcxkhyj .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-vbctgmdcwps5b3r3l6sboa6y/xdtoken-value/L> a rdfs:Class ;
     rdfs:label "L" ;
     rdfs:isDefinedBy "http://terminology.hl7.org/CodeSystem/v3-Confidentiality#L" ;
@@ -969,6 +1859,16 @@
     rdfs:isDefinedBy "https://loinc.org/LA33-6/" ;
     rdfs:subPropertyOf sdc4:mc-xsohkckyof7y1xj8h1ab4pxu .
 
+<https://semanticdatacharter.com/ns/sdc4/mc-y3m4tg7u1io8bimkhiuxz8zb/xdtoken-value/Claims-based%2520algorithm> a rdfs:Class ;
+    rdfs:label "Claims-based algorithm" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C221359" ;
+    rdfs:subPropertyOf sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb .
+
+<https://semanticdatacharter.com/ns/sdc4/mc-y3m4tg7u1io8bimkhiuxz8zb/xdtoken-value/Self-report%2520of%2520a%2520professional%2520diagnosis> a rdfs:Class ;
+    rdfs:label "Self-report of a professional diagnosis" ;
+    rdfs:isDefinedBy "http://purl.obolibrary.org/obo/NCIT_C188309" ;
+    rdfs:subPropertyOf sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb .
+
 <https://semanticdatacharter.com/ns/sdc4/mc-yshoeps2dm0j1ueusqs825v6/xdtoken-value/No> a rdfs:Class ;
     rdfs:label "No" ;
     rdfs:isDefinedBy "https://loinc.org/LA32-8/" ;
@@ -1026,14 +1926,14 @@
 
 <> dc:coverage "Universal" ;
     dc:creator "Timothy Cook" ;
-    dc:date "2026-09-26 22:03:40.721481+00:00" ;
+    dc:date "2026-10-26 13:53:02.628532+00:00" ;
     dc:description "SDC4 data model for CMS DE-SynPUF (Medicare Claims Synthetic Data) (cms_beneficiary) — FAIR Data Demo" ;
     dc:format "text/xml" ;
-    dc:identifier "dm-fnv3zi2btk3s0sfodjsc25eb" ;
+    dc:identifier "dm-vj0hr75146j0pbedvc0iaqrz" ;
     dc:language "en-US" ;
     dc:relation "None" ;
     dc:rights "CC-BY http://creativecommons.org/licenses/by/3.0/" ;
-    dc:title "CMS Beneficiary" ;
+    dc:title "CMS Beneficiary 4.2.4" ;
     dc:type "SDC Data Model (DM)" .
 
 sdc4:mc-a5scyosu6j84vz350mqyrzl2 a sdc4-meta:ModelComponent ;
@@ -1067,6 +1967,10 @@ sdc4:mc-bfn83x3fw1cyuqriuoquu9t1 a sdc4-meta:ModelComponent ;
     rdfs:label "Was Generated By Reference" ;
     rdfs:comment "The activity that generated this entity (prov:wasGeneratedBy). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-bq0dx31j0dzk5dsof8aoxfqk a sdc4-meta:ModelComponent ;
+    rdfs:label "Chronic Condition Indicators" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-c179ilk2ns15cd5rzzdfd6f6 a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Agent" ;
@@ -1105,10 +2009,6 @@ sdc4:mc-fnr5q1tfq42ez9jia9dqueho a sdc4-meta:ModelComponent ;
     rdfs:label "Deceased Indicator" ;
     rdfs:comment "Whether the patient is deceased. FHIR Patient.deceasedBoolean." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdBooleanType> .
-
-sdc4:mc-fnv3zi2btk3s0sfodjsc25eb a sdc4-meta:ModelComponent ;
-    rdfs:label "CMS Beneficiary" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType> .
 
 sdc4:mc-frvayvpr4jkzykc8ykchaev6 a sdc4-meta:ModelComponent ;
     rdfs:label "CMS Beneficiary Demographics" ;
@@ -1184,10 +2084,6 @@ sdc4:mc-i1defiugxfdcwfb9rqv4p5tz a sdc4-meta:ModelComponent ;
     rdfs:comment "The identifier of a PROV entity: a URI or another globally unique identifier." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-io2h28pi3yktedurk8ye3oq0 a sdc4-meta:ModelComponent ;
-    rdfs:label "CMS Beneficiary Governed Record" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
 sdc4:mc-ir7e2d7vwws6yisjvxgfm7ou a sdc4-meta:ModelComponent ;
     rdfs:label "Inpatient Annual Medicare Reimbursement" ;
     rdfs:comment "Medicare reimbursement for inpatient services in the year (MEDREIMB_IP), in US dollars." ;
@@ -1214,10 +2110,6 @@ sdc4:mc-k3rgauqfh9vs4bqq5q4nsbp4 a sdc4-meta:ModelComponent ;
     rdfs:comment "The identifier of the pipeline that created the record from a federal source file (PROV agent identifier; the audit's system id)." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
-sdc4:mc-kkdy1kjdruxvx8s1ra8eh231 a sdc4-meta:ModelComponent ;
-    rdfs:label "CMS Beneficiary" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
-
 sdc4:mc-kmcck093437mfdlnxnrzm0xw a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Value" ;
     rdfs:comment "The value of a PROV entity, or a reference to where its content can be found (prov:value)." ;
@@ -1237,6 +2129,10 @@ sdc4:mc-m9minyaug6ypyzt52zfxlyyi a sdc4-meta:ModelComponent ;
     rdfs:label "Entity Label" ;
     rdfs:comment "A human-readable label for a PROV entity." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
+
+sdc4:mc-meavxo1k8nbndmepkmdaagin a sdc4-meta:ModelComponent ;
+    rdfs:label "CMS Beneficiary Governed Record" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-mjl0vv39zsbigqiuyqm66fkv a sdc4-meta:ModelComponent ;
     rdfs:label "Was Quoted From Reference" ;
@@ -1415,6 +2311,10 @@ sdc4:mc-vhezo2cckpe92x4c3j2memeh a sdc4-meta:ModelComponent ;
     rdfs:comment "The plan the activity followed (prov:hadPlan). Holds the IRI of the referenced thing." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-vj0hr75146j0pbedvc0iaqrz a sdc4-meta:ModelComponent ;
+    rdfs:label "CMS Beneficiary 4.2.4" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#DMType> .
+
 sdc4:mc-vmikfu0irht9fmq7q02t3oqs a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Activity" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
@@ -1428,10 +2328,6 @@ sdc4:mc-w2ruemcfy35rw60jl1t9dew2 a sdc4-meta:ModelComponent ;
     rdfs:label "Agent Identifier" ;
     rdfs:comment "The identifier of a PROV agent: a URI or another globally unique identifier." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-wa0mknvfo83hej635n48s0ig a sdc4-meta:ModelComponent ;
-    rdfs:label "Chronic Condition Indicators" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
 
 sdc4:mc-wl1enu6oomssv6fn1kvvdx9f a sdc4-meta:ModelComponent ;
     rdfs:label "Outpatient Annual Primary Payer Reimbursement" ;
@@ -1502,13 +2398,13 @@ sdc4:mc-zshx6rx7ca1j00eda9kxyh6h a sdc4-meta:ModelComponent ;
     rdfs:seeAlso <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
+sdc4:mc-zvdxyiicvyhfaywtw7xikjbj a sdc4-meta:ModelComponent ;
+    rdfs:label "CMS Beneficiary" ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#ClusterType> .
+
 sdc4:mc-zwmu2x9s8tx628rvb1trh0ij a sdc4-meta:ModelComponent ;
     rdfs:label "Coverage Class Value" ;
     rdfs:comment "The value of the class, such as a group or plan number. FHIR Coverage.class.value." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
-sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn a sdc4-meta:ModelComponent ;
-    rdfs:label "Items" ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-acr1xvqppf1b3rjsrst6tt4p a sdc4-meta:ModelComponent ;
@@ -1520,6 +2416,11 @@ sdc4:mc-atqkooccakulfhkt18c008fx a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Liver Condition" ;
     rdfs:comment "Whether the person has liver condition (Liver Condition, SNOMED CT 235856003), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160L." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-c3ycqqk7ns1bvmsc0ricnsbn a sdc4-meta:ModelComponent ;
+    rdfs:label "Items" ;
+    rdfs:comment "A count of discrete things, with no dimension." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-d9z9mcx6gs9zbz4k6f0v738s a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Alzheimer's Disease or Related Disorder" ;
@@ -1534,11 +2435,6 @@ sdc4:mc-fzpb9xr5jg2m3e3dzmvi1v3h a sdc4-meta:ModelComponent ;
 sdc4:mc-gp3jxw3xzs761ll6u5rvc6jr a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: High Cholesterol" ;
     rdfs:comment "Whether the person has high cholesterol (High Cholesterol, SNOMED CT 13644009), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS TOLDHI3." ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
-
-sdc4:mc-hc79skkfionpgw87dsg5yrgw a sdc4-meta:ModelComponent ;
-    rdfs:label "Condition Indicator Basis" ;
-    rdfs:comment "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
 sdc4:mc-hyqlz591lhj54sdt1a1mup70 a sdc4-meta:ModelComponent ;
@@ -1623,6 +2519,11 @@ sdc4:mc-xsohkckyof7y1xj8h1ab4pxu a sdc4-meta:ModelComponent ;
     rdfs:comment "Whether the person has skin cancer (Skin Cancer, SNOMED CT 372130007), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by BRFSS CHCSCNC1." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
+sdc4:mc-y3m4tg7u1io8bimkhiuxz8zb a sdc4-meta:ModelComponent ;
+    rdfs:label "Condition Indicator Basis" ;
+    rdfs:comment "How a study established its chronic condition indicators: the person's report of what a health professional told them (NHANES, BRFSS) or the presence of qualifying diagnosis codes in claims (CMS). Stated once per record so the three studies compare on equal terms." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
 sdc4:mc-yshoeps2dm0j1ueusqs825v6 a sdc4-meta:ModelComponent ;
     rdfs:label "Condition: Heart Attack" ;
     rdfs:comment "Whether the person has heart attack (Heart Attack, SNOMED CT 22298006), on the basis the record states in its Condition Indicator Basis: told by a health professional, or found in claims. Carried by NHANES MCQ160E, BRFSS CVDINFR4." ;
@@ -1664,10 +2565,6 @@ sdc4:mc-u5xln0mppl3qk6vhgxdu0wcn a sdc4-meta:ModelComponent ;
     rdfs:seeAlso <https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-claims-synthetic-public-use-files/cms-2008-2010-data-entrepreneurs-synthetic-public-use-file-de-synpuf> ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-uixgck0xt60055m4bdcxkhyj a sdc4-meta:ModelComponent ;
-    rdfs:label "Months" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
 sdc4:mc-ce1c8sydkov8bkv4dgdmwe5x a sdc4-meta:ModelComponent ;
     rdfs:label "Audit Event Action" ;
     rdfs:comment "The operation performed in a logged access event (FHIR AuditEvent.action). Read and Execute change no state and are audit facts, not workflow moves." ;
@@ -1677,6 +2574,11 @@ sdc4:mc-i4e2nod7ss9d4cumhn2pah8b a sdc4-meta:ModelComponent ;
     rdfs:label "PROV Entity Type" ;
     rdfs:comment "The kind of PROV entity: a plain entity, a collection, an empty collection, a bundle or a plan." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-uixgck0xt60055m4bdcxkhyj a sdc4-meta:ModelComponent ;
+    rdfs:label "Months" ;
+    rdfs:comment "A duration in months." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 
 sdc4:mc-vbctgmdcwps5b3r3l6sboa6y a sdc4-meta:ModelComponent ;
     rdfs:label "Confidentiality" ;
@@ -1703,10 +2605,6 @@ sdc4:mc-fdtpvqw0se658x5m3zormi5v a sdc4-meta:ModelComponent ;
     rdfs:comment "The kind of cost sharing. FHIR Coverage.costToBeneficiary.type; Coverage Copay Type Codes, version 4.0.1." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
 
-sdc4:mc-hjjou19np3pohe63fxmqtkoi a sdc4-meta:ModelComponent ;
-    rdfs:label "Currency" ;
-    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
-
 sdc4:mc-d1evlz8yvdlwt6ia9fjq4pgj a sdc4-meta:ModelComponent ;
     rdfs:label "Purpose of Use" ;
     rdfs:comment "Why the information was used (HL7 v3 ActReason purpose of use). Activity context, not an access-control tag." ;
@@ -1726,4 +2624,9 @@ sdc4:mc-wpnvu6f56drsy767ucx60scd a sdc4-meta:ModelComponent ;
     rdfs:label "Coverage Type" ;
     rdfs:comment "The kind of coverage (HL7 v3 ActCoverageTypeCode). FHIR Coverage.type; ActCode, version 11.0.0." ;
     sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdTokenType> .
+
+sdc4:mc-hjjou19np3pohe63fxmqtkoi a sdc4-meta:ModelComponent ;
+    rdfs:label "Currency" ;
+    rdfs:comment "The ISO 4217 code of a currency: the complete list of 178 active codes. Each value is defined by its Wikidata entity." ;
+    sdc4-meta:isConstrainedByRmComponent <https://semanticdatacharter.com/ns/sdc4/sdc4.xsd#XdStringType> .
 

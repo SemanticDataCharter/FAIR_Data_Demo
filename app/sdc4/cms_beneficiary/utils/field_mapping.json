@@ -239,10 +239,10 @@
     "type": "XdToken",
     "label": "Condition: High Cholesterol"
   },
-  "hc79skkfionpgw87dsg5yrgw": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hc79skkfionpgw87dsg5yrgw",
-    "ct_id": "hc79skkfionpgw87dsg5yrgw",
-    "adapter_ctid": "sqz385aell855p97kpkdwuop",
+  "y3m4tg7u1io8bimkhiuxz8zb": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_y3m4tg7u1io8bimkhiuxz8zb",
+    "ct_id": "y3m4tg7u1io8bimkhiuxz8zb",
+    "adapter_ctid": "ks4buqh74w0bdcwdk6ky6ntr",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition Indicator Basis"
@@ -376,10 +376,10 @@
     "label": "Outpatient Annual Primary Payer Reimbursement"
   },
   "fnr5q1tfq42ez9jia9dqueho": {
-    "placeholder": "__PLACEHOLDER__xdboolean-value_fnr5q1tfq42ez9jia9dqueho",
+    "placeholder": "__PLACEHOLDER__true-value_fnr5q1tfq42ez9jia9dqueho",
     "ct_id": "fnr5q1tfq42ez9jia9dqueho",
     "adapter_ctid": "g8ey2hda0e5q85xkqud9a3av",
-    "element_name": "xdboolean-value",
+    "element_name": "true-value",
     "type": "XdBoolean",
     "label": "Deceased Indicator"
   },
@@ -488,10 +488,10 @@
     "label": "Supplementary Medical Insurance (Part B) Coverage Months"
   },
   "zc3g4e4kjtzehn3kkffkeu29": {
-    "placeholder": "__PLACEHOLDER__xdboolean-value_zc3g4e4kjtzehn3kkffkeu29",
+    "placeholder": "__PLACEHOLDER__true-value_zc3g4e4kjtzehn3kkffkeu29",
     "ct_id": "zc3g4e4kjtzehn3kkffkeu29",
     "adapter_ctid": "w99h7tvb9xvn1kshdf8yc53k",
-    "element_name": "xdboolean-value",
+    "element_name": "true-value",
     "type": "XdBoolean",
     "label": "Subrogation Indicator"
   },

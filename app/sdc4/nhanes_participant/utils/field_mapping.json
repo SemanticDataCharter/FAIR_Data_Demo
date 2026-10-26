@@ -231,10 +231,10 @@
     "type": "XdToken",
     "label": "Annual Household Income (INDHHIN2)"
   },
-  "m67ncwhc9s1j36f9w9qsrxfx": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_m67ncwhc9s1j36f9w9qsrxfx",
-    "ct_id": "m67ncwhc9s1j36f9w9qsrxfx",
-    "adapter_ctid": "jyned2v1w8klg2txlktsbpnq",
+  "ftyi95rho04uurpzxued878l": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ftyi95rho04uurpzxued878l",
+    "ct_id": "ftyi95rho04uurpzxued878l",
+    "adapter_ctid": "jwo5rjoh6737lnj9bz3qlgqw",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Citizenship Status (DMDCITZN)"
@@ -247,10 +247,10 @@
     "type": "XdToken",
     "label": "Country of Birth (DMDBORN4)"
   },
-  "fqjd2lvp9jamdpf0f3kpkwnp": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_fqjd2lvp9jamdpf0f3kpkwnp",
-    "ct_id": "fqjd2lvp9jamdpf0f3kpkwnp",
-    "adapter_ctid": "mh21uzqd20mzuwzwbdbk7u8g",
+  "ock06zt2jnlwwicpkqpzbgmh": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ock06zt2jnlwwicpkqpzbgmh",
+    "ct_id": "ock06zt2jnlwwicpkqpzbgmh",
+    "adapter_ctid": "ie5poipwqh1xbxn9j4qqayd2",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Education Level - Adults 20+ (DMDEDUC2)"
@@ -271,26 +271,26 @@
     "type": "XdToken",
     "label": "Marital Status (DMDMARTL)"
   },
-  "r0j6yo8zvo4q8x0ovdr6j9yz": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_r0j6yo8zvo4q8x0ovdr6j9yz",
-    "ct_id": "r0j6yo8zvo4q8x0ovdr6j9yz",
-    "adapter_ctid": "ur3qx130yhm8orpom57ebtpg",
+  "t1ahhck0k0mqctro2gk1velt": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_t1ahhck0k0mqctro2gk1velt",
+    "ct_id": "t1ahhck0k0mqctro2gk1velt",
+    "adapter_ctid": "pp2frcq9pvqios4wr0ecpn58",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Pregnancy Status at Exam (RIDEXPRG)"
   },
-  "hs44ipuqgvc3azbt3mirxtsz": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hs44ipuqgvc3azbt3mirxtsz",
-    "ct_id": "hs44ipuqgvc3azbt3mirxtsz",
-    "adapter_ctid": "uv7bw85npbla560z3qmik4md",
+  "d00bqkut44f2nxqcij9di549": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_d00bqkut44f2nxqcij9di549",
+    "ct_id": "d00bqkut44f2nxqcij9di549",
+    "adapter_ctid": "e9ebuuahg802jfpfpg5w596x",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Race/Hispanic Origin with NH Asian (RIDRETH3)"
   },
-  "eimlsgbawhm8aa4i6gbdrja0": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_eimlsgbawhm8aa4i6gbdrja0",
-    "ct_id": "eimlsgbawhm8aa4i6gbdrja0",
-    "adapter_ctid": "elfq9fc70w7vrblzcx9gr7iz",
+  "vyc62ndwazzqyn5ee5oeno1o": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vyc62ndwazzqyn5ee5oeno1o",
+    "ct_id": "vyc62ndwazzqyn5ee5oeno1o",
+    "adapter_ctid": "aerwuld48p0deu31rijadbv5",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Veteran Status"
@@ -303,10 +303,10 @@
     "type": "XdToken",
     "label": "Are you pregnant now?"
   },
-  "xtbtk7ro6s9247bcwt4ak4h1": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_xtbtk7ro6s9247bcwt4ak4h1",
-    "ct_id": "xtbtk7ro6s9247bcwt4ak4h1",
-    "adapter_ctid": "whbmbdx6w88jtct1o3xofw6u",
+  "yqqm7og0x00fbmazzm00s86e": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_yqqm7og0x00fbmazzm00s86e",
+    "ct_id": "yqqm7og0x00fbmazzm00s86e",
+    "adapter_ctid": "rlczhe82112k0iygals68dya",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Current Educational Attainment"
@@ -631,10 +631,10 @@
     "type": "XdString",
     "label": "Milligrams per Decilitre"
   },
-  "qp5mdgab3s37zwqzyfzq8rvi": {
-    "placeholder": "__PLACEHOLDER__xdquantity-value_qp5mdgab3s37zwqzyfzq8rvi",
-    "ct_id": "qp5mdgab3s37zwqzyfzq8rvi",
-    "adapter_ctid": "g82u3cw1lueodrdqwcwqacix",
+  "g2g6lk6fzdcxtpybr509h8o5": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_g2g6lk6fzdcxtpybr509h8o5",
+    "ct_id": "g2g6lk6fzdcxtpybr509h8o5",
+    "adapter_ctid": "dohl8m4adbaeui2cpu5vf40k",
     "element_name": "xdquantity-value",
     "type": "XdQuantity",
     "label": "Total Cholesterol (SI)"
@@ -791,10 +791,10 @@
     "type": "XdToken",
     "label": "Condition: High Cholesterol"
   },
-  "hc79skkfionpgw87dsg5yrgw": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hc79skkfionpgw87dsg5yrgw",
-    "ct_id": "hc79skkfionpgw87dsg5yrgw",
-    "adapter_ctid": "sqz385aell855p97kpkdwuop",
+  "y3m4tg7u1io8bimkhiuxz8zb": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_y3m4tg7u1io8bimkhiuxz8zb",
+    "ct_id": "y3m4tg7u1io8bimkhiuxz8zb",
+    "adapter_ctid": "ks4buqh74w0bdcwdk6ky6ntr",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition Indicator Basis"
@@ -847,74 +847,74 @@
     "type": "XdToken",
     "label": "Condition: Thyroid Problem"
   },
-  "p4jxl2rur1agjhdpvj2g9u4k": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_p4jxl2rur1agjhdpvj2g9u4k",
-    "ct_id": "p4jxl2rur1agjhdpvj2g9u4k",
-    "adapter_ctid": "jezrrijbbouq94eti060f80t",
+  "l6heok2fyjbbm657g6iwd9ao": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_l6heok2fyjbbm657g6iwd9ao",
+    "ct_id": "l6heok2fyjbbm657g6iwd9ao",
+    "adapter_ctid": "pxkya8tys2tqeywx1sxtu10r",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Dressing Yourself (PFQ061L)"
   },
-  "cy6k5rxvhvg2v27cfp7pjwyx": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_cy6k5rxvhvg2v27cfp7pjwyx",
-    "ct_id": "cy6k5rxvhvg2v27cfp7pjwyx",
-    "adapter_ctid": "tdgsv3z7rd96b7r1gfpbkvz7",
+  "an0ysk4wra3yf18zqh8xqz1u": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_an0ysk4wra3yf18zqh8xqz1u",
+    "ct_id": "an0ysk4wra3yf18zqh8xqz1u",
+    "adapter_ctid": "j6dasimeiijqlayn2bqx5l7c",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Getting In and Out of Bed (PFQ061J)"
   },
-  "b1mxr233mgqvzr39c90ly8cv": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_b1mxr233mgqvzr39c90ly8cv",
-    "ct_id": "b1mxr233mgqvzr39c90ly8cv",
-    "adapter_ctid": "p8862179iadfsl5z6jpbgy3l",
+  "s81mdwkizvrrih408g05j02z": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_s81mdwkizvrrih408g05j02z",
+    "ct_id": "s81mdwkizvrrih408g05j02z",
+    "adapter_ctid": "edaqmpz9jxkthznh4u5b9r9r",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Lifting or Carrying (PFQ061E)"
   },
-  "vp4ow7t3q8w2phcft0qvyj4u": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_vp4ow7t3q8w2phcft0qvyj4u",
-    "ct_id": "vp4ow7t3q8w2phcft0qvyj4u",
-    "adapter_ctid": "aixw24icqtjc1ea6v2ctfzxr",
+  "imcbb8w19x2veya8fp1y2zqz": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_imcbb8w19x2veya8fp1y2zqz",
+    "ct_id": "imcbb8w19x2veya8fp1y2zqz",
+    "adapter_ctid": "nbmvb18nf4gf694mcrzj7dns",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Standing for Long Periods (PFQ061M)"
   },
-  "y52y4mpq95zcknal0be1uc7v": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_y52y4mpq95zcknal0be1uc7v",
-    "ct_id": "y52y4mpq95zcknal0be1uc7v",
-    "adapter_ctid": "web3bzbt7f10eg8dqlnnjw5q",
+  "s1vje5rv2ubv17cqwlnglhyi": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_s1vje5rv2ubv17cqwlnglhyi",
+    "ct_id": "s1vje5rv2ubv17cqwlnglhyi",
+    "adapter_ctid": "bcfg09r20ucp3jf0zvraumox",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Standing Up from an Armless Chair (PFQ061I)"
   },
-  "knrs4clih4pi26tm2zra1ai0": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_knrs4clih4pi26tm2zra1ai0",
-    "ct_id": "knrs4clih4pi26tm2zra1ai0",
-    "adapter_ctid": "g9lpvt02dlurrv5dm8vpspkf",
+  "kexlzsor1x6i40xggqmdctwp": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_kexlzsor1x6i40xggqmdctwp",
+    "ct_id": "kexlzsor1x6i40xggqmdctwp",
+    "adapter_ctid": "nz44f1ixh0if1dj0asxbj0td",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Stooping, Crouching or Kneeling (PFQ061D)"
   },
-  "mktq5xr8slz67q85idl8bsky": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_mktq5xr8slz67q85idl8bsky",
-    "ct_id": "mktq5xr8slz67q85idl8bsky",
-    "adapter_ctid": "qsz3mb7zjbxrlwvix2glfnzf",
+  "xm59ukw41e98q86oanzreehg": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_xm59ukw41e98q86oanzreehg",
+    "ct_id": "xm59ukw41e98q86oanzreehg",
+    "adapter_ctid": "xnh292mno8equxc0pyj8yy52",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Walking a Quarter Mile (PFQ061B)"
   },
-  "crr2z3b2l7hlq1kvevppt8kt": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_crr2z3b2l7hlq1kvevppt8kt",
-    "ct_id": "crr2z3b2l7hlq1kvevppt8kt",
-    "adapter_ctid": "ujucqerfx02j9an65lovws8y",
+  "oto1vaautwazh218zmzj5wxc": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_oto1vaautwazh218zmzj5wxc",
+    "ct_id": "oto1vaautwazh218zmzj5wxc",
+    "adapter_ctid": "mui0tcxw4yygvnotlamewao2",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Walking Between Rooms (PFQ061H)"
   },
-  "rot4z5ny8gdkfmimedcjl1te": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_rot4z5ny8gdkfmimedcjl1te",
-    "ct_id": "rot4z5ny8gdkfmimedcjl1te",
-    "adapter_ctid": "j66le40jandysvfcdr4ifkg2",
+  "mrzg9shhypi53vy0nfw1xk05": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_mrzg9shhypi53vy0nfw1xk05",
+    "ct_id": "mrzg9shhypi53vy0nfw1xk05",
+    "adapter_ctid": "stdhxjadencdw0rcojwtvr3n",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Walking Up Ten Stairs (PFQ061C)"

@@ -15,7 +15,7 @@ import time
 from schema import Schema
 from shared import EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
 
-PARTICIPANT = "NHANES Participant 4.2.3"   # the 4.2.3 revision (E-2026-10-01, SOURCE-ERRATA.md)
+PARTICIPANT = "NHANES Participant 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
 MEDICATION = "NHANES Medication"
 AGENCY = "National Center for Health Statistics, Centers for Disease Control and Prevention"
 DROPPED = collections.Counter()   # variable -> refused / don't-know answers left out

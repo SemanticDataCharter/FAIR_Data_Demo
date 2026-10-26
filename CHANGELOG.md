@@ -2,6 +2,29 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.2.4 (2026-10-26)
+
+**The value bindings name what they say.** In 24 records, a value or a component was bound to a code that names
+something else in its terminology ("Underweight" to NCIt Multimedia, every level of the difficulty scale to Unknown, two
+pregnancy answers to one code). Each now carries a code looked up in its terminology, or the agency's codebook where no
+concept says exactly what the value says: [SOURCE-ERRATA.md](SOURCE-ERRATA.md), E-2026-10-03.
+
+- The 24 records and the 14 clusters above them are revisions of their published versions, and three models are
+  revisions of theirs: **NHANES Participant 4.2.4** (`tp5pg0u4dasqarie0b3ujn2u`), **BRFSS Respondent 4.2.4**
+  (`j6wmvhr46irxht2ls90nry8k`) and **CMS Beneficiary 4.2.4** (`vj0hr75146j0pbedvc0iaqrz`). `models-4.2.4.json` records
+  every model.
+- The two demographics clusters compose the NIH CDE library's corrected Current Educational Attainment
+  (`yqqm7og0x00fbmazzm00s86e`, its E-2026-10-02: NIH's export carries the Windows-1252 apostrophe as the control
+  character U+0092 in "Bachelor's Degree" and two other values). The demo's records leave that element out, so no record
+  carried the character; the schemas did.
+- `build/verify_codes.py` looks up every code the records name and keeps each terminology's name for it in
+  `build/verified-codes.json`; `build/tests/test_bindings.py` refuses a code nobody looked up, two values of one list
+  bound to one concept, and a value bound to Unknown that is not an unknown.
+- The three models' packages, applications and generated records are rebuilt (9,254, 5,000 and 1,000 records). The
+  other four models and their records are as in 4.2.3.
+- The previous versions of the three models stay published and resolvable, retired with the reason naming their
+  revision.
+
 ## 4.2.3 (2026-10-25)
 
 **The pregnancy answers carry the right codes.** The NIH CDE "Are you pregnant now?" (`LiUWCWluP`) that the NHANES

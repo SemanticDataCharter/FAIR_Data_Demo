@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "io2h28pi3yktedurk8ye3oq0",
+  "supersedes_ct_id": null,
   "members": [
     "cms-beneficiary",
     "https://axius-sdc.com/library/provgov/prov-activity",

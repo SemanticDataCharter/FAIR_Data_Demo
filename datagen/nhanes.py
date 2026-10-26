@@ -16,7 +16,7 @@ from schema import Schema
 from shared import EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
 
 PARTICIPANT = "NHANES Participant 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
-MEDICATION = "NHANES Medication"
+MEDICATION = "NHANES Medication 4.2.5"   # the 4.2.5 revision: prevention reason codes (SOURCE-ERRATA.md)
 AGENCY = "National Center for Health Statistics, Centers for Disease Control and Prevention"
 DROPPED = collections.Counter()   # variable -> refused / don't-know answers left out
 
@@ -174,6 +174,19 @@ def generate_participants():
 
 
 ICD10 = __import__("re").compile(r"^[A-TV-Z][0-9][0-9AB](\.[0-9A-TV-Z]{1,4})?$")
+NHANES_P = __import__("re").compile(r"^[A-TV-Z][0-9][0-9AB]\.[0-9A-TV-Z]{0,3}P$")
+PREVENTION = collections.Counter()   # NHANES prevention reason code -> uses
+
+
+def is_prevention(code: str, description: str | None) -> bool:
+    """NHANES's prevention reason code: an ICD-10-CM code with "P" appended, which NHANES describes as "Prevent ..."
+    (RXQ_RX_J Data Processing and Editing; SOURCE-ERRATA.md). It is not ICD-10-CM. A real ICD-10-CM code can end in P
+    (a seventh character), so both tests must agree, and a code that passes one and not the other stops the run."""
+    shaped = bool(NHANES_P.match(code))
+    says = (description or "").strip().lower().startswith("prevent")
+    if shaped != says:
+        raise SystemExit(f"RXQ_RX_J reason {code!r} ({description!r}): P-shaped={shaped}, described as prevention={says}; review")
+    return shaped
 
 
 def generate_medications():
@@ -195,10 +208,14 @@ def generate_medications():
             "NHANES Medication/Number of Prescription Medicines Taken (RXDCOUNT)": qty(r.get("RXDCOUNT", ""), "items"),
         }
         for k in (1, 2, 3):
-            c = r.get(f"RXDRSC{k}", "")
-            if c and ICD10.match(c):
+            c, d = r.get(f"RXDRSC{k}", ""), r.get(f"RXDRSD{k}") or None
+            if c and is_prevention(c, d):
+                v[f"Medication Reason {k}/Prevention Reason (NHANES)/Prevention Reason Code (NHANES)"] = c
+                v[f"Medication Reason {k}/Prevention Reason (NHANES)/Code Display Text"] = d
+                PREVENTION[c] += 1
+            elif c and ICD10.match(c):
                 v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Diagnosis Code (ICD-10-CM)"] = c
-                v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Code Display Text"] = r.get(f"RXDRSD{k}") or None
+                v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Code Display Text"] = d
             elif c:
                 DROPPED[f"RXDRSC{k}"] += 1
         xml = record(MEDICATION, v, study="NHANES", agency=AGENCY, source_key="RXQ_RX_J", subject=("NHANES Participant", seqn), row_ref=f"SEQN={seqn};RXDDRGID={r.get('RXDDRGID', '')}")
@@ -212,6 +229,7 @@ def generate():
     generate_participants()
     generate_medications()
     print("NHANES answers left out as refused or don't know:", dict(DROPPED.most_common(12)))
+    print("NHANES prevention reason codes carried as NHANES's own (not ICD-10-CM):", sum(PREVENTION.values()), "uses of", len(PREVENTION), "codes")
 
 
 if __name__ == "__main__":

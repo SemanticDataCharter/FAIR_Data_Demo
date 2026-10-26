@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": "mgqswj92qaeasqjjvfcyxon5",
+  "supersedes_ct_id": null,
   "members": [
     "nhanes-data-release-cycle",
     "nhanes-interview-examination-status",

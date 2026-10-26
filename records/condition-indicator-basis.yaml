@@ -14,4 +14,3 @@ enumeration:
   definition: http://purl.obolibrary.org/obo/NCIT_C188309
 - value: Claims-based algorithm
   definition: http://purl.obolibrary.org/obo/NCIT_C221359
-supersedes: hc79skkfionpgw87dsg5yrgw

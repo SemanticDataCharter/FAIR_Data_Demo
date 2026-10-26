@@ -1,0 +1,44 @@
+{
+  "tiny_id": "system-nhanes-rx-reason",
+  "label": "Code System: NHANES Prevention Reason",
+  "description": "The code system of a coded value, fixed: NHANES's prevention reason codes, defined in the RXQ_RX_J documentation (https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm). Not ICD-10-CM. FHIR Coding.system.",
+  "sdc_type": "XdLink",
+  "excluded": false,
+  "constraints": {
+    "link": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm",
+    "relation": "codeSystem",
+    "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/system-nhanes-rx-reason",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

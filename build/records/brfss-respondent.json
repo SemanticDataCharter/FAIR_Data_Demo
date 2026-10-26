@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "jxif4jju7k2rg3vokabzzj22",
+  "supersedes_ct_id": null,
   "members": [
     "brfss-annual-sequence-number",
     "brfss-survey-design",

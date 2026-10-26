@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "nzhi9t6qd9rhb5ojsaxtn8md",
+  "supersedes_ct_id": null,
   "members": [
     "https://axius-sdc.com/library/default/administrative-gender",
     "nhanes-gender-code",

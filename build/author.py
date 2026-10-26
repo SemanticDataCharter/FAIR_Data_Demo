@@ -314,7 +314,17 @@ nh_drug = leaf("nhanes-generic-drug-name", "Generic Drug Name (RXDDRUG)", "XdStr
 nh_drugid = leaf("nhanes-generic-drug-code", "Generic Drug Code (RXDDRGID)", "XdString", "The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one.", links=[nh("RXDDRGID", "RXQ_RX_J")], constraints={"max_length": 12}, source=NH)
 nh_days = leaf("nhanes-days-taken-medicine", "Number of Days Taken Medicine (RXDDAYS)", "XdCount", "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).", links=[nh("RXDDAYS", "RXQ_RX_J")], constraints={"units": U_DAYS, "min_inclusive": 0, "max_inclusive": 99999}, source=NH)
 nh_rxcount = leaf("nhanes-number-of-prescription-medicines", "Number of Prescription Medicines Taken (RXDCOUNT)", "XdCount", "The number of prescription medicines the participant is taking (RXDCOUNT).", links=[nh("RXDCOUNT", "RXQ_RX_J")], constraints={"units": D + "units-items", "min_inclusive": 0, "max_inclusive": 50}, source=NH)
-rx_reasons = [C(f"nhanes-medication-reason-{n}", f"Medication Reason {n}", f"The {['first', 'second', 'third'][n - 1]} reason the medicine is taken (RXDRSC{n}, RXDRSD{n}), as the FHIR ICD-10-CM diagnosis coded value by identifier.", [F + "diagnosis-icd10cm"], exact="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode", source=NH) for n in (1, 2, 3)]
+# NHANES's prevention codes: an ICD-10-CM code followed by "P" means the medicine is taken to prevent the condition (RXQ_RX_J
+# Data Processing and Editing). None is an ICD-10-CM code (all 29 in the file were looked up: SOURCE-ERRATA.md), so they are
+# a code system of NHANES's own and carried as one, never as ICD-10-CM.
+NH_RX = NHANES + "RXQ_RX_J.htm"
+sys_nhanes_rx = leaf("system-nhanes-rx-reason", "Code System: NHANES Prevention Reason", "XdLink", "The code system of a coded value, fixed: NHANES's prevention reason codes, defined in the RXQ_RX_J documentation (" + NH_RX + "). Not ICD-10-CM. FHIR Coding.system.",
+                     links=[("skos:exactMatch", NH_RX, "standard")], constraints={"link": NH_RX, "relation": "codeSystem", "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"}, source=NH)
+nhanes_prev_code = leaf("nhanes-prevention-reason-code", "Prevention Reason Code (NHANES)", "XdString", "An NHANES prevention reason code (RXDRSC1 to RXDRSC3): an ICD-10-CM code with the letter P appended, meaning the medicine is taken to prevent the condition (I21.P, prevent heart attack). NHANES's own code, not an ICD-10-CM code: ICD-10-CM has no I21.P.",
+                        links=[("skos:exactMatch", NH_RX, "standard"), nh("RXDRSC1", "RXQ_RX_J")], constraints={"max_length": 8, "str_fmt": "[A-TV-Z][0-9][0-9AB][.][0-9A-TV-Z]{0,3}P"}, source=NH)
+nh_prevention = C("nhanes-prevention-reason", "Prevention Reason (NHANES)", "A reason for a medicine coded in NHANES's prevention reason codes: the code, NHANES's description of it and the fixed code system (FHIR Coding). Kept apart from the ICD-10-CM diagnosis because the code is not ICD-10-CM and the condition is one the participant is preventing, not one diagnosed.",
+                  [nhanes_prev_code, F + "code-display-text", sys_nhanes_rx], exact="http://hl7.org/fhir/R4/datatypes.html#Coding", source=NH)
+rx_reasons = [C(f"nhanes-medication-reason-{n}", f"Medication Reason {n}", f"The {['first', 'second', 'third'][n - 1]} reason the medicine is taken (RXDRSC{n}, RXDRSD{n}): an ICD-10-CM diagnosis as the FHIR coded value by identifier, or one of NHANES's prevention reason codes, which are not ICD-10-CM.", [F + "diagnosis-icd10cm", nh_prevention], exact="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode", source=NH) for n in (1, 2, 3)]
 nh_medication = C("nhanes-medication", "NHANES Medication", "One prescription medicine a participant reported (RXQ_RX_J): the sequence number joining it to the participant, whether any was taken, the generic name and NHANES code, days taken, the count of medicines, and up to three reasons as ICD-10-CM coded values.",
                   [seqn, nh_rxduse, nh_drug, nh_drugid, nh_days, nh_rxcount] + rx_reasons, exact="http://hl7.org/fhir/StructureDefinition/MedicationStatement", source=NH)
 
@@ -543,48 +553,14 @@ def retire_rows():
     return rows
 
 
-# The records revised for the current release, each to the published holder of its slot (E-2026-10-03 in
-# SOURCE-ERRATA.md: the value bindings the terminologies do not confirm, and every cluster above them, so the models
-# compose the corrections; the six of E-2026-10-01 are among them, now revising their 4.2.3 revisions).
+# The records revised for the current release, each to the published holder of its slot. 4.2.5: the medication reason
+# clusters gain NHANES's prevention reason codes as their own coded value (SOURCE-ERRATA.md), and the clusters above them.
 REVISIONS = {
-    "brfss-bmi-category": "ezewpvppvx8zjikutr53ppgz",
-    "brfss-body-measures": "gc3nb6hzobkzifswmzgt7w6t",
-    "brfss-chronic-conditions": "lahhb7fhnu75l1fxrv9f8fdv",
-    "brfss-days-mental-health-not-good": "k32effn0kp5a42ikkpvcva9j",
-    "brfss-days-physical-health-not-good": "fljkn7b19qtnj6rr3t8qcfg1",
-    "brfss-demographics": "tto2m72tul0hj0z7zyoco4yx",
-    "brfss-education-level": "fci5gajaodxc2ihq6nuz9l6y",
-    "brfss-health-status": "kmgw3rv02bipvaoxpvnh7fzk",
-    "brfss-respondent": "jxif4jju7k2rg3vokabzzj22",
-    "brfss-respondent-governed-record": "kb26is7epmdlc0lm1k9pdz9f",
-    "brfss-survey-design": "zauadmfc05ep5nf2kd9j8cwh",
-    "chronic-condition-indicators": "wa0mknvfo83hej635n48s0ig",
-    "cms-beneficiary": "kkdy1kjdruxvx8s1ra8eh231",
-    "cms-beneficiary-governed-record": "io2h28pi3yktedurk8ye3oq0",
-    "condition-indicator-basis": "hc79skkfionpgw87dsg5yrgw",
-    "general-health-status": "lth27h6towue4i9iq1cudogc",
-    "nhanes-citizenship-status": "m67ncwhc9s1j36f9w9qsrxfx",
-    "nhanes-demographics": "nzhi9t6qd9rhb5ojsaxtn8md",
-    "nhanes-dressing": "p4jxl2rur1agjhdpvj2g9u4k",
-    "nhanes-education-level-adults": "fqjd2lvp9jamdpf0f3kpkwnp",
-    "nhanes-getting-in-and-out-of-bed": "cy6k5rxvhvg2v27cfp7pjwyx",
-    "nhanes-laboratory-results": "c73687ou0pkc7qy6n2kksfc7",
-    "nhanes-lifting-or-carrying": "b1mxr233mgqvzr39c90ly8cv",
-    "nhanes-medical-conditions": "mc8by65nv7wa59lw4oj54e2w",
-    "nhanes-participant": "dawjwho8viq3hr0esb39dhb7",
-    "nhanes-participant-governed-record": "u9elnmjjpxdtxcxnqugqaowk",
-    "nhanes-physical-functioning": "ky7lvmote5jfn5gt6n89q79s",
-    "nhanes-pregnancy-status-at-exam": "r0j6yo8zvo4q8x0ovdr6j9yz",
-    "nhanes-race-hispanic-origin": "hs44ipuqgvc3azbt3mirxtsz",
-    "nhanes-standing-for-long-periods": "vp4ow7t3q8w2phcft0qvyj4u",
-    "nhanes-standing-up-from-chair": "y52y4mpq95zcknal0be1uc7v",
-    "nhanes-stooping-crouching-kneeling": "knrs4clih4pi26tm2zra1ai0",
-    "nhanes-survey-design": "mgqswj92qaeasqjjvfcyxon5",
-    "nhanes-total-cholesterol-si": "qp5mdgab3s37zwqzyfzq8rvi",
-    "nhanes-walking-between-rooms": "crr2z3b2l7hlq1kvevppt8kt",
-    "nhanes-walking-quarter-mile": "mktq5xr8slz67q85idl8bsky",
-    "nhanes-walking-up-ten-stairs": "rot4z5ny8gdkfmimedcjl1te",
-    "veteran-status": "eimlsgbawhm8aa4i6gbdrja0",
+    "nhanes-medication": "ncudsi2t2ij3rd2pmnnfr2j9",
+    "nhanes-medication-governed-record": "jo2kw48cijwgg64s6cud2el1",
+    "nhanes-medication-reason-1": "i213d6dp9r4c0nmzxkgc0tja",
+    "nhanes-medication-reason-2": "u3qz0js9emqn2i7s5nyynmgt",
+    "nhanes-medication-reason-3": "rozfpmwczk4yuw4c2vom4gyx",
 }
 
 

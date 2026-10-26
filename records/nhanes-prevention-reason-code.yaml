@@ -1,0 +1,17 @@
+key: nhanes-prevention-reason-code
+label: Prevention Reason Code (NHANES)
+type: XdString
+description: 'An NHANES prevention reason code (RXDRSC1 to RXDRSC3): an ICD-10-CM code with the letter P appended, meaning the medicine is taken
+  to prevent the condition (I21.P, prevent heart attack). NHANES''s own code, not an ICD-10-CM code: ICD-10-CM has no I21.P.'
+source:
+  name: NHANES 2017-2018
+links:
+- predicate: skos:exactMatch
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm
+  basis: standard
+- predicate: rdfs:seeAlso
+  iri: https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDRSC1
+  basis: standard
+constraints:
+  max_length: 8
+  str_fmt: '[A-TV-Z][0-9][0-9AB][.][0-9A-TV-Z]{0,3}P'

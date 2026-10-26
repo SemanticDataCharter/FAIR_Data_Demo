@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "close",
-  "supersedes_ct_id": "ky7lvmote5jfn5gt6n89q79s",
+  "supersedes_ct_id": null,
   "members": [
     "nhanes-limitations-keeping-from-working",
     "nhanes-need-special-equipment-to-walk",

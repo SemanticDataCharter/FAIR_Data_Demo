@@ -23,7 +23,7 @@ import time
 from engine import EV, Quantity
 from shared import ASKR, ASKU, DEMO_SCALE, SAMPLE, code, import_dir, number, qty, read_csv, record, seeded_sample, write_record
 
-TITLE = "BRFSS Respondent 4.3.0"   # the 4.3.0 revision (Exceptional Values; SOURCE-ERRATA.md)
+TITLE = "BRFSS Respondent 4.3.1"   # the 4.3.1 revision (SOURCE-ERRATA.md)
 AGENCY = "Centers for Disease Control and Prevention"
 SOURCE = "LLCP2022"
 OUTPUT_DIR = import_dir("brfss_respondent")

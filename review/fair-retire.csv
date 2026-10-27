@@ -637,7 +637,7 @@ gar0akj5prixv8lqcd1zrb17,XdCount,Other Physician NPI,not carried into the second
 xg5kj7hykhhh0aebjaudrjfh,XdCount,Part D Plan Coverage Months,covered by cms-part-d-coverage-months,cms-part-d-coverage-months,accept,"Tim 2026-09-26: PRD approved, all seven models"
 fgnbk11h2vzwomg4txfocqhk,XdCount,Prescription Drug Event ID,covered by cms-prescription-drug-event-id,cms-prescription-drug-event-id,accept,"Tim 2026-09-26: PRD approved, all seven models"
 wt04kmf82aqpi3hkxigzpilh,XdCount,Product/Service ID (NDC),covered by product-ndc,product-ndc,accept,"Tim 2026-09-26: PRD approved, all seven models"
-je8telqg11pzntpcbm2tmt8p,XdCount,Race,covered by ct:u5tietya3u56hbz2kos06ai7,ct:u5tietya3u56hbz2kos06ai7,accept,"Tim 2026-09-26: PRD approved, all seven models"
+je8telqg11pzntpcbm2tmt8p,XdCount,Race,covered by ct:lasx9q9q5wgyvtnwtzjth55m,ct:lasx9q9q5wgyvtnwtzjth55m,accept,"Tim 2026-09-26: PRD approved, all seven models"
 at0gbvqwfye87h90hwvzduug,XdCount,Rheumatoid Arthritis / Osteoarthritis,covered by condition-arthritis,condition-arthritis,accept,"Tim 2026-09-26: PRD approved, all seven models"
 a2tag43yf695zvtmnc6pxzjn,XdCount,SEGMENT (duplicate label),not rebuilt: a duplicate-label leaf of the first build,,accept,"Tim 2026-09-26: PRD approved, all seven models"
 lbczhz56pdloeylt99l3h5nv,XdCount,Service Date,covered by cms-service-date,cms-service-date,accept,"Tim 2026-09-26: PRD approved, all seven models"

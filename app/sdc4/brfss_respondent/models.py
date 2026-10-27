@@ -26,7 +26,7 @@ class BrfssRespondentInstance(models.Model):
     XML is the authoritative data format. All data is stored as validated XML,
     with JSON extracted for efficient JSONB queries in PostgreSQL.
 
-    DM CT_ID: zmlfrxyorqbb1e2id0cwhjyy
+    DM CT_ID: avde43dotjjt10duhuvs4mo2
     """
 
     # ==========================================================================
@@ -128,7 +128,7 @@ class BrfssRespondentInstance(models.Model):
     # ==========================================================================
 
     # DM metadata - set at generation time, read-only at runtime
-    DM_CT_ID = 'zmlfrxyorqbb1e2id0cwhjyy'
+    DM_CT_ID = 'avde43dotjjt10duhuvs4mo2'
     DM_LABEL = 'BrfssRespondent'
 
     class Meta:

@@ -134,6 +134,13 @@ WEIGHT2 77 is 77 pounds) is never read as missing. Before 4.3.0 both were left o
 computes (height in centimeters, weight in kilograms, the derived smoking status) carry nothing when their input was
 refused: there is no answer of their own to qualify.
 
+**What a target receives** (checked 27 October 2026 against the mappers' output for the 4.3.0 models). The absence,
+never a value: in FHIR (`sdc-gdr2fhir` 4.0.6) the data-absent-reason, ASKR as `asked-declined`, ASKU as `asked-unknown`,
+UNK as `unknown`; in HL7 v2 (`sdc-gdr2hl7v2` 4.0.5) the observation with no value, result status `X` and a note naming
+the null flavor; in OMOP CDM (`sdc-gdr2omop` 4.0.5) an observation whose source value is the null flavor and which has
+no value, and, where the Exceptional Value stands in place of the code that makes a row a clinical fact (an unknown
+reason for a medicine), no row at all: an unknown reason is not a condition.
+
 **Why it needed SDCStudio 4.24.** The reference model allows an Exceptional Value in place of a value, but SDCStudio
 published every value as required before 4.24, so a refused answer had no valid form. 4.3.0 republishes each answer
 that can be refused or not known as a revision published under 4.24 (92 FAIR revisions, 4 in the NIH CDE library and 3
@@ -174,10 +181,13 @@ as the Exceptional Values they name, UNK (Unknown), ASKR (Asked and Refused) and
 the reason's code, and the same for the drug name (13, 30 and 91) and the days taken (77777 and 99999: 4 and 278). The
 134 medicines whose name was unknown, refused or not known were left out before 4.2.5; they are records now.
 
-**What a target receives** (once the mappers carry the 4.2.5 model; checked against their output then). The code under NHANES's code system with its description: in FHIR a reason Coding whose
-system is the NHANES documentation, not `http://hl7.org/fhir/sid/icd-10-cm`; in OMOP CDM no standard concept (the code
-and description as source values); in HL7 v2 a coded element whose coding system is local to NHANES. Each target
-states that the code is not ICD-10-CM; none receives a code it would read as a diagnosis.
+**What a target receives** (checked 27 October 2026 against the mappers' output for NHANES Medication 4.3.0). The code
+under NHANES's code system with its description, never ICD-10-CM: in FHIR (`sdc-gdr2fhir` 4.0.6) a reason Coding whose
+system is the RXQ_RX_J documentation, which HL7's FHIR validator reports as a code system it cannot check, a warning
+rather than the ICD-10-CM error `I21.P` drew before; in OMOP CDM (`sdc-gdr2omop` 4.0.5) an OBSERVATION row with concept 0,
+the code as its source value and NHANES's description as its value, and no CONDITION_OCCURRENCE row; in HL7 v2
+(`sdc-gdr2hl7v2` 4.0.5) a coded element under the local coding system `99NHANES`, never `I10C`. No target receives a
+code it would read as a diagnosis.
 
 **Status.** Decided 26 October 2026 (Tim): NHANES's own code system, with this statement of the non-conformance; the
 missing-value codes as Exceptional Values. Released in 4.3.0 (4.2.5 was folded into it).

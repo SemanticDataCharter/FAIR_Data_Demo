@@ -295,18 +295,18 @@
     "type": "XdToken",
     "label": "Veteran Status"
   },
-  "ukvlpa3hvurit0wuzkkgh7nx": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_ukvlpa3hvurit0wuzkkgh7nx",
-    "ct_id": "ukvlpa3hvurit0wuzkkgh7nx",
-    "adapter_ctid": "oxlp1hzq0e78x2qyekf6nz96",
+  "z3dy86uraka0bmuuvfdzf0ev": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_z3dy86uraka0bmuuvfdzf0ev",
+    "ct_id": "z3dy86uraka0bmuuvfdzf0ev",
+    "adapter_ctid": "e1nq3z0aenooyq8tjf6wzxv1",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Are you pregnant now?"
   },
-  "yqqm7og0x00fbmazzm00s86e": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_yqqm7og0x00fbmazzm00s86e",
-    "ct_id": "yqqm7og0x00fbmazzm00s86e",
-    "adapter_ctid": "rlczhe82112k0iygals68dya",
+  "foc9u5tdelz00c8duj4da09q": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_foc9u5tdelz00c8duj4da09q",
+    "ct_id": "foc9u5tdelz00c8duj4da09q",
+    "adapter_ctid": "v420ouj8aldq290pils4fz3f",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Current Educational Attainment"
@@ -319,10 +319,10 @@
     "type": "XdToken",
     "label": "Marital Status"
   },
-  "u5tietya3u56hbz2kos06ai7": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_u5tietya3u56hbz2kos06ai7",
-    "ct_id": "u5tietya3u56hbz2kos06ai7",
-    "adapter_ctid": "wzy3g7mcg3shr1ah8fhzxgkb",
+  "lasx9q9q5wgyvtnwtzjth55m": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_lasx9q9q5wgyvtnwtzjth55m",
+    "ct_id": "lasx9q9q5wgyvtnwtzjth55m",
+    "adapter_ctid": "m2twe1c9tc207xlz463pixi6",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Race/Ethnicity Self-Identification"

@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "ncudsi2t2ij3rd2pmnnfr2j9",
+  "supersedes_ct_id": null,
   "members": [
     "nhanes-respondent-sequence-number",
     "nhanes-taken-prescription-past-month",

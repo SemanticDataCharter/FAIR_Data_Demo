@@ -415,10 +415,10 @@
     "type": "XdToken",
     "label": "Sex (BENE_SEX_IDENT_CD)"
   },
-  "u5tietya3u56hbz2kos06ai7": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_u5tietya3u56hbz2kos06ai7",
-    "ct_id": "u5tietya3u56hbz2kos06ai7",
-    "adapter_ctid": "wzy3g7mcg3shr1ah8fhzxgkb",
+  "lasx9q9q5wgyvtnwtzjth55m": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_lasx9q9q5wgyvtnwtzjth55m",
+    "ct_id": "lasx9q9q5wgyvtnwtzjth55m",
+    "adapter_ctid": "m2twe1c9tc207xlz463pixi6",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Race/Ethnicity Self-Identification"

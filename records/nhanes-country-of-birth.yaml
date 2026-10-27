@@ -13,3 +13,4 @@ enumeration:
   definition: http://purl.obolibrary.org/obo/NCIT_C17234
 - value: Others
   definition: http://purl.obolibrary.org/obo/NCIT_C17649
+supersedes: nwsj84veb6u9g1v0h2a3a793

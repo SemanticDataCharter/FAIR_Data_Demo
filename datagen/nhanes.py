@@ -13,12 +13,12 @@ import sys
 import time
 
 from schema import Schema
-from shared import EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
+from shared import ASKR, ASKU, EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
 
-PARTICIPANT = "NHANES Participant 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
-MEDICATION = "NHANES Medication 4.2.5"   # the 4.2.5 revision: prevention reason codes (SOURCE-ERRATA.md)
+PARTICIPANT = "NHANES Participant 4.3.0"   # the 4.3.0 revision (Exceptional Values; SOURCE-ERRATA.md)
+MEDICATION = "NHANES Medication 4.3.0"   # the 4.3.0 revision: prevention reason codes, Exceptional Values (SOURCE-ERRATA.md)
 AGENCY = "National Center for Health Statistics, Centers for Disease Control and Prevention"
-DROPPED = collections.Counter()   # variable -> refused / don't-know answers left out
+DROPPED = collections.Counter()   # (variable, null flavor) -> refused / don't-know answers carried as Exceptional Values
 
 YN = {"1": "Yes", "2": "No"}
 GENDER = {"1": "Male", "2": "Female"}
@@ -58,19 +58,22 @@ LABS = [("LBXTC", "Total Cholesterol", "mg/dL"), ("LBDTCSI", "Total Cholesterol 
 # as it is for income. BRFSS is treated the same way.
 
 def ans(var, v, table, **kw):
-    """A coded answer, with a refusal or don't-know left out and counted."""
+    """A coded answer, or the refusal or don't-know as its Exceptional Value (NHANES: 7 / 77 / 777 Refused, 9 / 99 /
+    999 Don't know, code()'s default; every variable carried here checked against its codebook on 26 October 2026)."""
     out = code(v, table, **kw)
     if isinstance(out, EV):
-        DROPPED[var] += 1
-        return None
+        DROPPED[(var, out.code)] += 1
     return out
 
 
-def num(var, v, missing):
+def num_qty(var, v, missing, unit):
+    """A numeric answer as a Quantity, or the Exceptional Value its missing code states: ``missing`` is (refused, don't know)."""
     if v in missing:
-        DROPPED[var] += 1
-        return None
-    return number(v)
+        x = ASKR if v == missing[0] else ASKU
+        DROPPED[(var, x.code)] += 1
+        return x
+    n = number(v)
+    return qty(n, unit) if n else None
 
 
 def by_seqn(key):
@@ -140,8 +143,8 @@ def participant_values(seqn, demo, bpx, tchol, cbc, mcq, smq, pfq):
             "NHANES Smoking/Smoked at Least 100 Cigarettes in Life (SMQ020)": ans("SMQ020", smq.get("SMQ020", ""), YN),
             "NHANES Smoking/Do You Now Smoke Cigarettes (SMQ040)": ans("SMQ040", smq.get("SMQ040", ""), SMOKE_NOW),
             "NHANES Smoking/Smoking Status": smoking_status(smq.get("SMQ020", ""), smq.get("SMQ040", "")),
-            "NHANES Smoking/Age Started Smoking Cigarettes Regularly (SMD030)": qty(num("SMD030", smq.get("SMD030", ""), ("777", "999")) or "", "years"),
-            "NHANES Smoking/Average Cigarettes per Day, Past 30 Days (SMD650)": qty(num("SMD650", smq.get("SMD650", ""), ("777", "999")) or "", "cigarettes"),
+            "NHANES Smoking/Age Started Smoking Cigarettes Regularly (SMD030)": num_qty("SMD030", smq.get("SMD030", ""), ("777", "999"), "years"),
+            "NHANES Smoking/Average Cigarettes per Day, Past 30 Days (SMD650)": num_qty("SMD650", smq.get("SMD650", ""), ("777", "999"), "cigarettes"),
             "NHANES Smoking/Ever Used an E-cigarette (SMQ900)": ans("SMQ900", smq.get("SMQ900", ""), YN),
         })
     if mcq:
@@ -242,7 +245,7 @@ def generate_medications():
 def generate():
     generate_participants()
     generate_medications()
-    print("NHANES answers left out as refused or don't know:", dict(DROPPED.most_common(12)))
+    print("NHANES answers carried as Exceptional Values (refused ASKR, don't know ASKU):", sum(DROPPED.values()), dict(DROPPED.most_common(8)))
     print("NHANES prevention reason codes carried as NHANES's own (not ICD-10-CM):", sum(PREVENTION.values()), "uses of", len(PREVENTION), "codes")
     print("NHANES medication answers carried as Exceptional Values:", dict(sorted(EVS.items())))
 

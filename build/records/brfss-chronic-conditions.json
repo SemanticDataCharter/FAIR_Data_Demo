@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "yumwsic8qvlly00pluhl9415",
   "members": [
     "chronic-condition-indicators",
     "brfss-still-have-asthma"

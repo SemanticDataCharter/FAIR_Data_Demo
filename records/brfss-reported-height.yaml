@@ -12,3 +12,4 @@ links:
 constraints:
   max_length: 4
   str_fmt: '[0-9]{3,4}'
+supersedes: urjk1vvcot1s319mxygpdsf5

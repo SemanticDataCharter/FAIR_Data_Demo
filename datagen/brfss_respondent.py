@@ -21,9 +21,9 @@ import hashlib
 import time
 
 from engine import EV, Quantity
-from shared import DEMO_SCALE, SAMPLE, code, import_dir, number, qty, read_csv, record, seeded_sample, write_record
+from shared import ASKR, ASKU, DEMO_SCALE, SAMPLE, code, import_dir, number, qty, read_csv, record, seeded_sample, write_record
 
-TITLE = "BRFSS Respondent 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
+TITLE = "BRFSS Respondent 4.3.0"   # the 4.3.0 revision (Exceptional Values; SOURCE-ERRATA.md)
 AGENCY = "Centers for Disease Control and Prevention"
 SOURCE = "LLCP2022"
 OUTPUT_DIR = import_dir("brfss_respondent")
@@ -77,36 +77,54 @@ CONDITIONS = [("ASTHMA3", "Asthma", YESNO), ("HAVARTH4", "Arthritis", YESNO), ("
 # BPHIGH6 and TOLDHI3 are not in the 2022 core file (the hypertension and cholesterol module runs in odd years), so High Blood Pressure and High
 # Cholesterol are not carried by this study in this release.
 
-DROPPED = collections.Counter()   # variable -> refused or don't-know answers left out
+EVS = collections.Counter()   # (variable, null flavor) -> Exceptional Values written
+DROPPED = EVS   # the old name, for callers that print it
+# BRFSS's codebook (LLCP 2022, every variable carried here, checked 26 October 2026): 7, 77, 777 and 7777 are
+# "Don't know/Not sure", 9, 99, 999 and 9999 are "Refused". NHANES has it the other way round, which is code()'s default.
+BR_DONT_KNOW = ("7", "77", "777", "7777")
+BR_REFUSED = ("9", "99", "999", "9999")
+
+
+def br_ev(var: str, v: str, codes: tuple[str, ...]):
+    """The Exceptional Value a BRFSS missing-value code states, counted; None for any other value. ``codes`` are the
+    variable's own missing-value codes (WEIGHT2 77 is 77 pounds; only 7777 and 9999 are missing there)."""
+    if v not in codes:
+        return None
+    x = ASKU if v in BR_DONT_KNOW else ASKR if v in BR_REFUSED else None
+    if x is not None:
+        EVS[(var, x.code)] += 1
+    return x
 
 
 def ans(var: str, v: str, table: dict, **kw):
-    """The coded answer, or None; a refusal or don't-know is counted and left out."""
-    x = code(v, table, **kw)
+    """The coded answer, or the refusal or don't-know as its Exceptional Value."""
+    x = code(v, table, refused=BR_REFUSED, dont_know=BR_DONT_KNOW, **kw)
     if isinstance(x, EV):
-        DROPPED[var] += 1
-        return None
+        EVS[(var, x.code)] += 1
     return x
 
 
 def count(var: str, v: str, none_code: str | None = None, missing=("77", "99", "777", "999")):
-    """A count answer: none_code (88) means zero; refused and don't-know are counted and left out."""
+    """A count answer: none_code (88) means zero; a refusal or don't-know is its Exceptional Value."""
     if v == "":
         return None
     if none_code is not None and v == none_code:
         return "0"
     if v in missing:
-        DROPPED[var] += 1
-        return None
+        return br_ev(var, v, missing)
     return v
+
+
+def count_qty(var: str, v: str, none_code: str | None, unit: str, missing=("77", "99", "777", "999")):
+    """count() as a Quantity, or its Exceptional Value, or None."""
+    c = count(var, v, none_code, missing)
+    return c if c is None or isinstance(c, EV) else Quantity(c, unit)
 
 
 def height_cm(v: str):
     """HEIGHT3: 0FII feet and inches, or 9xxx metres and centimetres; 7777 and 9999 are missing."""
     if v in ("", "7777", "9999"):
-        if v:
-            DROPPED["HEIGHT3"] += 1
-        return None
+        return None   # the answer itself carries the Exceptional Value; nothing to compute from
     n = int(v)
     if 200 <= n <= 711:
         feet, inches = divmod(n, 100)
@@ -119,9 +137,7 @@ def height_cm(v: str):
 def weight_kg(v: str):
     """WEIGHT2: pounds (50-776) or 9xxx kilograms; returns (kilograms, pounds or None)."""
     if v in ("", "7777", "9999"):
-        if v:
-            DROPPED["WEIGHT2"] += 1
-        return None, None
+        return None, None   # the answer itself carries the Exceptional Value
     n = int(v)
     if 50 <= n <= 776:
         return f"{n * 0.45359237:.1f}", str(n)
@@ -137,8 +153,7 @@ def alcohol_days(v: str):
     if v == "888":
         return "0"
     if v in ("777", "999"):
-        DROPPED["ALCDAY4"] += 1
-        return None
+        return br_ev("ALCDAY4", v, ("777", "999"))
     n = int(v)
     if 101 <= n <= 199:
         return str(round((n - 100) * 30 / 7))
@@ -161,6 +176,11 @@ def interview_date(idate: str):
     if len(idate) != 8:
         return None
     return f"{idate[4:8]}-{idate[0:2]}-{idate[2:4]}"
+
+
+def alcohol_qty(v: str):
+    d = alcohol_days(v)
+    return d if d is None or isinstance(d, EV) else Quantity(d, "days")
 
 
 def build_instance(row: dict) -> str:
@@ -193,20 +213,20 @@ def build_instance(row: dict) -> str:
         DEMO + "Veteran Status": ans("VETERAN3", row["VETERAN3"], YESNO),
         DEMO + "Are you pregnant now?": ans("PREGNANT", row["PREGNANT"], YESNO),
         DEMO + "Pregnancy Status (PREGNANT)": ans("PREGNANT", row["PREGNANT"], YESNO),
-        DEMO + "Number of Children in Household (CHILDREN)": qty(count("CHILDREN", row["CHILDREN"], "88", ("99",)) or "", "items") if count("CHILDREN", row["CHILDREN"], "88", ("99",)) else None,
+        DEMO + "Number of Children in Household (CHILDREN)": count_qty("CHILDREN", row["CHILDREN"], "88", "items", ("99",)),
         DEMO + "Income Level (INCOME3)": ans("INCOME3", row["INCOME3"], INCOME3),
         # health status and access
         HEALTH + "General Health Status": ans("GENHLTH", row["GENHLTH"], GENHLTH),
-        HEALTH + "Days Physical Health Not Good, Past 30 (PHYSHLTH)": qty(count("PHYSHLTH", row["PHYSHLTH"], "88") or "", "days") if count("PHYSHLTH", row["PHYSHLTH"], "88") else None,
-        HEALTH + "Days Mental Health Not Good, Past 30 (MENTHLTH)": qty(count("MENTHLTH", row["MENTHLTH"], "88") or "", "days") if count("MENTHLTH", row["MENTHLTH"], "88") else None,
+        HEALTH + "Days Physical Health Not Good, Past 30 (PHYSHLTH)": count_qty("PHYSHLTH", row["PHYSHLTH"], "88", "days"),
+        HEALTH + "Days Mental Health Not Good, Past 30 (MENTHLTH)": count_qty("MENTHLTH", row["MENTHLTH"], "88", "days"),
         HEALTH + "Length of Time Since Last Routine Checkup (CHECKUP1)": ans("CHECKUP1", row["CHECKUP1"], CHECKUP1),
         HEALTH + "Exercise in Past 30 Days (EXERANY2)": ans("EXERANY2", row["EXERANY2"], YESNO),
         # chronic conditions: the shared indicators on a self-report basis
         COND + "Condition Indicator Basis": "Self-report of a professional diagnosis",
         "BRFSS Chronic Conditions/Still Have Asthma (ASTHNOW)": ans("ASTHNOW", row["ASTHNOW"], YESNO),
         # body measures: the agency's codes and the FHIR vital signs panel
-        BODY + "Reported Height in Feet and Inches (HEIGHT3)": row["HEIGHT3"] if row["HEIGHT3"] not in ("", "7777", "9999") else None,
-        BODY + "Reported Weight in Pounds (WEIGHT2)": Quantity(lb, "lb") if lb else None,
+        BODY + "Reported Height in Feet and Inches (HEIGHT3)": br_ev("HEIGHT3", row["HEIGHT3"], ("7777", "9999")) or (row["HEIGHT3"] or None),
+        BODY + "Reported Weight in Pounds (WEIGHT2)": br_ev("WEIGHT2", row["WEIGHT2"], ("7777", "9999")) or (Quantity(lb, "lb") if lb else None),
         BODY + "Computed Body Mass Index Category (_BMI5CAT)": BMI5CAT.get(row["_BMI5CAT"]),
         VITALS + "Body Height": Quantity(h, "cm") if h else None,
         VITALS + "Body Weight": Quantity(kg, "kg") if kg else None,
@@ -219,9 +239,9 @@ def build_instance(row: dict) -> str:
         TOBACCO + "Smoking Status": smoking_status(row["SMOKE100"], row["SMOKDAY2"]),
         TOBACCO + "Computed Smoking Status (_SMOKER3)": SMOKER3.get(row["_SMOKER3"]),
         TOBACCO + "Current E-cigarette Use (ECIGNOW2)": ans("ECIGNOW2", row["ECIGNOW2"], ECIGNOW2),
-        TOBACCO + "Days in Past 30 Had Alcoholic Beverage (ALCDAY4)": qty(alcohol_days(row["ALCDAY4"]) or "", "days") if alcohol_days(row["ALCDAY4"]) is not None else None,
-        TOBACCO + "Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3)": qty(count("AVEDRNK3", row["AVEDRNK3"], None) or "", "drinks") if row["AVEDRNK3"] not in ("", "88", "77", "99") else (DROPPED.update({"AVEDRNK3": 1}) if row["AVEDRNK3"] in ("77", "99") else None),
-        TOBACCO + "Binge Drinking Occasions in Past 30 (DRNK3GE5)": qty(count("DRNK3GE5", row["DRNK3GE5"], "88") or "", "items") if count("DRNK3GE5", row["DRNK3GE5"], "88") else None,
+        TOBACCO + "Days in Past 30 Had Alcoholic Beverage (ALCDAY4)": alcohol_qty(row["ALCDAY4"]),
+        TOBACCO + "Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3)": count_qty("AVEDRNK3", row["AVEDRNK3"], None, "drinks") if row["AVEDRNK3"] != "88" else None,
+        TOBACCO + "Binge Drinking Occasions in Past 30 (DRNK3GE5)": count_qty("DRNK3GE5", row["DRNK3GE5"], "88", "items"),
     }
     for var, label, table in CONDITIONS:
         values[COND + f"Condition: {label}"] = ans(var, row[var], table)
@@ -256,7 +276,7 @@ def generate():
         write_record(OUTPUT_DIR, "br", build_instance(row))
         count_ += 1
     print(f"BRFSS Respondent: generated {count_} XML files in {OUTPUT_DIR} in {time.time() - t0:.0f}s")
-    print("BRFSS Respondent: refused or don't-know answers left out, by variable:", dict(sorted(DROPPED.items())))
+    print("BRFSS Respondent: refused or don't-know answers carried as Exceptional Values, by variable:", dict(sorted(EVS.items())))
 
 
 if __name__ == "__main__":

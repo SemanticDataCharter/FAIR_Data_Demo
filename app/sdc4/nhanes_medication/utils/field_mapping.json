@@ -111,10 +111,10 @@
     "type": "XdString",
     "label": "Generic Drug Code (RXDDRGID)"
   },
-  "lok5ozew80qmwah6h45jr69y": {
-    "placeholder": "__PLACEHOLDER__xdstring-value_lok5ozew80qmwah6h45jr69y",
-    "ct_id": "lok5ozew80qmwah6h45jr69y",
-    "adapter_ctid": "o1vger3dnfnogl7pakpj849k",
+  "aut5uvzn0y8wb9xj2ox2n4wh": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_aut5uvzn0y8wb9xj2ox2n4wh",
+    "ct_id": "aut5uvzn0y8wb9xj2ox2n4wh",
+    "adapter_ctid": "djay4l82cuwt578f8gv0xvnt",
     "element_name": "xdstring-value",
     "type": "XdString",
     "label": "Generic Drug Name (RXDDRUG)"
@@ -135,10 +135,10 @@
     "type": "XdToken",
     "label": "Taken Prescription Medicine, Past Month (RXDUSE)"
   },
-  "jwgah039kcz574bbjvpxvfdj": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_jwgah039kcz574bbjvpxvfdj",
-    "ct_id": "jwgah039kcz574bbjvpxvfdj",
-    "adapter_ctid": "qtsby21a4f98wbmvc3hh5ifl",
+  "jybwb4302jxgp028dyk2cgmt": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_jybwb4302jxgp028dyk2cgmt",
+    "ct_id": "jybwb4302jxgp028dyk2cgmt",
+    "adapter_ctid": "k70txe6zyjaofmwl14nyxthq",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Number of Days Taken Medicine (RXDDAYS)"
@@ -183,13 +183,29 @@
     "type": "XdString",
     "label": "Code Display Text"
   },
-  "efimv7gxg5ompt8m6xb2b6k5": {
-    "placeholder": "__PLACEHOLDER__xdstring-value_efimv7gxg5ompt8m6xb2b6k5",
-    "ct_id": "efimv7gxg5ompt8m6xb2b6k5",
-    "adapter_ctid": "dpzwsqo29f64gp2snh4y5lly",
+  "km7yfw4egxchlb92ya8cqurd": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_km7yfw4egxchlb92ya8cqurd",
+    "ct_id": "km7yfw4egxchlb92ya8cqurd",
+    "adapter_ctid": "nkdwwfso43p0jwfqh7mx4vzl",
     "element_name": "xdstring-value",
     "type": "XdString",
     "label": "Diagnosis Code (ICD-10-CM)"
+  },
+  "m5mmhesnjwbf52fwdo8jzqxp": {
+    "placeholder": "__PLACEHOLDER__xdlink-value_m5mmhesnjwbf52fwdo8jzqxp",
+    "ct_id": "m5mmhesnjwbf52fwdo8jzqxp",
+    "adapter_ctid": "wwx086gha0hmtvijpt9u8ell",
+    "element_name": "xdlink-value",
+    "type": "XdLink",
+    "label": "Code System: NHANES Prevention Reason"
+  },
+  "fkfgjboicxhcx4j0l7jhqw42": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_fkfgjboicxhcx4j0l7jhqw42",
+    "ct_id": "fkfgjboicxhcx4j0l7jhqw42",
+    "adapter_ctid": "hpgw0247ehdwzf2uz8c6n8l8",
+    "element_name": "xdstring-value",
+    "type": "XdString",
+    "label": "Prevention Reason Code (NHANES)"
   },
   "hhusuzzig19rs46ngz23k5g7": {
     "placeholder": "__PLACEHOLDER__xdstring-value_hhusuzzig19rs46ngz23k5g7",

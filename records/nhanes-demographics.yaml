@@ -26,11 +26,12 @@ members:
 - nhanes-citizenship-status
 - ct:yqqm7og0x00fbmazzm00s86e
 - nhanes-education-level-adults
-- ct:qsetd453kk9own8co1wmc5cz
+- ct:epkiv5tjehgc94m17sxyi4g6
 - nhanes-marital-status
-- ct:zmpqfc6tb0o2hgu8qs6lj8tp
+- ct:ukvlpa3hvurit0wuzkkgh7nx
 - nhanes-pregnancy-status-at-exam
 - veteran-status
 - nhanes-household-size
 - nhanes-annual-household-income
 - nhanes-family-income-poverty-ratio
+supersedes: mcwxopvl79am1nwidvdhh6k1

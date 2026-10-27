@@ -526,11 +526,12 @@ class BulkImportProcessor:
                 # Get value element name
                 value_elem_name = self._get_value_element_name(field_type)
 
-                # Handle XdTemporal specially - try all variant element names
-                if value_elem_name is None and field_type == 'XdTemporal':
+                # Handle XdTemporal and XdBoolean specially - try each variant element name
+                if value_elem_name is None and field_type in ('XdTemporal', 'XdBoolean'):
                     raw_value = None
-                    for temporal_elem_name in self.TEMPORAL_ELEMENT_NAMES:
-                        value_elem = comp_elem.find(f".//{temporal_elem_name}")
+                    names = self.TEMPORAL_ELEMENT_NAMES if field_type == 'XdTemporal' else self.BOOLEAN_ELEMENT_NAMES
+                    for variant_elem_name in names:
+                        value_elem = comp_elem.find(f".//{variant_elem_name}")
                         if value_elem is not None and value_elem.text:
                             raw_value = value_elem.text.strip()
                             break
@@ -569,11 +570,13 @@ class BulkImportProcessor:
         'xdtemporal-month-day',
     ]
 
+    # XdBoolean is a choice in the reference model: the element present names the value
+    BOOLEAN_ELEMENT_NAMES = ['true-value', 'false-value']
+
     def _get_value_element_name(self, field_type: str) -> str:
         """Get the value element name for a given field type."""
         type_map = {
             'XdString': 'xdstring-value',
-            'XdBoolean': 'xdboolean-value',
             'XdCount': 'xdcount-value',
             'XdQuantity': 'xdquantity-value',
             'XdFloat': 'xdfloat-value',
@@ -582,8 +585,8 @@ class BulkImportProcessor:
             'XdFile': 'xdfile-value',
             'XdOrdinal': 'xdordinal-value',
         }
-        # XdTemporal returns None - caller must handle specially
-        if field_type == 'XdTemporal':
+        # XdTemporal and XdBoolean return None - caller must handle specially
+        if field_type in ('XdTemporal', 'XdBoolean'):
             return None
         return type_map.get(field_type, 'value')
 

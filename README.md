@@ -9,7 +9,7 @@
 
 ![The FAIR Data Demo dashboard: seven study models, 84,352 records, one knowledge graph](docs/images/dashboard.png)
 
-This is version 4.2.4 ([releases](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)), the second build of the FAIR Data Demo and the first in which the studies actually share their components. It takes three real federal releases, the CDC's NHANES 2017-2018 and BRFSS 2022 surveys and the CMS DE-SynPUF Medicare claims sample, and models each as [SDC4](https://semanticdatacharter.com) data models composed from the published component libraries: the person, gender and money from the Default library, race, age, education, marital status and insurance from the NIH CDE library, blood pressure, vital signs, laboratory results, encounters, coverage and medication orders from the FHIR library, provenance and audit from the ProvGov library, each named by its identifier slot. What the studies share and no library holds, smoking status, twenty-one chronic-condition indicators with their SNOMED CT subjects, general health, veteran status, is authored once in this project with LOINC and SNOMED CT links, and every study that measures the concept composes the same one. What one study alone needs stays that study's, coded as it was recorded: ICD-9-CM, HCPCS and NDC for the 2008-2010 claims, the survey identifiers, weights, strata and the agencies' own codes beside every harmonized value.
+This is version 4.3.0 ([releases](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)), the second build of the FAIR Data Demo and the first in which the studies actually share their components. It takes three real federal releases, the CDC's NHANES 2017-2018 and BRFSS 2022 surveys and the CMS DE-SynPUF Medicare claims sample, and models each as [SDC4](https://semanticdatacharter.com) data models composed from the published component libraries: the person, gender and money from the Default library, race, age, education, marital status and insurance from the NIH CDE library, blood pressure, vital signs, laboratory results, encounters, coverage and medication orders from the FHIR library, provenance and audit from the ProvGov library, each named by its identifier slot. What the studies share and no library holds, smoking status, twenty-one chronic-condition indicators with their SNOMED CT subjects, general health, veteran status, is authored once in this project with LOINC and SNOMED CT links, and every study that measures the concept composes the same one. What one study alone needs stays that study's, coded as it was recorded: ICD-9-CM, HCPCS and NDC for the 2008-2010 claims, the survey identifiers, weights, strata and the agencies' own codes beside every harmonized value.
 
 The seven models and the seven applications SDCStudio generated from them are in the repository exactly as downloaded, under `sdcstudio_downloads/`, so anyone who clones can read the raw models and apps before reading anything we wrote around them. The data is not invented: every record is generated from a row of the federal file by the template engine, validated on the way out against the model's XSD 1.1 schema, and states where it came from. Alongside its data each record carries its **Provenance** (the PROV-O activity that made it, whose used entity is the federal file by URL and release, and the pipeline as agent), an **Audit Event**, and a structural **Audit** naming the system and the source file, bound to the data at the source rather than bolted on afterward. The record's subject is the study's own participant identifier, so a reviewer can trace any value to its row.
 
@@ -25,14 +25,14 @@ You need Docker (or Podman) with the compose plugin, about 10GB of free RAM (Gra
 ```bash
 git clone https://github.com/SemanticDataCharter/FAIR_Data_Demo.git
 cd FAIR_Data_Demo
-git checkout v4.2.4
+git checkout v4.3.0
 # download the source files into source_data/ (see source_data/README.md), then
 python3 -m pip install pyreadstat pandas
 python3 scripts/convert_xpt_to_csv.py     # NHANES and BRFSS ship as SAS transport files
 make demo
 ```
 
-`git checkout v4.2.4` pins the release this README describes; skip it to run the current `main`. Every release also publishes the web image as `ghcr.io/semanticdatacharter/fair-data-demo:<version>`, and `make pull` fetches it instead of building locally.
+`git checkout v4.3.0` pins the release this README describes; skip it to run the current `main`. Every release also publishes the web image as `ghcr.io/semanticdatacharter/fair-data-demo:<version>`, and `make pull` fetches it instead of building locally.
 
 `make demo` starts the stack, generates the sampled dataset from the source files, and loads it. There are no accounts to create and nothing to send anywhere. The first run needs the network to pull container images and the host-side Python packages; after that the stack runs disconnected. When it finishes there are two front doors:
 
@@ -47,8 +47,8 @@ The generators are seeded, so every run on every machine produces the same recor
 
 | | Expected |
 |---|---|
-| Records loaded | **84,352** |
-| Named graphs in GraphDB | **84,352** (one per record, no drift; the loader prints the count per model, and a `COUNT(DISTINCT ?g)` over `GRAPH ?g` in the explorer confirms it) |
+| Records loaded | **84,486** |
+| Named graphs in GraphDB | **84,486** (one per record, no drift; the loader prints the count per model, and a `COUNT(DISTINCT ?g)` over `GRAPH ?g` in the explorer confirms it) |
 | Models | **7** |
 | Records stating an absence | **0** |
 
@@ -66,7 +66,7 @@ Generation takes about three minutes; **loading is the cost**: each instance is 
 | Model | Source rows | Records in `make demo` |
 |---|---|---|
 | NHANES Participant | DEMO_J joined on SEQN with BPX_J, TCHOL_J, CBC_J, MCQ_J, SMQ_J, PFQ_J | 9,254 |
-| NHANES Medication | RXQ_RX_J rows naming a medicine (5,343 rows without one are skipped) | 14,300 |
+| NHANES Medication | RXQ_RX_J rows reporting a medicine (5,209 rows without one are skipped; a medicine whose name is unknown, refused or not known is a record, with an Exceptional Value) | 14,434 |
 | BRFSS Respondent | LLCP2022, sampled | 5,000 |
 | CMS Beneficiary | 2008 beneficiary summary, sampled | 1,000 |
 | CMS Inpatient Claim | 2008-2010 inpatient claims of the sampled beneficiaries | 585 |

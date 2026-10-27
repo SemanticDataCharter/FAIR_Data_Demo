@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "zvdxyiicvyhfaywtw7xikjbj",
   "members": [
     "cms-beneficiary-code",
     "cms-beneficiary-demographics",

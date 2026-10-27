@@ -9,13 +9,14 @@ Provides:
 - Sort by date, ID, status
 """
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 
 from ..models import NhanesMedicationInstance
 from ..utils.wizard_config import DMMetadata
 
 
-class InstanceListView(ListView):
+class InstanceListView(LoginRequiredMixin, ListView):
     """
     List view for NhanesMedication instances.
     """

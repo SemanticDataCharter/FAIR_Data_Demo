@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "t1sv9gth4is2bswuhyid22co",
   "members": [
     "general-health-status",
     "brfss-days-physical-health-not-good",

@@ -111,10 +111,10 @@
     "type": "XdString",
     "label": "Annual Sequence Number (SEQNO)"
   },
-  "urjk1vvcot1s319mxygpdsf5": {
-    "placeholder": "__PLACEHOLDER__xdstring-value_urjk1vvcot1s319mxygpdsf5",
-    "ct_id": "urjk1vvcot1s319mxygpdsf5",
-    "adapter_ctid": "iiaw8zak25y4d6uhe2v57kii",
+  "d3laz8okd0e2x07j7997cqp2": {
+    "placeholder": "__PLACEHOLDER__xdstring-value_d3laz8okd0e2x07j7997cqp2",
+    "ct_id": "d3laz8okd0e2x07j7997cqp2",
+    "adapter_ctid": "vt487h1731msm92d7ng874r9",
     "element_name": "xdstring-value",
     "type": "XdString",
     "label": "Reported Height in Feet and Inches (HEIGHT3)"
@@ -127,10 +127,10 @@
     "type": "XdToken",
     "label": "Computed Body Mass Index Category (_BMI5CAT)"
   },
-  "gket571isxo2uckturhvxadk": {
-    "placeholder": "__PLACEHOLDER__xdquantity-value_gket571isxo2uckturhvxadk",
-    "ct_id": "gket571isxo2uckturhvxadk",
-    "adapter_ctid": "lj4ueok9tcwol2d5zwl7chtd",
+  "nt7f7frrptypnjlj7qd2v9jp": {
+    "placeholder": "__PLACEHOLDER__xdquantity-value_nt7f7frrptypnjlj7qd2v9jp",
+    "ct_id": "nt7f7frrptypnjlj7qd2v9jp",
+    "adapter_ctid": "lr7ll7s3xdubz59j6xemwmkp",
     "element_name": "xdquantity-value",
     "type": "XdQuantity",
     "label": "Reported Weight in Pounds (WEIGHT2)"
@@ -311,10 +311,10 @@
     "type": "XdString",
     "label": "Code Display Text"
   },
-  "dkmozm7gxxss45gf5yhthpjg": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_dkmozm7gxxss45gf5yhthpjg",
-    "ct_id": "dkmozm7gxxss45gf5yhthpjg",
-    "adapter_ctid": "mqewexs2h1klidtnokjzhul6",
+  "kkhglpbv7dtx47q25b7ufpha": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_kkhglpbv7dtx47q25b7ufpha",
+    "ct_id": "kkhglpbv7dtx47q25b7ufpha",
+    "adapter_ctid": "aeayhbogtz66jj6ka3gjmdmm",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Still Have Asthma (ASTHNOW)"
@@ -327,98 +327,98 @@
     "type": "XdToken",
     "label": "Condition: Alzheimer"
   },
-  "o4d67oubyyunugx3la44f53u": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_o4d67oubyyunugx3la44f53u",
-    "ct_id": "o4d67oubyyunugx3la44f53u",
-    "adapter_ctid": "qwr8oppceuigsrirvnpcjyed",
+  "j6yvuajlufg912b5yh0qlsap": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_j6yvuajlufg912b5yh0qlsap",
+    "ct_id": "j6yvuajlufg912b5yh0qlsap",
+    "adapter_ctid": "vzpx0eq70p35926puaizv30l",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Angina"
   },
-  "nd1v8jk7wtm1tthzw1f4987t": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_nd1v8jk7wtm1tthzw1f4987t",
-    "ct_id": "nd1v8jk7wtm1tthzw1f4987t",
-    "adapter_ctid": "cpjtssbqqnsi8kosc7cta973",
+  "pz3hm1xw6934t1ypypmljvnw": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_pz3hm1xw6934t1ypypmljvnw",
+    "ct_id": "pz3hm1xw6934t1ypypmljvnw",
+    "adapter_ctid": "m5vsdcvdjubbs06q5gatarcd",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Arthritis"
   },
-  "acr1xvqppf1b3rjsrst6tt4p": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_acr1xvqppf1b3rjsrst6tt4p",
-    "ct_id": "acr1xvqppf1b3rjsrst6tt4p",
-    "adapter_ctid": "lm8riadasawyvighwhidnfmr",
+  "qbjcujtims84q9neeh8561li": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_qbjcujtims84q9neeh8561li",
+    "ct_id": "qbjcujtims84q9neeh8561li",
+    "adapter_ctid": "n9ceektjn3iad3t2hsp7ug8p",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Asthma"
   },
-  "ix0my2v2z79s002g0r8orosf": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_ix0my2v2z79s002g0r8orosf",
-    "ct_id": "ix0my2v2z79s002g0r8orosf",
-    "adapter_ctid": "e0tdiylevix76r3l64fh8j4x",
+  "inuyw1b44xj8oqwcv0xhrqow": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_inuyw1b44xj8oqwcv0xhrqow",
+    "ct_id": "inuyw1b44xj8oqwcv0xhrqow",
+    "adapter_ctid": "dg9w3kvxr568cv5xjr23e7dt",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Cancer"
   },
-  "jyx7rxfktazhgxgq84fxf6wr": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_jyx7rxfktazhgxgq84fxf6wr",
-    "ct_id": "jyx7rxfktazhgxgq84fxf6wr",
-    "adapter_ctid": "c2ley3g1nu17i3djd4cotr88",
+  "vdaoheqhq8e9jrx73r56rx3f": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_vdaoheqhq8e9jrx73r56rx3f",
+    "ct_id": "vdaoheqhq8e9jrx73r56rx3f",
+    "adapter_ctid": "ri7dyssx8nyegnc3qw8lc8mc",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Chronic Bronchitis"
   },
-  "hyqlz591lhj54sdt1a1mup70": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hyqlz591lhj54sdt1a1mup70",
-    "ct_id": "hyqlz591lhj54sdt1a1mup70",
-    "adapter_ctid": "x6hucojdpiqdr60u3zxse3dl",
+  "o07iiqjgn8g0f7phjrsktkaw": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_o07iiqjgn8g0f7phjrsktkaw",
+    "ct_id": "o07iiqjgn8g0f7phjrsktkaw",
+    "adapter_ctid": "x06kidv0s0lztg6ho21qc4bu",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Congestive Heart Failure"
   },
-  "mijr18ynaqde2l8jps70l2g6": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_mijr18ynaqde2l8jps70l2g6",
-    "ct_id": "mijr18ynaqde2l8jps70l2g6",
-    "adapter_ctid": "byxxuau9d2hajbla9wwc442t",
+  "wfjyxu8bnw2aggwtnhl805i8": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_wfjyxu8bnw2aggwtnhl805i8",
+    "ct_id": "wfjyxu8bnw2aggwtnhl805i8",
+    "adapter_ctid": "npv9b7z5qafr0i2mruem6dj6",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: COPD"
   },
-  "udbydjqj76l8kl6mi2s3v7vd": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_udbydjqj76l8kl6mi2s3v7vd",
-    "ct_id": "udbydjqj76l8kl6mi2s3v7vd",
-    "adapter_ctid": "livh99p75uo3mssipi40v044",
+  "jmo8nz2e7f655nhlf5psynlc": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jmo8nz2e7f655nhlf5psynlc",
+    "ct_id": "jmo8nz2e7f655nhlf5psynlc",
+    "adapter_ctid": "oeucgdjwwsfls8kc9xke97mt",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Coronary Heart Disease"
   },
-  "of4crvmnrr3s5q5396kmt0jv": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_of4crvmnrr3s5q5396kmt0jv",
-    "ct_id": "of4crvmnrr3s5q5396kmt0jv",
-    "adapter_ctid": "jy09m0fa7skhj3w2h4vfak7b",
+  "kq2x1sgy3wjwp5hbcucw2y5r": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_kq2x1sgy3wjwp5hbcucw2y5r",
+    "ct_id": "kq2x1sgy3wjwp5hbcucw2y5r",
+    "adapter_ctid": "gz7b6ffqmq6yc2w456231h73",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Depression"
   },
-  "fzpb9xr5jg2m3e3dzmvi1v3h": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_fzpb9xr5jg2m3e3dzmvi1v3h",
-    "ct_id": "fzpb9xr5jg2m3e3dzmvi1v3h",
-    "adapter_ctid": "f5o4ld7fm5kqhzf102q4y2r9",
+  "bq1848nkj1vztl5ej911rqqs": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_bq1848nkj1vztl5ej911rqqs",
+    "ct_id": "bq1848nkj1vztl5ej911rqqs",
+    "adapter_ctid": "e87kr7flrdvo7vocprcrojx5",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Diabetes"
   },
-  "sbulkq80j4fkbiql4zgje4qr": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_sbulkq80j4fkbiql4zgje4qr",
-    "ct_id": "sbulkq80j4fkbiql4zgje4qr",
-    "adapter_ctid": "zosryxykww1exsfjtb0s3fzv",
+  "u70io4uc9cye55b6bgefa01t": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_u70io4uc9cye55b6bgefa01t",
+    "ct_id": "u70io4uc9cye55b6bgefa01t",
+    "adapter_ctid": "ihlff0uf9x9lvawwnvdp2gfw",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Emphysema"
   },
-  "yshoeps2dm0j1ueusqs825v6": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_yshoeps2dm0j1ueusqs825v6",
-    "ct_id": "yshoeps2dm0j1ueusqs825v6",
-    "adapter_ctid": "p4c4kczn0x3qkvzk6vty9vrs",
+  "o93ekm0cj6z7d8tzu3ekcd0g": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_o93ekm0cj6z7d8tzu3ekcd0g",
+    "ct_id": "o93ekm0cj6z7d8tzu3ekcd0g",
+    "adapter_ctid": "snmndzi01eqhtra6lnhb9f0f",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Heart Attack"
@@ -447,18 +447,18 @@
     "type": "XdToken",
     "label": "Condition Indicator Basis"
   },
-  "sw5rt0k2uap0e3xgl4rznfgu": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_sw5rt0k2uap0e3xgl4rznfgu",
-    "ct_id": "sw5rt0k2uap0e3xgl4rznfgu",
-    "adapter_ctid": "f3h2velkrit4w56qlfceatjl",
+  "fec7opy5hdofd8a97mwcaxjj": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_fec7opy5hdofd8a97mwcaxjj",
+    "ct_id": "fec7opy5hdofd8a97mwcaxjj",
+    "adapter_ctid": "fgwlzjihc2naljhx99xrinui",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Kidney Disease"
   },
-  "atqkooccakulfhkt18c008fx": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_atqkooccakulfhkt18c008fx",
-    "ct_id": "atqkooccakulfhkt18c008fx",
-    "adapter_ctid": "rhb4ksmdy1b0rx39kbpt9l2f",
+  "lidib2jgemps6wh9ykln9wuq": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_lidib2jgemps6wh9ykln9wuq",
+    "ct_id": "lidib2jgemps6wh9ykln9wuq",
+    "adapter_ctid": "n67w84clg8rzhuvnoi2mze7v",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Liver Condition"
@@ -471,42 +471,42 @@
     "type": "XdToken",
     "label": "Condition: Osteoporosis"
   },
-  "xsohkckyof7y1xj8h1ab4pxu": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_xsohkckyof7y1xj8h1ab4pxu",
-    "ct_id": "xsohkckyof7y1xj8h1ab4pxu",
-    "adapter_ctid": "ibjm0hmb9xywzwptvh4wsuzh",
+  "ub3s17jv5dwkl2774jxzvjpd": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ub3s17jv5dwkl2774jxzvjpd",
+    "ct_id": "ub3s17jv5dwkl2774jxzvjpd",
+    "adapter_ctid": "dvllk61meoow2b4ujwnh5adr",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Skin Cancer"
   },
-  "zc6p008h5naqev8zngtzvyx9": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_zc6p008h5naqev8zngtzvyx9",
-    "ct_id": "zc6p008h5naqev8zngtzvyx9",
-    "adapter_ctid": "fblg9innykrg6wveclrn2gz7",
+  "moqy6wwo2lailptfr29d4jgv": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_moqy6wwo2lailptfr29d4jgv",
+    "ct_id": "moqy6wwo2lailptfr29d4jgv",
+    "adapter_ctid": "q4u3ybdt34p2iyb6qgx69yku",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Stroke"
   },
-  "p8u71b4lhct4ra0szgkex7xo": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_p8u71b4lhct4ra0szgkex7xo",
-    "ct_id": "p8u71b4lhct4ra0szgkex7xo",
-    "adapter_ctid": "y429feu1qzr7lnagv9ua2cc6",
+  "ixjb8fmwbvq7j7yzrs9eene9": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ixjb8fmwbvq7j7yzrs9eene9",
+    "ct_id": "ixjb8fmwbvq7j7yzrs9eene9",
+    "adapter_ctid": "ea1q3sfyd2tl9qquzcg5lwtv",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Condition: Thyroid Problem"
   },
-  "bhi8aatu3lxo3erx3mo5y08v": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_bhi8aatu3lxo3erx3mo5y08v",
-    "ct_id": "bhi8aatu3lxo3erx3mo5y08v",
-    "adapter_ctid": "iguaqbdzjqk634r04nl5tmt0",
+  "eh0v402zw6c1yd7oznuingjs": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_eh0v402zw6c1yd7oznuingjs",
+    "ct_id": "eh0v402zw6c1yd7oznuingjs",
+    "adapter_ctid": "cxk1osrnkix4d0peeoyrodb5",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Education Level (EDUCA)"
   },
-  "j67yf27qljb83m2fwvown1lk": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_j67yf27qljb83m2fwvown1lk",
-    "ct_id": "j67yf27qljb83m2fwvown1lk",
-    "adapter_ctid": "er846fdase95qfn51295h02p",
+  "k05wg0bbugu8ukcdmnmlt1qy": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_k05wg0bbugu8ukcdmnmlt1qy",
+    "ct_id": "k05wg0bbugu8ukcdmnmlt1qy",
+    "adapter_ctid": "i56itikn5swzjrdwd9vxqjz0",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Employment Status (EMPLOY1)"
@@ -519,34 +519,34 @@
     "type": "XdToken",
     "label": "Imputed Race/Ethnicity Value (_IMPRACE)"
   },
-  "crdh278iwq7azbtcgsuxteve": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_crdh278iwq7azbtcgsuxteve",
-    "ct_id": "crdh278iwq7azbtcgsuxteve",
-    "adapter_ctid": "gr29r0bd1qh6bg27jk3gfag9",
+  "dju49c0pact95uwpsah5va7x": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_dju49c0pact95uwpsah5va7x",
+    "ct_id": "dju49c0pact95uwpsah5va7x",
+    "adapter_ctid": "tz1jbc766kz5f7vx75z1xg3e",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Income Level (INCOME3)"
   },
-  "czh5vzmdeijkwrtyla1w7su8": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_czh5vzmdeijkwrtyla1w7su8",
-    "ct_id": "czh5vzmdeijkwrtyla1w7su8",
-    "adapter_ctid": "yfhu36gacryjw93df3jbuc5t",
+  "owy9ch3j6pf97109icu555h7": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_owy9ch3j6pf97109icu555h7",
+    "ct_id": "owy9ch3j6pf97109icu555h7",
+    "adapter_ctid": "rc89bgh52190d8eiw3ypgvp3",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Marital Status (MARITAL)"
   },
-  "gighl3atjkq88ttivdezt4p7": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_gighl3atjkq88ttivdezt4p7",
-    "ct_id": "gighl3atjkq88ttivdezt4p7",
-    "adapter_ctid": "q024v5d61vo8bjlt8u8aoh0d",
+  "xgqur4ng24jxjy9ynh7o8n09": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_xgqur4ng24jxjy9ynh7o8n09",
+    "ct_id": "xgqur4ng24jxjy9ynh7o8n09",
+    "adapter_ctid": "l9f9j1gore6dq4zs42ffs31a",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Pregnancy Status (PREGNANT)"
   },
-  "evbpc370eyfc3q3lldwifu78": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_evbpc370eyfc3q3lldwifu78",
-    "ct_id": "evbpc370eyfc3q3lldwifu78",
-    "adapter_ctid": "wvcuj86059g45cb7afy0phwm",
+  "h7uor7e9qd9oqd1y0z74odub": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_h7uor7e9qd9oqd1y0z74odub",
+    "ct_id": "h7uor7e9qd9oqd1y0z74odub",
+    "adapter_ctid": "c2vpfxgd2jqd0134le0ygtec",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Primary Source of Health Insurance (PRIMINSR)"
@@ -559,26 +559,26 @@
     "type": "XdToken",
     "label": "Sex of Respondent (SEXVAR)"
   },
-  "vyc62ndwazzqyn5ee5oeno1o": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_vyc62ndwazzqyn5ee5oeno1o",
-    "ct_id": "vyc62ndwazzqyn5ee5oeno1o",
-    "adapter_ctid": "aerwuld48p0deu31rijadbv5",
+  "e57oiwd36dqgjfs25bxakvyy": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_e57oiwd36dqgjfs25bxakvyy",
+    "ct_id": "e57oiwd36dqgjfs25bxakvyy",
+    "adapter_ctid": "bphy8thw915ek8mqadcud1y1",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Veteran Status"
   },
-  "zmpqfc6tb0o2hgu8qs6lj8tp": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_zmpqfc6tb0o2hgu8qs6lj8tp",
-    "ct_id": "zmpqfc6tb0o2hgu8qs6lj8tp",
-    "adapter_ctid": "kv6rttqb1ftfogc8s42xrqf9",
+  "ukvlpa3hvurit0wuzkkgh7nx": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ukvlpa3hvurit0wuzkkgh7nx",
+    "ct_id": "ukvlpa3hvurit0wuzkkgh7nx",
+    "adapter_ctid": "oxlp1hzq0e78x2qyekf6nz96",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Are you pregnant now?"
   },
-  "luq973ggnjoo9ixkt0dym8v6": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_luq973ggnjoo9ixkt0dym8v6",
-    "ct_id": "luq973ggnjoo9ixkt0dym8v6",
-    "adapter_ctid": "r7t7cvtkprjf4k0thmkzzbz7",
+  "c2wsks8tysw588vtax4cssuw": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_c2wsks8tysw588vtax4cssuw",
+    "ct_id": "c2wsks8tysw588vtax4cssuw",
+    "adapter_ctid": "fetriuha60xaiatlo2punozi",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Category of Health Insurance"
@@ -591,18 +591,18 @@
     "type": "XdToken",
     "label": "Current Educational Attainment"
   },
-  "oy35qocyvn0zxq8ni4azvz39": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_oy35qocyvn0zxq8ni4azvz39",
-    "ct_id": "oy35qocyvn0zxq8ni4azvz39",
-    "adapter_ctid": "ghyghsy37eqekdq91e4rk55v",
+  "nsms1sp76vlxpzpnkoumpy8a": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_nsms1sp76vlxpzpnkoumpy8a",
+    "ct_id": "nsms1sp76vlxpzpnkoumpy8a",
+    "adapter_ctid": "w720g6pdozdbymhbtym38lly",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Employment Status"
   },
-  "qsetd453kk9own8co1wmc5cz": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_qsetd453kk9own8co1wmc5cz",
-    "ct_id": "qsetd453kk9own8co1wmc5cz",
-    "adapter_ctid": "lt5ldcz6erg3hhsij4pv7c43",
+  "epkiv5tjehgc94m17sxyi4g6": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_epkiv5tjehgc94m17sxyi4g6",
+    "ct_id": "epkiv5tjehgc94m17sxyi4g6",
+    "adapter_ctid": "pd4trv8sfipelo4eely15dng",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Marital Status"
@@ -639,10 +639,10 @@
     "type": "XdString",
     "label": "Years"
   },
-  "abjbfcel6qppumg0rlf78wcp": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_abjbfcel6qppumg0rlf78wcp",
-    "ct_id": "abjbfcel6qppumg0rlf78wcp",
-    "adapter_ctid": "nufn1nz347zhnyx962xu8nly",
+  "d3kvmj4ri2h2dhbijwds3xqy": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_d3kvmj4ri2h2dhbijwds3xqy",
+    "ct_id": "d3kvmj4ri2h2dhbijwds3xqy",
+    "adapter_ctid": "w95dh14x0sf9tthxovc81tgj",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Number of Children in Household (CHILDREN)"
@@ -671,82 +671,82 @@
     "type": "XdString",
     "label": "years or months"
   },
-  "rw8s64t4v80421biq8eo9p2x": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_rw8s64t4v80421biq8eo9p2x",
-    "ct_id": "rw8s64t4v80421biq8eo9p2x",
-    "adapter_ctid": "pk3hw4wzjnd5e1oa2yxc69dk",
+  "hg9jj08jjp2zzftl24jpt4l7": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_hg9jj08jjp2zzftl24jpt4l7",
+    "ct_id": "hg9jj08jjp2zzftl24jpt4l7",
+    "adapter_ctid": "pnbi86aqgn5yb0d8yxrncq8c",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Blind or Serious Difficulty Seeing (BLIND)"
   },
-  "hs066djavlc5r494vqu61thl": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hs066djavlc5r494vqu61thl",
-    "ct_id": "hs066djavlc5r494vqu61thl",
-    "adapter_ctid": "vaejfpw94f682dg8981lpwos",
+  "sl111cv5z7udtg90zs99o5k2": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_sl111cv5z7udtg90zs99o5k2",
+    "ct_id": "sl111cv5z7udtg90zs99o5k2",
+    "adapter_ctid": "rsur9x4cafv0k4kbyi2ibv7y",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Deaf or Serious Difficulty Hearing (DEAF)"
   },
-  "l9s5avvkix0og66m0lewwqgg": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_l9s5avvkix0og66m0lewwqgg",
-    "ct_id": "l9s5avvkix0og66m0lewwqgg",
-    "adapter_ctid": "mghaxfjyhejq0djyg0p7a1th",
+  "kp3kttctf0fb6h9j0kel1bbx": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_kp3kttctf0fb6h9j0kel1bbx",
+    "ct_id": "kp3kttctf0fb6h9j0kel1bbx",
+    "adapter_ctid": "qdd1a5v0d1pgwpijlwjrttja",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Doing Errands Alone (DIFFALON)"
   },
-  "zbwodv9m60b33blptlellmu0": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_zbwodv9m60b33blptlellmu0",
-    "ct_id": "zbwodv9m60b33blptlellmu0",
-    "adapter_ctid": "pr9t93hr1blrb5r5o3o6h03p",
+  "a3y99qyj9iv8ayhvsrapr273": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_a3y99qyj9iv8ayhvsrapr273",
+    "ct_id": "a3y99qyj9iv8ayhvsrapr273",
+    "adapter_ctid": "d7ctak0bvl6nnd9g37ev3qmo",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Difficulty Dressing or Bathing (DIFFDRES)"
   },
-  "e104gkr3e96ekydrpe8qogjw": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_e104gkr3e96ekydrpe8qogjw",
-    "ct_id": "e104gkr3e96ekydrpe8qogjw",
-    "adapter_ctid": "dzkw7ngcz4zzsr68e6b50rvx",
+  "kszrkw68dgwqjbgg7zac8jfa": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_kszrkw68dgwqjbgg7zac8jfa",
+    "ct_id": "kszrkw68dgwqjbgg7zac8jfa",
+    "adapter_ctid": "lk9pjb3s3bez7taci4wf5wvd",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Serious Difficulty Concentrating, Remembering or Deciding (DECIDE)"
   },
-  "m3970or5qg49k78l0lq1ptjc": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_m3970or5qg49k78l0lq1ptjc",
-    "ct_id": "m3970or5qg49k78l0lq1ptjc",
-    "adapter_ctid": "s38nznee1x9kak4nf75pkc3r",
+  "p28qox9j5xr0ddsxv1nz7r2b": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_p28qox9j5xr0ddsxv1nz7r2b",
+    "ct_id": "p28qox9j5xr0ddsxv1nz7r2b",
+    "adapter_ctid": "nkqykudc8v2sqg2llwiu3ztx",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Serious Difficulty Walking or Climbing Stairs (DIFFWALK)"
   },
-  "a08lkh4xjvqqjtz7sxy129pa": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_a08lkh4xjvqqjtz7sxy129pa",
-    "ct_id": "a08lkh4xjvqqjtz7sxy129pa",
-    "adapter_ctid": "myh7mf4v2aq3ryf4a3ewmapc",
+  "jism06vp9hkg2u53kpbaf2qd": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jism06vp9hkg2u53kpbaf2qd",
+    "ct_id": "jism06vp9hkg2u53kpbaf2qd",
+    "adapter_ctid": "ij9bentrkdns152qypjxk365",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Exercise in Past 30 Days (EXERANY2)"
   },
-  "j6jj7wf0olxh3db6td9wey6g": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_j6jj7wf0olxh3db6td9wey6g",
-    "ct_id": "j6jj7wf0olxh3db6td9wey6g",
-    "adapter_ctid": "v9ghbsx8x43n7irclyc8a6wi",
+  "gjo2iktwwiy6ug4jy2eq025w": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_gjo2iktwwiy6ug4jy2eq025w",
+    "ct_id": "gjo2iktwwiy6ug4jy2eq025w",
+    "adapter_ctid": "pld1b3017ky04ltm8s1ndnii",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "General Health Status"
   },
-  "fa0aian3co6if5igu488whhr": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_fa0aian3co6if5igu488whhr",
-    "ct_id": "fa0aian3co6if5igu488whhr",
-    "adapter_ctid": "pojjp13k3i95ttw23sm24gz2",
+  "ddmtnw5f3sxbchiko1j01sie": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_ddmtnw5f3sxbchiko1j01sie",
+    "ct_id": "ddmtnw5f3sxbchiko1j01sie",
+    "adapter_ctid": "vq4asu8dszqcoydr90gaimfp",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Length of Time Since Last Routine Checkup (CHECKUP1)"
   },
-  "cjh0775qjyyaqb9spk1k3rty": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_cjh0775qjyyaqb9spk1k3rty",
-    "ct_id": "cjh0775qjyyaqb9spk1k3rty",
-    "adapter_ctid": "jmna260wybd2zd4ou66fqoie",
+  "hqyuuhoqfeomuufr5524yp0c": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_hqyuuhoqfeomuufr5524yp0c",
+    "ct_id": "hqyuuhoqfeomuufr5524yp0c",
+    "adapter_ctid": "cvpckd8tbwk8xbf2oeendvyu",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Days Mental Health Not Good, Past 30 (MENTHLTH)"
@@ -759,10 +759,10 @@
     "type": "XdString",
     "label": "Days"
   },
-  "kmr0bcq4vaae10cw4hhgjbtx": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_kmr0bcq4vaae10cw4hhgjbtx",
-    "ct_id": "kmr0bcq4vaae10cw4hhgjbtx",
-    "adapter_ctid": "quq1mhgciebpg3oacr6cxsdo",
+  "gl4co76ubrg8rn7022q64lia": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_gl4co76ubrg8rn7022q64lia",
+    "ct_id": "gl4co76ubrg8rn7022q64lia",
+    "adapter_ctid": "pvyvg39u5yifuyz7dnlooa52",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Days Physical Health Not Good, Past 30 (PHYSHLTH)"
@@ -823,26 +823,26 @@
     "type": "XdToken",
     "label": "Computed Smoking Status (_SMOKER3)"
   },
-  "ecwiva31y2fky3eu1mdnvurt": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_ecwiva31y2fky3eu1mdnvurt",
-    "ct_id": "ecwiva31y2fky3eu1mdnvurt",
-    "adapter_ctid": "jtlejg2rigitywxgabu1jkg9",
+  "nh7yxuomhyb6mrb6g73dmvid": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_nh7yxuomhyb6mrb6g73dmvid",
+    "ct_id": "nh7yxuomhyb6mrb6g73dmvid",
+    "adapter_ctid": "xbd6zzcnk5xp3cbroag758vq",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Current E-cigarette Use (ECIGNOW2)"
   },
-  "kzni1q04rghj23ca0zbhauu5": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_kzni1q04rghj23ca0zbhauu5",
-    "ct_id": "kzni1q04rghj23ca0zbhauu5",
-    "adapter_ctid": "mb6mwfeajun0wn1agj109jeo",
+  "jed5xgv6wt01fypgezaprjj1": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_jed5xgv6wt01fypgezaprjj1",
+    "ct_id": "jed5xgv6wt01fypgezaprjj1",
+    "adapter_ctid": "carmxrtzc4gqqqnk72vu1gtd",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Frequency of Days Now Smoking (SMOKDAY2)"
   },
-  "hukufq8g2u2k0cpcal7uxsa8": {
-    "placeholder": "__PLACEHOLDER__xdtoken-value_hukufq8g2u2k0cpcal7uxsa8",
-    "ct_id": "hukufq8g2u2k0cpcal7uxsa8",
-    "adapter_ctid": "j08jnwhphzsz339c1bd1bwnp",
+  "o5ns82g7ac1ofd6i2snnzr12": {
+    "placeholder": "__PLACEHOLDER__xdtoken-value_o5ns82g7ac1ofd6i2snnzr12",
+    "ct_id": "o5ns82g7ac1ofd6i2snnzr12",
+    "adapter_ctid": "b24ifjdi6qln2v0p60be12we",
     "element_name": "xdtoken-value",
     "type": "XdToken",
     "label": "Smoked at Least 100 Cigarettes (SMOKE100)"
@@ -855,10 +855,10 @@
     "type": "XdToken",
     "label": "Smoking Status"
   },
-  "gr95a9bk6mfr0220fmxc3o4e": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_gr95a9bk6mfr0220fmxc3o4e",
-    "ct_id": "gr95a9bk6mfr0220fmxc3o4e",
-    "adapter_ctid": "rycouibueybaqp4hzjjs9jte",
+  "ibn88cop59rkf8sx982tkdub": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_ibn88cop59rkf8sx982tkdub",
+    "ct_id": "ibn88cop59rkf8sx982tkdub",
+    "adapter_ctid": "opd0v5ivs8ivp3e5eydjebmw",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Average Alcoholic Drinks per Day in Past 30 (AVEDRNK3)"
@@ -871,18 +871,18 @@
     "type": "XdString",
     "label": "Drinks"
   },
-  "g0dq4n7oml1mmi21t50biiwt": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_g0dq4n7oml1mmi21t50biiwt",
-    "ct_id": "g0dq4n7oml1mmi21t50biiwt",
-    "adapter_ctid": "c1vlbryimxwvm55s9vj2w7tl",
+  "rfna4x2fps9mpssz7e5updk1": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_rfna4x2fps9mpssz7e5updk1",
+    "ct_id": "rfna4x2fps9mpssz7e5updk1",
+    "adapter_ctid": "b0yopahe0j822d3i3oh3yj05",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Binge Drinking Occasions in Past 30 (DRNK3GE5)"
   },
-  "nh9s5b7gb713asjatbg5guyc": {
-    "placeholder": "__PLACEHOLDER__xdcount-value_nh9s5b7gb713asjatbg5guyc",
-    "ct_id": "nh9s5b7gb713asjatbg5guyc",
-    "adapter_ctid": "yczwu98f29i5a7ov89cay8q9",
+  "g8g0dbj6un5dsfuoqlrilk4x": {
+    "placeholder": "__PLACEHOLDER__xdcount-value_g8g0dbj6un5dsfuoqlrilk4x",
+    "ct_id": "g8g0dbj6un5dsfuoqlrilk4x",
+    "adapter_ctid": "fxy46dzn0uqnzuqyzhyghtys",
     "element_name": "xdcount-value",
     "type": "XdCount",
     "label": "Days in Past 30 Had Alcoholic Beverage (ALCDAY4)"

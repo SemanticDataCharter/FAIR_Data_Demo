@@ -48,7 +48,8 @@ class JSONInstanceGenerator:
     # XdType value element names
     VALUE_ELEMENTS = {
         'xdstring-value': 'string',
-        'xdboolean-value': 'boolean',
+        'true-value': 'boolean',
+        'false-value': 'boolean',
         'xdcount-value': 'integer',
         'xdquantity-value': 'decimal',
         'xdfloat-value': 'float',
@@ -231,7 +232,6 @@ class JSONInstanceGenerator:
         # Map field type to value element name
         type_to_elem = {
             'XdString': 'xdstring-value',
-            'XdBoolean': 'xdboolean-value',
             'XdCount': 'xdcount-value',
             'XdQuantity': 'xdquantity-value',
             'XdFloat': 'xdfloat-value',
@@ -261,6 +261,14 @@ class JSONInstanceGenerator:
                     text = value_elem.text
                     if not text.startswith(self.PLACEHOLDER_PREFIX):
                         return text
+            return None
+
+        if field_type == 'XdBoolean':
+            # The reference model writes <true-value>true</true-value> or <false-value>false</false-value>
+            for boolean_elem_name in ('true-value', 'false-value'):
+                value_elem = elem.find(f'.//{boolean_elem_name}')
+                if value_elem is not None and value_elem.text and not value_elem.text.startswith(self.PLACEHOLDER_PREFIX):
+                    return self._parse_value(value_elem.text, field_type)
             return None
 
         value_elem_name = type_to_elem.get(field_type, 'value')

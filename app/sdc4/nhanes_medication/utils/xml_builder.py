@@ -253,7 +253,20 @@ class XMLBuilder:
             value = form_data.get(field_name)
 
             # Get the expected value element name for this type
-            value_elem_name = self._get_value_element_name(field_type, meta)
+            value_elem_name = self._get_value_element_name(field_type, meta, value)
+
+            # A boolean is a choice of true-value or false-value; the published template carries one of them with
+            # a fixed text, so the element is renamed and filled from the value rather than from a placeholder
+            if field_type == 'XdBoolean' and value is not None and value != '':
+                booleans = [e for e in comp_elem.iter() if not callable(e.tag)
+                            and (etree.QName(e.tag).localname if '}' in e.tag else e.tag) in self.BOOLEAN_VALUE_ELEMENTS]
+                for extra in booleans[1:]:
+                    extra.getparent().remove(extra)
+                if booleans:
+                    booleans[0].tag = value_elem_name
+                    booleans[0].text = 'true' if value else 'false'
+                else:
+                    etree.SubElement(comp_elem, value_elem_name).text = 'true' if value else 'false'
 
             # Walk the subtree and replace _PH_/_OPT_PH_ markers
             for elem in comp_elem.iter():
@@ -553,9 +566,14 @@ class XMLBuilder:
 
         return '\n'.join(filtered_lines)
 
-    def _get_value_element_name(self, field_type: str, field_meta: Dict = None) -> str:
+    BOOLEAN_VALUE_ELEMENTS = ('true-value', 'false-value')
+
+    def _get_value_element_name(self, field_type: str, field_meta: Dict = None, value: Any = None) -> str:
         """
         Get the value element name for a given field type.
+
+        For XdBoolean the reference model is a choice: <true-value>true</true-value> or
+        <false-value>false</false-value>, so the element name depends on the value.
 
         For XdTemporal, the element name depends on which temporal types are allowed.
         The element name is xdtemporal-{subtype} where subtype is one of:
@@ -565,9 +583,10 @@ class XMLBuilder:
             field_type: The SDC4 type (XdString, XdTemporal, etc.)
             field_meta: Optional field metadata dict containing temporal_types for XdTemporal
         """
+        if field_type == 'XdBoolean':
+            return 'true-value' if value else 'false-value'
         type_map = {
             'XdString': 'xdstring-value',
-            'XdBoolean': 'xdboolean-value',
             'XdCount': 'xdcount-value',
             'XdQuantity': 'xdquantity-value',
             'XdFloat': 'xdfloat-value',
@@ -786,7 +805,7 @@ class XMLBuilder:
 
             # Add value
             if value is not None and value != '':
-                value_elem_name = self._get_value_element_name(field_type, meta)
+                value_elem_name = self._get_value_element_name(field_type, meta, value)
                 value_elem = etree.SubElement(component_elem, value_elem_name)
                 if field_type == 'XdBoolean':
                     value_elem.text = 'true' if value else 'false'
@@ -1262,7 +1281,7 @@ class XMLBuilder:
             else:
                 value = getattr(instance, field_name, None)
                 if value is not None:
-                    value_elem_name = self._get_value_element_name(field_type, meta)
+                    value_elem_name = self._get_value_element_name(field_type, meta, value)
                     value_elem = etree.SubElement(component_elem, value_elem_name)
                     if field_type == 'XdBoolean':
                         value_elem.text = 'true' if value else 'false'

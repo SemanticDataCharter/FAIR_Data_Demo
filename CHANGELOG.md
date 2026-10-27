@@ -2,6 +2,29 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.3.0 (2026-10-27)
+
+**A refused or unknown answer is an Exceptional Value, not a gap.** NHANES and BRFSS code a refusal and a don't-know
+with 7s and 9s, the opposite way round from each other; 4.2.x left both out and counted them. 4.3.0 carries each as
+the Exceptional Value it names, ASKR (Asked and Refused) or ASKU (Asked but Unknown), in place of the answer, by each
+survey's own codebook ([SOURCE-ERRATA.md](SOURCE-ERRATA.md)). The medication file's 55555, 77777 and 99999 are UNK,
+ASKR and ASKU.
+
+- **Published so an Exceptional Value can stand in place of a value.** SDCStudio published every value as required
+  before 4.24, so a refused answer had no valid form. Every answer that can be refused or not known is a revision
+  published under SDCStudio 4.24 (92 here; 4 in the NIH CDE library and 3 in the FHIR library), and four models are
+  revisions of theirs: **NHANES Participant 4.3.0** (`drjvqb171q9pqwcdq6nxxrr4`), **BRFSS Respondent 4.3.0**
+  (`zmlfrxyorqbb1e2id0cwhjyy`), **NHANES Medication 4.3.0** (`plc9gto1kzy244g1r2op257f`) and **CMS Beneficiary 4.3.0**
+  (`n7y449kzry6ax839d9g3oecd`). `models-4.3.0.json` records every model.
+- **NHANES's prevention reason codes are their own code system.** `I21.P` (prevent heart attack) is not ICD-10-CM;
+  it is carried as NHANES's code with its description, never as ICD-10-CM (SOURCE-ERRATA.md states the
+  non-conformance). The days taken has the range NHANES documents, 1 to 21,900 (E-2026-10-04).
+- **134 more medication records** (84,486 in all): a medicine whose name is unknown, refused or not known is a record
+  now, with an Exceptional Value for the name.
+- The four apps and packages are rebuilt and the records regenerated; a sample weighted to records with an
+  Exceptional Value validates against each published schema. The previous models stay published and resolvable,
+  retired with the reason naming their revision.
+
 ## 4.2.4 (2026-10-26)
 
 **The value bindings name what they say.** In 24 records, a value or a component was bound to a code that names

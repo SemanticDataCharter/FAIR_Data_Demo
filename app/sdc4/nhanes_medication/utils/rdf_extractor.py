@@ -79,7 +79,6 @@ class RDFExtractor:
     VALUE_ELEMENTS = {
         'XdString': 'xdstring-value',
         'XdToken': 'xdtoken-value',
-        'XdBoolean': 'xdboolean-value',
         'XdCount': 'xdcount-value',
         'XdOrdinal': 'xdordinal-value',
         'XdQuantity': 'xdquantity-value',
@@ -88,7 +87,11 @@ class RDFExtractor:
         'XdLink': 'xdlink-value',
         'XdFile': 'xdfile-value',
         # Note: XdTemporal is handled specially - see TEMPORAL_VALUE_ELEMENTS
+        # Note: XdBoolean is handled specially - see BOOLEAN_VALUE_ELEMENTS
     }
+
+    # XdBoolean is a choice in the reference model: the element present names the value
+    BOOLEAN_VALUE_ELEMENTS = ['true-value', 'false-value']
 
     # XdTemporal uses variant element names based on temporal subtype
     TEMPORAL_VALUE_ELEMENTS = [
@@ -346,6 +349,13 @@ class RDFExtractor:
                 value_elem = elem.find(f'.//{temporal_elem_name}')
                 if value_elem is not None and value_elem.text:
                     value_elem_name = temporal_elem_name
+                    break
+        elif field_type == 'XdBoolean':
+            # The reference model writes <true-value>true</true-value> or <false-value>false</false-value>
+            for boolean_elem_name in self.BOOLEAN_VALUE_ELEMENTS:
+                value_elem = elem.find(f'.//{boolean_elem_name}')
+                if value_elem is not None and value_elem.text:
+                    value_elem_name = boolean_elem_name
                     break
         else:
             value_elem_name = self.VALUE_ELEMENTS.get(field_type, 'value')

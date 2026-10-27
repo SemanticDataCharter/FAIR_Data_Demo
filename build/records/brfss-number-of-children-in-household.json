@@ -37,7 +37,7 @@
     }
   ],
   "identity_status": "none",
-  "supersedes_ct_id": "abjbfcel6qppumg0rlf78wcp",
+  "supersedes_ct_id": null,
   "members": [],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "u19jrjjc6aznug6hs2twjiy5",
+  "supersedes_ct_id": null,
   "members": [
     "brfss-deaf-or-hard-of-hearing",
     "brfss-blind-or-difficulty-seeing",

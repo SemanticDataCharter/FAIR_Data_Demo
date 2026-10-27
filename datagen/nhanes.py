@@ -15,7 +15,7 @@ import time
 from schema import Schema
 from shared import ASKR, ASKU, EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
 
-PARTICIPANT = "NHANES Participant 4.3.0"   # the 4.3.0 revision (Exceptional Values; SOURCE-ERRATA.md)
+PARTICIPANT = "NHANES Participant 4.3.1"   # the 4.3.1 revision (SOURCE-ERRATA.md)
 MEDICATION = "NHANES Medication 4.3.0"   # the 4.3.0 revision: prevention reason codes, Exceptional Values (SOURCE-ERRATA.md)
 AGENCY = "National Center for Health Statistics, Centers for Disease Control and Prevention"
 DROPPED = collections.Counter()   # (variable, null flavor) -> refused / don't-know answers carried as Exceptional Values

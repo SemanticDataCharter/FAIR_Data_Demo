@@ -2,6 +2,21 @@
 
 All notable changes to the FAIR Data Demo. Version numbers follow the SDC4 release line the models are published on.
 
+## 4.3.1 (2026-10-27)
+
+**No exact-match claim on a compound concept.** NIH describes most data elements with a compound concept: "State" is
+Address + State + Code, and only the whole means the element. The NIH CDE library had claimed each compound's first
+part as an exact match ("Are you pregnant now?" as exactly Person); its R-2026-10-27 round writes every part as what
+the element is about (`dcterms:subject`) and claims no match. Found by a code audit of every component library on 27
+October 2026, which found no code missing from its terminology and no answer bound to a wrong code outside the demo.
+
+- The demo composes four of those answers (pregnancy, insurance category, educational attainment, race and ethnicity)
+  in the NHANES, BRFSS and CMS demographics, so those clusters and the six above them are revisions, and three models
+  are revisions of theirs: **NHANES Participant 4.3.1** (`fafj69kdii37997sy7dpsz13`), **BRFSS Respondent 4.3.1**
+  (`avde43dotjjt10duhuvs4mo2`) and **CMS Beneficiary 4.3.1** (`z5cw245lvxw7atrbgqukyvbh`). `models-4.3.1.json`.
+- The answers and their Exceptional Values are unchanged; the records are regenerated on the new models (84,486 in
+  all) and a sample validates against each published schema.
+
 ## 4.3.0 (2026-10-27)
 
 **A refused or unknown answer is an Exceptional Value, not a gap.** NHANES and BRFSS code a refusal and a don't-know

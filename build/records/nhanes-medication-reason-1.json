@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "i213d6dp9r4c0nmzxkgc0tja",
+  "supersedes_ct_id": null,
   "members": [
     "https://axius-sdc.com/library/fhir/diagnosis-icd10cm",
     "nhanes-prevention-reason"

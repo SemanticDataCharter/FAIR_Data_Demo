@@ -33,14 +33,14 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "frvayvpr4jkzykc8ykchaev6",
   "members": [
     "https://axius-sdc.com/library/default/date-of-birth",
     "https://axius-sdc.com/library/default/administrative-gender",
     "cms-sex-code",
     "https://axius-sdc.com/library/fhir/deceased-indicator",
     "https://axius-sdc.com/library/fhir/deceased-date",
-    "ct:u5tietya3u56hbz2kos06ai7",
+    "ct:lasx9q9q5wgyvtnwtzjth55m",
     "cms-race-code",
     "cms-state-code",
     "cms-county-code"

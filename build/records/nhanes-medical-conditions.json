@@ -33,7 +33,7 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": "hmaeg366kmkc99g6gdsejufy",
+  "supersedes_ct_id": null,
   "members": [
     "chronic-condition-indicators",
     "nhanes-still-have-asthma",

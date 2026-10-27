@@ -17,7 +17,8 @@ members:
 - cms-sex-code
 - https://axius-sdc.com/library/fhir/deceased-indicator
 - https://axius-sdc.com/library/fhir/deceased-date
-- ct:u5tietya3u56hbz2kos06ai7
+- ct:lasx9q9q5wgyvtnwtzjth55m
 - cms-race-code
 - cms-state-code
 - cms-county-code
+supersedes: frvayvpr4jkzykc8ykchaev6

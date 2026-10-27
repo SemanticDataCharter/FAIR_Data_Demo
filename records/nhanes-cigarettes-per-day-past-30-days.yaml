@@ -12,3 +12,4 @@ constraints:
   units: units-cigarettes
   min_inclusive: 0
   max_inclusive: 100
+supersedes: v9wj86qu70lda3tt2dh299wz

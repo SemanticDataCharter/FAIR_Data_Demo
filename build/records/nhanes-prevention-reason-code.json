@@ -1,0 +1,49 @@
+{
+  "tiny_id": "nhanes-prevention-reason-code",
+  "label": "Prevention Reason Code (NHANES)",
+  "description": "An NHANES prevention reason code (RXDRSC1 to RXDRSC3): an ICD-10-CM code with the letter P appended, meaning the medicine is taken to prevent the condition (I21.P, prevent heart attack). NHANES's own code, not an ICD-10-CM code: ICD-10-CM has no I21.P.",
+  "sdc_type": "XdString",
+  "excluded": false,
+  "constraints": {
+    "max_length": 8,
+    "str_fmt": "[A-TV-Z][0-9][0-9AB][.][0-9A-TV-Z]{0,3}P"
+  },
+  "enumeration": [],
+  "links": [
+    {
+      "predicate": "dcterms:identifier",
+      "iri": "https://axius-sdc.com/library/fair/nhanes-prevention-reason-code",
+      "basis": "mechanical",
+      "note": "library slot; stable across revisions"
+    },
+    {
+      "predicate": "dcterms:source",
+      "iri": "https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2017",
+      "basis": "mechanical",
+      "note": "NHANES 2017-2018"
+    },
+    {
+      "predicate": "dcterms:publisher",
+      "iri": "https://axius-sdc.com",
+      "basis": "mechanical",
+      "note": "Axius SDC, Inc."
+    },
+    {
+      "predicate": "skos:exactMatch",
+      "iri": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm",
+      "basis": "mechanical",
+      "note": ""
+    },
+    {
+      "predicate": "rdfs:seeAlso",
+      "iri": "https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/RXQ_RX_J.htm#RXDRSC1",
+      "basis": "mechanical",
+      "note": ""
+    }
+  ],
+  "identity_status": "exact",
+  "supersedes_ct_id": null,
+  "members": [],
+  "flags": [],
+  "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"
+}

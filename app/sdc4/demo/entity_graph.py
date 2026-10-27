@@ -74,10 +74,10 @@ PARTY_REF_PREFIX = 'urn:fair-data-demo:party:'   # no record carries a party ref
 #: Which components name a record on screen, per data model. First present wins,
 #: several are joined with a space (given name + surname).
 TITLE_LABELS: Dict[str, List[List[str]]] = {
-    'tp5pg0u4dasqarie0b3ujn2u': [['Respondent Sequence Number (SEQN)']],                       # NHANES Participant
-    'epbdfmvxc3gbh5f66hhb3o2m': [['Generic Drug Name (RXDDRUG)'], ['Respondent Sequence Number (SEQN)']],   # NHANES Medication
-    'j6wmvhr46irxht2ls90nry8k': [['Annual Sequence Number (SEQNO)']],                          # BRFSS Respondent
-    'vj0hr75146j0pbedvc0iaqrz': [['Beneficiary Code (DESYNPUF_ID)']],                          # CMS Beneficiary
+    'drjvqb171q9pqwcdq6nxxrr4': [['Respondent Sequence Number (SEQN)']],                       # NHANES Participant
+    'plc9gto1kzy244g1r2op257f': [['Generic Drug Name (RXDDRUG)'], ['Respondent Sequence Number (SEQN)']],   # NHANES Medication
+    'zmlfrxyorqbb1e2id0cwhjyy': [['Annual Sequence Number (SEQNO)']],                          # BRFSS Respondent
+    'n7y449kzry6ax839d9g3oecd': [['Beneficiary Code (DESYNPUF_ID)']],                          # CMS Beneficiary
     'ji1eccop92mlmikwq5gwp7cr': [['Claim ID (CLM_ID)']],                                       # CMS Inpatient Claim
     'mllwhe842wtnim4ms48qonio': [['Claim ID (CLM_ID)']],                                       # CMS Outpatient Claim
     'nvemvhvdkctdlm9alwwgcay7': [['Prescription Drug Event ID (PDE_ID)']],                     # CMS Prescription Drug Event

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sdc4:dm-epbdfmvxc3gbh5f66hhb3o2m
+<sdc4:dm-plc9gto1kzy244g1r2op257f
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:sdc4="https://semanticdatacharter.com/ns/sdc4/"
-  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-epbdfmvxc3gbh5f66hhb3o2m.xsd">
+  xsi:schemaLocation="https://semanticdatacharter.com/ns/sdc4/ https://semanticdatacharter.com/dmlib/dm-plc9gto1kzy244g1r2op257f.xsd">
 
-  <dm-label>NHANES Medication</dm-label>
+  <dm-label>NHANES Medication 4.3.0</dm-label>
   <dm-language>en-US</dm-language>
   <dm-encoding>utf-8</dm-encoding>
   <creation_timestamp>_PH_</creation_timestamp>
-  <instance_id>msb1llb7rhouq857yq2j14bz</instance_id>
+  <instance_id>t9jxvsj2vtksscq8j4af50p3</instance_id>
   <instance_version>_PH_</instance_version>
   <source_instance_id>_OPT_PH_</source_instance_id>
   <source_version_id>_OPT_PH_</source_version_id>
   <current-state>_OPT_PH_</current-state>
-  <sdc4:ms-jo2kw48cijwgg64s6cud2el1>
+  <sdc4:ms-rzlq0w15v4jci151pg5bdxpi>
     <label>NHANES Medication Governed Record</label>
   <sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
     <label>Audit Event</label>
@@ -200,11 +200,11 @@
     </sdc4:ms-uwiosm2q9ym3ewr4de910s70>
   </sdc4:ms-r5fply6fvzhg90zybxgdx5cb>
   </sdc4:ms-t2tvd3wylxrstdeu5aw6gkw1>
-  <sdc4:ms-ncudsi2t2ij3rd2pmnnfr2j9>
+  <sdc4:ms-pgn54ip279evo9nxul6bsw2d>
     <label>NHANES Medication</label>
-  <sdc4:ms-i213d6dp9r4c0nmzxkgc0tja>
+  <sdc4:ms-rgrfnzoti0vquavt7m32mf8k>
     <label>Medication Reason 1</label>
-  <sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
+  <sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
     <label>Diagnosis (ICD-10-CM)</label>
   <sdc4:ms-ist2xk6m5ews6vch4d7tezej>
     <sdc4:ms-jwgx8nvbtsim7ck4uqmpqyl2>
@@ -235,8 +235,8 @@
       <xdstring-language>_OPT_PH_</xdstring-language>
     </sdc4:ms-eo5tlfr0576ypknys5alvcn0>
   </sdc4:ms-deau6rxprq0zivzdddupk7cj>
-  <sdc4:ms-dpzwsqo29f64gp2snh4y5lly>
-    <sdc4:ms-efimv7gxg5ompt8m6xb2b6k5>
+  <sdc4:ms-nkdwwfso43p0jwfqh7mx4vzl>
+    <sdc4:ms-km7yfw4egxchlb92ya8cqurd>
       <label>Diagnosis Code (ICD-10-CM)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -247,22 +247,74 @@
       <longitude>_OPT_PH_</longitude>
       <xdstring-value>_PH_</xdstring-value>
       <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-efimv7gxg5ompt8m6xb2b6k5>
-  </sdc4:ms-dpzwsqo29f64gp2snh4y5lly>
-  </sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
-  </sdc4:ms-i213d6dp9r4c0nmzxkgc0tja>
-  <sdc4:ms-u3qz0js9emqn2i7s5nyynmgt>
+    </sdc4:ms-km7yfw4egxchlb92ya8cqurd>
+  </sdc4:ms-nkdwwfso43p0jwfqh7mx4vzl>
+  </sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
+  <sdc4:ms-fyurnfjn767pebwima5aq1ek>
+    <label>Prevention Reason (NHANES)</label>
+  <sdc4:ms-wwx086gha0hmtvijpt9u8ell>
+    <sdc4:ms-m5mmhesnjwbf52fwdo8jzqxp>
+      <label>Code System: NHANES Prevention Reason</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <link>https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm</link>
+      <relation>codeSystem</relation>
+      <relation-uri>http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system</relation-uri>
+    </sdc4:ms-m5mmhesnjwbf52fwdo8jzqxp>
+  </sdc4:ms-wwx086gha0hmtvijpt9u8ell>
+  <sdc4:ms-hpgw0247ehdwzf2uz8c6n8l8>
+    <sdc4:ms-fkfgjboicxhcx4j0l7jhqw42>
+      <label>Prevention Reason Code (NHANES)</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-fkfgjboicxhcx4j0l7jhqw42>
+  </sdc4:ms-hpgw0247ehdwzf2uz8c6n8l8>
+  <sdc4:ms-deau6rxprq0zivzdddupk7cj>
+    <sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+      <label>Code Display Text</label>
+      <act>_OPT_PH_</act>
+      <vtb>_OPT_PH_</vtb>
+      <vte>_OPT_PH_</vte>
+      <tr>_OPT_PH_</tr>
+      <modified>_OPT_PH_</modified>
+      <latitude>_OPT_PH_</latitude>
+      <longitude>_OPT_PH_</longitude>
+      <xdstring-value>_PH_</xdstring-value>
+      <xdstring-language>_OPT_PH_</xdstring-language>
+    </sdc4:ms-eo5tlfr0576ypknys5alvcn0>
+  </sdc4:ms-deau6rxprq0zivzdddupk7cj>
+  </sdc4:ms-fyurnfjn767pebwima5aq1ek>
+  </sdc4:ms-rgrfnzoti0vquavt7m32mf8k>
+  <sdc4:ms-zljaiuq15yi0ow5y1l7luzoy>
     <label>Medication Reason 2</label>
-  <sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
+  <sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
     <label>Diagnosis (ICD-10-CM)</label>
-  </sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
-  </sdc4:ms-u3qz0js9emqn2i7s5nyynmgt>
-  <sdc4:ms-rozfpmwczk4yuw4c2vom4gyx>
+  </sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
+  <sdc4:ms-fyurnfjn767pebwima5aq1ek>
+    <label>Prevention Reason (NHANES)</label>
+  </sdc4:ms-fyurnfjn767pebwima5aq1ek>
+  </sdc4:ms-zljaiuq15yi0ow5y1l7luzoy>
+  <sdc4:ms-mwmrnudjznage2exv6e8v0ws>
     <label>Medication Reason 3</label>
-  <sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
+  <sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
     <label>Diagnosis (ICD-10-CM)</label>
-  </sdc4:ms-jk4cboqk4me0yj2i04m8c2ad>
-  </sdc4:ms-rozfpmwczk4yuw4c2vom4gyx>
+  </sdc4:ms-eijlau8c1zoa8fbw8fmy0ir4>
+  <sdc4:ms-fyurnfjn767pebwima5aq1ek>
+    <label>Prevention Reason (NHANES)</label>
+  </sdc4:ms-fyurnfjn767pebwima5aq1ek>
+  </sdc4:ms-mwmrnudjznage2exv6e8v0ws>
   <sdc4:ms-jd13g95pzsr1brs8skc01ffl>
     <sdc4:ms-wypildaam8rrd87zkkjxl732>
       <label>Generic Drug Code (RXDDRGID)</label>
@@ -277,8 +329,8 @@
       <xdstring-language>_OPT_PH_</xdstring-language>
     </sdc4:ms-wypildaam8rrd87zkkjxl732>
   </sdc4:ms-jd13g95pzsr1brs8skc01ffl>
-  <sdc4:ms-o1vger3dnfnogl7pakpj849k>
-    <sdc4:ms-lok5ozew80qmwah6h45jr69y>
+  <sdc4:ms-djay4l82cuwt578f8gv0xvnt>
+    <sdc4:ms-aut5uvzn0y8wb9xj2ox2n4wh>
       <label>Generic Drug Name (RXDDRUG)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -289,8 +341,8 @@
       <longitude>_OPT_PH_</longitude>
       <xdstring-value>_PH_</xdstring-value>
       <xdstring-language>_OPT_PH_</xdstring-language>
-    </sdc4:ms-lok5ozew80qmwah6h45jr69y>
-  </sdc4:ms-o1vger3dnfnogl7pakpj849k>
+    </sdc4:ms-aut5uvzn0y8wb9xj2ox2n4wh>
+  </sdc4:ms-djay4l82cuwt578f8gv0xvnt>
   <sdc4:ms-ijj1g8r7gy94nivsf80yzp3y>
     <sdc4:ms-uto4zszvpicva38wx77knz5y>
       <label>Respondent Sequence Number (SEQN)</label>
@@ -319,8 +371,8 @@
       <xdtoken-language>_OPT_PH_</xdtoken-language>
     </sdc4:ms-a1zr74c1vayeeglk54da7gaf>
   </sdc4:ms-r6lzzcxjuphediq43gde5dwf>
-  <sdc4:ms-qtsby21a4f98wbmvc3hh5ifl>
-    <sdc4:ms-jwgah039kcz574bbjvpxvfdj>
+  <sdc4:ms-k70txe6zyjaofmwl14nyxthq>
+    <sdc4:ms-jybwb4302jxgp028dyk2cgmt>
       <label>Number of Days Taken Medicine (RXDDAYS)</label>
       <act>_OPT_PH_</act>
       <vtb>_OPT_PH_</vtb>
@@ -338,8 +390,8 @@
         <label>Days</label>
         <xdstring-value>_PH_</xdstring-value>
       </xdcount-units>
-    </sdc4:ms-jwgah039kcz574bbjvpxvfdj>
-  </sdc4:ms-qtsby21a4f98wbmvc3hh5ifl>
+    </sdc4:ms-jybwb4302jxgp028dyk2cgmt>
+  </sdc4:ms-k70txe6zyjaofmwl14nyxthq>
   <sdc4:ms-b8p0fzjgozu22ylsddyy3ki6>
     <sdc4:ms-v28gzpjsaxkkgjm470icwipg>
       <label>Number of Prescription Medicines Taken (RXDCOUNT)</label>
@@ -361,7 +413,7 @@
       </xdcount-units>
     </sdc4:ms-v28gzpjsaxkkgjm470icwipg>
   </sdc4:ms-b8p0fzjgozu22ylsddyy3ki6>
-  </sdc4:ms-ncudsi2t2ij3rd2pmnnfr2j9>
+  </sdc4:ms-pgn54ip279evo9nxul6bsw2d>
   <sdc4:ms-vmikfu0irht9fmq7q02t3oqs>
     <label>PROV Activity</label>
   <sdc4:ms-vycps7awt38y25jhnrr4okxt>
@@ -704,7 +756,7 @@
     </sdc4:ms-i16vqj89it3db7d3c5qjko9p>
   </sdc4:ms-y1u3ladafqtryhgyetpn5ild>
   </sdc4:ms-c179ilk2ns15cd5rzzdfd6f6>
-  </sdc4:ms-jo2kw48cijwgg64s6cud2el1>
+  </sdc4:ms-rzlq0w15v4jci151pg5bdxpi>
   <sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
     <label>FAIR Pipeline Audit</label>
     <system-id>
@@ -719,4 +771,4 @@
     </location>
     <timestamp>2024-01-01T00:00:00</timestamp>
   </sdc4:ms-nz4t9iecyq1ukvs4s3ymgd8t>
-</sdc4:dm-epbdfmvxc3gbh5f66hhb3o2m>
+</sdc4:dm-plc9gto1kzy244g1r2op257f>

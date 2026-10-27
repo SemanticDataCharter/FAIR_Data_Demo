@@ -26,7 +26,7 @@ class NhanesMedicationInstance(models.Model):
     XML is the authoritative data format. All data is stored as validated XML,
     with JSON extracted for efficient JSONB queries in PostgreSQL.
 
-    DM CT_ID: epbdfmvxc3gbh5f66hhb3o2m
+    DM CT_ID: plc9gto1kzy244g1r2op257f
     """
 
     # ==========================================================================
@@ -128,7 +128,7 @@ class NhanesMedicationInstance(models.Model):
     # ==========================================================================
 
     # DM metadata - set at generation time, read-only at runtime
-    DM_CT_ID = 'epbdfmvxc3gbh5f66hhb3o2m'
+    DM_CT_ID = 'plc9gto1kzy244g1r2op257f'
     DM_LABEL = 'NhanesMedication'
 
     class Meta:

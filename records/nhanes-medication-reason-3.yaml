@@ -1,8 +1,8 @@
 key: nhanes-medication-reason-3
 label: Medication Reason 3
 type: Cluster
-description: 'The third reason the medicine is taken (RXDRSC3, RXDRSD3), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm
-  (FHIR).'
+description: 'The third reason the medicine is taken (RXDRSC3, RXDRSD3): an ICD-10-CM diagnosis as the FHIR coded value by identifier, or one
+  of NHANES''s prevention reason codes, which are not ICD-10-CM. Members: diagnosis-icd10cm (FHIR); Prevention Reason (NHANES).'
 source:
   name: NHANES 2017-2018
 links:
@@ -11,3 +11,5 @@ links:
   basis: standard
 members:
 - https://axius-sdc.com/library/fhir/diagnosis-icd10cm
+- nhanes-prevention-reason
+supersedes: rozfpmwczk4yuw4c2vom4gyx

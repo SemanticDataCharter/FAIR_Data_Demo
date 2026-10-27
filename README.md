@@ -9,7 +9,7 @@
 
 ![The FAIR Data Demo dashboard: seven study models, 84,352 records, one knowledge graph](docs/images/dashboard.png)
 
-This is version 4.2.4 ([releases](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)), the second build of the FAIR Data Demo and the first in which the studies actually share their components. It takes three real federal releases, the CDC's NHANES 2017-2018 and BRFSS 2022 surveys and the CMS DE-SynPUF Medicare claims sample, and models each as [SDC4](https://semanticdatacharter.com) data models composed from the published component libraries: the person, gender and money from the Default library, race, age, education, marital status and insurance from the NIH CDE library, blood pressure, vital signs, laboratory results, encounters, coverage and medication orders from the FHIR library, provenance and audit from the ProvGov library, each named by its identifier slot. What the studies share and no library holds, smoking status, twenty-one chronic-condition indicators with their SNOMED CT subjects, general health, veteran status, is authored once in this project with LOINC and SNOMED CT links, and every study that measures the concept composes the same one. What one study alone needs stays that study's, coded as it was recorded: ICD-9-CM, HCPCS and NDC for the 2008-2010 claims, the survey identifiers, weights, strata and the agencies' own codes beside every harmonized value.
+This is version 4.3.0 ([releases](https://github.com/SemanticDataCharter/FAIR_Data_Demo/releases)), the second build of the FAIR Data Demo and the first in which the studies actually share their components. It takes three real federal releases, the CDC's NHANES 2017-2018 and BRFSS 2022 surveys and the CMS DE-SynPUF Medicare claims sample, and models each as [SDC4](https://semanticdatacharter.com) data models composed from the published component libraries: the person, gender and money from the Default library, race, age, education, marital status and insurance from the NIH CDE library, blood pressure, vital signs, laboratory results, encounters, coverage and medication orders from the FHIR library, provenance and audit from the ProvGov library, each named by its identifier slot. What the studies share and no library holds, smoking status, twenty-one chronic-condition indicators with their SNOMED CT subjects, general health, veteran status, is authored once in this project with LOINC and SNOMED CT links, and every study that measures the concept composes the same one. What one study alone needs stays that study's, coded as it was recorded: ICD-9-CM, HCPCS and NDC for the 2008-2010 claims, the survey identifiers, weights, strata and the agencies' own codes beside every harmonized value.
 
 The seven models and the seven applications SDCStudio generated from them are in the repository exactly as downloaded, under `sdcstudio_downloads/`, so anyone who clones can read the raw models and apps before reading anything we wrote around them. The data is not invented: every record is generated from a row of the federal file by the template engine, validated on the way out against the model's XSD 1.1 schema, and states where it came from. Alongside its data each record carries its **Provenance** (the PROV-O activity that made it, whose used entity is the federal file by URL and release, and the pipeline as agent), an **Audit Event**, and a structural **Audit** naming the system and the source file, bound to the data at the source rather than bolted on afterward. The record's subject is the study's own participant identifier, so a reviewer can trace any value to its row.
 
@@ -25,21 +25,21 @@ You need Docker (or Podman) with the compose plugin, about 10GB of free RAM (Gra
 ```bash
 git clone https://github.com/SemanticDataCharter/FAIR_Data_Demo.git
 cd FAIR_Data_Demo
-git checkout v4.2.4
+git checkout v4.3.0
 # download the source files into source_data/ (see source_data/README.md), then
 python3 -m pip install pyreadstat pandas
 python3 scripts/convert_xpt_to_csv.py     # NHANES and BRFSS ship as SAS transport files
 make demo
 ```
 
-`git checkout v4.2.4` pins the release this README describes; skip it to run the current `main`. Every release also publishes the web image as `ghcr.io/semanticdatacharter/fair-data-demo:<version>`, and `make pull` fetches it instead of building locally.
+`git checkout v4.3.0` pins the release this README describes; skip it to run the current `main`. Every release also publishes the web image as `ghcr.io/semanticdatacharter/fair-data-demo:<version>`, and `make pull` fetches it instead of building locally.
 
 `make demo` starts the stack, generates the sampled dataset from the source files, and loads it. There are no accounts to create and nothing to send anywhere. The first run needs the network to pull container images and the host-side Python packages; after that the stack runs disconnected. When it finishes there are two front doors:
 
 | Open | What it is |
 |---|---|
 | **http://localhost:18100/console/** | The record console. Seven models, one record shown as table, document and graph, and the governance behind every field. Start here. |
-| **http://localhost:18100/demo/** | The dashboard, the "Three Studies, One Component" walk-through, and the SPARQL explorer. Every result has a **Graph** tab: the records behind the rows as nodes, every subject identifier two of them share drawn as a node between them, and every component two studies compose drawn as a node the records of both studies meet at, labelled with each record's value. Click a record to open it in the console. |
+| **http://localhost:18100/demo/** | The dashboard, the "Three Studies, One Component" walk-through, and the SPARQL explorer. Every result has a **Graph** tab: the records behind the rows as nodes, every subject identifier two of them share drawn as a node between them, and every component two studies compose drawn as a node the records of both studies meet at, labeled with each record's value. Click a record to open it in the console. |
 
 ### Check it worked
 
@@ -47,8 +47,8 @@ The generators are seeded, so every run on every machine produces the same recor
 
 | | Expected |
 |---|---|
-| Records loaded | **84,352** |
-| Named graphs in GraphDB | **84,352** (one per record, no drift; the loader prints the count per model, and a `COUNT(DISTINCT ?g)` over `GRAPH ?g` in the explorer confirms it) |
+| Records loaded | **84,486** |
+| Named graphs in GraphDB | **84,486** (one per record, no drift; the loader prints the count per model, and a `COUNT(DISTINCT ?g)` over `GRAPH ?g` in the explorer confirms it) |
 | Models | **7** |
 | Records stating an absence | **0** |
 
@@ -66,7 +66,7 @@ Generation takes about three minutes; **loading is the cost**: each instance is 
 | Model | Source rows | Records in `make demo` |
 |---|---|---|
 | NHANES Participant | DEMO_J joined on SEQN with BPX_J, TCHOL_J, CBC_J, MCQ_J, SMQ_J, PFQ_J | 9,254 |
-| NHANES Medication | RXQ_RX_J rows naming a medicine (5,343 rows without one are skipped) | 14,300 |
+| NHANES Medication | RXQ_RX_J rows reporting a medicine (5,209 rows without one are skipped; a medicine whose name is unknown, refused or not known is a record, with an Exceptional Value) | 14,434 |
 | BRFSS Respondent | LLCP2022, sampled | 5,000 |
 | CMS Beneficiary | 2008 beneficiary summary, sampled | 1,000 |
 | CMS Inpatient Claim | 2008-2010 inpatient claims of the sampled beneficiaries | 585 |
@@ -133,6 +133,28 @@ The walk-through at `/demo/narrative/` runs six beats, each answered by one of t
 5. **Medications: where the join does not exist, and why.** NHANES names the drug and carries its own identifier; CMS carries an NDC. Neither is RxNorm, so the two do not join, and the page says that rather than staging it.
 6. **Demographics side by side.** Gender on the Default component, race and ethnicity on the NIH CDE component, by study.
 
+## When the metadata moves
+
+The three sources this demo is built from changed their documentation while it was being built, each outside the
+control of anyone using their data. All three were checked on 26 October 2026:
+
+- **NHANES.** CDC moved the 2017-2018 documentation. The pages every NHANES variable points to
+  (`https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/DEMO_J.htm` and the rest) now answer with a "Page Not Found" page, and
+  answer it with HTTP 200, so a link checker reports them as working. The documentation is at
+  `https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/`, with the same variable anchors.
+- **BRFSS.** The 2022 codebook PDF that defines BRFSS's coded answers answers 404. CDC now publishes it only inside a
+  zip on the 2022 annual data page.
+- **The NIH CDE Repository.** The public record for "Are you pregnant now?" no longer shows the LOINC code of each
+  answer without a login, so a reader cannot check the codes without an account (the codes were wrong; see
+  [SOURCE-ERRATA.md](SOURCE-ERRATA.md)).
+
+A dataset that carries a code and a link to its meaning loses the meaning when the link stops answering, and the
+people downstream are the last to find out. Here the meaning is in the published model: each component's label and
+description, every permissible value with its label, the units, ranges and data types, and where the source has a
+convention of its own, the convention itself (NHANES's prevention codes are described in the component, not only on
+CDC's page). The links to the agencies' pages are kept as provenance, and they are the part that rots. A published
+model never changes, so the links in it stay as they were published, and the records still say what they say.
+
 ## SPARQL queries
 
 Six pre-built queries in `sparql/` run against the store the seven applications project, one named graph per record. Each anchors on a published component by its `ct_id` or its label, and the join across studies is the component itself.
@@ -166,7 +188,7 @@ The project's components from the first build, 976 of them and eight models, sta
 
 The first build (March 2026) ran the SDC_Agents pipeline over the same three studies: introspect the files, discover catalog matches, enrich the sparse federal metadata (about 2,000 lines of codebook parsing in `scripts/enrichment/`, kept as the record of what that took), assemble models by API, and download them. It published 976 components across eight models, and found what this build is built on: the agencies' metadata was too thin for an agent to say that two columns measured the same concept, so each study minted its own components and the studies shared none. The cross-study queries were kept as a specification and the README said so.
 
-That is the finding: the join across studies is a modelling decision a person makes, not a match an agent guesses. This build makes it as reviewed records, once, and every study composes the result. The pipeline scripts and `sdc-agents.yaml` remain in the repository as what the first build did; they are not part of `make demo`.
+That is the finding: the join across studies is a modeling decision a person makes, not a match an agent guesses. This build makes it as reviewed records, once, and every study composes the result. The pipeline scripts and `sdc-agents.yaml` remain in the repository as what the first build did; they are not part of `make demo`.
 
 ## What this demonstration does not show
 

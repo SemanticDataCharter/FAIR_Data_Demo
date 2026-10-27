@@ -1,0 +1,51 @@
+{
+ "audit": "nz4t9iecyq1ukvs4s3ymgd8t",
+ "models": {
+  "BRFSS Respondent 4.3.0": {
+   "ct_id": "zmlfrxyorqbb1e2id0cwhjyy",
+   "was_revision_of": "j6wmvhr46irxht2ls90nry8k",
+   "app": "brfss_respondent",
+   "study": "BRFSS",
+   "revised_for": "4.3.0: refused and don't-know answers as Exceptional Values (SDCStudio 4.24); NHANES prevention reason codes as their own code system (SOURCE-ERRATA.md)"
+  },
+  "CMS Beneficiary 4.3.0": {
+   "ct_id": "n7y449kzry6ax839d9g3oecd",
+   "was_revision_of": "vj0hr75146j0pbedvc0iaqrz",
+   "app": "cms_beneficiary",
+   "study": "CMS",
+   "revised_for": "4.3.0: refused and don't-know answers as Exceptional Values (SDCStudio 4.24); NHANES prevention reason codes as their own code system (SOURCE-ERRATA.md)"
+  },
+  "CMS Inpatient Claim": {
+   "ct_id": "ji1eccop92mlmikwq5gwp7cr",
+   "was_revision_of": "ra4tn4wzsu2rlbk5dineab5g",
+   "app": "cms_inpatient_claim",
+   "study": "CMS"
+  },
+  "CMS Outpatient Claim": {
+   "ct_id": "mllwhe842wtnim4ms48qonio",
+   "was_revision_of": "k6f8kugg359vc6ew75ulojg9",
+   "app": "cms_outpatient_claim",
+   "study": "CMS"
+  },
+  "CMS Prescription Drug Event": {
+   "ct_id": "nvemvhvdkctdlm9alwwgcay7",
+   "was_revision_of": "dg6lyhgvz9wd9cuqxqdc5g4p",
+   "app": "cms_prescription_drug_event",
+   "study": "CMS"
+  },
+  "NHANES Medication 4.3.0": {
+   "ct_id": "plc9gto1kzy244g1r2op257f",
+   "was_revision_of": "epbdfmvxc3gbh5f66hhb3o2m",
+   "app": "nhanes_medication",
+   "study": "NHANES",
+   "revised_for": "4.3.0: refused and don't-know answers as Exceptional Values (SDCStudio 4.24); NHANES prevention reason codes as their own code system (SOURCE-ERRATA.md)"
+  },
+  "NHANES Participant 4.3.0": {
+   "ct_id": "drjvqb171q9pqwcdq6nxxrr4",
+   "was_revision_of": "tp5pg0u4dasqarie0b3ujn2u",
+   "app": "nhanes_participant",
+   "study": "NHANES",
+   "revised_for": "4.3.0: refused and don't-know answers as Exceptional Values (SDCStudio 4.24); NHANES prevention reason codes as their own code system (SOURCE-ERRATA.md)"
+  }
+ }
+}

@@ -312,9 +312,20 @@ nh_participant = C("nhanes-participant", "NHANES Participant", "One NHANES 2017-
 nh_rxduse = leaf("nhanes-taken-prescription-past-month", "Taken Prescription Medicine, Past Month (RXDUSE)", "XdToken", "Whether the participant took prescription medicine in the past 30 days (RXDUSE).", links=[nh("RXDUSE", "RXQ_RX_J")], enumeration=yesno(), source=NH)
 nh_drug = leaf("nhanes-generic-drug-name", "Generic Drug Name (RXDDRUG)", "XdString", "The generic drug name as NHANES records it (RXDDRUG).", links=[nh("RXDDRUG", "RXQ_RX_J")], constraints={"max_length": 200}, source=NH)
 nh_drugid = leaf("nhanes-generic-drug-code", "Generic Drug Code (RXDDRGID)", "XdString", "The NHANES generic drug code (RXDDRGID), the agency's own identifier from the Lexicon Plus database; not an RxNorm code, so it is not presented as one.", links=[nh("RXDDRGID", "RXQ_RX_J")], constraints={"max_length": 12}, source=NH)
-nh_days = leaf("nhanes-days-taken-medicine", "Number of Days Taken Medicine (RXDDAYS)", "XdCount", "The number of days the participant has taken the medicine (RXDDAYS; 99999 means more than that).", links=[nh("RXDDAYS", "RXQ_RX_J")], constraints={"units": U_DAYS, "min_inclusive": 0, "max_inclusive": 99999}, source=NH)
+nh_days = leaf("nhanes-days-taken-medicine", "Number of Days Taken Medicine (RXDDAYS)", "XdCount", "The number of days the participant has taken the medicine (RXDDAYS; 1 to 21,900 in the file). A refusal (77777) or don't know (99999) is carried as an Exceptional Value, not a number.", links=[nh("RXDDAYS", "RXQ_RX_J")], constraints={"units": U_DAYS, "min_inclusive": 1, "max_inclusive": 21900}, source=NH)
 nh_rxcount = leaf("nhanes-number-of-prescription-medicines", "Number of Prescription Medicines Taken (RXDCOUNT)", "XdCount", "The number of prescription medicines the participant is taking (RXDCOUNT).", links=[nh("RXDCOUNT", "RXQ_RX_J")], constraints={"units": D + "units-items", "min_inclusive": 0, "max_inclusive": 50}, source=NH)
-rx_reasons = [C(f"nhanes-medication-reason-{n}", f"Medication Reason {n}", f"The {['first', 'second', 'third'][n - 1]} reason the medicine is taken (RXDRSC{n}, RXDRSD{n}), as the FHIR ICD-10-CM diagnosis coded value by identifier.", [F + "diagnosis-icd10cm"], exact="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode", source=NH) for n in (1, 2, 3)]
+# NHANES's prevention codes: an ICD-10-CM code followed by "P" means the medicine is taken to prevent the condition (RXQ_RX_J
+# Data Processing and Editing). None is an ICD-10-CM code (all 29 in the file were looked up: SOURCE-ERRATA.md), so they are
+# a code system of NHANES's own and carried as one, never as ICD-10-CM.
+# CDC moved the NHANES documentation; the 2017-2018 pages under NHANES now answer "Page Not Found" (SOURCE-ERRATA.md).
+NH_RX = "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/RXQ_RX_J.htm"
+sys_nhanes_rx = leaf("system-nhanes-rx-reason", "Code System: NHANES Prevention Reason", "XdLink", "The code system of a coded value, fixed: NHANES's prevention reason codes, defined in the RXQ_RX_J documentation (" + NH_RX + "). Not ICD-10-CM. FHIR Coding.system.",
+                     links=[("skos:exactMatch", NH_RX, "standard")], constraints={"link": NH_RX, "relation": "codeSystem", "relation_uri": "http://hl7.org/fhir/R4/datatypes-definitions.html#Coding.system"}, source=NH)
+nhanes_prev_code = leaf("nhanes-prevention-reason-code", "Prevention Reason Code (NHANES)", "XdString", "An NHANES prevention reason code (RXDRSC1 to RXDRSC3): an ICD-10-CM code with the letter P appended, meaning the medicine is taken to prevent the condition (I21.P, prevent heart attack). NHANES's own code, not an ICD-10-CM code: ICD-10-CM has no I21.P.",
+                        links=[("skos:exactMatch", NH_RX, "standard"), nh("RXDRSC1", "RXQ_RX_J")], constraints={"max_length": 8, "str_fmt": "[A-TV-Z][0-9][0-9AB][.][0-9A-TV-Z]{0,3}P"}, source=NH)
+nh_prevention = C("nhanes-prevention-reason", "Prevention Reason (NHANES)", "A reason for a medicine coded in NHANES's prevention reason codes: the code, NHANES's description of it and the fixed code system (FHIR Coding). Kept apart from the ICD-10-CM diagnosis because the code is not ICD-10-CM and the condition is one the participant is preventing, not one diagnosed.",
+                  [nhanes_prev_code, F + "code-display-text", sys_nhanes_rx], exact="http://hl7.org/fhir/R4/datatypes.html#Coding", source=NH)
+rx_reasons = [C(f"nhanes-medication-reason-{n}", f"Medication Reason {n}", f"The {['first', 'second', 'third'][n - 1]} reason the medicine is taken (RXDRSC{n}, RXDRSD{n}): an ICD-10-CM diagnosis as the FHIR coded value by identifier, or one of NHANES's prevention reason codes, which are not ICD-10-CM.", [F + "diagnosis-icd10cm", nh_prevention], exact="http://hl7.org/fhir/R4/medicationrequest-definitions.html#MedicationRequest.reasonCode", source=NH) for n in (1, 2, 3)]
 nh_medication = C("nhanes-medication", "NHANES Medication", "One prescription medicine a participant reported (RXQ_RX_J): the sequence number joining it to the participant, whether any was taken, the generic name and NHANES code, days taken, the count of medicines, and up to three reasons as ICD-10-CM coded values.",
                   [seqn, nh_rxduse, nh_drug, nh_drugid, nh_days, nh_rxcount] + rx_reasons, exact="http://hl7.org/fhir/StructureDefinition/MedicationStatement", source=NH)
 
@@ -543,48 +554,103 @@ def retire_rows():
     return rows
 
 
-# The records revised for the current release, each to the published holder of its slot (E-2026-10-03 in
-# SOURCE-ERRATA.md: the value bindings the terminologies do not confirm, and every cluster above them, so the models
-# compose the corrections; the six of E-2026-10-01 are among them, now revising their 4.2.3 revisions).
+# The records revised for the current release, each to the published holder of its slot. 4.3.0: every answer that can
+# be refused or not known, so that SDCStudio 4.24 publishes it with an Exceptional Value allowed in place of the value
+# (SOURCE-ERRATA.md); NHANES's prevention reason codes and the documented days-taken range (4.2.5, folded in); and every
+# cluster above them, including those composing the revised NIH CDE answers and the FHIR ICD-10-CM diagnosis.
 REVISIONS = {
-    "brfss-bmi-category": "ezewpvppvx8zjikutr53ppgz",
-    "brfss-body-measures": "gc3nb6hzobkzifswmzgt7w6t",
-    "brfss-chronic-conditions": "lahhb7fhnu75l1fxrv9f8fdv",
-    "brfss-days-mental-health-not-good": "k32effn0kp5a42ikkpvcva9j",
-    "brfss-days-physical-health-not-good": "fljkn7b19qtnj6rr3t8qcfg1",
-    "brfss-demographics": "tto2m72tul0hj0z7zyoco4yx",
-    "brfss-education-level": "fci5gajaodxc2ihq6nuz9l6y",
-    "brfss-health-status": "kmgw3rv02bipvaoxpvnh7fzk",
-    "brfss-respondent": "jxif4jju7k2rg3vokabzzj22",
-    "brfss-respondent-governed-record": "kb26is7epmdlc0lm1k9pdz9f",
-    "brfss-survey-design": "zauadmfc05ep5nf2kd9j8cwh",
-    "chronic-condition-indicators": "wa0mknvfo83hej635n48s0ig",
-    "cms-beneficiary": "kkdy1kjdruxvx8s1ra8eh231",
-    "cms-beneficiary-governed-record": "io2h28pi3yktedurk8ye3oq0",
-    "condition-indicator-basis": "hc79skkfionpgw87dsg5yrgw",
-    "general-health-status": "lth27h6towue4i9iq1cudogc",
-    "nhanes-citizenship-status": "m67ncwhc9s1j36f9w9qsrxfx",
-    "nhanes-demographics": "nzhi9t6qd9rhb5ojsaxtn8md",
-    "nhanes-dressing": "p4jxl2rur1agjhdpvj2g9u4k",
-    "nhanes-education-level-adults": "fqjd2lvp9jamdpf0f3kpkwnp",
-    "nhanes-getting-in-and-out-of-bed": "cy6k5rxvhvg2v27cfp7pjwyx",
-    "nhanes-laboratory-results": "c73687ou0pkc7qy6n2kksfc7",
-    "nhanes-lifting-or-carrying": "b1mxr233mgqvzr39c90ly8cv",
-    "nhanes-medical-conditions": "mc8by65nv7wa59lw4oj54e2w",
-    "nhanes-participant": "dawjwho8viq3hr0esb39dhb7",
-    "nhanes-participant-governed-record": "u9elnmjjpxdtxcxnqugqaowk",
-    "nhanes-physical-functioning": "ky7lvmote5jfn5gt6n89q79s",
-    "nhanes-pregnancy-status-at-exam": "r0j6yo8zvo4q8x0ovdr6j9yz",
-    "nhanes-race-hispanic-origin": "hs44ipuqgvc3azbt3mirxtsz",
-    "nhanes-standing-for-long-periods": "vp4ow7t3q8w2phcft0qvyj4u",
-    "nhanes-standing-up-from-chair": "y52y4mpq95zcknal0be1uc7v",
-    "nhanes-stooping-crouching-kneeling": "knrs4clih4pi26tm2zra1ai0",
-    "nhanes-survey-design": "mgqswj92qaeasqjjvfcyxon5",
-    "nhanes-total-cholesterol-si": "qp5mdgab3s37zwqzyfzq8rvi",
-    "nhanes-walking-between-rooms": "crr2z3b2l7hlq1kvevppt8kt",
-    "nhanes-walking-quarter-mile": "mktq5xr8slz67q85idl8bsky",
-    "nhanes-walking-up-ten-stairs": "rot4z5ny8gdkfmimedcjl1te",
-    "veteran-status": "eimlsgbawhm8aa4i6gbdrja0",
+    "brfss-average-drinks-per-day": "gr95a9bk6mfr0220fmxc3o4e",
+    "brfss-binge-drinking-occasions": "g0dq4n7oml1mmi21t50biiwt",
+    "brfss-blind-or-difficulty-seeing": "rw8s64t4v80421biq8eo9p2x",
+    "brfss-body-measures": "dgd703p5t3yzmnw7np9g1u5p",
+    "brfss-chronic-conditions": "yumwsic8qvlly00pluhl9415",
+    "brfss-days-drank-alcohol": "nh9s5b7gb713asjatbg5guyc",
+    "brfss-days-mental-health-not-good": "cjh0775qjyyaqb9spk1k3rty",
+    "brfss-days-physical-health-not-good": "kmr0bcq4vaae10cw4hhgjbtx",
+    "brfss-deaf-or-hard-of-hearing": "hs066djavlc5r494vqu61thl",
+    "brfss-demographics": "c6lumieatnqpb33vp80sblyd",
+    "brfss-difficulty-concentrating-or-remembering": "e104gkr3e96ekydrpe8qogjw",
+    "brfss-difficulty-doing-errands-alone": "l9s5avvkix0og66m0lewwqgg",
+    "brfss-difficulty-dressing-or-bathing": "zbwodv9m60b33blptlellmu0",
+    "brfss-difficulty-walking-or-climbing-stairs": "m3970or5qg49k78l0lq1ptjc",
+    "brfss-disability": "u19jrjjc6aznug6hs2twjiy5",
+    "brfss-e-cigarette-use": "ecwiva31y2fky3eu1mdnvurt",
+    "brfss-education-level": "bhi8aatu3lxo3erx3mo5y08v",
+    "brfss-employment-status": "j67yf27qljb83m2fwvown1lk",
+    "brfss-exercise-in-past-30-days": "a08lkh4xjvqqjtz7sxy129pa",
+    "brfss-frequency-of-days-now-smoking": "kzni1q04rghj23ca0zbhauu5",
+    "brfss-health-status": "t1sv9gth4is2bswuhyid22co",
+    "brfss-income-level": "crdh278iwq7azbtcgsuxteve",
+    "brfss-length-since-last-checkup": "fa0aian3co6if5igu488whhr",
+    "brfss-marital-status": "czh5vzmdeijkwrtyla1w7su8",
+    "brfss-number-of-children-in-household": "abjbfcel6qppumg0rlf78wcp",
+    "brfss-pregnancy-status": "gighl3atjkq88ttivdezt4p7",
+    "brfss-primary-source-of-insurance": "evbpc370eyfc3q3lldwifu78",
+    "brfss-reported-height": "urjk1vvcot1s319mxygpdsf5",
+    "brfss-reported-weight-in-pounds": "gket571isxo2uckturhvxadk",
+    "brfss-respondent": "job3i8sfv3zikxymqe625fm2",
+    "brfss-respondent-governed-record": "cd2j0wzlcvfsfk7ikiaujmzx",
+    "brfss-smoked-100-cigarettes": "hukufq8g2u2k0cpcal7uxsa8",
+    "brfss-still-have-asthma": "dkmozm7gxxss45gf5yhthpjg",
+    "brfss-tobacco-and-alcohol": "dh2ghpj9z1brefxf0pb4yi14",
+    "chronic-condition-indicators": "bq0dx31j0dzk5dsof8aoxfqk",
+    "cms-beneficiary": "zvdxyiicvyhfaywtw7xikjbj",
+    "cms-beneficiary-governed-record": "meavxo1k8nbndmepkmdaagin",
+    "condition-angina": "o4d67oubyyunugx3la44f53u",
+    "condition-arthritis": "nd1v8jk7wtm1tthzw1f4987t",
+    "condition-asthma": "acr1xvqppf1b3rjsrst6tt4p",
+    "condition-cancer": "ix0my2v2z79s002g0r8orosf",
+    "condition-chronic-bronchitis": "jyx7rxfktazhgxgq84fxf6wr",
+    "condition-congestive-heart-failure": "hyqlz591lhj54sdt1a1mup70",
+    "condition-copd": "mijr18ynaqde2l8jps70l2g6",
+    "condition-coronary-heart-disease": "udbydjqj76l8kl6mi2s3v7vd",
+    "condition-depression": "of4crvmnrr3s5q5396kmt0jv",
+    "condition-diabetes": "fzpb9xr5jg2m3e3dzmvi1v3h",
+    "condition-emphysema": "sbulkq80j4fkbiql4zgje4qr",
+    "condition-heart-attack": "yshoeps2dm0j1ueusqs825v6",
+    "condition-kidney-disease": "sw5rt0k2uap0e3xgl4rznfgu",
+    "condition-liver-condition": "atqkooccakulfhkt18c008fx",
+    "condition-skin-cancer": "xsohkckyof7y1xj8h1ab4pxu",
+    "condition-stroke": "zc6p008h5naqev8zngtzvyx9",
+    "condition-thyroid-problem": "p8u71b4lhct4ra0szgkex7xo",
+    "general-health-status": "j6jj7wf0olxh3db6td9wey6g",
+    "nhanes-age-started-smoking": "wlfal1j4vnwy76szun72madm",
+    "nhanes-annual-household-income": "ex88a2s3ys6hm5pvv77j0q2u",
+    "nhanes-cigarettes-per-day-past-30-days": "v9wj86qu70lda3tt2dh299wz",
+    "nhanes-citizenship-status": "ftyi95rho04uurpzxued878l",
+    "nhanes-confusion-memory-problems": "jxdk8rs1m133yzb52rfs08hy",
+    "nhanes-country-of-birth": "nwsj84veb6u9g1v0h2a3a793",
+    "nhanes-days-taken-medicine": "jwgah039kcz574bbjvpxvfdj",
+    "nhanes-demographics": "mcwxopvl79am1nwidvdhh6k1",
+    "nhanes-doctor-said-overweight": "fwyb9ukfypotqkvahtygrjo5",
+    "nhanes-dressing": "l6heok2fyjbbm657g6iwd9ao",
+    "nhanes-education-level-adults": "ock06zt2jnlwwicpkqpzbgmh",
+    "nhanes-ever-used-e-cigarette": "gy1045dipmx8udv1bndk7hrv",
+    "nhanes-generic-drug-name": "lok5ozew80qmwah6h45jr69y",
+    "nhanes-getting-in-and-out-of-bed": "an0ysk4wra3yf18zqh8xqz1u",
+    "nhanes-lifting-or-carrying": "s81mdwkizvrrih408g05j02z",
+    "nhanes-limitations-keeping-from-working": "gxy0s65v35djnq875rzhcmby",
+    "nhanes-marital-status": "i3uys2dmi257jkdzavsst5az",
+    "nhanes-medical-conditions": "hmaeg366kmkc99g6gdsejufy",
+    "nhanes-medication": "ncudsi2t2ij3rd2pmnnfr2j9",
+    "nhanes-medication-governed-record": "jo2kw48cijwgg64s6cud2el1",
+    "nhanes-medication-reason-1": "i213d6dp9r4c0nmzxkgc0tja",
+    "nhanes-medication-reason-2": "u3qz0js9emqn2i7s5nyynmgt",
+    "nhanes-medication-reason-3": "rozfpmwczk4yuw4c2vom4gyx",
+    "nhanes-now-smoke-cigarettes": "mq5xicyh1n3d8ofhyroazip2",
+    "nhanes-participant": "vianv75qjtm1agy1mhyctpvo",
+    "nhanes-participant-governed-record": "qsegrqlbnrpyedsuyh602l7p",
+    "nhanes-physical-functioning": "wm4o1tvmo89r0wn7ailb51v2",
+    "nhanes-smoked-100-cigarettes": "lnbzdjsluc4ebnri7k4dvn2i",
+    "nhanes-smoking": "u3nopo5pxqb1dwwk3u0fyp6e",
+    "nhanes-standing-for-long-periods": "imcbb8w19x2veya8fp1y2zqz",
+    "nhanes-standing-up-from-chair": "s1vje5rv2ubv17cqwlnglhyi",
+    "nhanes-still-have-asthma": "ejjthi5lftrx9a7rv3fedq6m",
+    "nhanes-stooping-crouching-kneeling": "kexlzsor1x6i40xggqmdctwp",
+    "nhanes-walking-between-rooms": "oto1vaautwazh218zmzj5wxc",
+    "nhanes-walking-quarter-mile": "xm59ukw41e98q86oanzreehg",
+    "nhanes-walking-up-ten-stairs": "mrzg9shhypi53vy0nfw1xk05",
+    "veteran-status": "vyc62ndwazzqyn5ee5oeno1o",
 }
 
 

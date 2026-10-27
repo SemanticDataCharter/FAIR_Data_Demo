@@ -13,12 +13,12 @@ import sys
 import time
 
 from schema import Schema
-from shared import EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
+from shared import ASKR, ASKU, EV, Quantity, read_csv, code, number, qty, record, write_record, import_dir, model_ct, DEMO_SCALE
 
-PARTICIPANT = "NHANES Participant 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
-MEDICATION = "NHANES Medication"
+PARTICIPANT = "NHANES Participant 4.3.0"   # the 4.3.0 revision (Exceptional Values; SOURCE-ERRATA.md)
+MEDICATION = "NHANES Medication 4.3.0"   # the 4.3.0 revision: prevention reason codes, Exceptional Values (SOURCE-ERRATA.md)
 AGENCY = "National Center for Health Statistics, Centers for Disease Control and Prevention"
-DROPPED = collections.Counter()   # variable -> refused / don't-know answers left out
+DROPPED = collections.Counter()   # (variable, null flavor) -> refused / don't-know answers carried as Exceptional Values
 
 YN = {"1": "Yes", "2": "No"}
 GENDER = {"1": "Male", "2": "Female"}
@@ -58,19 +58,22 @@ LABS = [("LBXTC", "Total Cholesterol", "mg/dL"), ("LBDTCSI", "Total Cholesterol 
 # as it is for income. BRFSS is treated the same way.
 
 def ans(var, v, table, **kw):
-    """A coded answer, with a refusal or don't-know left out and counted."""
+    """A coded answer, or the refusal or don't-know as its Exceptional Value (NHANES: 7 / 77 / 777 Refused, 9 / 99 /
+    999 Don't know, code()'s default; every variable carried here checked against its codebook on 26 October 2026)."""
     out = code(v, table, **kw)
     if isinstance(out, EV):
-        DROPPED[var] += 1
-        return None
+        DROPPED[(var, out.code)] += 1
     return out
 
 
-def num(var, v, missing):
+def num_qty(var, v, missing, unit):
+    """A numeric answer as a Quantity, or the Exceptional Value its missing code states: ``missing`` is (refused, don't know)."""
     if v in missing:
-        DROPPED[var] += 1
-        return None
-    return number(v)
+        x = ASKR if v == missing[0] else ASKU
+        DROPPED[(var, x.code)] += 1
+        return x
+    n = number(v)
+    return qty(n, unit) if n else None
 
 
 def by_seqn(key):
@@ -140,8 +143,8 @@ def participant_values(seqn, demo, bpx, tchol, cbc, mcq, smq, pfq):
             "NHANES Smoking/Smoked at Least 100 Cigarettes in Life (SMQ020)": ans("SMQ020", smq.get("SMQ020", ""), YN),
             "NHANES Smoking/Do You Now Smoke Cigarettes (SMQ040)": ans("SMQ040", smq.get("SMQ040", ""), SMOKE_NOW),
             "NHANES Smoking/Smoking Status": smoking_status(smq.get("SMQ020", ""), smq.get("SMQ040", "")),
-            "NHANES Smoking/Age Started Smoking Cigarettes Regularly (SMD030)": qty(num("SMD030", smq.get("SMD030", ""), ("777", "999")) or "", "years"),
-            "NHANES Smoking/Average Cigarettes per Day, Past 30 Days (SMD650)": qty(num("SMD650", smq.get("SMD650", ""), ("777", "999")) or "", "cigarettes"),
+            "NHANES Smoking/Age Started Smoking Cigarettes Regularly (SMD030)": num_qty("SMD030", smq.get("SMD030", ""), ("777", "999"), "years"),
+            "NHANES Smoking/Average Cigarettes per Day, Past 30 Days (SMD650)": num_qty("SMD650", smq.get("SMD650", ""), ("777", "999"), "cigarettes"),
             "NHANES Smoking/Ever Used an E-cigarette (SMQ900)": ans("SMQ900", smq.get("SMQ900", ""), YN),
         })
     if mcq:
@@ -174,6 +177,30 @@ def generate_participants():
 
 
 ICD10 = __import__("re").compile(r"^[A-TV-Z][0-9][0-9AB](\.[0-9A-TV-Z]{1,4})?$")
+NHANES_P = __import__("re").compile(r"^[A-TV-Z][0-9][0-9AB]\.[0-9A-TV-Z]{0,3}P$")
+PREVENTION = collections.Counter()   # NHANES prevention reason code -> uses
+# RXQ_RX_J's codebook: 55555 Unknown, 77777 Refused, 99999 Don't know, for the drug name, the days taken and the reasons.
+# Each is carried as the Exceptional Value it names (ISO 21090 null flavors), not left out.
+RX_EV = {"55555": EV("UNK"), "77777": EV("ASKR"), "99999": EV("ASKU")}
+EVS = collections.Counter()   # (variable, code) -> Exceptional Values written
+
+
+def rx_ev(var: str, v: str):
+    if v in RX_EV:
+        EVS[(var, v)] += 1
+        return RX_EV[v]
+    return None
+
+
+def is_prevention(code: str, description: str | None) -> bool:
+    """NHANES's prevention reason code: an ICD-10-CM code with "P" appended, which NHANES describes as "Prevent ..."
+    (RXQ_RX_J Data Processing and Editing; SOURCE-ERRATA.md). It is not ICD-10-CM. A real ICD-10-CM code can end in P
+    (a seventh character), so both tests must agree, and a code that passes one and not the other stops the run."""
+    shaped = bool(NHANES_P.match(code))
+    says = (description or "").strip().lower().startswith("prevent")
+    if shaped != says:
+        raise SystemExit(f"RXQ_RX_J reason {code!r} ({description!r}): P-shaped={shaped}, described as prevention={says}; review")
+    return shaped
 
 
 def generate_medications():
@@ -182,23 +209,30 @@ def generate_medications():
     n = skipped = 0
     for r in read_csv("RXQ_RX_J"):
         drug = r.get("RXDDRUG", "")
-        if r.get("RXDUSE") != "1" or not drug or drug in ("55555", "77777", "99999"):
-            skipped += 1
+        if r.get("RXDUSE") != "1" or not drug:
+            skipped += 1   # no medicine reported (RXDUSE 2), or whether one is taken refused or not known (7, 9): no medication row
             continue
         seqn = r["SEQN"]
         v = {
             "NHANES Medication/Respondent Sequence Number (SEQN)": seqn,
             "NHANES Medication/Taken Prescription Medicine, Past Month (RXDUSE)": "Yes",
-            "NHANES Medication/Generic Drug Name (RXDDRUG)": drug,
+            "NHANES Medication/Generic Drug Name (RXDDRUG)": rx_ev("RXDDRUG", drug) or drug,
             "NHANES Medication/Generic Drug Code (RXDDRGID)": r.get("RXDDRGID") or None,
-            "NHANES Medication/Number of Days Taken Medicine (RXDDAYS)": qty(num("RXDDAYS", r.get("RXDDAYS", ""), ("77777", "99999")) or "", "days"),
+            "NHANES Medication/Number of Days Taken Medicine (RXDDAYS)": rx_ev("RXDDAYS", r.get("RXDDAYS", "")) or qty(number(r.get("RXDDAYS", "")) if r.get("RXDDAYS") else "", "days"),
             "NHANES Medication/Number of Prescription Medicines Taken (RXDCOUNT)": qty(r.get("RXDCOUNT", ""), "items"),
         }
         for k in (1, 2, 3):
-            c = r.get(f"RXDRSC{k}", "")
-            if c and ICD10.match(c):
+            c, d = r.get(f"RXDRSC{k}", ""), r.get(f"RXDRSD{k}") or None
+            if c and is_prevention(c, d):
+                v[f"Medication Reason {k}/Prevention Reason (NHANES)/Prevention Reason Code (NHANES)"] = c
+                v[f"Medication Reason {k}/Prevention Reason (NHANES)/Code Display Text"] = d
+                PREVENTION[c] += 1
+            elif c in RX_EV:   # a reason given but not known, refused or don't know: the code is the Exceptional Value
+                v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Diagnosis Code (ICD-10-CM)"] = RX_EV[c]
+                EVS[(f"RXDRSC{k}", c)] += 1
+            elif c and ICD10.match(c):
                 v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Diagnosis Code (ICD-10-CM)"] = c
-                v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Code Display Text"] = r.get(f"RXDRSD{k}") or None
+                v[f"Medication Reason {k}/Diagnosis (ICD-10-CM)/Code Display Text"] = d
             elif c:
                 DROPPED[f"RXDRSC{k}"] += 1
         xml = record(MEDICATION, v, study="NHANES", agency=AGENCY, source_key="RXQ_RX_J", subject=("NHANES Participant", seqn), row_ref=f"SEQN={seqn};RXDDRGID={r.get('RXDDRGID', '')}")
@@ -211,7 +245,9 @@ def generate_medications():
 def generate():
     generate_participants()
     generate_medications()
-    print("NHANES answers left out as refused or don't know:", dict(DROPPED.most_common(12)))
+    print("NHANES answers carried as Exceptional Values (refused ASKR, don't know ASKU):", sum(DROPPED.values()), dict(DROPPED.most_common(8)))
+    print("NHANES prevention reason codes carried as NHANES's own (not ICD-10-CM):", sum(PREVENTION.values()), "uses of", len(PREVENTION), "codes")
+    print("NHANES medication answers carried as Exceptional Values:", dict(sorted(EVS.items())))
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ import time
 from cms_common import AGENCY, SUBJECT, sample_ids, usd
 from shared import Quantity, cms_date, import_dir, read_csv, record, write_record
 
-TITLE = "CMS Beneficiary 4.2.4"   # the 4.2.4 revision (E-2026-10-03, SOURCE-ERRATA.md)
+TITLE = "CMS Beneficiary 4.3.0"   # the 4.3.0 revision (SOURCE-ERRATA.md)
 OUTPUT_DIR = import_dir("cms_beneficiary")
 
 SEX = {"1": "Male", "2": "Female"}

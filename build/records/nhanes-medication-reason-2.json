@@ -1,7 +1,7 @@
 {
   "tiny_id": "nhanes-medication-reason-2",
   "label": "Medication Reason 2",
-  "description": "The second reason the medicine is taken (RXDRSC2, RXDRSD2), as the FHIR ICD-10-CM diagnosis coded value by identifier. Members: diagnosis-icd10cm (FHIR).",
+  "description": "The second reason the medicine is taken (RXDRSC2, RXDRSD2): an ICD-10-CM diagnosis as the FHIR coded value by identifier, or one of NHANES's prevention reason codes, which are not ICD-10-CM. Members: diagnosis-icd10cm (FHIR); Prevention Reason (NHANES).",
   "sdc_type": "Cluster",
   "excluded": false,
   "constraints": {},
@@ -33,9 +33,10 @@
     }
   ],
   "identity_status": "exact",
-  "supersedes_ct_id": null,
+  "supersedes_ct_id": "u3qz0js9emqn2i7s5nyynmgt",
   "members": [
-    "https://axius-sdc.com/library/fhir/diagnosis-icd10cm"
+    "https://axius-sdc.com/library/fhir/diagnosis-icd10cm",
+    "nhanes-prevention-reason"
   ],
   "flags": [],
   "selection_reason": "FAIR Data Demo 4.2.0 models 2026-09"

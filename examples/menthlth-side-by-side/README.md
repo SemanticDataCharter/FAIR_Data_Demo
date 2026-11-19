@@ -11,4 +11,4 @@ Run: `python run.py /path/to/LLCP2022.csv` (pandas + Ollama with the model pulle
 
 Limits: one run, three columns (`_STATE`, `SEXVAR`, `MENTHLTH`; all 326 would not fit the context), LLM text varies by model and version. The tutorial prints the coder agent's code without running it; so do we. The mapping in B (88 to 0, 77 and 99 to typed absences) is written into the model, not inferred by the LLM.
 
-Data: the CSV comes from the demo's own conversion step (`scripts/convert_xpt_to_csv.py`) on `source_data/brfss/LLCP2022.XPT`; see `source_data/README.md` for the download. Example: `python examples/menthlth-side-by-side/run.py source_data/brfss/LLCP2022.csv` from the repository root, run inside the example folder so the outputs land there.
+Data: the CSV comes from the demo's own conversion step (`scripts/convert_xpt_to_csv.py`) on `source_data/brfss/LLCP2022.XPT`; see `source_data/README.md` for the download. Example, from inside this folder (outputs are written to the current directory): `python run.py ../../source_data/brfss/LLCP2022.csv`.

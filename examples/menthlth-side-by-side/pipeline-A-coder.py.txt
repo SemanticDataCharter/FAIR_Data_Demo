@@ -1,0 +1,53 @@
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+
+# Assuming the dataset is loaded into a DataFrame named 'df'
+# For demonstration, creating a dummy dataframe based on your metadata
+data = {
+    '_STATE': np.random.uniform(1, 50, 445132),
+    'SEXVAR': np.random.choice([1, 2], 445132),
+    'MENTHLTH': np.random.uniform(1, 15, 445132)
+}
+df = pd.DataFrame(data)
+# Injecting 3 missing values as per metadata
+df.loc[0:2, 'MENTHLTH'] = np.nan
+
+# 1. Generate summary statistics
+print("Summary Statistics:")
+print(df.describe())
+
+# Set visual style
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(15, 12))
+
+# 2. Plot distributions for numerical columns
+plt.subplot(2, 2, 1)
+sns.histplot(df['_STATE'], kde=True, color='skyblue')
+plt.title('Distribution of _STATE')
+
+plt.subplot(2, 2, 2)
+sns.histplot(df['SEXVAR'], kde=True, color='salmon')
+plt.title('Distribution of SEXVAR')
+
+plt.subplot(2, 2, 3)
+sns.histplot(df['MENTHLTH'], kde=True, color='green')
+plt.title('Distribution of MENTHLTH')
+
+# 3. Plot correlation heatmap
+plt.subplot(2, 2, 4)
+correlation_matrix = df.corr(numeric_only=True)
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title('Correlation Heatmap')
+
+plt.tight_layout()
+plt.show()
+
+# 4. Identify missing values visually
+plt.figure(figsize=(10, 4))
+sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='viridis')
+plt.title('Missing Values Map')
+plt.show()
+```

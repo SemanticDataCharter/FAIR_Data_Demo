@@ -1,0 +1,53 @@
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Mock data generation based on metadata provided
+# In a real scenario, you would use: df = pd.read_csv('your_file.csv')
+np.random.seed(42)
+n_rows = 445132
+data = {
+    'MENTHLTH': np.random.randint(0, 31, size=n_rows),
+    'SEXVAR': np.random.choice([1, 2], size=n_rows),
+    '_STATE': np.random.randint(1, 51, size=n_rows)
+}
+
+df = pd.DataFrame(data)
+
+# Handling specific metadata logic: source code 88 is recorded as 0
+# (Assuming 88 might exist in the raw data before cleaning)
+df['MENTHLTH'] = df['MENTHLTH'].replace(88, 0)
+
+# 1. Generate summary statistics
+print("--- Summary Statistics ---")
+print(df.describe())
+print("\n--- Missing Values Count ---")
+print(df.isnull().sum())
+
+# Set visual style
+sns.set_theme(style="whitegrid")
+
+# 2. Plot distributions for numerical columns
+plt.figure(figsize=(15, 5))
+for i, col in enumerate(df.select_dtypes(include=[np.number]).columns):
+    plt.subplot(1, 3, i+1)
+    sns.histplot(df[col], kde=True, color='skyblue')
+    plt.title(f'Distribution of {col}')
+plt.tight_layout()
+plt.show()
+
+# 3. Plot correlation heatmap
+plt.figure(figsize=(8, 6))
+correlation_matrix = df.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=0.5)
+plt.title('Correlation Heatmap')
+plt.show()
+
+# 4. Identify missing values visually
+plt.figure(figsize=(10, 4))
+sns.heatmap(df.isnull(), yticklabels=False, cbar=False, cmap='viridis')
+plt.title('Missing Values Heatmap')
+plt.show()
+```

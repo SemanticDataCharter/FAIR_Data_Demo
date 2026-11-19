@@ -81,7 +81,7 @@ triple store from the same source. Open any record in the console at
 There is no pipeline between them and no reconciliation step. The graph is not
 a copy that drifts, it is a projection.
 
-## 3. A refused answer is left out and counted, never averaged
+## 3. A refused answer is carried as what it is, and counted, never averaged
 
 Survey files encode missingness as values. NHANES writes 7 for "refused" and 9
 for "don't know"; BRFSS writes 7 and 9, or 77 and 99, depending on the width
@@ -89,13 +89,16 @@ of the answer; CMS leaves the cell blank. Every one of those parses downstream
 as a real value unless something stops it. A 9 in a "days smoked" column is
 nine days.
 
-The generators read the agencies' missing-value codes per variable and do not
-write the leaf. Every leaf in these models is optional, so the record is valid
-and asserts nothing about the answer. The counts of what was left out are
-printed per variable when the data is generated, so the omission is
-accountable: in the sampled BRFSS run, 924 respondents did not state their
-income and 402 did not name their insurance, and neither number is in the
-store as a category.
+The generators read the agencies' missing-value codes per variable and write
+the Exceptional Value the code names in place of the answer: `ASKR` (asked and
+refused) for a refusal, `ASKU` (asked but unknown) for a don't-know. It is not
+a number, so no average or sum can fold it in, and it is not a blank, so it says
+why there is no value. The counts are printed per variable and per type when
+the data is generated, so each absence is accountable: in the sampled BRFSS
+run (5,000 respondents), 924 did not state their income (551 refused, 373 did
+not know) and 402 did not name their insurance (202 refused, 200 did not
+know), and no record holds either as a quantity. Cells the agency leaves blank,
+as CMS does, are left out of the record and counted.
 
 Where a model *requires* a value and the row has none, SDC4 has the other
 form: an ISO 21090 null flavor (`ASKU`, `ASKR`, `NI`) naming the reason, and

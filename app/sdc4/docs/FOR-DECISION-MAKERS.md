@@ -49,9 +49,9 @@ Seven models, 84,352 records, every one generated from a row of the public
 files. Note the third figure: **zero records refused**, and it is
 not because the data is complete. A survey respondent who refused to answer is
 recorded as a refusal by the agency, coded 7 or 9 in the file. Most pipelines
-carry that 7 into an average. Here the refusal is left out of the record and
-counted, and the count is printed when the data is generated. Nothing in this
-store is a number that was never an answer.
+carry that 7 into an average. Here the refusal is carried as a refusal, an
+Exceptional Value in place of the answer, and the count is printed when the
+data is generated. Nothing in this store is a number that was never an answer.
 
 ### 2. Open any record, and switch the three tabs
 
